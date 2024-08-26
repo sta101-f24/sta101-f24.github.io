@@ -53,10 +53,6 @@ income_alcohol |>
 
 In evaluating the relationship between these two variables, what is the response variable and what is the explanatory variable?
 
-::: {.content-visible when-format="pdf"}
-$\vspace{2cm}$
-:::
-
 ## Question 2
 
 Which of the following are appropriate visualizations for these data? Check **all** that apply.
@@ -79,17 +75,10 @@ e.  Only V
 
 What are the hypotheses for evaluating whether there is a relationship between income bracket and preferred alcoholic beverage?
 
-::: {.content-visible when-format="pdf"}
-$\vspace{2cm}$
-:::
 
 ## Question 4
 
-If in fact the null hypothesis is true, how many Americans who make between **\$30,000 and \$74,999** would we expect to have **liquor** as their preferred alcoholic beverage?
-
-::: {.content-visible when-format="pdf"}
-$\vspace{2cm}$
-:::
+If in fact the null hypothesis is true, how many Americans who make between XXX would we expect to have **liquor** as their preferred alcoholic beverage?
 
 ## Question 5
 
@@ -139,17 +128,9 @@ ggplot(null_dist, aes(x = stat)) +
 
 Estimate the p-value. In your answer, describe how you arrived at your answer.
 
-::: {.content-visible when-format="pdf"}
-$\vspace{2cm}$
-:::
-
 ## Question 7
 
 Based on your answer to the previous question, what is the conclusion of the hypothesis test at the 5% discernibility level?
-
-::: {.content-visible when-format="pdf"}
-$\vspace{2cm}$
-:::
 
 # Part 2 - Employment
 
@@ -159,9 +140,6 @@ A large university knows that about 70% of the full-time students are employed a
 
 Describe how you can set up a simulation to estimate the proportion of statistics majors who work 5 or more hours each week based on this sample.
 
-::: {.content-visible when-format="pdf"}
-$\vspace{2cm}$
-:::
 
 ## Question 9
 
@@ -224,9 +202,9 @@ d.  We are 95% confident that, were we to repeat this survey, the mean number of
 
 **Which is bigger?**
 
-A researcher is planning to conduct a test of two proportions. The null hypothesis is $H_0: p_1 - p_2 = 0$. The researcher has found that in their data $\hat{p}_1 - \hat{p}_2 = 0.2$.
+A researcher is planning to conduct a test of two proportions. The null hypothesis is XXX. The researcher has found that in their data XXX.
 
-I. P-value associated if $H_A: p_1 - p_2 \ne 0$ II. P-value associated if $H_A: p_1 - p_2 > 0$
+I. P-value associated if XXX II. P-value associated if XXX
 
 a.  I \> II
 b.  I \< II
@@ -238,46 +216,26 @@ c.  I = II
 
 a\. Power of the test is the probability of \_\_\_.
 
-::: {.content-visible when-format="pdf"}
-$\vspace{1cm}$
-:::
+
 
 b\. Type 1 error rate is the probability of \_\_\_.
 
-::: {.content-visible when-format="pdf"}
-$\vspace{1cm}$
-:::
+
 
 c\. Type 2 error rate is the probability of \_\_\_.
 
-::: {.content-visible when-format="pdf"}
-$\vspace{1cm}$
-:::
-
 d\. Unbeknownst to you, let’s say that the null hypothesis is actually true in the population. You plan to run a study anyway. If the level of discernibility you choose (i.e., the cutoff for your p-value) is 0.05, the probability that you will mistakenly reject the null hypothesis is \_\_\_\_.
-
-::: {.content-visible when-format="pdf"}
-$\vspace{1cm}$
-:::
 
 ## Question 15
 
 **True or false.** And, if false, explain your reasoning.
 
-a\. The central limit theorem tells us that the sampling distribution of a sample proportion will be centered at $\hat{p}$.
+a\. The central limit theorem tells us that the sampling distribution of a sample proportion will be centered at XXX.
 
 b\. Increasing the number of bootstrap samples will decrease the width of the confidence interval.
 
-c\. The bootstrap distribution of a sample proportion, $\hat{p}$, will be centered at $\hat{p}$.
-
-::: {.content-visible when-format="pdf"}
-$\vspace{2cm}$
-:::
+c\. The bootstrap distribution of a sample proportion, XXX, will be centered at XXX.
 
 ## Bonus
 
 Pick a concept we introduced in class so far that you've been struggling with and explain it in your own words.
-
-::: {.content-visible when-format="pdf"}
-$\vspace{2cm}$
-:::
