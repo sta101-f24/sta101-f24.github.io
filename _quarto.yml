@@ -45,7 +45,7 @@ website:
           - href: course-materials.qmd
             text: Course materials
           - href: course-grading.qmd
-            text: Grading
+            text: Assignments and grading
           - href: course-policies.qmd
             text: Course policies
           - href: course-resources.qmd
