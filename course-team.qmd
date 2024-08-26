@@ -36,4 +36,6 @@ title: "Teaching team"
 |                |                      |              | Location TBD             |
 +----------------+----------------------+--------------+--------------------------+
 
-**Note**: the office hour schedule is tentative as of 8/27/2024, but it will be finalized by 9/3/2024.
+::: callout-warning
+The office hour schedule is tentative as of 8/27/2024, but it will be finalized by 9/3/2024.
+:::
