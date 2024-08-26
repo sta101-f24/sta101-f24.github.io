@@ -20,16 +20,16 @@ website:
     pinned: true
     align: center
 
-    tools:
-      - icon: person-fill
-        text: "Canvas"
-        menu:
-          - text: Announcements
-            url: https://canvas.duke.edu/courses/4625/announcements
-          - text: Grades
-            url: https://canvas.duke.edu/courses/4625/gradebook
-          - text: Tutorial submission
-            url: https://canvas.duke.edu/courses/4625/quizzes
+#    tools:
+#      - icon: person-fill
+#        text: "Canvas"
+#        menu:
+#          - text: Announcements
+#            url: https://canvas.duke.edu/courses/4625/announcements
+#          - text: Grades
+#            url: https://canvas.duke.edu/courses/4625/gradebook
+#          - text: Tutorial submission
+#            url: https://canvas.duke.edu/courses/4625/quizzes
 
     style: docked
     search: true
