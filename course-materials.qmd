@@ -2,7 +2,6 @@
 title: "Course materials"
 ---
 
-# Textbooks
+## Textbooks
 
-
-# Technology
+## Technology
