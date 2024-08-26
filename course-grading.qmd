@@ -2,6 +2,35 @@
 title: "Assessments and grading"
 ---
 
-## Breakdown
+The final course grade will be calculated as follows:
 
-## Cutoffs
+| Category                     | Percentage |
+|------------------------------|------------|
+| Labs                         | 25%        |
+| Exam 1                       | 25%        |
+| Exam 2                       | 25%        |
+| Final project                | 25%        |
+
+The final letter grade will be determined based on the following thresholds, 
+**which will not change**:
+
+| Letter Grade | Final Course Grade |
+|--------------|--------------------|
+| A            | \>= 93             |
+| A-           | 90 - 92.99         |
+| B+           | 87 - 89.99         |
+| B            | 83 - 86.99         |
+| B-           | 80 - 82.99         |
+| C+           | 77 - 79.99         |
+| C            | 73 - 76.99         |
+| C-           | 70 - 72.99         |
+| D+           | 67 - 69.99         |
+| D            | 63 - 66.99         |
+| D-           | 60 - 62.99         |
+| F            | \< 60              |
+
+## Labs 
+
+## Exams 
+
+## Final project
