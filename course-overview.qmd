@@ -2,19 +2,21 @@
 title: "Course overview"
 ---
 
-This is the homepage for STA 101 - Data Analysis and Statistical Inference taught by [Dr. Mine Çetinkaya-Rundel](http://mine-cr.com/) in Fall 2023 at Duke University. All course materials will be posted on this site.
+## Course description
 
-You can find the course syllabus [here](/syllabus) and the course schedule [here](/).
+blah blah
 
 ## Class meetings
 
-| Meeting  | Location                       | Time                     | Instructor / Lab leader |
-|----------|--------------------------------|--------------------------|-------------------------|
-| Lectures | Gross Hall 103                 | Mon & Wed 1:25 - 2:40 pm | Mine                    |
-| Lab 1    | Perkins LINK 087 (Classroom 3) | Fri 8:30 - 9:45 am       | Shuo                    |
-| Lab 2    | Perkins LINK 087 (Classroom 3) | Fri 10:05 - 11:20 am     | Sylvia                  |
-| Lab 3    | Perkins LINK 087 (Classroom 3) | Fri 11:45 am - 1:00 pm   | John                    |
-| Lab 4    | Perkins LINK 087 (Classroom 3) | Fri 1:25 - 2:40 pm       | Chris                   |
+| Meeting  | Location                       | Time                         | Instructor/TA    |
+|------------------|-------------------|------------------|------------------|
+| Lectures | Social Sciences 139            | Tue, Thu 03:05 PM - 04:20 PM | John Z           |
+| Lab 1    | Perkins LINK 087 (Classroom 3) | Fri 10:05 AM - 11:20 AM      | John G, Camilla  |
+| Lab 2    | Perkins LINK 087 (Classroom 3) | Fri 11:45 AM - 01:00 PM      | Katie, Meghna    |
+| Lab 3    | Perkins LINK 087 (Classroom 3) | Fri 01:25 PM - 02:40 PM      | Leah, Nichole    |
+| Lab 4    | Perkins LINK 087 (Classroom 3) | Fri 08:30 AM - 09:45 AM      | Benjamin, Sayali |
+
+**Note**: for reasons unknown to me, the labs are not exactly numbered in chronological order.
 
 <br>
 
