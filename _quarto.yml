@@ -21,15 +21,6 @@ website:
     align: center
 
     tools:
-      - icon: cloud
-        href: https://posit.cloud/spaces/405361
-        text: "Posit Cloud"
-      - icon: slack
-        href: https://sta101-f23.slack.com
-        text: "Slack"
-      - icon: file-play
-        href: https://duke.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=a792a9f8-8b5d-432e-99e1-b06d01424ec4
-        text: "Panopto"
       - icon: person-fill
         text: "Canvas"
         menu:
