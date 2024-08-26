@@ -196,17 +196,6 @@
     "text": "Application exercise: UN Votes\n\nGo to Posit Cloud and start the project called UN Votes. Render the document titled unvotes.qmd. Review the narrative and the data visualization you just created. Then, change “Turkey” to another country of your choice. Re-render the document. Show the plot you created to your neighbor and discuss (1) why you chose that country and (2) how this new visualization is different than the original (and what that says about country politics, if anything).\nTime permitting: How were these data collected?\n\n\n\n\n\n🔗 sta101-f23.github.io"
   },
   {
-    "objectID": "computing/computing-cheatsheets.html",
-    "href": "computing/computing-cheatsheets.html",
-    "title": "R cheatsheets",
-    "section": "",
-    "text": "The following cheatsheets come from https://posit.co/resources/cheatsheets. We haven’t covered every function and functionality listed on them, but you might still find them useful as references.",
-    "crumbs": [
-      "Computing",
-      "Cheatsheets"
-    ]
-  },
-  {
     "objectID": "course-support.html",
     "href": "course-support.html",
     "title": "Course support",
@@ -1106,26 +1095,11 @@
     ]
   },
   {
-    "objectID": "computing/computing-access.html",
-    "href": "computing/computing-access.html",
-    "title": "Computing access",
+    "objectID": "computing/computing-cheatsheets.html",
+    "href": "computing/computing-cheatsheets.html",
+    "title": "R cheatsheets",
     "section": "",
-    "text": "To access RStudio in the browser, go to the Posit Cloud space for this course.\nAt the beginning of the semester you should have received a link to join this space. If you haven’t yet joined, you can find the link in Canvas Announcements or ask for it on the course Slack.",
-    "crumbs": [
-      "Computing",
-      "Access"
-    ]
-  },
-  {
-    "objectID": "computing/computing-troubleshooting.html",
-    "href": "computing/computing-troubleshooting.html",
-    "title": "Computing troubleshooting",
-    "section": "",
-    "text": "If you’re having difficulty launching an RStudio session from Posit Cloud, go to status.posit.co and check under Posit Cloud.\n\nIf it shows “Operational”, this means the system is expected to be working. Check your internet connection, if need be, restart your computer to ensure a fresh new connection. If your issue persists, post on the course Slack with details on what you’ve tried and the errors you see (including verbatim errors and/or screenshots).\nIf it shows “Partial Outage” or “Outage” (or anything other than “Operational”), this means there is a known incident with the containers. Check back later to see if it’s been resolved. If there’s a deadline coming up soon, post on the course Slack to let us know that there’s an issue. We can look into how quickly it might get resolved and decide on what to do about the deadline accordingly. Note: We don’t anticipate this to happen regularly, the systems are Operational a huge majority of the time!s",
-    "crumbs": [
-      "Computing",
-      "Troubleshooting"
-    ]
+    "text": "The following cheatsheets come from https://posit.co/resources/cheatsheets. We haven’t covered every function and functionality listed on them, but you might still find them useful as references."
   },
   {
     "objectID": "course-syllabus.html",
