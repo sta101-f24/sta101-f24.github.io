@@ -2,46 +2,30 @@
 title: "Teaching team"
 ---
 
-## Instructor
-
-![](images/team/mine.png){style="float:right;padding: 0 0 0 10px;" fig-alt="Headshot of Dr. Mine Çetinkaya-Rundel" width="200"}
-
-[**Dr. Mine Çetinkaya-Rundel**](http://mine-cr.com/) (she/her) is Professor of the Practice and Director of Undergraduate Studies at the [Department of Statistical Science](https://stat.duke.edu/) at Duke University and an affiliated faculty in the [Computational Media, Arts, and Cultures](https://cmac.duke.edu/). Mine's work focuses on innovation in statistics and data science pedagogy, with an emphasis on computing, reproducible research, student-centered learning, and open-source education as well as pedagogical approaches for enhancing retention of women and under-represented minorities in STEM.
-
-| Office hours       | Location     |
-|--------------------|--------------|
-| Tue 3:30 - 5:30 pm | Old Chem 213 |
-
-## Teaching assistants
-
-+--------------------------------------------+------------------------------------------------------------------------+---------------+------------------------+--------------------------------------------------------------------+
-|                                            | Name                                                                   | Role          | Lab section            | Office hours                                                       |
-+============================================+========================================================================+===============+========================+====================================================================+
-| ![](images/team/shuo.png){width="100"}     | [Shuo Wang](https://scholars.duke.edu/person/shuo.wang717)             | Head + Lab TA | Fri 8:30 - 9:45 am     | Mon 2:45 - 4:45 pm\                                                |
-|                                            |                                                                        |               |                        | Old Chem 203B                                                      |
-+--------------------------------------------+------------------------------------------------------------------------+---------------+------------------------+--------------------------------------------------------------------+
-| ![](images/team/sylvia.png){width="100"}   | [Sylvia Vincent](https://www.linkedin.com/in/sylvia-vincent-57b71917a) | Lab TA        | Fri 10:05 - 11:20 am   | Wed 3 - 5 pm\                                                      |
-|                                            |                                                                        |               |                        | Old Chem 025                                                       |
-+--------------------------------------------+------------------------------------------------------------------------+---------------+------------------------+--------------------------------------------------------------------+
-| ![](images/team/john.png){width="100"}     | [John Gillen](https://www.linkedin.com/in/john-gillen-611471229/)      | Lab TA        | Fri 11:45 am - 1:00 pm | Wed 10:30 am - 12:30 pm\                                           |
-|                                            |                                                                        |               |                        | [Zoom](https://canvas.duke.edu/courses/4625/pages/ta-office-hours) |
-+--------------------------------------------+------------------------------------------------------------------------+---------------+------------------------+--------------------------------------------------------------------+
-| ![](images/team/chris.png){width="100"}    | [Chris Oswald](https://scholars.duke.edu/person/chris.oswald)          | Lab TA        | Fri 1:25 - 2:40 pm     | Mon 9 - 10 am\                                                     |
-|                                            |                                                                        |               |                        | Tue 9 - 10 am\                                                     |
-|                                            |                                                                        |               |                        | Jones Open Lab (Bostock Library, 1st Floor)                        |
-+--------------------------------------------+------------------------------------------------------------------------+---------------+------------------------+--------------------------------------------------------------------+
-| ![](images/team/minh-anh.png){width="100"} | [Minh Anh To](https://scholars.duke.edu/person/minhanh.to)             | TA            |                        | Mon 10 am - 12 pm\                                                 |
-|                                            |                                                                        |               |                        | Old Chem 203B                                                      |
-+--------------------------------------------+------------------------------------------------------------------------+---------------+------------------------+--------------------------------------------------------------------+
-| ![](images/team/hao.png){width="100"}      | [Hao Wang](https://scholars.duke.edu/person/hao.wang)                  | TA            |                        | Tue 10 am - 12 pm\                                                 |
-|                                            |                                                                        |               |                        | Old Chem 203B                                                      |
-+--------------------------------------------+------------------------------------------------------------------------+---------------+------------------------+--------------------------------------------------------------------+
-| ![](images/team/noah.png){width="100"}     | [Noah Obuya](https://www.linkedin.com/in/noah-obuya-5795b7228)         | TA            |                        | Sun 12 - 2 pm\                                                     |
-|                                            |                                                                        |               |                        | [Zoom](https://canvas.duke.edu/courses/4625/pages/ta-office-hours) |
-+--------------------------------------------+------------------------------------------------------------------------+---------------+------------------------+--------------------------------------------------------------------+
-| ![](images/team/meghna.png){width="100"}   | [Meghna Katyal](https://www.linkedin.com/in/meghna-katyal-90bb13202)   | TA            |                        | Mon 7:30 - 8:30 pm\                                                |
-|                                            |                                                                        |               |                        | [Zoom](https://canvas.duke.edu/courses/4625/pages/ta-office-hours) |
-+--------------------------------------------+------------------------------------------------------------------------+---------------+------------------------+--------------------------------------------------------------------+
-| ![](images/team/avery.png){width="100"}    | [Avery Hodges](https://www.linkedin.com/in/avery-hodges-26824318a)     | TA            |                        | Mon 5 - 7 pm\                                                      |
-|                                            |                                                                        |               |                        | [Zoom](https://canvas.duke.edu/courses/4625/pages/ta-office-hours) |
-+--------------------------------------------+------------------------------------------------------------------------+---------------+------------------------+--------------------------------------------------------------------+
++----------------+----------------------+-------------+-------------------------+
+| Name           | Role                 | Lab section | Office hours            |
++================+======================+=============+=========================+
+| John Zito      | Instructor           |             | Thu 7:00 PM - 9:00 PM\  |
+|                |                      |             | Old Chem 207            |
++----------------+----------------------+-------------+-------------------------+
+| Leah Johnson   | Head TA + Lab Leader |             | Wed 2:00 PM - 4:00 PM\  |
+|                |                      |             | Location TBD            |
++----------------+----------------------+-------------+-------------------------+
+| Benjamin Dahl  | Lab Leader           |             | Thu 8:00 AM - 10:00 AM\ |
+|                |                      |             | Location TBD            |
++----------------+----------------------+-------------+-------------------------+
+| John Gillen    | Lab Leader           |             |                         |
++----------------+----------------------+-------------+-------------------------+
+| Katie Solarz   | Lab Leader           |             | Tue 4:30 PM - 6:30 PM\  |
+|                |                      |             | Location TBD            |
++----------------+----------------------+-------------+-------------------------+
+| Camilla Hanson | Lab Helper           |             |                         |
++----------------+----------------------+-------------+-------------------------+
+| Meghna Katyal  | Lab Helper           |             | Tue 6:30 PM - 8:30 PM\  |
+|                |                      |             | Zoom TBD                |
++----------------+----------------------+-------------+-------------------------+
+| Sayali Pingle  | Lab Helper           |             |                         |
++----------------+----------------------+-------------+-------------------------+
+| Nichole Zhang  | Lab Helper           |             | Wed 7:00 PM - 9:00 PM\  |
+|                |                      |             | Location TBD            |
++----------------+----------------------+-------------+-------------------------+
