@@ -6,7 +6,7 @@
     "section": "",
     "text": "This course introduces students to the discipline of statistics as a science of understanding and analyzing data. Themes include data collection, exploratory analysis, inference, and modeling. Focus on principles underlying quantitative research in social sciences, humanities, and public policy. Research projects teach the process of scientific discovery and synthesis and critical evaluation of research and statistical arguments. Readings give perspective on why in 1950, S. Wilks said, “Statistical thinking will one day be as necessary a qualification for efficient citizenship as the ability to read and write.”\nIn this course, students learn how to effectively make use of data in the face of uncertainty: how to collect data, how to analyze data, and how to use data to make inferences and conclusions about real world phenomena. Critiquing data-based claims and evaluating data-based decisions is at the core of this course. Throughout the course students acquire a conceptual understanding and mastery of statistical and quantitative reasoning tools in order to be able to make such critiques and evaluations.\nIn addition, students are presented with novel data sets and application examples on a daily basis, and they use these data to model outcomes and make inferences about unknown population characteristics. Students learn that the first step of any analysis is identifying the assumptions and conditions necessary to apply the statistical technique(s) required to answer the research question at hand. Students not only learn the mechanics of the quantitative analysis, but also how to interpret conclusions based on quantitative evidence in context of the data and the research questions as well as identifying limitations due to data collection and study design.\nFor the lab component of this course students prepare weekly lab reports presenting statistical analysis of real data. In addition, students complete two independent data analysis projects where they answer significant research questions via the analysis of real data using statistical inference and modeling tools.",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "Syllabus"
     ]
   },
@@ -17,7 +17,7 @@
     "section": "",
     "text": "This course introduces students to the discipline of statistics as a science of understanding and analyzing data. Themes include data collection, exploratory analysis, inference, and modeling. Focus on principles underlying quantitative research in social sciences, humanities, and public policy. Research projects teach the process of scientific discovery and synthesis and critical evaluation of research and statistical arguments. Readings give perspective on why in 1950, S. Wilks said, “Statistical thinking will one day be as necessary a qualification for efficient citizenship as the ability to read and write.”\nIn this course, students learn how to effectively make use of data in the face of uncertainty: how to collect data, how to analyze data, and how to use data to make inferences and conclusions about real world phenomena. Critiquing data-based claims and evaluating data-based decisions is at the core of this course. Throughout the course students acquire a conceptual understanding and mastery of statistical and quantitative reasoning tools in order to be able to make such critiques and evaluations.\nIn addition, students are presented with novel data sets and application examples on a daily basis, and they use these data to model outcomes and make inferences about unknown population characteristics. Students learn that the first step of any analysis is identifying the assumptions and conditions necessary to apply the statistical technique(s) required to answer the research question at hand. Students not only learn the mechanics of the quantitative analysis, but also how to interpret conclusions based on quantitative evidence in context of the data and the research questions as well as identifying limitations due to data collection and study design.\nFor the lab component of this course students prepare weekly lab reports presenting statistical analysis of real data. In addition, students complete two independent data analysis projects where they answer significant research questions via the analysis of real data using statistical inference and modeling tools.",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "Syllabus"
     ]
   },
@@ -28,7 +28,7 @@
     "section": "Learning objectives",
     "text": "Learning objectives\nThe course learning objectives are as follows:\n\nRecognize the importance of data collection, identify limitations in data collection methods, and determine how they affect the scope of inference.\nUse statistical software to summarize data numerically and visually, and to perform data analysis.\nHave a conceptual understanding of the unified nature of statistical inference.\nApply estimation and testing methods to analyze single variables or the relationship between two variables in order to understand natural phenomena and make data-based decisions.\nModel numerical response variables using a single or multiple explanatory variables.\nInterpret results correctly, effectively, and in context without relying on statistical jargon.\nCritique data-based claims and evaluate data-based decisions.\nComplete research projects demonstrating mastery of statistical data analysis from exploratory analysis to inference to modeling.",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "Syllabus"
     ]
   },
@@ -39,7 +39,7 @@
     "section": "Prerequisites",
     "text": "Prerequisites\nThis course has no pre-requisites.",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "Syllabus"
     ]
   },
@@ -50,7 +50,7 @@
     "section": "Workload",
     "text": "Workload\nYou are expected to put in ~6 hours of work / week outside of class. Some of you will do well with less time than this, and some of you will need more.",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "Syllabus"
     ]
   },
@@ -61,7 +61,7 @@
     "section": "Tips for success",
     "text": "Tips for success\n\nComplete the reading before a new unit begins, and then review again after the unit is over.\nBe an active participant during lectures and labs.\nAsk questions - during class or office hours, or by email. Ask me, your TAs, and your classmates.\nDo the problem sets - start early and make sure you attempt and understand all questions.\nStart your project early and and allow adequate time to complete it.\nGive yourself plenty of time time to prepare a good cheat sheet for exams. This requires going through the material and taking the time to review the concepts that you’re not comfortable with.\nDo not procrastinate - don’t let a unit go by with unanswered questions as it will just make the following unit’s material even more difficult to follow.",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "Syllabus"
     ]
   },
@@ -72,7 +72,7 @@
     "section": "Textbooks",
     "text": "Textbooks\nReadings for the course will come from the following textbooks. They are freely available online and you do not need to purchase a physical copy of either book to succeed in this class.\n\n[ims]: Mine Çetinkaya-Rundel and Jo Hardin. Introduction to Modern Statistics. (in progress) 2nd edition. OpenIntro, 2023.\n[r4ds]: Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. R for Data Science. 2nd edition. O’Reilly, 2022.",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "Syllabus"
     ]
   },
@@ -83,7 +83,7 @@
     "section": "Course community",
     "text": "Course community\n\nDuke Community Standard\nAll students must adhere to the Duke Community Standard (DCS): Duke University is a community dedicated to scholarship, leadership, and service and to the principles of honesty, fairness, and accountability. Citizens of this community commit to reflect upon these principles in all academic and non-academic endeavors, and to protect and promote a culture of integrity.\nTo uphold the Duke Community Standard, students agree:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised.\n\n\n\n\n\nInclusive community\nIt is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength, and benefit. It is my intent to present materials and activities that are respectful of diversity and in alignment with Duke’s Commitment to Diversity and Inclusion. Your suggestions are encouraged and appreciated. Please let me know ways to improve the effectiveness of the course for you personally, or for other students or student groups.\nFurthermore, I would like to create a learning environment for my students that supports a diversity of thoughts, perspectives and experiences, and honors your identities. To help accomplish this:\n\nIf you have a name that differs from those that appear in your official Duke records, please let me know! You’ll be able to note this in the Getting to know you survey.\nIf you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me. If you prefer to speak with someone outside of the course, your academic dean is an excellent resource.\nI (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please let me or a member of the teaching team know.\n\n\n\nPronouns\nPronouns are meaningful tools to communicate identities and experiences, and using pronouns supports a campus environment where all community members can thrive.\nPlease update your gender pronouns in Duke Hub. You can learn more at the Center for Sexual and Gender Diversity’s website.\n\n\nAccessibility\nIf there is any portion of the course that is not accessible to you due to challenges with technology or the course format, please let me know so we can make appropriate accommodations.\nThe Student Disability Access Office (SDAO) is available to ensure that students are able to engage with their courses and related assignments. Students should be in touch with the Student Disability Access Office to request or update accommodations under these circumstances.\n\n\nCommunication\nAll lecture notes, assignment instructions, an up-to-date schedule, and other course materials may be found on the course website: sta101-f23.github.io.\nI will regularly send course announcements via email and Canvas, make sure to check one or the other of these regularly. If an announcement is sent Monday through Thursday, I will assume that you have read the announcement by the next day. If an announcement is sent on a Friday or over the weekend, I will assume that you have read it by Monday.\n\n\nWhere to get help\n\nIf you have a question during lecture or lab, feel free to ask it! There are likely other students with the same question, so by asking you will create a learning opportunity for everyone.\nThe teaching team is here to help you be successful in the course. You are encouraged to attend office hours to ask questions about the course content and assignments. Many questions are most effectively answered as you discuss them with others, so office hours are a valuable resource. Please use them!\nOutside of class and office hours, any general questions about course content or assignments should be posted on the course Slack. There is a chance another student has already asked a similar question, so please check the other posts on Slack before adding a new question. If you know the answer to a question posted on Slack, I encourage you to respond!\n\nCheck out the Support page for more resources.\nI want to make sure that you learn everything you were hoping to learn from this class. If this requires flexibility, please don’t hesitate to ask.\n\nYou never owe me personal information about your health (mental or physical) but you’re always welcome to talk to me. If I can’t help, I likely know someone who can.\nI want you to learn lots of things from this class, but I primarily want you to stay healthy, balanced, and grounded during this crisis.",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "Syllabus"
     ]
   },
@@ -94,7 +94,7 @@
     "section": "Lectures and lab",
     "text": "Lectures and lab\nThe goal of both the lectures and the labs is for them to be as interactive as possible. My role as instructor is to introduce you new tools and techniques, but it is up to you to take them and make use of them. A lot of what you do in this course will involve writing code, and coding is a skill that is best learned by doing. Therefore, as much as possible, you will be working on a variety of tasks and activities throughout each lecture and lab. Attendance will not be taken during class but you are expected to attend all lecture and lab sessions and meaningfully contribute to in-class exercises and discussion.\nYou are expected to bring a laptop to each class so that you can take part in the in-class exercises. Please make sure your laptop is fully charged before you come to class as the number of outlets in the classroom will not be sufficient to accommodate everyone. See Duke LIFE loaner laptop program if you need a loaner laptop.",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "Syllabus"
     ]
   },
@@ -105,7 +105,7 @@
     "section": "Assessments and grading",
     "text": "Assessments and grading\nThe final course grade will be calculated as follows:\n\n\n\nCategory\nPercentage\n\n\n\n\nAttendance and participation\n5%\n\n\nInteractive tutorials\n5%\n\n\nLabs\n25%\n\n\nExam 1\n20%\n\n\nExam 2\n20%\n\n\nProject 1\n10%\n\n\nProject 2\n15%\n\n\n\nThe final letter grade will be determined based on the following thresholds:\n\n\n\nLetter Grade\nFinal Course Grade\n\n\n\n\nA\n&gt;= 93\n\n\nA-\n90 - 92.99\n\n\nB+\n87 - 89.99\n\n\nB\n83 - 86.99\n\n\nB-\n80 - 82.99\n\n\nC+\n77 - 79.99\n\n\nC\n73 - 76.99\n\n\nC-\n70 - 72.99\n\n\nD+\n67 - 69.99\n\n\nD\n63 - 66.99\n\n\nD-\n60 - 62.99\n\n\nF\n&lt; 60\n\n\n\nThese are upper bounds for grade cutoffs, depending on the class performance the cutoffs may be lowered but they won’t be increased.\nAll work is expected to be submitted by the deadline and there are no make ups for any missed assessments. See Section 10.2 for policies on late work.\n\nAttendance and participation\nYou are expected to be present at class meeting and actively participate in the discussion. Your attendance and participation during class, as well as your activity on the course Slack will make up a non-insignificant portion of your grade in this class. While I might sometimes call on you during the class discussion, it is your responsibility to be an active participant without being called on.\nIf you attend at least 80% of the classes, you’ll get all available points for this component.\n\n\nInteractive tutorials\nYou will be assigned a number of interactive tutorials each week from the textbook. You will be asked to submit these on a weekly basis and graded on a check/no check basis.\nMake sure to add your name and your Net ID before generating the hash. Submit these in Canvas.\nIf you’ve completed at least 80% of the tutorials, you’ll get all available points for this component.\n\n\nLabs\nIn labs, you will apply the concepts discussed in lecture to various data analysis scenarios. Labs will focus on both computation and conceptualization. Lab assignments will be completed using Quarto and submitted as PDF for grading in Gradescope. While you may collaborate with others on lab assignments, your final solution should be your own.\nLowest lab score will be dropped.\n\n\nExams\nThere will be two exams. Each exam will be comprised of two components:\n\nIn class: 75 minute in-class exam. This exam is closed book, however you are allowed to use one sheet of notes (“cheat sheet”) to the midterm and the final. This sheet must be no larger than 8 1/2 x 11, and must be prepared by you. You may use both sides of the sheet. (70% of the grade)\nTake home: Following the in class exam, you’ll have 48 hours to complete the take home portion of your exam. The take home portion will follow from the in class exam and focus on the analysis of a dataset introduced in the take home exam. (30% of the grade)\n\nThrough these exams you have the opportunity to demonstrate what you’ve learned in the course thus far. Each exam will include small analyses and computational tasks related to the content in application exercises and labs. More details about the content and structure of the exams will be discussed during the semester.\nSee Section 12 for dates and times of the exams. Exam dates cannot be changed and no make-up exams will be given. If you can’t take the exams on these dates, you should drop this class.\n\n\nProjects\nThere will be a mid-semester prediction project and a final project. The prediction project will introduce you to conducting independent analyses and writing a formal report using a pre-specified data set. The final project allows you to explore a question and data set of your own. More details about the projects will be provided during the semester. Projects will be completed in teams.\nYou will be assigned to a different team for each of your two projects. You are encouraged to sit with your teammates in lecture and you will also work with them in the lab sessions. All team members are expected to contribute equally to the completion of each project and you will be asked to evaluate your team members after each assignment is due. Failure to adequately contribute to an assignment will result in a penalty to your mark relative to the team’s overall mark.\nSee Section 12 for dates and times of project deadlines. Project deadlines cannot be changed. If you can’t be in class for the final project presentation, you should drop this class.",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "Syllabus"
     ]
   },
@@ -116,7 +116,7 @@
     "section": "Course policies",
     "text": "Course policies\n\nAcademic honesty\nTL;DR: Don’t cheat!\nPlease abide by the following as you work on assignments in this course:\n\nCollaboration: Only work that is clearly assigned as team work should be completed collaboratively.\n\nThe labs must also be completed individually and you are welcomed to discuss the assignment with classmates at a high level (e.g., discuss what’s the best way for approaching a problem, what functions are useful for accomplishing a particular task, etc.). However you may not directly share answers to lab questions (including any code) with anyone other than myself and the teaching assistants.\nFor the projects, collaboration within teams is not only allowed, but expected. Communication between teams at a high level is also allowed however you may not share code or components of the project across teams.\nOn individual assignments you may not directly share code with another student in this class, and on team assignments you may not directly share code with another team in this class.\n\nOnline resources: I am well aware that a huge volume of code is available on the web to solve any number of problems. Unless I explicitly tell you not to use something, the course’s policy is that you may make use of any online resources (e.g., StackOverflow) but you must explicitly cite where you obtained any code you directly use (or use as inspiration). Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism.\nUse of generative artificial intelligence (AI): You should treat generative AI, such as ChatGPT, the same as other online resources. There are two guiding principles that govern how you can use AI in this course:1 (1) Cognitive dimension: Working with AI should not reduce your ability to think clearly. We will practice using AI to facilitate—rather than hinder—learning. (2) Ethical dimension: Students using AI should be transparent about their use and make sure it aligns with academic integrity.\n\n✅ AI tools for code: You may make use of the technology for coding examples on assignments; if you do so, you must explicitly cite where you obtained the code. Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism. You may use these guidelines for citing AI-generated content.\n❌ AI tools for narrative: Unless instructed otherwise, you may not use generative AI to write narrative on assignments. In general, you may use generative AI as a resource as you complete assignments but not to answer the exercises for you. You are ultimately responsible for the work you turn in; it should reflect your understanding of the course content.\n\n\nRegardless of course delivery format, it is the responsibility of all students to understand and follow all Duke policies, including academic integrity (e.g., completing one’s own work, following proper citation of sources, adhering to guidance around group work projects, and more). Ignoring these requirements is a violation of the Duke Community Standard. Any questions and/or concerns regarding academic integrity can be directed to the Office of Student Conduct and Community Standards at conduct@duke.edu.\nAny violations in academic honesty standards as outlined in the Duke Community Standard and those specific to this course will\n\nautomatically result in a 0 for the assignment,\ncan further impact your overall course grade, and\nwill be reported to the Office of Student Conduct for further action.\n\n\n\nLate work & extensions\nThe due dates for assignments are there to help you keep up with the course material and to ensure the teaching team can provide feedback within a timely manner. We understand that things come up periodically that could make it difficult to submit an assignment by the deadline.\nPolicy on late work depends on the particular course component:\n\nLabs:\n\nLate, but within 24 hours of deadline: -20% of available points.\nAny later: No credit, and we will not provide written feedback.\nNote that lowest lab score will be dropped, even if that score is a 0.\n\nExams:\n\nIn class portions of the exams can obviously not be turned in late.\nLate exams are not accepted.\n\nProjects: The following three components contribute to your project score.\n\nPresentation: Late presentations are not accepted and there are no make ups for missed presentations.\nWrite up: GitHub repositories will be closed to contributions at the deadline. If you need to submit your work late, Slack/email me to reopen your repository.\n\nLate, but within 24 hours of deadline: -20% of available points.\nAny later: No credit, and we will not provide written feedback.\n\nPeer evaluation: Late peer evaluations are not accepted. If you do not turn in your peer evaluation, you get 0 points for your own peer score as well, regardless of how your teammates have evaluated you.\n\n\n\n\nWaiver for extenuating circumstances\nIf there are circumstances that prevent you from completing a lab or homework assignment by the stated due date, you may email the Head TA (Shuo Wang, shuo.wang717@duke.edu) before the deadline to waive the late penalty. In your email, you only need to request the waiver; you do not need to provide explanation. This waiver may only be used for once in the semester, so only use it for a truly extenuating circumstance.\nIf there are circumstances that are having a longer-term impact on your academic performance, please let your academic dean know, as they can be a resource. Please let me know if you need help contacting your academic dean.\n\n\nRegrade requests\nEvery effort will be made to mark your work accurately. We are on your side, and want you to receive every point you have worked to earn. However, sometimes grading mistakes happen. If you believe that an error has been made, return the paper to the instructor within four days, stating your claim in writing.\nThe following claims will be considered for re-grading:\n\npoints are not totaled correctly;\nthe grader did not see a correct answer that is on your paper;\nyour answer is the same as the correct answer, but in a different form (e.g., you wrote a correct answer as 1/3 and the grader was looking for 0.333);\nyour answer to a free response question is essentially correct but stated slightly differently than the grader’s expectation.\n\nThe following claims will not be considered for re-grading:\n\narguments about the number of points lost;\narguments about question wording.\n\nConsidering re-grades consumes time and resources that TAs and the instructor would rather spend helping you understand material. Please bring only claims of type 1-4 to our attention.\nNote that during the regrade process your score could go up or go down or not change.\n\n\n\n\n\n\nWarning\n\n\n\nNo grades will be changed after the project presentations.\n\n\n\n\nAttendance policy\nResponsibility for class attendance rests with individual students. Since regular and punctual class attendance is expected, students must accept the consequences of failure to attend. More details on Trinity attendance policies are available here.\nHowever, there may be many reasons why you cannot be in class on a given day, particularly with possible extra personal and academic stress and health concerns this semester. All course lectures will be recorded and available to enrolled students after class. If you miss a lecture, make sure to watch the recording and review the material before the next class session. Lab time is dedicated to working on your assignments and collaborating with your teammates on your project. If you miss a lab session, make sure to communicate with your team about how you can make up your contribution. Given the technologies we use in the course, this is straightforward to do asynchronously. If you know you’re going to miss a lab session and you’re feeling well enough to do so, notify your teammates ahead of time. Overall these policies are put in place to ensure communication between team members, respect for each others’ time, and also to give you a safety net in the case of illness or other reasons that keep you away from attending class.\nNote that attendance and participation is part of your grade as well.\n\n\nAttendance policy related to COVID symptoms, exposure, or infection\nStudent health, safety, and well-being are the university’s top priorities. To help ensure your well-being and the well-being of those around you, please do not come to class if you have tested positive for COVID-19 or have possible symptoms and have not yet been tested. If any of these situations apply to you, you must follow university guidance related to the ongoing COVID-19 pandemic and current health and safety protocols. If you are experiencing any COVID-19 symptoms, contact student health (dshcheckin@duke.edu, 919- 681-9355). Learn more about current university policy related to COVID-19 at https://coronavirus.duke.edu. To keep the university community as safe and healthy as possible, you will be expected to follow these guidelines. Please reach out to me and your academic dean as soon as possible if you need to quarantine or isolate so that we can discuss arrangements for your continued participation in class.\n\n\nInclement weather policy\nIn the event of inclement weather or other connectivity-related events that prohibit class attendance, I will notify you how we will make up missed course content and work. This might entail holding the class on Zoom synchronously, we may rely on Duke’s designated make-up days, or you may be asked to watch a recording of the class.\n\n\nPolicy on video recording course content\nAll lectures will be recorded and available on Panopto, so students should not need to create their own recordings of lectures. If you feel that you need record the lectures yourself, you must get permission from me ahead of time and these recordings should be used for personal study only, no for distribution. The full policy on recording of lectures falls under the Duke University Policy on Intellectual Property Rights, available at https://policies.provost.duke.edu/docs/faculty-handbook-appendix-m-intellectual-property. Unauthorized distribution is a cause for disciplinary action by the Judicial Board.",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "Syllabus"
     ]
   },
@@ -127,7 +127,7 @@
     "section": "Accommodations",
     "text": "Accommodations\n\nAcademic accommodations\nIf you are a student with a disability and need accommodations for this class, it is your responsibility to register with the Student Disability Access Office (SDAO) and provide them with documentation of your disability. SDAO will work with you to determine what accommodations are appropriate for your situation. Please note that accommodations are not retroactive and disability accommodations cannot be provided until a Faculty Accommodation Letter has been given to me. Please contact SDAO for more information: sdao@duke.edu or access.duke.edu.\n\n\nReligious accommodations\nStudents are permitted by university policy to be absent from class to observe a religious holiday. Accordingly, Trinity College of Arts & Sciences and the Pratt School of Engineering have established procedures to be followed by students for notifying their instructors of an absence necessitated by the observance of a religious holiday. Please submit requests for religious accommodations at the beginning of the semester so that we can work to make suitable arrangements well ahead of time. You can find the policy and relevant notification form here: https://trinity.duke.edu/undergraduate/academic-policies/religious-holidays.\nNote: If you’ve read this far in the syllabus, email me a picture of your pet if you have one or your favorite meme!",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "Syllabus"
     ]
   },
@@ -138,7 +138,7 @@
     "section": "Important dates",
     "text": "Important dates\n\nMonday, August 28: Classes begin\nMonday, September 4: Labor Day - No lecture\nFriday, September 8: Drop/add ends\nWednesday, October 4: Exam 1 - In class\nFriday, October 6: Exam 1 - Take home due\nFriday, October 13: Project 1 due + Mid-semester grades reported\nMonday, October 16: Fall Break - No lecture\nFriday, November 10: Last day to withdraw with W\nWednesday, November 15: Exam 2 - In class\nFriday, November 17: Exam 2 - Take home due\nWednesday, November 22: Thanksgiving Break - No lecture\nFriday, November 24: Thanksgiving Break - No lab\nFriday, December 8: Classes end\nSaturday, December 9 - Tuesday, December 12: Reading period\nThursday, December 14, 2-5pm: Project 2 presentations\n\nFor more important dates, see the full Duke Academic Calendar.",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "Syllabus"
     ]
   },
@@ -149,7 +149,7 @@
     "section": "Footnotes",
     "text": "Footnotes\n\n\nThese guiding principles are based on Course Policies related to ChatGPT and other AI Tools developed by Joel Gladd, Ph.D.↩︎",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "Syllabus"
     ]
   },
@@ -1190,7 +1190,7 @@
     "section": "",
     "text": "The short answer is, I’d rather you didn’t, to save yourself some headache. But, the long answer is, sure! But you will need to install a specific versions of R and RStudio for everything to work as expected. You will also need to install the R packages we’re using as well as have Git installed on your computer. These are not extremely challenging things to get right, but they are not trivial either, particularly on certain operating systems. Myself and the TAs are always happy to provide help with any computational questions when you’re working in the containers we have provided for you. If you’re working on your local setup, we can’t guarantee being able to resolve your issues, though we’re happy to try.\nIf you want to take this path, here is what you need to do:\n\nDownload and install R 4.3.1: https://cran.r-project.org\nDownload and install the preview build of RStudio: https://posit.co/download/rstudio-desktop\nInstall any necessary packages with install.packages(\"___\")\n\nAnd I’d like to reiterate again that successful installation of these software is not a learning goal of this course. So if any of this seems tedious or intimidating in any way, just use the computing environment we have set up for you. More on that here.",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "FAQ"
     ]
   },
@@ -1201,7 +1201,7 @@
     "section": "",
     "text": "The short answer is, I’d rather you didn’t, to save yourself some headache. But, the long answer is, sure! But you will need to install a specific versions of R and RStudio for everything to work as expected. You will also need to install the R packages we’re using as well as have Git installed on your computer. These are not extremely challenging things to get right, but they are not trivial either, particularly on certain operating systems. Myself and the TAs are always happy to provide help with any computational questions when you’re working in the containers we have provided for you. If you’re working on your local setup, we can’t guarantee being able to resolve your issues, though we’re happy to try.\nIf you want to take this path, here is what you need to do:\n\nDownload and install R 4.3.1: https://cran.r-project.org\nDownload and install the preview build of RStudio: https://posit.co/download/rstudio-desktop\nInstall any necessary packages with install.packages(\"___\")\n\nAnd I’d like to reiterate again that successful installation of these software is not a learning goal of this course. So if any of this seems tedious or intimidating in any way, just use the computing environment we have set up for you. More on that here.",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "FAQ"
     ]
   },
@@ -1338,7 +1338,7 @@
     "section": "",
     "text": "Dr. Mine Çetinkaya-Rundel (she/her) is Professor of the Practice and Director of Undergraduate Studies at the Department of Statistical Science at Duke University and an affiliated faculty in the Computational Media, Arts, and Cultures. Mine’s work focuses on innovation in statistics and data science pedagogy, with an emphasis on computing, reproducible research, student-centered learning, and open-source education as well as pedagogical approaches for enhancing retention of women and under-represented minorities in STEM.\n\n\n\nOffice hours\nLocation\n\n\n\n\nTue 3:30 - 5:30 pm\nOld Chem 213",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "Teaching team"
     ]
   },
@@ -1349,7 +1349,7 @@
     "section": "",
     "text": "Dr. Mine Çetinkaya-Rundel (she/her) is Professor of the Practice and Director of Undergraduate Studies at the Department of Statistical Science at Duke University and an affiliated faculty in the Computational Media, Arts, and Cultures. Mine’s work focuses on innovation in statistics and data science pedagogy, with an emphasis on computing, reproducible research, student-centered learning, and open-source education as well as pedagogical approaches for enhancing retention of women and under-represented minorities in STEM.\n\n\n\nOffice hours\nLocation\n\n\n\n\nTue 3:30 - 5:30 pm\nOld Chem 213",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "Teaching team"
     ]
   },
@@ -1360,7 +1360,7 @@
     "section": "Teaching assistants",
     "text": "Teaching assistants\n\n\n\n\nName\nRole\nLab section\nOffice hours\n\n\n\n\n\nShuo Wang\nHead + Lab TA\nFri 8:30 - 9:45 am\nMon 2:45 - 4:45 pm\nOld Chem 203B\n\n\n\nSylvia Vincent\nLab TA\nFri 10:05 - 11:20 am\nWed 3 - 5 pm\nOld Chem 025\n\n\n\nJohn Gillen\nLab TA\nFri 11:45 am - 1:00 pm\nWed 10:30 am - 12:30 pm\nZoom\n\n\n\nChris Oswald\nLab TA\nFri 1:25 - 2:40 pm\nMon 9 - 10 am\nTue 9 - 10 am\nJones Open Lab (Bostock Library, 1st Floor)\n\n\n\nMinh Anh To\nTA\n\nMon 10 am - 12 pm\nOld Chem 203B\n\n\n\nHao Wang\nTA\n\nTue 10 am - 12 pm\nOld Chem 203B\n\n\n\nNoah Obuya\nTA\n\nSun 12 - 2 pm\nZoom\n\n\n\nMeghna Katyal\nTA\n\nMon 7:30 - 8:30 pm\nZoom\n\n\n\nAvery Hodges\nTA\n\nMon 5 - 7 pm\nZoom",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "Teaching team"
     ]
   },
@@ -1371,7 +1371,7 @@
     "section": "",
     "text": "This is the homepage for STA 101 - Data Analysis and Statistical Inference taught by Dr. Mine Çetinkaya-Rundel in Fall 2023 at Duke University. All course materials will be posted on this site.\nYou can find the course syllabus here and the course schedule here.",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "Overview"
     ]
   },
@@ -1382,7 +1382,7 @@
     "section": "Class meetings",
     "text": "Class meetings\n\n\n\n\n\n\n\n\n\nMeeting\nLocation\nTime\nInstructor / Lab leader\n\n\n\n\nLectures\nGross Hall 103\nMon & Wed 1:25 - 2:40 pm\nMine\n\n\nLab 1\nPerkins LINK 087 (Classroom 3)\nFri 8:30 - 9:45 am\nShuo\n\n\nLab 2\nPerkins LINK 087 (Classroom 3)\nFri 10:05 - 11:20 am\nSylvia\n\n\nLab 3\nPerkins LINK 087 (Classroom 3)\nFri 11:45 am - 1:00 pm\nJohn\n\n\nLab 4\nPerkins LINK 087 (Classroom 3)\nFri 1:25 - 2:40 pm\nChris",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "Overview"
     ]
   },
@@ -1393,7 +1393,7 @@
     "section": "License",
     "text": "License\n\nThis online work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International. Visit here for more information about the license.",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "Overview"
     ]
   },
@@ -2475,7 +2475,7 @@
     "section": "",
     "text": "Posit Cloud\n🔗 Posit Cloud\n\n\nLecture recordings\n🔗 Panopto\n\n\nSlack\n🔗 Slack\n\n\nGradebook\n🔗 on Canvas\n\n\nAnnouncements\n🔗 on Canvas\n\n\nTutorial submission\n🔗 on Canvas\n\n\nTextbooks\n🔗 Introduction to Modern Statistics, 2nd Edition\n🔗 R for Data Science, 2nd Edition\n\n\nPackage documentation\n🔗 tidyverse: tidyverse.org\n🔗 tidymodels: tidymodels.org",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "Useful links"
     ]
   },
@@ -3976,9 +3976,9 @@
     "href": "index.html",
     "title": "STA 101 Data Analysis and Statistical Inference",
     "section": "",
-    "text": "This page contains a prospective outline for the course, but things may change with advanced notice:\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nPREPARE\nMATERIALS\nDUE\n\n\n\n\n1\nTue, Aug 27\nWelcome!\n\n\n\n\n\n\n\n\n\n\nThu, Aug 29\nData\n\n\n\n\n\n\n\n\n\n\nFri, Aug 30\nLab 1: R\n\n\n\n\n\n\n\n\n2\nTue, Sep 3\nStudy design\n\n\n\n\n\n\n\n\n\n\nThu, Sep 5\nCategorical data\n\n\n\n\n\n\n\n\n\n\nFri, Sep 6\nLab 2: Data\n\n\n\n\n\n\n\n\n3\nTue, Sep 10\nNumerical data\n\n\n\n\n\n\n\n\n\n\nThu, Sep 12\nRegression 1\n\n\n\n\n\n\n\n\n\n\nFri, Sep 13\nLab 3: Exploratory data analysis\n\n\n\n\n\n\n\n\n4\nTue, Sep 17\nRegression 2\n\n\n\n\n\n\n\n\n\n\nThu, Sep 19\nModel selection\n\n\n\n\n\n\n\n\n\n\nFri, Sep 20\nLab 4: Regression\n\n\n\n\n\n\n\n\n5\nTue, Sep 24\nRegression overview\n\n\n\n\n\n\n\n\n\n\nThu, Sep 26\nLogistic regression 1\n\n\n\n\n\n\n\n\n\n\nFri, Sep 27\nLab: Exam Review\n\n\n\n\n\n\n\n\n6\nTue, Oct 1\nIn-class Exam 1\n\n\n\n\n\n\n\n\n\n\nThu, Oct 3\nNo lecture\n\n\n\n\n\n\n\n\n\n\nFri, Oct 4\nNo lab\n\n\n\n\n\n\n\n\n7\nTue, Oct 8\nLogistic Regression 2\n\n\n\n\n\n\n\n\n\n\nThu, Oct 10\nHypothesis testing\n\n\n\n\n\n\n\n\n\n\nFri, Oct 11\nNo lab\n\n\n\n\n\n\n\n\n8\nTue, Oct 15\nNo lecture\n\n\n\n\n\n\n\n\n\n\nThu, Oct 17\nConfidence intervals\n\n\n\n\n\n\n\n\n\n\nFri, Oct 18\nLab 5: hypothesis testing\n\n\n\n\n\n\n\n\n9\nTue, Oct 22\nDecision errors\n\n\n\n\n\n\n\n\n\n\nThu, Oct 24\nInference with mathematical models\n\n\n\n\n\n\n\n\n\n\nFri, Oct 25\nLab 6: Foundations of inference\n\n\n\n\n\n\n\n\n10\nTue, Oct 29\nInference for one proportion\n\n\n\n\n\n\n\n\n\n\nThu, Oct 31\nComparing two proportions\n\n\n\n\n\n\n\n\n\n\nFri, Nov 1\nLab 7: Inference for proportions\n\n\n\n\n\n\n\n\n11\nTue, Nov 5\nInference for two-way tables\n\n\n\n\n\n\n\n\n\n\nThu, Nov 7\nProportions overview\n\n\n\n\n\n\n\n\n\n\nFri, Nov 8\nLab 8\n\n\n\n\n\n\n\n\n12\nTue, Nov 12\nInference for one mean\n\n\n\n\n\n\n\n\n\n\nThu, Nov 14\nInference for two means\n\n\n\n\n\n\n\n\n\n\nFri, Nov 15\nLab: Exam Review\n\n\n\n\n\n\n\n\n13\nTue, Nov 19\nIn-class Exam 2\n\n\n\n\n\n\n\n\n\n\nThu, Nov 21\nNo lecture\n\n\n\n\n\n\n\n\n\n\nFri, Nov 22\nNo lab\n\n\n\n\n\n\n\n\n14\nTue, Nov 26\nanova\n\n\n\n\n\n\n\n\n\n\nThu, Nov 28\nNo lecture\n\n\n\n\n\n\n\n\n\n\nFri, Nov 29\nNo lab\n\n\n\n\n\n\n\n\n15\nTue, Dec 3\nEthics\n\n\n\n\n\n\n\n\n\n\nThu, Dec 5\nTelling a (data) story\n\n\n\n\n\n\n\n\n\n\nFri, Dec 6\nNo lab",
+    "text": "This page contains a prospective outline for the course, but things may change with advanced notice:\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nPREPARE\nMATERIALS\nDUE\n\n\n\n\n1\nTue, Aug 27\nWelcome!\n\n\n\n\n\n\n\n\n\n\nThu, Aug 29\nData\n\n\n\n\n\n\n\n\n\n\nFri, Aug 30\nLab 1\n\n\n\n\n\n\n\n\n2\nTue, Sep 3\nStudy design\n\n\n\n\n\n\n\n\n\n\nThu, Sep 5\nCategorical data\n\n\n\n\n\n\n\n\n\n\nFri, Sep 6\nLab 2\n\n\n\n\n\n\n\n\n3\nTue, Sep 10\nNumerical data\n\n\n\n\n\n\n\n\n\n\nThu, Sep 12\nRegression 1\n\n\n\n\n\n\n\n\n\n\nFri, Sep 13\nLab 3\n\n\n\n\n\n\n\n\n4\nTue, Sep 17\nRegression 2\n\n\n\n\n\n\n\n\n\n\nThu, Sep 19\nModel selection\n\n\n\n\n\n\n\n\n\n\nFri, Sep 20\nLab 4\n\n\n\n\n\n\n\n\n5\nTue, Sep 24\nRegression overview\n\n\n\n\n\n\n\n\n\n\nThu, Sep 26\nLogistic regression 1\n\n\n\n\n\n\n\n\n\n\nFri, Sep 27\nLab: Exam Review\n\n\n\n\n\n\n\n\n6\nTue, Oct 1\nIn-class Exam 1\n\n\n\n\n\n\n\n\n\n\nThu, Oct 3\nNo lecture\n\n\n\n\n\n\n\n\n\n\nFri, Oct 4\nNo lab\n\n\n\n\n\n\n\n\n7\nTue, Oct 8\nLogistic Regression 2\n\n\n\n\n\n\n\n\n\n\nThu, Oct 10\nHypothesis testing\n\n\n\n\n\n\n\n\n\n\nFri, Oct 11\nNo lab\n\n\n\n\n\n\n\n\n8\nTue, Oct 15\nNo lecture\n\n\n\n\n\n\n\n\n\n\nThu, Oct 17\nConfidence intervals\n\n\n\n\n\n\n\n\n\n\nFri, Oct 18\nLab 5\n\n\n\n\n\n\n\n\n9\nTue, Oct 22\nDecision errors\n\n\n\n\n\n\n\n\n\n\nThu, Oct 24\nInference with mathematical models\n\n\n\n\n\n\n\n\n\n\nFri, Oct 25\nLab 6\n\n\n\n\n\n\n\n\n10\nTue, Oct 29\nInference for one proportion\n\n\n\n\n\n\n\n\n\n\nThu, Oct 31\nComparing two proportions\n\n\n\n\n\n\n\n\n\n\nFri, Nov 1\nLab 7\n\n\n\n\n\n\n\n\n11\nTue, Nov 5\nInference for two-way tables\n\n\n\n\n\n\n\n\n\n\nThu, Nov 7\nProportions overview\n\n\n\n\n\n\n\n\n\n\nFri, Nov 8\nLab 8\n\n\n\n\n\n\n\n\n12\nTue, Nov 12\nInference for one mean\n\n\n\n\n\n\n\n\n\n\nThu, Nov 14\nInference for two means\n\n\n\n\n\n\n\n\n\n\nFri, Nov 15\nLab: Exam Review\n\n\n\n\n\n\n\n\n13\nTue, Nov 19\nIn-class Exam 2\n\n\n\n\n\n\n\n\n\n\nThu, Nov 21\nNo lecture\n\n\n\n\n\n\n\n\n\n\nFri, Nov 22\nNo lab\n\n\n\n\n\n\n\n\n14\nTue, Nov 26\nANOVA\n\n\n\n\n\n\n\n\n\n\nThu, Nov 28\nNo lecture\n\n\n\n\n\n\n\n\n\n\nFri, Nov 29\nNo lab\n\n\n\n\n\n\n\n\n15\nTue, Dec 3\nEthics\n\n\n\n\n\n\n\n\n\n\nThu, Dec 5\nTelling a (data) story\n\n\n\n\n\n\n\n\n\n\nFri, Dec 6\nNo lab",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "Schedule"
     ]
   },
@@ -4225,7 +4225,7 @@
     "section": "",
     "text": "Most of you will need help at some point and we want to make sure you can identify when that is without getting too frustrated and feel comfortable seeking help.",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "Support"
     ]
   },
@@ -4236,7 +4236,7 @@
     "section": "Lectures and labs",
     "text": "Lectures and labs\nIf you have a question during lecture or lab, feel free to ask it! There are likely other students with the same question, so by asking you will create a learning opportunity for everyone.",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "Support"
     ]
   },
@@ -4247,7 +4247,7 @@
     "section": "Office hours",
     "text": "Office hours\nThe teaching team is here to help you be successful in the course. You are encouraged to attend office hours during the times posted on the home page to ask questions about the course content and assignments. A lot of questions are most effectively answered in-person, so office hours are a valuable resource. I encourage each and every one of you to take advantage of this resource! Make a pledge to stop by office hours at least once during the first three weeks of class. If you truly have no questions to ask, just stop by and say hi and introduce yourself. You can find a list of everyone’s office hours here.",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "Support"
     ]
   },
@@ -4258,7 +4258,7 @@
     "section": "Slack",
     "text": "Slack\nHave a question that can’t wait for office hours? Prefer to write out your question in detail rather than asking in person? The course Slack is the best venue for these! There is a chance another student has already asked a similar question, so please check the other posts on Slack before asking a new question. If you know the answer to a question that is posted, I encourage you to respond!",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "Support"
     ]
   },
@@ -4269,7 +4269,7 @@
     "section": "Email",
     "text": "Email\nPlease refrain from emailing any course content questions (those should go to Slack), and only use email for questions about personal matters that may not be appropriate for the public course forum (e.g., illness, accommodations, etc.). For such matters, you may email Dr. Mine Çetinkaya-Rundel at mc301@duke.edu.\nIf there is a question that’s not appropriate for the public forum, you are welcome to email me directly. If you email me, please include “STA 101” in the subject line. Barring extenuating circumstances, I will respond to STA 101 emails within 48 hours Monday - Friday. Response time may be slower for emails sent Friday evening - Sunday.",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "Support"
     ]
   },
@@ -4280,7 +4280,7 @@
     "section": "Academic support",
     "text": "Academic support\nThere are times may need help with the class that is beyond what can be provided by the teaching team. In those instances, I encourage you to visit the Academic Resource Center. The Academic Resource Center (ARC) offers free services to all students during their undergraduate careers at Duke. Services include Learning Consultations, Peer Tutoring and Study Groups, ADHD/LD Coaching, Outreach Workshops, and more. Because learning is a process unique to every individual, they work with each student to discover and develop their own academic strategy for success at Duke. Contact the ARC to schedule an appointment. Undergraduates in any year, studying any discipline can benefit! Contact ARC@duke.edu, 919-684-5917.",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "Support"
     ]
   },
@@ -4291,7 +4291,7 @@
     "section": "Mental health and wellness",
     "text": "Mental health and wellness\nStudent mental health and wellness are of primary importance at Duke, and the university offers resources to support students in managing daily stress and self-care. Duke offers several resources for students to seek assistance on coursework and to nurture daily habits that support overall well-being, some of which are listed below.\n\nThe Academic Resource Center: (919) 684-5917, theARC@duke.edu, or arc.duke.edu.\nDuWell: (919) 681-8421, provides Moments of Mindfulness (stress management and resilience building) and meditation programming to assist students in developing a daily emotional well-being practice. To see schedules for programs please see https://studentaffairs.duke.edu/duwell. All are welcome and no experience necessary.\n\nIf your mental health concerns and/or stressful events negatively affect your daily emotional state, academic performance, or ability to participate in your daily activities, many resources are available to help you through difficult times. Duke encourages all students to access these resources.\n\nDukeReach: Provides comprehensive outreach services to identify and support students in managing all aspects of well-being. If you have concerns about a student’s behavior or health visit the website for resources and assistance: http://studentaffairs.duke.edu/dukereach.\nCounseling and Psychological Services (CAPS): CAPS services include individual and group counseling services, psychiatric services, and workshops. To initiate services, walk-in/call-in 9-4 M,W,Th,F and 9-6 Tuesdays. CAPS also provides referral to off-campus resources for specialized care. (919) 660-1000 or https://students.duke.edu/wellness/caps.\nTimelyCare: (formerly known as Blue Devils Care) An online platform that is a convenient, confidential, and free way for Duke students to receive 24/7 mental health support through TalkNow and scheduled counseling: https://bluedevilscare.duke.edu.",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "Support"
     ]
   },
@@ -4302,7 +4302,7 @@
     "section": "Course costs",
     "text": "Course costs\n\nTextbooks: The textbooks for this course are freely available on the web.\nLaptops: Each student is expected to have a laptop they can bring to each lecture and lab.\n\nIf you are having difficulty with costs associated with this course, here are some resources:\n\nContact the financial aid office (whether or not you are on aid). They have loans and resources for connecting students with programs on campus that might be able to help alleviate these costs.\nDukeLIFE offers course materials assistance for eligible students. Please note that students who are eligible for DukeLIFE benefits are notified prior to the start of the semester; program resources are limited.\nDuke Libraries offers textbook rentals through the Top Textbook Program, where you can rent out a textbook for 3 hours at a time.\nFor course-specific technology needs such as Digital Voice Recorder, HD Video Camera, TI-84 Plus CE, DSLR camera kit, Tripod, Shotgun Mic, iPad Mini 4, a Handheld Projector, or a GoPro, you can reserve rental equipment from the Link.",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "Support"
     ]
   },
@@ -4313,7 +4313,7 @@
     "section": "Assistance with Canvas and Zoom",
     "text": "Assistance with Canvas and Zoom\nFor technical help with Canvas or Zoom, contact the Duke OIT Service Desk at oit.duke.edu/help. You can also access the self-service help documentation for Zoom here and for Canvas here.\nNote that we will be making minimal use of Canvas in this course (primarily for announcements and grade book). All assignment submission will take place on Gradescope and conversation on Slack.\nZoom will be used for online office hours as well as as a backup option should we need to hold the course online instead of in person.",
     "crumbs": [
-      "Course information",
+      "Syllabus",
       "Support"
     ]
   },
