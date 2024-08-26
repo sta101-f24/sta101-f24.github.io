@@ -9,8 +9,8 @@ website:
   description: "Homepage for STA 101 Data Analysis and Statistical Inference at Duke University, Fall 2024."
   site-url: "https://sta101-f24.github.io"
 
-  repo-url: https://github.com/sta101-f24/sta101-f24.github.io
-  repo-actions: [edit, issue]
+#  repo-url: https://github.com/sta101-f24/sta101-f24.github.io
+#  repo-actions: [edit, issue]
 
   open-graph: true
 
