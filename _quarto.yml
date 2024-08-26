@@ -47,7 +47,7 @@ website:
           - href: course-grading.qmd
             text: Grading
           - href: course-policies.qmd
-            text: Policies
+            text: Course policies
           - href: course-resources.qmd
             text: University resources
           - href: index.qmd
