@@ -1,10 +1,43 @@
 [
   {
-    "objectID": "course-grading.html#cutoffs",
-    "href": "course-grading.html#cutoffs",
+    "objectID": "course-grading.html",
+    "href": "course-grading.html",
     "title": "Assessments and grading",
-    "section": "Cutoffs",
-    "text": "Cutoffs",
+    "section": "",
+    "text": "The final course grade will be calculated as follows:\nThe final letter grade will be determined based on the following thresholds, which will not change:",
+    "crumbs": [
+      "Syllabus",
+      "Grading"
+    ]
+  },
+  {
+    "objectID": "course-grading.html#labs",
+    "href": "course-grading.html#labs",
+    "title": "Assessments and grading",
+    "section": "Labs",
+    "text": "Labs",
+    "crumbs": [
+      "Syllabus",
+      "Grading"
+    ]
+  },
+  {
+    "objectID": "course-grading.html#exams",
+    "href": "course-grading.html#exams",
+    "title": "Assessments and grading",
+    "section": "Exams",
+    "text": "Exams",
+    "crumbs": [
+      "Syllabus",
+      "Grading"
+    ]
+  },
+  {
+    "objectID": "course-grading.html#final-project",
+    "href": "course-grading.html#final-project",
+    "title": "Assessments and grading",
+    "section": "Final project",
+    "text": "Final project",
     "crumbs": [
       "Syllabus",
       "Grading"
