@@ -5,50 +5,6 @@
     <lastmod>2024-08-26T04:41:51.160Z</lastmod>
   </url>
   <url>
-    <loc>https://sta101-f24.github.io/lectures/13/13-confidence-intervals-bootstrapping.html</loc>
-    <lastmod>2024-08-26T04:41:51.209Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/lectures/15/15-inference-mathematical-models.html</loc>
-    <lastmod>2024-08-26T04:41:51.209Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/lectures/24/24-tell-data-story.html</loc>
-    <lastmod>2024-08-26T04:41:51.213Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/lectures/01/01-welcome.html</loc>
-    <lastmod>2024-08-26T04:41:51.192Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/lectures/09/09-regression-overview.html</loc>
-    <lastmod>2024-08-26T04:41:51.198Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/lectures/21/21-inference-two-means.html</loc>
-    <lastmod>2024-08-26T04:41:51.211Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/lectures/10/10-logistic-regression-I.html</loc>
-    <lastmod>2024-08-26T04:41:51.199Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/lectures/16/16-inference-one-proportion.html</loc>
-    <lastmod>2024-08-26T04:41:51.210Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/lectures/18/18-inference-twoway-tables.html</loc>
-    <lastmod>2024-08-26T04:41:51.210Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/lectures/02/02-hello-data.html</loc>
-    <lastmod>2024-08-26T04:41:51.194Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/lectures/04/04-explore-categorical.html</loc>
-    <lastmod>2024-08-26T04:41:51.194Z</lastmod>
-  </url>
-  <url>
     <loc>https://sta101-f24.github.io/computing/computing-troubleshooting.html</loc>
     <lastmod>2024-08-26T04:41:51.159Z</lastmod>
   </url>
@@ -77,68 +33,8 @@
     <lastmod>2024-08-26T04:41:51.159Z</lastmod>
   </url>
   <url>
-    <loc>https://sta101-f24.github.io/ae/ae-15-gestation.html</loc>
-    <lastmod>2024-08-26T04:41:51.133Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/ae/ae-06-stock.html</loc>
-    <lastmod>2024-08-26T04:41:51.128Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/ae/ae-03-delta.html</loc>
+    <loc>https://sta101-f24.github.io/ae/ae-02-flint-sa.html</loc>
     <lastmod>2024-08-26T04:41:51.121Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/ae/ae-07-books-sa.html</loc>
-    <lastmod>2024-08-26T04:41:51.128Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/ae/ae-14-candidate-talk.html</loc>
-    <lastmod>2024-08-26T04:41:51.132Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/ae/ae-15-gestation-sa.html</loc>
-    <lastmod>2024-08-26T04:41:51.133Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/ae/ae-02-flint.html</loc>
-    <lastmod>2024-08-26T04:41:51.121Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/ae/ae-06-stocks-sa.html</loc>
-    <lastmod>2024-08-26T04:41:51.128Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/ae/ae-03-delta-sa.html</loc>
-    <lastmod>2024-08-26T04:41:51.121Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/ae/ae-12-voters.html</loc>
-    <lastmod>2024-08-26T04:41:51.131Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/ae/ae-17-climate-sa.html</loc>
-    <lastmod>2024-08-26T04:41:51.133Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/ae/ae-13-equality.html</loc>
-    <lastmod>2024-08-26T04:41:51.132Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/ae/ae-10-donor-yawner.html</loc>
-    <lastmod>2024-08-26T04:41:51.130Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/ae/ae-05-durham.html</loc>
-    <lastmod>2024-08-26T04:41:51.128Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/ae/ae-01-unvotes.html</loc>
-    <lastmod>2024-08-26T04:41:51.121Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/ae/ae-13-equality-sa.html</loc>
-    <lastmod>2024-08-26T04:41:51.131Z</lastmod>
   </url>
   <url>
     <loc>https://sta101-f24.github.io/course-links.html</loc>
@@ -149,72 +45,12 @@
     <lastmod>2024-08-26T04:41:51.189Z</lastmod>
   </url>
   <url>
-    <loc>https://sta101-f24.github.io/ae/ae-16-birth-weight-sa.html</loc>
-    <lastmod>2024-08-26T04:41:51.133Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/ae/ae-09-spam-sa.html</loc>
-    <lastmod>2024-08-26T04:41:51.129Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/ae/ae-11-bone-density-sa.html</loc>
-    <lastmod>2024-08-26T04:41:51.130Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/ae/ae-17-climate.html</loc>
-    <lastmod>2024-08-26T04:41:51.134Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/ae/ae-08-tips-sa.html</loc>
-    <lastmod>2024-08-26T04:41:51.129Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/ae/ae-05-durham-sa.html</loc>
-    <lastmod>2024-08-26T04:41:51.128Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/ae/ae-02-flint-sa.html</loc>
+    <loc>https://sta101-f24.github.io/ae/ae-01-unvotes.html</loc>
     <lastmod>2024-08-26T04:41:51.121Z</lastmod>
   </url>
   <url>
-    <loc>https://sta101-f24.github.io/ae/ae-16-birth-weight.html</loc>
-    <lastmod>2024-08-26T04:41:51.133Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/ae/ae-09-spam.html</loc>
-    <lastmod>2024-08-26T04:41:51.129Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/ae/ae-04-durham.html</loc>
-    <lastmod>2024-08-26T04:41:51.122Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/ae/ae-04-durham-sa.html</loc>
+    <loc>https://sta101-f24.github.io/ae/ae-02-flint.html</loc>
     <lastmod>2024-08-26T04:41:51.121Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/ae/ae-10-donor-yawner-sa.html</loc>
-    <lastmod>2024-08-26T04:41:51.129Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/ae/ae-07-books.html</loc>
-    <lastmod>2024-08-26T04:41:51.129Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/ae/ae-14-candidate-talk-sa.html</loc>
-    <lastmod>2024-08-26T04:41:51.132Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/ae/ae-12-voters-sa.html</loc>
-    <lastmod>2024-08-26T04:41:51.131Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/ae/ae-11-bone-density.html</loc>
-    <lastmod>2024-08-26T04:41:51.130Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/ae/ae-08-tips.html</loc>
-    <lastmod>2024-08-26T04:41:51.129Z</lastmod>
   </url>
   <url>
     <loc>https://sta101-f24.github.io/index.html</loc>
@@ -241,51 +77,7 @@
     <lastmod>2024-08-26T04:41:51.158Z</lastmod>
   </url>
   <url>
-    <loc>https://sta101-f24.github.io/lectures/03/03-study-design.html</loc>
-    <lastmod>2024-08-26T04:41:51.194Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/lectures/05/05-explore-numerical.html</loc>
-    <lastmod>2024-08-26T04:41:51.196Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/lectures/20/20-inference-one-mean.html</loc>
-    <lastmod>2024-08-26T04:41:51.211Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/lectures/11/11-logistic-regression-II.html</loc>
-    <lastmod>2024-08-26T04:41:51.202Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/lectures/17/17-inference-two-proportions.html</loc>
-    <lastmod>2024-08-26T04:41:51.210Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/lectures/19/19-overview-inf-props.html</loc>
-    <lastmod>2024-08-26T04:41:51.211Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/lectures/07/07-regression-multiple-predictors.html</loc>
-    <lastmod>2024-08-26T04:41:51.197Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/lectures/08/08-model-selection.html</loc>
-    <lastmod>2024-08-26T04:41:51.198Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/lectures/06/06-regression-one-predictor.html</loc>
-    <lastmod>2024-08-26T04:41:51.197Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/lectures/23/23-ethics.html</loc>
-    <lastmod>2024-08-26T04:41:51.213Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/lectures/12/12-hypothesis-testing-randomization.html</loc>
-    <lastmod>2024-08-26T04:41:51.205Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/lectures/22/22-inference-more-means.html</loc>
-    <lastmod>2024-08-26T04:41:51.213Z</lastmod>
+    <loc>https://sta101-f24.github.io/lectures/01/01-welcome.html</loc>
+    <lastmod>2024-08-26T04:41:51.192Z</lastmod>
   </url>
 </urlset>
