@@ -4,11 +4,18 @@ title: "Policies"
 
 ## Collaboration
 
+- You are encouraged to discuss and help one another with the labs, but you should not share solutions (e.g. emailing a friend your code). All submitted work must be your own;
+- You are forbidden from collaborating in any way on the exams;
+- You are enthusiastically encouraged to collaborate with your teammates on all aspects of the final project.
+
 ## Communication
 
 ## Late work and extensions
 
+No late work will be accepted unless you request an extension in advanced. All reasonable requests will be entertained, but extensions will not be long.
+
 ## Regrade requests
 
-## Artificial intelligence
+You have one week after receiving a grade to dispute it. Regrade requests can be made in Gradescope, and the instructor will do the regrading.
 
+## Artificial intelligence
