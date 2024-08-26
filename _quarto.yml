@@ -40,18 +40,19 @@ website:
         contents:
           - href: course-overview.qmd
             text: Overview
-          - href: course-syllabus.qmd
-            text: Syllabus
-          - href: course-support.qmd
-            text: Support
           - href: course-team.qmd
             text: Teaching team
+          - href: course-materials.qmd
+            text: Course materials
+          - href: course-grading.qmd
+            text: Grading
+          - href: course-policies.qmd
+            text: Policies
+          - href: course-resources.qmd
+            text: University resources
           - href: index.qmd
             text: Schedule
-          - href: course-links.qmd
-            text: Useful links
-          - href: course-faq.qmd
-            text: FAQ
+            
       - section: "Labs"
         contents:
           - href: labs/lab-1.qmd
