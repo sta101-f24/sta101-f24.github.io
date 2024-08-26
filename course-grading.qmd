@@ -1,5 +1,5 @@
 ---
-title: "Assessments and grading"
+title: "Assignments and grading"
 ---
 
 The final course grade will be calculated as follows:
