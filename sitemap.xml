@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://sta101-f24.github.io/course-syllabus.html</loc>
-    <lastmod>2024-08-26T04:41:51.160Z</lastmod>
+    <loc>https://sta101-f24.github.io/course-grading.html</loc>
+    <lastmod>2024-08-26T06:58:23.291Z</lastmod>
   </url>
   <url>
-    <loc>https://sta101-f24.github.io/computing/computing-troubleshooting.html</loc>
-    <lastmod>2024-08-26T04:41:51.159Z</lastmod>
+    <loc>https://sta101-f24.github.io/lectures/01/01-welcome.html</loc>
+    <lastmod>2024-08-26T04:41:51.192Z</lastmod>
   </url>
   <url>
-    <loc>https://sta101-f24.github.io/computing/computing-access.html</loc>
+    <loc>https://sta101-f24.github.io/computing/computing-cheatsheets.html</loc>
     <lastmod>2024-08-26T04:41:51.158Z</lastmod>
   </url>
   <url>
-    <loc>https://sta101-f24.github.io/course-faq.html</loc>
-    <lastmod>2024-08-26T04:41:51.159Z</lastmod>
+    <loc>https://sta101-f24.github.io/course-support.html</loc>
+    <lastmod>2024-08-26T04:41:51.160Z</lastmod>
   </url>
   <url>
     <loc>https://sta101-f24.github.io/exam-review/exam-1-review.html</loc>
@@ -33,24 +33,32 @@
     <lastmod>2024-08-26T04:41:51.159Z</lastmod>
   </url>
   <url>
-    <loc>https://sta101-f24.github.io/ae/ae-02-flint-sa.html</loc>
+    <loc>https://sta101-f24.github.io/ae/ae-02-flint.html</loc>
     <lastmod>2024-08-26T04:41:51.121Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/course-links.html</loc>
-    <lastmod>2024-08-26T04:41:51.159Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/labs/lab-1.html</loc>
-    <lastmod>2024-08-26T04:41:51.189Z</lastmod>
   </url>
   <url>
     <loc>https://sta101-f24.github.io/ae/ae-01-unvotes.html</loc>
     <lastmod>2024-08-26T04:41:51.121Z</lastmod>
   </url>
   <url>
-    <loc>https://sta101-f24.github.io/ae/ae-02-flint.html</loc>
+    <loc>https://sta101-f24.github.io/course-materials.html</loc>
+    <lastmod>2024-08-26T06:58:42.412Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta101-f24.github.io/labs/lab-1.html</loc>
+    <lastmod>2024-08-26T04:41:51.189Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta101-f24.github.io/course-policies.html</loc>
+    <lastmod>2024-08-26T06:58:50.545Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta101-f24.github.io/ae/ae-02-flint-sa.html</loc>
     <lastmod>2024-08-26T04:41:51.121Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta101-f24.github.io/course-resources.html</loc>
+    <lastmod>2024-08-26T06:59:00.664Z</lastmod>
   </url>
   <url>
     <loc>https://sta101-f24.github.io/index.html</loc>
@@ -69,15 +77,15 @@
     <lastmod>2024-08-26T04:41:51.215Z</lastmod>
   </url>
   <url>
-    <loc>https://sta101-f24.github.io/course-support.html</loc>
-    <lastmod>2024-08-26T04:41:51.160Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta101-f24.github.io/computing/computing-cheatsheets.html</loc>
+    <loc>https://sta101-f24.github.io/computing/computing-access.html</loc>
     <lastmod>2024-08-26T04:41:51.158Z</lastmod>
   </url>
   <url>
-    <loc>https://sta101-f24.github.io/lectures/01/01-welcome.html</loc>
-    <lastmod>2024-08-26T04:41:51.192Z</lastmod>
+    <loc>https://sta101-f24.github.io/computing/computing-troubleshooting.html</loc>
+    <lastmod>2024-08-26T04:41:51.159Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta101-f24.github.io/course-syllabus.html</loc>
+    <lastmod>2024-08-26T04:41:51.160Z</lastmod>
   </url>
 </urlset>
