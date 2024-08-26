@@ -2,45 +2,45 @@
   {
     "objectID": "course-grading.html",
     "href": "course-grading.html",
-    "title": "Assessments and grading",
+    "title": "Assignments and grading",
     "section": "",
     "text": "The final course grade will be calculated as follows:\nThe final letter grade will be determined based on the following thresholds, which will not change:",
     "crumbs": [
       "Syllabus",
-      "Grading"
+      "Assignments and grading"
     ]
   },
   {
     "objectID": "course-grading.html#labs",
     "href": "course-grading.html#labs",
-    "title": "Assessments and grading",
+    "title": "Assignments and grading",
     "section": "Labs",
     "text": "Labs",
     "crumbs": [
       "Syllabus",
-      "Grading"
+      "Assignments and grading"
     ]
   },
   {
     "objectID": "course-grading.html#exams",
     "href": "course-grading.html#exams",
-    "title": "Assessments and grading",
+    "title": "Assignments and grading",
     "section": "Exams",
     "text": "Exams",
     "crumbs": [
       "Syllabus",
-      "Grading"
+      "Assignments and grading"
     ]
   },
   {
     "objectID": "course-grading.html#final-project",
     "href": "course-grading.html#final-project",
-    "title": "Assessments and grading",
+    "title": "Assignments and grading",
     "section": "Final project",
     "text": "Final project",
     "crumbs": [
       "Syllabus",
-      "Grading"
+      "Assignments and grading"
     ]
   },
   {
@@ -634,6 +634,50 @@
     "title": "Lab 1: Hello R!",
     "section": "Acknowledgements",
     "text": "Acknowledgements\nThis assignment was adapted from a lab in Data Science in a Box."
+  },
+  {
+    "objectID": "course-policies.html#communication",
+    "href": "course-policies.html#communication",
+    "title": "Policies",
+    "section": "Communication",
+    "text": "Communication",
+    "crumbs": [
+      "Syllabus",
+      "Course policies"
+    ]
+  },
+  {
+    "objectID": "course-policies.html#late-work-and-extensions",
+    "href": "course-policies.html#late-work-and-extensions",
+    "title": "Policies",
+    "section": "Late work and extensions",
+    "text": "Late work and extensions",
+    "crumbs": [
+      "Syllabus",
+      "Course policies"
+    ]
+  },
+  {
+    "objectID": "course-policies.html#regrade-requests",
+    "href": "course-policies.html#regrade-requests",
+    "title": "Policies",
+    "section": "Regrade requests",
+    "text": "Regrade requests",
+    "crumbs": [
+      "Syllabus",
+      "Course policies"
+    ]
+  },
+  {
+    "objectID": "course-policies.html#artificial-intelligence",
+    "href": "course-policies.html#artificial-intelligence",
+    "title": "Policies",
+    "section": "Artificial intelligence",
+    "text": "Artificial intelligence",
+    "crumbs": [
+      "Syllabus",
+      "Course policies"
+    ]
   },
   {
     "objectID": "ae/ae-02-flint-sa.html",
