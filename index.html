@@ -1,0 +1,1970 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.555">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>STA 101 Fall 2024 - STA 101: Data Analysis and Statistical Inference</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./course-links.html" rel="next">
+<link href="./course-team.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<meta property="og:title" content="STA 101 Fall 2024 - STA 101: Data Analysis and Statistical Inference">
+<meta property="og:description" content="Homepage for STA 101 Data Analysis and Statistical Inference at Duke University, Fall 2024.">
+<meta property="og:site_name" content="STA 101 Fall 2024">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./course-overview.html">Course information</a></li><li class="breadcrumb-item"><a href="./index.html">Schedule</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main tools-wide">
+    <a href="https://posit.cloud/spaces/405361" title="Posit Cloud" class="quarto-navigation-tool px-1" aria-label="Posit Cloud"><i class="bi bi-cloud"></i></a>
+    <a href="https://sta101-f23.slack.com" title="Slack" class="quarto-navigation-tool px-1" aria-label="Slack"><i class="bi bi-slack"></i></a>
+    <a href="https://duke.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=a792a9f8-8b5d-432e-99e1-b06d01424ec4" title="Panopto" class="quarto-navigation-tool px-1" aria-label="Panopto"><i class="bi bi-file-play"></i></a>
+    <div class="dropdown">
+      <a href="" title="Canvas" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Canvas"><i class="bi bi-person-fill"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/4625/announcements">
+            Announcements
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/4625/gradebook">
+            Grades
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/4625/quizzes">
+            Tutorial submission
+            </a>
+          </li>
+      </ul>
+    </div>
+    <a href="https://github.com/sta101-f23/sta101-f23.github.io" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Course information</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./course-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./course-syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./course-support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./course-team.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Teaching team</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./course-links.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Useful links</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./course-faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FAQ</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">Labs</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./labs/lab-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./labs/lab-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./labs/lab-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./labs/lab-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./labs/lab-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./labs/lab-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 6</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./labs/lab-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 7</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./labs/lab-8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 8</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">Projects</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./project/project-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./project/project-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project 2</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">Computing</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./computing/computing-access.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Access</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./computing/computing-troubleshooting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Troubleshooting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./computing/computing-cheatsheets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cheatsheets</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./extra-credit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Extra credit</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./course-overview.html">Course information</a></li><li class="breadcrumb-item"><a href="./index.html">Schedule</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">STA 101: Data Analysis and Statistical Inference</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="tlnpjvwmmm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#tlnpjvwmmm table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#tlnpjvwmmm thead, #tlnpjvwmmm tbody, #tlnpjvwmmm tfoot, #tlnpjvwmmm tr, #tlnpjvwmmm td, #tlnpjvwmmm th {
+  border-style: none;
+}
+
+#tlnpjvwmmm p {
+  margin: 0;
+  padding: 0;
+}
+
+#tlnpjvwmmm .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#tlnpjvwmmm .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#tlnpjvwmmm .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#tlnpjvwmmm .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#tlnpjvwmmm .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#tlnpjvwmmm .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#tlnpjvwmmm .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#tlnpjvwmmm .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#tlnpjvwmmm .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#tlnpjvwmmm .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#tlnpjvwmmm .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#tlnpjvwmmm .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#tlnpjvwmmm .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#tlnpjvwmmm .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#tlnpjvwmmm .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#tlnpjvwmmm .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#tlnpjvwmmm .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#tlnpjvwmmm .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#tlnpjvwmmm .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tlnpjvwmmm .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#tlnpjvwmmm .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#tlnpjvwmmm .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#tlnpjvwmmm .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tlnpjvwmmm .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#tlnpjvwmmm .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#tlnpjvwmmm .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#tlnpjvwmmm .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tlnpjvwmmm .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#tlnpjvwmmm .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#tlnpjvwmmm .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#tlnpjvwmmm .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#tlnpjvwmmm .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#tlnpjvwmmm .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tlnpjvwmmm .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#tlnpjvwmmm .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tlnpjvwmmm .gt_left {
+  text-align: left;
+}
+
+#tlnpjvwmmm .gt_center {
+  text-align: center;
+}
+
+#tlnpjvwmmm .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#tlnpjvwmmm .gt_font_normal {
+  font-weight: normal;
+}
+
+#tlnpjvwmmm .gt_font_bold {
+  font-weight: bold;
+}
+
+#tlnpjvwmmm .gt_font_italic {
+  font-style: italic;
+}
+
+#tlnpjvwmmm .gt_super {
+  font-size: 65%;
+}
+
+#tlnpjvwmmm .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#tlnpjvwmmm .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#tlnpjvwmmm .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#tlnpjvwmmm .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#tlnpjvwmmm .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#tlnpjvwmmm .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#tlnpjvwmmm .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#tlnpjvwmmm .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#tlnpjvwmmm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_col_headings">
+<th id="<div data-qmd-base64=&quot;KipXRUVLKio=&quot;><div class='gt_from_md'><p><strong>WEEK</strong></p>
+</div></div>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><p><strong>WEEK</strong></p></th>
+<th id="<div data-qmd-base64=&quot;KipEQVRFKio=&quot;><div class='gt_from_md'><p><strong>DATE</strong></p>
+</div></div>" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col"><p><strong>DATE</strong></p></th>
+<th id="<div data-qmd-base64=&quot;KipUT1BJQyoq&quot;><div class='gt_from_md'><p><strong>TOPIC</strong></p>
+</div></div>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><p><strong>TOPIC</strong></p></th>
+<th id="<div data-qmd-base64=&quot;KipQUkVQQVJFKio=&quot;><div class='gt_from_md'><p><strong>PREPARE</strong></p>
+</div></div>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><p><strong>PREPARE</strong></p></th>
+<th id="<div data-qmd-base64=&quot;KipNQVRFUklBTFMqKg==&quot;><div class='gt_from_md'><p><strong>MATERIALS</strong></p>
+</div></div>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><p><strong>MATERIALS</strong></p></th>
+<th id="<div data-qmd-base64=&quot;KipEVUUqKg==&quot;><div class='gt_from_md'><p><strong>DUE</strong></p>
+</div></div>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><p><strong>DUE</strong></p></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_center" headers="week">1</td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Mon, Aug 28</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Welcome to STA 101!</p></td>
+<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>🖥️ <a href="https://sta101-f23.github.io/lectures/01/01-welcome.html">slides</a> <br> ☁️ <a href="https://posit.cloud/spaces/405361/content/6388717">ae-01</a> <br> ⌨️ <a href="https://sta101-f23.github.io/ae/ae-01-unvotes.html">ae-01</a></p></td>
+<td class="gt_row gt_left" headers="due"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center gt_striped" headers="week"><br>
+</td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Wed, Aug 30</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Hello data</p></td>
+<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>📖 <a href="https://openintro-ims2.netlify.app/01-data-hello">ims: Chp 1</a> <br> 💻 <a href="https://openintro.shinyapps.io/ims-01-data-01/">tutorial: 01-data-01</a> <code>|&gt;</code> <a href="https://canvas.duke.edu/courses/4625/quizzes/9272">submit</a></p></td>
+<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>🖥️ <a href="https://sta101-f23.github.io/lectures/02/02-hello-data.html">slides</a> <br> ☁️ <a href="https://posit.cloud/spaces/405361/content/6403505">ae-02</a> <br> ⌨️ <a href="https://sta101-f23.github.io/ae/ae-02-flint.html">ae-02</a> <br> 🗝️ <a href="https://sta101-f23.github.io/ae/ae-02-flint-sa.html">ae-02-sa</a></p></td>
+<td class="gt_row gt_left gt_striped" headers="due"><p>🔘 <a href="https://canvas.duke.edu/courses/4625/quizzes/9277">Survey: Getting to know you</a></p></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="week"><br>
+</td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Fri, Sep 1</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Lab 1: Hello R!</p></td>
+<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>⌨️ <a href="https://sta101-f23.github.io/labs/lab-1.html">lab-1</a></p></td>
+<td class="gt_row gt_left" headers="due"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center gt_striped" headers="week">2</td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Mon, Sep 4</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>⚒️ <em>Labor Day - No lecture</em></p></td>
+<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left gt_striped" headers="due"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="week"><br>
+</td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Wed, Sep 6</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Study design</p></td>
+<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>📖 <a href="https://openintro-ims2.netlify.app/02-data-design">ims: Chp 2</a> <br> 💻 <a href="https://openintro.shinyapps.io/ims-01-data-02/">tutorial: 01-data-02</a> <code>|&gt;</code> <a href="https://canvas.duke.edu/courses/4625/quizzes/9273">submit</a> <br> 💻 <a href="https://openintro.shinyapps.io/ims-01-data-03/">tutorial: 01-data-03</a> <code>|&gt;</code> <a href="https://canvas.duke.edu/courses/4625/quizzes/9274">submit</a></p></td>
+<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>🖥️ <a href="https://sta101-f23.github.io/lectures/03/03-study-design.html">slides</a> <br> ☁️ <a href="https://posit.cloud/spaces/405361/content/6459824">ae-03</a> <br> ⌨️ <a href="https://sta101-f23.github.io/ae/ae-03-delta.html">ae-03</a> <br> 🗝️ <a href="https://sta101-f23.github.io/ae/ae-03-delta-sa.html">ae-03-sa</a></p></td>
+<td class="gt_row gt_left" headers="due"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center gt_striped" headers="week"><br>
+</td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Thu, Sep 7</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left gt_striped" headers="due"><p>✅ <a href="https://sta101-f23.github.io/labs/lab-1.html">Lab 1</a> at 5 pm</p></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="week"><br>
+</td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Fri, Sep 8</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Lab 2: Hello data!</p></td>
+<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>📖 <a href="https://openintro-ims2.netlify.app/03-data-applications">ims: Chp 3</a> <br> 💻 <a href="https://openintro.shinyapps.io/ims-01-data-04/">tutorial: 01-data-04</a> <code>|&gt;</code> <a href="https://canvas.duke.edu/courses/4625/quizzes/9275">submit</a></p></td>
+<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>⌨️ <a href="https://sta101-f23.github.io/labs/lab-2.html">lab-2</a></p></td>
+<td class="gt_row gt_left" headers="due"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center gt_striped" headers="week">3</td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Mon, Sep 11</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Exploring categorical data</p></td>
+<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>📖 <a href="https://openintro-ims2.netlify.app/04-explore-categorical">ims: Chp 4</a> <br> 💻 <a href="https://openintro.shinyapps.io/ims-02-explore-01/">tutorial: 02-explore-01</a> <code>|&gt;</code> <a href="https://canvas.duke.edu/courses/4625/quizzes/9910">submit</a></p></td>
+<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>🖥️ <a href="https://sta101-f23.github.io/lectures/04/04-explore-categorical.html">slides</a> <br> ☁️ <a href="https://posit.cloud/spaces/405361/content/6497090">ae-04</a> <br> ⌨️ <a href="https://sta101-f23.github.io/ae/ae-04-durham.html">ae-04</a> <br> 🗝️ <a href="https://sta101-f23.github.io/ae/ae-04-durham-sa.html">ae-04-sa</a></p></td>
+<td class="gt_row gt_left gt_striped" headers="due"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="week"><br>
+</td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Wed, Sep 13</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Exploring numerical data</p></td>
+<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>📖 <a href="https://openintro-ims2.netlify.app/05-explore-numerical">ims: Chp 5</a> <br> 💻 <a href="https://openintro.shinyapps.io/ims-02-explore-02/">tutorial: 02-explore-02</a> <code>|&gt;</code> <a href="https://canvas.duke.edu/courses/4625/quizzes/9911">submit</a></p></td>
+<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>🖥️ <a href="https://sta101-f23.github.io/lectures/05/05-explore-numerical.html">slides</a> <br> ☁️ <a href="https://posit.cloud/spaces/405361/content/6518578">ae-05</a> <br> ⌨️ <a href="https://sta101-f23.github.io/ae/ae-05-durham.html">ae-05</a> <br> 🗝️ <a href="https://sta101-f23.github.io/ae/ae-05-durham-sa.html">ae-05-sa</a></p></td>
+<td class="gt_row gt_left" headers="due"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center gt_striped" headers="week"><br>
+</td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Thu, Sep 14</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left gt_striped" headers="due"><p>✅ <a href="https://sta101-f23.github.io/labs/lab-2.html">Lab 2</a> at 5 pm</p></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="week"><br>
+</td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Fri, Sep 15</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Lab 3: Exploratory data analysis</p></td>
+<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>📖 <a href="https://openintro-ims2.netlify.app/06-explore-applications">ims: Chp 6</a> <br> 💻 <a href="https://openintro.shinyapps.io/ims-02-explore-03/">tutorial: 02-explore-03</a> <code>|&gt;</code> <a href="https://canvas.duke.edu/courses/4625/quizzes/9912">submit</a></p></td>
+<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>⌨️ <a href="https://sta101-f23.github.io/labs/lab-3.html">lab-3</a></p></td>
+<td class="gt_row gt_left" headers="due"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center gt_striped" headers="week">4</td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Mon, Sep 18</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Regression with a single predictor I <br> <em>Guest Lecture: <a href="https://stat.duke.edu/alexander-fisher">Dr.&nbsp;Alex Fisher</a></em></p></td>
+<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>📖 <a href="https://openintro-ims2.netlify.app/07-model-slr">ims: Chp 7.1 - 7.2</a> <br> 💻 <a href="https://openintro.shinyapps.io/ims-03-model-01/">tutorial: 03-model-01</a> <code>|&gt;</code> <a href="https://canvas.duke.edu/courses/4625/quizzes/9913">submit</a> <br> 💻 <a href="https://openintro.shinyapps.io/ims-03-model-02/">tutorial: 03-model-02</a> <code>|&gt;</code> <a href="https://canvas.duke.edu/courses/4625/quizzes/9914">submit</a> <br></p></td>
+<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>🖥️ <a href="https://sta101-f23.github.io/lectures/06/06-regression-one-predictor.html">slides</a> <br> ☁️ <a href="https://posit.cloud/spaces/405361/content/6523369">ae-06</a> <br> ⌨️ <a href="https://sta101-f23.github.io/ae/ae-06-stocks.html">ae-06</a> <br> 🗝️ <a href="https://sta101-f23.github.io/ae/ae-06-stocks-sa.html">ae-06-sa</a></p></td>
+<td class="gt_row gt_left gt_striped" headers="due"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="week"><br>
+</td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Wed, Sep 20</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>No class <br> Catch up with readings and interactive tutorials</p></td>
+<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>📖 <a href="https://openintro-ims2.netlify.app/07-model-slr">ims: Chp 7.2 - 7.4</a> <br> 💻 <a href="https://openintro.shinyapps.io/ims-03-model-03/">tutorial: 03-model-03</a> <code>|&gt;</code> <a href="https://canvas.duke.edu/courses/4625/quizzes/9915">submit</a></p></td>
+<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left" headers="due"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center gt_striped" headers="week"><br>
+</td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Thu, Sep 21</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left gt_striped" headers="due"><p>✅ <a href="https://sta101-f23.github.io/labs/lab-3.html">Lab 3</a> at 5 pm</p></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="week"><br>
+</td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Fri, Sep 22</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Lab 4: Regression</p></td>
+<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>⌨️ <a href="https://sta101-f23.github.io/labs/lab-4.html">lab-4</a></p></td>
+<td class="gt_row gt_left" headers="due"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center gt_striped" headers="week">5</td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Mon, Sep 25</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Regression with multiple predictors</p></td>
+<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>📖 <a href="https://openintro-ims2.netlify.app/08-model-mlr">ims: Chp 8.1 - 8.3</a></p></td>
+<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>🖥️ <a href="https://sta101-f23.github.io/lectures/07/07-regression-multiple-predictors.html">slides</a> <br> ☁️ <a href="https://posit.cloud/spaces/405361/content/6610813">ae-07</a> <br> ⌨️ <a href="https://sta101-f23.github.io/ae/ae-07-books.html">ae-07</a> <br> 🗝️ <a href="https://sta101-f23.github.io/ae/ae-07-books-sa.html">ae-07-sa</a></p></td>
+<td class="gt_row gt_left gt_striped" headers="due"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="week"><br>
+</td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Wed, Sep 27</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Model selection</p></td>
+<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>📖 <a href="https://openintro-ims2.netlify.app/08-model-mlr">ims: Chp 8.4 - 8.5</a></p></td>
+<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>🖥️ <a href="https://sta101-f23.github.io/lectures/08/08-model-selection.html">slides</a> <br> ☁️ <a href="https://posit.cloud/spaces/405361/content/6610813">ae-08</a> <br> ⌨️ <a href="https://sta101-f23.github.io/ae/ae-08-tips.html">ae-08</a> <br> 🗝️ <a href="https://sta101-f23.github.io/ae/ae-08-tips-sa.html">ae-08-sa</a></p></td>
+<td class="gt_row gt_left" headers="due"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center gt_striped" headers="week"><br>
+</td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Thu, Sep 28</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left gt_striped" headers="due"><p>✅ <a href="https://sta101-f23.github.io/labs/lab-4.html">Lab 4</a> at 5 pm</p></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="week"><br>
+</td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Fri, Sep 29</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Exam 1 Review</p></td>
+<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>📝 <a href="https://sta101-f23.github.io/exam-review/exam-1-review.html">er-1</a> <br> 🗝️ <a href="https://sta101-f23.github.io/exam-review/exam-1-review-sa.html">er-1-sa</a></p></td>
+<td class="gt_row gt_left" headers="due"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center gt_striped" headers="week">6</td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Mon, Oct 2</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Regression overview</p></td>
+<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>🖥️ <a href="https://sta101-f23.github.io/lectures/09/09-regression-overview.html">slides</a></p></td>
+<td class="gt_row gt_left gt_striped" headers="due"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="week"><br>
+</td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Wed, Oct 4</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Exam 1 - In class</p></td>
+<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left" headers="due"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center gt_striped" headers="week"><br>
+</td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Fri, Oct 6</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>No lab: Work on Exam 1 - Take home</p></td>
+<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left gt_striped" headers="due"><p>Exam 1 - Take home + Tutorials at 5 pm</p></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="week">7</td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Mon, Oct 9</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Logistic regression I</p></td>
+<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>📖 <a href="https://openintro-ims2.netlify.app/09-model-logistic">ims: Chp 9.1 - 9.2</a></p></td>
+<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>🖥️ <a href="https://sta101-f23.github.io/lectures/10/10-logistic-regression-I.html">slides</a> <br> ☁️ <a href="https://posit.cloud/spaces/405361/content/6745761">ae-09</a> <br> ⌨️ <a href="https://sta101-f23.github.io/ae/ae-09-spam.html">ae-09</a> <br> 🗝️ <a href="https://sta101-f23.github.io/ae/ae-09-spam-sa.html">ae-09-sa</a></p></td>
+<td class="gt_row gt_left" headers="due"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center gt_striped" headers="week"><br>
+</td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Wed, Oct 11</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Logistic regression II</p></td>
+<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>📖 <a href="https://openintro-ims2.netlify.app/09-model-logistic">ims: Chp 9.3 - 9.5</a></p></td>
+<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>🖥️ <a href="https://sta101-f23.github.io/lectures/11/11-logistic-regression-II.html">slides</a></p></td>
+<td class="gt_row gt_left gt_striped" headers="due"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="week"><br>
+</td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Fri, Oct 13</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Project 1 workday</p></td>
+<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left" headers="due"><p>📄 <a href="https://sta101-f23.github.io/project/project-1.html">Project 1</a> at 5 pm</p></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center gt_striped" headers="week">8</td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Mon, Oct 16</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>🍂 <em>Fall Break - No lecture</em></p></td>
+<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left gt_striped" headers="due"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="week"><br>
+</td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Wed, Oct 18</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Hypothesis testing with randomization</p></td>
+<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>📖 <a href="https://openintro-ims2.netlify.app/11-foundations-randomization">ims: Chp 11</a> <br> 💻 <a href="https://openintro.shinyapps.io/ims-04-foundations-01/">tutorial: 04-foundations-01</a> <code>|&gt;</code> <a href="https://canvas.duke.edu/courses/4625/quizzes/11177">submit</a> <br> 💻 <a href="https://openintro.shinyapps.io/ims-04-foundations-02/">tutorial: 04-foundations-02</a> <code>|&gt;</code> <a href="https://canvas.duke.edu/courses/4625/quizzes/11178">submit</a></p></td>
+<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>🖥️ <a href="https://sta101-f23.github.io/lectures/12/12-hypothesis-testing-randomization.html">slides</a> <br> ☁️ <a href="https://posit.cloud/spaces/405361/content/6822648">ae-10</a> <br> ⌨️ <a href="https://sta101-f23.github.io/ae/ae-10-donor-yawner.html">ae-10</a> <br> 🗝️ <a href="https://sta101-f23.github.io/ae/ae-10-donor-yawner-sa.html">ae-10</a></p></td>
+<td class="gt_row gt_left" headers="due"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center gt_striped" headers="week"><br>
+</td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Fri, Oct 20</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Lab 5: Hypothesis testing</p></td>
+<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>⌨️ <a href="https://sta101-f23.github.io/labs/lab-5.html">lab-5</a></p></td>
+<td class="gt_row gt_left gt_striped" headers="due"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="week">9</td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Mon, Oct 23</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Confidence intervals with bootstrapping</p></td>
+<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>📖 <a href="https://openintro-ims2.netlify.app/12-foundations-bootstrapping">ims: Chp 12</a> <br> 💻 <a href="https://openintro.shinyapps.io/ims-04-foundations-04/">tutorial: 04-foundations-04</a> <code>|&gt;</code> <a href="https://canvas.duke.edu/courses/4625/quizzes/11180">submit</a></p></td>
+<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>🖥️ <a href="https://sta101-f23.github.io/lectures/13/13-confidence-intervals-bootstrapping.html">slides</a></p></td>
+<td class="gt_row gt_left" headers="due"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center gt_striped" headers="week"><br>
+</td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Wed, Oct 25</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Decision errors <br> <em>Guest Lecture: <a href="http://www.yue-jiang.com/">Dr.&nbsp;Yue Jiang</a></em></p></td>
+<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>📖 <a href="https://openintro-ims2.netlify.app/14-foundations-errors">ims: Chp 14</a> <br> 💻 <a href="https://openintro.shinyapps.io/ims-04-foundations-03/">tutorial: 04-foundations-03</a> <code>|&gt;</code> <a href="https://canvas.duke.edu/courses/4625/quizzes/11179">submit</a></p></td>
+<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>🖥️ <a href="https://sta101-f23.github.io/lectures/14/14-decision-errors.pdf">slides</a></p></td>
+<td class="gt_row gt_left gt_striped" headers="due"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="week"><br>
+</td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Thu, Oct 26</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left" headers="due"><p>✅ <a href="https://sta101-f23.github.io/labs/lab-5.html">Lab 5</a> at 5 pm</p></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center gt_striped" headers="week"><br>
+</td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Fri, Oct 27</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Lab 6: Foundations of inference</p></td>
+<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>⌨️ <a href="https://sta101-f23.github.io/labs/lab-6.html">lab-6</a></p></td>
+<td class="gt_row gt_left gt_striped" headers="due"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="week">10</td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Mon, Oct 30</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Inference with mathematical models</p></td>
+<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>📖 <a href="https://openintro-ims2.netlify.app/13-foundations-mathematical">ims: Chp 13</a></p></td>
+<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>🖥️ <a href="https://sta101-f23.github.io/lectures/15/15-inference-mathematical-models.html">slides</a> <br> ☁️ <a href="https://posit.cloud/spaces/405361/content/6921879">ae-11</a> <br> ⌨️ <a href="https://sta101-f23.github.io/ae/ae-11-bone-density.html">ae-11</a> <br> 🗝️ <a href="https://sta101-f23.github.io/ae/ae-11-bone-density-sa.html">ae-11</a></p></td>
+<td class="gt_row gt_left" headers="due"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center gt_striped" headers="week"><br>
+</td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Wed, Nov 1</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Zoom lecture: <br> Inference for a single proportion</p></td>
+<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>📖 <a href="https://openintro-ims2.netlify.app/16-inference-one-prop">ims: Chp 16</a> <br> 💻 <a href="https://openintro.shinyapps.io/ims-05-infer-01/">tutorial: 05-infer-01</a> <code>|&gt;</code> <a href="https://canvas.duke.edu/courses/4625/quizzes/12395">submit</a></p></td>
+<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>🖥️ <a href="https://sta101-f23.github.io/lectures/16/16-inference-one-proportion.html">slides</a> <br> ☁️ <a href="https://posit.cloud/spaces/405361/content/6944477">ae-12</a> <br> ⌨️ <a href="https://sta101-f23.github.io/ae/ae-12-voters.html">ae-12</a> <br> 🗝️ <a href="https://sta101-f23.github.io/ae/ae-12-voters-sa.html">ae-12</a></p></td>
+<td class="gt_row gt_left gt_striped" headers="due"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="week"><br>
+</td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Thu, Nov 2</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left" headers="due"><p>✅ <a href="https://sta101-f23.github.io/labs/lab-6.html">Lab 6</a> at 5 pm</p></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center gt_striped" headers="week"><br>
+</td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Fri, Nov 3</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Lab 7: Inference for proportions</p></td>
+<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>⌨️ <a href="https://sta101-f23.github.io/labs/lab-7.html">lab-7</a></p></td>
+<td class="gt_row gt_left gt_striped" headers="due"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="week">11</td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Mon, Nov 6</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Inference for comparing two proportions</p></td>
+<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>📖 <a href="https://openintro-ims2.netlify.app/17-inference-two-props">ims: Chp 17</a> <br> 💻 <a href="https://openintro.shinyapps.io/ims-05-infer-02/">tutorial: 05-infer-02</a> <code>|&gt;</code> <a href="https://canvas.duke.edu/courses/4625/quizzes/12396">submit</a></p></td>
+<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>🖥️ <a href="https://sta101-f23.github.io/lectures/17/17-inference-two-proportions.html">slides</a> <br> ☁️ <a href="https://posit.cloud/spaces/405361/content/6976722">ae-13</a> <br> ⌨️ <a href="https://sta101-f23.github.io/ae/ae-13-equality.html">ae-13</a> <br> 🗝️ <a href="https://sta101-f23.github.io/ae/ae-13-equality-sa.html">ae-13</a></p></td>
+<td class="gt_row gt_left" headers="due"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center gt_striped" headers="week"><br>
+</td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Wed, Nov 8</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Inference for two-way tables</p></td>
+<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>📖 <a href="https://openintro-ims2.netlify.app/18-inference-tables">ims: Chp 18</a> <br> 💻 <a href="https://openintro.shinyapps.io/ims-05-infer-03/">tutorial: 05-infer-03</a> <code>|&gt;</code> <a href="https://canvas.duke.edu/courses/4625/quizzes/12394">submit</a></p></td>
+<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>🖥️ <a href="https://sta101-f23.github.io/lectures/18/18-inference-twoway-tables.html">slides</a> <br> ☁️ <a href="https://posit.cloud/spaces/405361/content/7004204">ae-14</a> <br> ⌨️ <a href="https://sta101-f23.github.io/ae/ae-14-candidate-talk.html">ae-14</a> <br> 🗝️ <a href="https://sta101-f23.github.io/ae/ae-14-candidate-talk-sa.html">ae-14</a></p></td>
+<td class="gt_row gt_left gt_striped" headers="due"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="week"><br>
+</td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Thu, Nov 9</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left" headers="due"><p>✅ <a href="https://sta101-f23.github.io/labs/lab-7.html">Lab 7</a> at 5 pm</p></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center gt_striped" headers="week"><br>
+</td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Fri, Nov 10</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Exam 2 Review</p></td>
+<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>💻 <a href="https://openintro.shinyapps.io/ims-05-infer-04/">tutorial: 05-infer-04</a> <code>|&gt;</code> <a href="https://canvas.duke.edu/courses/4625/quizzes/12397">submit</a></p></td>
+<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>📝 <a href="https://sta101-f23.github.io/exam-review/exam-2-review.html">er-2</a> <br> 🗝️ <a href="https://sta101-f23.github.io/exam-review/exam-2-review-sa.html">er-2-sa</a></p></td>
+<td class="gt_row gt_left gt_striped" headers="due"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="week">12</td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Mon, Nov 13</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Overview: Inference for proportions</p></td>
+<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>📖 <a href="https://openintro-ims2.netlify.app/23-inference-applications#comp-methods-summary">ims: Chp 23.1</a></p></td>
+<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>🖥️ <a href="https://sta101-f23.github.io/lectures/19/19-overview-inf-props.html">slides</a></p></td>
+<td class="gt_row gt_left" headers="due"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center gt_striped" headers="week"><br>
+</td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Wed, Nov 15</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Exam 2 - In class</p></td>
+<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left gt_striped" headers="due"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="week"><br>
+</td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Fri, Nov 17</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>No lab: Work on Exam 2 - Take home</p></td>
+<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left" headers="due"><p>Exam 2 - Take home + Tutorials at 5 pm</p></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center gt_striped" headers="week">13</td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Mon, Nov 20</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Inference for a single mean</p></td>
+<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>📖 <a href="https://openintro-ims2.netlify.app/19-inference-one-mean">ims: Chp 19</a> <br> 💻 <a href="https://openintro.shinyapps.io/ims-05-infer-05/">tutorial: 05-infer-05</a> <code>|&gt;</code> <a href="https://canvas.duke.edu/courses/4625/quizzes/12399">submit</a> <br> 💻 <a href="https://openintro.shinyapps.io/ims-05-infer-06/">tutorial: 05-infer-06</a> <code>|&gt;</code> <a href="https://canvas.duke.edu/courses/4625/quizzes/12398">submit</a></p></td>
+<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>🖥️ <a href="https://sta101-f23.github.io/lectures/20/20-inference-one-mean.html">slides</a> <br> ☁️ <a href="https://posit.cloud/spaces/405361/content/7101345">ae-15</a> <br> ⌨️ <a href="https://sta101-f23.github.io/ae/ae-15-gestation.html">ae-15</a> <br> 🗝️ <a href="https://sta101-f23.github.io/ae/ae-15-gestation-sa.html">ae-15</a></p></td>
+<td class="gt_row gt_left gt_striped" headers="due"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="week"><br>
+</td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Wed, Nov 22</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>🦃 <em>Thanksgiving Break - No lecture</em></p></td>
+<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left" headers="due"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center gt_striped" headers="week"><br>
+</td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Fri, Nov 24</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>🦃 <em>Thanksgiving Break - No lab</em></p></td>
+<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left gt_striped" headers="due"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="week">14</td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Mon, Nov 27</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Inference for comparing two independent means</p></td>
+<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>📖 <a href="https://openintro-ims2.netlify.app/20-inference-two-means">ims: Chp 20</a> <br> 💻 <a href="https://openintro.shinyapps.io/ims-05-infer-07/">tutorial: 05-infer-07</a> <code>|&gt;</code> <a href="https://canvas.duke.edu/courses/4625/quizzes/12400">submit</a></p></td>
+<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>🖥️ <a href="https://sta101-f23.github.io/lectures/21/21-inference-two-means.html">slides</a> <br> ☁️ <a href="https://posit.cloud/spaces/405361/content/7143300">ae-16</a> <br> ⌨️ <a href="https://sta101-f23.github.io/ae/ae-16-birth-weights.html">ae-16</a></p></td>
+<td class="gt_row gt_left" headers="due"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center gt_striped" headers="week"><br>
+</td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Wed, Nov 29</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Inference for comparing two paired + more means</p></td>
+<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>📖 <a href="https://openintro-ims2.netlify.app/21-inference-paired-means">ims: Chp 21</a></p></td>
+<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>🖥️ <a href="https://sta101-f23.github.io/lectures/22/22-inference-more-means.html">slides</a> <br> ☁️ ae-17</p></td>
+<td class="gt_row gt_left gt_striped" headers="due"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="week"><br>
+</td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Fri, Dec 1</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Project proposal conversation <br> Lab 8: Inference for means</p></td>
+<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>⌨️ <a href="https://sta101-f23.github.io/labs/lab-8.html">lab-8</a> [Optional]</p></td>
+<td class="gt_row gt_left" headers="due"><p>📄 <a href="https://sta101-f23.github.io/project/project-2.html#project-proposal-conversation">Project 2</a> proposal conversation</p></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center gt_striped" headers="week">15</td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Mon, Dec 4</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Ethics</p></td>
+<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>🎥 <a href="https://www.youtube.com/watch?v=c4fvdoNbcSw">Data privacy</a> <br> 🎥 <a href="https://www.youtube.com/watch?v=C_-rTKfswUI">Misrepresentation</a> <br> 🎥 <a href="https://www.youtube.com/watch?v=E2eD72pwtps">Algorithmic bias</a> <br> 🎥 <a href="https://youtu.be/UG_X_7g63rY">Joy Buolamwini - How I’m fighting bias in algorithms</a> <br> 🎥 <a href="https://youtu.be/TQHs8SA1qpk">Cathy O’Neil - Weapons of Math Destruction</a> <br> 🎥 <a href="https://youtu.be/tNi_U1Bb1S0">Safiya Umoja Noble - Imagining a Future Free from the Algorithms of Oppression</a></p></td>
+<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>🖥️ <a href="https://sta101-f23.github.io/lectures/23/23-ethics.html">slides</a></p></td>
+<td class="gt_row gt_left gt_striped" headers="due"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="week"><br>
+</td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Wed, Dec 6</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Telling a (data) story</p></td>
+<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>📖 <a href="https://clauswilke.com/dataviz/telling-a-story.html">fdv: Chp 29</a></p></td>
+<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>🖥️ <a href="https://sta101-f23.github.io/lectures/24/24-tell-data-story.html">slides</a></p></td>
+<td class="gt_row gt_left" headers="due"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center gt_striped" headers="week"><br>
+</td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Thu, Dec 7</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left gt_striped" headers="due"><p>✅ <a href="https://sta101-f23.github.io/labs/lab-8.html">Lab 8</a> at 5 pm</p></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="week"><br>
+</td>
+<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Fri, Dec 8</td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Project 2 peer review</p></td>
+<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left" headers="due"><p>📄 <a href="https://sta101-f23.github.io/project/project-2.html#peer-review">Project 2</a> peer review</p></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center gt_striped" headers="week">16</td>
+<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Thu, Dec 14</td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
+<td class="gt_row gt_left gt_striped" headers="due"><p>📄 <a href="https://sta101-f23.github.io/project/project-2.html">Project 2</a> at 2 pm</p></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/sta101-f24\.github\.io");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./course-team.html" class="pagination-link" aria-label="Teaching team">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Teaching team</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./course-links.html" class="pagination-link" aria-label="Useful links">
+        <span class="nav-page-text">Useful links</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© Copyright 2023, Mine Çetinkaya-Rundel</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions"><ul><li><a href="https://github.com/sta101-f24/sta101-f24.github.io/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta101-f24/sta101-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>This page is built with 🤍 and <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
