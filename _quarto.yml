@@ -60,8 +60,6 @@ website:
             text: Lab 1
       - section: "Projects"
         contents:
-          - href: project/project-1.qmd
-            text: "Project 1"
           - href: project/project-2.qmd
       - section: "Computing"
         contents:
@@ -71,12 +69,10 @@ website:
             text: Troubleshooting
           - href: computing/computing-cheatsheets.qmd
             text: Cheatsheets
-      - href: extra-credit.qmd
-        text: Extra credit
 
   page-footer:
     right: "This page is built with 🤍 and [Quarto](https://quarto.org/)."
-    left: "&copy; Copyright 2023, Mine Çetinkaya-Rundel; 2024, John Zito"
+    left: "&copy; Copyright 2024, Mine Çetinkaya-Rundel and John Zito"
     background: "#5d6d74"
 
 
