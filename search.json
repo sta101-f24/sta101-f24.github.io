@@ -1,5 +1,16 @@
 [
   {
+    "objectID": "course-grading.html",
+    "href": "course-grading.html",
+    "title": "Assessments and grading",
+    "section": "",
+    "text": "Breakdown\n\n\nCutoffs",
+    "crumbs": [
+      "Syllabus",
+      "Grading"
+    ]
+  },
+  {
     "objectID": "lectures/01/01-welcome.html#teaching-team",
     "href": "lectures/01/01-welcome.html#teaching-team",
     "title": "Welcome to STA 101",
@@ -560,6 +571,17 @@
     "title": "UN Votes",
     "section": "Appendix",
     "text": "Appendix\nBelow is a list of countries in the dataset:"
+  },
+  {
+    "objectID": "course-materials.html",
+    "href": "course-materials.html",
+    "title": "Course materials",
+    "section": "",
+    "text": "Textbooks\n\n\nTechnology",
+    "crumbs": [
+      "Syllabus",
+      "Course materials"
+    ]
   },
   {
     "objectID": "labs/lab-1.html",
