@@ -4,7 +4,7 @@ execute:
   freeze: false
 ---
 
-This page contains a prospective outline for the course, but things may change with advanced notice:
+Below is a prospective outline for the course, but things may change with advanced notice:
 
 ```{r}
 #| echo: false
