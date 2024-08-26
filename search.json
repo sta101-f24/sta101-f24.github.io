@@ -2594,704 +2594,448 @@
     "href": "labs/lab-7.html",
     "title": "Lab 7 - Inference for proportions and means",
     "section": "",
-    "text": "By the end of this lab you will\nFor all visualizations you create, be sure to include informative titles for the plot, axes, and legend!",
-    "crumbs": [
-      "Labs",
-      "Lab 7"
-    ]
+    "text": "By the end of this lab you will\nFor all visualizations you create, be sure to include informative titles for the plot, axes, and legend!"
   },
   {
     "objectID": "labs/lab-7.html#exercise-1",
     "href": "labs/lab-7.html#exercise-1",
     "title": "Lab 7 - Inference for proportions and means",
     "section": "Exercise 1",
-    "text": "Exercise 1\n\nCreate a subset of the data that only contains Yes and No answers for the harassment question. How many responses chose each of these answers?",
-    "crumbs": [
-      "Labs",
-      "Lab 7"
-    ]
+    "text": "Exercise 1\n\nCreate a subset of the data that only contains Yes and No answers for the harassment question. How many responses chose each of these answers?"
   },
   {
     "objectID": "labs/lab-7.html#exercise-2",
     "href": "labs/lab-7.html#exercise-2",
     "title": "Lab 7 - Inference for proportions and means",
     "section": "Exercise 2",
-    "text": "Exercise 2\n\nDescribe how bootstrapping can be used to estimate the proportion of all Americans who have been harassed by their superiors or co-workers at their job.",
-    "crumbs": [
-      "Labs",
-      "Lab 7"
-    ]
+    "text": "Exercise 2\n\nDescribe how bootstrapping can be used to estimate the proportion of all Americans who have been harassed by their superiors or co-workers at their job."
   },
   {
     "objectID": "labs/lab-7.html#exercise-3",
     "href": "labs/lab-7.html#exercise-3",
     "title": "Lab 7 - Inference for proportions and means",
     "section": "Exercise 3",
-    "text": "Exercise 3\n\n\nCalculate a 95% bootstrap confidence interval for the proportion of Americans who have been harassed by their superiors or co-workers at their job. Use 1,000 iterations when creating your bootstrap distribution. Set the seed to 1234. Interpret this interval in context of the data. Make sure to visualize this interval as well.\nWhere was your 95% confidence interval centered? Why does this make sense?\nNow, calculate 90% bootstrap confidence interval for the proportion of Americans who have been harassed by their superiors or co-workers at their job. Interpret this interval in context of the data. Is it wider or more narrow than the 95% confidence interval? Additionally, visualize the interval by layering it on the visualization (for the 95% confidence interval) from part (a). You can do this simply by adding another shading layer where the endpoints now come from the new 90% confidence interval. Use a different pair of colors for the color and fill arguments, e.g., darkorange4 and darkorange1.\nNow, suppose you created a bootstrap distribution with 50,000 simulations instead of 1,000. What would you expect to change (if anything)? Center of your confidence interval? Width of your confidence interval? Do not run this simulation, just conceptually think about it.\n\n\n\n\n\n\n\n\nPause and render\n\n\n\nNow that you’ve completed the second part of the exercises, pause and render your document. If it renders without any issues, great! Move on to the next exercise. If it does not, debug the issue before moving on. Ask for help from your TA if you need. Do not proceed without rendering your document.",
-    "crumbs": [
-      "Labs",
-      "Lab 7"
-    ]
+    "text": "Exercise 3\n\n\nCalculate a 95% bootstrap confidence interval for the proportion of Americans who have been harassed by their superiors or co-workers at their job. Use 1,000 iterations when creating your bootstrap distribution. Set the seed to 1234. Interpret this interval in context of the data. Make sure to visualize this interval as well.\nWhere was your 95% confidence interval centered? Why does this make sense?\nNow, calculate 90% bootstrap confidence interval for the proportion of Americans who have been harassed by their superiors or co-workers at their job. Interpret this interval in context of the data. Is it wider or more narrow than the 95% confidence interval? Additionally, visualize the interval by layering it on the visualization (for the 95% confidence interval) from part (a). You can do this simply by adding another shading layer where the endpoints now come from the new 90% confidence interval. Use a different pair of colors for the color and fill arguments, e.g., darkorange4 and darkorange1.\nNow, suppose you created a bootstrap distribution with 50,000 simulations instead of 1,000. What would you expect to change (if anything)? Center of your confidence interval? Width of your confidence interval? Do not run this simulation, just conceptually think about it.\n\n\n\n\n\n\n\n\nPause and render\n\n\n\nNow that you’ve completed the second part of the exercises, pause and render your document. If it renders without any issues, great! Move on to the next exercise. If it does not, debug the issue before moving on. Ask for help from your TA if you need. Do not proceed without rendering your document."
   },
   {
     "objectID": "labs/lab-7.html#exercise-4",
     "href": "labs/lab-7.html#exercise-4",
     "title": "Lab 7 - Inference for proportions and means",
     "section": "Exercise 4",
-    "text": "Exercise 4\n\n\nWhat is the probability a randomly selected student scored less than 28?\nWhat is the probability a randomly selected student scored higher than than 35?\nWhat score did only 20 percent of the class exceed?",
-    "crumbs": [
-      "Labs",
-      "Lab 7"
-    ]
+    "text": "Exercise 4\n\n\nWhat is the probability a randomly selected student scored less than 28?\nWhat is the probability a randomly selected student scored higher than than 35?\nWhat score did only 20 percent of the class exceed?"
   },
   {
     "objectID": "labs/lab-7.html#exercise-5",
     "href": "labs/lab-7.html#exercise-5",
     "title": "Lab 7 - Inference for proportions and means",
     "section": "Exercise 5",
-    "text": "Exercise 5\n\nI pick 10 students at random from the class.\n\n[Without looking at the next question] How does the standard error of their average score compare to the standard deviation of the population of all STA 101 students? Explain your reasoning.\nThe standard error of the mean can be calculated as \\(SE = \\frac{\\sigma}{\\sqrt{n}}\\). What is the probability the average midterm score of these 10 students is less than 28?\nWhat is the probability the average midterm score of these 10 students is higher than 35?\nHow do the probabilities you calculated in the previous two questions (less than 28 and higher than 35) compare to the probabilities you calculated in Exercise 4? Why?\n\n\n\n\n\n\n\n\nPause and render\n\n\n\nNow that you’ve completed the first part of the exercises, pause and render your document. If it renders without any issues, great! Move on to the next exercise. If it does not, debug the issue before moving on. Ask for help from your TA if you need. Do not proceed without rendering your document.",
-    "crumbs": [
-      "Labs",
-      "Lab 7"
-    ]
+    "text": "Exercise 5\n\nI pick 10 students at random from the class.\n\n[Without looking at the next question] How does the standard error of their average score compare to the standard deviation of the population of all STA 101 students? Explain your reasoning.\nThe standard error of the mean can be calculated as \\(SE = \\frac{\\sigma}{\\sqrt{n}}\\). What is the probability the average midterm score of these 10 students is less than 28?\nWhat is the probability the average midterm score of these 10 students is higher than 35?\nHow do the probabilities you calculated in the previous two questions (less than 28 and higher than 35) compare to the probabilities you calculated in Exercise 4? Why?\n\n\n\n\n\n\n\n\nPause and render\n\n\n\nNow that you’ve completed the first part of the exercises, pause and render your document. If it renders without any issues, great! Move on to the next exercise. If it does not, debug the issue before moving on. Ask for help from your TA if you need. Do not proceed without rendering your document."
   },
   {
     "objectID": "labs/lab-7.html#exercise-6",
     "href": "labs/lab-7.html#exercise-6",
     "title": "Lab 7 - Inference for proportions and means",
     "section": "Exercise 6",
-    "text": "Exercise 6\n\nIMS - Chapter 16 exercises, #2: Married at 25.",
-    "crumbs": [
-      "Labs",
-      "Lab 7"
-    ]
+    "text": "Exercise 6\n\nIMS - Chapter 16 exercises, #2: Married at 25."
   },
   {
     "objectID": "labs/lab-7.html#exercise-7",
     "href": "labs/lab-7.html#exercise-7",
     "title": "Lab 7 - Inference for proportions and means",
     "section": "Exercise 7",
-    "text": "Exercise 7\n\nIMS - Chapter 16 exercises, #5: If I fits, I sits, bootstrap test.",
-    "crumbs": [
-      "Labs",
-      "Lab 7"
-    ]
+    "text": "Exercise 7\n\nIMS - Chapter 16 exercises, #5: If I fits, I sits, bootstrap test."
   },
   {
     "objectID": "labs/lab-7.html#exercise-8",
     "href": "labs/lab-7.html#exercise-8",
     "title": "Lab 7 - Inference for proportions and means",
     "section": "Exercise 8",
-    "text": "Exercise 8\n\nIMS - Chapter 16 exercises, #6: Legalization of marijuana, bootstrap test.",
-    "crumbs": [
-      "Labs",
-      "Lab 7"
-    ]
+    "text": "Exercise 8\n\nIMS - Chapter 16 exercises, #6: Legalization of marijuana, bootstrap test."
   },
   {
     "objectID": "labs/lab-7.html#exercise-9",
     "href": "labs/lab-7.html#exercise-9",
     "title": "Lab 7 - Inference for proportions and means",
     "section": "Exercise 9",
-    "text": "Exercise 9\n\nIMS - Chapter 16 exercises, #8: Legalization of marijuana, standard errors.",
-    "crumbs": [
-      "Labs",
-      "Lab 7"
-    ]
+    "text": "Exercise 9\n\nIMS - Chapter 16 exercises, #8: Legalization of marijuana, standard errors."
   },
   {
     "objectID": "labs/lab-7.html#exercise-10",
     "href": "labs/lab-7.html#exercise-10",
     "title": "Lab 7 - Inference for proportions and means",
     "section": "Exercise 10",
-    "text": "Exercise 10\n\nIMS - Chapter 16 exercises, #22: Legalization of marijuana, mathematical interval.",
-    "crumbs": [
-      "Labs",
-      "Lab 7"
-    ]
+    "text": "Exercise 10\n\nIMS - Chapter 16 exercises, #22: Legalization of marijuana, mathematical interval."
   },
   {
     "objectID": "labs/lab-7.html#submitting",
     "href": "labs/lab-7.html#submitting",
     "title": "Lab 7 - Inference for proportions and means",
     "section": "Submitting",
-    "text": "Submitting\n\n\n\n\n\n\nImportant\n\n\n\nBefore you proceed, first, make sure that you have updated the document YAML with your name! Then, render your document one last time, for good measure.\n\n\nTo submit your assignment to Gradescope:\n\nGo to your Files pane and check the box next to the PDF output of your document (lab-7.pdf).\nThen, in the Files pane, go to More &gt; Export. This will download the PDF file to your computer. Save it somewhere you can easily locate, e.g., your Downloads folder or your Desktop.\nGo to the course Canvas page and click on Gradescope and then click on the assignment. You’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the papers of your lab should be associated with at least one question (i.e., should be “checked”).\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you fail to mark the pages associated with an exercise, that exercise won’t be graded. This means, if you fail to mark the pages for all exercises, you will receive a 0 on the assignment. The TAs can’t mark your pages for you, and for them to be able to grade, you must mark them.",
-    "crumbs": [
-      "Labs",
-      "Lab 7"
-    ]
+    "text": "Submitting\n\n\n\n\n\n\nImportant\n\n\n\nBefore you proceed, first, make sure that you have updated the document YAML with your name! Then, render your document one last time, for good measure.\n\n\nTo submit your assignment to Gradescope:\n\nGo to your Files pane and check the box next to the PDF output of your document (lab-7.pdf).\nThen, in the Files pane, go to More &gt; Export. This will download the PDF file to your computer. Save it somewhere you can easily locate, e.g., your Downloads folder or your Desktop.\nGo to the course Canvas page and click on Gradescope and then click on the assignment. You’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the papers of your lab should be associated with at least one question (i.e., should be “checked”).\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you fail to mark the pages associated with an exercise, that exercise won’t be graded. This means, if you fail to mark the pages for all exercises, you will receive a 0 on the assignment. The TAs can’t mark your pages for you, and for them to be able to grade, you must mark them."
   },
   {
     "objectID": "labs/lab-7.html#grading",
     "href": "labs/lab-7.html#grading",
     "title": "Lab 7 - Inference for proportions and means",
     "section": "Grading",
-    "text": "Grading\nThe lab will be graded out of 50 total points.",
-    "crumbs": [
-      "Labs",
-      "Lab 7"
-    ]
+    "text": "Grading\nThe lab will be graded out of 50 total points."
   },
   {
     "objectID": "labs/lab-4.html",
     "href": "labs/lab-4.html",
     "title": "Lab 4",
     "section": "",
-    "text": "By the end of this lab you will create and fit regression models with a single predictor and visualize a simple regression model.\nFor all visualizations you create, b sure to include informative titles for the plot, axes, and legend!",
-    "crumbs": [
-      "Labs",
-      "Lab 4"
-    ]
+    "text": "By the end of this lab you will create and fit regression models with a single predictor and visualize a simple regression model.\nFor all visualizations you create, b sure to include informative titles for the plot, axes, and legend!"
   },
   {
     "objectID": "labs/lab-4.html#exercise-1",
     "href": "labs/lab-4.html#exercise-1",
     "title": "Lab 4",
     "section": "Exercise 1",
-    "text": "Exercise 1\n\nLet’s begin by taking a look at the squat lifting records.\nTo begin, remove any observations that are negative for squat. Next, create a new column called best3_squat_lbs that converts the record from kg to lbs (you may have to google the conversion). Save your data frame as ipf_squat. Report the number of rows and columns of this new data frame using inline code.\n\n\n\n\n\n\n\nHint\n\n\n\nFirst, you’re taking a dataset and filtering it for certain records, and then you’re mutate-ing that dataset to gain a new column, and you’re assigning the resulting dataset to a new object called ipf_squat.",
-    "crumbs": [
-      "Labs",
-      "Lab 4"
-    ]
+    "text": "Exercise 1\n\nLet’s begin by taking a look at the squat lifting records.\nTo begin, remove any observations that are negative for squat. Next, create a new column called best3_squat_lbs that converts the record from kg to lbs (you may have to google the conversion). Save your data frame as ipf_squat. Report the number of rows and columns of this new data frame using inline code.\n\n\n\n\n\n\n\nHint\n\n\n\nFirst, you’re taking a dataset and filtering it for certain records, and then you’re mutate-ing that dataset to gain a new column, and you’re assigning the resulting dataset to a new object called ipf_squat."
   },
   {
     "objectID": "labs/lab-4.html#exercise-2",
     "href": "labs/lab-4.html#exercise-2",
     "title": "Lab 4",
     "section": "Exercise 2",
-    "text": "Exercise 2\n\nUsing ipf_squat from the previous exercise, create a scatter plot to investigate the relationship between squat (in lbs) and age. Age should be on the x-axis. Adjust the alpha level of your points to get a better sense of the density of the data. Add a linear trend-line. Be sure to label all axes and give the plot a title. Comment on what you observe.",
-    "crumbs": [
-      "Labs",
-      "Lab 4"
-    ]
+    "text": "Exercise 2\n\nUsing ipf_squat from the previous exercise, create a scatter plot to investigate the relationship between squat (in lbs) and age. Age should be on the x-axis. Adjust the alpha level of your points to get a better sense of the density of the data. Add a linear trend-line. Be sure to label all axes and give the plot a title. Comment on what you observe."
   },
   {
     "objectID": "labs/lab-4.html#exercise-3",
     "href": "labs/lab-4.html#exercise-3",
     "title": "Lab 4",
     "section": "Exercise 3",
-    "text": "Exercise 3\n\nWrite down the linear model to predict lift squat lbs from age in \\(x\\), \\(y\\), \\(\\beta\\) notation. What is \\(x\\)? What is \\(y\\)? Next, fit the linear model, and save it as age_fit. Re-write your previous equation replacing \\(\\beta\\) with the numeric estimates. This is called the “fitted” linear model. Interpret each estimate of \\(\\beta\\). Are the interpretations sensible?",
-    "crumbs": [
-      "Labs",
-      "Lab 4"
-    ]
+    "text": "Exercise 3\n\nWrite down the linear model to predict lift squat lbs from age in \\(x\\), \\(y\\), \\(\\beta\\) notation. What is \\(x\\)? What is \\(y\\)? Next, fit the linear model, and save it as age_fit. Re-write your previous equation replacing \\(\\beta\\) with the numeric estimates. This is called the “fitted” linear model. Interpret each estimate of \\(\\beta\\). Are the interpretations sensible?"
   },
   {
     "objectID": "labs/lab-4.html#exercise-4",
     "href": "labs/lab-4.html#exercise-4",
     "title": "Lab 4",
     "section": "Exercise 4",
-    "text": "Exercise 4\n\nBuilding on your ipf_squat data frame, create a new column called age2 that takes the age of each lifter and squares it. Save it to your data frame ipf_squat. Next, plot squat in lbs vs age2 and add a linear best fit line. Does this model look like it fits the data better?\n\n\n\n\n\n\n\nHint\n\n\n\nTo raise a value to a power, use ^ in R, e.g.: 2 ^ 2 gives you 4, 2 ^ 3 gives you 8, etc.",
-    "crumbs": [
-      "Labs",
-      "Lab 4"
-    ]
+    "text": "Exercise 4\n\nBuilding on your ipf_squat data frame, create a new column called age2 that takes the age of each lifter and squares it. Save it to your data frame ipf_squat. Next, plot squat in lbs vs age2 and add a linear best fit line. Does this model look like it fits the data better?\n\n\n\n\n\n\n\nHint\n\n\n\nTo raise a value to a power, use ^ in R, e.g.: 2 ^ 2 gives you 4, 2 ^ 3 gives you 8, etc."
   },
   {
     "objectID": "labs/lab-4.html#exercise-5",
     "href": "labs/lab-4.html#exercise-5",
     "title": "Lab 4",
     "section": "Exercise 5",
-    "text": "Exercise 5\n\nOne metric to assess the fit of a model is the correlation squared, also known as \\(R^2\\). Fit the age\\(^2\\) model and save the object as age2_fit. Subsequently run\n\nglance(age2_fit)$r.squared\n\nto examine the \\(R^2\\). Compare \\(R^2\\) of the age\\(^2\\) model to the \\(R^2\\) of the model from Exercise 3. Which has a higher \\(R^2\\)?\n\n\n\n\n\n\n\nNote\n\n\n\n\\(R^2\\) values range from 0 to 1. Values close to 0 means weak correlation between the variables whereas \\(R^2 = 1\\) implies perfect correlation. You can (optionally) read more about \\(R^2\\) in section 7.2.5 of the book. We’ll pick up here in the next class.",
-    "crumbs": [
-      "Labs",
-      "Lab 4"
-    ]
+    "text": "Exercise 5\n\nOne metric to assess the fit of a model is the correlation squared, also known as \\(R^2\\). Fit the age\\(^2\\) model and save the object as age2_fit. Subsequently run\n\nglance(age2_fit)$r.squared\n\nto examine the \\(R^2\\). Compare \\(R^2\\) of the age\\(^2\\) model to the \\(R^2\\) of the model from Exercise 3. Which has a higher \\(R^2\\)?\n\n\n\n\n\n\n\nNote\n\n\n\n\\(R^2\\) values range from 0 to 1. Values close to 0 means weak correlation between the variables whereas \\(R^2 = 1\\) implies perfect correlation. You can (optionally) read more about \\(R^2\\) in section 7.2.5 of the book. We’ll pick up here in the next class."
   },
   {
     "objectID": "labs/lab-4.html#exercise-6",
     "href": "labs/lab-4.html#exercise-6",
     "title": "Lab 4",
     "section": "Exercise 6",
-    "text": "Exercise 6\n\nNext, let’s turn our attention to dead lifting records.\nRecreate the plot below. Make sure axes and title labels are exactly matching, including spelling, capitalization, etc. Based on the plot below, which impacts deadlift weight more, age category or sex?\n\n\n\n\n\n\n\nHint\n\n\n\nYou will need to create a couple of new columns. One to classify age appropriately and one to convert best3deadlift_kg to the plotted units (lbs). Notice that there are no negative deadlift values on the x-axis.",
-    "crumbs": [
-      "Labs",
-      "Lab 4"
-    ]
+    "text": "Exercise 6\n\nNext, let’s turn our attention to dead lifting records.\nRecreate the plot below. Make sure axes and title labels are exactly matching, including spelling, capitalization, etc. Based on the plot below, which impacts deadlift weight more, age category or sex?\n\n\n\n\n\n\n\nHint\n\n\n\nYou will need to create a couple of new columns. One to classify age appropriately and one to convert best3deadlift_kg to the plotted units (lbs). Notice that there are no negative deadlift values on the x-axis."
   },
   {
     "objectID": "labs/lab-4.html#exercise-7",
     "href": "labs/lab-4.html#exercise-7",
     "title": "Lab 4",
     "section": "Exercise 7",
-    "text": "Exercise 7\n\nFinally, let’s turn our attention to bench press records.\nTo begin, remove any observations that are negative for bench press, create two new columns: best3bench_lbs and bodyweight_lbs. Save the result in a new data frame called ipf_bench.\nThen, create a scatter plot to investigate the relationship between best bench press (in lbs) and the lifter’s bodyweight (in lbs). Bodyweight should be on the x-axis. Add a linear trend-line. Be sure to label all axes and give the plot a title. Comment on what you observe.",
-    "crumbs": [
-      "Labs",
-      "Lab 4"
-    ]
+    "text": "Exercise 7\n\nFinally, let’s turn our attention to bench press records.\nTo begin, remove any observations that are negative for bench press, create two new columns: best3bench_lbs and bodyweight_lbs. Save the result in a new data frame called ipf_bench.\nThen, create a scatter plot to investigate the relationship between best bench press (in lbs) and the lifter’s bodyweight (in lbs). Bodyweight should be on the x-axis. Add a linear trend-line. Be sure to label all axes and give the plot a title. Comment on what you observe."
   },
   {
     "objectID": "labs/lab-4.html#exercise-8",
     "href": "labs/lab-4.html#exercise-8",
     "title": "Lab 4",
     "section": "Exercise 8",
-    "text": "Exercise 8\n\nFit the linear model displayed in the previous exercise and write down the fitted model equation only, replacing \\(\\hat{\\beta}\\)s with their fitted estimates. Interpret the \\(\\hat{\\beta}\\)s (intercept and slope). Report \\(R^2\\). Is body weight an important predictor of bench press ability? Why or why not?",
-    "crumbs": [
-      "Labs",
-      "Lab 4"
-    ]
+    "text": "Exercise 8\n\nFit the linear model displayed in the previous exercise and write down the fitted model equation only, replacing \\(\\hat{\\beta}\\)s with their fitted estimates. Interpret the \\(\\hat{\\beta}\\)s (intercept and slope). Report \\(R^2\\). Is body weight an important predictor of bench press ability? Why or why not?"
   },
   {
     "objectID": "labs/lab-4.html#exercise-9",
     "href": "labs/lab-4.html#exercise-9",
     "title": "Lab 4",
     "section": "Exercise 9",
-    "text": "Exercise 9\n\nIMS - Chapter 7 exercises, #18: Over-under, II.",
-    "crumbs": [
-      "Labs",
-      "Lab 4"
-    ]
+    "text": "Exercise 9\n\nIMS - Chapter 7 exercises, #18: Over-under, II."
   },
   {
     "objectID": "labs/lab-4.html#exercise-10",
     "href": "labs/lab-4.html#exercise-10",
     "title": "Lab 4",
     "section": "Exercise 10",
-    "text": "Exercise 10\n\nIMS - Chapter 7 exercises, #24: Cats weights.",
-    "crumbs": [
-      "Labs",
-      "Lab 4"
-    ]
+    "text": "Exercise 10\n\nIMS - Chapter 7 exercises, #24: Cats weights."
   },
   {
     "objectID": "labs/lab-4.html#submitting",
     "href": "labs/lab-4.html#submitting",
     "title": "Lab 4",
     "section": "Submitting",
-    "text": "Submitting\n\n\n\n\n\n\nImportant\n\n\n\nBefore you proceed, first, make sure that you have updated the document YAML with your name! Then, render your document one last time, for good measure.\n\n\nTo submit your assignment to Gradescope:\n\nGo to your Files pane and check the box next to the PDF output of your document (lab-3.pdf).\nThen, in the Files pane, go to More &gt; Export. This will download the PDF file to your computer. Save it somewhere you can easily locate, e.g., your Downloads folder or your Desktop.\nGo to the course Canvas page and click on Gradescope and then click on the assignment. You’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the papers of your lab should be associated with at least one question (i.e., should be “checked”).\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you fail to mark the pages associated with an exercise, that exercise won’t be graded. This means, if you fail to mark the pages for all exercises, you will receive a 0 on the assignment. The TAs can’t mark your pages for you, and for them to be able to grade, you must mark them.",
-    "crumbs": [
-      "Labs",
-      "Lab 4"
-    ]
+    "text": "Submitting\n\n\n\n\n\n\nImportant\n\n\n\nBefore you proceed, first, make sure that you have updated the document YAML with your name! Then, render your document one last time, for good measure.\n\n\nTo submit your assignment to Gradescope:\n\nGo to your Files pane and check the box next to the PDF output of your document (lab-3.pdf).\nThen, in the Files pane, go to More &gt; Export. This will download the PDF file to your computer. Save it somewhere you can easily locate, e.g., your Downloads folder or your Desktop.\nGo to the course Canvas page and click on Gradescope and then click on the assignment. You’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the papers of your lab should be associated with at least one question (i.e., should be “checked”).\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you fail to mark the pages associated with an exercise, that exercise won’t be graded. This means, if you fail to mark the pages for all exercises, you will receive a 0 on the assignment. The TAs can’t mark your pages for you, and for them to be able to grade, you must mark them."
   },
   {
     "objectID": "labs/lab-4.html#grading",
     "href": "labs/lab-4.html#grading",
     "title": "Lab 4",
     "section": "Grading",
-    "text": "Grading\n\n\nExercise\nPoints\n\n\n\nExercise 1\n3\n\n\nExercise 2\n5\n\n\nExercise 3\n5\n\n\nExercise 4\n5\n\n\nExercise 5\n5\n\n\nExercise 6\n8\n\n\nExercise 7\n6\n\n\nExercise 8\n7\n\n\nExercise 9\n4\n\n\nExercise 10\n2\n\n\nTotal\n50",
-    "crumbs": [
-      "Labs",
-      "Lab 4"
-    ]
+    "text": "Grading\n\n\nExercise\nPoints\n\n\n\nExercise 1\n3\n\n\nExercise 2\n5\n\n\nExercise 3\n5\n\n\nExercise 4\n5\n\n\nExercise 5\n5\n\n\nExercise 6\n8\n\n\nExercise 7\n6\n\n\nExercise 8\n7\n\n\nExercise 9\n4\n\n\nExercise 10\n2\n\n\nTotal\n50"
   },
   {
     "objectID": "labs/lab-3.html",
     "href": "labs/lab-3.html",
     "title": "Lab 3",
     "section": "",
-    "text": "The goal of this lab is to effectively visualize numerical and categorical data.\nFor all visualizations you create, be sure to include informative titles for the plot, axes, and legend!",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
+    "text": "The goal of this lab is to effectively visualize numerical and categorical data.\nFor all visualizations you create, be sure to include informative titles for the plot, axes, and legend!"
   },
   {
     "objectID": "labs/lab-3.html#exercise-1",
     "href": "labs/lab-3.html#exercise-1",
     "title": "Lab 3",
     "section": "Exercise 1",
-    "text": "Exercise 1\n\nHow many observations and how many variables are in the dataset? Use inline code to answer this question. What does each row represent?",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
+    "text": "Exercise 1\n\nHow many observations and how many variables are in the dataset? Use inline code to answer this question. What does each row represent?"
   },
   {
     "objectID": "labs/lab-3.html#exercise-2",
     "href": "labs/lab-3.html#exercise-2",
     "title": "Lab 3",
     "section": "Exercise 2",
-    "text": "Exercise 2\nThere are some observations in this dataset that we will exclude from our analysis to match the Buzzfeed results.\n\nCreate a new data frame called nobel_living that filters for\n\nlaureates for whom country is available: !is.na(country)\n\nlaureates who are people as opposed to organizations, i.e., organizations are denoted with \"org\" as their gender: gender != \"org\"\n\nlaureates who are still alive, i.e., their died_date is NA: is.na(died_date)\n\n\nConfirm that once you have filtered for these characteristics you are left with a data frame with 228 observations, once again using inline code.\n\n\n\nMost living Nobel laureates were based in the US when they won their prizes\n\n… says the Buzzfeed article. Let’s see if that’s true.\nFirst, we’ll create a new variable to identify whether the laureate was in the US when they won their prize. We’ll use the mutate() function for this. The following pipeline mutates the nobel_living data frame by adding a new variable called country_us. We use an if statement to create this variable. The first argument in the if_else() function we’re using to write this if statement is the condition we’re testing for. If country is equal to \"USA\", we set country_us to \"USA\". If not, we set the country_us to \"Other\".\n\nnobel_living &lt;- nobel_living |&gt;\n  mutate(\n    country_us = if_else(country == \"USA\", \"USA\", \"Other\")\n  )\n\nNext, we will limit our analysis to only the following categories: Physics, Medicine, Chemistry, and Economics.\n\nnobel_living_science &lt;- nobel_living |&gt;\n  filter(category %in% c(\"Physics\", \"Medicine\", \"Chemistry\", \"Economics\"))\n\nFor the following exercises, work with the nobel_living_science data frame you created above. This means you’ll need to define this data frame in your Quarto document, even though the next exercise doesn’t explicitly ask you to do so.",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
+    "text": "Exercise 2\nThere are some observations in this dataset that we will exclude from our analysis to match the Buzzfeed results.\n\nCreate a new data frame called nobel_living that filters for\n\nlaureates for whom country is available: !is.na(country)\n\nlaureates who are people as opposed to organizations, i.e., organizations are denoted with \"org\" as their gender: gender != \"org\"\n\nlaureates who are still alive, i.e., their died_date is NA: is.na(died_date)\n\n\nConfirm that once you have filtered for these characteristics you are left with a data frame with 228 observations, once again using inline code.\n\n\n\nMost living Nobel laureates were based in the US when they won their prizes\n\n… says the Buzzfeed article. Let’s see if that’s true.\nFirst, we’ll create a new variable to identify whether the laureate was in the US when they won their prize. We’ll use the mutate() function for this. The following pipeline mutates the nobel_living data frame by adding a new variable called country_us. We use an if statement to create this variable. The first argument in the if_else() function we’re using to write this if statement is the condition we’re testing for. If country is equal to \"USA\", we set country_us to \"USA\". If not, we set the country_us to \"Other\".\n\nnobel_living &lt;- nobel_living |&gt;\n  mutate(\n    country_us = if_else(country == \"USA\", \"USA\", \"Other\")\n  )\n\nNext, we will limit our analysis to only the following categories: Physics, Medicine, Chemistry, and Economics.\n\nnobel_living_science &lt;- nobel_living |&gt;\n  filter(category %in% c(\"Physics\", \"Medicine\", \"Chemistry\", \"Economics\"))\n\nFor the following exercises, work with the nobel_living_science data frame you created above. This means you’ll need to define this data frame in your Quarto document, even though the next exercise doesn’t explicitly ask you to do so."
   },
   {
     "objectID": "labs/lab-3.html#exercise-3",
     "href": "labs/lab-3.html#exercise-3",
     "title": "Lab 3",
     "section": "Exercise 3",
-    "text": "Exercise 3\n\nCreate a faceted bar plot visualizing the relationship between the category of prize and whether the laureate was in the US when they won the nobel prize. Interpret your visualization, and say a few words about whether the Buzzfeed headline is supported by the data.\n\nYour visualization should be faceted by category.\nFor each facet you should have two bars, one for winners in the US and one for Other.\nFlip the coordinates so the bars are horizontal, not vertical.",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
+    "text": "Exercise 3\n\nCreate a faceted bar plot visualizing the relationship between the category of prize and whether the laureate was in the US when they won the nobel prize. Interpret your visualization, and say a few words about whether the Buzzfeed headline is supported by the data.\n\nYour visualization should be faceted by category.\nFor each facet you should have two bars, one for winners in the US and one for Other.\nFlip the coordinates so the bars are horizontal, not vertical."
   },
   {
     "objectID": "labs/lab-3.html#exercise-4",
     "href": "labs/lab-3.html#exercise-4",
     "title": "Lab 3",
     "section": "Exercise 4",
-    "text": "Exercise 4\nNext, let’s investigate, of those US-based Nobel laureates, what proportion were born in other countries.\n\nCreate a new variable called born_country_us in nobel_living_science that has the value \"USA\" if the laureate is born in the US, and \"Other\" otherwise. How many of the winners are born in the US?",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
+    "text": "Exercise 4\nNext, let’s investigate, of those US-based Nobel laureates, what proportion were born in other countries.\n\nCreate a new variable called born_country_us in nobel_living_science that has the value \"USA\" if the laureate is born in the US, and \"Other\" otherwise. How many of the winners are born in the US?"
   },
   {
     "objectID": "labs/lab-3.html#exercise-5",
     "href": "labs/lab-3.html#exercise-5",
     "title": "Lab 3",
     "section": "Exercise 5",
-    "text": "Exercise 5\n\nAdd a second variable to your visualization from Exercise 3 based on whether the laureate was born in the US or not.\nCreate two visualizations with this new variable added:\n\nPlot 1: Segmented frequency bar plot\nPlot 2: Segmented relative frequency bar plot (Hint: Add position = \"fill\" to geom_bar().)\n\nHere are some instructions that apply to both of these visualizations:\n\nYour final visualization should contain a facet for each category.\nWithin each facet, there should be two bars for whether the laureate won the award in the US or not.\nEach bar should have segments for whether the laureate was born in the US or not.\n\nWhich of these visualizations is a better fit for answering the following question: “Do the data appear to support Buzzfeed’s claim that of those US-based Nobel laureates, many were born in other countries?” First, state which plot you’re using to answer the question. Then, answer the question, explaining your reasoning in 1-2 sentences.",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
+    "text": "Exercise 5\n\nAdd a second variable to your visualization from Exercise 3 based on whether the laureate was born in the US or not.\nCreate two visualizations with this new variable added:\n\nPlot 1: Segmented frequency bar plot\nPlot 2: Segmented relative frequency bar plot (Hint: Add position = \"fill\" to geom_bar().)\n\nHere are some instructions that apply to both of these visualizations:\n\nYour final visualization should contain a facet for each category.\nWithin each facet, there should be two bars for whether the laureate won the award in the US or not.\nEach bar should have segments for whether the laureate was born in the US or not.\n\nWhich of these visualizations is a better fit for answering the following question: “Do the data appear to support Buzzfeed’s claim that of those US-based Nobel laureates, many were born in other countries?” First, state which plot you’re using to answer the question. Then, answer the question, explaining your reasoning in 1-2 sentences."
   },
   {
     "objectID": "labs/lab-3.html#exercise-6",
     "href": "labs/lab-3.html#exercise-6",
     "title": "Lab 3",
     "section": "Exercise 6",
-    "text": "Exercise 6\n\nIn a single pipeline, filter the nobel_living_science data frame for laureates who won their prize in the US, but were born outside of the US, and then create a frequency table (with the count() function) for their birth country (born_country) and arrange the resulting data frame in descending order of number of observations for each country. Which country is the most common?",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
+    "text": "Exercise 6\n\nIn a single pipeline, filter the nobel_living_science data frame for laureates who won their prize in the US, but were born outside of the US, and then create a frequency table (with the count() function) for their birth country (born_country) and arrange the resulting data frame in descending order of number of observations for each country. Which country is the most common?"
   },
   {
     "objectID": "labs/lab-3.html#exercise-7",
     "href": "labs/lab-3.html#exercise-7",
     "title": "Lab 3",
     "section": "Exercise 7",
-    "text": "Exercise 7\n\nIMS - Chapter 4 exercises, #4: Raise taxes.",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
+    "text": "Exercise 7\n\nIMS - Chapter 4 exercises, #4: Raise taxes."
   },
   {
     "objectID": "labs/lab-3.html#exercise-8",
     "href": "labs/lab-3.html#exercise-8",
     "title": "Lab 3",
     "section": "Exercise 8",
-    "text": "Exercise 8\n\nIMS - Chapter 5 exercises, #4: Office productivity.",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
+    "text": "Exercise 8\n\nIMS - Chapter 5 exercises, #4: Office productivity."
   },
   {
     "objectID": "labs/lab-3.html#exercise-9",
     "href": "labs/lab-3.html#exercise-9",
     "title": "Lab 3",
     "section": "Exercise 9",
-    "text": "Exercise 9\n\nIMS - Chapter 5 exercises, #16: Distributions and appropriate statistics.",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
+    "text": "Exercise 9\n\nIMS - Chapter 5 exercises, #16: Distributions and appropriate statistics."
   },
   {
     "objectID": "labs/lab-3.html#exercise-10",
     "href": "labs/lab-3.html#exercise-10",
     "title": "Lab 3",
     "section": "Exercise 10",
-    "text": "Exercise 10\n\nIMS - Chapter 5 exercises, #26: NYC marathon winners.",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
+    "text": "Exercise 10\n\nIMS - Chapter 5 exercises, #26: NYC marathon winners."
   },
   {
     "objectID": "labs/lab-3.html#submitting",
     "href": "labs/lab-3.html#submitting",
     "title": "Lab 3",
     "section": "Submitting",
-    "text": "Submitting\n\n\n\n\n\n\nImportant\n\n\n\nBefore you proceed, first, make sure that you have updated the document YAML with your name! Then, render your document one last time, for good measure.\n\n\nTo submit your assignment to Gradescope:\n\nGo to your Files pane and check the box next to the PDF output of your document (lab-3.pdf).\nThen, in the Files pane, go to More &gt; Export. This will download the PDF file to your computer. Save it somewhere you can easily locate, e.g., your Downloads folder or your Desktop.\nGo to the course Canvas page and click on Gradescope and then click on the assignment. You’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the papers of your lab should be associated with at least one question (i.e., should be “checked”).\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you fail to mark the pages associated with an exercise, that exercise won’t be graded. This means, if you fail to mark the pages for all exercises, you will receive a 0 on the assignment. The TAs can’t mark your pages for you, and for them to be able to grade, you must mark them.",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
+    "text": "Submitting\n\n\n\n\n\n\nImportant\n\n\n\nBefore you proceed, first, make sure that you have updated the document YAML with your name! Then, render your document one last time, for good measure.\n\n\nTo submit your assignment to Gradescope:\n\nGo to your Files pane and check the box next to the PDF output of your document (lab-3.pdf).\nThen, in the Files pane, go to More &gt; Export. This will download the PDF file to your computer. Save it somewhere you can easily locate, e.g., your Downloads folder or your Desktop.\nGo to the course Canvas page and click on Gradescope and then click on the assignment. You’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the papers of your lab should be associated with at least one question (i.e., should be “checked”).\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you fail to mark the pages associated with an exercise, that exercise won’t be graded. This means, if you fail to mark the pages for all exercises, you will receive a 0 on the assignment. The TAs can’t mark your pages for you, and for them to be able to grade, you must mark them."
   },
   {
     "objectID": "labs/lab-3.html#grading",
     "href": "labs/lab-3.html#grading",
     "title": "Lab 3",
     "section": "Grading",
-    "text": "Grading\n\n\nExercise\nPoints\n\n\n\nExercise 1\n3\n\n\nExercise 2\n4\n\n\nExercise 3\n8\n\n\nExercise 4\n6\n\n\nExercise 5\n8\n\n\nExercise 6\n8\n\n\nExercise 7\n2\n\n\nExercise 8\n2\n\n\nExercise 9\n5\n\n\nExercise 10\n4\n\n\nTotal\n50",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
+    "text": "Grading\n\n\nExercise\nPoints\n\n\n\nExercise 1\n3\n\n\nExercise 2\n4\n\n\nExercise 3\n8\n\n\nExercise 4\n6\n\n\nExercise 5\n8\n\n\nExercise 6\n8\n\n\nExercise 7\n2\n\n\nExercise 8\n2\n\n\nExercise 9\n5\n\n\nExercise 10\n4\n\n\nTotal\n50"
   },
   {
     "objectID": "labs/lab-8.html",
     "href": "labs/lab-8.html",
     "title": "Lab 8 - Wrap it up!",
     "section": "",
-    "text": "By the end of this lab you will\nFor all visualizations you create, be sure to include informative titles for the plot, axes, and legend!",
-    "crumbs": [
-      "Labs",
-      "Lab 8"
-    ]
+    "text": "By the end of this lab you will\nFor all visualizations you create, be sure to include informative titles for the plot, axes, and legend!"
   },
   {
     "objectID": "labs/lab-8.html#exercise-1",
     "href": "labs/lab-8.html#exercise-1",
     "title": "Lab 8 - Wrap it up!",
     "section": "Exercise 1",
-    "text": "Exercise 1\nFor this exercise you can do one of the following:\n\nAttend a talk related to statistics or data science. To count, the talk must be at least 30 minutes or longer.\nTalk with someone who uses statistics in their daily work. This could include a professor, professional in industry, graduate student, etc.\nListen to a statistics podcast (e.g., check out Causal Inference podcast) or watch a conference talk (e.g., a talk from rstudio::conf(2022))\n\nNext, write 4-6 sentences summarizing your experience. Include the following:\n\nCitation or link to web page for event if applicable.\nName/brief description of the event/podcast/chat.\nSomething you found new, interesting, or unexpected.\nHow the event connects to something we’ve done in class.",
-    "crumbs": [
-      "Labs",
-      "Lab 8"
-    ]
+    "text": "Exercise 1\nFor this exercise you can do one of the following:\n\nAttend a talk related to statistics or data science. To count, the talk must be at least 30 minutes or longer.\nTalk with someone who uses statistics in their daily work. This could include a professor, professional in industry, graduate student, etc.\nListen to a statistics podcast (e.g., check out Causal Inference podcast) or watch a conference talk (e.g., a talk from rstudio::conf(2022))\n\nNext, write 4-6 sentences summarizing your experience. Include the following:\n\nCitation or link to web page for event if applicable.\nName/brief description of the event/podcast/chat.\nSomething you found new, interesting, or unexpected.\nHow the event connects to something we’ve done in class."
   },
   {
     "objectID": "labs/lab-8.html#exercise-2",
     "href": "labs/lab-8.html#exercise-2",
     "title": "Lab 8 - Wrap it up!",
     "section": "Exercise 2",
-    "text": "Exercise 2\nFor this exercise you’re asked to read a “winning” class project from a student. Read one of the winning projects from the the Undergraduate Class Project Competition (USCLAP). You can find the winners at https://www.causeweb.org/usproc/projects/winners.\nNext, write 4-6 sentences summarizing the project you read. Include the following:\n\nLink to project.\nTitle and research question.\nDescription of dataset used.\nBrief summary of findings.\nSomething you found new, interesting, or unexpected.",
-    "crumbs": [
-      "Labs",
-      "Lab 8"
-    ]
+    "text": "Exercise 2\nFor this exercise you’re asked to read a “winning” class project from a student. Read one of the winning projects from the the Undergraduate Class Project Competition (USCLAP). You can find the winners at https://www.causeweb.org/usproc/projects/winners.\nNext, write 4-6 sentences summarizing the project you read. Include the following:\n\nLink to project.\nTitle and research question.\nDescription of dataset used.\nBrief summary of findings.\nSomething you found new, interesting, or unexpected."
   },
   {
     "objectID": "labs/lab-8.html#exercise-3",
     "href": "labs/lab-8.html#exercise-3",
     "title": "Lab 8 - Wrap it up!",
     "section": "Exercise 3",
-    "text": "Exercise 3\nA second chance for an exercise: Take one of the exercises from a previous homework assignment, ideally one you received more feedback on / lost more points on and improve it. First, write one sentence reminding us of the specific exercise and a a few sentences on why you chose this specific exercise to improve and how you plan to improve it. Some of these improvements might be “fixes” for things that were pointed out as missing or incorrect. Some of them might be things you hoped to do before the homework deadline, but didn’t get a chance to. Some notes for completing this exercise:\n\nYou will need to add your data from your the homework assignment to the data/ folder in this assignment. You do not need to also add a data dictionary.\nYou will need to copy over any code needed for cleaning / preparing your data for this specific exercise. You can reuse code from your previous assignment but note that we will re-evaluate your code as part of the grading for this exercise. This means we might catch something wrong with it that we didn’t catch before, so if you spot any errors make sure to fix them.\nDon’t worry about being critical of your own work. Even if you lost no points on the plot, if you think it can be improved, articulate how / why. We will not go back and penalize for any mistakes you might point out that we didn’t catch at the time of grading your homework assignment. There’s no risk to being critical!",
-    "crumbs": [
-      "Labs",
-      "Lab 8"
-    ]
+    "text": "Exercise 3\nA second chance for an exercise: Take one of the exercises from a previous homework assignment, ideally one you received more feedback on / lost more points on and improve it. First, write one sentence reminding us of the specific exercise and a a few sentences on why you chose this specific exercise to improve and how you plan to improve it. Some of these improvements might be “fixes” for things that were pointed out as missing or incorrect. Some of them might be things you hoped to do before the homework deadline, but didn’t get a chance to. Some notes for completing this exercise:\n\nYou will need to add your data from your the homework assignment to the data/ folder in this assignment. You do not need to also add a data dictionary.\nYou will need to copy over any code needed for cleaning / preparing your data for this specific exercise. You can reuse code from your previous assignment but note that we will re-evaluate your code as part of the grading for this exercise. This means we might catch something wrong with it that we didn’t catch before, so if you spot any errors make sure to fix them.\nDon’t worry about being critical of your own work. Even if you lost no points on the plot, if you think it can be improved, articulate how / why. We will not go back and penalize for any mistakes you might point out that we didn’t catch at the time of grading your homework assignment. There’s no risk to being critical!"
   },
   {
     "objectID": "labs/lab-8.html#exercise-4",
     "href": "labs/lab-8.html#exercise-4",
     "title": "Lab 8 - Wrap it up!",
     "section": "Exercise 4",
-    "text": "Exercise 4\nA second chance for a Project 1 plot: TL;DR - Same as the previous exercise, but for a plot from Project 1.\nTake one of the visualizations from your first project, ideally one you received more feedback on / lost more points on and improve it. First, write one sentence reminding us of your project and a a few sentences on why you chose this plot and how you plan to improve it. Some of these improvements might be “fixes” for things that were pointed out as missing or incorrect. Some of them might be things you hoped to do before the project deadline, but didn’t get a chance to. And some might be things you wanted to do in your project but your teammates didn’t agree so you gave up on at the time. Some notes for completing this exercise:\n\nYou will need to add your data from your project to the data/ folder in this assignment. You do not need to also add the data dictionary.\nYou will need to copy over any code needed for cleaning / preparing your data for this plot. You can reuse code from your project but note that we will re-evaluate your code as part of the grading for this exercise. This means we might catch something wrong with it that we didn’t catch before, so if you spot any errors make sure to fix them.\nDon’t worry about being critical of your own work. Even if you lost no points on the plot, if you think it can be improved, articulate how / why. We will not go back and penalize for any mistakes you might point out that we didn’t catch at the time of grading your project. There’s no risk to being critical!",
-    "crumbs": [
-      "Labs",
-      "Lab 8"
-    ]
+    "text": "Exercise 4\nA second chance for a Project 1 plot: TL;DR - Same as the previous exercise, but for a plot from Project 1.\nTake one of the visualizations from your first project, ideally one you received more feedback on / lost more points on and improve it. First, write one sentence reminding us of your project and a a few sentences on why you chose this plot and how you plan to improve it. Some of these improvements might be “fixes” for things that were pointed out as missing or incorrect. Some of them might be things you hoped to do before the project deadline, but didn’t get a chance to. And some might be things you wanted to do in your project but your teammates didn’t agree so you gave up on at the time. Some notes for completing this exercise:\n\nYou will need to add your data from your project to the data/ folder in this assignment. You do not need to also add the data dictionary.\nYou will need to copy over any code needed for cleaning / preparing your data for this plot. You can reuse code from your project but note that we will re-evaluate your code as part of the grading for this exercise. This means we might catch something wrong with it that we didn’t catch before, so if you spot any errors make sure to fix them.\nDon’t worry about being critical of your own work. Even if you lost no points on the plot, if you think it can be improved, articulate how / why. We will not go back and penalize for any mistakes you might point out that we didn’t catch at the time of grading your project. There’s no risk to being critical!"
   },
   {
     "objectID": "labs/lab-8.html#exercise-5",
     "href": "labs/lab-8.html#exercise-5",
     "title": "Lab 8 - Wrap it up!",
     "section": "Exercise 5",
-    "text": "Exercise 5\n\nIMS - Chapter 19 exercises, #14: Interpreting p-values for population mean.",
-    "crumbs": [
-      "Labs",
-      "Lab 8"
-    ]
+    "text": "Exercise 5\n\nIMS - Chapter 19 exercises, #14: Interpreting p-values for population mean."
   },
   {
     "objectID": "labs/lab-8.html#exercise-6",
     "href": "labs/lab-8.html#exercise-6",
     "title": "Lab 8 - Wrap it up!",
     "section": "Exercise 6",
-    "text": "Exercise 6\n\nIMS - Chapter 19 exercises, #20: Possible bootstrap samples.",
-    "crumbs": [
-      "Labs",
-      "Lab 8"
-    ]
+    "text": "Exercise 6\n\nIMS - Chapter 19 exercises, #20: Possible bootstrap samples."
   },
   {
     "objectID": "labs/lab-8.html#exercise-7",
     "href": "labs/lab-8.html#exercise-7",
     "title": "Lab 8 - Wrap it up!",
     "section": "Exercise 7",
-    "text": "Exercise 7\n\nIMS - Chapter 20 exercises, #4: Lizards running, randomization test.",
-    "crumbs": [
-      "Labs",
-      "Lab 8"
-    ]
+    "text": "Exercise 7\n\nIMS - Chapter 20 exercises, #4: Lizards running, randomization test."
   },
   {
     "objectID": "labs/lab-8.html#exercise-8",
     "href": "labs/lab-8.html#exercise-8",
     "title": "Lab 8 - Wrap it up!",
     "section": "Exercise 8",
-    "text": "Exercise 8\n\nIMS - Chapter 20 exercises, #6: Lizards running, bootstrap interval.",
-    "crumbs": [
-      "Labs",
-      "Lab 8"
-    ]
+    "text": "Exercise 8\n\nIMS - Chapter 20 exercises, #6: Lizards running, bootstrap interval."
   },
   {
     "objectID": "labs/lab-8.html#exercise-9",
     "href": "labs/lab-8.html#exercise-9",
     "title": "Lab 8 - Wrap it up!",
     "section": "Exercise 9",
-    "text": "Exercise 9\n\nIMS - Chapter 20 exercises, #10: A/B testing.",
-    "crumbs": [
-      "Labs",
-      "Lab 8"
-    ]
+    "text": "Exercise 9\n\nIMS - Chapter 20 exercises, #10: A/B testing."
   },
   {
     "objectID": "labs/lab-8.html#exercise-10",
     "href": "labs/lab-8.html#exercise-10",
     "title": "Lab 8 - Wrap it up!",
     "section": "Exercise 10",
-    "text": "Exercise 10\n\nIMS - Chapter 21 exercises, #6: High School and Beyond, randomization test.",
-    "crumbs": [
-      "Labs",
-      "Lab 8"
-    ]
+    "text": "Exercise 10\n\nIMS - Chapter 21 exercises, #6: High School and Beyond, randomization test."
   },
   {
     "objectID": "labs/lab-2.html",
     "href": "labs/lab-2.html",
     "title": "Lab 2",
     "section": "",
-    "text": "The goal of this lab is to effectively visualize numerical and categorical data.\nFor all visualizations you create, b sure to include informative titles for the plot, axes, and legend!",
-    "crumbs": [
-      "Labs",
-      "Lab 2"
-    ]
+    "text": "The goal of this lab is to effectively visualize numerical and categorical data.\nFor all visualizations you create, b sure to include informative titles for the plot, axes, and legend!"
   },
   {
     "objectID": "labs/lab-2.html#exercise-1",
     "href": "labs/lab-2.html#exercise-1",
     "title": "Lab 2",
     "section": "Exercise 1",
-    "text": "Exercise 1\n\nCreate a bar plot of the results of games for NC Courage. Additionally, calculate the numbers of wins, losses, and ties. Write a one sentence narrative for your findings.\n\nHint: result is a categorical variable, so use a bar plot for the visualization and the count() function for calculating the frequencies of levels of this variable.",
-    "crumbs": [
-      "Labs",
-      "Lab 2"
-    ]
+    "text": "Exercise 1\n\nCreate a bar plot of the results of games for NC Courage. Additionally, calculate the numbers of wins, losses, and ties. Write a one sentence narrative for your findings.\n\nHint: result is a categorical variable, so use a bar plot for the visualization and the count() function for calculating the frequencies of levels of this variable."
   },
   {
     "objectID": "labs/lab-2.html#exercise-2",
     "href": "labs/lab-2.html#exercise-2",
     "title": "Lab 2",
     "section": "Exercise 2",
-    "text": "Exercise 2\n\nCreate a new variable indicating whether the game was played at home or away for NC Courage. This variable should be called home_courage and take the value “home” if NC Courage is the home team and “away” if NC Courage is the away team. (Instructions for how to do this are given below.)\nThen, calculate the number of home and away games, and write a one sentence narrative for your findings.\n\nUse the example code below to get started.\n\ncourage &lt;- courage |&gt;\n  mutate(home_courage = if_else(home_team == \"NC\", \"home\", \"away\"))\n\nThere are two things of note here:\n\nThe use of the assignment operator (&lt;-) to assign the resulting data frame to courage, thus overwriting the courage dataset to contain this new column. We do this because we will use this new variable, home_courage, in a subsequent exercise.\n\nThe use of a new function, if_else() to determine whether the game is played at home or away.\n\n\nhome_team == \"NC\" finds all rows where the home team is NC Courage.\nIf the home team is NC Courage, then we set the value of home_courage to `“home”.\nOtherwise (else) Courage must be the away team and we set the value of home_courage to \"away\".",
-    "crumbs": [
-      "Labs",
-      "Lab 2"
-    ]
+    "text": "Exercise 2\n\nCreate a new variable indicating whether the game was played at home or away for NC Courage. This variable should be called home_courage and take the value “home” if NC Courage is the home team and “away” if NC Courage is the away team. (Instructions for how to do this are given below.)\nThen, calculate the number of home and away games, and write a one sentence narrative for your findings.\n\nUse the example code below to get started.\n\ncourage &lt;- courage |&gt;\n  mutate(home_courage = if_else(home_team == \"NC\", \"home\", \"away\"))\n\nThere are two things of note here:\n\nThe use of the assignment operator (&lt;-) to assign the resulting data frame to courage, thus overwriting the courage dataset to contain this new column. We do this because we will use this new variable, home_courage, in a subsequent exercise.\n\nThe use of a new function, if_else() to determine whether the game is played at home or away.\n\n\nhome_team == \"NC\" finds all rows where the home team is NC Courage.\nIf the home team is NC Courage, then we set the value of home_courage to `“home”.\nOtherwise (else) Courage must be the away team and we set the value of home_courage to \"away\"."
   },
   {
     "objectID": "labs/lab-2.html#exercise-3",
     "href": "labs/lab-2.html#exercise-3",
     "title": "Lab 2",
     "section": "Exercise 3",
-    "text": "Exercise 3\n\nFirst, create a visualization that displays the relationship between home_courage and result. Then, calculate the proportions of home and away games that the Courage won. Based on these, do your findings suggest a home-field advantage? Why or why not?\n\nSo far we have focused on whether the game was at home or away and whether the Courage won. Next, we dive deeper and focus on the number of points the Courage wins by, at home and away.",
-    "crumbs": [
-      "Labs",
-      "Lab 2"
-    ]
+    "text": "Exercise 3\n\nFirst, create a visualization that displays the relationship between home_courage and result. Then, calculate the proportions of home and away games that the Courage won. Based on these, do your findings suggest a home-field advantage? Why or why not?\n\nSo far we have focused on whether the game was at home or away and whether the Courage won. Next, we dive deeper and focus on the number of points the Courage wins by, at home and away."
   },
   {
     "objectID": "labs/lab-2.html#exercise-4",
     "href": "labs/lab-2.html#exercise-4",
     "title": "Lab 2",
     "section": "Exercise 4",
-    "text": "Exercise 4\n\nHow many points do the Courage typically win by (on average)? Use the example code below to get started. You’ll encounter a new function: abs() is the absolute value function. It takes the absolute value of a number. Why do we want to use this absolute value function here?\n\nHint: We are only interested in games the Courage wins, therefore we should filter() for those games first.\n\ncourage |&gt;\n  filter(___) |&gt;\n  mutate(win_pts = abs(home_pts - away_pts)) |&gt;\n  summarize(___)",
-    "crumbs": [
-      "Labs",
-      "Lab 2"
-    ]
+    "text": "Exercise 4\n\nHow many points do the Courage typically win by (on average)? Use the example code below to get started. You’ll encounter a new function: abs() is the absolute value function. It takes the absolute value of a number. Why do we want to use this absolute value function here?\n\nHint: We are only interested in games the Courage wins, therefore we should filter() for those games first.\n\ncourage |&gt;\n  filter(___) |&gt;\n  mutate(win_pts = abs(home_pts - away_pts)) |&gt;\n  summarize(___)"
   },
   {
     "objectID": "labs/lab-2.html#exercise-5",
     "href": "labs/lab-2.html#exercise-5",
     "title": "Lab 2",
     "section": "Exercise 5",
-    "text": "Exercise 5\n\nHow many points do NC Courage score when they win (on average)? Note this is different than how many points they “win by”. How many points do the Courage score when they lose on average?\n\nTo calculate this we first need to determine how many points NC Courage scored in every game. We can use if_else() logic again to find this value for each game, and store it in a new column, courage_pts.\n\ncourage &lt;- courage |&gt;\n  mutate(courage_pts = if_else(home_team == \"NC\", home_pts, away_pts))\n\ncourage |&gt;\n  group_by(___) |&gt;\n  summarize(___)",
-    "crumbs": [
-      "Labs",
-      "Lab 2"
-    ]
+    "text": "Exercise 5\n\nHow many points do NC Courage score when they win (on average)? Note this is different than how many points they “win by”. How many points do the Courage score when they lose on average?\n\nTo calculate this we first need to determine how many points NC Courage scored in every game. We can use if_else() logic again to find this value for each game, and store it in a new column, courage_pts.\n\ncourage &lt;- courage |&gt;\n  mutate(courage_pts = if_else(home_team == \"NC\", home_pts, away_pts))\n\ncourage |&gt;\n  group_by(___) |&gt;\n  summarize(___)"
   },
   {
     "objectID": "labs/lab-2.html#exercise-6",
     "href": "labs/lab-2.html#exercise-6",
     "title": "Lab 2",
     "section": "Exercise 6",
-    "text": "Exercise 6\n\nNext we’ll investigate visually whether or not NC Courage has a home-field advantage. To start, let’s build on the courage2 data frame. Add a new column called home_courage that takes the value “home” if Courage is the home team and “away” if Courage is the away team. Hint: use the ifelse logic from exercise 4.\nMutate the courage data frame to create two new variables:\n\ntotal_pts: Sum of points scored by both teams, i.e. home_pts + away_pts.\nopponent_pts: Points scored by the opposing team, i.e., total_pts - courage_pts.\n\nSave the resulting data frame as courage again and print the three points columns (total_pts, opponent_pts, courage_pts) to screen.\n\nHint:\n\nUse the mutate() function to create the columns.\n\n\ncourage &lt;- courage |&gt;\n  mutate(\n    total_pts = ___,\n    opponent_pts = ___\n    )\n\n\nUse the select() function to print them to screen:\n\n\ncourage |&gt;\n  select(total_pts, opponent_pts, courage_pts)",
-    "crumbs": [
-      "Labs",
-      "Lab 2"
-    ]
+    "text": "Exercise 6\n\nNext we’ll investigate visually whether or not NC Courage has a home-field advantage. To start, let’s build on the courage2 data frame. Add a new column called home_courage that takes the value “home” if Courage is the home team and “away” if Courage is the away team. Hint: use the ifelse logic from exercise 4.\nMutate the courage data frame to create two new variables:\n\ntotal_pts: Sum of points scored by both teams, i.e. home_pts + away_pts.\nopponent_pts: Points scored by the opposing team, i.e., total_pts - courage_pts.\n\nSave the resulting data frame as courage again and print the three points columns (total_pts, opponent_pts, courage_pts) to screen.\n\nHint:\n\nUse the mutate() function to create the columns.\n\n\ncourage &lt;- courage |&gt;\n  mutate(\n    total_pts = ___,\n    opponent_pts = ___\n    )\n\n\nUse the select() function to print them to screen:\n\n\ncourage |&gt;\n  select(total_pts, opponent_pts, courage_pts)"
   },
   {
     "objectID": "labs/lab-2.html#exercise-7",
     "href": "labs/lab-2.html#exercise-7",
     "title": "Lab 2",
     "section": "Exercise 7",
-    "text": "Exercise 7\n\nCreate a scatter plot:\n\nopponent_pts (y) vs. courage_pts (x)\nColor the scatter plot by whether NC Courage are home or away.\nRepresent the data with “jittered” points wth geom_jitter().\nOverlay a \\(y = x\\) line with geom_abline().\nFaceted by season.\n\nWhat does the line represent? What does it mean for a point to fall above the line? Below the line?\n\n\nggplot(courage, aes(x = ___, y = ___, color = ___)) + \n  geom_jitter(width = 0.1, height = 0.1) + \n  geom_abline(slope = 1, intercept = 0) +\n  facet_wrap(~ ___) +\n  labs(\n    x = \"___\", \n    y = \"___\", \n    title = \"___\", \n    color = \"___\"\n  )",
-    "crumbs": [
-      "Labs",
-      "Lab 2"
-    ]
+    "text": "Exercise 7\n\nCreate a scatter plot:\n\nopponent_pts (y) vs. courage_pts (x)\nColor the scatter plot by whether NC Courage are home or away.\nRepresent the data with “jittered” points wth geom_jitter().\nOverlay a \\(y = x\\) line with geom_abline().\nFaceted by season.\n\nWhat does the line represent? What does it mean for a point to fall above the line? Below the line?\n\n\nggplot(courage, aes(x = ___, y = ___, color = ___)) + \n  geom_jitter(width = 0.1, height = 0.1) + \n  geom_abline(slope = 1, intercept = 0) +\n  facet_wrap(~ ___) +\n  labs(\n    x = \"___\", \n    y = \"___\", \n    title = \"___\", \n    color = \"___\"\n  )"
   },
   {
     "objectID": "labs/lab-2.html#exercise-8",
     "href": "labs/lab-2.html#exercise-8",
     "title": "Lab 2",
     "section": "Exercise 8",
-    "text": "Exercise 8\nThis exercise is a look at where we’re headed…\n\nIf we want to formally test whether the Courage have a home-field advantage, then we must first define what this means! In your own words, what do you think a home-field advantage means? Then, now that you’ve defined what it means to have a home field advantage, define what it means to not have a home-field advantage.\n\n\n\n\n\n\n\nNote\n\n\n\nWhile there is a right answer, this part is graded for completion, so don’t worry too much about answering this in exactly the right way. Although graded for completion, your response must make sense to receive full points.\n\n\nWe’ll pick-up here in a future class.",
-    "crumbs": [
-      "Labs",
-      "Lab 2"
-    ]
+    "text": "Exercise 8\nThis exercise is a look at where we’re headed…\n\nIf we want to formally test whether the Courage have a home-field advantage, then we must first define what this means! In your own words, what do you think a home-field advantage means? Then, now that you’ve defined what it means to have a home field advantage, define what it means to not have a home-field advantage.\n\n\n\n\n\n\n\nNote\n\n\n\nWhile there is a right answer, this part is graded for completion, so don’t worry too much about answering this in exactly the right way. Although graded for completion, your response must make sense to receive full points.\n\n\nWe’ll pick-up here in a future class."
   },
   {
     "objectID": "labs/lab-2.html#exercise-9",
     "href": "labs/lab-2.html#exercise-9",
     "title": "Lab 2",
     "section": "Exercise 9",
-    "text": "Exercise 9\n\nIMS - Chapter 2 exercises, #20: Vitamin supplements.",
-    "crumbs": [
-      "Labs",
-      "Lab 2"
-    ]
+    "text": "Exercise 9\n\nIMS - Chapter 2 exercises, #20: Vitamin supplements."
   },
   {
     "objectID": "labs/lab-2.html#exercise-10",
     "href": "labs/lab-2.html#exercise-10",
     "title": "Lab 2",
     "section": "Exercise 10",
-    "text": "Exercise 10\n\nIMS - Chapter 2 exercises, #30: Screens, teens, and psychological well-being.",
-    "crumbs": [
-      "Labs",
-      "Lab 2"
-    ]
+    "text": "Exercise 10\n\nIMS - Chapter 2 exercises, #30: Screens, teens, and psychological well-being."
   },
   {
     "objectID": "labs/lab-2.html#submitting",
     "href": "labs/lab-2.html#submitting",
     "title": "Lab 2",
     "section": "Submitting",
-    "text": "Submitting\n\n\n\n\n\n\nImportant\n\n\n\nBefore you proceed, first, make sure that you have updated the document YAML with your name! Then, render your document one last time, for good measure.\n\n\nTo submit your assignment to Gradescope:\n\nGo to your Files pane and check the box next to the PDF output of your document (lab-2.pdf).\nThen, in the Files pane, go to More &gt; Export. This will download the PDF file to your computer. Save it somewhere you can easily locate, e.g., your Downloads folder or your Desktop.\nGo to the course Canvas page and click on Gradescope and then click on the assignment. You’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the papers of your lab should be associated with at least one question (i.e., should be “checked”).\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you fail to mark the pages associated with an exercise, that exercise won’t be graded. This means, if you fail to mark the pages for all exercises, you will receive a 0 on the assignment. The TAs can’t mark your pages for you, and for them to be able to grade, you must mark them.",
-    "crumbs": [
-      "Labs",
-      "Lab 2"
-    ]
+    "text": "Submitting\n\n\n\n\n\n\nImportant\n\n\n\nBefore you proceed, first, make sure that you have updated the document YAML with your name! Then, render your document one last time, for good measure.\n\n\nTo submit your assignment to Gradescope:\n\nGo to your Files pane and check the box next to the PDF output of your document (lab-2.pdf).\nThen, in the Files pane, go to More &gt; Export. This will download the PDF file to your computer. Save it somewhere you can easily locate, e.g., your Downloads folder or your Desktop.\nGo to the course Canvas page and click on Gradescope and then click on the assignment. You’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the papers of your lab should be associated with at least one question (i.e., should be “checked”).\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you fail to mark the pages associated with an exercise, that exercise won’t be graded. This means, if you fail to mark the pages for all exercises, you will receive a 0 on the assignment. The TAs can’t mark your pages for you, and for them to be able to grade, you must mark them."
   },
   {
     "objectID": "labs/lab-2.html#grading",
     "href": "labs/lab-2.html#grading",
     "title": "Lab 2",
     "section": "Grading",
-    "text": "Grading\n\n\nExercise\nPoints\n\n\n\nExercise 1\n5\n\n\nExercise 2\n5\n\n\nExercise 3\n6\n\n\nExercise 4\n6\n\n\nExercise 5\n6\n\n\nExercise 6\n4\n\n\nExercise 7\n6\n\n\nExercise 8\n2\n\n\nExercise 9\n5\n\n\nExercise 10\n5\n\n\nTotal\n50",
-    "crumbs": [
-      "Labs",
-      "Lab 2"
-    ]
+    "text": "Grading\n\n\nExercise\nPoints\n\n\n\nExercise 1\n5\n\n\nExercise 2\n5\n\n\nExercise 3\n6\n\n\nExercise 4\n6\n\n\nExercise 5\n6\n\n\nExercise 6\n4\n\n\nExercise 7\n6\n\n\nExercise 8\n2\n\n\nExercise 9\n5\n\n\nExercise 10\n5\n\n\nTotal\n50"
   },
   {
     "objectID": "labs/lab-2.html#acknowledgements",
     "href": "labs/lab-2.html#acknowledgements",
     "title": "Lab 2",
     "section": "Acknowledgements",
-    "text": "Acknowledgements\nThis assignment was adapted from a similar exercise by Dr. Alex Fisher (who will be our guest lecturer soon!).",
-    "crumbs": [
-      "Labs",
-      "Lab 2"
-    ]
+    "text": "Acknowledgements\nThis assignment was adapted from a similar exercise by Dr. Alex Fisher (who will be our guest lecturer soon!)."
   },
   {
     "objectID": "labs/lab-1.html",
@@ -3474,286 +3218,182 @@
     "href": "labs/lab-5.html",
     "title": "Lab 5",
     "section": "",
-    "text": "By the end of this lab you will create formulate and conduct hypothesis tests using randomization.\nFor all visualizations you create, be sure to include informative titles for the plot, axes, and legend!",
-    "crumbs": [
-      "Labs",
-      "Lab 5"
-    ]
+    "text": "By the end of this lab you will create formulate and conduct hypothesis tests using randomization.\nFor all visualizations you create, be sure to include informative titles for the plot, axes, and legend!"
   },
   {
     "objectID": "labs/lab-5.html#exercise-1",
     "href": "labs/lab-5.html#exercise-1",
     "title": "Lab 5",
     "section": "Exercise 1",
-    "text": "Exercise 1\n\nIMS - Chapter 11 exercises, #2: Identify the parameter, II.",
-    "crumbs": [
-      "Labs",
-      "Lab 5"
-    ]
+    "text": "Exercise 1\n\nIMS - Chapter 11 exercises, #2: Identify the parameter, II."
   },
   {
     "objectID": "labs/lab-5.html#exercise-2",
     "href": "labs/lab-5.html#exercise-2",
     "title": "Lab 5",
     "section": "Exercise 2",
-    "text": "Exercise 2\n\nIMS - Chapter 11 exercises, #6: Identify hypotheses, II.",
-    "crumbs": [
-      "Labs",
-      "Lab 5"
-    ]
+    "text": "Exercise 2\n\nIMS - Chapter 11 exercises, #6: Identify hypotheses, II."
   },
   {
     "objectID": "labs/lab-5.html#exercise-3",
     "href": "labs/lab-5.html#exercise-3",
     "title": "Lab 5",
     "section": "Exercise 3",
-    "text": "Exercise 3\n\nIMS - Chapter 11 exercises, #8: Heart transplants.",
-    "crumbs": [
-      "Labs",
-      "Lab 5"
-    ]
+    "text": "Exercise 3\n\nIMS - Chapter 11 exercises, #8: Heart transplants."
   },
   {
     "objectID": "labs/lab-5.html#exercise-4",
     "href": "labs/lab-5.html#exercise-4",
     "title": "Lab 5",
     "section": "Exercise 4",
-    "text": "Exercise 4\n\nRecreate the stacked bar plot in Exercise 3.\n\n\n\n\n\n\n\nHint\n\n\n\nThe colors are #569BBD and #114B5F. Use scale_fill_manual() to indicate these are the colors you want to use.\n\n\n\n\n\n\n\n\nPause and render\n\n\n\nNow that you’ve completed a few exercises, pause and render your document. If it renders without any issues, great! Move on to the next exercise. If it does not, debug the issue before moving on. Ask for help from your TA if you need. Do not proceed without rendering your document.",
-    "crumbs": [
-      "Labs",
-      "Lab 5"
-    ]
+    "text": "Exercise 4\n\nRecreate the stacked bar plot in Exercise 3.\n\n\n\n\n\n\n\nHint\n\n\n\nThe colors are #569BBD and #114B5F. Use scale_fill_manual() to indicate these are the colors you want to use.\n\n\n\n\n\n\n\n\nPause and render\n\n\n\nNow that you’ve completed a few exercises, pause and render your document. If it renders without any issues, great! Move on to the next exercise. If it does not, debug the issue before moving on. Ask for help from your TA if you need. Do not proceed without rendering your document."
   },
   {
     "objectID": "labs/lab-5.html#exercise-5",
     "href": "labs/lab-5.html#exercise-5",
     "title": "Lab 5",
     "section": "Exercise 5",
-    "text": "Exercise 5\n\nCalculate the point estimate for the difference in proportions of patients who died between the treatment and control groups: \\(\\hat{p}_{treatment} - \\hat{p}_{control}\\), where \\(\\hat{p}\\) is the observed probability of dying in each group. Do this in two ways:\n\nConstruct a frequency table of survived by transplant and calculate the difference in proportions “by hand”.\nUse specify() and calculate() to calculate the difference in proportions as shown below.\n\n\nobs_diff_outcome &lt;- heart_transplant |&gt;\n  specify(response = outcome, explanatory = transplant, success = \"deceased\") |&gt;\n  calculate(stat = \"diff in props\", order = c(\"treatment\", \"control\"))\n\nThen, confirm that you obtained the same results with the two methods.",
-    "crumbs": [
-      "Labs",
-      "Lab 5"
-    ]
+    "text": "Exercise 5\n\nCalculate the point estimate for the difference in proportions of patients who died between the treatment and control groups: \\(\\hat{p}_{treatment} - \\hat{p}_{control}\\), where \\(\\hat{p}\\) is the observed probability of dying in each group. Do this in two ways:\n\nConstruct a frequency table of survived by transplant and calculate the difference in proportions “by hand”.\nUse specify() and calculate() to calculate the difference in proportions as shown below.\n\n\nobs_diff_outcome &lt;- heart_transplant |&gt;\n  specify(response = outcome, explanatory = transplant, success = \"deceased\") |&gt;\n  calculate(stat = \"diff in props\", order = c(\"treatment\", \"control\"))\n\nThen, confirm that you obtained the same results with the two methods."
   },
   {
     "objectID": "labs/lab-5.html#exercise-6",
     "href": "labs/lab-5.html#exercise-6",
     "title": "Lab 5",
     "section": "Exercise 6",
-    "text": "Exercise 6\n\nUsing the code below, generate a null distribution for the hypothesis test for the hypothesis you formulated in Exercise 3. Use 100 resamples (reps). However, change the seed to use a different seed.\n\nset.seed(1234)\n\nnull_dist_outcome &lt;- heart_transplant |&gt;\n  specify(response = outcome, explanatory = transplant, success = \"deceased\") |&gt;\n  hypothesize(null = \"independence\") |&gt;\n  generate(reps = 100, type = \"permute\") |&gt;\n  calculate(stat = \"diff in props\", order = c(\"treatment\", \"control\"))\n\nThen, inspect the object null_dist_outcome using either glimpse() or just printing it to screen. How many rows and how many columns does it have? What does each row represent? What does each variable represent?",
-    "crumbs": [
-      "Labs",
-      "Lab 5"
-    ]
+    "text": "Exercise 6\n\nUsing the code below, generate a null distribution for the hypothesis test for the hypothesis you formulated in Exercise 3. Use 100 resamples (reps). However, change the seed to use a different seed.\n\nset.seed(1234)\n\nnull_dist_outcome &lt;- heart_transplant |&gt;\n  specify(response = outcome, explanatory = transplant, success = \"deceased\") |&gt;\n  hypothesize(null = \"independence\") |&gt;\n  generate(reps = 100, type = \"permute\") |&gt;\n  calculate(stat = \"diff in props\", order = c(\"treatment\", \"control\"))\n\nThen, inspect the object null_dist_outcome using either glimpse() or just printing it to screen. How many rows and how many columns does it have? What does each row represent? What does each variable represent?"
   },
   {
     "objectID": "labs/lab-5.html#exercise-7",
     "href": "labs/lab-5.html#exercise-7",
     "title": "Lab 5",
     "section": "Exercise 7",
-    "text": "Exercise 7\n\nVisualize the distribution of simulated differences in proportions of deceased between treatment and control groups. What is the shape of this distribution? What is the center of this distribution? Are these results expected? Explain your reasoning.\n\n\n\n\n\n\n\nHint\n\n\n\nThese simulated values are in the stat column of null_dist_outcome.",
-    "crumbs": [
-      "Labs",
-      "Lab 5"
-    ]
+    "text": "Exercise 7\n\nVisualize the distribution of simulated differences in proportions of deceased between treatment and control groups. What is the shape of this distribution? What is the center of this distribution? Are these results expected? Explain your reasoning.\n\n\n\n\n\n\n\nHint\n\n\n\nThese simulated values are in the stat column of null_dist_outcome."
   },
   {
     "objectID": "labs/lab-5.html#exercise-8",
     "href": "labs/lab-5.html#exercise-8",
     "title": "Lab 5",
     "section": "Exercise 8",
-    "text": "Exercise 8\n\nCalculate the p-value. Do this in two ways:\n\nFilter null_dist_outcome for stat values that are at least as far away from the null value as the observed value you calculated in Exercise 4. Make sure you’re considering both directions! Note how many such values there are, and calculate the proportion out of the total number of resamples.\nUse get_p_value():\n\n\np_value_outcome &lt;- null_dist_outcome |&gt;\n  get_p_value(obs_stat = obs_diff_outcome, direction = \"two-sided\")\n\nThen, confirm that you obtained the same results with the two methods. Finally, interpret the p-value in context of the data and the research question and comment on the statistical discernability of this result using a discernability level of 5%.\n\n\n\n\n\n\n\nPause and render\n\n\n\nNow that you’ve completed a few exercises, pause and render your document. If it renders without any issues, great! Move on to the next exercise. If it does not, debug the issue before moving on. Ask for help from your TA if you need. Do not proceed without rendering your document.",
-    "crumbs": [
-      "Labs",
-      "Lab 5"
-    ]
+    "text": "Exercise 8\n\nCalculate the p-value. Do this in two ways:\n\nFilter null_dist_outcome for stat values that are at least as far away from the null value as the observed value you calculated in Exercise 4. Make sure you’re considering both directions! Note how many such values there are, and calculate the proportion out of the total number of resamples.\nUse get_p_value():\n\n\np_value_outcome &lt;- null_dist_outcome |&gt;\n  get_p_value(obs_stat = obs_diff_outcome, direction = \"two-sided\")\n\nThen, confirm that you obtained the same results with the two methods. Finally, interpret the p-value in context of the data and the research question and comment on the statistical discernability of this result using a discernability level of 5%.\n\n\n\n\n\n\n\nPause and render\n\n\n\nNow that you’ve completed a few exercises, pause and render your document. If it renders without any issues, great! Move on to the next exercise. If it does not, debug the issue before moving on. Ask for help from your TA if you need. Do not proceed without rendering your document."
   },
   {
     "objectID": "labs/lab-5.html#exercise-9",
     "href": "labs/lab-5.html#exercise-9",
     "title": "Lab 5",
     "section": "Exercise 9",
-    "text": "Exercise 9\n\nRecreate the side-by–side box plots in Exercise 3. The variable of interest is survtime, which is the number of days patients were alive after the date they were determined to be a candidate for a heart transplant until the termination date of the study.",
-    "crumbs": [
-      "Labs",
-      "Lab 5"
-    ]
+    "text": "Exercise 9\n\nRecreate the side-by–side box plots in Exercise 3. The variable of interest is survtime, which is the number of days patients were alive after the date they were determined to be a candidate for a heart transplant until the termination date of the study."
   },
   {
     "objectID": "labs/lab-5.html#exercise-10",
     "href": "labs/lab-5.html#exercise-10",
     "title": "Lab 5",
     "section": "Exercise 10",
-    "text": "Exercise 10\n\nDo these data provide convincing evidence of a difference between average survival times of patient who did and did not get a heart transplant?\nWrite the hypotheses for answering this question and conduct the hypothesis test using randomization. Use 1,000 resamples. In order to avoid name collision, use object names like obs_diff_survtime, null_dist_survtime, and p_value_survtime. Find and interpret the p-value in context of the data and the research question and comment on the statistical discernability of this result using a discernability level of 5%.",
-    "crumbs": [
-      "Labs",
-      "Lab 5"
-    ]
+    "text": "Exercise 10\n\nDo these data provide convincing evidence of a difference between average survival times of patient who did and did not get a heart transplant?\nWrite the hypotheses for answering this question and conduct the hypothesis test using randomization. Use 1,000 resamples. In order to avoid name collision, use object names like obs_diff_survtime, null_dist_survtime, and p_value_survtime. Find and interpret the p-value in context of the data and the research question and comment on the statistical discernability of this result using a discernability level of 5%."
   },
   {
     "objectID": "labs/lab-5.html#submitting",
     "href": "labs/lab-5.html#submitting",
     "title": "Lab 5",
     "section": "Submitting",
-    "text": "Submitting\n\n\n\n\n\n\nImportant\n\n\n\nBefore you proceed, first, make sure that you have updated the document YAML with your name! Then, render your document one last time, for good measure.\n\n\nTo submit your assignment to Gradescope:\n\nGo to your Files pane and check the box next to the PDF output of your document (lab-5.pdf).\nThen, in the Files pane, go to More &gt; Export. This will download the PDF file to your computer. Save it somewhere you can easily locate, e.g., your Downloads folder or your Desktop.\nGo to the course Canvas page and click on Gradescope and then click on the assignment. You’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the papers of your lab should be associated with at least one question (i.e., should be “checked”).\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you fail to mark the pages associated with an exercise, that exercise won’t be graded. This means, if you fail to mark the pages for all exercises, you will receive a 0 on the assignment. The TAs can’t mark your pages for you, and for them to be able to grade, you must mark them.",
-    "crumbs": [
-      "Labs",
-      "Lab 5"
-    ]
+    "text": "Submitting\n\n\n\n\n\n\nImportant\n\n\n\nBefore you proceed, first, make sure that you have updated the document YAML with your name! Then, render your document one last time, for good measure.\n\n\nTo submit your assignment to Gradescope:\n\nGo to your Files pane and check the box next to the PDF output of your document (lab-5.pdf).\nThen, in the Files pane, go to More &gt; Export. This will download the PDF file to your computer. Save it somewhere you can easily locate, e.g., your Downloads folder or your Desktop.\nGo to the course Canvas page and click on Gradescope and then click on the assignment. You’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the papers of your lab should be associated with at least one question (i.e., should be “checked”).\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you fail to mark the pages associated with an exercise, that exercise won’t be graded. This means, if you fail to mark the pages for all exercises, you will receive a 0 on the assignment. The TAs can’t mark your pages for you, and for them to be able to grade, you must mark them."
   },
   {
     "objectID": "labs/lab-5.html#grading",
     "href": "labs/lab-5.html#grading",
     "title": "Lab 5",
     "section": "Grading",
-    "text": "Grading\n\n\nExercise\nPoints\n\n\n\nExercise 1\n5\n\n\nExercise 2\n4\n\n\nExercise 3\n6\n\n\nExercise 4\n4\n\n\nExercise 5\n4\n\n\nExercise 6\n6\n\n\nExercise 7\n5\n\n\nExercise 8\n4\n\n\nExercise 9\n5\n\n\nExercise 10\n7\n\n\nTotal\n50",
-    "crumbs": [
-      "Labs",
-      "Lab 5"
-    ]
+    "text": "Grading\n\n\nExercise\nPoints\n\n\n\nExercise 1\n5\n\n\nExercise 2\n4\n\n\nExercise 3\n6\n\n\nExercise 4\n4\n\n\nExercise 5\n4\n\n\nExercise 6\n6\n\n\nExercise 7\n5\n\n\nExercise 8\n4\n\n\nExercise 9\n5\n\n\nExercise 10\n7\n\n\nTotal\n50"
   },
   {
     "objectID": "labs/lab-6.html",
     "href": "labs/lab-6.html",
     "title": "Lab 6",
     "section": "",
-    "text": "By the end of this lab you will construct and interpret confidence intervals via bootstrapping.\nFor all visualizations you create, be sure to include informative titles for the plot, axes, and legend!",
-    "crumbs": [
-      "Labs",
-      "Lab 6"
-    ]
+    "text": "By the end of this lab you will construct and interpret confidence intervals via bootstrapping.\nFor all visualizations you create, be sure to include informative titles for the plot, axes, and legend!"
   },
   {
     "objectID": "labs/lab-6.html#exercise-1",
     "href": "labs/lab-6.html#exercise-1",
     "title": "Lab 6",
     "section": "Exercise 1",
-    "text": "Exercise 1\n\nLoad the lemurs data from your data folder and save it as lemurs. Then, report which “types” of lemurs are represented in the sample and how many of each. Note that this information is in the taxon variable. You should refer back to the linked data dictionary to understand what the different values of taxon mean.\n\n\n\n\n\n\n\nPause and render\n\n\n\nNow that you’ve completed your first exercise, pause and render your document. If it renders without any issues, great! Move on to the next exercise. If it does not, debug the issue before moving on. Ask for help from your TA if you need. Do not proceed without rendering your document.",
-    "crumbs": [
-      "Labs",
-      "Lab 6"
-    ]
+    "text": "Exercise 1\n\nLoad the lemurs data from your data folder and save it as lemurs. Then, report which “types” of lemurs are represented in the sample and how many of each. Note that this information is in the taxon variable. You should refer back to the linked data dictionary to understand what the different values of taxon mean.\n\n\n\n\n\n\n\nPause and render\n\n\n\nNow that you’ve completed your first exercise, pause and render your document. If it renders without any issues, great! Move on to the next exercise. If it does not, debug the issue before moving on. Ask for help from your TA if you need. Do not proceed without rendering your document."
   },
   {
     "objectID": "labs/lab-6.html#exercise-2",
     "href": "labs/lab-6.html#exercise-2",
     "title": "Lab 6",
     "section": "Exercise 2",
-    "text": "Exercise 2\n\nWhat is the mean weight of ring-tailed lemurs? Calculate, visualize, and interpret a 95% bootstrap confidence interval together with your point estimate. Use set.seed(123) and reps = 1000 to create your bootstrap confidence interval.\n\nHints:\nBelow is a step-by-step recipe for constructing and visualizing a confidence interval. The code snippets shown are not “complete”, they’re intended to guide you in the right direction.\n\nStep 1: Create a dataset of ring-tailed lemurs, and call it lemurs_rt. Note, these are taxon == \"LCAT\".\nStep 2: Calculate the mean weight of ring-tailed lemurs.\n\n\nobs_stat_mean_rt &lt;- lemurs_rt |&gt;\n  specify(response = weight_g) |&gt;\n  calculate(stat = \"mean\")\n\n\nStep 3: Construct a bootstrap distribution. Note: There is a generate() step, so you also need to set a seed before running the following.\n\n\nboot_dist_mean_rt &lt;- lemurs_rt |&gt;\n  specify(response = weight_g) |&gt;\n  generate(reps = 1000, type = \"bootstrap\") |&gt;\n  calculate(stat = \"mean\")\n\n\nStep 4: Calculate the bounds of the confidence interval. Don’t forget to interpret it as well!\n\n\nci_95_mean_rt &lt;- boot_dist_mean_rt |&gt;\n  get_confidence_interval(\n    point_estimate = obs_stat_mean_rt, \n    level = 0.95\n  )\n\n\nStep 5: Visualize the confidence interval, overlaying it on the bootstrap distribution.\n\n\nvisualize(boot_dist_mean_rt) +\n  shade_confidence_interval(endpoints = ci_95_mean_rt)",
-    "crumbs": [
-      "Labs",
-      "Lab 6"
-    ]
+    "text": "Exercise 2\n\nWhat is the mean weight of ring-tailed lemurs? Calculate, visualize, and interpret a 95% bootstrap confidence interval together with your point estimate. Use set.seed(123) and reps = 1000 to create your bootstrap confidence interval.\n\nHints:\nBelow is a step-by-step recipe for constructing and visualizing a confidence interval. The code snippets shown are not “complete”, they’re intended to guide you in the right direction.\n\nStep 1: Create a dataset of ring-tailed lemurs, and call it lemurs_rt. Note, these are taxon == \"LCAT\".\nStep 2: Calculate the mean weight of ring-tailed lemurs.\n\n\nobs_stat_mean_rt &lt;- lemurs_rt |&gt;\n  specify(response = weight_g) |&gt;\n  calculate(stat = \"mean\")\n\n\nStep 3: Construct a bootstrap distribution. Note: There is a generate() step, so you also need to set a seed before running the following.\n\n\nboot_dist_mean_rt &lt;- lemurs_rt |&gt;\n  specify(response = weight_g) |&gt;\n  generate(reps = 1000, type = \"bootstrap\") |&gt;\n  calculate(stat = \"mean\")\n\n\nStep 4: Calculate the bounds of the confidence interval. Don’t forget to interpret it as well!\n\n\nci_95_mean_rt &lt;- boot_dist_mean_rt |&gt;\n  get_confidence_interval(\n    point_estimate = obs_stat_mean_rt, \n    level = 0.95\n  )\n\n\nStep 5: Visualize the confidence interval, overlaying it on the bootstrap distribution.\n\n\nvisualize(boot_dist_mean_rt) +\n  shade_confidence_interval(endpoints = ci_95_mean_rt)"
   },
   {
     "objectID": "labs/lab-6.html#exercise-3",
     "href": "labs/lab-6.html#exercise-3",
     "title": "Lab 6",
     "section": "Exercise 3",
-    "text": "Exercise 3\n\nWhat is the median weight of ring-tailed lemurs? What is the median weight of mongoose lemurs? Report a 95% bootstrap confidence interval together with your point estimates. Use set.seed(123) and reps = 10000 to create your bootstrap confidence intervals.",
-    "crumbs": [
-      "Labs",
-      "Lab 6"
-    ]
+    "text": "Exercise 3\n\nWhat is the median weight of ring-tailed lemurs? What is the median weight of mongoose lemurs? Report a 95% bootstrap confidence interval together with your point estimates. Use set.seed(123) and reps = 10000 to create your bootstrap confidence intervals."
   },
   {
     "objectID": "labs/lab-6.html#exercise-4",
     "href": "labs/lab-6.html#exercise-4",
     "title": "Lab 6",
     "section": "Exercise 4",
-    "text": "Exercise 4\n\nYour friend has never taken a statistics course. Describe to your friend the process of “bootstrap sampling” in the previous exercise to create a bootstrap confidence interval in your own words. Walk your friend through the process of collecting a bootstrap sample, computing a statistic and then repeating). You may find it helpful to describe it as drawing pieces of paper from a bag like we did in class.\n\nHint: What would you write on the slips of paper? How many pieces of paper would be in the bag(s)? How many bag(s) would you need for the above exercise?",
-    "crumbs": [
-      "Labs",
-      "Lab 6"
-    ]
+    "text": "Exercise 4\n\nYour friend has never taken a statistics course. Describe to your friend the process of “bootstrap sampling” in the previous exercise to create a bootstrap confidence interval in your own words. Walk your friend through the process of collecting a bootstrap sample, computing a statistic and then repeating). You may find it helpful to describe it as drawing pieces of paper from a bag like we did in class.\n\nHint: What would you write on the slips of paper? How many pieces of paper would be in the bag(s)? How many bag(s) would you need for the above exercise?"
   },
   {
     "objectID": "labs/lab-6.html#exercise-5",
     "href": "labs/lab-6.html#exercise-5",
     "title": "Lab 6",
     "section": "Exercise 5",
-    "text": "Exercise 5\n\nDo female lemurs differ in weight from male lemurs? Report the difference in mean weights between groups. Next, construct a 99% bootstrap distribution for the difference in means between groups and interpret it. If the interval covers 0, you might think there is no difference between groups. Does the interval cover 0? Use set.seed(123) and reps = 10000.",
-    "crumbs": [
-      "Labs",
-      "Lab 6"
-    ]
+    "text": "Exercise 5\n\nDo female lemurs differ in weight from male lemurs? Report the difference in mean weights between groups. Next, construct a 99% bootstrap distribution for the difference in means between groups and interpret it. If the interval covers 0, you might think there is no difference between groups. Does the interval cover 0? Use set.seed(123) and reps = 10000."
   },
   {
     "objectID": "labs/lab-6.html#exercise-6",
     "href": "labs/lab-6.html#exercise-6",
     "title": "Lab 6",
     "section": "Exercise 6",
-    "text": "Exercise 6\n\nCreate a new column that tells you whether or not a lemur was born in the first or second half of the year (January through June vs July through December). Create a meaningful plot to illustrate the weights of each group of lemurs. Use theme_bw() to replace the default gray plot background. Based on your figure, which group of lemurs weighs more? Is the distribution of one or both groups skewed or symmetric? See here for more information about skew vs symmetric distributions.",
-    "crumbs": [
-      "Labs",
-      "Lab 6"
-    ]
+    "text": "Exercise 6\n\nCreate a new column that tells you whether or not a lemur was born in the first or second half of the year (January through June vs July through December). Create a meaningful plot to illustrate the weights of each group of lemurs. Use theme_bw() to replace the default gray plot background. Based on your figure, which group of lemurs weighs more? Is the distribution of one or both groups skewed or symmetric? See here for more information about skew vs symmetric distributions."
   },
   {
     "objectID": "labs/lab-6.html#exercise-7",
     "href": "labs/lab-6.html#exercise-7",
     "title": "Lab 6",
     "section": "Exercise 7",
-    "text": "Exercise 7\n\nIs there more variability in weight for lemurs born in the first half or second half of the year? Report the estimated standard deviation of each group. Report a 90% bootstrap confidence interval of s.d. for each group. Interpret the confidence intervals in context. Use set.seed(123) and remember to set reps = 10000.\n\n\n\n\n\n\n\nPause and render\n\n\n\nNow that you’ve completed a few more exercises, pause and render your document. If it renders without any issues, great! Move on to the next exercise. If it does not, debug the issue before moving on. Ask for help from your TA if you need. Do not proceed without rendering your document.",
-    "crumbs": [
-      "Labs",
-      "Lab 6"
-    ]
+    "text": "Exercise 7\n\nIs there more variability in weight for lemurs born in the first half or second half of the year? Report the estimated standard deviation of each group. Report a 90% bootstrap confidence interval of s.d. for each group. Interpret the confidence intervals in context. Use set.seed(123) and remember to set reps = 10000.\n\n\n\n\n\n\n\nPause and render\n\n\n\nNow that you’ve completed a few more exercises, pause and render your document. If it renders without any issues, great! Move on to the next exercise. If it does not, debug the issue before moving on. Ask for help from your TA if you need. Do not proceed without rendering your document."
   },
   {
     "objectID": "labs/lab-6.html#exercise-8",
     "href": "labs/lab-6.html#exercise-8",
     "title": "Lab 6",
     "section": "Exercise 8",
-    "text": "Exercise 8\n\nIMS - Chapter 12 exercises, #2: Chronic illness.",
-    "crumbs": [
-      "Labs",
-      "Lab 6"
-    ]
+    "text": "Exercise 8\n\nIMS - Chapter 12 exercises, #2: Chronic illness."
   },
   {
     "objectID": "labs/lab-6.html#exercise-9",
     "href": "labs/lab-6.html#exercise-9",
     "title": "Lab 6",
     "section": "Exercise 9",
-    "text": "Exercise 9\n\nIMS - Chapter 12 exercises, #6: Bootstrap distributions of \\(\\hat{p}\\), III.",
-    "crumbs": [
-      "Labs",
-      "Lab 6"
-    ]
+    "text": "Exercise 9\n\nIMS - Chapter 12 exercises, #6: Bootstrap distributions of \\(\\hat{p}\\), III."
   },
   {
     "objectID": "labs/lab-6.html#exercise-10",
     "href": "labs/lab-6.html#exercise-10",
     "title": "Lab 6",
     "section": "Exercise 10",
-    "text": "Exercise 10\n\nIMS - Chapter 12 exercises, #8: Waiting at an ER.",
-    "crumbs": [
-      "Labs",
-      "Lab 6"
-    ]
+    "text": "Exercise 10\n\nIMS - Chapter 12 exercises, #8: Waiting at an ER."
   },
   {
     "objectID": "labs/lab-6.html#submitting",
     "href": "labs/lab-6.html#submitting",
     "title": "Lab 6",
     "section": "Submitting",
-    "text": "Submitting\n\n\n\n\n\n\nImportant\n\n\n\nBefore you proceed, first, make sure that you have updated the document YAML with your name! Then, render your document one last time, for good measure.\n\n\nTo submit your assignment to Gradescope:\n\nGo to your Files pane and check the box next to the PDF output of your document (lab-6.pdf).\nThen, in the Files pane, go to More &gt; Export. This will download the PDF file to your computer. Save it somewhere you can easily locate, e.g., your Downloads folder or your Desktop.\nGo to the course Canvas page and click on Gradescope and then click on the assignment. You’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the papers of your lab should be associated with at least one question (i.e., should be “checked”).\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you fail to mark the pages associated with an exercise, that exercise won’t be graded. This means, if you fail to mark the pages for all exercises, you will receive a 0 on the assignment. The TAs can’t mark your pages for you, and for them to be able to grade, you must mark them.",
-    "crumbs": [
-      "Labs",
-      "Lab 6"
-    ]
+    "text": "Submitting\n\n\n\n\n\n\nImportant\n\n\n\nBefore you proceed, first, make sure that you have updated the document YAML with your name! Then, render your document one last time, for good measure.\n\n\nTo submit your assignment to Gradescope:\n\nGo to your Files pane and check the box next to the PDF output of your document (lab-6.pdf).\nThen, in the Files pane, go to More &gt; Export. This will download the PDF file to your computer. Save it somewhere you can easily locate, e.g., your Downloads folder or your Desktop.\nGo to the course Canvas page and click on Gradescope and then click on the assignment. You’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the papers of your lab should be associated with at least one question (i.e., should be “checked”).\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you fail to mark the pages associated with an exercise, that exercise won’t be graded. This means, if you fail to mark the pages for all exercises, you will receive a 0 on the assignment. The TAs can’t mark your pages for you, and for them to be able to grade, you must mark them."
   },
   {
     "objectID": "labs/lab-6.html#grading",
     "href": "labs/lab-6.html#grading",
     "title": "Lab 6",
     "section": "Grading",
-    "text": "Grading\n\n\nExercise\nPoints\n\n\n\nExercise 1\n3\n\n\nExercise 2\n6\n\n\nExercise 3\n7\n\n\nExercise 4\n5\n\n\nExercise 5\n5\n\n\nExercise 6\n7\n\n\nExercise 7\n8\n\n\nExercise 8\n3\n\n\nExercise 9\n3\n\n\nExercise 10\n3\n\n\nTotal\n50",
-    "crumbs": [
-      "Labs",
-      "Lab 6"
-    ]
+    "text": "Grading\n\n\nExercise\nPoints\n\n\n\nExercise 1\n3\n\n\nExercise 2\n6\n\n\nExercise 3\n7\n\n\nExercise 4\n5\n\n\nExercise 5\n5\n\n\nExercise 6\n7\n\n\nExercise 7\n8\n\n\nExercise 8\n3\n\n\nExercise 9\n3\n\n\nExercise 10\n3\n\n\nTotal\n50"
   },
   {
     "objectID": "ae/ae-16-birth-weight-sa.html",
@@ -5076,7 +4716,7 @@
     "href": "index.html",
     "title": "STA 101: Data Analysis and Statistical Inference",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nPREPARE\nMATERIALS\nDUE\n\n\n\n\n1\nMon, Aug 28\nWelcome to STA 101!\n\n\n🖥️ slides  ☁️ ae-01  ⌨️ ae-01\n\n\n\n\n\n\nWed, Aug 30\nHello data\n📖 ims: Chp 1  💻 tutorial: 01-data-01 |&gt; submit\n🖥️ slides  ☁️ ae-02  ⌨️ ae-02  🗝️ ae-02-sa\n🔘 Survey: Getting to know you\n\n\n\n\nFri, Sep 1\nLab 1: Hello R!\n\n\n⌨️ lab-1\n\n\n\n\n2\nMon, Sep 4\n⚒️ Labor Day - No lecture\n\n\n\n\n\n\n\n\n\n\nWed, Sep 6\nStudy design\n📖 ims: Chp 2  💻 tutorial: 01-data-02 |&gt; submit  💻 tutorial: 01-data-03 |&gt; submit\n🖥️ slides  ☁️ ae-03  ⌨️ ae-03  🗝️ ae-03-sa\n\n\n\n\n\n\nThu, Sep 7\n\n\n\n\n\n\n✅ Lab 1 at 5 pm\n\n\n\n\nFri, Sep 8\nLab 2: Hello data!\n📖 ims: Chp 3  💻 tutorial: 01-data-04 |&gt; submit\n⌨️ lab-2\n\n\n\n\n3\nMon, Sep 11\nExploring categorical data\n📖 ims: Chp 4  💻 tutorial: 02-explore-01 |&gt; submit\n🖥️ slides  ☁️ ae-04  ⌨️ ae-04  🗝️ ae-04-sa\n\n\n\n\n\n\nWed, Sep 13\nExploring numerical data\n📖 ims: Chp 5  💻 tutorial: 02-explore-02 |&gt; submit\n🖥️ slides  ☁️ ae-05  ⌨️ ae-05  🗝️ ae-05-sa\n\n\n\n\n\n\nThu, Sep 14\n\n\n\n\n\n\n✅ Lab 2 at 5 pm\n\n\n\n\nFri, Sep 15\nLab 3: Exploratory data analysis\n📖 ims: Chp 6  💻 tutorial: 02-explore-03 |&gt; submit\n⌨️ lab-3\n\n\n\n\n4\nMon, Sep 18\nRegression with a single predictor I  Guest Lecture: Dr. Alex Fisher\n📖 ims: Chp 7.1 - 7.2  💻 tutorial: 03-model-01 |&gt; submit  💻 tutorial: 03-model-02 |&gt; submit \n🖥️ slides  ☁️ ae-06  ⌨️ ae-06  🗝️ ae-06-sa\n\n\n\n\n\n\nWed, Sep 20\nNo class  Catch up with readings and interactive tutorials\n📖 ims: Chp 7.2 - 7.4  💻 tutorial: 03-model-03 |&gt; submit\n\n\n\n\n\n\n\n\nThu, Sep 21\n\n\n\n\n\n\n✅ Lab 3 at 5 pm\n\n\n\n\nFri, Sep 22\nLab 4: Regression\n\n\n⌨️ lab-4\n\n\n\n\n5\nMon, Sep 25\nRegression with multiple predictors\n📖 ims: Chp 8.1 - 8.3\n🖥️ slides  ☁️ ae-07  ⌨️ ae-07  🗝️ ae-07-sa\n\n\n\n\n\n\nWed, Sep 27\nModel selection\n📖 ims: Chp 8.4 - 8.5\n🖥️ slides  ☁️ ae-08  ⌨️ ae-08  🗝️ ae-08-sa\n\n\n\n\n\n\nThu, Sep 28\n\n\n\n\n\n\n✅ Lab 4 at 5 pm\n\n\n\n\nFri, Sep 29\nExam 1 Review\n\n\n📝 er-1  🗝️ er-1-sa\n\n\n\n\n6\nMon, Oct 2\nRegression overview\n\n\n🖥️ slides\n\n\n\n\n\n\nWed, Oct 4\nExam 1 - In class\n\n\n\n\n\n\n\n\n\n\nFri, Oct 6\nNo lab: Work on Exam 1 - Take home\n\n\n\n\nExam 1 - Take home + Tutorials at 5 pm\n\n\n7\nMon, Oct 9\nLogistic regression I\n📖 ims: Chp 9.1 - 9.2\n🖥️ slides  ☁️ ae-09  ⌨️ ae-09  🗝️ ae-09-sa\n\n\n\n\n\n\nWed, Oct 11\nLogistic regression II\n📖 ims: Chp 9.3 - 9.5\n🖥️ slides\n\n\n\n\n\n\nFri, Oct 13\nProject 1 workday\n\n\n\n\n📄 Project 1 at 5 pm\n\n\n8\nMon, Oct 16\n🍂 Fall Break - No lecture\n\n\n\n\n\n\n\n\n\n\nWed, Oct 18\nHypothesis testing with randomization\n📖 ims: Chp 11  💻 tutorial: 04-foundations-01 |&gt; submit  💻 tutorial: 04-foundations-02 |&gt; submit\n🖥️ slides  ☁️ ae-10  ⌨️ ae-10  🗝️ ae-10\n\n\n\n\n\n\nFri, Oct 20\nLab 5: Hypothesis testing\n\n\n⌨️ lab-5\n\n\n\n\n9\nMon, Oct 23\nConfidence intervals with bootstrapping\n📖 ims: Chp 12  💻 tutorial: 04-foundations-04 |&gt; submit\n🖥️ slides\n\n\n\n\n\n\nWed, Oct 25\nDecision errors  Guest Lecture: Dr. Yue Jiang\n📖 ims: Chp 14  💻 tutorial: 04-foundations-03 |&gt; submit\n🖥️ slides\n\n\n\n\n\n\nThu, Oct 26\n\n\n\n\n\n\n✅ Lab 5 at 5 pm\n\n\n\n\nFri, Oct 27\nLab 6: Foundations of inference\n\n\n⌨️ lab-6\n\n\n\n\n10\nMon, Oct 30\nInference with mathematical models\n📖 ims: Chp 13\n🖥️ slides  ☁️ ae-11  ⌨️ ae-11  🗝️ ae-11\n\n\n\n\n\n\nWed, Nov 1\nZoom lecture:  Inference for a single proportion\n📖 ims: Chp 16  💻 tutorial: 05-infer-01 |&gt; submit\n🖥️ slides  ☁️ ae-12  ⌨️ ae-12  🗝️ ae-12\n\n\n\n\n\n\nThu, Nov 2\n\n\n\n\n\n\n✅ Lab 6 at 5 pm\n\n\n\n\nFri, Nov 3\nLab 7: Inference for proportions\n\n\n⌨️ lab-7\n\n\n\n\n11\nMon, Nov 6\nInference for comparing two proportions\n📖 ims: Chp 17  💻 tutorial: 05-infer-02 |&gt; submit\n🖥️ slides  ☁️ ae-13  ⌨️ ae-13  🗝️ ae-13\n\n\n\n\n\n\nWed, Nov 8\nInference for two-way tables\n📖 ims: Chp 18  💻 tutorial: 05-infer-03 |&gt; submit\n🖥️ slides  ☁️ ae-14  ⌨️ ae-14  🗝️ ae-14\n\n\n\n\n\n\nThu, Nov 9\n\n\n\n\n\n\n✅ Lab 7 at 5 pm\n\n\n\n\nFri, Nov 10\nExam 2 Review\n💻 tutorial: 05-infer-04 |&gt; submit\n📝 er-2  🗝️ er-2-sa\n\n\n\n\n12\nMon, Nov 13\nOverview: Inference for proportions\n📖 ims: Chp 23.1\n🖥️ slides\n\n\n\n\n\n\nWed, Nov 15\nExam 2 - In class\n\n\n\n\n\n\n\n\n\n\nFri, Nov 17\nNo lab: Work on Exam 2 - Take home\n\n\n\n\nExam 2 - Take home + Tutorials at 5 pm\n\n\n13\nMon, Nov 20\nInference for a single mean\n📖 ims: Chp 19  💻 tutorial: 05-infer-05 |&gt; submit  💻 tutorial: 05-infer-06 |&gt; submit\n🖥️ slides  ☁️ ae-15  ⌨️ ae-15  🗝️ ae-15\n\n\n\n\n\n\nWed, Nov 22\n🦃 Thanksgiving Break - No lecture\n\n\n\n\n\n\n\n\n\n\nFri, Nov 24\n🦃 Thanksgiving Break - No lab\n\n\n\n\n\n\n\n\n14\nMon, Nov 27\nInference for comparing two independent means\n📖 ims: Chp 20  💻 tutorial: 05-infer-07 |&gt; submit\n🖥️ slides  ☁️ ae-16  ⌨️ ae-16\n\n\n\n\n\n\nWed, Nov 29\nInference for comparing two paired + more means\n📖 ims: Chp 21\n🖥️ slides  ☁️ ae-17\n\n\n\n\n\n\nFri, Dec 1\nProject proposal conversation  Lab 8: Inference for means\n\n\n⌨️ lab-8 [Optional]\n📄 Project 2 proposal conversation\n\n\n15\nMon, Dec 4\nEthics\n🎥 Data privacy  🎥 Misrepresentation  🎥 Algorithmic bias  🎥 Joy Buolamwini - How I’m fighting bias in algorithms  🎥 Cathy O’Neil - Weapons of Math Destruction  🎥 Safiya Umoja Noble - Imagining a Future Free from the Algorithms of Oppression\n🖥️ slides\n\n\n\n\n\n\nWed, Dec 6\nTelling a (data) story\n📖 fdv: Chp 29\n🖥️ slides\n\n\n\n\n\n\nThu, Dec 7\n\n\n\n\n\n\n✅ Lab 8 at 5 pm\n\n\n\n\nFri, Dec 8\nProject 2 peer review\n\n\n\n\n📄 Project 2 peer review\n\n\n16\nThu, Dec 14\n\n\n\n\n\n\n📄 Project 2 at 2 pm",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nPREPARE\nMATERIALS\nDUE\n\n\n\n\n1\nMon, Aug 28\nWelcome to STA 101!\n\n\n🖥️ slides  ☁️ ae-01  ⌨️ ae-01\n\n\n\n\n\n\nWed, Aug 30\nHello data\n📖 ims: Chp 1  💻 tutorial: 01-data-01 |&gt; submit\n🖥️ slides  ☁️ ae-02  ⌨️ ae-02  🗝️ ae-02-sa\n🔘 Survey: Getting to know you\n\n\n\n\nFri, Sep 1\nLab 1: Hello R!\n\n\n⌨️ lab-1\n\n\n\n\n2\nMon, Sep 4\n\n\n\n\n\n\n\n\n\n\n\n\nWed, Sep 6\n\n\n\n\n\n\n\n\n\n\n\n\nThu, Sep 7\n\n\n\n\n\n\n\n\n\n\n\n\nFri, Sep 8\n\n\n\n\n\n\n\n\n\n\n3\nMon, Sep 11\n\n\n\n\n\n\n\n\n\n\n\n\nWed, Sep 13\n\n\n\n\n\n\n\n\n\n\n\n\nThu, Sep 14\n\n\n\n\n\n\n\n\n\n\n\n\nFri, Sep 15\n\n\n\n\n\n\n\n\n\n\n4\nMon, Sep 18\n\n\n\n\n\n\n\n\n\n\n\n\nWed, Sep 20\n\n\n\n\n\n\n\n\n\n\n\n\nThu, Sep 21\n\n\n\n\n\n\n\n\n\n\n\n\nFri, Sep 22\n\n\n\n\n\n\n\n\n\n\n5\nMon, Sep 25\n\n\n\n\n\n\n\n\n\n\n\n\nWed, Sep 27\n\n\n\n\n\n\n\n\n\n\n\n\nThu, Sep 28\n\n\n\n\n\n\n\n\n\n\n\n\nFri, Sep 29\n\n\n\n\n\n\n\n\n\n\n6\nMon, Oct 2\n\n\n\n\n\n\n\n\n\n\n\n\nWed, Oct 4\n\n\n\n\n\n\n\n\n\n\n\n\nFri, Oct 6\n\n\n\n\n\n\n\n\n\n\n7\nMon, Oct 9\n\n\n\n\n\n\n\n\n\n\n\n\nWed, Oct 11\n\n\n\n\n\n\n\n\n\n\n\n\nFri, Oct 13\n\n\n\n\n\n\n\n\n\n\n8\nMon, Oct 16\n\n\n\n\n\n\n\n\n\n\n\n\nWed, Oct 18\n\n\n\n\n\n\n\n\n\n\n\n\nFri, Oct 20\n\n\n\n\n\n\n\n\n\n\n9\nMon, Oct 23\n\n\n\n\n\n\n\n\n\n\n\n\nWed, Oct 25\n\n\n\n\n\n\n\n\n\n\n\n\nThu, Oct 26\n\n\n\n\n\n\n\n\n\n\n\n\nFri, Oct 27\n\n\n\n\n\n\n\n\n\n\n10\nMon, Oct 30\n\n\n\n\n\n\n\n\n\n\n\n\nWed, Nov 1\n\n\n\n\n\n\n\n\n\n\n\n\nThu, Nov 2\n\n\n\n\n\n\n\n\n\n\n\n\nFri, Nov 3\n\n\n\n\n\n\n\n\n\n\n11\nMon, Nov 6\n\n\n\n\n\n\n\n\n\n\n\n\nWed, Nov 8\n\n\n\n\n\n\n\n\n\n\n\n\nThu, Nov 9\n\n\n\n\n\n\n\n\n\n\n\n\nFri, Nov 10\n\n\n\n\n\n\n\n\n\n\n12\nMon, Nov 13\n\n\n\n\n\n\n\n\n\n\n\n\nWed, Nov 15\n\n\n\n\n\n\n\n\n\n\n\n\nFri, Nov 17\n\n\n\n\n\n\n\n\n\n\n13\nMon, Nov 20\n\n\n\n\n\n\n\n\n\n\n\n\nWed, Nov 22\n\n\n\n\n\n\n\n\n\n\n\n\nFri, Nov 24\n\n\n\n\n\n\n\n\n\n\n14\nMon, Nov 27\n\n\n\n\n\n\n\n\n\n\n\n\nWed, Nov 29\n\n\n\n\n\n\n\n\n\n\n\n\nFri, Dec 1\n\n\n\n\n\n\n\n\n\n\n15\nMon, Dec 4\n\n\n\n\n\n\n\n\n\n\n\n\nWed, Dec 6\n\n\n\n\n\n\n\n\n\n\n\n\nThu, Dec 7\n\n\n\n\n\n\n\n\n\n\n\n\nFri, Dec 8\n\n\n\n\n\n\n\n\n\n\n16\nThu, Dec 14",
     "crumbs": [
       "Course information",
       "Schedule"
