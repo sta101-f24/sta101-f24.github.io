@@ -15,7 +15,7 @@ website:
   open-graph: true
 
   sidebar:
-    background: "#798b93"
+    background: "#9c1625"
     logo: "images/logo.png"
     pinned: true
     align: center
@@ -38,7 +38,7 @@ website:
     collapse-level: 1
 
     contents:
-      - section: "Course information"
+      - section: "Syllabus"
         contents:
           - href: course-overview.qmd
             text: Overview
@@ -73,7 +73,7 @@ website:
   page-footer:
     right: "This page is built with 🤍 and [Quarto](https://quarto.org/)."
     left: "&copy; Copyright 2024, Mine Çetinkaya-Rundel and John Zito"
-    background: "#5d6d74"
+    background: "#9c1625"
 
 
 format:
