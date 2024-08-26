@@ -1206,116 +1206,6 @@
     ]
   },
   {
-    "objectID": "project/project-2.html",
-    "href": "project/project-2.html",
-    "title": "Project 2",
-    "section": "",
-    "text": "Team assignments are posted at https://canvas.duke.edu/courses/4625/files?preview=549493.\nThe deliverable for this project (what you will turn in) is a written report and a pre-recorded presentation. See below for more details.",
-    "crumbs": [
-      "Projects",
-      "Project 2"
-    ]
-  },
-  {
-    "objectID": "project/project-2.html#criteria-for-datasets",
-    "href": "project/project-2.html#criteria-for-datasets",
-    "title": "Project 2",
-    "section": "Criteria for datasets",
-    "text": "Criteria for datasets\nThe data sets should meet the following criteria:\n\nAt least 100 observations\nAt least 5 columns\nAt least 4 of the columns must be useful and unique explanatory variables.\n\nIdentifier variables such as “name”, “social security number”, etc. are not useful explanatory variables.\nIf you have multiple columns with the same information (e.g. “state abbreviation” and “state name”), then they are not unique explanatory variables.\n\nYou may not use data that has previously been used in any course materials, or any derivation of data that has been used in course materials.\n\n\n\n\n\n\n\nTip\n\n\n\nPlease ask a member of the teaching team if you’re unsure whether your data set meets the criteria.\n\n\nIf you set your hearts on a dataset that has fewer observations or variables than what’s suggested here, that might still be ok; use these numbers as guidance for a successful proposal, not as minimum requirements.",
-    "crumbs": [
-      "Projects",
-      "Project 2"
-    ]
-  },
-  {
-    "objectID": "project/project-2.html#resources",
-    "href": "project/project-2.html#resources",
-    "title": "Project 2",
-    "section": "Resources for datasets",
-    "text": "Resources for datasets\nYou can find data wherever you like, but here are some recommendations to get you started. You shouldn’t feel constrained to datasets that are already in a tidy format, you can start with data that needs cleaning and tidying, scrape data off the web, or collect your own data.\n\nAwesome public datasets\nBikeshare data portal\nCDC\nData.gov\nData is Plural\nDurham Open Data Portal\nEdinburgh Open Data\nElection Studies\nEuropean Statistics\nCORGIS: The Collection of Really Great, Interesting, Situated Datasets\nGeneral Social Survey\nGoogle Dataset Search\nHarvard Dataverse\nInternational Monetary Fund\nIPUMS survey data from around the world\nLos Angeles Open Data\nNational Crime Victimization Survey\nNHS Scotland Open Data\nNYC OpenData\nOpen access to Scotland’s official statistics\nPew Research\nPRISM Data Archive Project\nStatistics Canada\nThe National Bureau of Economic Research\nTidyTuesday\nUCI Machine Learning Repository\nUK Government Data\nUNICEF Data\nUnited Nations Data\nUnited Nations Statistics Division\nUS Census Data\nUS Government Data\nWorld Bank Data\nYouth Risk Behavior Surveillance System (YRBSS)",
-    "crumbs": [
-      "Projects",
-      "Project 2"
-    ]
-  },
-  {
-    "objectID": "project/project-2.html#proposal-conversation-grading",
-    "href": "project/project-2.html#proposal-conversation-grading",
-    "title": "Project 2",
-    "section": "Proposal conversation grading",
-    "text": "Proposal conversation grading\nEach component will be graded as follows:\n\nMeets expectations (full credit): All team members are present and contribute to the conversation. The team has a dataset and research question identified. There is a plan for completing the project as envisioned.\nClose to expectations (half credit): Not all team members are present and contribute to the conversation (without any excused absences). The team does not have a dataset and/or research question identified. The plan for completing the project as envisioned is not well designed.\nDoes not meet expectations (no credit): Not all team members are present and contribute to the conversation (without any excused absences). The team does not have a dataset or research question identified. There is no plan for completing the project as envisioned.\n\nEven if you earn full credit, it may not mean that your proposal is perfect.",
-    "crumbs": [
-      "Projects",
-      "Project 2"
-    ]
-  },
-  {
-    "objectID": "project/project-2.html#components",
-    "href": "project/project-2.html#components",
-    "title": "Project 2",
-    "section": "Components",
-    "text": "Components\nYou should include, at a minimum, the following sections in your report.\n\nIntroduction (7 pts)\nThe introduction provides motivation and context for your research.\nTo begin, introduce the data set in a few short sentences. Next, create a code book (aka a “data dictionary”) of the variables in the data set. Although a code book is provided above, you should include one in your report as well so that your report is self-contained. Specifically, only include in your report a code book of the variables that you use.\nComplete the introduction by providing a concise, clear statement of your research question and hypotheses. Be sure to motivate why the research question is interesting/useful.\nExample research question and hypotheses (if we were predicting penguin weights instead of baby weights):\nCan we predict body mass with bill depth? We hypothesize that penguins with deeper bills will also have more mass.\n\n\nMethodology (15 pts)\nHere you should introduce any statistical methods you use and describe why you choose the methods you do to answer your question. You might also include any preliminary summary statistics or figures you use to explore the data.\n\n\nResults (15 pts)\nPlace figure(s) here to illustrate the main results from your analysis. 1 beautiful figure is worth more than several poorly formatted figures. You must have at least 1 figure.\nProvide only the main results from your analysis. The goal is not to do an exhaustive data analysis (calculate every possible statistic and create every possible model for all variables). Rather, you should demonstrate that you are proficient at asking meaningful questions and answering them using data, that you are skilled in writing about and interpreting results, and that you can accomplish these tasks using R. More is not better.\n\n\nDiscussion (6 pts)\nThis section is a conclusion and discussion. You should\n\nSummarize your main finding in a sentence or two.\nDiscuss your finding and why it is useful (put in the context of your motivation from the introduction).\nCritique your own analyses and include a brief paragraph on what you would do differently if you were able to start the project over.\n\n\n\nAppendix (2 pts)\nList a brief (1 or 2 sentence) summary of the relative contributions of each team member, e.g., “Aang built the models, Katara implemented them in R, and Sokka wrote the introduction and discussion.”\n\n\n\n\n\n\nImportant\n\n\n\nAll team members should be comfortable describing all aspects of the project and understanding all code.\n\n\n\n\nFormatting (5 pts)\nYour project should be professionally formatted. For example, this means labeling graphs and figures, turning off code chunks, using proper citations and cross-references, and following typical style guidelines.",
-    "crumbs": [
-      "Projects",
-      "Project 2"
-    ]
-  },
-  {
-    "objectID": "project/project-2.html#submission",
-    "href": "project/project-2.html#submission",
-    "title": "Project 2",
-    "section": "Submission",
-    "text": "Submission\n\nSelect one team member to upload the team’s PDF submission to Gradescope.\nBe sure to select every team member’s name in Gradescope.\nAssociate all pages with “Full report”.",
-    "crumbs": [
-      "Projects",
-      "Project 2"
-    ]
-  },
-  {
-    "objectID": "project/project-2.html#slides",
-    "href": "project/project-2.html#slides",
-    "title": "Project 2",
-    "section": "Slides",
-    "text": "Slides\nFor your presentation, you must create presentation slides that summarize and showcase your project. Introduce your research question and data set, showcase visualizations, and provide some conclusions. These slides should serve as a brief visual accompaniment to your write-up and will be graded for content and quality.\nHere is a suggested outline as you think through the slides; you do not have to use this exact format for the slide deck.\n\nTitle Slide\nSlide 1: Introduce the topic and motivation\nSlide 2: Introduce the data\nSlide 3 - 4: Highlights from exploratory data analysis\nSlide 4 - 5: Highlights from inference and/or modeling\nSlide 6: Conclusions + critique/shortcomings\n\nYou can create your slides with any software you like (Keynote, PowerPoint, Google Slides, etc.). We recommend choosing an option that’s easy to collaborate with, e.g., Google Slides.\n\n\n\n\n\n\nNote\n\n\n\nYou can also use Quarto to make your slides! While we won’t be covering making slides with Quarto in the class, we would be happy to help you with it in office hours. It’s no different than writing other documents with Quarto, so the learning curve will not be steep!",
-    "crumbs": [
-      "Projects",
-      "Project 2"
-    ]
-  },
-  {
-    "objectID": "project/project-2.html#recording",
-    "href": "project/project-2.html#recording",
-    "title": "Project 2",
-    "section": "Recording",
-    "text": "Recording\nPresentations will be submitted as a pre-recorded video by the due date.\nFor recording, you may use can use any platform that works best for your group to record your presentation. Below are a few resources on recording videos:\n\nRecording presentations in Zoom\nApple Quicktime for screen recording\nWindows 10 built-in screen recording functionality\nKap for screen recording\n\nOnce your video is ready, upload the video to Warpwire or another video platform (e.g., YouTube), then add a link to your video at https://docs.google.com/spreadsheets/d/1mGLkIqhtUEylFR4Ovlpuysv4xWCz6L4FdWqFGmjUKPw/edit?usp=sharing.\nTo upload your video to Warpwire:\n\nClick the Warpwire tab in the course Canvas site.\nClick the “+” and select “Upload files”.\nLocate the video on your computer and click to upload.\nOnce you’ve uploaded the video to Warpwire, click to share the video and copy the video’s URL. You will need this when you post the video in the Project 2 spreadsheet.",
-    "crumbs": [
-      "Projects",
-      "Project 2"
-    ]
-  },
-  {
-    "objectID": "project/project-2.html#grading-summary",
-    "href": "project/project-2.html#grading-summary",
-    "title": "Project 2",
-    "section": "Grading summary",
-    "text": "Grading summary\nGrading of the project will take into account the following:\n\nContent - What is the quality of research and/or policy question and relevancy of data to those questions?\nCorrectness - Are statistical procedures carried out and explained correctly?\nWriting and Presentation - What is the quality of the statistical presentation, writing, and explanations?\nCreativity and Critical Thought - Is the project carefully thought out? Are the limitations carefully considered? Does it appear that time and effort went into the planning and implementation of the project?\n\nA general breakdown of scoring is as follows:\n\n90%-100%: Outstanding effort. Student understands how to apply all statistical concepts, can put the results into a cogent argument, can identify weaknesses in the argument, and can clearly communicate the results to others.\n80%-89%: Good effort. Student understands most of the concepts, puts together an adequate argument, identifies some weaknesses of their argument, and communicates most results clearly to others.\n70%-79%: Passing effort. Student has misunderstanding of concepts in several areas, has some trouble putting results together in a cogent argument, and communication of results is sometimes unclear.\n60%-69%: Struggling effort. Student is making some effort, but has misunderstanding of many concepts and is unable to put together a cogent argument. Communication of results is unclear.\nBelow 60%: Student is not making a sufficient effort.",
-    "crumbs": [
-      "Projects",
-      "Project 2"
-    ]
-  },
-  {
-    "objectID": "project/project-2.html#late-work-policy",
-    "href": "project/project-2.html#late-work-policy",
-    "title": "Project 2",
-    "section": "Late work policy",
-    "text": "Late work policy\nBe sure to turn in your work early to avoid any technological mishaps.\n\n\n\n\n\n\nWarning\n\n\n\nThere is no late work accepted on this project.",
-    "crumbs": [
-      "Projects",
-      "Project 2"
-    ]
-  },
-  {
     "objectID": "exam-review/exam-1-review.html",
     "href": "exam-review/exam-1-review.html",
     "title": "Exam 1 Review",
@@ -2590,454 +2480,6 @@
     ]
   },
   {
-    "objectID": "labs/lab-7.html",
-    "href": "labs/lab-7.html",
-    "title": "Lab 7 - Inference for proportions and means",
-    "section": "",
-    "text": "By the end of this lab you will\nFor all visualizations you create, be sure to include informative titles for the plot, axes, and legend!"
-  },
-  {
-    "objectID": "labs/lab-7.html#exercise-1",
-    "href": "labs/lab-7.html#exercise-1",
-    "title": "Lab 7 - Inference for proportions and means",
-    "section": "Exercise 1",
-    "text": "Exercise 1\n\nCreate a subset of the data that only contains Yes and No answers for the harassment question. How many responses chose each of these answers?"
-  },
-  {
-    "objectID": "labs/lab-7.html#exercise-2",
-    "href": "labs/lab-7.html#exercise-2",
-    "title": "Lab 7 - Inference for proportions and means",
-    "section": "Exercise 2",
-    "text": "Exercise 2\n\nDescribe how bootstrapping can be used to estimate the proportion of all Americans who have been harassed by their superiors or co-workers at their job."
-  },
-  {
-    "objectID": "labs/lab-7.html#exercise-3",
-    "href": "labs/lab-7.html#exercise-3",
-    "title": "Lab 7 - Inference for proportions and means",
-    "section": "Exercise 3",
-    "text": "Exercise 3\n\n\nCalculate a 95% bootstrap confidence interval for the proportion of Americans who have been harassed by their superiors or co-workers at their job. Use 1,000 iterations when creating your bootstrap distribution. Set the seed to 1234. Interpret this interval in context of the data. Make sure to visualize this interval as well.\nWhere was your 95% confidence interval centered? Why does this make sense?\nNow, calculate 90% bootstrap confidence interval for the proportion of Americans who have been harassed by their superiors or co-workers at their job. Interpret this interval in context of the data. Is it wider or more narrow than the 95% confidence interval? Additionally, visualize the interval by layering it on the visualization (for the 95% confidence interval) from part (a). You can do this simply by adding another shading layer where the endpoints now come from the new 90% confidence interval. Use a different pair of colors for the color and fill arguments, e.g., darkorange4 and darkorange1.\nNow, suppose you created a bootstrap distribution with 50,000 simulations instead of 1,000. What would you expect to change (if anything)? Center of your confidence interval? Width of your confidence interval? Do not run this simulation, just conceptually think about it.\n\n\n\n\n\n\n\n\nPause and render\n\n\n\nNow that you’ve completed the second part of the exercises, pause and render your document. If it renders without any issues, great! Move on to the next exercise. If it does not, debug the issue before moving on. Ask for help from your TA if you need. Do not proceed without rendering your document."
-  },
-  {
-    "objectID": "labs/lab-7.html#exercise-4",
-    "href": "labs/lab-7.html#exercise-4",
-    "title": "Lab 7 - Inference for proportions and means",
-    "section": "Exercise 4",
-    "text": "Exercise 4\n\n\nWhat is the probability a randomly selected student scored less than 28?\nWhat is the probability a randomly selected student scored higher than than 35?\nWhat score did only 20 percent of the class exceed?"
-  },
-  {
-    "objectID": "labs/lab-7.html#exercise-5",
-    "href": "labs/lab-7.html#exercise-5",
-    "title": "Lab 7 - Inference for proportions and means",
-    "section": "Exercise 5",
-    "text": "Exercise 5\n\nI pick 10 students at random from the class.\n\n[Without looking at the next question] How does the standard error of their average score compare to the standard deviation of the population of all STA 101 students? Explain your reasoning.\nThe standard error of the mean can be calculated as \\(SE = \\frac{\\sigma}{\\sqrt{n}}\\). What is the probability the average midterm score of these 10 students is less than 28?\nWhat is the probability the average midterm score of these 10 students is higher than 35?\nHow do the probabilities you calculated in the previous two questions (less than 28 and higher than 35) compare to the probabilities you calculated in Exercise 4? Why?\n\n\n\n\n\n\n\n\nPause and render\n\n\n\nNow that you’ve completed the first part of the exercises, pause and render your document. If it renders without any issues, great! Move on to the next exercise. If it does not, debug the issue before moving on. Ask for help from your TA if you need. Do not proceed without rendering your document."
-  },
-  {
-    "objectID": "labs/lab-7.html#exercise-6",
-    "href": "labs/lab-7.html#exercise-6",
-    "title": "Lab 7 - Inference for proportions and means",
-    "section": "Exercise 6",
-    "text": "Exercise 6\n\nIMS - Chapter 16 exercises, #2: Married at 25."
-  },
-  {
-    "objectID": "labs/lab-7.html#exercise-7",
-    "href": "labs/lab-7.html#exercise-7",
-    "title": "Lab 7 - Inference for proportions and means",
-    "section": "Exercise 7",
-    "text": "Exercise 7\n\nIMS - Chapter 16 exercises, #5: If I fits, I sits, bootstrap test."
-  },
-  {
-    "objectID": "labs/lab-7.html#exercise-8",
-    "href": "labs/lab-7.html#exercise-8",
-    "title": "Lab 7 - Inference for proportions and means",
-    "section": "Exercise 8",
-    "text": "Exercise 8\n\nIMS - Chapter 16 exercises, #6: Legalization of marijuana, bootstrap test."
-  },
-  {
-    "objectID": "labs/lab-7.html#exercise-9",
-    "href": "labs/lab-7.html#exercise-9",
-    "title": "Lab 7 - Inference for proportions and means",
-    "section": "Exercise 9",
-    "text": "Exercise 9\n\nIMS - Chapter 16 exercises, #8: Legalization of marijuana, standard errors."
-  },
-  {
-    "objectID": "labs/lab-7.html#exercise-10",
-    "href": "labs/lab-7.html#exercise-10",
-    "title": "Lab 7 - Inference for proportions and means",
-    "section": "Exercise 10",
-    "text": "Exercise 10\n\nIMS - Chapter 16 exercises, #22: Legalization of marijuana, mathematical interval."
-  },
-  {
-    "objectID": "labs/lab-7.html#submitting",
-    "href": "labs/lab-7.html#submitting",
-    "title": "Lab 7 - Inference for proportions and means",
-    "section": "Submitting",
-    "text": "Submitting\n\n\n\n\n\n\nImportant\n\n\n\nBefore you proceed, first, make sure that you have updated the document YAML with your name! Then, render your document one last time, for good measure.\n\n\nTo submit your assignment to Gradescope:\n\nGo to your Files pane and check the box next to the PDF output of your document (lab-7.pdf).\nThen, in the Files pane, go to More &gt; Export. This will download the PDF file to your computer. Save it somewhere you can easily locate, e.g., your Downloads folder or your Desktop.\nGo to the course Canvas page and click on Gradescope and then click on the assignment. You’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the papers of your lab should be associated with at least one question (i.e., should be “checked”).\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you fail to mark the pages associated with an exercise, that exercise won’t be graded. This means, if you fail to mark the pages for all exercises, you will receive a 0 on the assignment. The TAs can’t mark your pages for you, and for them to be able to grade, you must mark them."
-  },
-  {
-    "objectID": "labs/lab-7.html#grading",
-    "href": "labs/lab-7.html#grading",
-    "title": "Lab 7 - Inference for proportions and means",
-    "section": "Grading",
-    "text": "Grading\nThe lab will be graded out of 50 total points."
-  },
-  {
-    "objectID": "labs/lab-4.html",
-    "href": "labs/lab-4.html",
-    "title": "Lab 4",
-    "section": "",
-    "text": "By the end of this lab you will create and fit regression models with a single predictor and visualize a simple regression model.\nFor all visualizations you create, b sure to include informative titles for the plot, axes, and legend!"
-  },
-  {
-    "objectID": "labs/lab-4.html#exercise-1",
-    "href": "labs/lab-4.html#exercise-1",
-    "title": "Lab 4",
-    "section": "Exercise 1",
-    "text": "Exercise 1\n\nLet’s begin by taking a look at the squat lifting records.\nTo begin, remove any observations that are negative for squat. Next, create a new column called best3_squat_lbs that converts the record from kg to lbs (you may have to google the conversion). Save your data frame as ipf_squat. Report the number of rows and columns of this new data frame using inline code.\n\n\n\n\n\n\n\nHint\n\n\n\nFirst, you’re taking a dataset and filtering it for certain records, and then you’re mutate-ing that dataset to gain a new column, and you’re assigning the resulting dataset to a new object called ipf_squat."
-  },
-  {
-    "objectID": "labs/lab-4.html#exercise-2",
-    "href": "labs/lab-4.html#exercise-2",
-    "title": "Lab 4",
-    "section": "Exercise 2",
-    "text": "Exercise 2\n\nUsing ipf_squat from the previous exercise, create a scatter plot to investigate the relationship between squat (in lbs) and age. Age should be on the x-axis. Adjust the alpha level of your points to get a better sense of the density of the data. Add a linear trend-line. Be sure to label all axes and give the plot a title. Comment on what you observe."
-  },
-  {
-    "objectID": "labs/lab-4.html#exercise-3",
-    "href": "labs/lab-4.html#exercise-3",
-    "title": "Lab 4",
-    "section": "Exercise 3",
-    "text": "Exercise 3\n\nWrite down the linear model to predict lift squat lbs from age in \\(x\\), \\(y\\), \\(\\beta\\) notation. What is \\(x\\)? What is \\(y\\)? Next, fit the linear model, and save it as age_fit. Re-write your previous equation replacing \\(\\beta\\) with the numeric estimates. This is called the “fitted” linear model. Interpret each estimate of \\(\\beta\\). Are the interpretations sensible?"
-  },
-  {
-    "objectID": "labs/lab-4.html#exercise-4",
-    "href": "labs/lab-4.html#exercise-4",
-    "title": "Lab 4",
-    "section": "Exercise 4",
-    "text": "Exercise 4\n\nBuilding on your ipf_squat data frame, create a new column called age2 that takes the age of each lifter and squares it. Save it to your data frame ipf_squat. Next, plot squat in lbs vs age2 and add a linear best fit line. Does this model look like it fits the data better?\n\n\n\n\n\n\n\nHint\n\n\n\nTo raise a value to a power, use ^ in R, e.g.: 2 ^ 2 gives you 4, 2 ^ 3 gives you 8, etc."
-  },
-  {
-    "objectID": "labs/lab-4.html#exercise-5",
-    "href": "labs/lab-4.html#exercise-5",
-    "title": "Lab 4",
-    "section": "Exercise 5",
-    "text": "Exercise 5\n\nOne metric to assess the fit of a model is the correlation squared, also known as \\(R^2\\). Fit the age\\(^2\\) model and save the object as age2_fit. Subsequently run\n\nglance(age2_fit)$r.squared\n\nto examine the \\(R^2\\). Compare \\(R^2\\) of the age\\(^2\\) model to the \\(R^2\\) of the model from Exercise 3. Which has a higher \\(R^2\\)?\n\n\n\n\n\n\n\nNote\n\n\n\n\\(R^2\\) values range from 0 to 1. Values close to 0 means weak correlation between the variables whereas \\(R^2 = 1\\) implies perfect correlation. You can (optionally) read more about \\(R^2\\) in section 7.2.5 of the book. We’ll pick up here in the next class."
-  },
-  {
-    "objectID": "labs/lab-4.html#exercise-6",
-    "href": "labs/lab-4.html#exercise-6",
-    "title": "Lab 4",
-    "section": "Exercise 6",
-    "text": "Exercise 6\n\nNext, let’s turn our attention to dead lifting records.\nRecreate the plot below. Make sure axes and title labels are exactly matching, including spelling, capitalization, etc. Based on the plot below, which impacts deadlift weight more, age category or sex?\n\n\n\n\n\n\n\nHint\n\n\n\nYou will need to create a couple of new columns. One to classify age appropriately and one to convert best3deadlift_kg to the plotted units (lbs). Notice that there are no negative deadlift values on the x-axis."
-  },
-  {
-    "objectID": "labs/lab-4.html#exercise-7",
-    "href": "labs/lab-4.html#exercise-7",
-    "title": "Lab 4",
-    "section": "Exercise 7",
-    "text": "Exercise 7\n\nFinally, let’s turn our attention to bench press records.\nTo begin, remove any observations that are negative for bench press, create two new columns: best3bench_lbs and bodyweight_lbs. Save the result in a new data frame called ipf_bench.\nThen, create a scatter plot to investigate the relationship between best bench press (in lbs) and the lifter’s bodyweight (in lbs). Bodyweight should be on the x-axis. Add a linear trend-line. Be sure to label all axes and give the plot a title. Comment on what you observe."
-  },
-  {
-    "objectID": "labs/lab-4.html#exercise-8",
-    "href": "labs/lab-4.html#exercise-8",
-    "title": "Lab 4",
-    "section": "Exercise 8",
-    "text": "Exercise 8\n\nFit the linear model displayed in the previous exercise and write down the fitted model equation only, replacing \\(\\hat{\\beta}\\)s with their fitted estimates. Interpret the \\(\\hat{\\beta}\\)s (intercept and slope). Report \\(R^2\\). Is body weight an important predictor of bench press ability? Why or why not?"
-  },
-  {
-    "objectID": "labs/lab-4.html#exercise-9",
-    "href": "labs/lab-4.html#exercise-9",
-    "title": "Lab 4",
-    "section": "Exercise 9",
-    "text": "Exercise 9\n\nIMS - Chapter 7 exercises, #18: Over-under, II."
-  },
-  {
-    "objectID": "labs/lab-4.html#exercise-10",
-    "href": "labs/lab-4.html#exercise-10",
-    "title": "Lab 4",
-    "section": "Exercise 10",
-    "text": "Exercise 10\n\nIMS - Chapter 7 exercises, #24: Cats weights."
-  },
-  {
-    "objectID": "labs/lab-4.html#submitting",
-    "href": "labs/lab-4.html#submitting",
-    "title": "Lab 4",
-    "section": "Submitting",
-    "text": "Submitting\n\n\n\n\n\n\nImportant\n\n\n\nBefore you proceed, first, make sure that you have updated the document YAML with your name! Then, render your document one last time, for good measure.\n\n\nTo submit your assignment to Gradescope:\n\nGo to your Files pane and check the box next to the PDF output of your document (lab-3.pdf).\nThen, in the Files pane, go to More &gt; Export. This will download the PDF file to your computer. Save it somewhere you can easily locate, e.g., your Downloads folder or your Desktop.\nGo to the course Canvas page and click on Gradescope and then click on the assignment. You’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the papers of your lab should be associated with at least one question (i.e., should be “checked”).\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you fail to mark the pages associated with an exercise, that exercise won’t be graded. This means, if you fail to mark the pages for all exercises, you will receive a 0 on the assignment. The TAs can’t mark your pages for you, and for them to be able to grade, you must mark them."
-  },
-  {
-    "objectID": "labs/lab-4.html#grading",
-    "href": "labs/lab-4.html#grading",
-    "title": "Lab 4",
-    "section": "Grading",
-    "text": "Grading\n\n\nExercise\nPoints\n\n\n\nExercise 1\n3\n\n\nExercise 2\n5\n\n\nExercise 3\n5\n\n\nExercise 4\n5\n\n\nExercise 5\n5\n\n\nExercise 6\n8\n\n\nExercise 7\n6\n\n\nExercise 8\n7\n\n\nExercise 9\n4\n\n\nExercise 10\n2\n\n\nTotal\n50"
-  },
-  {
-    "objectID": "labs/lab-3.html",
-    "href": "labs/lab-3.html",
-    "title": "Lab 3",
-    "section": "",
-    "text": "The goal of this lab is to effectively visualize numerical and categorical data.\nFor all visualizations you create, be sure to include informative titles for the plot, axes, and legend!"
-  },
-  {
-    "objectID": "labs/lab-3.html#exercise-1",
-    "href": "labs/lab-3.html#exercise-1",
-    "title": "Lab 3",
-    "section": "Exercise 1",
-    "text": "Exercise 1\n\nHow many observations and how many variables are in the dataset? Use inline code to answer this question. What does each row represent?"
-  },
-  {
-    "objectID": "labs/lab-3.html#exercise-2",
-    "href": "labs/lab-3.html#exercise-2",
-    "title": "Lab 3",
-    "section": "Exercise 2",
-    "text": "Exercise 2\nThere are some observations in this dataset that we will exclude from our analysis to match the Buzzfeed results.\n\nCreate a new data frame called nobel_living that filters for\n\nlaureates for whom country is available: !is.na(country)\n\nlaureates who are people as opposed to organizations, i.e., organizations are denoted with \"org\" as their gender: gender != \"org\"\n\nlaureates who are still alive, i.e., their died_date is NA: is.na(died_date)\n\n\nConfirm that once you have filtered for these characteristics you are left with a data frame with 228 observations, once again using inline code.\n\n\n\nMost living Nobel laureates were based in the US when they won their prizes\n\n… says the Buzzfeed article. Let’s see if that’s true.\nFirst, we’ll create a new variable to identify whether the laureate was in the US when they won their prize. We’ll use the mutate() function for this. The following pipeline mutates the nobel_living data frame by adding a new variable called country_us. We use an if statement to create this variable. The first argument in the if_else() function we’re using to write this if statement is the condition we’re testing for. If country is equal to \"USA\", we set country_us to \"USA\". If not, we set the country_us to \"Other\".\n\nnobel_living &lt;- nobel_living |&gt;\n  mutate(\n    country_us = if_else(country == \"USA\", \"USA\", \"Other\")\n  )\n\nNext, we will limit our analysis to only the following categories: Physics, Medicine, Chemistry, and Economics.\n\nnobel_living_science &lt;- nobel_living |&gt;\n  filter(category %in% c(\"Physics\", \"Medicine\", \"Chemistry\", \"Economics\"))\n\nFor the following exercises, work with the nobel_living_science data frame you created above. This means you’ll need to define this data frame in your Quarto document, even though the next exercise doesn’t explicitly ask you to do so."
-  },
-  {
-    "objectID": "labs/lab-3.html#exercise-3",
-    "href": "labs/lab-3.html#exercise-3",
-    "title": "Lab 3",
-    "section": "Exercise 3",
-    "text": "Exercise 3\n\nCreate a faceted bar plot visualizing the relationship between the category of prize and whether the laureate was in the US when they won the nobel prize. Interpret your visualization, and say a few words about whether the Buzzfeed headline is supported by the data.\n\nYour visualization should be faceted by category.\nFor each facet you should have two bars, one for winners in the US and one for Other.\nFlip the coordinates so the bars are horizontal, not vertical."
-  },
-  {
-    "objectID": "labs/lab-3.html#exercise-4",
-    "href": "labs/lab-3.html#exercise-4",
-    "title": "Lab 3",
-    "section": "Exercise 4",
-    "text": "Exercise 4\nNext, let’s investigate, of those US-based Nobel laureates, what proportion were born in other countries.\n\nCreate a new variable called born_country_us in nobel_living_science that has the value \"USA\" if the laureate is born in the US, and \"Other\" otherwise. How many of the winners are born in the US?"
-  },
-  {
-    "objectID": "labs/lab-3.html#exercise-5",
-    "href": "labs/lab-3.html#exercise-5",
-    "title": "Lab 3",
-    "section": "Exercise 5",
-    "text": "Exercise 5\n\nAdd a second variable to your visualization from Exercise 3 based on whether the laureate was born in the US or not.\nCreate two visualizations with this new variable added:\n\nPlot 1: Segmented frequency bar plot\nPlot 2: Segmented relative frequency bar plot (Hint: Add position = \"fill\" to geom_bar().)\n\nHere are some instructions that apply to both of these visualizations:\n\nYour final visualization should contain a facet for each category.\nWithin each facet, there should be two bars for whether the laureate won the award in the US or not.\nEach bar should have segments for whether the laureate was born in the US or not.\n\nWhich of these visualizations is a better fit for answering the following question: “Do the data appear to support Buzzfeed’s claim that of those US-based Nobel laureates, many were born in other countries?” First, state which plot you’re using to answer the question. Then, answer the question, explaining your reasoning in 1-2 sentences."
-  },
-  {
-    "objectID": "labs/lab-3.html#exercise-6",
-    "href": "labs/lab-3.html#exercise-6",
-    "title": "Lab 3",
-    "section": "Exercise 6",
-    "text": "Exercise 6\n\nIn a single pipeline, filter the nobel_living_science data frame for laureates who won their prize in the US, but were born outside of the US, and then create a frequency table (with the count() function) for their birth country (born_country) and arrange the resulting data frame in descending order of number of observations for each country. Which country is the most common?"
-  },
-  {
-    "objectID": "labs/lab-3.html#exercise-7",
-    "href": "labs/lab-3.html#exercise-7",
-    "title": "Lab 3",
-    "section": "Exercise 7",
-    "text": "Exercise 7\n\nIMS - Chapter 4 exercises, #4: Raise taxes."
-  },
-  {
-    "objectID": "labs/lab-3.html#exercise-8",
-    "href": "labs/lab-3.html#exercise-8",
-    "title": "Lab 3",
-    "section": "Exercise 8",
-    "text": "Exercise 8\n\nIMS - Chapter 5 exercises, #4: Office productivity."
-  },
-  {
-    "objectID": "labs/lab-3.html#exercise-9",
-    "href": "labs/lab-3.html#exercise-9",
-    "title": "Lab 3",
-    "section": "Exercise 9",
-    "text": "Exercise 9\n\nIMS - Chapter 5 exercises, #16: Distributions and appropriate statistics."
-  },
-  {
-    "objectID": "labs/lab-3.html#exercise-10",
-    "href": "labs/lab-3.html#exercise-10",
-    "title": "Lab 3",
-    "section": "Exercise 10",
-    "text": "Exercise 10\n\nIMS - Chapter 5 exercises, #26: NYC marathon winners."
-  },
-  {
-    "objectID": "labs/lab-3.html#submitting",
-    "href": "labs/lab-3.html#submitting",
-    "title": "Lab 3",
-    "section": "Submitting",
-    "text": "Submitting\n\n\n\n\n\n\nImportant\n\n\n\nBefore you proceed, first, make sure that you have updated the document YAML with your name! Then, render your document one last time, for good measure.\n\n\nTo submit your assignment to Gradescope:\n\nGo to your Files pane and check the box next to the PDF output of your document (lab-3.pdf).\nThen, in the Files pane, go to More &gt; Export. This will download the PDF file to your computer. Save it somewhere you can easily locate, e.g., your Downloads folder or your Desktop.\nGo to the course Canvas page and click on Gradescope and then click on the assignment. You’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the papers of your lab should be associated with at least one question (i.e., should be “checked”).\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you fail to mark the pages associated with an exercise, that exercise won’t be graded. This means, if you fail to mark the pages for all exercises, you will receive a 0 on the assignment. The TAs can’t mark your pages for you, and for them to be able to grade, you must mark them."
-  },
-  {
-    "objectID": "labs/lab-3.html#grading",
-    "href": "labs/lab-3.html#grading",
-    "title": "Lab 3",
-    "section": "Grading",
-    "text": "Grading\n\n\nExercise\nPoints\n\n\n\nExercise 1\n3\n\n\nExercise 2\n4\n\n\nExercise 3\n8\n\n\nExercise 4\n6\n\n\nExercise 5\n8\n\n\nExercise 6\n8\n\n\nExercise 7\n2\n\n\nExercise 8\n2\n\n\nExercise 9\n5\n\n\nExercise 10\n4\n\n\nTotal\n50"
-  },
-  {
-    "objectID": "labs/lab-8.html",
-    "href": "labs/lab-8.html",
-    "title": "Lab 8 - Wrap it up!",
-    "section": "",
-    "text": "By the end of this lab you will\nFor all visualizations you create, be sure to include informative titles for the plot, axes, and legend!"
-  },
-  {
-    "objectID": "labs/lab-8.html#exercise-1",
-    "href": "labs/lab-8.html#exercise-1",
-    "title": "Lab 8 - Wrap it up!",
-    "section": "Exercise 1",
-    "text": "Exercise 1\nFor this exercise you can do one of the following:\n\nAttend a talk related to statistics or data science. To count, the talk must be at least 30 minutes or longer.\nTalk with someone who uses statistics in their daily work. This could include a professor, professional in industry, graduate student, etc.\nListen to a statistics podcast (e.g., check out Causal Inference podcast) or watch a conference talk (e.g., a talk from rstudio::conf(2022))\n\nNext, write 4-6 sentences summarizing your experience. Include the following:\n\nCitation or link to web page for event if applicable.\nName/brief description of the event/podcast/chat.\nSomething you found new, interesting, or unexpected.\nHow the event connects to something we’ve done in class."
-  },
-  {
-    "objectID": "labs/lab-8.html#exercise-2",
-    "href": "labs/lab-8.html#exercise-2",
-    "title": "Lab 8 - Wrap it up!",
-    "section": "Exercise 2",
-    "text": "Exercise 2\nFor this exercise you’re asked to read a “winning” class project from a student. Read one of the winning projects from the the Undergraduate Class Project Competition (USCLAP). You can find the winners at https://www.causeweb.org/usproc/projects/winners.\nNext, write 4-6 sentences summarizing the project you read. Include the following:\n\nLink to project.\nTitle and research question.\nDescription of dataset used.\nBrief summary of findings.\nSomething you found new, interesting, or unexpected."
-  },
-  {
-    "objectID": "labs/lab-8.html#exercise-3",
-    "href": "labs/lab-8.html#exercise-3",
-    "title": "Lab 8 - Wrap it up!",
-    "section": "Exercise 3",
-    "text": "Exercise 3\nA second chance for an exercise: Take one of the exercises from a previous homework assignment, ideally one you received more feedback on / lost more points on and improve it. First, write one sentence reminding us of the specific exercise and a a few sentences on why you chose this specific exercise to improve and how you plan to improve it. Some of these improvements might be “fixes” for things that were pointed out as missing or incorrect. Some of them might be things you hoped to do before the homework deadline, but didn’t get a chance to. Some notes for completing this exercise:\n\nYou will need to add your data from your the homework assignment to the data/ folder in this assignment. You do not need to also add a data dictionary.\nYou will need to copy over any code needed for cleaning / preparing your data for this specific exercise. You can reuse code from your previous assignment but note that we will re-evaluate your code as part of the grading for this exercise. This means we might catch something wrong with it that we didn’t catch before, so if you spot any errors make sure to fix them.\nDon’t worry about being critical of your own work. Even if you lost no points on the plot, if you think it can be improved, articulate how / why. We will not go back and penalize for any mistakes you might point out that we didn’t catch at the time of grading your homework assignment. There’s no risk to being critical!"
-  },
-  {
-    "objectID": "labs/lab-8.html#exercise-4",
-    "href": "labs/lab-8.html#exercise-4",
-    "title": "Lab 8 - Wrap it up!",
-    "section": "Exercise 4",
-    "text": "Exercise 4\nA second chance for a Project 1 plot: TL;DR - Same as the previous exercise, but for a plot from Project 1.\nTake one of the visualizations from your first project, ideally one you received more feedback on / lost more points on and improve it. First, write one sentence reminding us of your project and a a few sentences on why you chose this plot and how you plan to improve it. Some of these improvements might be “fixes” for things that were pointed out as missing or incorrect. Some of them might be things you hoped to do before the project deadline, but didn’t get a chance to. And some might be things you wanted to do in your project but your teammates didn’t agree so you gave up on at the time. Some notes for completing this exercise:\n\nYou will need to add your data from your project to the data/ folder in this assignment. You do not need to also add the data dictionary.\nYou will need to copy over any code needed for cleaning / preparing your data for this plot. You can reuse code from your project but note that we will re-evaluate your code as part of the grading for this exercise. This means we might catch something wrong with it that we didn’t catch before, so if you spot any errors make sure to fix them.\nDon’t worry about being critical of your own work. Even if you lost no points on the plot, if you think it can be improved, articulate how / why. We will not go back and penalize for any mistakes you might point out that we didn’t catch at the time of grading your project. There’s no risk to being critical!"
-  },
-  {
-    "objectID": "labs/lab-8.html#exercise-5",
-    "href": "labs/lab-8.html#exercise-5",
-    "title": "Lab 8 - Wrap it up!",
-    "section": "Exercise 5",
-    "text": "Exercise 5\n\nIMS - Chapter 19 exercises, #14: Interpreting p-values for population mean."
-  },
-  {
-    "objectID": "labs/lab-8.html#exercise-6",
-    "href": "labs/lab-8.html#exercise-6",
-    "title": "Lab 8 - Wrap it up!",
-    "section": "Exercise 6",
-    "text": "Exercise 6\n\nIMS - Chapter 19 exercises, #20: Possible bootstrap samples."
-  },
-  {
-    "objectID": "labs/lab-8.html#exercise-7",
-    "href": "labs/lab-8.html#exercise-7",
-    "title": "Lab 8 - Wrap it up!",
-    "section": "Exercise 7",
-    "text": "Exercise 7\n\nIMS - Chapter 20 exercises, #4: Lizards running, randomization test."
-  },
-  {
-    "objectID": "labs/lab-8.html#exercise-8",
-    "href": "labs/lab-8.html#exercise-8",
-    "title": "Lab 8 - Wrap it up!",
-    "section": "Exercise 8",
-    "text": "Exercise 8\n\nIMS - Chapter 20 exercises, #6: Lizards running, bootstrap interval."
-  },
-  {
-    "objectID": "labs/lab-8.html#exercise-9",
-    "href": "labs/lab-8.html#exercise-9",
-    "title": "Lab 8 - Wrap it up!",
-    "section": "Exercise 9",
-    "text": "Exercise 9\n\nIMS - Chapter 20 exercises, #10: A/B testing."
-  },
-  {
-    "objectID": "labs/lab-8.html#exercise-10",
-    "href": "labs/lab-8.html#exercise-10",
-    "title": "Lab 8 - Wrap it up!",
-    "section": "Exercise 10",
-    "text": "Exercise 10\n\nIMS - Chapter 21 exercises, #6: High School and Beyond, randomization test."
-  },
-  {
-    "objectID": "labs/lab-2.html",
-    "href": "labs/lab-2.html",
-    "title": "Lab 2",
-    "section": "",
-    "text": "The goal of this lab is to effectively visualize numerical and categorical data.\nFor all visualizations you create, b sure to include informative titles for the plot, axes, and legend!"
-  },
-  {
-    "objectID": "labs/lab-2.html#exercise-1",
-    "href": "labs/lab-2.html#exercise-1",
-    "title": "Lab 2",
-    "section": "Exercise 1",
-    "text": "Exercise 1\n\nCreate a bar plot of the results of games for NC Courage. Additionally, calculate the numbers of wins, losses, and ties. Write a one sentence narrative for your findings.\n\nHint: result is a categorical variable, so use a bar plot for the visualization and the count() function for calculating the frequencies of levels of this variable."
-  },
-  {
-    "objectID": "labs/lab-2.html#exercise-2",
-    "href": "labs/lab-2.html#exercise-2",
-    "title": "Lab 2",
-    "section": "Exercise 2",
-    "text": "Exercise 2\n\nCreate a new variable indicating whether the game was played at home or away for NC Courage. This variable should be called home_courage and take the value “home” if NC Courage is the home team and “away” if NC Courage is the away team. (Instructions for how to do this are given below.)\nThen, calculate the number of home and away games, and write a one sentence narrative for your findings.\n\nUse the example code below to get started.\n\ncourage &lt;- courage |&gt;\n  mutate(home_courage = if_else(home_team == \"NC\", \"home\", \"away\"))\n\nThere are two things of note here:\n\nThe use of the assignment operator (&lt;-) to assign the resulting data frame to courage, thus overwriting the courage dataset to contain this new column. We do this because we will use this new variable, home_courage, in a subsequent exercise.\n\nThe use of a new function, if_else() to determine whether the game is played at home or away.\n\n\nhome_team == \"NC\" finds all rows where the home team is NC Courage.\nIf the home team is NC Courage, then we set the value of home_courage to `“home”.\nOtherwise (else) Courage must be the away team and we set the value of home_courage to \"away\"."
-  },
-  {
-    "objectID": "labs/lab-2.html#exercise-3",
-    "href": "labs/lab-2.html#exercise-3",
-    "title": "Lab 2",
-    "section": "Exercise 3",
-    "text": "Exercise 3\n\nFirst, create a visualization that displays the relationship between home_courage and result. Then, calculate the proportions of home and away games that the Courage won. Based on these, do your findings suggest a home-field advantage? Why or why not?\n\nSo far we have focused on whether the game was at home or away and whether the Courage won. Next, we dive deeper and focus on the number of points the Courage wins by, at home and away."
-  },
-  {
-    "objectID": "labs/lab-2.html#exercise-4",
-    "href": "labs/lab-2.html#exercise-4",
-    "title": "Lab 2",
-    "section": "Exercise 4",
-    "text": "Exercise 4\n\nHow many points do the Courage typically win by (on average)? Use the example code below to get started. You’ll encounter a new function: abs() is the absolute value function. It takes the absolute value of a number. Why do we want to use this absolute value function here?\n\nHint: We are only interested in games the Courage wins, therefore we should filter() for those games first.\n\ncourage |&gt;\n  filter(___) |&gt;\n  mutate(win_pts = abs(home_pts - away_pts)) |&gt;\n  summarize(___)"
-  },
-  {
-    "objectID": "labs/lab-2.html#exercise-5",
-    "href": "labs/lab-2.html#exercise-5",
-    "title": "Lab 2",
-    "section": "Exercise 5",
-    "text": "Exercise 5\n\nHow many points do NC Courage score when they win (on average)? Note this is different than how many points they “win by”. How many points do the Courage score when they lose on average?\n\nTo calculate this we first need to determine how many points NC Courage scored in every game. We can use if_else() logic again to find this value for each game, and store it in a new column, courage_pts.\n\ncourage &lt;- courage |&gt;\n  mutate(courage_pts = if_else(home_team == \"NC\", home_pts, away_pts))\n\ncourage |&gt;\n  group_by(___) |&gt;\n  summarize(___)"
-  },
-  {
-    "objectID": "labs/lab-2.html#exercise-6",
-    "href": "labs/lab-2.html#exercise-6",
-    "title": "Lab 2",
-    "section": "Exercise 6",
-    "text": "Exercise 6\n\nNext we’ll investigate visually whether or not NC Courage has a home-field advantage. To start, let’s build on the courage2 data frame. Add a new column called home_courage that takes the value “home” if Courage is the home team and “away” if Courage is the away team. Hint: use the ifelse logic from exercise 4.\nMutate the courage data frame to create two new variables:\n\ntotal_pts: Sum of points scored by both teams, i.e. home_pts + away_pts.\nopponent_pts: Points scored by the opposing team, i.e., total_pts - courage_pts.\n\nSave the resulting data frame as courage again and print the three points columns (total_pts, opponent_pts, courage_pts) to screen.\n\nHint:\n\nUse the mutate() function to create the columns.\n\n\ncourage &lt;- courage |&gt;\n  mutate(\n    total_pts = ___,\n    opponent_pts = ___\n    )\n\n\nUse the select() function to print them to screen:\n\n\ncourage |&gt;\n  select(total_pts, opponent_pts, courage_pts)"
-  },
-  {
-    "objectID": "labs/lab-2.html#exercise-7",
-    "href": "labs/lab-2.html#exercise-7",
-    "title": "Lab 2",
-    "section": "Exercise 7",
-    "text": "Exercise 7\n\nCreate a scatter plot:\n\nopponent_pts (y) vs. courage_pts (x)\nColor the scatter plot by whether NC Courage are home or away.\nRepresent the data with “jittered” points wth geom_jitter().\nOverlay a \\(y = x\\) line with geom_abline().\nFaceted by season.\n\nWhat does the line represent? What does it mean for a point to fall above the line? Below the line?\n\n\nggplot(courage, aes(x = ___, y = ___, color = ___)) + \n  geom_jitter(width = 0.1, height = 0.1) + \n  geom_abline(slope = 1, intercept = 0) +\n  facet_wrap(~ ___) +\n  labs(\n    x = \"___\", \n    y = \"___\", \n    title = \"___\", \n    color = \"___\"\n  )"
-  },
-  {
-    "objectID": "labs/lab-2.html#exercise-8",
-    "href": "labs/lab-2.html#exercise-8",
-    "title": "Lab 2",
-    "section": "Exercise 8",
-    "text": "Exercise 8\nThis exercise is a look at where we’re headed…\n\nIf we want to formally test whether the Courage have a home-field advantage, then we must first define what this means! In your own words, what do you think a home-field advantage means? Then, now that you’ve defined what it means to have a home field advantage, define what it means to not have a home-field advantage.\n\n\n\n\n\n\n\nNote\n\n\n\nWhile there is a right answer, this part is graded for completion, so don’t worry too much about answering this in exactly the right way. Although graded for completion, your response must make sense to receive full points.\n\n\nWe’ll pick-up here in a future class."
-  },
-  {
-    "objectID": "labs/lab-2.html#exercise-9",
-    "href": "labs/lab-2.html#exercise-9",
-    "title": "Lab 2",
-    "section": "Exercise 9",
-    "text": "Exercise 9\n\nIMS - Chapter 2 exercises, #20: Vitamin supplements."
-  },
-  {
-    "objectID": "labs/lab-2.html#exercise-10",
-    "href": "labs/lab-2.html#exercise-10",
-    "title": "Lab 2",
-    "section": "Exercise 10",
-    "text": "Exercise 10\n\nIMS - Chapter 2 exercises, #30: Screens, teens, and psychological well-being."
-  },
-  {
-    "objectID": "labs/lab-2.html#submitting",
-    "href": "labs/lab-2.html#submitting",
-    "title": "Lab 2",
-    "section": "Submitting",
-    "text": "Submitting\n\n\n\n\n\n\nImportant\n\n\n\nBefore you proceed, first, make sure that you have updated the document YAML with your name! Then, render your document one last time, for good measure.\n\n\nTo submit your assignment to Gradescope:\n\nGo to your Files pane and check the box next to the PDF output of your document (lab-2.pdf).\nThen, in the Files pane, go to More &gt; Export. This will download the PDF file to your computer. Save it somewhere you can easily locate, e.g., your Downloads folder or your Desktop.\nGo to the course Canvas page and click on Gradescope and then click on the assignment. You’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the papers of your lab should be associated with at least one question (i.e., should be “checked”).\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you fail to mark the pages associated with an exercise, that exercise won’t be graded. This means, if you fail to mark the pages for all exercises, you will receive a 0 on the assignment. The TAs can’t mark your pages for you, and for them to be able to grade, you must mark them."
-  },
-  {
-    "objectID": "labs/lab-2.html#grading",
-    "href": "labs/lab-2.html#grading",
-    "title": "Lab 2",
-    "section": "Grading",
-    "text": "Grading\n\n\nExercise\nPoints\n\n\n\nExercise 1\n5\n\n\nExercise 2\n5\n\n\nExercise 3\n6\n\n\nExercise 4\n6\n\n\nExercise 5\n6\n\n\nExercise 6\n4\n\n\nExercise 7\n6\n\n\nExercise 8\n2\n\n\nExercise 9\n5\n\n\nExercise 10\n5\n\n\nTotal\n50"
-  },
-  {
-    "objectID": "labs/lab-2.html#acknowledgements",
-    "href": "labs/lab-2.html#acknowledgements",
-    "title": "Lab 2",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\nThis assignment was adapted from a similar exercise by Dr. Alex Fisher (who will be our guest lecturer soon!)."
-  },
-  {
     "objectID": "labs/lab-1.html",
     "href": "labs/lab-1.html",
     "title": "Lab 1: Hello R!",
@@ -3212,188 +2654,6 @@
       "Labs",
       "Lab 1"
     ]
-  },
-  {
-    "objectID": "labs/lab-5.html",
-    "href": "labs/lab-5.html",
-    "title": "Lab 5",
-    "section": "",
-    "text": "By the end of this lab you will create formulate and conduct hypothesis tests using randomization.\nFor all visualizations you create, be sure to include informative titles for the plot, axes, and legend!"
-  },
-  {
-    "objectID": "labs/lab-5.html#exercise-1",
-    "href": "labs/lab-5.html#exercise-1",
-    "title": "Lab 5",
-    "section": "Exercise 1",
-    "text": "Exercise 1\n\nIMS - Chapter 11 exercises, #2: Identify the parameter, II."
-  },
-  {
-    "objectID": "labs/lab-5.html#exercise-2",
-    "href": "labs/lab-5.html#exercise-2",
-    "title": "Lab 5",
-    "section": "Exercise 2",
-    "text": "Exercise 2\n\nIMS - Chapter 11 exercises, #6: Identify hypotheses, II."
-  },
-  {
-    "objectID": "labs/lab-5.html#exercise-3",
-    "href": "labs/lab-5.html#exercise-3",
-    "title": "Lab 5",
-    "section": "Exercise 3",
-    "text": "Exercise 3\n\nIMS - Chapter 11 exercises, #8: Heart transplants."
-  },
-  {
-    "objectID": "labs/lab-5.html#exercise-4",
-    "href": "labs/lab-5.html#exercise-4",
-    "title": "Lab 5",
-    "section": "Exercise 4",
-    "text": "Exercise 4\n\nRecreate the stacked bar plot in Exercise 3.\n\n\n\n\n\n\n\nHint\n\n\n\nThe colors are #569BBD and #114B5F. Use scale_fill_manual() to indicate these are the colors you want to use.\n\n\n\n\n\n\n\n\nPause and render\n\n\n\nNow that you’ve completed a few exercises, pause and render your document. If it renders without any issues, great! Move on to the next exercise. If it does not, debug the issue before moving on. Ask for help from your TA if you need. Do not proceed without rendering your document."
-  },
-  {
-    "objectID": "labs/lab-5.html#exercise-5",
-    "href": "labs/lab-5.html#exercise-5",
-    "title": "Lab 5",
-    "section": "Exercise 5",
-    "text": "Exercise 5\n\nCalculate the point estimate for the difference in proportions of patients who died between the treatment and control groups: \\(\\hat{p}_{treatment} - \\hat{p}_{control}\\), where \\(\\hat{p}\\) is the observed probability of dying in each group. Do this in two ways:\n\nConstruct a frequency table of survived by transplant and calculate the difference in proportions “by hand”.\nUse specify() and calculate() to calculate the difference in proportions as shown below.\n\n\nobs_diff_outcome &lt;- heart_transplant |&gt;\n  specify(response = outcome, explanatory = transplant, success = \"deceased\") |&gt;\n  calculate(stat = \"diff in props\", order = c(\"treatment\", \"control\"))\n\nThen, confirm that you obtained the same results with the two methods."
-  },
-  {
-    "objectID": "labs/lab-5.html#exercise-6",
-    "href": "labs/lab-5.html#exercise-6",
-    "title": "Lab 5",
-    "section": "Exercise 6",
-    "text": "Exercise 6\n\nUsing the code below, generate a null distribution for the hypothesis test for the hypothesis you formulated in Exercise 3. Use 100 resamples (reps). However, change the seed to use a different seed.\n\nset.seed(1234)\n\nnull_dist_outcome &lt;- heart_transplant |&gt;\n  specify(response = outcome, explanatory = transplant, success = \"deceased\") |&gt;\n  hypothesize(null = \"independence\") |&gt;\n  generate(reps = 100, type = \"permute\") |&gt;\n  calculate(stat = \"diff in props\", order = c(\"treatment\", \"control\"))\n\nThen, inspect the object null_dist_outcome using either glimpse() or just printing it to screen. How many rows and how many columns does it have? What does each row represent? What does each variable represent?"
-  },
-  {
-    "objectID": "labs/lab-5.html#exercise-7",
-    "href": "labs/lab-5.html#exercise-7",
-    "title": "Lab 5",
-    "section": "Exercise 7",
-    "text": "Exercise 7\n\nVisualize the distribution of simulated differences in proportions of deceased between treatment and control groups. What is the shape of this distribution? What is the center of this distribution? Are these results expected? Explain your reasoning.\n\n\n\n\n\n\n\nHint\n\n\n\nThese simulated values are in the stat column of null_dist_outcome."
-  },
-  {
-    "objectID": "labs/lab-5.html#exercise-8",
-    "href": "labs/lab-5.html#exercise-8",
-    "title": "Lab 5",
-    "section": "Exercise 8",
-    "text": "Exercise 8\n\nCalculate the p-value. Do this in two ways:\n\nFilter null_dist_outcome for stat values that are at least as far away from the null value as the observed value you calculated in Exercise 4. Make sure you’re considering both directions! Note how many such values there are, and calculate the proportion out of the total number of resamples.\nUse get_p_value():\n\n\np_value_outcome &lt;- null_dist_outcome |&gt;\n  get_p_value(obs_stat = obs_diff_outcome, direction = \"two-sided\")\n\nThen, confirm that you obtained the same results with the two methods. Finally, interpret the p-value in context of the data and the research question and comment on the statistical discernability of this result using a discernability level of 5%.\n\n\n\n\n\n\n\nPause and render\n\n\n\nNow that you’ve completed a few exercises, pause and render your document. If it renders without any issues, great! Move on to the next exercise. If it does not, debug the issue before moving on. Ask for help from your TA if you need. Do not proceed without rendering your document."
-  },
-  {
-    "objectID": "labs/lab-5.html#exercise-9",
-    "href": "labs/lab-5.html#exercise-9",
-    "title": "Lab 5",
-    "section": "Exercise 9",
-    "text": "Exercise 9\n\nRecreate the side-by–side box plots in Exercise 3. The variable of interest is survtime, which is the number of days patients were alive after the date they were determined to be a candidate for a heart transplant until the termination date of the study."
-  },
-  {
-    "objectID": "labs/lab-5.html#exercise-10",
-    "href": "labs/lab-5.html#exercise-10",
-    "title": "Lab 5",
-    "section": "Exercise 10",
-    "text": "Exercise 10\n\nDo these data provide convincing evidence of a difference between average survival times of patient who did and did not get a heart transplant?\nWrite the hypotheses for answering this question and conduct the hypothesis test using randomization. Use 1,000 resamples. In order to avoid name collision, use object names like obs_diff_survtime, null_dist_survtime, and p_value_survtime. Find and interpret the p-value in context of the data and the research question and comment on the statistical discernability of this result using a discernability level of 5%."
-  },
-  {
-    "objectID": "labs/lab-5.html#submitting",
-    "href": "labs/lab-5.html#submitting",
-    "title": "Lab 5",
-    "section": "Submitting",
-    "text": "Submitting\n\n\n\n\n\n\nImportant\n\n\n\nBefore you proceed, first, make sure that you have updated the document YAML with your name! Then, render your document one last time, for good measure.\n\n\nTo submit your assignment to Gradescope:\n\nGo to your Files pane and check the box next to the PDF output of your document (lab-5.pdf).\nThen, in the Files pane, go to More &gt; Export. This will download the PDF file to your computer. Save it somewhere you can easily locate, e.g., your Downloads folder or your Desktop.\nGo to the course Canvas page and click on Gradescope and then click on the assignment. You’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the papers of your lab should be associated with at least one question (i.e., should be “checked”).\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you fail to mark the pages associated with an exercise, that exercise won’t be graded. This means, if you fail to mark the pages for all exercises, you will receive a 0 on the assignment. The TAs can’t mark your pages for you, and for them to be able to grade, you must mark them."
-  },
-  {
-    "objectID": "labs/lab-5.html#grading",
-    "href": "labs/lab-5.html#grading",
-    "title": "Lab 5",
-    "section": "Grading",
-    "text": "Grading\n\n\nExercise\nPoints\n\n\n\nExercise 1\n5\n\n\nExercise 2\n4\n\n\nExercise 3\n6\n\n\nExercise 4\n4\n\n\nExercise 5\n4\n\n\nExercise 6\n6\n\n\nExercise 7\n5\n\n\nExercise 8\n4\n\n\nExercise 9\n5\n\n\nExercise 10\n7\n\n\nTotal\n50"
-  },
-  {
-    "objectID": "labs/lab-6.html",
-    "href": "labs/lab-6.html",
-    "title": "Lab 6",
-    "section": "",
-    "text": "By the end of this lab you will construct and interpret confidence intervals via bootstrapping.\nFor all visualizations you create, be sure to include informative titles for the plot, axes, and legend!"
-  },
-  {
-    "objectID": "labs/lab-6.html#exercise-1",
-    "href": "labs/lab-6.html#exercise-1",
-    "title": "Lab 6",
-    "section": "Exercise 1",
-    "text": "Exercise 1\n\nLoad the lemurs data from your data folder and save it as lemurs. Then, report which “types” of lemurs are represented in the sample and how many of each. Note that this information is in the taxon variable. You should refer back to the linked data dictionary to understand what the different values of taxon mean.\n\n\n\n\n\n\n\nPause and render\n\n\n\nNow that you’ve completed your first exercise, pause and render your document. If it renders without any issues, great! Move on to the next exercise. If it does not, debug the issue before moving on. Ask for help from your TA if you need. Do not proceed without rendering your document."
-  },
-  {
-    "objectID": "labs/lab-6.html#exercise-2",
-    "href": "labs/lab-6.html#exercise-2",
-    "title": "Lab 6",
-    "section": "Exercise 2",
-    "text": "Exercise 2\n\nWhat is the mean weight of ring-tailed lemurs? Calculate, visualize, and interpret a 95% bootstrap confidence interval together with your point estimate. Use set.seed(123) and reps = 1000 to create your bootstrap confidence interval.\n\nHints:\nBelow is a step-by-step recipe for constructing and visualizing a confidence interval. The code snippets shown are not “complete”, they’re intended to guide you in the right direction.\n\nStep 1: Create a dataset of ring-tailed lemurs, and call it lemurs_rt. Note, these are taxon == \"LCAT\".\nStep 2: Calculate the mean weight of ring-tailed lemurs.\n\n\nobs_stat_mean_rt &lt;- lemurs_rt |&gt;\n  specify(response = weight_g) |&gt;\n  calculate(stat = \"mean\")\n\n\nStep 3: Construct a bootstrap distribution. Note: There is a generate() step, so you also need to set a seed before running the following.\n\n\nboot_dist_mean_rt &lt;- lemurs_rt |&gt;\n  specify(response = weight_g) |&gt;\n  generate(reps = 1000, type = \"bootstrap\") |&gt;\n  calculate(stat = \"mean\")\n\n\nStep 4: Calculate the bounds of the confidence interval. Don’t forget to interpret it as well!\n\n\nci_95_mean_rt &lt;- boot_dist_mean_rt |&gt;\n  get_confidence_interval(\n    point_estimate = obs_stat_mean_rt, \n    level = 0.95\n  )\n\n\nStep 5: Visualize the confidence interval, overlaying it on the bootstrap distribution.\n\n\nvisualize(boot_dist_mean_rt) +\n  shade_confidence_interval(endpoints = ci_95_mean_rt)"
-  },
-  {
-    "objectID": "labs/lab-6.html#exercise-3",
-    "href": "labs/lab-6.html#exercise-3",
-    "title": "Lab 6",
-    "section": "Exercise 3",
-    "text": "Exercise 3\n\nWhat is the median weight of ring-tailed lemurs? What is the median weight of mongoose lemurs? Report a 95% bootstrap confidence interval together with your point estimates. Use set.seed(123) and reps = 10000 to create your bootstrap confidence intervals."
-  },
-  {
-    "objectID": "labs/lab-6.html#exercise-4",
-    "href": "labs/lab-6.html#exercise-4",
-    "title": "Lab 6",
-    "section": "Exercise 4",
-    "text": "Exercise 4\n\nYour friend has never taken a statistics course. Describe to your friend the process of “bootstrap sampling” in the previous exercise to create a bootstrap confidence interval in your own words. Walk your friend through the process of collecting a bootstrap sample, computing a statistic and then repeating). You may find it helpful to describe it as drawing pieces of paper from a bag like we did in class.\n\nHint: What would you write on the slips of paper? How many pieces of paper would be in the bag(s)? How many bag(s) would you need for the above exercise?"
-  },
-  {
-    "objectID": "labs/lab-6.html#exercise-5",
-    "href": "labs/lab-6.html#exercise-5",
-    "title": "Lab 6",
-    "section": "Exercise 5",
-    "text": "Exercise 5\n\nDo female lemurs differ in weight from male lemurs? Report the difference in mean weights between groups. Next, construct a 99% bootstrap distribution for the difference in means between groups and interpret it. If the interval covers 0, you might think there is no difference between groups. Does the interval cover 0? Use set.seed(123) and reps = 10000."
-  },
-  {
-    "objectID": "labs/lab-6.html#exercise-6",
-    "href": "labs/lab-6.html#exercise-6",
-    "title": "Lab 6",
-    "section": "Exercise 6",
-    "text": "Exercise 6\n\nCreate a new column that tells you whether or not a lemur was born in the first or second half of the year (January through June vs July through December). Create a meaningful plot to illustrate the weights of each group of lemurs. Use theme_bw() to replace the default gray plot background. Based on your figure, which group of lemurs weighs more? Is the distribution of one or both groups skewed or symmetric? See here for more information about skew vs symmetric distributions."
-  },
-  {
-    "objectID": "labs/lab-6.html#exercise-7",
-    "href": "labs/lab-6.html#exercise-7",
-    "title": "Lab 6",
-    "section": "Exercise 7",
-    "text": "Exercise 7\n\nIs there more variability in weight for lemurs born in the first half or second half of the year? Report the estimated standard deviation of each group. Report a 90% bootstrap confidence interval of s.d. for each group. Interpret the confidence intervals in context. Use set.seed(123) and remember to set reps = 10000.\n\n\n\n\n\n\n\nPause and render\n\n\n\nNow that you’ve completed a few more exercises, pause and render your document. If it renders without any issues, great! Move on to the next exercise. If it does not, debug the issue before moving on. Ask for help from your TA if you need. Do not proceed without rendering your document."
-  },
-  {
-    "objectID": "labs/lab-6.html#exercise-8",
-    "href": "labs/lab-6.html#exercise-8",
-    "title": "Lab 6",
-    "section": "Exercise 8",
-    "text": "Exercise 8\n\nIMS - Chapter 12 exercises, #2: Chronic illness."
-  },
-  {
-    "objectID": "labs/lab-6.html#exercise-9",
-    "href": "labs/lab-6.html#exercise-9",
-    "title": "Lab 6",
-    "section": "Exercise 9",
-    "text": "Exercise 9\n\nIMS - Chapter 12 exercises, #6: Bootstrap distributions of \\(\\hat{p}\\), III."
-  },
-  {
-    "objectID": "labs/lab-6.html#exercise-10",
-    "href": "labs/lab-6.html#exercise-10",
-    "title": "Lab 6",
-    "section": "Exercise 10",
-    "text": "Exercise 10\n\nIMS - Chapter 12 exercises, #8: Waiting at an ER."
-  },
-  {
-    "objectID": "labs/lab-6.html#submitting",
-    "href": "labs/lab-6.html#submitting",
-    "title": "Lab 6",
-    "section": "Submitting",
-    "text": "Submitting\n\n\n\n\n\n\nImportant\n\n\n\nBefore you proceed, first, make sure that you have updated the document YAML with your name! Then, render your document one last time, for good measure.\n\n\nTo submit your assignment to Gradescope:\n\nGo to your Files pane and check the box next to the PDF output of your document (lab-6.pdf).\nThen, in the Files pane, go to More &gt; Export. This will download the PDF file to your computer. Save it somewhere you can easily locate, e.g., your Downloads folder or your Desktop.\nGo to the course Canvas page and click on Gradescope and then click on the assignment. You’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the papers of your lab should be associated with at least one question (i.e., should be “checked”).\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you fail to mark the pages associated with an exercise, that exercise won’t be graded. This means, if you fail to mark the pages for all exercises, you will receive a 0 on the assignment. The TAs can’t mark your pages for you, and for them to be able to grade, you must mark them."
-  },
-  {
-    "objectID": "labs/lab-6.html#grading",
-    "href": "labs/lab-6.html#grading",
-    "title": "Lab 6",
-    "section": "Grading",
-    "text": "Grading\n\n\nExercise\nPoints\n\n\n\nExercise 1\n3\n\n\nExercise 2\n6\n\n\nExercise 3\n7\n\n\nExercise 4\n5\n\n\nExercise 5\n5\n\n\nExercise 6\n7\n\n\nExercise 7\n8\n\n\nExercise 8\n3\n\n\nExercise 9\n3\n\n\nExercise 10\n3\n\n\nTotal\n50"
   },
   {
     "objectID": "ae/ae-16-birth-weight-sa.html",
@@ -4849,132 +4109,113 @@
     "text": "There are 409 rows in the blizzard_salary dataset. Each row represents a Blizzard Entertainment worker who filled out the spreadsheet.\na - Figure 1 - A shared x-axis makes it easier to compare summary statistics for the variable on the x-axis.\nc - It’s a value higher than the median for hourly but lower than the mean for salaried.\nb - There is more variability around the mean compared to the hourly distribution.\nb - Pie charts and waffle charts are for categorical data only.\nc - For every additional $1,000 of annual salary, the model predicts the raise to be higher, on average, by 0.0155%.\nd - \\(R^2\\) of raise_2_fit is higher than \\(R^2\\) of raise_1_fit since raise_2_fit has one more predictor and \\(R^2\\) always goes up with the addition of a predictor.\nThe reference level of performance_rating is High, since it’s the first level alphabetically. Therefore, the coefficient -2.40% is the predicted difference in raise comparing High to Successful. In this context a negative coefficient makes sense since we would expect those with High performance rating to get higher raises than those with Successful performance.\na - “Poor”, “Successful”, “High”, “Top”\nChoose Option 2 since it shows the proportions of employees with top, high, successful, and poor performance within each salary type, and is not affected by there being much fewer hourly paid employees. Proportions of employees with top and successful performance ratings are higher for employees paid hourly than salaried.\nThere may be some NAs in these two variables that are not visible in the plot.\nThe proportions under Hourly would go in the Hourly bar, and those under Salaried would go in the Salaried bar.\nThis is a mosaic plot. It shows the marginal distribution of salary type (proportion of hourly and salaried employees), which is not displayed in the previous plot.\nc - Option 3. Parallel lines and salaried line has a higher intercept since Hourly is the reference level in raise_3_fit and the slope for salary_typeSalaried is positive.\nA parsimonious model is the simplest model with the best predictive performance."
   },
   {
-    "objectID": "extra-credit.html",
-    "href": "extra-credit.html",
-    "title": "Extra credit",
+    "objectID": "project/project-2.html",
+    "href": "project/project-2.html",
+    "title": "Project 2",
     "section": "",
-    "text": "Create a GitHub account at https://github.com, make sure to use your real name in your profile so that I can match your name to you. You can use whatever username you like, but here is some helpful username advice.1\nGo to https://github.com/OpenIntroStat/ims/issues/new/choose and select either “Suggestion” or “Typo”.\n\nIf Suggestion, describe in detail your suggestion, giving as much information and justification as possible.\nIf Typo, fill in the blanks to provide as much information as possible for the typo to be fixed.\n\nWhen done, hit Submit.\nLater in the course you will be asked to fill out a form where you let us know if you’ve opened any feedback issues in the GitHub repo. I’ll confirm your answers by referring back to the issues you opened, and you’ll have the opportunity to earn 2 extra points (out of 100) on each of your exams for opening “useful” issues. “Useful” can be based on the number of issues (quantity) or the depth of your feedback (quality).\nBefore opening an issue, you must the existing ones at https://github.com/OpenIntroStat/ims/issues to make sure you’re not reporting something someone else has already reported.\nIssues can refer to the text of the book or the interactive tutorials.",
-    "crumbs": [
-      "Extra credit"
-    ]
-  },
-  {
-    "objectID": "extra-credit.html#extra-credit",
-    "href": "extra-credit.html#extra-credit",
-    "title": "Extra credit",
-    "section": "",
-    "text": "Create a GitHub account at https://github.com, make sure to use your real name in your profile so that I can match your name to you. You can use whatever username you like, but here is some helpful username advice.1\nGo to https://github.com/OpenIntroStat/ims/issues/new/choose and select either “Suggestion” or “Typo”.\n\nIf Suggestion, describe in detail your suggestion, giving as much information and justification as possible.\nIf Typo, fill in the blanks to provide as much information as possible for the typo to be fixed.\n\nWhen done, hit Submit.\nLater in the course you will be asked to fill out a form where you let us know if you’ve opened any feedback issues in the GitHub repo. I’ll confirm your answers by referring back to the issues you opened, and you’ll have the opportunity to earn 2 extra points (out of 100) on each of your exams for opening “useful” issues. “Useful” can be based on the number of issues (quantity) or the depth of your feedback (quality).\nBefore opening an issue, you must the existing ones at https://github.com/OpenIntroStat/ims/issues to make sure you’re not reporting something someone else has already reported.\nIssues can refer to the text of the book or the interactive tutorials.",
-    "crumbs": [
-      "Extra credit"
-    ]
-  },
-  {
-    "objectID": "extra-credit.html#footnotes",
-    "href": "extra-credit.html#footnotes",
-    "title": "Extra credit",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nGitHub is a code hosting platform for collaboration and version control. You will not need to learn about GitHub for this class (it’s something you will learn in a higher level statistics or data science course) however it is also where our open-source textbook is hosted so we’re asking you to make an account on GitHub to be able to provide feedback on the book.↩︎",
-    "crumbs": [
-      "Extra credit"
-    ]
-  },
-  {
-    "objectID": "project/project-1.html",
-    "href": "project/project-1.html",
-    "title": "Project 1 - Regression",
-    "section": "",
-    "text": "Team assignments are posted at https://canvas.duke.edu/courses/4625/files?preview=338995.\nThe deliverable for this project (what you will turn in) is a written report. See below for more details.",
+    "text": "Team assignments are posted at https://canvas.duke.edu/courses/4625/files?preview=549493.\nThe deliverable for this project (what you will turn in) is a written report and a pre-recorded presentation. See below for more details.",
     "crumbs": [
       "Projects",
-      "Project 1"
+      "Project 2"
     ]
   },
   {
-    "objectID": "project/project-1.html#codebook",
-    "href": "project/project-1.html#codebook",
-    "title": "Project 1 - Regression",
-    "section": "Codebook",
-    "text": "Codebook\n\nnewborn_birth_weight: newborn birth weight in grams (response)\nmonth: birth month (1: January, …, 12: December)\nmother_age: age of the mother in years\nprenatal_care_starting_month: month in which prenatal care began; if 0, there was no prenatal care\ndaily_cigarette_prepregnancy: daily number of cigarettes smoked before the pregnancy\ndaily_cigarette_trimester_1: daily number of cigarettes smoked during the 1st trimester of the pregnancy\ndaily_cigarette_trimester_2: daily number of cigarettes smoked during the 2nd trimester of the pregnancy\ndaily_cigarette_trimester_3: daily number of cigarettes smoked during the 3rd trimester of the pregnancy\nmother_height: height of the mother in inches\nmother_bmi: body mass index of the mother\nmother_weight_prepregnancy: weight of the mother before the pregnancy in pounds\nmother_weight_delivery: weight of the mother at delivery in pounds\nmother_diabetes_gestational: whether the mother had diabetes during the pregnancy\nnewborn_sex: sex of the newborn\ngestation_week: number of gestational weeks\nmother_risk_factors: whether the mother had any risk factor (diabetes, hypertension, previous preterm birth, previous cesarean, infertility treatment used, etc)",
+    "objectID": "project/project-2.html#criteria-for-datasets",
+    "href": "project/project-2.html#criteria-for-datasets",
+    "title": "Project 2",
+    "section": "Criteria for datasets",
+    "text": "Criteria for datasets\nThe data sets should meet the following criteria:\n\nAt least 100 observations\nAt least 5 columns\nAt least 4 of the columns must be useful and unique explanatory variables.\n\nIdentifier variables such as “name”, “social security number”, etc. are not useful explanatory variables.\nIf you have multiple columns with the same information (e.g. “state abbreviation” and “state name”), then they are not unique explanatory variables.\n\nYou may not use data that has previously been used in any course materials, or any derivation of data that has been used in course materials.\n\n\n\n\n\n\n\nTip\n\n\n\nPlease ask a member of the teaching team if you’re unsure whether your data set meets the criteria.\n\n\nIf you set your hearts on a dataset that has fewer observations or variables than what’s suggested here, that might still be ok; use these numbers as guidance for a successful proposal, not as minimum requirements.",
     "crumbs": [
       "Projects",
-      "Project 1"
+      "Project 2"
     ]
   },
   {
-    "objectID": "project/project-1.html#testing-data",
-    "href": "project/project-1.html#testing-data",
-    "title": "Project 1 - Regression",
-    "section": "Testing data",
-    "text": "Testing data\nYou are additionally provided testing data to evaluate the predictive ability of your model, using 1,000 observations contained in the test data set below.\n\nbirths_test &lt;- read_csv(\"data/us_births_test.csv\")",
+    "objectID": "project/project-2.html#resources",
+    "href": "project/project-2.html#resources",
+    "title": "Project 2",
+    "section": "Resources for datasets",
+    "text": "Resources for datasets\nYou can find data wherever you like, but here are some recommendations to get you started. You shouldn’t feel constrained to datasets that are already in a tidy format, you can start with data that needs cleaning and tidying, scrape data off the web, or collect your own data.\n\nAwesome public datasets\nBikeshare data portal\nCDC\nData.gov\nData is Plural\nDurham Open Data Portal\nEdinburgh Open Data\nElection Studies\nEuropean Statistics\nCORGIS: The Collection of Really Great, Interesting, Situated Datasets\nGeneral Social Survey\nGoogle Dataset Search\nHarvard Dataverse\nInternational Monetary Fund\nIPUMS survey data from around the world\nLos Angeles Open Data\nNational Crime Victimization Survey\nNHS Scotland Open Data\nNYC OpenData\nOpen access to Scotland’s official statistics\nPew Research\nPRISM Data Archive Project\nStatistics Canada\nThe National Bureau of Economic Research\nTidyTuesday\nUCI Machine Learning Repository\nUK Government Data\nUNICEF Data\nUnited Nations Data\nUnited Nations Statistics Division\nUS Census Data\nUS Government Data\nWorld Bank Data\nYouth Risk Behavior Surveillance System (YRBSS)",
     "crumbs": [
       "Projects",
-      "Project 1"
+      "Project 2"
     ]
   },
   {
-    "objectID": "project/project-1.html#introduction-7-pts",
-    "href": "project/project-1.html#introduction-7-pts",
-    "title": "Project 1 - Regression",
-    "section": "Introduction (7 pts)",
-    "text": "Introduction (7 pts)\nThe introduction provides motivation and context for your research.\nTo begin, introduce the data set in a few short sentences. Next, create a code book (aka a “data dictionary”) of the variables in the data set. Although a code book is provided above, you should include one in your report as well so that your report is self-contained. Specifically, only include in your report a code book of the variables that you use.\nComplete the introduction by providing a concise, clear statement of your research question and hypotheses. Be sure to motivate why the research question is interesting/useful.\nExample research question and hypotheses (if we were predicting penguin weights instead of baby weights):\nCan we predict body mass with bill depth? We hypothesize that penguins with deeper bills will also have more mass.",
+    "objectID": "project/project-2.html#proposal-conversation-grading",
+    "href": "project/project-2.html#proposal-conversation-grading",
+    "title": "Project 2",
+    "section": "Proposal conversation grading",
+    "text": "Proposal conversation grading\nEach component will be graded as follows:\n\nMeets expectations (full credit): All team members are present and contribute to the conversation. The team has a dataset and research question identified. There is a plan for completing the project as envisioned.\nClose to expectations (half credit): Not all team members are present and contribute to the conversation (without any excused absences). The team does not have a dataset and/or research question identified. The plan for completing the project as envisioned is not well designed.\nDoes not meet expectations (no credit): Not all team members are present and contribute to the conversation (without any excused absences). The team does not have a dataset or research question identified. There is no plan for completing the project as envisioned.\n\nEven if you earn full credit, it may not mean that your proposal is perfect.",
     "crumbs": [
       "Projects",
-      "Project 1"
+      "Project 2"
     ]
   },
   {
-    "objectID": "project/project-1.html#methodology-15-pts",
-    "href": "project/project-1.html#methodology-15-pts",
-    "title": "Project 1 - Regression",
-    "section": "Methodology (15 pts)",
-    "text": "Methodology (15 pts)\nIn this section, you should introduce your regression model. Specifically, do you use regular linear regression or logistic regression? Why? What’s the full model equation?\nDid you choose to leave out some predictors but include others? Why or why not? You can also include summary statistics or create plots to explore the data and help inform your model choices.\nDo you fit multiple models? If so, why?\nDo you compare them using \\(R^2\\), another metric, why?",
+    "objectID": "project/project-2.html#components",
+    "href": "project/project-2.html#components",
+    "title": "Project 2",
+    "section": "Components",
+    "text": "Components\nYou should include, at a minimum, the following sections in your report.\n\nIntroduction (7 pts)\nThe introduction provides motivation and context for your research.\nTo begin, introduce the data set in a few short sentences. Next, create a code book (aka a “data dictionary”) of the variables in the data set. Although a code book is provided above, you should include one in your report as well so that your report is self-contained. Specifically, only include in your report a code book of the variables that you use.\nComplete the introduction by providing a concise, clear statement of your research question and hypotheses. Be sure to motivate why the research question is interesting/useful.\nExample research question and hypotheses (if we were predicting penguin weights instead of baby weights):\nCan we predict body mass with bill depth? We hypothesize that penguins with deeper bills will also have more mass.\n\n\nMethodology (15 pts)\nHere you should introduce any statistical methods you use and describe why you choose the methods you do to answer your question. You might also include any preliminary summary statistics or figures you use to explore the data.\n\n\nResults (15 pts)\nPlace figure(s) here to illustrate the main results from your analysis. 1 beautiful figure is worth more than several poorly formatted figures. You must have at least 1 figure.\nProvide only the main results from your analysis. The goal is not to do an exhaustive data analysis (calculate every possible statistic and create every possible model for all variables). Rather, you should demonstrate that you are proficient at asking meaningful questions and answering them using data, that you are skilled in writing about and interpreting results, and that you can accomplish these tasks using R. More is not better.\n\n\nDiscussion (6 pts)\nThis section is a conclusion and discussion. You should\n\nSummarize your main finding in a sentence or two.\nDiscuss your finding and why it is useful (put in the context of your motivation from the introduction).\nCritique your own analyses and include a brief paragraph on what you would do differently if you were able to start the project over.\n\n\n\nAppendix (2 pts)\nList a brief (1 or 2 sentence) summary of the relative contributions of each team member, e.g., “Aang built the models, Katara implemented them in R, and Sokka wrote the introduction and discussion.”\n\n\n\n\n\n\nImportant\n\n\n\nAll team members should be comfortable describing all aspects of the project and understanding all code.\n\n\n\n\nFormatting (5 pts)\nYour project should be professionally formatted. For example, this means labeling graphs and figures, turning off code chunks, using proper citations and cross-references, and following typical style guidelines.",
     "crumbs": [
       "Projects",
-      "Project 1"
+      "Project 2"
     ]
   },
   {
-    "objectID": "project/project-1.html#results-15-pts",
-    "href": "project/project-1.html#results-15-pts",
-    "title": "Project 1 - Regression",
-    "section": "Results (15 pts)",
-    "text": "Results (15 pts)\nReport and interpret your final fitted model equation(s).\nReport any relevant metrics you use to select between models.\nPlace figure(s) here to illustrate the main results from your analysis. One elegant visualization is worth more than several poorly formatted figures. You must have at least one visualization.\nProvide only the main results from your analysis. The goal is not to do an exhaustive data analysis (calculate every possible statistic and create every possible model for all variables). Rather, you should demonstrate that you are proficient at asking meaningful questions and answering them using data, that you are skilled in writing about and interpreting results, and that you can accomplish these tasks using R. More is not better.\nHow well does your model predict new data? Use the testing data to calculate a measure of the predictive performance of your model and interpret that in the context of your data.",
+    "objectID": "project/project-2.html#submission",
+    "href": "project/project-2.html#submission",
+    "title": "Project 2",
+    "section": "Submission",
+    "text": "Submission\n\nSelect one team member to upload the team’s PDF submission to Gradescope.\nBe sure to select every team member’s name in Gradescope.\nAssociate all pages with “Full report”.",
     "crumbs": [
       "Projects",
-      "Project 1"
+      "Project 2"
     ]
   },
   {
-    "objectID": "project/project-1.html#discussion-6-pts",
-    "href": "project/project-1.html#discussion-6-pts",
-    "title": "Project 1 - Regression",
-    "section": "Discussion (6 pts)",
-    "text": "Discussion (6 pts)\nThis section is a conclusion and discussion. You should\n\nSummarize your main finding in a sentence or two.\nDiscuss your finding and why it is useful (put in the context of your motivation from the introduction).\nCritique your own analyses and include a brief paragraph on what you would do differently if you were able to start the project over.",
+    "objectID": "project/project-2.html#slides",
+    "href": "project/project-2.html#slides",
+    "title": "Project 2",
+    "section": "Slides",
+    "text": "Slides\nFor your presentation, you must create presentation slides that summarize and showcase your project. Introduce your research question and data set, showcase visualizations, and provide some conclusions. These slides should serve as a brief visual accompaniment to your write-up and will be graded for content and quality.\nHere is a suggested outline as you think through the slides; you do not have to use this exact format for the slide deck.\n\nTitle Slide\nSlide 1: Introduce the topic and motivation\nSlide 2: Introduce the data\nSlide 3 - 4: Highlights from exploratory data analysis\nSlide 4 - 5: Highlights from inference and/or modeling\nSlide 6: Conclusions + critique/shortcomings\n\nYou can create your slides with any software you like (Keynote, PowerPoint, Google Slides, etc.). We recommend choosing an option that’s easy to collaborate with, e.g., Google Slides.\n\n\n\n\n\n\nNote\n\n\n\nYou can also use Quarto to make your slides! While we won’t be covering making slides with Quarto in the class, we would be happy to help you with it in office hours. It’s no different than writing other documents with Quarto, so the learning curve will not be steep!",
     "crumbs": [
       "Projects",
-      "Project 1"
+      "Project 2"
     ]
   },
   {
-    "objectID": "project/project-1.html#appendix-2-pts",
-    "href": "project/project-1.html#appendix-2-pts",
-    "title": "Project 1 - Regression",
-    "section": "Appendix (2 pts)",
-    "text": "Appendix (2 pts)\nList a brief (1 or 2 sentence) summary of the relative contributions of each team member, e.g., “Aang built the models, Katara implemented them in R, and Sokka wrote the introduction and discussion.”\n\n\n\n\n\n\nImportant\n\n\n\nAll team members should be comfortable describing all aspects of the project and understanding all code.",
+    "objectID": "project/project-2.html#recording",
+    "href": "project/project-2.html#recording",
+    "title": "Project 2",
+    "section": "Recording",
+    "text": "Recording\nPresentations will be submitted as a pre-recorded video by the due date.\nFor recording, you may use can use any platform that works best for your group to record your presentation. Below are a few resources on recording videos:\n\nRecording presentations in Zoom\nApple Quicktime for screen recording\nWindows 10 built-in screen recording functionality\nKap for screen recording\n\nOnce your video is ready, upload the video to Warpwire or another video platform (e.g., YouTube), then add a link to your video at https://docs.google.com/spreadsheets/d/1mGLkIqhtUEylFR4Ovlpuysv4xWCz6L4FdWqFGmjUKPw/edit?usp=sharing.\nTo upload your video to Warpwire:\n\nClick the Warpwire tab in the course Canvas site.\nClick the “+” and select “Upload files”.\nLocate the video on your computer and click to upload.\nOnce you’ve uploaded the video to Warpwire, click to share the video and copy the video’s URL. You will need this when you post the video in the Project 2 spreadsheet.",
     "crumbs": [
       "Projects",
-      "Project 1"
+      "Project 2"
     ]
   },
   {
-    "objectID": "project/project-1.html#formatting-5-pts",
-    "href": "project/project-1.html#formatting-5-pts",
-    "title": "Project 1 - Regression",
-    "section": "Formatting (5 pts)",
-    "text": "Formatting (5 pts)\nYour project should be professionally formatted. For example, this means labeling graphs and figures, turning off code chunks, using proper citations and cross-references, and following typical style guidelines.",
+    "objectID": "project/project-2.html#grading-summary",
+    "href": "project/project-2.html#grading-summary",
+    "title": "Project 2",
+    "section": "Grading summary",
+    "text": "Grading summary\nGrading of the project will take into account the following:\n\nContent - What is the quality of research and/or policy question and relevancy of data to those questions?\nCorrectness - Are statistical procedures carried out and explained correctly?\nWriting and Presentation - What is the quality of the statistical presentation, writing, and explanations?\nCreativity and Critical Thought - Is the project carefully thought out? Are the limitations carefully considered? Does it appear that time and effort went into the planning and implementation of the project?\n\nA general breakdown of scoring is as follows:\n\n90%-100%: Outstanding effort. Student understands how to apply all statistical concepts, can put the results into a cogent argument, can identify weaknesses in the argument, and can clearly communicate the results to others.\n80%-89%: Good effort. Student understands most of the concepts, puts together an adequate argument, identifies some weaknesses of their argument, and communicates most results clearly to others.\n70%-79%: Passing effort. Student has misunderstanding of concepts in several areas, has some trouble putting results together in a cogent argument, and communication of results is sometimes unclear.\n60%-69%: Struggling effort. Student is making some effort, but has misunderstanding of many concepts and is unable to put together a cogent argument. Communication of results is unclear.\nBelow 60%: Student is not making a sufficient effort.",
     "crumbs": [
       "Projects",
-      "Project 1"
+      "Project 2"
+    ]
+  },
+  {
+    "objectID": "project/project-2.html#late-work-policy",
+    "href": "project/project-2.html#late-work-policy",
+    "title": "Project 2",
+    "section": "Late work policy",
+    "text": "Late work policy\nBe sure to turn in your work early to avoid any technological mishaps.\n\n\n\n\n\n\nWarning\n\n\n\nThere is no late work accepted on this project.",
+    "crumbs": [
+      "Projects",
+      "Project 2"
     ]
   },
   {
