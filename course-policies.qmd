@@ -30,8 +30,6 @@ You should treat generative AI, such as ChatGPT, like other online resources. Tw
 
 -   {{< fa ban >}} **AI tools for narrative:** Unless instructed otherwise, you may not use generative AI to generate a narrative that you then copy-paste verbatim into an assignment or edit and then insert into your assignment.
 
--   {{< fa check >}} **AI tools for learning:** You're welcomed to ask AI tools questions that might help your learning and understanding in this course.
-
 In general, you may use generative AI as a resource as you complete assignments but not to answer the exercises for you. You are ultimately responsible for the work you turn in; it should reflect *your* understanding of the course content. Identifying AI-generated content is fairly straightforward. Any code identified as AI-generated but not cited as such and any narrative identified as AI-generated will be considered plagiarism and treated as such.
 
 ## Late work and extensions
