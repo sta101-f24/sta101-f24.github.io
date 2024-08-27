@@ -4,10 +4,18 @@ title: "Course materials"
 
 ## Textbooks
 
-Readings for the course will come from the following textbooks. They are **freely available online** and you do not need to purchase a physical copy of either book to succeed in this class.
+Readings for the course will come from the following textbooks. They are **freely available online** and you do not need to purchase a physical copy of either book to succeed in this class:
 
 1.  `[ims]`: Mine Çetinkaya-Rundel and Jo Hardin. [Introduction to Modern Statistics](https://openintro-ims2.netlify.app/). 2nd edition. OpenIntro, 2024.
 2.  `[r4ds]`: Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. [R for Data Science](https://r4ds.hadley.nz/). 2nd edition. O'Reilly, 2022.
 
 ## Technology
 
+You will need a laptop in this course, and you will need to bring it to all lectures and labs. Options for obtaining a laptop through the university are described here. Armed with your trusty laptop, you must be able to access the following:
+
+-   [This course page](https://sta101-f24.github.io/) that you are on right now;
+-   `R`/`RStudio` as provided by the [Duke Container Manager](https://cmgr.oit.duke.edu/containers);
+-   [Canvas](https://go.canvas.duke.edu/), through which you can access...
+    -   Gradescope;
+    -   [Ed Discussion](https://edstem.org/us/courses/64268/discussion/);
+-   [Zoom](https://duke.zoom.us/) (e.g. for remote office hours).
