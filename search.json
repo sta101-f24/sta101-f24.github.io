@@ -506,7 +506,7 @@
     "href": "course-materials.html#technology",
     "title": "Course materials",
     "section": "Technology",
-    "text": "Technology\nYou will need a laptop in this course, and you will need to bring it to all lectures and labs. Options for obtaining a laptop through the university are described here. Armed with your trusty laptop, you must be able to access the following:\n\nThis course page that you are on right now;\nR/RStudio as provided by the Duke Container Manager;\nCanvas, through which you can access…\n\nGradescope;\nEd Discussion;\n\nZoom (e.g. for remote office hours).",
+    "text": "Technology\nYou will need a laptop in this course, and you will need to bring it to all lectures and labs. Options for obtaining a laptop through the university are described here. Armed with your trusty laptop, you must be able to access the following:\n\nThis course page that you are on right now;\nR/RStudio as provided by the Duke Container Manager;\nCanvas, through which you can access…\n\nGradescope;\nEd Discussion;\n\nZoom (e.g. for remote office hours).\n\nIf access to technology becomes a concern for you during the semester, contact the instructor immediately to discuss options.",
     "crumbs": [
       "Syllabus",
       "Course materials"
@@ -629,7 +629,7 @@
     "href": "course-policies.html",
     "title": "Policies",
     "section": "",
-    "text": "You are encouraged to discuss and help one another with the labs, but you should not share solutions (e.g. emailing a friend your code). All submitted work must be your own;\nYou are forbidden from collaborating in any way on the exams;\nYou are enthusiastically encouraged to collaborate with your teammates on all aspects of the final project.",
+    "text": "Duke Community standard",
     "crumbs": [
       "Syllabus",
       "Course policies"
@@ -639,8 +639,8 @@
     "objectID": "course-policies.html#collaboration",
     "href": "course-policies.html#collaboration",
     "title": "Policies",
-    "section": "",
-    "text": "You are encouraged to discuss and help one another with the labs, but you should not share solutions (e.g. emailing a friend your code). All submitted work must be your own;\nYou are forbidden from collaborating in any way on the exams;\nYou are enthusiastically encouraged to collaborate with your teammates on all aspects of the final project.",
+    "section": "Collaboration",
+    "text": "Collaboration\n\nYou are encouraged to discuss and help one another with the labs, but you should not share solutions (e.g. emailing a friend your code). All submitted work must be your own;\nYou are forbidden from collaborating in any way on the exams;\nYou are enthusiastically encouraged to collaborate with your teammates on all aspects of the final project.",
     "crumbs": [
       "Syllabus",
       "Course policies"
@@ -651,7 +651,18 @@
     "href": "course-policies.html#communication",
     "title": "Policies",
     "section": "Communication",
-    "text": "Communication",
+    "text": "Communication\nIf you wish to ask content-related questions in writing, please do not do so via e-mail. Instead, please use the course discussion forum Ed Discussion. That way all members of the teaching team can see your question, and all students can benefit from the ensuing discussion. You are also encouraged to answer one another’s questions.\nIf you have questions about personal matters that may not be appropriate for the public course forum (e.g. illness, accommodations, etc), then please e-mail the instructor directly (john.zito@duke.edu).",
+    "crumbs": [
+      "Syllabus",
+      "Course policies"
+    ]
+  },
+  {
+    "objectID": "course-policies.html#use-of-online-resources-including-ai",
+    "href": "course-policies.html#use-of-online-resources-including-ai",
+    "title": "Policies",
+    "section": "Use of online resources, including AI",
+    "text": "Use of online resources, including AI\nYou may make use of any online resources (e.g. StackOverflow) but you must explicitly cite where you obtained any code you directly use (or use as inspiration). Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism.\nYou should treat generative AI, such as ChatGPT, like other online resources. Two guiding principles govern how to use AI in this course:\n1.  *Cognitive dimension:* Working with AI should not reduce your thinking ability.\n    We will practice using AI to facilitate—rather than hinder—learning.\n\n2.  *Ethical dimension***:** Students using AI should be transparent about their use and ensure it aligns with academic integrity.\n\n-    **AI tools for code:** You may use the technology for coding examples on assignments; if you do so, you must explicitly cite where you obtained the code.\n    Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism.\n    You may use [these guidelines](https://guides.lib.monash.edu/c.php?g=219786&p=6972087) to cite AI-generated content.\n    The bare minimum citation must include the AI tool you're using (e.g., ChatGPT) and your prompt.\n    The prompt you use cannot be copied and pasted directly from the assignment; you must create a prompt yourself.\n\n-    **AI tools for narrative:** Unless instructed otherwise, you may not use generative AI to generate a narrative that you then copy-paste verbatim into an assignment or edit and then insert into your assignment.\n\n-    **AI tools for learning:** You're welcomed to ask AI tools questions that might help your learning and understanding in this course.\n\nIn general, you may use generative AI as a resource as you complete assignments but not to answer the exercises for you.\nYou are ultimately responsible for the work you turn in; it should reflect *your* understanding of the course content.\nIdentifying AI-generated content is fairly straightforward.\nAny code identified as AI-generated but not cited as such and any narrative identified as AI-generated will be considered plagiarism and treated as such.",
     "crumbs": [
       "Syllabus",
       "Course policies"
