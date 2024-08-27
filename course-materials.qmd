@@ -4,7 +4,7 @@ title: "Course materials"
 
 ## Textbooks
 
-Readings for the course will come from the following textbooks. They are **freely available online** and you do not need to purchase a physical copy of either book to succeed in this class:
+All books are **freely available online**:
 
 1.  `[ims]`: Mine Çetinkaya-Rundel and Jo Hardin. [Introduction to Modern Statistics](https://openintro-ims2.netlify.app/). 2nd edition. OpenIntro, 2024.
 2.  `[r4ds]`: Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. [R for Data Science](https://r4ds.hadley.nz/). 2nd edition. O'Reilly, 2022.
