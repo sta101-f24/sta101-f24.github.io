@@ -22,25 +22,17 @@ You may make use of any online resources (e.g. `StackOverflow`) but you must exp
 
 You should treat generative AI, such as ChatGPT, like other online resources. Two guiding principles govern how to use AI in this course:
 
-    1.  *Cognitive dimension:* Working with AI should not reduce your thinking ability.
-        We will practice using AI to facilitate—rather than hinder—learning.
+1.  *Cognitive dimension:* Working with AI should not reduce your thinking ability. We will practice using AI to facilitate—rather than hinder—learning.
 
-    2.  *Ethical dimension***:** Students using AI should be transparent about their use and ensure it aligns with academic integrity.
+2.  *Ethical dimension***:** Students using AI should be transparent about their use and ensure it aligns with academic integrity.
 
-    -   {{< fa check >}} **AI tools for code:** You may use the technology for coding examples on assignments; if you do so, you must explicitly cite where you obtained the code.
-        Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism.
-        You may use [these guidelines](https://guides.lib.monash.edu/c.php?g=219786&p=6972087) to cite AI-generated content.
-        The bare minimum citation must include the AI tool you're using (e.g., ChatGPT) and your prompt.
-        The prompt you use cannot be copied and pasted directly from the assignment; you must create a prompt yourself.
+-   {{< fa check >}} **AI tools for code:** You may use the technology for coding examples on assignments; if you do so, you must explicitly cite where you obtained the code. Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism. You may use [these guidelines](https://guides.lib.monash.edu/c.php?g=219786&p=6972087) to cite AI-generated content. The bare minimum citation must include the AI tool you're using (e.g., ChatGPT) and your prompt. The prompt you use cannot be copied and pasted directly from the assignment; you must create a prompt yourself.
 
-    -   {{< fa ban >}} **AI tools for narrative:** Unless instructed otherwise, you may not use generative AI to generate a narrative that you then copy-paste verbatim into an assignment or edit and then insert into your assignment.
+-   {{< fa ban >}} **AI tools for narrative:** Unless instructed otherwise, you may not use generative AI to generate a narrative that you then copy-paste verbatim into an assignment or edit and then insert into your assignment.
 
-    -   {{< fa check >}} **AI tools for learning:** You're welcomed to ask AI tools questions that might help your learning and understanding in this course.
+-   {{< fa check >}} **AI tools for learning:** You're welcomed to ask AI tools questions that might help your learning and understanding in this course.
 
-    In general, you may use generative AI as a resource as you complete assignments but not to answer the exercises for you.
-    You are ultimately responsible for the work you turn in; it should reflect *your* understanding of the course content.
-    Identifying AI-generated content is fairly straightforward.
-    Any code identified as AI-generated but not cited as such and any narrative identified as AI-generated will be considered plagiarism and treated as such.
+In general, you may use generative AI as a resource as you complete assignments but not to answer the exercises for you. You are ultimately responsible for the work you turn in; it should reflect *your* understanding of the course content. Identifying AI-generated content is fairly straightforward. Any code identified as AI-generated but not cited as such and any narrative identified as AI-generated will be considered plagiarism and treated as such.
 
 ## Late work and extensions
 
