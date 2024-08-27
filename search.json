@@ -340,18 +340,7 @@
     "href": "course-overview.html#class-meetings",
     "title": "Course overview",
     "section": "Class meetings",
-    "text": "Class meetings\n\n\n\n\n\n\n\n\n\nMeeting\nLocation\nTime\nInstructor/TA\n\n\n\n\nLectures\nSocial Sciences 139\nTue, Thu 03:05 PM - 04:20 PM\nJohn Z\n\n\nLab 1\nPerkins LINK 087 (Classroom 3)\nFri 10:05 AM - 11:20 AM\nJohn G, Camilla\n\n\nLab 2\nPerkins LINK 087 (Classroom 3)\nFri 11:45 AM - 01:00 PM\nKatie, Meghna\n\n\nLab 3\nPerkins LINK 087 (Classroom 3)\nFri 01:25 PM - 02:40 PM\nLeah, Nichole\n\n\nLab 4\nPerkins LINK 087 (Classroom 3)\nFri 08:30 AM - 09:45 AM\nBenjamin, Sayali\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\nFor reasons unknown to rational people, the labs are not exactly numbered in chronological order. “Lab 4” is in fact the first one of the day.",
-    "crumbs": [
-      "Syllabus",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "course-overview.html#license",
-    "href": "course-overview.html#license",
-    "title": "Course overview",
-    "section": "License",
-    "text": "License\n\nThis online work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International. Visit here for more information about the license.",
+    "text": "Class meetings\n\n\n\n\n\n\n\n\n\nMeeting\nLocation\nTime\nStaff\n\n\n\n\nLectures\nSocial Sciences 139\nTue, Thu 03:05 PM - 04:20 PM\nJohn Z\n\n\nLab 1\nPerkins LINK 087 (Classroom 3)\nFri 10:05 AM - 11:20 AM\nJohn G, Camilla\n\n\nLab 2\nPerkins LINK 087 (Classroom 3)\nFri 11:45 AM - 01:00 PM\nKatie, Meghna\n\n\nLab 3\nPerkins LINK 087 (Classroom 3)\nFri 01:25 PM - 02:40 PM\nLeah, Nichole\n\n\nLab 4\nPerkins LINK 087 (Classroom 3)\nFri 08:30 AM - 09:45 AM\nBenjamin, Sayali\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\nFor reasons unknown to rational people, the labs are not exactly numbered in chronological order. “Lab 4” is in fact the first one of the day.",
     "crumbs": [
       "Syllabus",
       "Overview"
@@ -495,7 +484,7 @@
     "href": "course-materials.html",
     "title": "Course materials",
     "section": "",
-    "text": "Readings for the course will come from the following textbooks. They are freely available online and you do not need to purchase a physical copy of either book to succeed in this class.\n\n[ims]: Mine Çetinkaya-Rundel and Jo Hardin. Introduction to Modern Statistics. 2nd edition. OpenIntro, 2024.\n[r4ds]: Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. R for Data Science. 2nd edition. O’Reilly, 2022.",
+    "text": "All books are freely available online:\n\n[ims]: Mine Çetinkaya-Rundel and Jo Hardin. Introduction to Modern Statistics. 2nd edition. OpenIntro, 2024.\n[r4ds]: Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. R for Data Science. 2nd edition. O’Reilly, 2022.",
     "crumbs": [
       "Syllabus",
       "Course materials"
@@ -506,7 +495,7 @@
     "href": "course-materials.html#textbooks",
     "title": "Course materials",
     "section": "",
-    "text": "Readings for the course will come from the following textbooks. They are freely available online and you do not need to purchase a physical copy of either book to succeed in this class.\n\n[ims]: Mine Çetinkaya-Rundel and Jo Hardin. Introduction to Modern Statistics. 2nd edition. OpenIntro, 2024.\n[r4ds]: Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. R for Data Science. 2nd edition. O’Reilly, 2022.",
+    "text": "All books are freely available online:\n\n[ims]: Mine Çetinkaya-Rundel and Jo Hardin. Introduction to Modern Statistics. 2nd edition. OpenIntro, 2024.\n[r4ds]: Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. R for Data Science. 2nd edition. O’Reilly, 2022.",
     "crumbs": [
       "Syllabus",
       "Course materials"
@@ -517,7 +506,7 @@
     "href": "course-materials.html#technology",
     "title": "Course materials",
     "section": "Technology",
-    "text": "Technology",
+    "text": "Technology\nYou will need a laptop in this course, and you will need to bring it to all lectures and labs. Options for obtaining a laptop through the university are described here. Armed with your trusty laptop, you must be able to access the following:\n\nThis course page that you are on right now;\nR/RStudio as provided by the Duke Container Manager;\nCanvas, through which you can access…\n\nGradescope;\nEd Discussion;\n\nZoom (e.g. for remote office hours).",
     "crumbs": [
       "Syllabus",
       "Course materials"
