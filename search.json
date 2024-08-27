@@ -318,7 +318,7 @@
     "href": "course-overview.html",
     "title": "Course overview",
     "section": "",
-    "text": "Introduction to statistics as a science of understanding and analyzing data. Themes include data collection, exploratory analysis, inference, and modeling. Focus on principles underlying quantitative research in social sciences, humanities, and public policy. Research projects teach the process of scientific discovery and synthesis and critical evaluation of research and statistical arguments. Readings give perspective on why in 1950, S. Wilks said, ‘Statistical thinking will one day be as necessary a qualification for efficient citizenship as the ability to read and write.’",
+    "text": "Introduction to statistics as a science of understanding and analyzing data. Themes include data collection, exploratory analysis, inference, and modeling. Focus on principles underlying quantitative research in social sciences, humanities, and public policy. Research projects teach the process of scientific discovery and synthesis and critical evaluation of research and statistical arguments. Readings give perspective on why in 1950, S. Wilks said, ‘Statistical thinking will one day be as necessary a qualification for efficient citizenship as the ability to read and write.’\nPrerequisites: none.",
     "crumbs": [
       "Syllabus",
       "Overview"
@@ -329,7 +329,7 @@
     "href": "course-overview.html#course-description",
     "title": "Course overview",
     "section": "",
-    "text": "Introduction to statistics as a science of understanding and analyzing data. Themes include data collection, exploratory analysis, inference, and modeling. Focus on principles underlying quantitative research in social sciences, humanities, and public policy. Research projects teach the process of scientific discovery and synthesis and critical evaluation of research and statistical arguments. Readings give perspective on why in 1950, S. Wilks said, ‘Statistical thinking will one day be as necessary a qualification for efficient citizenship as the ability to read and write.’",
+    "text": "Introduction to statistics as a science of understanding and analyzing data. Themes include data collection, exploratory analysis, inference, and modeling. Focus on principles underlying quantitative research in social sciences, humanities, and public policy. Research projects teach the process of scientific discovery and synthesis and critical evaluation of research and statistical arguments. Readings give perspective on why in 1950, S. Wilks said, ‘Statistical thinking will one day be as necessary a qualification for efficient citizenship as the ability to read and write.’\nPrerequisites: none.",
     "crumbs": [
       "Syllabus",
       "Overview"
@@ -636,6 +636,28 @@
     "text": "Acknowledgements\nThis assignment was adapted from a lab in Data Science in a Box."
   },
   {
+    "objectID": "course-policies.html",
+    "href": "course-policies.html",
+    "title": "Policies",
+    "section": "",
+    "text": "You are encouraged to discuss and help one another with the labs, but you should not share solutions (e.g. emailing a friend your code). All submitted work must be your own;\nYou are forbidden from collaborating in any way on the exams;\nYou are enthusiastically encouraged to collaborate with your teammates on all aspects of the final project.",
+    "crumbs": [
+      "Syllabus",
+      "Course policies"
+    ]
+  },
+  {
+    "objectID": "course-policies.html#collaboration",
+    "href": "course-policies.html#collaboration",
+    "title": "Policies",
+    "section": "",
+    "text": "You are encouraged to discuss and help one another with the labs, but you should not share solutions (e.g. emailing a friend your code). All submitted work must be your own;\nYou are forbidden from collaborating in any way on the exams;\nYou are enthusiastically encouraged to collaborate with your teammates on all aspects of the final project.",
+    "crumbs": [
+      "Syllabus",
+      "Course policies"
+    ]
+  },
+  {
     "objectID": "course-policies.html#communication",
     "href": "course-policies.html#communication",
     "title": "Policies",
@@ -651,7 +673,7 @@
     "href": "course-policies.html#late-work-and-extensions",
     "title": "Policies",
     "section": "Late work and extensions",
-    "text": "Late work and extensions",
+    "text": "Late work and extensions\nNo late work will be accepted unless you request an extension in advanced. All reasonable requests will be entertained, but extensions will not be long.",
     "crumbs": [
       "Syllabus",
       "Course policies"
@@ -662,7 +684,7 @@
     "href": "course-policies.html#regrade-requests",
     "title": "Policies",
     "section": "Regrade requests",
-    "text": "Regrade requests",
+    "text": "Regrade requests\nYou have one week after receiving a grade to dispute it. Regrade requests can be made in Gradescope, and the instructor will do the regrading.",
     "crumbs": [
       "Syllabus",
       "Course policies"
@@ -826,7 +848,7 @@
     "href": "index.html",
     "title": "STA 101 Data Analysis and Statistical Inference",
     "section": "",
-    "text": "Below is a prospective outline for the course, but things may change with advanced notice:\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nPREPARE\nMATERIALS\nDUE\n\n\n\n\n1\nTue, Aug 27\nWelcome!\n\n\n\n\n\n\n\n\n\n\nThu, Aug 29\nData\n\n\n\n\n\n\n\n\n\n\nFri, Aug 30\nLab 1\n\n\n\n\n\n\n\n\n2\nTue, Sep 3\nStudy design\n\n\n\n\n\n\n\n\n\n\nThu, Sep 5\nCategorical data\n\n\n\n\n\n\n\n\n\n\nFri, Sep 6\nLab 2\n\n\n\n\nLab 1 @ 8AM\n\n\n3\nTue, Sep 10\nNumerical data\n\n\n\n\n\n\n\n\n\n\nThu, Sep 12\nRegression 1\n\n\n\n\n\n\n\n\n\n\nFri, Sep 13\nLab 3\n\n\n\n\nLab 2 @ 8AM\n\n\n4\nTue, Sep 17\nRegression 2\n\n\n\n\n\n\n\n\n\n\nThu, Sep 19\nModel selection\n\n\n\n\n\n\n\n\n\n\nFri, Sep 20\nLab 4\n\n\n\n\nLab 3 @ 8AM\n\n\n5\nTue, Sep 24\nRegression overview\n\n\n\n\n\n\n\n\n\n\nThu, Sep 26\nLogistic regression 1\n\n\n\n\n\n\n\n\n\n\nFri, Sep 27\nLab: Exam Review\n\n\n\n\nLab 4 @ 8AM\n\n\n6\nTue, Oct 1\nIn-class Exam 1\n\n\n\n\n\n\n\n\n\n\nThu, Oct 3\nNo lecture\n\n\n\n\nTake-home Exam 1 @ 5PM\n\n\n\n\nFri, Oct 4\nNo lab\n\n\n\n\n\n\n\n\n7\nTue, Oct 8\nLogistic Regression 2\n\n\n\n\n\n\n\n\n\n\nThu, Oct 10\nHypothesis testing\n\n\n\n\n\n\n\n\n\n\nFri, Oct 11\nNo lab\n\n\n\n\n\n\n\n\n8\nTue, Oct 15\nNo lecture\n\n\n\n\n\n\n\n\n\n\nThu, Oct 17\nConfidence intervals\n\n\n\n\n\n\n\n\n\n\nFri, Oct 18\nLab 5\n\n\n\n\n\n\n\n\n9\nTue, Oct 22\nDecision errors\n\n\n\n\n\n\n\n\n\n\nThu, Oct 24\nInference with mathematical models\n\n\n\n\n\n\n\n\n\n\nFri, Oct 25\nLab 6\n\n\n\n\nLab 5 @ 8AM\n\n\n10\nTue, Oct 29\nInference for one proportion\n\n\n\n\n\n\n\n\n\n\nThu, Oct 31\nComparing two proportions\n\n\n\n\n\n\n\n\n\n\nFri, Nov 1\nLab 7\n\n\n\n\nLab 6 @ 8AM\n\n\n11\nTue, Nov 5\nInference for two-way tables\n\n\n\n\n\n\n\n\n\n\nThu, Nov 7\nProportions overview\n\n\n\n\n\n\n\n\n\n\nFri, Nov 8\nLab 8\n\n\n\n\nLab 7 @ 8AM\n\n\n12\nTue, Nov 12\nInference for one mean\n\n\n\n\n\n\n\n\n\n\nThu, Nov 14\nInference for two means\n\n\n\n\n\n\n\n\n\n\nFri, Nov 15\nLab: Exam Review\n\n\n\n\nLab 8 @ 8AM\n\n\n13\nTue, Nov 19\nIn-class Exam 2\n\n\n\n\n\n\n\n\n\n\nThu, Nov 21\nNo lecture\n\n\n\n\nTake-home Exam 2 @ 5PM\n\n\n\n\nFri, Nov 22\nNo lab\n\n\n\n\n\n\n\n\n14\nTue, Nov 26\nANOVA\n\n\n\n\n\n\n\n\n\n\nThu, Nov 28\nNo lecture\n\n\n\n\n\n\n\n\n\n\nFri, Nov 29\nNo lab\n\n\n\n\n\n\n\n\n15\nTue, Dec 3\nEthics\n\n\n\n\n\n\n\n\n\n\nThu, Dec 5\nTelling a (data) story\n\n\n\n\n\n\n\n\n\n\nFri, Dec 6\nNo lab",
+    "text": "Below is a prospective outline for the course, but things may change with advanced notice:\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nPREPARE\nMATERIALS\nDUE\n\n\n\n\n1\nTue, Aug 27\nWelcome!\n\n\nTo be posted\n\n\n\n\n\n\nThu, Aug 29\nData\n📖 ims: Ch 1  💻 tutorial: 01-data-01\nTo be posted\n\n\n\n\n\n\nFri, Aug 30\nLab 1\n\n\nTo be posted\n\n\n\n\n2\nTue, Sep 3\nStudy design\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Sep 5\nCategorical data\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Sep 6\nLab 2\n\n\nTo be posted\nLab 1 @ 8AM\n\n\n3\nTue, Sep 10\nNumerical data\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Sep 12\nRegression 1\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Sep 13\nLab 3\n\n\nTo be posted\nLab 2 @ 8AM\n\n\n4\nTue, Sep 17\nRegression 2\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Sep 19\nModel selection\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Sep 20\nLab 4\n\n\nTo be posted\nLab 3 @ 8AM\n\n\n5\nTue, Sep 24\nRegression overview\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Sep 26\nLogistic regression 1\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Sep 27\nLab: Exam Review\n\n\nTo be posted\nLab 4 @ 8AM\n\n\n6\nTue, Oct 1\nIn-class Exam 1\n\n\nTo be posted\n\n\n\n\n\n\nThu, Oct 3\nNo lecture\n\n\n\n\nTake-home Exam 1 @ 5PM\n\n\n\n\nFri, Oct 4\nNo lab\n\n\n\n\n\n\n\n\n7\nTue, Oct 8\nLogistic Regression 2\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Oct 10\nHypothesis testing\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Oct 11\nNo lab\n\n\n\n\n\n\n\n\n8\nTue, Oct 15\nNo lecture\n\n\n\n\n\n\n\n\n\n\nThu, Oct 17\nConfidence intervals\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Oct 18\nLab 5\n\n\nTo be posted\n\n\n\n\n9\nTue, Oct 22\nDecision errors\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Oct 24\nInference with mathematical models\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Oct 25\nLab 6\n\n\nTo be posted\nLab 5 @ 8AM\n\n\n10\nTue, Oct 29\nInference for one proportion\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Oct 31\nComparing two proportions\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Nov 1\nLab 7\n\n\nTo be posted\nLab 6 @ 8AM\n\n\n11\nTue, Nov 5\nInference for two-way tables\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Nov 7\nProportions overview\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Nov 8\nLab 8\n\n\nTo be posted\nLab 7 @ 8AM\n\n\n12\nTue, Nov 12\nInference for one mean\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Nov 14\nInference for two means\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Nov 15\nLab: Exam Review\n\n\nTo be posted\nLab 8 @ 8AM\n\n\n13\nTue, Nov 19\nIn-class Exam 2\n\n\nTo be posted\n\n\n\n\n\n\nThu, Nov 21\nNo lecture\n\n\n\n\nTake-home Exam 2 @ 5PM\n\n\n\n\nFri, Nov 22\nNo lab\n\n\n\n\n\n\n\n\n14\nTue, Nov 26\nANOVA\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Nov 28\nNo lecture\n\n\n\n\n\n\n\n\n\n\nFri, Nov 29\nNo lab\n\n\n\n\n\n\n\n\n15\nTue, Dec 3\nEthics\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Dec 5\nTelling a (data) story\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Dec 6\nNo lab\n\n\n\n\n\n\n\n\n16\nSun, Dec 15\nFinal presentation",
     "crumbs": [
       "Syllabus",
       "Schedule"
