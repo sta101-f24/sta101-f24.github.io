@@ -32,6 +32,10 @@ The final letter grade will be determined based on the following thresholds, **w
 
 In labs, you will apply the concepts discussed in lecture to various data analysis scenarios. Labs will focus on both computation and conceptualization. Lab assignments will be completed using Quarto and submitted as as a PDF for grading in Gradescope.
 
+::: callout-note
+Your lowest lab score will be dropped.
+:::
+
 ## Exams
 
 There will be two exams. Each exam will be comprised of two components:
