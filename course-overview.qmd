@@ -10,7 +10,7 @@ Introduction to statistics as a science of understanding and analyzing data. The
 
 ## Class meetings
 
-| Meeting  | Location                       | Time                         | Instructor/TA    |
+| Meeting  | Location                       | Time                         | Staff            |
 |------------------|-------------------|------------------|------------------|
 | Lectures | Social Sciences 139            | Tue, Thu 03:05 PM - 04:20 PM | John Z           |
 | Lab 1    | Perkins LINK 087 (Classroom 3) | Fri 10:05 AM - 11:20 AM      | John G, Camilla  |
