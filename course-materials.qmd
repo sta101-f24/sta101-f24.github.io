@@ -11,7 +11,7 @@ All books are **freely available online**:
 
 ## Technology
 
-You will need a laptop in this course, and you will need to bring it to all lectures and labs. Options for obtaining a laptop through the university are described [here](https://sta101-f24.github.io/course-resources.html#course-costs). Armed with your trusty laptop, you must be able to access the following:
+You will need to bring a laptop to all lectures and labs. Options for obtaining a laptop through the university are described [here](https://sta101-f24.github.io/course-resources.html#course-costs). Armed with your trusty laptop, you must be able to access the following:
 
 -   [This course page](https://sta101-f24.github.io/) that you are on right now;
 -   `R`/`RStudio` as provided by the [Duke Container Manager](https://cmgr.oit.duke.edu/containers);
