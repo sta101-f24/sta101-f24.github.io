@@ -1,8 +1,8 @@
 ---
-title: "Lab 1: Hello R!"
+title: "Lab 1: Hello `R`!"
 ---
 
-The goal of this lab is to acquaint you with R (the computing language), RStudio (the IDE, integrated development environment), and Posit Cloud (the browser based service we will use to access RStudio).
+The goal of this lab is to acquaint you with `R` and `RStudio`[^1].
 
 # Getting started
 
@@ -294,3 +294,6 @@ If you fail to mark the pages associated with an exercise, that exercise won't b
 ## Acknowledgements
 
 This assignment was adapted from a lab in [Data Science in a Box](https://datasciencebox.org/).
+
+
+[^1]: test
