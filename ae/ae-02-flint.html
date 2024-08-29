@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STA 101 Fall 2024 - Exploring Flint’s water data</title>
+<title>STA 101 Fall 2024 - Exploring Flint Michigan’s water data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -101,7 +101,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<meta property="og:title" content="STA 101 Fall 2024 - Exploring Flint’s water data">
+<meta property="og:title" content="STA 101 Fall 2024 - Exploring Flint Michigan’s water data">
 <meta property="og:description" content="Homepage for STA 101 Data Analysis and Statistical Inference at Duke University, Fall 2024.">
 <meta property="og:site_name" content="STA 101 Fall 2024">
 </head>
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Exploring Flint’s water data</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Exploring Flint Michigan’s water data</li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -261,7 +261,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Exploring Flint’s water data</h1>
+<h1 class="title">Exploring Flint Michigan’s water data</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Application exercise</div>
   </div>
@@ -286,7 +286,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>By the end of this application exercise you will</p>
 <ul>
 <li>meet the computational toolkit for the course</li>
-<li>practice using <code>glimpse()</code>, <code>names()</code>, <code>nrow()</code>, <code>ncol()</code>, <code>count()</code></li>
 <li>define and compute various statistics</li>
 <li>begin to gain familiarity with making data visualizations with <code>ggplot()</code></li>
 </ul>
@@ -294,6 +293,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <blockquote class="blockquote">
 <p>While there is no completely safe amount of lead consumption, the limit allowed by the Lead and Copper Rule (LCR) of 1991 is 15 parts per billion (ppb). If this is exceeded in more than 10% of homes tested (or if the 90th percentile value of the total sample is above 15 ppb), action is required. And to make sure problems are caught, sampling for lead in water is supposed to target the “worst-case” homes – those in areas served by lead pipes.</p>
 </blockquote>
+<p>If you’re interested in this sort of thing, <em>Cullud Wattah</em> by Erika Dickerson-Despenza is a very good play about the human toll of this fiasco.</p>
 </section>
 <section id="meet-the-toolkit" class="level1">
 <h1>Meet the toolkit</h1>
@@ -339,10 +339,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.2     ✔ readr     2.1.4
-✔ forcats   1.0.0     ✔ stringr   1.5.0
-✔ ggplot2   3.4.3     ✔ tibble    3.2.1
-✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
 ✔ purrr     1.0.2     
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ✖ dplyr::filter() masks stats::filter()

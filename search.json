@@ -164,98 +164,98 @@
   {
     "objectID": "ae/ae-02-flint.html",
     "href": "ae/ae-02-flint.html",
-    "title": "Exploring Flint’s water data",
+    "title": "Exploring Flint Michigan’s water data",
     "section": "",
-    "text": "By the end of this application exercise you will\n\nmeet the computational toolkit for the course\npractice using glimpse(), names(), nrow(), ncol(), count()\ndefine and compute various statistics\nbegin to gain familiarity with making data visualizations with ggplot()\n\nWe will do this using water lead content data from Flint, MI. The following paragraph will be useful in evaluating the lead amount values we’ll see in the dataset.\n\nWhile there is no completely safe amount of lead consumption, the limit allowed by the Lead and Copper Rule (LCR) of 1991 is 15 parts per billion (ppb). If this is exceeded in more than 10% of homes tested (or if the 90th percentile value of the total sample is above 15 ppb), action is required. And to make sure problems are caught, sampling for lead in water is supposed to target the “worst-case” homes – those in areas served by lead pipes."
+    "text": "By the end of this application exercise you will\n\nmeet the computational toolkit for the course\ndefine and compute various statistics\nbegin to gain familiarity with making data visualizations with ggplot()\n\nWe will do this using water lead content data from Flint, MI. The following paragraph will be useful in evaluating the lead amount values we’ll see in the dataset.\n\nWhile there is no completely safe amount of lead consumption, the limit allowed by the Lead and Copper Rule (LCR) of 1991 is 15 parts per billion (ppb). If this is exceeded in more than 10% of homes tested (or if the 90th percentile value of the total sample is above 15 ppb), action is required. And to make sure problems are caught, sampling for lead in water is supposed to target the “worst-case” homes – those in areas served by lead pipes.\n\nIf you’re interested in this sort of thing, Cullud Wattah by Erika Dickerson-Despenza is a very good play about the human toll of this fiasco."
   },
   {
     "objectID": "ae/ae-02-flint.html#rstudio",
     "href": "ae/ae-02-flint.html#rstudio",
-    "title": "Exploring Flint’s water data",
+    "title": "Exploring Flint Michigan’s water data",
     "section": "RStudio",
     "text": "RStudio\n\nFiles, plots, viewer, environment, etc. panes\nConsole\nEditor"
   },
   {
     "objectID": "ae/ae-02-flint.html#r",
     "href": "ae/ae-02-flint.html#r",
-    "title": "Exploring Flint’s water data",
+    "title": "Exploring Flint Michigan’s water data",
     "section": "R",
     "text": "R\n\nWriting code in the console\nBasic math with R\nCreating variables in R, the assignment operator (&lt;-), and the Environment pane\nR functions and packages and the Packages pane\nGetting help with R and the Help pane"
   },
   {
     "objectID": "ae/ae-02-flint.html#quarto",
     "href": "ae/ae-02-flint.html#quarto",
-    "title": "Exploring Flint’s water data",
+    "title": "Exploring Flint Michigan’s water data",
     "section": "Quarto",
     "text": "Quarto\n\nYAML: Metadata\nNarrative: Edited with the visual editor (or the source editor)\nCode: In code chunks\n\nChunk options (following #|)\nComments (following #)\nCode\n\nRunning individual code chunks vs. rendering a document"
   },
   {
     "objectID": "ae/ae-02-flint.html#load-packages",
     "href": "ae/ae-02-flint.html#load-packages",
-    "title": "Exploring Flint’s water data",
+    "title": "Exploring Flint Michigan’s water data",
     "section": "Load packages",
-    "text": "Load packages\nWe’ll use the tidyverse package for analysis, which offers functionality for data import, wrangling, visualization, and more.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.3     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nLoading this package prints out a message. What does this message mean? How can we suppress the message from the output?"
+    "text": "Load packages\nWe’ll use the tidyverse package for analysis, which offers functionality for data import, wrangling, visualization, and more.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nLoading this package prints out a message. What does this message mean? How can we suppress the message from the output?"
   },
   {
     "objectID": "ae/ae-02-flint.html#load-data",
     "href": "ae/ae-02-flint.html#load-data",
-    "title": "Exploring Flint’s water data",
+    "title": "Exploring Flint Michigan’s water data",
     "section": "Load data",
     "text": "Load data\nThe read_csv() function can be used for reading CSV (comma separated values) files. The file we’re reading is called flint with the suffix (.csv) which indicates its file type. The file is in the data folder.\nBefore reading in the file, go to the data folder in the Files pane to confirm that it is, indeed, there. Then, read the file by running the code chunk below by clicking on the green triangle icon on the code chunk.\n\nflint &lt;- read_csv(\"data/flint.csv\")\n\nRows: 813 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): draw\ndbl (4): id, zip, ward, lead\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\nOne of two things may have happened:\n\nThe file was read successfully and you now see a dataset called flint in your Environment pane.\nThe file was not read successfully and you see an error Error in read_csv(\"data/flint.csv\") : could not find function \"read_csv\".\n\nIf (1) happened, great!\nIf (2) happened, let’s troubleshoot first before continuing."
   },
   {
     "objectID": "ae/ae-02-flint.html#data-dictionary",
     "href": "ae/ae-02-flint.html#data-dictionary",
-    "title": "Exploring Flint’s water data",
+    "title": "Exploring Flint Michigan’s water data",
     "section": "Data dictionary",
     "text": "Data dictionary\nThe following variables are in the flint data frame:\n\nid: sample ID number (identifies the home)\nzip: ZIP code in Flint of the sample’s location\nward: ward in Flint of the sample’s location\ndraw: which time point the water was sampled from\nlead: lead content in parts per billion (ppb)"
   },
   {
     "objectID": "ae/ae-02-flint.html#populations-and-samples",
     "href": "ae/ae-02-flint.html#populations-and-samples",
-    "title": "Exploring Flint’s water data",
+    "title": "Exploring Flint Michigan’s water data",
     "section": "Populations and samples",
     "text": "Populations and samples\nWe want to learn about the population using a sample.\nIn the case we want to learn about the lead content in all of Flint, MI homes but only have available water readings from a sample of homes (our data set).\nExercise 1: Look at the data, how many observations are there? How many variables?\n\n# add code here"
   },
   {
     "objectID": "ae/ae-02-flint.html#frequencies",
     "href": "ae/ae-02-flint.html#frequencies",
-    "title": "Exploring Flint’s water data",
+    "title": "Exploring Flint Michigan’s water data",
     "section": "Frequencies",
     "text": "Frequencies\nLet’s count() to find the number of different time points water was sampled with the count() function.\n\nThe first argument is flint: the data frame\nThe second argument is draw: the variable\n\n\ncount(flint, draw)\n\n# A tibble: 3 × 2\n  draw       n\n  &lt;chr&gt;  &lt;int&gt;\n1 first    271\n2 second   271\n3 third    271\n\n\nWe can achieve the same result with the following “piped” operation as well.\n\nThe first line is flint: the data frame\nThen the pipe operator, read as “and then”, which places what comes before it as the first argument of what comes after it\nThe second line is count(draw)\n\n\nflint |&gt;\n  count(draw)\n\n# A tibble: 3 × 2\n  draw       n\n  &lt;chr&gt;  &lt;int&gt;\n1 first    271\n2 second   271\n3 third    271\n\n\nWe can use a similar approach to fund out how many unique homes are in the data set:\n\nflint |&gt;\n  count(id)\n\n# A tibble: 269 × 2\n      id     n\n   &lt;dbl&gt; &lt;int&gt;\n 1     1     3\n 2     2     3\n 3     4     3\n 4     5     3\n 5     6     3\n 6     7     3\n 7     8     3\n 8     9     3\n 9    12     3\n10    13     3\n# ℹ 259 more rows\n\n\nExercise 2: How many samples were taken from each zip code?\n\n# add code here\n\nExercise 3: Which ZIP code had the most samples drawn? Hint: See the help for count.\n\n# add code here"
   },
   {
     "objectID": "ae/ae-02-flint.html#measures-of-central-tendency",
     "href": "ae/ae-02-flint.html#measures-of-central-tendency",
-    "title": "Exploring Flint’s water data",
+    "title": "Exploring Flint Michigan’s water data",
     "section": "Measures of central tendency",
     "text": "Measures of central tendency\n\nmean\nmedian\nmode"
   },
   {
     "objectID": "ae/ae-02-flint.html#measures-of-spread",
     "href": "ae/ae-02-flint.html#measures-of-spread",
-    "title": "Exploring Flint’s water data",
+    "title": "Exploring Flint Michigan’s water data",
     "section": "Measures of spread",
     "text": "Measures of spread\n\nvariance\nstandard deviation\nrange\nquartiles\ninter-quartile range (IQR)"
   },
   {
     "objectID": "ae/ae-02-flint.html#order-statistics",
     "href": "ae/ae-02-flint.html#order-statistics",
-    "title": "Exploring Flint’s water data",
+    "title": "Exploring Flint Michigan’s water data",
     "section": "Order statistics",
     "text": "Order statistics\n\nquantiles\nminimum (0 percentile)\nmedian (50th percentile)\nmaximum (100 percentile)\n\n… and any other arbitrary function of the data you can come up with!\nExercise 4: Compute each of these statistics for lead ppb.\n\n# add code here"
   },
   {
     "objectID": "ae/ae-02-flint.html#histograms",
     "href": "ae/ae-02-flint.html#histograms",
-    "title": "Exploring Flint’s water data",
+    "title": "Exploring Flint Michigan’s water data",
     "section": "Histograms",
     "text": "Histograms\nLet’s take a look at the distribution of lead content in homes in Flint, MI.\n\nggplot(flint, aes(x = lead)) +\n  geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n\nWe can make this plot look nicer/more useful by adjusting the number of bins and zooming into the x-axis.\n\nggplot(flint, aes(x = lead)) +\n  geom_histogram(bins = 50) +\n  coord_cartesian(xlim = c(0, 100))\n\n\n\n\n\n\n\n\nLet’s visualize some of our summary statistics on the plot.\nExercise 5: Add a new layer, geom_vline(xintercept = __, color = \"red\"), to the histogram below, filling in the blank with the mean.\n\nggplot(flint, aes(x = lead)) + \n  geom_histogram(bins = 50) + \n  coord_cartesian(xlim = c(0, 100))\n\n\n\n\n\n\n\n\nExercise 6: Add one more layer which overlays the median, in a different color.\n\n# add code here"
   },
   {
     "objectID": "ae/ae-02-flint.html#box-plots",
     "href": "ae/ae-02-flint.html#box-plots",
-    "title": "Exploring Flint’s water data",
+    "title": "Exploring Flint Michigan’s water data",
     "section": "Box plots",
     "text": "Box plots\nNext, let’s narrow our focus to the zip codes 48503, 48504, 48505, 48506, and 48507 and observations with lead values less than 1,000 ppb.\n\nflint_focus &lt;- flint |&gt;\n  filter(zip %in% 48503:48507 & lead &lt; 1000)\n\nExercise 7: Below are side-by-side box plots for the three flushing times in each of the five zip codes we considered. Add x and y labels; add a title by inserting title = \"title_name\" inside the labs() function.\n\nggplot(data = flint_focus, aes(y = factor(zip), x = lead)) +\n  geom_boxplot(aes(fill = factor(draw))) +\n  labs(x = \"___\", y = \"___\", fill = \"Flushing time\") +\n  scale_fill_discrete(\n    breaks = c(\"first\", \"second\", \"third\"),\n    labels = c(\"0 (sec)\", \"45 (sec)\", \"120 (sec)\")\n  )\n\n\n\n\n\n\n\n\nExercise 8: Add labels for x, y, a title, and subtitle to the code below to update the corresponding plot.\n\nggplot(data = flint_focus, aes(y = factor(zip), x = lead)) +\n  geom_boxplot(aes(fill = factor(draw))) + \n  labs(\n    x = \"___\", y = \"___\", fill = \"Flushing time\",\n    title = \"___\",\n    subtitle = \"___\"\n    ) +\n  scale_fill_discrete(\n    breaks = c(\"first\", \"second\", \"third\"),\n    labels = c(\"0 (sec)\", \"45 (sec)\", \"120 (sec)\")\n  ) +\n  coord_cartesian(xlim = c(0, 50)) +\n  theme_bw()\n\n\n\n\n\n\n\n\nExercise 9: What is the difference between the two plots? What are the advantages and disadvantages to each plot?\n[Add your answer here]"
   },
@@ -710,7 +710,7 @@
     "href": "index.html",
     "title": "STA 101 Data Analysis and Statistical Inference",
     "section": "",
-    "text": "Below is a prospective outline for the course, but things may change with advanced notice:\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nPREPARE\nMATERIALS\nDUE\n\n\n\n\n1\nTue, Aug 27\nWelcome!\n\n\n\n\n\n\n\n\n\n\nThu, Aug 29\nData\n📖 ims: Ch 1  💻 tutorial: 01-data-01\nTo be posted\nGetting to know you @ 3PM\n\n\n\n\nFri, Aug 30\nLab 1: R\n\n\nTo be posted\n\n\n\n\n2\nTue, Sep 3\nStudy design\n📖 ims: Chp 2  💻 tutorial: 01-data-02  💻 tutorial: 01-data-03\nTo be posted\n\n\n\n\n\n\nThu, Sep 5\nCategorical data\n📖 ims: Chp 4  💻 tutorial: 02-explore-01\nTo be posted\n\n\n\n\n\n\nFri, Sep 6\nLab 2: data\n📖 ims: Chp 3  💻 tutorial: 01-data-04\nTo be posted\nLab 1 @ 8AM\n\n\n3\nTue, Sep 10\nNumerical data\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Sep 12\nRegression 1\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Sep 13\nLab 3: exploratory data analysis\nTo be posted\nTo be posted\nLab 2 @ 8AM\n\n\n4\nTue, Sep 17\nRegression 2\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Sep 19\nModel selection\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Sep 20\nLab 4: regression\nTo be posted\nTo be posted\nLab 3 @ 8AM\n\n\n5\nTue, Sep 24\nRegression overview\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Sep 26\nLogistic regression 1\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Sep 27\nLab: exam review\n\n\nTo be posted\nLab 4 @ 8AM\n\n\n6\nTue, Oct 1\nIn-class Exam 1\n\n\n\n\n\n\n\n\n\n\nThu, Oct 3\nNo lecture\n\n\n\n\nTake-home Exam 1 @ 5PM\n\n\n\n\nFri, Oct 4\nNo lab\n\n\n\n\n\n\n\n\n7\nTue, Oct 8\nLogistic Regression 2\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Oct 10\nHypothesis testing\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Oct 11\nNo lab\n\n\n\n\n\n\n\n\n8\nTue, Oct 15\nNo lecture\n\n\n\n\n\n\n\n\n\n\nThu, Oct 17\nConfidence intervals\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Oct 18\nLab 5: hypothesis testing\nTo be posted\nTo be posted\n\n\n\n\n9\nTue, Oct 22\nDecision errors\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Oct 24\nInference with mathematical models\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Oct 25\nLab 6: foundations\nTo be posted\nTo be posted\nLab 5 @ 8AM\n\n\n10\nTue, Oct 29\nInference for one proportion\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Oct 31\nComparing two proportions\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Nov 1\nLab 7: inference for proportions\nTo be posted\nTo be posted\nLab 6 @ 8AM\n\n\n11\nTue, Nov 5\nInference for two-way tables\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Nov 7\nProportions overview\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Nov 8\nLab: exam review\n\n\nTo be posted\nLab 7 @ 8AM\n\n\n12\nTue, Nov 12\nIn-class Exam 2\n\n\nTo be posted\n\n\n\n\n\n\nThu, Nov 14\nNo lecture\n\n\nTo be posted\nTake-home Exam 2 @ 5PM\n\n\n\n\nFri, Nov 15\nNo lab\n\n\nTo be posted\n\n\n\n\n13\nTue, Nov 19\nInference for one mean\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Nov 21\nInference for two means\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Nov 22\nLab: project proposal\n\n\n\n\nProject proposal @ 5PM\n\n\n14\nTue, Nov 26\nANOVA\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Nov 28\nNo lecture\n\n\n\n\n\n\n\n\n\n\nFri, Nov 29\nNo lab\n\n\n\n\n\n\n\n\n15\nTue, Dec 3\nEthics\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Dec 5\nTelling a (data) story\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Dec 6\nNo lab\n\n\n\n\nPeer review @ 5PM\n\n\n16\nSun, Dec 15\nFinal presentation\n\n\n\n\nFinal project @ 2PM",
+    "text": "Below is a prospective outline for the course, but things may change with advanced notice:\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nPREPARE\nMATERIALS\nDUE\n\n\n\n\n1\nTue, Aug 27\nWelcome!\n\n\n\n\n\n\n\n\n\n\nThu, Aug 29\nData\n📖 ims: Ch 1  💻 tutorial: 01-data-01\nactivity\nGetting to know you @ 3PM\n\n\n\n\nFri, Aug 30\nLab 1: R\n\n\nTo be posted\n\n\n\n\n2\nTue, Sep 3\nStudy design\n📖 ims: Chp 2  💻 tutorial: 01-data-02  💻 tutorial: 01-data-03\nTo be posted\n\n\n\n\n\n\nThu, Sep 5\nCategorical data\n📖 ims: Chp 4  💻 tutorial: 02-explore-01\nTo be posted\n\n\n\n\n\n\nFri, Sep 6\nLab 2: data\n📖 ims: Chp 3  💻 tutorial: 01-data-04\nTo be posted\nLab 1 @ 8AM\n\n\n3\nTue, Sep 10\nNumerical data\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Sep 12\nRegression 1\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Sep 13\nLab 3: exploratory data analysis\nTo be posted\nTo be posted\nLab 2 @ 8AM\n\n\n4\nTue, Sep 17\nRegression 2\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Sep 19\nModel selection\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Sep 20\nLab 4: regression\nTo be posted\nTo be posted\nLab 3 @ 8AM\n\n\n5\nTue, Sep 24\nRegression overview\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Sep 26\nLogistic regression 1\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Sep 27\nLab: exam review\n\n\nTo be posted\nLab 4 @ 8AM\n\n\n6\nTue, Oct 1\nIn-class Exam 1\n\n\n\n\n\n\n\n\n\n\nThu, Oct 3\nNo lecture\n\n\n\n\nTake-home Exam 1 @ 5PM\n\n\n\n\nFri, Oct 4\nNo lab\n\n\n\n\n\n\n\n\n7\nTue, Oct 8\nLogistic Regression 2\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Oct 10\nHypothesis testing\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Oct 11\nNo lab\n\n\n\n\n\n\n\n\n8\nTue, Oct 15\nNo lecture\n\n\n\n\n\n\n\n\n\n\nThu, Oct 17\nConfidence intervals\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Oct 18\nLab 5: hypothesis testing\nTo be posted\nTo be posted\n\n\n\n\n9\nTue, Oct 22\nDecision errors\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Oct 24\nInference with mathematical models\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Oct 25\nLab 6: foundations\nTo be posted\nTo be posted\nLab 5 @ 8AM\n\n\n10\nTue, Oct 29\nInference for one proportion\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Oct 31\nComparing two proportions\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Nov 1\nLab 7: inference for proportions\nTo be posted\nTo be posted\nLab 6 @ 8AM\n\n\n11\nTue, Nov 5\nInference for two-way tables\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Nov 7\nProportions overview\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Nov 8\nLab: exam review\n\n\nTo be posted\nLab 7 @ 8AM\n\n\n12\nTue, Nov 12\nIn-class Exam 2\n\n\nTo be posted\n\n\n\n\n\n\nThu, Nov 14\nNo lecture\n\n\nTo be posted\nTake-home Exam 2 @ 5PM\n\n\n\n\nFri, Nov 15\nNo lab\n\n\nTo be posted\n\n\n\n\n13\nTue, Nov 19\nInference for one mean\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Nov 21\nInference for two means\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Nov 22\nLab: project proposal\n\n\n\n\nProject proposal @ 5PM\n\n\n14\nTue, Nov 26\nANOVA\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Nov 28\nNo lecture\n\n\n\n\n\n\n\n\n\n\nFri, Nov 29\nNo lab\n\n\n\n\n\n\n\n\n15\nTue, Dec 3\nEthics\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Dec 5\nTelling a (data) story\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Dec 6\nNo lab\n\n\n\n\nPeer review @ 5PM\n\n\n16\nSun, Dec 15\nFinal presentation\n\n\n\n\nFinal project @ 2PM",
     "crumbs": [
       "Syllabus",
       "Schedule"
