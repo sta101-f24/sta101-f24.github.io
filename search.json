@@ -524,14 +524,14 @@
     "href": "labs/lab-1.html#quarto",
     "title": "Lab 1: Hello R!",
     "section": "Quarto",
-    "text": "Quarto\nlab-1.qmd is an example of a Quarto Markdown file. Quarto allows you to seamlessly combine written text and code to produce clean and professional looking reports. You will use this system to create all of your lab and project submissions. When you open your .qmd file, you see a block of text at the top in between dashed lines. This is called the YAML2, and it contains the settings for your document, like the title, author name, date, and what sort of document you want to create. In our case, it will always be a PDF.\nChange the author name to your name and update the date with today’s date. Click the Render to render the document. What do you notice?\n\n\n\n\n\n\nNote\n\n\n\nTo avoid issues that can occur while rendering, it is a good idea to render early and often. At least after every exercise."
+    "text": "Quarto\nlab-1.qmd is an example of a Quarto Markdown file. Quarto allows you to seamlessly combine written text and code to produce clean and professional looking reports. You will use this system to create all of your assignment submissions in this course. When you open your .qmd file, you see a block of text at the top in between dashed lines. This is called the YAML2, and it contains the settings for your document, like the title, author name, date, and what sort of document you want to create. In our case, it will always be a PDF.\nChange the author name to your name and update the date with today’s date. Click the Render button to render the document. What do you notice?\n\n\n\n\n\n\nNote\n\n\n\nTo avoid issues that can occur while rendering, it is a good idea to render early and often. At least after every exercise."
   },
   {
     "objectID": "labs/lab-1.html#packages",
     "href": "labs/lab-1.html#packages",
     "title": "Lab 1: Hello R!",
     "section": "Packages",
-    "text": "Packages\nIn this lab we will work with three packages: the tidyverse package which is a collection of packages for doing data analysis in a “tidy” way, the datasauRus package which contains the data set for the first part of your lab.\n\nlibrary(tidyverse) \nlibrary(datasauRus)\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you are using R on Duke Containers, packages we use should already be installed and only need to be loaded with the function library(). If you are using a local version of R you probably have to run the following code in the console to install the packages (one time only!)\n\ninstall.packages(\"tidyverse\")\ninstall.packages(\"datasauRus\")"
+    "text": "Packages\nIn this lab we will work with three packages: the tidyverse package which is a collection of packages for doing data analysis in a “tidy” way, the datasauRus package which contains the data set for the first part of your lab.\n\nlibrary(tidyverse) \nlibrary(datasauRus)"
   },
   {
     "objectID": "labs/lab-1.html#exercise-1",
