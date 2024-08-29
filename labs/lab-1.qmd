@@ -10,7 +10,7 @@ The goal of this lab is to acquaint you with `R` and `RStudio`[^1].
 
 # Getting started
 
-1.  Go to the **Files** section of our [Canvas page](https://canvas.duke.edu/courses/36641) and download `lab-1.qmd`. This is a template that you will fill in to complete this assignment;
+1.  Go to the **Files** section of our [Canvas page](https://canvas.duke.edu/courses/36641) and download `lab-1.qmd`. This is a blank template that you will fill in to complete this assignment;
 
 2.  Use [these steps](https://sta101-f24.github.io/computing/computing-access.html) to navigate to `RStudio` using the [Duke Container Manager](https://cmgr.oit.duke.edu/containers);
 
@@ -60,7 +60,7 @@ For all assignments in this course there is a "code style and formatting" compon
 
 4.  Code is properly indented.
 
-5.  Code doesn't exceed 80 characters in each line, longer lines of code are spread across multiple lines with appropriately placed line breaks. (In the rendered document, you shouldn't have to scroll to see all your code.)
+5.  Code doesn't exceed 80 characters in each line, longer lines of code are spread across multiple lines with appropriately placed line breaks. (In the rendered document, your code shouldn't run off the page)
 
 6.  Code chunks are labeled, informatively and without spaces.
 
