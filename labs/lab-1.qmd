@@ -12,7 +12,7 @@ The goal of this lab is to acquaint you with `R` and `RStudio`[^1].
 
 1.  Go to the **Files** section of our [Canvas page](https://canvas.duke.edu/courses/36641) and download `lab-1.qmd`. This is a template that you will fill in to complete this assignment;
 
-2.  Use these steps to navigate to `RStudio` using the [Duke Container Manager](https://cmgr.oit.duke.edu/containers);
+2.  Use [these steps](https://sta101-f24.github.io/computing/computing-access.html) to navigate to `RStudio` using the [Duke Container Manager](https://cmgr.oit.duke.edu/containers);
 
 3.  Let's keep things organized. Under the *Files* tab on the lower right of `RStudio`, create a new folder called `lab-1`. You'll keep everything related to this lab in that folder;
 
@@ -28,9 +28,9 @@ The goal of this lab is to acquaint you with `R` and `RStudio`[^1].
 
 `lab-1.qmd` is an example of a Quarto Markdown file. Quarto allows you to seamlessly combine written text and code to produce clean and professional looking reports. You will use this system to create all of your assignment submissions in this course. When you open your `.qmd` file, you see a block of text at the top in between dashed lines. This is called the YAML[^2], and it contains the settings for your document, like the title, author name, date, and what sort of document you want to create. In our case, it will always be a PDF.
 
-Change the `author` name to your name and update the `date` with today's date. Click the **Render** button to render the document. What do you notice?
-
 [^2]: That stands for "Yet Another Markup Language." Now please promptly forget that.
+
+Change the `author` name to your name and update the `date` with today's date. Click the **Render** button to render the document. What do you notice?
 
 ::: callout-note
 To avoid issues that can occur while rendering, it is a good idea to render early and often. **At least after every exercise**.
