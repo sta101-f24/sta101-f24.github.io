@@ -26,9 +26,9 @@ The goal of this lab is to acquaint you with `R` and `RStudio`[^1].
 
 ## Quarto
 
-`lab-1.qmd` is an example of a Quarto Markdown file. Quarto allows you to seamlessly combine written text and code to produce clean and professional looking reports. You will use this system to create all of your lab and project submissions. When you open your `.qmd` file, you see a block of text at the top in between dashed lines. This is called the YAML[^2], and it contains the settings for your document, like the title, author name, date, and what sort of document you want to create. In our case, it will always be a PDF.
+`lab-1.qmd` is an example of a Quarto Markdown file. Quarto allows you to seamlessly combine written text and code to produce clean and professional looking reports. You will use this system to create all of your assignment submissions in this course. When you open your `.qmd` file, you see a block of text at the top in between dashed lines. This is called the YAML[^2], and it contains the settings for your document, like the title, author name, date, and what sort of document you want to create. In our case, it will always be a PDF.
 
-Change the `author` name to your name and update the `date` with today's date. Click the **Render** to render the document. What do you notice?
+Change the `author` name to your name and update the `date` with today's date. Click the **Render** button to render the document. What do you notice?
 
 [^2]: That stands for "Yet Another Markup Language." Now please promptly forget that.
 
@@ -47,17 +47,6 @@ In this lab we will work with three packages: the **tidyverse** package which is
 library(tidyverse) 
 library(datasauRus)
 ```
-
-::: callout-warning
-If you are using `R` on Duke Containers, packages we use should already be installed and only need to be **loaded** with the function `library()`. If you are using a local version of `R` you probably have to run the following code in the **console** to install the packages (one time only!)
-
-```{r}
-#| eval: false
-
-install.packages("tidyverse")
-install.packages("datasauRus")
-```
-:::
 
 # Code style
 
