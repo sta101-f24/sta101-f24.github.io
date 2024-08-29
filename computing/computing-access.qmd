@@ -4,12 +4,12 @@ title: "Accessing RStudio"
 
 In this class, you will always and everywhere access `RStudio` through the [Duke Container Manager](https://cmgr.oit.duke.edu/containers). This ensures that all of us are using the same version of all the software. If this were not the case, unexpected and difficult to diagnose/resolve coding issues could arise when you seek help from the teaching team or collaborate with your project partners. Nobody needs that, so please stick to the containers. Here is how you get in.
 
-1. Go here: https://cmgr.oit.duke.edu/containers. You may have to log in with your NetID at some point;
+1.  Go here: <https://cmgr.oit.duke.edu/containers>. You may have to log in with your NetID at some point;
 
-2. (The first time you do this, you look for STA101 under "Reservations available" on the righthand side, and click "reserve STA101". After you do that once, STA101 will appear under "My reservations" on the lefthand side forever more)
+2.  (The first time you do this, you look for STA101 under "Reservations available" on the righthand side, and click "reserve STA101". After you do that once, STA101 will appear under "My reservations" on the lefthand side forever more)
 
-3. Click STA101 under "My reservations";
+3.  Click STA101 under "My reservations";
 
-4. Login;
+4.  Login;
 
-5. Start. It may take a while, but then `RStudio` should launch in your browser.
+5.  Start. It may take a while, but then `RStudio` should launch in your browser.
