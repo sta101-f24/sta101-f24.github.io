@@ -59,6 +59,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../computing/computing-access.html" rel="next">
+<link href="../index.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -105,7 +107,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 1: Hello R!</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/lab-1.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/lab-1.html">Lab 1</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -180,13 +182,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
- <span class="menu-text">Computing</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Labs</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-1.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lab 1</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">Computing</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../computing/computing-access.html" class="sidebar-item-text sidebar-link">
@@ -236,7 +255,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="#exercise-8" id="toc-exercise-8" class="nav-link" data-scroll-target="#exercise-8">Exercise 8</a></li>
   <li><a href="#exercise-9" id="toc-exercise-9" class="nav-link" data-scroll-target="#exercise-9">Exercise 9</a></li>
   <li><a href="#exercise-10" id="toc-exercise-10" class="nav-link" data-scroll-target="#exercise-10">Exercise 10</a></li>
-  <li><a href="#exerxise-11" id="toc-exerxise-11" class="nav-link" data-scroll-target="#exerxise-11">Exerxise 11</a></li>
+  <li><a href="#lastly" id="toc-lastly" class="nav-link" data-scroll-target="#lastly">Lastly…</a></li>
   </ul>
 </li>
   <li>
@@ -250,7 +269,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/lab-1.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/lab-1.html">Lab 1</a></li></ol></nav><div class="quarto-title">
 <h1 class="title">Lab 1: Hello R!</h1>
 </div>
 
@@ -268,7 +287,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header><p>The goal of this lab is to acquaint you with <code>R</code> and <code>RStudio</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
 <section id="getting-started" class="level1"><h1>Getting started</h1>
 <ol type="1">
-<li><p>Go to the <strong>Files</strong> section of our <a href="https://canvas.duke.edu/courses/36641">Canvas page</a> and download <code>lab-1.qmd</code>. This is a template that you will fill in to complete this assignment;</p></li>
+<li><p>Go to the <strong>Files</strong> section of our <a href="https://canvas.duke.edu/courses/36641">Canvas page</a> and download <code>lab-1.qmd</code>. This is a blank template that you will fill in to complete this assignment;</p></li>
 <li><p>Use <a href="https://sta101-f24.github.io/computing/computing-access.html">these steps</a> to navigate to <code>RStudio</code> using the <a href="https://cmgr.oit.duke.edu/containers">Duke Container Manager</a>;</p></li>
 <li><p>Let’s keep things organized. Under the <em>Files</em> tab on the lower right of <code>RStudio</code>, create a new folder called <code>lab-1</code>. You’ll keep everything related to this lab in that folder;</p></li>
 <li>
@@ -306,7 +325,7 @@ Note
 <li><p>There are spaces around <code>=</code> signs.</p></li>
 <li><p>There is a space after each <code>,</code>.</p></li>
 <li><p>Code is properly indented.</p></li>
-<li><p>Code doesn’t exceed 80 characters in each line, longer lines of code are spread across multiple lines with appropriately placed line breaks. (In the rendered document, you shouldn’t have to scroll to see all your code.)</p></li>
+<li><p>Code doesn’t exceed 80 characters in each line, longer lines of code are spread across multiple lines with appropriately placed line breaks. (In the rendered document, your code shouldn’t run off the page)</p></li>
 <li><p>Code chunks are labeled, informatively and without spaces.</p></li>
 </ol>
 <p>These guidelines follow the <a href="https://style.tidyverse.org/">tidyverse style guide</a>. This style guide is commonly used and will help make your code more legible.</p>
@@ -471,7 +490,7 @@ Note
 <div class="exercise">
 <p>IMS - <a href="https://openintro-ims2.netlify.app/01-data-hello#chp1-exercises">Chapter 1 exercises</a>, #16: Shows on Netflix.</p>
 </div>
-</section><section id="exerxise-11" class="level2"><h2 class="anchored" data-anchor-id="exerxise-11">Exerxise 11</h2>
+</section><section id="lastly" class="level2"><h2 class="anchored" data-anchor-id="lastly">Lastly…</h2>
 <p>Recommend some music for us to listen to while we grade this.</p>
 </section></section><section id="wrap-up" class="level1"><h1>Wrap up</h1>
 <section id="submitting" class="level2"><h2 class="anchored" data-anchor-id="submitting">Submitting</h2>
@@ -556,10 +575,6 @@ Warning
 <td>5</td>
 </tr>
 <tr class="odd">
-<td>Exercise 11</td>
-<td>0</td>
-</tr>
-<tr class="even">
 <td><strong>Total</strong></td>
 <td>50</td>
 </tr>
@@ -980,7 +995,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+      <a href="../index.html" class="pagination-link" aria-label="Schedule">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Schedule</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../computing/computing-access.html" class="pagination-link" aria-label="Access">
+        <span class="nav-page-text">Access</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
