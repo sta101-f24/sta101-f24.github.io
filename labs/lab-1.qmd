@@ -1,26 +1,36 @@
 ---
-title: "Lab 1: Hello `R`!"
+title: "Lab 1: Hello R!"
+#format: 
+#  pdf: default
 ---
 
 The goal of this lab is to acquaint you with `R` and `RStudio`[^1].
 
+[^1]: `R` is a programming language, just like `Python`, `Java`, `C++`, and other things you may have heard of. `RStudio` is a platform for writing `R` code in an easy and organized way. It is an example of an *integrated development environment* (IDE).
+
 # Getting started
 
-1.  Go to [Posit Cloud](https://posit.cloud/spaces/405361) and start the project titled **lab-1 - Hello R!**.
+1.  Go to the **Files** section of our [Canvas page](https://canvas.duke.edu/courses/36641) and download `lab-1.qmd`. This is a template that you will fill in to complete this assignment;
 
-2.  Under the *Files* tab on the lower right, click on `lab-1.qmd` to open the lab template.
+2.  Use these steps to navigate to `RStudio` using the [Duke Container Manager](https://cmgr.oit.duke.edu/containers);
 
-![](images/open-the-file.png){fig-alt="Where to find the file" width="500"}
+3.  Let's keep things organized. Under the *Files* tab on the lower right of `RStudio`, create a new folder called `lab-1`. You'll keep everything related to this lab in that folder;
 
-3.  Complete the exercises in this document.
+4.  Upload the file `lab-1.qmd` to your `RStudio` files using the pictured button, and move it into the `lab-1` folder;
+
+    ![](images/upload.png){fig-alt="Where to find the upload" width="500"}
+
+5.  Now proceed to complete the exercises in this document.
 
 # Toolkit review
 
-## YAML
+## Quarto
 
-The top portion of your Quarto Markdown file (aka `.qmd`), you'll find three dashed lines. Between the dashed lines is called YAML. YAML stands for "YAML Ain't Markup Language". It is a human friendly data serialization standard for all programming languages. All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.
+`lab-1.qmd` is an example of a Quarto Markdown file. Quarto allows you to seamlessly combine written text and code to produce clean and professional looking reports. You will use this system to create all of your lab and project submissions. When you open your `.qmd` file, you see a block of text at the top in between dashed lines. This is called the YAML[^2], and it contains the settings for your document, like the title, author name, date, and what sort of document you want to create. In our case, it will always be a PDF.
 
 Change the `author` name to your name and update the `date` with today's date. Click the **Render** to render the document. What do you notice?
+
+[^2]: That stands for "Yet Another Markup Language." Now please promptly forget that.
 
 ::: callout-note
 To avoid issues that can occur while rendering, it is a good idea to render early and often. **At least after every exercise**.
@@ -39,7 +49,7 @@ library(datasauRus)
 ```
 
 ::: callout-warning
-If you are using `R` on Posit Cloud, packages we use should already be installed and only need to be **loaded** with the function `library()`. If you are using a local version of `R` you probably have to run the following code in the **console** to install the packages (one time only!)
+If you are using `R` on Duke Containers, packages we use should already be installed and only need to be **loaded** with the function `library()`. If you are using a local version of `R` you probably have to run the following code in the **console** to install the packages (one time only!)
 
 ```{r}
 #| eval: false
@@ -294,6 +304,3 @@ If you fail to mark the pages associated with an exercise, that exercise won't b
 ## Acknowledgements
 
 This assignment was adapted from a lab in [Data Science in a Box](https://datasciencebox.org/).
-
-
-[^1]: `R` is a programming language, like `Python`, `Java`, `C++`, and other things you may have heard of. `RStudio` is a platform for writing `R` an an easy an organized way. It is an example of an *integrated development environment* (IDE).
