@@ -105,7 +105,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 1: Hello <code>R</code>!</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 1: Hello R!</li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -190,7 +190,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li>
 <a href="#toolkit-review" id="toc-toolkit-review" class="nav-link" data-scroll-target="#toolkit-review">Toolkit review</a>
   <ul class="collapse">
-<li><a href="#yaml" id="toc-yaml" class="nav-link" data-scroll-target="#yaml">YAML</a></li>
+<li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a></li>
   <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
   </ul>
 </li>
@@ -227,7 +227,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">Lab 1: Hello <code>R</code>!</h1>
+<h1 class="title">Lab 1: Hello R!</h1>
 </div>
 
 
@@ -244,15 +244,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header><p>The goal of this lab is to acquaint you with <code>R</code> and <code>RStudio</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
 <section id="getting-started" class="level1"><h1>Getting started</h1>
 <ol type="1">
-<li><p>Go to <a href="https://posit.cloud/spaces/405361">Posit Cloud</a> and start the project titled <strong>lab-1 - Hello R!</strong>.</p></li>
-<li><p>Under the <em>Files</em> tab on the lower right, click on <code>lab-1.qmd</code> to open the lab template.</p></li>
-</ol>
-<p><img src="images/open-the-file.png" class="img-fluid" alt="Where to find the file" width="500"></p>
-<ol start="3" type="1">
-<li>Complete the exercises in this document.</li>
+<li><p>Go to the <strong>Files</strong> section of our <a href="https://canvas.duke.edu/courses/36641">Canvas page</a> and download <code>lab-1.qmd</code>. This is a template that you will fill in to complete this assignment;</p></li>
+<li><p>Use these steps to navigate to <code>RStudio</code> using the <a href="https://cmgr.oit.duke.edu/containers">Duke Container Manager</a>;</p></li>
+<li><p>Let’s keep things organized. Under the <em>Files</em> tab on the lower right of <code>RStudio</code>, create a new folder called <code>lab-1</code>. You’ll keep everything related to this lab in that folder;</p></li>
+<li>
+<p>Upload the file <code>lab-1.qmd</code> to your <code>RStudio</code> files using the pictured button, and move it into the <code>lab-1</code> folder;</p>
+<p><img src="images/upload.png" class="img-fluid" alt="Where to find the upload" width="500"></p>
+</li>
+<li><p>Now proceed to complete the exercises in this document.</p></li>
 </ol></section><section id="toolkit-review" class="level1"><h1>Toolkit review</h1>
-<section id="yaml" class="level2"><h2 class="anchored" data-anchor-id="yaml">YAML</h2>
-<p>The top portion of your Quarto Markdown file (aka <code>.qmd</code>), you’ll find three dashed lines. Between the dashed lines is called YAML. YAML stands for “YAML Ain’t Markup Language”. It is a human friendly data serialization standard for all programming languages. All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.</p>
+<section id="quarto" class="level2"><h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
+<p><code>lab-1.qmd</code> is an example of a Quarto Markdown file. Quarto allows you to seamlessly combine written text and code to produce clean and professional looking reports. You will use this system to create all of your lab and project submissions. When you open your <code>.qmd</code> file, you see a block of text at the top in between dashed lines. This is called the YAML<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, and it contains the settings for your document, like the title, author name, date, and what sort of document you want to create. In our case, it will always be a PDF.</p>
 <p>Change the <code>author</code> name to your name and update the <code>date</code> with today’s date. Click the <strong>Render</strong> to render the document. What do you notice?</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -283,7 +285,7 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If you are using <code>R</code> on Posit Cloud, packages we use should already be installed and only need to be <strong>loaded</strong> with the function <code><a href="https://rdrr.io/r/base/library.html">library()</a></code>. If you are using a local version of <code>R</code> you probably have to run the following code in the <strong>console</strong> to install the packages (one time only!)</p>
+<p>If you are using <code>R</code> on Duke Containers, packages we use should already be installed and only need to be <strong>loaded</strong> with the function <code><a href="https://rdrr.io/r/base/library.html">library()</a></code>. If you are using a local version of <code>R</code> you probably have to run the following code in the <strong>console</strong> to install the packages (one time only!)</p>
 <div class="cell">
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"tidyverse"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"datasauRus"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -555,7 +557,8 @@ Warning
 
 </section></section><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 <ol>
-<li id="fn1"><p>test<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p><code>R</code> is a programming language, just like <code>Python</code>, <code>Java</code>, <code>C++</code>, and other things you may have heard of. <code>RStudio</code> is a platform for writing <code>R</code> code in an easy and organized way. It is an example of an <em>integrated development environment</em> (IDE).<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>That stands for “Yet Another Markup Language.” Now please promptly forget that.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
