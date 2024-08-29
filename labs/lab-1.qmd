@@ -252,6 +252,10 @@ IMS - [Chapter 1 exercises](https://openintro-ims2.netlify.app/01-data-hello#chp
 IMS - [Chapter 1 exercises](https://openintro-ims2.netlify.app/01-data-hello#chp1-exercises), #16: Shows on Netflix.
 :::
 
+## Exerxise 11
+
+Recommend some music for us to listen to while we grade this.
+
 # Wrap up
 
 ## Submitting
@@ -288,6 +292,7 @@ If you fail to mark the pages associated with an exercise, that exercise won't b
 | Exercise 8  | 5      |
 | Exercise 9  | 5      |
 | Exercise 10 | 5      |
+| Exercise 11 | 0      |
 | **Total**   | 50     |
 
 ## Acknowledgements
