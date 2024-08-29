@@ -274,7 +274,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Upload the file <code>lab-1.qmd</code> to your <code>RStudio</code> files using the pictured button, and move it into the <code>lab-1</code> folder;</p>
 <p><img src="images/upload.png" class="img-fluid" alt="Where to find the upload" width="500"></p>
 </li>
-<li><p>Now proceed to complete the exercises in this document.</p></li>
+<li><p>Now proceed to complete the exercises in this lab.</p></li>
 </ol></section><section id="toolkit-review" class="level1"><h1>Toolkit review</h1>
 <section id="quarto" class="level2"><h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
 <p><code>lab-1.qmd</code> is an example of a Quarto Markdown file. Quarto allows you to seamlessly combine written text and code to produce clean and professional looking reports. You will use this system to create all of your assignment submissions in this course. When you open your <code>.qmd</code> file, you see a block of text at the top in between dashed lines. This is called the YAML<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, and it contains the settings for your document, like the title, author name, date, and what sort of document you want to create. In our case, it will always be a PDF.</p>
@@ -319,7 +319,7 @@ Note
 <div class="exercise">
 <p>Based on the help file, how many rows and how many columns does the <code>datasaurus_dozen</code> file have? What are the <strong>variables</strong> included in the data frame? Add your responses to your lab report under “Exercise 1”.</p>
 </div>
-<p>Let’s take a look at the names of the data sets inside of <code>datasaurus_dozen</code>. To do so this, we can make a frequency table of the “data set” variable. Run the code chunk below. Note: when you run the code chunk below, a table “prints” to the screen. In general, we say “print to screen” to mean that the output of your code should show up on your screen (when asked to ‘print to screen’ in an assignment, you should make sure the output displays in your rendered document).</p>
+<p>Let’s take a look at the names of the data sets inside of <code>datasaurus_dozen</code>. To do this, we can make a frequency table of the “data set” variable. Run the code chunk below. Note: when you run the code chunk below, a table “prints” to the screen. In general, we say “print to screen” to mean that the output of your code should show up on your screen (when asked to ‘print to screen’ in an assignment, you should make sure the output displays in your rendered document).</p>
 <div class="cell">
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">datasaurus_dozen</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">dataset</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
