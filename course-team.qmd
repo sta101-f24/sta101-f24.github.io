@@ -18,14 +18,14 @@ title: "Teaching team"
 |                |                      |              | Tue 06:00 PM - 07:00 PM\ |
 |                |                      |              | Zoom TBD                 |
 +----------------+----------------------+--------------+--------------------------+
-| Katie Solarz   | Lab Leader           | 2 (11:45 AM) | Tue 4:30 PM - 6:30 PM\   |
+| Katie Solarz   | Lab Leader           | 2 (11:45 AM) | Mon 4:30 PM - 6:30 PM\   |
 |                |                      |              | Location TBD             |
 +----------------+----------------------+--------------+--------------------------+
 | Camilla Hanson | Lab Helper           | 1 (10:05 AM) | Tue 12:00 PM - 01:00 PM\ |
 |                |                      |              | Wed 11:00 AM - 12:00 PM\ |
 |                |                      |              | Location TBD             |
 +----------------+----------------------+--------------+--------------------------+
-| Meghna Katyal  | Lab Helper           | 2 (11:45 AM) | Tue 6:30 PM - 8:30 PM\   |
+| Meghna Katyal  | Lab Helper           | 2 (11:45 AM) | Mon 6:30 PM - 8:30 PM\   |
 |                |                      |              | Zoom TBD                 |
 +----------------+----------------------+--------------+--------------------------+
 | Sayali Pingle  | Lab Helper           | 4 (08:30 AM) | Sun 10:00 AM - 11:00 AM\ |
