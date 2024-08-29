@@ -20,7 +20,7 @@ The goal of this lab is to acquaint you with `R` and `RStudio`[^1].
 
     ![](images/upload.png){fig-alt="Where to find the upload" width="500"}
 
-5.  Now proceed to complete the exercises in this document.
+5.  Now proceed to complete the exercises in this lab.
 
 # Toolkit review
 
@@ -84,7 +84,7 @@ To find out more about the data set, type the following in your console (this wi
 Based on the help file, how many rows and how many columns does the `datasaurus_dozen` file have? What are the **variables** included in the data frame? Add your responses to your lab report under "Exercise 1".
 :::
 
-Let's take a look at the names of the data sets inside of `datasaurus_dozen`. To do so this, we can make a frequency table of the "data set" variable. Run the code chunk below. Note: when you run the code chunk below, a table "prints" to the screen. In general, we say "print to screen" to mean that the output of your code should show up on your screen (when asked to 'print to screen' in an assignment, you should make sure the output displays in your rendered document).
+Let's take a look at the names of the data sets inside of `datasaurus_dozen`. To do this, we can make a frequency table of the "data set" variable. Run the code chunk below. Note: when you run the code chunk below, a table "prints" to the screen. In general, we say "print to screen" to mean that the output of your code should show up on your screen (when asked to 'print to screen' in an assignment, you should make sure the output displays in your rendered document).
 
 ```{r}
 #| label: freq-table-1
