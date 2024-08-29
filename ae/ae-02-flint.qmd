@@ -1,5 +1,5 @@
 ---
-title: "Exploring Flint's water data"
+title: "Exploring Flint Michigan's water data"
 categories: 
   - Application exercise
 editor: visual
@@ -10,13 +10,14 @@ editor: visual
 By the end of this application exercise you will
 
 -   meet the computational toolkit for the course
--   practice using `glimpse()`, `names()`, `nrow()`, `ncol()`, `count()`
 -   define and compute various statistics
 -   begin to gain familiarity with making data visualizations with `ggplot()`
 
 We will do this using water lead content data from Flint, MI. The following paragraph will be useful in evaluating the lead amount values we'll see in the dataset.
 
 > While there is no completely safe amount of lead consumption, the limit allowed by the Lead and Copper Rule (LCR) of 1991 is 15 parts per billion (ppb). If this is exceeded in more than 10% of homes tested (or if the 90th percentile value of the total sample is above 15 ppb), action is required. And to make sure problems are caught, sampling for lead in water is supposed to target the "worst-case" homes -- those in areas served by lead pipes.
+
+If you're interested in this sort of thing, *Cullud Wattah* by Erika Dickerson-Despenza is a very good play about the human toll of this fiasco.
 
 # Meet the toolkit
 
