@@ -40,8 +40,12 @@ In general, you may use generative AI as a resource as you complete assignments 
 
 ## Late work and extensions
 
-No late work will be accepted unless you request an extension in advance. All reasonable requests will be entertained, but extensions will not be long.
+No late work will be accepted unless you request an extension in advance by e-mailing the instructor (`john.zito@duke.edu`). All reasonable requests will be entertained, but extensions will not be long.
 
 ## Regrade requests
 
-You have one week after receiving a grade to dispute it. Regrade requests can be made in Gradescope, and the instructor will do the regrading.
+If you receive a graded assignment back, and you believe that some part of it was graded incorrectly, you may dispute it. You have one week after you receive a grade to submit a regrade request in Gradescope. The instructor will do the regrading. 
+
+::: callout-warning
+A regrade request can result in your grade going up, staying the same, or going down if the instructor determines that, in fact, the original grader was too lenient. 
+:::
