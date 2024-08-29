@@ -296,4 +296,4 @@ If you fail to mark the pages associated with an exercise, that exercise won't b
 This assignment was adapted from a lab in [Data Science in a Box](https://datasciencebox.org/).
 
 
-[^1]: test
+[^1]: `R` is a programming language, like `Python`, `Java`, `C++`, and other things you may have heard of. `RStudio` is a platform for writing `R` an an easy an organized way. It is an example of an *integrated development environment* (IDE).
