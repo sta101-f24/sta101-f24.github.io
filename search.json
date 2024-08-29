@@ -419,6 +419,13 @@
     "text": "Exercise 10\n\nIMS - Chapter 1 exercises, #16: Shows on Netflix."
   },
   {
+    "objectID": "labs/lab-1.html#exerxise-11",
+    "href": "labs/lab-1.html#exerxise-11",
+    "title": "Lab 1: Hello R!",
+    "section": "Exerxise 11",
+    "text": "Exerxise 11\nRecommend some music for us to listen to while we grade this."
+  },
+  {
     "objectID": "labs/lab-1.html#submitting",
     "href": "labs/lab-1.html#submitting",
     "title": "Lab 1: Hello R!",
@@ -430,7 +437,7 @@
     "href": "labs/lab-1.html#grading",
     "title": "Lab 1: Hello R!",
     "section": "Grading",
-    "text": "Grading\n\n\nExercise\nPoints\n\n\n\nExercise 1\n5\n\n\nExercise 2\n4\n\n\nExercise 3\n6\n\n\nExercise 4\n5\n\n\nExercise 5\n2\n\n\nExercise 6\n6\n\n\nExercise 7\n7\n\n\nExercise 8\n5\n\n\nExercise 9\n5\n\n\nExercise 10\n5\n\n\nTotal\n50"
+    "text": "Grading\n\n\nExercise\nPoints\n\n\n\nExercise 1\n5\n\n\nExercise 2\n4\n\n\nExercise 3\n6\n\n\nExercise 4\n5\n\n\nExercise 5\n2\n\n\nExercise 6\n6\n\n\nExercise 7\n7\n\n\nExercise 8\n5\n\n\nExercise 9\n5\n\n\nExercise 10\n5\n\n\nExercise 11\n0\n\n\nTotal\n50"
   },
   {
     "objectID": "labs/lab-1.html#acknowledgements",
@@ -506,7 +513,7 @@
     "href": "course-policies.html#late-work-and-extensions",
     "title": "Policies",
     "section": "Late work and extensions",
-    "text": "Late work and extensions\nNo late work will be accepted unless you request an extension in advance. All reasonable requests will be entertained, but extensions will not be long.",
+    "text": "Late work and extensions\nNo late work will be accepted unless you request an extension in advance by e-mailing the instructor (john.zito@duke.edu). All reasonable requests will be entertained, but extensions will not be long.",
     "crumbs": [
       "Syllabus",
       "Course policies"
@@ -517,7 +524,7 @@
     "href": "course-policies.html#regrade-requests",
     "title": "Policies",
     "section": "Regrade requests",
-    "text": "Regrade requests\nYou have one week after receiving a grade to dispute it. Regrade requests can be made in Gradescope, and the instructor will do the regrading.",
+    "text": "Regrade requests\nIf you receive a graded assignment back, and you believe that some part of it was graded incorrectly, you may dispute it. You have one week after you receive a grade to submit a regrade request in Gradescope. The instructor will do the regrading.\n\n\n\n\n\n\nWarning\n\n\n\nA regrade request can result in your grade going up, staying the same, or going down if the instructor determines that, in fact, the original grader was too lenient.",
     "crumbs": [
       "Syllabus",
       "Course policies"
