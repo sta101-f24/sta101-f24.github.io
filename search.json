@@ -861,9 +861,31 @@
   {
     "objectID": "computing/computing-access.html",
     "href": "computing/computing-access.html",
-    "title": "Accessing RStudio",
+    "title": "Access",
     "section": "",
     "text": "In this class, you will always and everywhere access RStudio through the Duke Container Manager. This ensures that all of us are using the same version of all the software. If this were not the case, unexpected and difficult to diagnose/resolve coding incompatibilities could arise when you seek help from the teaching team or collaborate with your project partners. Nobody needs that, so please stick to the containers. Here is how you get in:\n\nGo here: https://cmgr.oit.duke.edu/containers. You may have to log in with your NetID at some point;\n(The first time you do this, you look for STA101 under “Reservations available” on the righthand side, and click “reserve STA101”. After you do that once, STA101 will appear under “My reservations” on the lefthand side forever more)\nClick STA101 under “My reservations”;\nLogin;\nStart. It may take a while, but then RStudio should launch in your browser.",
+    "crumbs": [
+      "Computing",
+      "Access"
+    ]
+  },
+  {
+    "objectID": "computing/computing-access.html#accessing-rstudio",
+    "href": "computing/computing-access.html#accessing-rstudio",
+    "title": "Access",
+    "section": "",
+    "text": "In this class, you will always and everywhere access RStudio through the Duke Container Manager. This ensures that all of us are using the same version of all the software. If this were not the case, unexpected and difficult to diagnose/resolve coding incompatibilities could arise when you seek help from the teaching team or collaborate with your project partners. Nobody needs that, so please stick to the containers. Here is how you get in:\n\nGo here: https://cmgr.oit.duke.edu/containers. You may have to log in with your NetID at some point;\n(The first time you do this, you look for STA101 under “Reservations available” on the righthand side, and click “reserve STA101”. After you do that once, STA101 will appear under “My reservations” on the lefthand side forever more)\nClick STA101 under “My reservations”;\nLogin;\nStart. It may take a while, but then RStudio should launch in your browser.",
+    "crumbs": [
+      "Computing",
+      "Access"
+    ]
+  },
+  {
+    "objectID": "computing/computing-access.html#getting-everything-where-it-needs-to-be",
+    "href": "computing/computing-access.html#getting-everything-where-it-needs-to-be",
+    "title": "Access",
+    "section": "Getting everything where it needs to be",
+    "text": "Getting everything where it needs to be\nWe will distribute files to you (datasets, Quarto documents, etc) by placing them in the Files section of the course Canvas page:\n\nFrom there, you will download them to your computer. The best way to do this is by following the “three dots” on the righthand side of the file name:\n\nOnce you have downloaded a file to your computer, you can then upload it to your RStudio instance using the yellow button in the Files tab in the lower right:\n\nIt may be the case that you do not see your uploaded file right away. Try clicking the Home button to “refresh” the file list:\n\nThe Files section in your RStudio instance is like a little Dropbox or Google Drive account that you can use to store you STA101-related files during the semester. I recommend keeping it organized with folders, like this:\n\nThis button creates new folders:\n\nTo move files between the folders, check the box to the left of the file you want to move, and go here:",
     "crumbs": [
       "Computing",
       "Access"
