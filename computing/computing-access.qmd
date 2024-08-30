@@ -16,7 +16,7 @@ In this class, you will always and everywhere access `RStudio` through the [Duke
 
 5.  Start. It may take a while, but then `RStudio` should launch in your browser.
 
-## Moving files where they need to be
+## Getting everything where it needs to be
 
 We will distribute files to you (datasets, Quarto documents, etc) by placing them in the Files section of the course Canvas page:
 
