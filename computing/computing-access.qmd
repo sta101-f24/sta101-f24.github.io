@@ -1,6 +1,8 @@
 ---
-title: "Accessing RStudio"
+title: "Access"
 ---
+
+## Accessing RStudio
 
 In this class, you will always and everywhere access `RStudio` through the [Duke Container Manager](https://cmgr.oit.duke.edu/containers). This ensures that all of us are using the same version of all the software. If this were not the case, unexpected and difficult to diagnose/resolve coding incompatibilities could arise when you seek help from the teaching team or collaborate with your project partners. Nobody needs that, so please stick to the containers. Here is how you get in:
 
@@ -13,3 +15,33 @@ In this class, you will always and everywhere access `RStudio` through the [Duke
 4.  Login;
 
 5.  Start. It may take a while, but then `RStudio` should launch in your browser.
+
+## Moving files where they need to be
+
+We will distribute files to you (datasets, Quarto documents, etc) by placing them in the Files section of the course Canvas page:
+
+![](canvas_files.png){width="614"}
+
+From there, you will download them to your computer. The best way to do this is by following the "three dots" on the righthand side of the file name:
+
+![](canvas_download.png)
+
+Once you have downloaded a file to your computer, you can then upload it to your RStudio instance using the yellow button in the Files tab in the lower right:
+
+![](upload.png){width="483"}
+
+It may be the case that you do not see your uploaded file right away. Try clicking the Home button to "refresh" the file list:
+
+![](home.png){width="486"}
+
+The Files section in your RStudio instance is like a little Dropbox or Google Drive account that you can use to store you STA101-related files during the semester. I recommend keeping it organized with folders, like this:
+
+![](organize.png){width="551"}
+
+This button creates new folders:
+
+![](new_folder.png){width="533"}
+
+To move files between the folders, check the box to the left of the file you want to move, and go here:
+
+![](move.png)
