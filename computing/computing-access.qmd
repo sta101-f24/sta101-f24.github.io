@@ -22,7 +22,7 @@ We will distribute files to you (datasets, Quarto documents, etc) by placing the
 
 ![](canvas_files.png){width="614"}
 
-From there, you will download them to your computer. The best way to do this is by following the "three dots" on the righthand side of the file name:
+From there, you will download them to your computer. The best way to do this is by following the "three dots" on the right hand side of the file name:
 
 ![](canvas_download.png)
 
@@ -34,14 +34,14 @@ It may be the case that you do not see your uploaded file right away. Try clicki
 
 ![](home.png){width="486"}
 
-The Files section in your RStudio instance is like a little Dropbox or Google Drive account that you can use to store you STA101-related files during the semester. I recommend keeping it organized with folders, like this:
+The Files section in your RStudio instance is like a lil' Dropbox or Google Drive account that you can use to store your STA101-related files during the semester. I recommend keeping it organized with folders, like this:
 
-![](organize.png){width="551"}
+![](organize.png){width="488"}
 
 This button creates new folders:
 
-![](new_folder.png){width="533"}
+![](new_folder.png){width="483"}
 
 To move files between the folders, check the box to the left of the file you want to move, and go here:
 
-![](move.png)
+![](move.png){width="537" height="307"}
