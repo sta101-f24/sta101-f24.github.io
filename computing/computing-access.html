@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STA 101 Fall 2024 - Access</title>
+<title>STA 101 Fall 2024 - Access RStudio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,7 +29,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../computing/computing-cheatsheets.html" rel="next">
+<link href="../computing/computing-moving.html" rel="next">
 <link href="../labs/lab-1.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -69,7 +69,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="STA 101 Fall 2024 - Access">
+<meta property="og:title" content="STA 101 Fall 2024 - Access RStudio">
 <meta property="og:description" content="Homepage for STA 101 Data Analysis and Statistical Inference at Duke University, Fall 2024.">
 <meta property="og:site_name" content="STA 101 Fall 2024">
 </head>
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../computing/computing-access.html">Computing</a></li><li class="breadcrumb-item"><a href="../computing/computing-access.html">Access</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../computing/computing-access.html">Computing</a></li><li class="breadcrumb-item"><a href="../computing/computing-access.html">Accessing RStudio</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -190,7 +190,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../computing/computing-access.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Access</span></a>
+ <span class="menu-text">Accessing RStudio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing/computing-moving.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Moving files around</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -207,21 +213,14 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#accessing-rstudio" id="toc-accessing-rstudio" class="nav-link active" data-scroll-target="#accessing-rstudio">Accessing RStudio</a></li>
-  <li><a href="#getting-everything-where-it-needs-to-be" id="toc-getting-everything-where-it-needs-to-be" class="nav-link" data-scroll-target="#getting-everything-where-it-needs-to-be">Getting everything where it needs to be</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../computing/computing-access.html">Computing</a></li><li class="breadcrumb-item"><a href="../computing/computing-access.html">Access</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../computing/computing-access.html">Computing</a></li><li class="breadcrumb-item"><a href="../computing/computing-access.html">Accessing RStudio</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Access</h1>
+<h1 class="title">Access RStudio</h1>
 </div>
 
 
@@ -238,8 +237,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="accessing-rstudio" class="level2">
-<h2 class="anchored" data-anchor-id="accessing-rstudio">Accessing RStudio</h2>
 <p>In this class, you will always and everywhere access <code>RStudio</code> through the <a href="https://cmgr.oit.duke.edu/containers">Duke Container Manager</a>. This ensures that all of us are using the same version of all the software. If this were not the case, unexpected and difficult to diagnose/resolve coding incompatibilities could arise when you seek help from the teaching team or collaborate with your project partners. Nobody needs that, so please stick to the containers. Here is how you get in:</p>
 <ol type="1">
 <li><p>Go here: <a href="https://cmgr.oit.duke.edu/containers" class="uri">https://cmgr.oit.duke.edu/containers</a>. You may have to log in with your NetID at some point;</p></li>
@@ -248,26 +245,8 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Login;</p></li>
 <li><p>Start. It may take a while, but then <code>RStudio</code> should launch in your browser.</p></li>
 </ol>
-</section>
-<section id="getting-everything-where-it-needs-to-be" class="level2">
-<h2 class="anchored" data-anchor-id="getting-everything-where-it-needs-to-be">Getting everything where it needs to be</h2>
-<p>We will distribute files to you (datasets, Quarto documents, etc) by placing them in the Files section of the course Canvas page:</p>
-<p><img src="canvas_files.png" class="img-fluid" width="614"></p>
-<p>From there, you will download them to your computer. The best way to do this is by following the “three dots” on the right hand side of the file name:</p>
-<p><img src="canvas_download.png" class="img-fluid"></p>
-<p>Once you have downloaded a file to your computer, you can then upload it to your RStudio instance using the yellow button in the Files tab in the lower right:</p>
-<p><img src="upload.png" class="img-fluid" width="483"></p>
-<p>It may be the case that you do not see your uploaded file right away. Try clicking the Home button to “refresh” the file list:</p>
-<p><img src="home.png" class="img-fluid" width="486"></p>
-<p>The Files section in your RStudio instance is like a lil’ Dropbox or Google Drive account that you can use to store your STA101-related files during the semester. I recommend keeping it organized with folders, like this:</p>
-<p><img src="organize.png" class="img-fluid" width="488"></p>
-<p>This button creates new folders:</p>
-<p><img src="new_folder.png" class="img-fluid" width="483"></p>
-<p>To move files between the folders, check the box to the left of the file you want to move, and go here:</p>
-<p><img src="move.png" width="537" height="307"></p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -686,8 +665,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../computing/computing-cheatsheets.html" class="pagination-link" aria-label="Cheatsheets">
-        <span class="nav-page-text">Cheatsheets</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../computing/computing-moving.html" class="pagination-link" aria-label="Moving files around">
+        <span class="nav-page-text">Moving files around</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
