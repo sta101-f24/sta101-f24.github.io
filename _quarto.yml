@@ -62,9 +62,9 @@ website:
       - section: "Computing"
         contents:
           - href: computing/computing-access.qmd
-            text: Access
-#          - href: computing/computing-troubleshooting.qmd
-#            text: Troubleshooting
+            text: Accessing RStudio
+          - href: computing/computing-moving.qmd
+            text: Moving files around
           - href: computing/computing-cheatsheets.qmd
             text: Cheatsheets
 
