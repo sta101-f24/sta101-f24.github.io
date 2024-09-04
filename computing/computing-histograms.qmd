@@ -75,6 +75,8 @@ ggplot(flint, aes(x = lead)) +
   geom_vline(xintercept = median_value, color = "blue")
 ```
 
+Notice that the distribution of lead levels is positively skewed, which results in the mean being larger than the median.
+
 ## Now you try
 
 To double check that you can follow these instructions, redo
