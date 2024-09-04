@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STA 101 Fall 2024 - COVID vaccine and deaths from Delta variant</title>
+<title>STA 101 Fall 2024 - Histogram basics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -63,6 +63,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../computing/computing-cheatsheets.html" rel="next">
+<link href="../computing/computing-moving.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -100,8 +102,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="STA 101 Fall 2024 - COVID vaccine and deaths from Delta variant">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="STA 101 Fall 2024 - Histogram basics">
 <meta property="og:description" content="Homepage for STA 101 Data Analysis and Statistical Inference at Duke University, Fall 2024.">
 <meta property="og:site_name" content="STA 101 Fall 2024">
 </head>
@@ -115,7 +146,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">COVID vaccine and deaths from Delta variant</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../computing/computing-access.html">Computing primers</a></li><li class="breadcrumb-item"><a href="../computing/computing-histograms.html">Histogram basics</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -212,13 +243,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
  <span class="menu-text">Computing primers</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../computing/computing-access.html" class="sidebar-item-text sidebar-link">
@@ -233,7 +264,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computing/computing-histogram.qmd" class="sidebar-item-text sidebar-link">
+  <a href="../computing/computing-histograms.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Histogram basics</span></a>
   </div>
 </li>
@@ -255,38 +286,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#goals" id="toc-goals" class="nav-link active" data-scroll-target="#goals">Goals</a></li>
-  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
-  <li><a href="#visualizing-and-summarizing-categorical-data" id="toc-visualizing-and-summarizing-categorical-data" class="nav-link" data-scroll-target="#visualizing-and-summarizing-categorical-data">Visualizing and summarizing categorical data</a>
-  <ul class="collapse">
-  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
-  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
-  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
-  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
-  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
-  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
-  </ul></li>
-  <li><a href="#simpsons-paradox" id="toc-simpsons-paradox" class="nav-link" data-scroll-target="#simpsons-paradox">Simpson’s Paradox</a>
-  <ul class="collapse">
-  <li><a href="#exercise-7" id="toc-exercise-7" class="nav-link" data-scroll-target="#exercise-7">Exercise 7</a></li>
-  <li><a href="#exercise-8" id="toc-exercise-8" class="nav-link" data-scroll-target="#exercise-8">Exercise 8</a></li>
-  </ul></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
-  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
+  <li><a href="#loading-a-package" id="toc-loading-a-package" class="nav-link active" data-scroll-target="#loading-a-package">Loading a package</a></li>
+  <li><a href="#loading-a-dataset" id="toc-loading-a-dataset" class="nav-link" data-scroll-target="#loading-a-dataset">Loading a dataset</a></li>
+  <li><a href="#plotting-a-histogram" id="toc-plotting-a-histogram" class="nav-link" data-scroll-target="#plotting-a-histogram">Plotting a histogram</a></li>
+  <li><a href="#adding-a-vertical-line-to-the-histogram" id="toc-adding-a-vertical-line-to-the-histogram" class="nav-link" data-scroll-target="#adding-a-vertical-line-to-the-histogram">Adding a vertical line to the histogram</a></li>
+  <li><a href="#now-you-try" id="toc-now-you-try" class="nav-link" data-scroll-target="#now-you-try">Now you try</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../computing/computing-access.html">Computing primers</a></li><li class="breadcrumb-item"><a href="../computing/computing-histograms.html">Histogram basics</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">COVID vaccine and deaths from Delta variant</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Application exercise</div>
-  </div>
-  </div>
+<h1 class="title">Histogram basics</h1>
+</div>
 
 
 
@@ -302,143 +316,97 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>The main question we’ll explore today is “How do deaths from COVID cases compare between vaccinated and unvaccinated?”</p>
-<p>What do you think?</p>
-<section id="goals" class="level1">
-<h1>Goals</h1>
+<p>A <strong>histogram</strong> displays the <em>distribution</em> or <em>variability</em> of numerical data. It shows you where the data values are typically concentrated, how spread out they are, and whether or not there are any asymmetries.</p>
+<p>This primer leads you down the path of least resistance to producing a histogram plot using <code>R</code>. Trust me; you would not want to do this by hand.</p>
+<section id="loading-a-package" class="level2">
+<h2 class="anchored" data-anchor-id="loading-a-package">Loading a package</h2>
+<p>The command for plotting a histogram is contained inside the <code>tidyverse</code> package, so you need to load that first:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="loading-a-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="loading-a-dataset">Loading a dataset</h2>
+<p>Next, we need something to plot, so let us load in a data set. We will consider the flint water data that was mentioned during the second lecture on 8/29/2024:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>flint <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"lecture-2/flint.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Let us unpack what this is doing:</p>
 <ul>
-<li><p>Creating data visualizations and calculating summary statistics for comparing trends across groups</p></li>
-<li><p>Distinguishing observational studies and experiments</p></li>
-<li><p>Reviewing various sampling methods</p></li>
-<li><p>Identifying confounding variables and Simpson’s paradox</p></li>
+<li><code>read_csv</code> is a <em>function</em>, just like <span class="math inline">\(f(x)=x^2\)</span> or <span class="math inline">\(f(x)=ax+b\)</span> from your math class. It receives an input, and returns an output. The input is the name of a file: <code>"lecture-2/flint.csv"</code>. The output is a data frame (a spreadsheet) in <code>R</code>;</li>
+<li>When you run <code>read_csv</code>, it returns a data frame. But if you don’t give that data frame a name and store it someplace, then you can’t actually use it. So that’s what the <code>flint &lt;-</code> part is doing. You are <em>assigning</em> the output of <code>read_csv</code> to a variable named “flint.” If this went as planned, you should see <code>flint</code> listed in the upper right Environment tab of <code>RStudio</code>:<br>
+<br>
+<img src="data_in_environment.png" class="img-fluid" width="347"></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Recalling the information here, you may have to modify the file path <code>"lecture-2/flint.csv"</code> to match the particular way you have chosen to organize your files.</p>
+</div>
+</div>
+</section>
+<section id="plotting-a-histogram" class="level2">
+<h2 class="anchored" data-anchor-id="plotting-a-histogram">Plotting a histogram</h2>
+<p>Here is the basic command in all its glory:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(flint, <span class="fu">aes</span>(<span class="at">x =</span> lead)) <span class="sc">+</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">250</span>) <span class="sc">+</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="computing-histograms_files/figure-html/histogram-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Now let’s talk about it:</p>
+<ul>
+<li><code>ggplot(flint, aes(x = lead))</code> is where we tell <code>R</code> what data frame we are using (<code>flint</code>) and which variable (column) in that data set we want to plot (<code>lead</code>);</li>
+<li>Next, we use <code>geom_histogram(bins = 250)</code> to tell it that we specifically want a histogram with 250 bins;</li>
+<li>Last, we use <code>coord_cartesian(xlim = c(0, 100))</code> to adjust the bounds of the horizontal axis: start at x = 0 and end at x = 100;</li>
+<li>We stitch all of these requests together using the <code>+</code> sign, and to make things more readable (not run off the page), we put a new line after each <code>+</code>.</li>
 </ul>
 </section>
-<section id="packages" class="level1">
-<h1>Packages</h1>
+<section id="adding-a-vertical-line-to-the-histogram" class="level2">
+<h2 class="anchored" data-anchor-id="adding-a-vertical-line-to-the-histogram">Adding a vertical line to the histogram</h2>
+<p>When plotting a histogram, it can also be useful to indicate on the plot the location of some particularly meaningful summary statistics, such as the mean or median. In order to do this, we can use the same basic command from the previous section, but then add some extra <em>layers</em> that will place vertical lines on the plot at those values:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.2     ✔ readr     2.1.4
-✔ forcats   1.0.0     ✔ stringr   1.5.0
-✔ ggplot2   3.4.3     ✔ tibble    3.2.1
-✔ lubridate 1.9.2     ✔ tidyr     1.3.0
-✔ purrr     1.0.2     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>mean_value <span class="ot">&lt;-</span> <span class="fu">mean</span>(flint<span class="sc">$</span>lead)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>median_value <span class="ot">&lt;-</span> <span class="fu">median</span>(flint<span class="sc">$</span>lead)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(flint, <span class="fu">aes</span>(<span class="at">x =</span> lead)) <span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">250</span>) <span class="sc">+</span> </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>)) <span class="sc">+</span> </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> mean_value, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span> </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> median_value, <span class="at">color =</span> <span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="computing-histograms_files/figure-html/histogram-with-line-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
-</div>
-</section>
-<section id="data" class="level1">
-<h1>Data</h1>
-<p>The data for this case study come from a technical briefing published by Public Health England in August 2021 on COVID cases, vaccinations, and deaths from the Delta variant.</p>
-<p>First, let’s load the data:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>delta <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/delta.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 268166 Columns: 3
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (3): vaccine, age, outcome
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
 </div>
 </section>
-<section id="visualizing-and-summarizing-categorical-data" class="level1">
-<h1>Visualizing and summarizing categorical data</h1>
-<section id="exercise-1" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
-<p>How many rows and columns are in this dataset? Answer in a full sentence using <strong>inline code</strong>. What does each row represent and what does each column represent? For each variable, identify its type.</p>
-<p><em>Add your answer here.</em></p>
-</section>
-<section id="exercise-2" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
-<p>Do these data come from an observational study or experiment? Why?</p>
-<p><em>Add your answer here.</em></p>
-</section>
-<section id="exercise-3" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
-<p>Create a visualization of health outcome by vaccine status that allows you to compare the proportion of deaths across those who are and are not vaccinated. What can you say about death rates in these two groups based on this visualization?</p>
-<p><em>Add your answer here.</em></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="exercise-4" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
-<p>Calculate the proportion of deaths in among those who are vaccinated. Then, calculate the proportion among those who are not vaccinated.</p>
-<p><em>Add your answer here.</em></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="exercise-5" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
-<p>Create the visualization and calculate proportions from the two previous exercises, this time controlling for age. How do the proportions compare?</p>
-<p><em>Add your answer here.</em></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="exercise-6" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
-<p>Based on your findings so far, fill in the blanks with <em>more</em>, <em>less</em>, or <em>equally</em>: Is there anything surprising about these statements? Speculate on what, if anything, the discrepancy might be due to.</p>
+<section id="now-you-try" class="level2">
+<h2 class="anchored" data-anchor-id="now-you-try">Now you try</h2>
+<p>To double check that you can follow these instructions, redo everything above using a different data set. This may require you to modify the code in various ways:</p>
 <ul>
-<li><p>In 2021, among those in the UK who were COVID Delta cases, the vaccinated were ___ likely to die than the unvaccinated.</p></li>
-<li><p>For those under 50, those who were unvaccinated were ___ likely to die than those who were vaccinated.</p></li>
-<li><p>For those 50 and up, those who were unvaccinated were ___ likely to die than those who were vaccinated.</p></li>
+<li>the file path you provide to <code>read_csv</code>;</li>
+<li>the name you assign to the resulting data frame;</li>
+<li>the variable you plot in <code>aes(x = lead)</code>;</li>
+<li>the number of histogram bins;</li>
+<li>the range of the horizontal axis.</li>
 </ul>
-<p><em>Add your answer here.</em></p>
-</section>
-</section>
-<section id="simpsons-paradox" class="level1">
-<h1>Simpson’s Paradox</h1>
-<p><strong>Simpson’s paradox</strong> is a phenomenon in which a trend appears in subsets of the data, but disappears or reverses when the subsets are combined. The paradox can be resolved when <strong>confounding variables</strong> and causal relations are appropriately addressed in the analysis.</p>
-<section id="exercise-7" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-7">Exercise 7</h2>
-<p>Let’s rephrase the previous question which asked you to speculate on why deaths among vaccinated cases overall is higher while deaths among unvaccinated cases are higher when we split the data into two groups (below 50 and 50 and up). What might be the confounding variable in the relationship between vaccination and deaths?</p>
-<p><em>Add your answer here.</em></p>
-</section>
-<section id="exercise-8" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-8">Exercise 8</h2>
-<p>Visualize and describe the distribution of seniors (50 and up) based on (a.k.a. conditional on) vaccination status. Hint: Your description will benefit from calculating proportions of seniors in each of the vaccination groups and working those values into your narrative.</p>
-<p>Add your answer here.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-</section>
-<section id="summary" class="level1">
-<h1>Summary</h1>
-<p>The percentages of deaths from COVID across vaccination groups is as follows:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Also considering age groups, the death rates are as follows:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>We can <em>pivot</em> these data for better display; we’ll learn more about these “data moves” soon:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>We identified age as a potential confounding variable in the relationship between. So let’s take a look at the distribution of age in the data:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>And then, let’s use these proportions to <em>weigh</em> the percentages of deaths.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Revisiting the question we posed to start with: How do deaths from COVID cases compare between vaccinated and unvaccinated?</p>
-</section>
-<section id="acknowledgements" class="level1">
-<h1>Acknowledgements</h1>
-<p>This case study is inspired by <a href="http://www.statlit.org/pdf/2021-Schield-ASA-BOF.pdf">Statistical Literacy: Simpson’s Paradox and Covid Deaths</a> by Milo Schield.</p>
+<p>Check that you are comfortable making these changes.</p>
 
 
 </section>
@@ -853,6 +821,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../computing/computing-moving.html" class="pagination-link" aria-label="Moving files around">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Moving files around</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../computing/computing-cheatsheets.html" class="pagination-link" aria-label="Cheatsheets">
+        <span class="nav-page-text">Cheatsheets</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

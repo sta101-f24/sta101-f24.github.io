@@ -44,25 +44,80 @@
     ]
   },
   {
-    "objectID": "computing/computing-cheatsheets.html",
-    "href": "computing/computing-cheatsheets.html",
-    "title": "R cheatsheets",
+    "objectID": "computing/computing-histograms.html",
+    "href": "computing/computing-histograms.html",
+    "title": "Histogram basics",
     "section": "",
-    "text": "The following cheatsheets come from https://posit.co/resources/cheatsheets. We haven’t covered every function and functionality listed on them, but you might still find them useful as references.",
+    "text": "A histogram displays the distribution or variability of numerical data. It shows you where the data values are typically concentrated, how spread out they are, and whether or not there are any asymmetries.\nThis primer leads you down the path of least resistance to producing a histogram plot using R. Trust me; you would not want to do this by hand.",
     "crumbs": [
-      "Computing",
-      "Cheatsheets"
+      "Computing primers",
+      "Histogram basics"
     ]
   },
   {
-    "objectID": "computing/computing-moving.html",
-    "href": "computing/computing-moving.html",
-    "title": "Moving files around",
-    "section": "",
-    "text": "We will distribute files to you (datasets, Quarto documents, etc) by placing them in the Files section of the course Canvas page:\n\nFrom there, you will download them to your computer. The best way to do this is by following the “three dots” on the right hand side of the file name:\n\nOnce you have downloaded a file to your computer, you can then upload it to your RStudio instance using the yellow button in the Files tab in the lower right:\n\nIt may be the case that you do not see your uploaded file right away. Try clicking the Home button to “refresh” the file list:\n\nThe Files section in your RStudio instance is like a lil’ Dropbox or Google Drive account that you can use to store your STA101-related files during the semester. I recommend keeping it organized with folders, like this:\n\nThis button creates new folders:\n\nTo move files between the folders, check the box to the left of the file you want to move, and go here:",
+    "objectID": "computing/computing-histograms.html#loading-a-package",
+    "href": "computing/computing-histograms.html#loading-a-package",
+    "title": "Histogram basics",
+    "section": "Loading a package",
+    "text": "Loading a package\nThe command for plotting a histogram is contained inside the tidyverse package, so you need to load that first:\n\nlibrary(tidyverse)",
     "crumbs": [
-      "Computing",
-      "Moving files around"
+      "Computing primers",
+      "Histogram basics"
+    ]
+  },
+  {
+    "objectID": "computing/computing-histograms.html#loading-a-dataset",
+    "href": "computing/computing-histograms.html#loading-a-dataset",
+    "title": "Histogram basics",
+    "section": "Loading a dataset",
+    "text": "Loading a dataset\nNext, we need something to plot, so let us load in a data set. We will consider the flint water data that was mentioned during the second lecture on 8/29/2024:\n\nflint &lt;- read_csv(\"lecture-2/flint.csv\")\n\nLet us unpack what this is doing:\n\nread_csv is a function, just like \\(f(x)=x^2\\) or \\(f(x)=ax+b\\) from your math class. It receives an input, and returns an output. The input is the name of a file: \"lecture-2/flint.csv\". The output is a data frame (a spreadsheet) in R;\nWhen you run read_csv, it returns a data frame. But if you don’t give that data frame a name and store it someplace, then you can’t actually use it. So that’s what the flint &lt;- part is doing. You are assigning the output of read_csv to a variable named “flint.” If this went as planned, you should see flint listed in the upper right Environment tab of RStudio:\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nRecalling the information here, you may have to modify the file path \"lecture-2/flint.csv\" to match the particular way you have chosen to organize your files.",
+    "crumbs": [
+      "Computing primers",
+      "Histogram basics"
+    ]
+  },
+  {
+    "objectID": "computing/computing-histograms.html#plotting-a-histogram",
+    "href": "computing/computing-histograms.html#plotting-a-histogram",
+    "title": "Histogram basics",
+    "section": "Plotting a histogram",
+    "text": "Plotting a histogram\nHere is the basic command in all its glory:\n\nggplot(flint, aes(x = lead)) +\n  geom_histogram(bins = 250) + \n  coord_cartesian(xlim = c(0, 100))\n\n\n\n\n\n\n\n\nNow let’s talk about it:\n\nggplot(flint, aes(x = lead)) is where we tell R what data frame we are using (flint) and which variable (column) in that data set we want to plot (lead);\nNext, we use geom_histogram(bins = 250) to tell it that we specifically want a histogram with 250 bins;\nLast, we use coord_cartesian(xlim = c(0, 100)) to adjust the bounds of the horizontal axis: start at x = 0 and end at x = 100;\nWe stitch all of these requests together using the + sign, and to make things more readable (not run off the page), we put a new line after each +.",
+    "crumbs": [
+      "Computing primers",
+      "Histogram basics"
+    ]
+  },
+  {
+    "objectID": "computing/computing-histograms.html#adding-a-vertical-line-to-the-histogram",
+    "href": "computing/computing-histograms.html#adding-a-vertical-line-to-the-histogram",
+    "title": "Histogram basics",
+    "section": "Adding a vertical line to the histogram",
+    "text": "Adding a vertical line to the histogram\nWhen plotting a histogram, it can also be useful to indicate on the plot the location of some particularly meaningful summary statistics, such as the mean or median. In order to do this, we can use the same basic command from the previous section, but then add some extra layers that will place vertical lines on the plot at those values:\n\nmean_value &lt;- mean(flint$lead)\nmedian_value &lt;- median(flint$lead)\n\nggplot(flint, aes(x = lead)) +\n  geom_histogram(bins = 250) + \n  coord_cartesian(xlim = c(0, 100)) + \n  geom_vline(xintercept = mean_value, color = \"red\") + \n  geom_vline(xintercept = median_value, color = \"blue\")",
+    "crumbs": [
+      "Computing primers",
+      "Histogram basics"
+    ]
+  },
+  {
+    "objectID": "computing/computing-histograms.html#now-you-try",
+    "href": "computing/computing-histograms.html#now-you-try",
+    "title": "Histogram basics",
+    "section": "Now you try",
+    "text": "Now you try\nTo double check that you can follow these instructions, redo everything above using a different data set. This may require you to modify the code in various ways:\n\nthe file path you provide to read_csv;\nthe name you assign to the resulting data frame;\nthe variable you plot in aes(x = lead);\nthe number of histogram bins;\nthe range of the horizontal axis.\n\nCheck that you are comfortable making these changes.",
+    "crumbs": [
+      "Computing primers",
+      "Histogram basics"
+    ]
+  },
+  {
+    "objectID": "computing/computing-access.html",
+    "href": "computing/computing-access.html",
+    "title": "Access RStudio",
+    "section": "",
+    "text": "In this class, you will always and everywhere access RStudio through the Duke Container Manager. This ensures that all of us are using the same version of all the software. If this were not the case, unexpected and difficult to diagnose/resolve coding incompatibilities could arise when you seek help from the teaching team or collaborate with your project partners. Nobody needs that, so please stick to the containers. Here is how you get in:\n\nGo here: https://cmgr.oit.duke.edu/containers. You may have to log in with your NetID at some point;\n(The first time you do this, you look for STA101 under “Reservations available” on the righthand side, and click “reserve STA101”. After you do that once, STA101 will appear under “My reservations” on the lefthand side forever more)\nClick STA101 under “My reservations”;\nLogin;\nStart. It may take a while, but then RStudio should launch in your browser.",
+    "crumbs": [
+      "Computing primers",
+      "Accessing RStudio"
     ]
   },
   {
@@ -933,14 +988,25 @@
     "text": "Assistance with Canvas and Zoom\nFor technical help with Canvas or Zoom, contact the Duke OIT Service Desk at oit.duke.edu/help. You can also access the self-service help documentation for Zoom here and for Canvas here.\nNote that we will be making minimal use of Canvas in this course (primarily for announcements and grade book). All assignment submission will take place on Gradescope and conversation on Slack.\nZoom will be used for online office hours as well as as a backup option should we need to hold the course online instead of in person."
   },
   {
-    "objectID": "computing/computing-access.html",
-    "href": "computing/computing-access.html",
-    "title": "Access RStudio",
+    "objectID": "computing/computing-moving.html",
+    "href": "computing/computing-moving.html",
+    "title": "Moving files around",
     "section": "",
-    "text": "In this class, you will always and everywhere access RStudio through the Duke Container Manager. This ensures that all of us are using the same version of all the software. If this were not the case, unexpected and difficult to diagnose/resolve coding incompatibilities could arise when you seek help from the teaching team or collaborate with your project partners. Nobody needs that, so please stick to the containers. Here is how you get in:\n\nGo here: https://cmgr.oit.duke.edu/containers. You may have to log in with your NetID at some point;\n(The first time you do this, you look for STA101 under “Reservations available” on the righthand side, and click “reserve STA101”. After you do that once, STA101 will appear under “My reservations” on the lefthand side forever more)\nClick STA101 under “My reservations”;\nLogin;\nStart. It may take a while, but then RStudio should launch in your browser.",
+    "text": "We will distribute files to you (datasets, Quarto documents, etc) by placing them in the Files section of the course Canvas page:\n\nFrom there, you will download them to your computer. The best way to do this is by following the “three dots” on the right hand side of the file name:\n\nOnce you have downloaded a file to your computer, you can then upload it to your RStudio instance using the yellow button in the Files tab in the lower right:\n\nIt may be the case that you do not see your uploaded file right away. Try clicking the Home button to “refresh” the file list:\n\nThe Files section in your RStudio instance is like a lil’ Dropbox or Google Drive account that you can use to store your STA101-related files during the semester. I recommend keeping it organized with folders, like this:\n\nThis button creates new folders:\n\nTo move files between the folders, check the box to the left of the file you want to move, and go here:",
     "crumbs": [
-      "Computing",
-      "Accessing RStudio"
+      "Computing primers",
+      "Moving files around"
+    ]
+  },
+  {
+    "objectID": "computing/computing-cheatsheets.html",
+    "href": "computing/computing-cheatsheets.html",
+    "title": "R cheatsheets",
+    "section": "",
+    "text": "The following cheatsheets come from https://posit.co/resources/cheatsheets. We haven’t covered every function and functionality listed on them, but you might still find them useful as references.",
+    "crumbs": [
+      "Computing primers",
+      "Cheatsheets"
     ]
   },
   {
