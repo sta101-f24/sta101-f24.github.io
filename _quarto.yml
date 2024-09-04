@@ -59,12 +59,14 @@ website:
             text: Lab 1
 #      - href: project/project-2.qmd
 #        text: Project
-      - section: "Computing"
+      - section: "Computing primers"
         contents:
           - href: computing/computing-access.qmd
             text: Accessing RStudio
           - href: computing/computing-moving.qmd
             text: Moving files around
+          - href: computing/computing-histogram.qmd
+            text: Histogram basics
           - href: computing/computing-cheatsheets.qmd
             text: Cheatsheets
 
