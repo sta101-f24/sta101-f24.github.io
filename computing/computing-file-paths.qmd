@@ -8,7 +8,7 @@ Hopefully you have followed the advice [here](https://sta101-f24.github.io/compu
 
 And so, for example, when you go inside your Lecture 2 folder, it looks like this:
 
-![](inside_folder.png)
+![](inside_folder.png){width="397"}
 
 This is great for organization, but it causes a small problem. A command like this does not work:
 
