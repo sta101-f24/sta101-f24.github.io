@@ -65,7 +65,7 @@ website:
             text: Accessing RStudio
           - href: computing/computing-moving.qmd
             text: Moving files around
-          - href: computing/computing-histogram.qmd
+          - href: computing/computing-histograms.qmd
             text: Histogram basics
           - href: computing/computing-cheatsheets.qmd
             text: Cheatsheets
