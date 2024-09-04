@@ -36,7 +36,7 @@ Let us unpack what this is doing:
     ![](data_in_environment.png){width="347"}
 
 ::: callout-note
-Recalling the information here, you may have to modify the file path `"lecture-2/flint.csv"` to match the particular way you have chosen to organize your files. 
+Recalling the information [here](https://sta101-f24.github.io/computing/computing-file-paths.html), you may have to modify the file path `"lecture-2/flint.csv"` to match the particular way you have chosen to organize your files. 
 :::
 
 ## Plotting a histogram
