@@ -25,18 +25,18 @@ Next, we need something to plot, so let us load in a data set. We will consider 
 #| label: load-data
 #| message: false
 
-flint <- read_csv("lecture-2/flint.csv")
+flint <- read_csv("~/lecture-2/flint.csv")
 ```
 
 Let us unpack what this is doing:
 
--   `read_csv` is a *function*, just like $f(x)=x^2$ or $f(x)=ax+b$ from your math class. It receives an input, and returns an output. The input is the name of a file: `"lecture-2/flint.csv"`. The output is a data frame (a spreadsheet) in `R`;
+-   `read_csv` is a *function*, just like $f(x)=x^2$ or $f(x)=ax+b$ from your math class. It receives an input, and returns an output. The input is the name of a file: `"~/lecture-2/flint.csv"`. The output is a data frame (a spreadsheet) in `R`;
 -   When you run `read_csv`, it returns a data frame. But if you don't give that data frame a name and store it someplace, then you can't actually use it. So that's what the `flint <-` part is doing. You are *assigning* the output of `read_csv` to a variable named "flint." If this went as planned, you should see `flint` listed in the upper right Environment tab of `RStudio`:\
     \
     ![](data_in_environment.png){width="347"}
 
 ::: callout-note
-Recalling the information [here](https://sta101-f24.github.io/computing/computing-file-paths.html), you may have to modify the file path `"lecture-2/flint.csv"` to match the particular way you have chosen to organize your files. 
+Recalling the information [here](https://sta101-f24.github.io/computing/computing-file-paths.html), you may have to modify the file path `"~/lecture-2/flint.csv"` to match the particular way you have chosen to name and organize your files and folders.
 :::
 
 ## Plotting a histogram
@@ -50,13 +50,13 @@ ggplot(flint, aes(x = lead)) +
   geom_histogram(bins = 250) + 
   coord_cartesian(xlim = c(0, 100))
 ```
+
 Now let's talk about it:
 
-- `ggplot(flint, aes(x = lead))` is where we tell `R` what data frame we are using (`flint`) and which variable (column) in that data set we want to plot (`lead`);
-- Next, we use `geom_histogram(bins = 250)` to tell it that we specifically want a histogram with 250 bins;
-- Last, we use `coord_cartesian(xlim = c(0, 100))` to adjust the bounds of the horizontal axis: start at x = 0 and end at x = 100;
-- We stitch all of these requests together using the `+` sign, 
-and to make things more readable (not run off the page), we put a new line after each `+`.
+-   `ggplot(flint, aes(x = lead))` is where we tell `R` what data frame we are using (`flint`) and which variable (column) in that data set we want to plot (`lead`);
+-   Next, we use `geom_histogram(bins = 250)` to tell it that we specifically want a histogram with 250 bins;
+-   Last, we use `coord_cartesian(xlim = c(0, 100))` to adjust the bounds of the horizontal axis: start at x = 0 and end at x = 100;
+-   We stitch all of these requests together using the `+` sign, and to make things more readable (not run off the page), we put a new line after each `+`.
 
 ## Adding a vertical line to the histogram
 
@@ -79,13 +79,12 @@ Notice that the distribution of lead levels is positively skewed, which results 
 
 ## Now you try
 
-To double check that you can follow these instructions, redo
-everything above using a different data set. This may require you to modify the code in various ways:
+To double check that you can follow these instructions, redo everything above using a different data set. This may require you to modify the code in various ways:
 
-- the file path you provide to `read_csv`;
-- the name you assign to the resulting data frame;
-- the variable you plot in `aes(x = lead)`;
-- the number of histogram bins;
-- the range of the horizontal axis.
+-   the file path you provide to `read_csv`;
+-   the name you assign to the resulting data frame;
+-   the variable you plot in `aes(x = lead)`;
+-   the number of histogram bins;
+-   the range of the horizontal axis.
 
 Check that you are comfortable making these changes.

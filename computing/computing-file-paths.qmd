@@ -27,7 +27,7 @@ Why not? Because the file `flint.csv` is inside one of your handy dandy folders,
 
 ```{r}
 #| message: false
-flint <- read_csv("lecture-2/flint.csv")
+flint <- read_csv("~/lecture-2/flint.csv")
 ```
 
-The string `"lecture-2/flint.csv"` is called a *file path* and it tells the function `read_csv` the path of folders it has to search down in order to find the file `flint.csv`. If you have chosen to give your folders slightly different names like `Lecture 2` or `Lecture-2` or `lecture 2` or `john-sucks`, that's fine. Just make sure you make the appropriate change when you run the command. So `flint <- read_csv("Lecture 2/flint.csv")` or `flint <- read_csv("john-sucks/flint.csv")` , etc.
+The string `"~/lecture-2/flint.csv"` is called a **file path** and it tells the function `read_csv` the path of folders it has to search down in order to find the file `flint.csv`. If you have chosen to give your folders slightly different names like `Lecture 2` or `Lecture-2` or `lecture 2` or `john-sucks`, that's fine. Just make sure you make the appropriate change when you run the command. So `flint <- read_csv("~/Lecture 2/flint.csv")` or `flint <- read_csv("~/john-sucks/flint.csv")` , etc.
