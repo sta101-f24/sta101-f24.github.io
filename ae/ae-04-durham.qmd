@@ -44,7 +44,7 @@ durham <- read_csv("data/durham-2020.csv")
 
 ## Exercise 1
 
-How many rows and columns are in this dataset? Answer in a full sentence using **inline code**. What does each row represent and what does each column represent?
+How many rows and columns are in this dataset? What does each row represent and what does each column represent?
 
 *Add your answer here.*
 
@@ -180,9 +180,8 @@ In this application exercise we:
 
 -   Defined **factor**s -- the data type that R uses for categorical variables, i.e., variables that can take on values from a finite set of **level**s.
 
-```{=html}
 <!-- -->
-```
+
 -   Reviewed data imports, visualization, and wrangling functions encountered before:
     -   Import: `read_csv()`: Read data from a CSV (comma separated values) file
     -   Visualization:
