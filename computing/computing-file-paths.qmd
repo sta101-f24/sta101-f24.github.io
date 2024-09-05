@@ -26,7 +26,7 @@ flint <- read_csv("flint.csv")
 Why not? Because the file `flint.csv` is inside one of your handy dandy folders, but you have not told `read_csv` *which* folder, and so it cannot find it. To fix this, change the code to this:
 
 ```{r}
-#| message: false
+#| eval: false
 flint <- read_csv("~/lecture-2/flint.csv")
 ```
 
