@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STA 101 Fall 2024 - Policies</title>
+<title>STA 101 Fall 2024 - Piping</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,28 +20,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./course-resources.html" rel="next">
-<link href="./course-grading.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../computing/computing-cheatsheets.html" rel="next">
+<link href="../computing/computing-histograms.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -71,7 +103,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="STA 101 Fall 2024 - Policies">
+<meta property="og:title" content="STA 101 Fall 2024 - Piping">
 <meta property="og:description" content="Homepage for STA 101 Data Analysis and Statistical Inference at Duke University, Fall 2024.">
 <meta property="og:site_name" content="STA 101 Fall 2024">
 </head>
@@ -85,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./course-overview.html">Syllabus</a></li><li class="breadcrumb-item"><a href="./course-policies.html">Course policies</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../computing/computing-access.html">Computing primers</a></li><li class="breadcrumb-item"><a href="../computing/computing-pipe.html">Piping</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -99,8 +131,8 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -112,52 +144,52 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
  <span class="menu-text">Syllabus</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-team.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-team.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Teaching team</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-materials.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-materials.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Course materials</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-grading.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-grading.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Assignments and grading</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-policies.html" class="sidebar-item-text sidebar-link active">
+  <a href="../course-policies.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Course policies</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-resources.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-resources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">University resources</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schedule</span></a>
   </div>
 </li>
@@ -174,7 +206,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./labs/lab-1.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/lab-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 1</span></a>
   </div>
 </li>
@@ -182,46 +214,46 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
  <span class="menu-text">Computing primers</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./computing/computing-access.html" class="sidebar-item-text sidebar-link">
+  <a href="../computing/computing-access.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Accessing RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./computing/computing-moving.html" class="sidebar-item-text sidebar-link">
+  <a href="../computing/computing-moving.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Moving files around</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./computing/computing-file-paths.html" class="sidebar-item-text sidebar-link">
+  <a href="../computing/computing-file-paths.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Adjusting file paths</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./computing/computing-histograms.html" class="sidebar-item-text sidebar-link">
+  <a href="../computing/computing-histograms.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Histogram basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./computing/computing-pipe.html" class="sidebar-item-text sidebar-link">
+  <a href="../computing/computing-pipe.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Piping</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./computing/computing-cheatsheets.html" class="sidebar-item-text sidebar-link">
+  <a href="../computing/computing-cheatsheets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Cheatsheets</span></a>
   </div>
 </li>
@@ -237,21 +269,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#duke-community-standard" id="toc-duke-community-standard" class="nav-link active" data-scroll-target="#duke-community-standard">Duke Community Standard</a></li>
-  <li><a href="#collaboration" id="toc-collaboration" class="nav-link" data-scroll-target="#collaboration">Collaboration</a></li>
-  <li><a href="#communication" id="toc-communication" class="nav-link" data-scroll-target="#communication">Communication</a></li>
-  <li><a href="#use-of-online-resources-including-ai" id="toc-use-of-online-resources-including-ai" class="nav-link" data-scroll-target="#use-of-online-resources-including-ai">Use of online resources, including AI</a></li>
-  <li><a href="#late-work-and-extensions" id="toc-late-work-and-extensions" class="nav-link" data-scroll-target="#late-work-and-extensions">Late work and extensions</a></li>
-  <li><a href="#regrade-requests" id="toc-regrade-requests" class="nav-link" data-scroll-target="#regrade-requests">Regrade requests</a></li>
+  <li><a href="#a-very-silly-example" id="toc-a-very-silly-example" class="nav-link active" data-scroll-target="#a-very-silly-example">A very silly example</a></li>
+  <li><a href="#tallying-stuff-up-in-a-spreadsheet" id="toc-tallying-stuff-up-in-a-spreadsheet" class="nav-link" data-scroll-target="#tallying-stuff-up-in-a-spreadsheet">Tallying stuff up in a spreadsheet</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./course-overview.html">Syllabus</a></li><li class="breadcrumb-item"><a href="./course-policies.html">Course policies</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../computing/computing-access.html">Computing primers</a></li><li class="breadcrumb-item"><a href="../computing/computing-pipe.html">Piping</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Policies</h1>
+<h1 class="title">Piping</h1>
 </div>
 
 
@@ -268,57 +296,102 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="duke-community-standard" class="level2">
-<h2 class="anchored" data-anchor-id="duke-community-standard">Duke Community Standard</h2>
-<p>As a student in this course, you have agreed to uphold the <a href="https://trinity.duke.edu/undergraduate/academic-policies/community-standard-student-conduct">Duke Community Standard</a> and the practices specific to this course.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_KN97j30ST4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
+<p>A <em>pipe</em> in <code>R</code> is a way of stitching together many commands to make your code easier for a human to read, and to keep it from running off the pages of the PDF documents you will submit to us.</p>
+<section id="a-very-silly-example" class="level2">
+<h2 class="anchored" data-anchor-id="a-very-silly-example">A very silly example</h2>
+<p>These two code chunks do exactly the same thing:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+</div>
+<p>So the pipe operator <code>|&gt;</code> passes (or <em>pipes</em>), the number <code>1</code> into the <code>sum</code> function as the first input. In a simple example like this, <code>sum(1, 2)</code> is <em>definitely</em> the way I would write the code, but as things get more elaborate, you will want to pipe.</p>
 </section>
-<section id="collaboration" class="level2">
-<h2 class="anchored" data-anchor-id="collaboration">Collaboration</h2>
-<ul>
-<li>You are encouraged to discuss and help one another with the labs, but you should not share solutions (e.g.&nbsp;emailing a friend your code). All submitted work must be your own;</li>
-<li>You are forbidden from collaborating in any way on the exams;</li>
-<li>You are enthusiastically encouraged to collaborate with your teammates on all aspects of the final project.</li>
-</ul>
-</section>
-<section id="communication" class="level2">
-<h2 class="anchored" data-anchor-id="communication">Communication</h2>
-<p>If you wish to ask content-related questions in writing, please do not do so via e-mail. Instead, please use the course discussion forum <a href="https://edstem.org/us/courses/64268/discussion/">Ed Discussion</a>. That way all members of the teaching team can see your question, and all students can benefit from the ensuing discussion. You are also encouraged to answer one another’s questions.</p>
-<p>If you have questions about personal matters that may not be appropriate for the public course forum (e.g.&nbsp;illness, accommodations, etc), then please e-mail the instructor directly (<code>john.zito@duke.edu</code>).</p>
-</section>
-<section id="use-of-online-resources-including-ai" class="level2">
-<h2 class="anchored" data-anchor-id="use-of-online-resources-including-ai">Use of online resources, including AI</h2>
-<p>You may make use of any online resources (e.g.&nbsp;<code>StackOverflow</code>) but you must explicitly cite where you obtained any code you directly use (or use as inspiration). Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism.</p>
-<p>You should treat generative AI, such as ChatGPT, like other online resources. Two guiding principles govern how to use AI in this course:</p>
-<ol type="1">
-<li><p><em>Cognitive dimension:</em> Working with AI should not reduce your thinking ability. We will practice using AI to facilitate—rather than hinder—learning.</p></li>
-<li><p><em>Ethical dimension</em><strong>:</strong> Students using AI should be transparent about their use and ensure it aligns with academic integrity.</p></li>
-</ol>
-<ul>
-<li><p><i class="fa-solid fa-check" aria-hidden="true"></i> <strong>AI tools for code:</strong> You may use the technology for coding examples on assignments; if you do so, you must explicitly cite where you obtained the code. Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism. You may use <a href="https://guides.lib.monash.edu/c.php?g=219786&amp;p=6972087">these guidelines</a> to cite AI-generated content. The bare minimum citation must include the AI tool you’re using (e.g., ChatGPT) and your prompt. The prompt you use cannot be copied and pasted directly from the assignment; you must create a prompt yourself.</p></li>
-<li><p><i class="fa-solid fa-ban" aria-hidden="true"></i> <strong>AI tools for narrative:</strong> Unless instructed otherwise, you may not use generative AI to generate a narrative that you then copy-paste verbatim into an assignment or edit and then insert into your assignment.</p></li>
-</ul>
-<p>In general, you may use generative AI as a resource as you complete assignments but not to answer the exercises for you. You are ultimately responsible for the work you turn in; it should reflect <em>your</em> understanding of the course content. Identifying AI-generated content is fairly straightforward. Any code identified as AI-generated but not cited as such and any narrative identified as AI-generated will be considered plagiarism and treated as such.</p>
-</section>
-<section id="late-work-and-extensions" class="level2">
-<h2 class="anchored" data-anchor-id="late-work-and-extensions">Late work and extensions</h2>
-<p>No late work will be accepted unless you request an extension in advance by e-mailing the instructor (<code>john.zito@duke.edu</code>). All reasonable requests will be entertained, but extensions will not be long.</p>
-</section>
-<section id="regrade-requests" class="level2">
-<h2 class="anchored" data-anchor-id="regrade-requests">Regrade requests</h2>
-<p>If you receive a graded assignment back, and you believe that some part of it was graded incorrectly, you may dispute it. You have one week after you receive a grade to submit a regrade request in Gradescope. The instructor will do the regrading.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
+<section id="tallying-stuff-up-in-a-spreadsheet" class="level2">
+<h2 class="anchored" data-anchor-id="tallying-stuff-up-in-a-spreadsheet">Tallying stuff up in a spreadsheet</h2>
+<p>Let’s consider the COVID data set from class on 9/3/2024:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>delta <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"delta.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 268166 Columns: 3
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (3): vaccine, age, outcome
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Warning
+Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A regrade request can result in your grade going up, staying the same, or going down if the instructor determines that, in fact, the original grader was too lenient.</p>
+<p>Recalling the information <a href="https://sta101-f24.github.io/computing/computing-file-paths.html">here</a>, be prepared to adjust the file path to match how you have organized your files and folders.</p>
+</div>
+</div>
+<p>A row in this data set is a person, and we record whether or not that person died from/with COVID, and whether or not they were vaccinated. So there are four categories in all</p>
+<ul>
+<li>unvaccinated and died</li>
+<li>unvaccinated and survived</li>
+<li>vaccinated and died</li>
+<li>vaccinated and survived</li>
+</ul>
+<p>The following code creates a nifty lil’ table that tallies up the proportion of people that belong in each of the four categories:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>delta <span class="sc">|&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(vaccine, outcome) <span class="sc">|&gt;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(vaccine) <span class="sc">|&gt;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 4
+# Groups:   vaccine [2]
+  vaccine      outcome       n    prop
+  &lt;chr&gt;        &lt;chr&gt;     &lt;int&gt;   &lt;dbl&gt;
+1 Unvaccinated died        250 0.00166
+2 Unvaccinated survived 150802 0.998  
+3 Vaccinated   died        477 0.00407
+4 Vaccinated   survived 116637 0.996  </code></pre>
+</div>
+</div>
+<p>This code is equivalent, but it provides a truly horrific reading experience:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">group_by</span>(<span class="fu">count</span>(delta, vaccine, outcome), vaccine), <span class="at">prop =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 4
+# Groups:   vaccine [2]
+  vaccine      outcome       n    prop
+  &lt;chr&gt;        &lt;chr&gt;     &lt;int&gt;   &lt;dbl&gt;
+1 Unvaccinated died        250 0.00166
+2 Unvaccinated survived 150802 0.998  
+3 Vaccinated   died        477 0.00407
+4 Vaccinated   survived 116637 0.996  </code></pre>
 </div>
 </div>
 
@@ -737,13 +810,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./course-grading.html" class="pagination-link" aria-label="Assignments and grading">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Assignments and grading</span>
+      <a href="../computing/computing-histograms.html" class="pagination-link" aria-label="Histogram basics">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Histogram basics</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./course-resources.html" class="pagination-link" aria-label="University resources">
-        <span class="nav-page-text">University resources</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../computing/computing-cheatsheets.html" class="pagination-link" aria-label="Cheatsheets">
+        <span class="nav-page-text">Cheatsheets</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
