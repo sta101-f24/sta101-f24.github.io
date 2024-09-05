@@ -271,6 +271,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#a-very-silly-example" id="toc-a-very-silly-example" class="nav-link active" data-scroll-target="#a-very-silly-example">A very silly example</a></li>
   <li><a href="#tallying-stuff-up-in-a-spreadsheet" id="toc-tallying-stuff-up-in-a-spreadsheet" class="nav-link" data-scroll-target="#tallying-stuff-up-in-a-spreadsheet">Tallying stuff up in a spreadsheet</a></li>
+  <li><a href="#now-you-try" id="toc-now-you-try" class="nav-link" data-scroll-target="#now-you-try">Now you try</a></li>
   </ul>
 </nav>
     </div>
@@ -319,29 +320,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="tallying-stuff-up-in-a-spreadsheet">Tallying stuff up in a spreadsheet</h2>
 <p>Let’s consider the COVID data set from class on 9/3/2024:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.1     ✔ tibble    3.2.1
-✔ lubridate 1.9.3     ✔ tidyr     1.3.1
-✔ purrr     1.0.2     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>delta <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"delta.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 268166 Columns: 3
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (3): vaccine, age, outcome
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>delta <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"delta.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -356,7 +337,7 @@ Note
 <p>Recalling the information <a href="https://sta101-f24.github.io/computing/computing-file-paths.html">here</a>, be prepared to adjust the file path to match how you have organized your files and folders.</p>
 </div>
 </div>
-<p>A row in this data set is a person, and we record whether or not that person died from/with COVID, and whether or not they were vaccinated. So there are four categories in all</p>
+<p>A row in this data set is a person, and we record whether or not that person died from/with COVID, and whether or not they were vaccinated. So there are four categories in all:</p>
 <ul>
 <li>unvaccinated and died</li>
 <li>unvaccinated and survived</li>
@@ -365,10 +346,10 @@ Note
 </ul>
 <p>The following code creates a nifty lil’ table that tallies up the proportion of people that belong in each of the four categories:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>delta <span class="sc">|&gt;</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(vaccine, outcome) <span class="sc">|&gt;</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(vaccine) <span class="sc">|&gt;</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>delta <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(vaccine, outcome) <span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(vaccine) <span class="sc">|&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 4
 # Groups:   vaccine [2]
@@ -382,7 +363,7 @@ Note
 </div>
 <p>This code is equivalent, but it provides a truly horrific reading experience:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">group_by</span>(<span class="fu">count</span>(delta, vaccine, outcome), vaccine), <span class="at">prop =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">group_by</span>(<span class="fu">count</span>(delta, vaccine, outcome), vaccine), <span class="at">prop =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 4
 # Groups:   vaccine [2]
@@ -394,6 +375,10 @@ Note
 4 Vaccinated   survived 116637 0.996  </code></pre>
 </div>
 </div>
+</section>
+<section id="now-you-try" class="level2">
+<h2 class="anchored" data-anchor-id="now-you-try">Now you try</h2>
+<p>The COVID data contains another variable indicating whether or not the person was older or younger than fifty. Write some code (it will be <em>very</em> similar to the code above) that produces a table that breaks things down by vaccination status, outcome, <em>and</em> age. How many rows should this table contain?</p>
 
 
 </section>
