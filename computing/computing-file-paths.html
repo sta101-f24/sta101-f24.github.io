@@ -287,14 +287,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="organize.png" class="img-fluid" width="397"></p>
 <p>And so, for example, when you go inside your Lecture 2 folder, it looks like this:</p>
 <p><img src="inside_folder.png" class="img-fluid" width="397"></p>
-<p>This is great for organization, but it causes a small problem. A command like this does not work:</p>
+<p>This is great for organization, but it causes a small problem. A command like this may not work:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>flint <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"flint.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error: 'flint.csv' does not exist in current working directory ('/Users/johnzito/sta101-f24.github.io/computing').</code></pre>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 813 Columns: 5
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): draw
+dbl (4): id, zip, ward, lead
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
 </div>
 <p>Why not? Because the file <code>flint.csv</code> is inside one of your handy dandy folders, but you have not told <code>read_csv</code> <em>which</em> folder, and so it cannot find it. To fix this, change the code to this:</p>
