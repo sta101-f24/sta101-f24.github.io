@@ -1,0 +1,57 @@
+---
+  title: "Piping"
+---
+
+A *pipe* in `R` is a way of stitching together many commands to make your code easier for a human to read, and to keep it from running off the pages of the PDF documents you will submit to us.
+
+## A very silly example
+
+These two code chunks do exactly the same thing:
+
+```{r}
+sum(1, 2)
+```
+
+```{r}
+1 |>
+  sum(2)
+```
+
+So the pipe operator `|>` passes (or *pipes*), the number `1` into the `sum` function as the first input. In a simple example like this, `sum(1, 2)` is *definitely* the way I would write the code, but as things get more elaborate, you will want to pipe.
+
+## Tallying stuff up in a spreadsheet
+
+Let's consider the COVID data set from class on 9/3/2024:
+
+```{r}
+#| label: load-package-and-data
+library(tidyverse)
+
+delta <- read_csv("delta.csv")
+```
+
+::: callout-note
+Recalling the information [here](https://sta101-f24.github.io/computing/computing-file-paths.html), be prepared to adjust the file path to match how you have organized your files and folders.
+:::
+
+A row in this data set is a person, and we record whether or not that person died from/with COVID, and whether or not they were vaccinated. So there are four categories in all 
+
+- unvaccinated and died
+- unvaccinated and survived
+- vaccinated and died
+- vaccinated and survived
+
+The following code creates a nifty lil' table that tallies up the proportion of people that belong in each of the four categories: 
+
+```{r}
+delta |>
+  count(vaccine, outcome) |>
+  group_by(vaccine) |>
+  mutate(prop = n / sum(n))
+```
+
+This code is equivalent, but it provides a truly horrific reading experience:
+
+```{r}
+  mutate(group_by(count(delta, vaccine, outcome), vaccine), prop = n / sum(n))
+```
