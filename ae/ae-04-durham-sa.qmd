@@ -55,8 +55,6 @@ Recalling the information [here](https://sta101-f24.github.io/computing/computin
 
 How many rows and columns are in this dataset? What does each row represent and what does each column represent?
 
-*Add your answer here.*
-
 ## Exercise 2
 
 The variables we'll use in this analysis are as follows. Rename the variables to the updated names shown below.
@@ -82,8 +80,6 @@ durham <- durham |>
 What language do Durham residents speak: `primary_language`?
 
 > What is the primary language used in your household?
-
-*Add your answer here.*
 
 ```{r}
 #| label: primary-language
@@ -123,9 +119,7 @@ durham <- durham |>
 
 ## Exercise 6
 
-Recreate the visualization from the `previous exercise`income\` barplot, improving it for both visual appeal and better communication of findings.
-
-*Add your answer here.*
+Recreate the visualization from the previous exercise, improving it for both visual appeal and better communication of findings.
 
 ```{r}
 #| label: income-improve
@@ -135,7 +129,11 @@ Recreate the visualization from the `previous exercise`income\` barplot, improvi
 durham |>
   ggplot(aes(y = income, fill = income)) +
   geom_bar(show.legend = FALSE) +
-  scale_fill_viridis_d(na.value = "darkgray") +
+  labs(
+    x = "Count",
+    y = NULL,
+    title = "Would you say your total annual household income is..."
+  ) + 
   scale_y_discrete(
     labels = c(
       "1" = "Under $30,000",
@@ -143,11 +141,6 @@ durham |>
       "3" = "$60,000-$99,999",
       "4" = "$100,000 or more"
     )
-  ) +
-  labs(
-    x = "Count",
-    y = NULL,
-    title = "Would you say your total annual household income is..."
   )
 ```
 
@@ -158,12 +151,23 @@ Recreate the visualization from the previous exercise, but first calculate relat
 ```{r}
 #| label: income-proportions
 
-durham |>
+my_proportions <- durham |>
   count(income) |>
-  mutate(prop = n / sum(n)) |>
-  ggplot(aes(y = income, x = prop, fill = income)) +
+  mutate(prop = n / sum(n))
+```
+
+
+```{r}
+#| label: bar-plot-with-proportions
+
+ggplot(my_proportions, aes(y = income, x = prop, fill = income)) +
   geom_col(show.legend = FALSE) +
   scale_fill_viridis_d(na.value = "gray") +
+  labs(
+    x = "Proportion",
+    y = NULL,
+    title = "Would you say your total annual household income is..."
+  ) +   
   scale_y_discrete(
     labels = c(
       "1" = "Under $30,000",
@@ -171,11 +175,6 @@ durham |>
       "3" = "$60,000-$99,999",
       "4" = "$100,000 or more"
     )
-  ) +
-  labs(
-    x = "Proportion",
-    y = NULL,
-    title = "Would you say your total annual household income is..."
   )
 ```
 
@@ -184,10 +183,6 @@ durham |>
 ## Exercise 8
 
 Visualize and describe the relationship between income and home ownership of Durham residents.
-
-*Stretch goal:* Customize the colors using named colors from <http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf>.
-
-*Add your answer here.*
 
 ```{r}
 #| label: income-own-rent-plot
@@ -222,8 +217,6 @@ durham |>
 ## Exercise 9
 
 Calculate the proportions of home owners for each category of Durham residents. Describe the relationship between these two variables, this time with the actual values from the **conditional distribution** of home ownership based on income level.
-
-*Add your answer here.*
 
 ```{r}
 #| label: income-own-rent-props
