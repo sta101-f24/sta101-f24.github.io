@@ -68,7 +68,7 @@ website:
           - href: computing/computing-file-paths.qmd
             text: Adjusting file paths
           - href: computing/computing-histograms.qmd
-            text: Plot basics: histogram
+            text: Histogram basics
           - href: computing/computing-pipe.qmd
             text: Piping
           - href: computing/computing-cheatsheets.qmd
