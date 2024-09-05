@@ -25,18 +25,18 @@ Next, we need something to plot, so let us load in a data set. We will consider 
 #| label: load-data
 #| message: false
 
-flint <- read_csv("~/lecture-2/flint.csv")
+flint <- read_csv("flint.csv")
 ```
 
 Let us unpack what this is doing:
 
--   `read_csv` is a *function*, just like $f(x)=x^2$ or $f(x)=ax+b$ from your math class. It receives an input, and returns an output. The input is the name of a file: `"~/lecture-2/flint.csv"`. The output is a data frame (a spreadsheet) in `R`;
+-   `read_csv` is a *function*, just like $f(x)=x^2$ or $f(x)=ax+b$ from your math class. It receives an input, and returns an output. The input is the name of a file: `"flint.csv"`. The output is a data frame (a spreadsheet) in `R`;
 -   When you run `read_csv`, it returns a data frame. But if you don't give that data frame a name and store it someplace, then you can't actually use it. So that's what the `flint <-` part is doing. You are *assigning* the output of `read_csv` to a variable named "flint." If this went as planned, you should see `flint` listed in the upper right Environment tab of `RStudio`:\
     \
     ![](data_in_environment.png){width="347"}
 
 ::: callout-note
-Recalling the information [here](https://sta101-f24.github.io/computing/computing-file-paths.html), you may have to modify the file path `"~/lecture-2/flint.csv"` to match the particular way you have chosen to name and organize your files and folders.
+Recalling the information [here](https://sta101-f24.github.io/computing/computing-file-paths.html), you may have to modify the file path to something like `"~/lecture-2/flint.csv"` to match the particular way you have chosen to name and organize your files and folders.
 :::
 
 ## Plotting a histogram
