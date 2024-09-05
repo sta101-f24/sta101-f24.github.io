@@ -10,9 +10,9 @@ For all visualizations you create, be sure to include informative titles for the
 
 1.  Use [these steps](https://sta101-f24.github.io/computing/computing-access.html) to navigate to `RStudio` using the [Duke Container Manager](https://cmgr.oit.duke.edu/containers);
 
-2. Use [these steps](https://sta101-f24.github.io/computing/computing-moving.html) to download the blank template `lab-2.qmd` and the data set `courage.csv` from our [Canvas page](https://canvas.duke.edu/courses/36641), upload them to your `RStudio` files, and move them into an appropriately named folder (`lab-2`, for instance);
+2.  Use [these steps](https://sta101-f24.github.io/computing/computing-moving.html) to download the blank template `lab-2.qmd` and the data set `courage.csv` from our [Canvas page](https://canvas.duke.edu/courses/36641), upload them to your `RStudio` files, and move them into an appropriately named folder (`lab-2`, for instance);
 
-3. Once `lab-2.qmd` is where it needs to be, open it, and verify that you can click the "Render" button in `RStudio` and get a PDF file. See [this answer](https://edstem.org/us/courses/64268/discussion/5216372?answer=12080244) on Ed if you want a bit more guidance here;
+3.  Once `lab-2.qmd` is where it needs to be, open it, and verify that you can click the "Render" button in `RStudio` and get a PDF file. See [this answer](https://edstem.org/us/courses/64268/discussion/5216372?answer=12080244) on Ed if you want more guidance here;
 
 4.  Now proceed to complete the exercises in this lab.
 
