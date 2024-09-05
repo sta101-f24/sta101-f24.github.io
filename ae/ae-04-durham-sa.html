@@ -363,12 +363,25 @@ dbl (42): id, overall_quality_of_services_3_01, overall_quality_of_services_...
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Recalling the information <a href="https://sta101-f24.github.io/computing/computing-file-paths.html">here</a>, be prepared to adjust the file path to match how you have organized your files and folders.</p>
+</div>
+</div>
 </section>
 <section id="visualizing-and-summarizing-categorical-data" class="level1">
 <h1>Visualizing and summarizing categorical data</h1>
 <section id="exercise-1" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
-<p>How many rows and columns are in this dataset? Answer in a full sentence using <strong>inline code</strong>. What does each row represent and what does each column represent?</p>
+<p>How many rows and columns are in this dataset? What does each row represent and what does each column represent?</p>
 <p><em>Add your answer here.</em></p>
 </section>
 <section id="exercise-2" class="level2">
@@ -430,7 +443,8 @@ dbl (42): id, overall_quality_of_services_3_01, overall_quality_of_services_...
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(durham, <span class="fu">aes</span>(<span class="at">x =</span> own_rent)) <span class="sc">+</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 2 rows containing non-finite values (`stat_count()`).</code></pre>
+<pre><code>Warning: Removed 2 rows containing non-finite outside the scale range
+(`stat_count()`).</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
@@ -442,7 +456,8 @@ dbl (42): id, overall_quality_of_services_3_01, overall_quality_of_services_...
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(durham, <span class="fu">aes</span>(<span class="at">x =</span> income)) <span class="sc">+</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 110 rows containing non-finite values (`stat_count()`).</code></pre>
+<pre><code>Warning: Removed 110 rows containing non-finite outside the scale range
+(`stat_count()`).</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
