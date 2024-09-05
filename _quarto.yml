@@ -1,7 +1,7 @@
 project:
   type: website
   resources:
-    - lectures/14/14-decision-errors.pdf
+    - lectures/zito_sta101_09_03_2024_slides.pdf
 
 website:
   page-navigation: true
