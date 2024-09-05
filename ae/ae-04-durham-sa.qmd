@@ -6,10 +6,6 @@ categories:
 editor: visual
 ---
 
-::: callout-important
-These are suggested answers for the application exercise. They're not necessarily complete or 100% accurate, they're roughly what we develop in class while going through the exercises.
-:::
-
 The main question we'll explore today is "What are the demographics and priorities of City of Durham residents?"
 
 # Goals
