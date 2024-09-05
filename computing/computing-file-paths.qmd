@@ -16,10 +16,7 @@ This is great for organization, but it causes a small problem. A command like th
 #| message: false
 
 library(tidyverse)
-```
 
-```{r}
-#| error: true
 flint <- read_csv("flint.csv")
 ```
 
