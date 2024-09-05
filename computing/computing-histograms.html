@@ -335,11 +335,11 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="loading-a-dataset">Loading a dataset</h2>
 <p>Next, we need something to plot, so let us load in a data set. We will consider the flint water data that was mentioned during the second lecture on 8/29/2024:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>flint <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"lecture-2/flint.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>flint <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"flint.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Let us unpack what this is doing:</p>
 <ul>
-<li><code>read_csv</code> is a <em>function</em>, just like <span class="math inline">\(f(x)=x^2\)</span> or <span class="math inline">\(f(x)=ax+b\)</span> from your math class. It receives an input, and returns an output. The input is the name of a file: <code>"lecture-2/flint.csv"</code>. The output is a data frame (a spreadsheet) in <code>R</code>;</li>
+<li><code>read_csv</code> is a <em>function</em>, just like <span class="math inline">\(f(x)=x^2\)</span> or <span class="math inline">\(f(x)=ax+b\)</span> from your math class. It receives an input, and returns an output. The input is the name of a file: <code>"flint.csv"</code>. The output is a data frame (a spreadsheet) in <code>R</code>;</li>
 <li>When you run <code>read_csv</code>, it returns a data frame. But if you don’t give that data frame a name and store it someplace, then you can’t actually use it. So that’s what the <code>flint &lt;-</code> part is doing. You are <em>assigning</em> the output of <code>read_csv</code> to a variable named “flint.” If this went as planned, you should see <code>flint</code> listed in the upper right Environment tab of <code>RStudio</code>:<br>
 <br>
 <img src="data_in_environment.png" class="img-fluid" width="347"></li>
@@ -354,7 +354,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Recalling the information <a href="https://sta101-f24.github.io/computing/computing-file-paths.html">here</a>, you may have to modify the file path <code>"lecture-2/flint.csv"</code> to match the particular way you have chosen to organize your files.</p>
+<p>Recalling the information <a href="https://sta101-f24.github.io/computing/computing-file-paths.html">here</a>, you may have to modify the file path to something like <code>"~/lecture-2/flint.csv"</code> to match the particular way you have chosen to name and organize your files and folders.</p>
 </div>
 </div>
 </section>
