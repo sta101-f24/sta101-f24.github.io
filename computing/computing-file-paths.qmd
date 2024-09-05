@@ -10,7 +10,7 @@ And so, for example, when you go inside your Lecture 2 folder, it looks like thi
 
 ![](inside_folder.png){width="397"}
 
-This is great for organization, but it causes a small problem. A command like this does not work:
+This is great for organization, but it causes a small problem. A command like this may not work:
 
 ```{r}
 #| message: false
