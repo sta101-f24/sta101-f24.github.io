@@ -25,6 +25,7 @@ Let's consider the COVID data set from class on 9/3/2024:
 
 ```{r}
 #| label: load-package-and-data
+#| message: false
 library(tidyverse)
 
 delta <- read_csv("delta.csv")
@@ -34,7 +35,7 @@ delta <- read_csv("delta.csv")
 Recalling the information [here](https://sta101-f24.github.io/computing/computing-file-paths.html), be prepared to adjust the file path to match how you have organized your files and folders.
 :::
 
-A row in this data set is a person, and we record whether or not that person died from/with COVID, and whether or not they were vaccinated. So there are four categories in all 
+A row in this data set is a person, and we record whether or not that person died from/with COVID, and whether or not they were vaccinated. So there are four categories in all:
 
 - unvaccinated and died
 - unvaccinated and survived
@@ -55,3 +56,7 @@ This code is equivalent, but it provides a truly horrific reading experience:
 ```{r}
   mutate(group_by(count(delta, vaccine, outcome), vaccine), prop = n / sum(n))
 ```
+
+## Now you try
+
+The COVID data contains another variable indicating whether or not the person was older or younger than fifty. Write some code (it will be *very* similar to the code above) that produces a table that breaks things down by vaccination status, outcome, *and* age. How many rows should this table contain?
