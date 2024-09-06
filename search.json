@@ -1493,28 +1493,44 @@
     "href": "computing/computing-barplot.html",
     "title": "Barplot basics",
     "section": "",
-    "text": "A barplot is similar to a histogram, but instead of visualizing numerical data, we are visualizing categorical data. Each bar in the chart is counting the number of observations (rows) that correspond to each level of the categorical variable."
+    "text": "A barplot is similar to a histogram, but instead of visualizing numerical data, we are visualizing categorical data. Each bar in the chart is counting the number of observations (rows) that correspond to each level of the categorical variable.",
+    "crumbs": [
+      "Computing primers",
+      "Barplot basics"
+    ]
   },
   {
     "objectID": "computing/computing-barplot.html#load-a-data-set",
     "href": "computing/computing-barplot.html#load-a-data-set",
     "title": "Barplot basics",
     "section": "Load a data set",
-    "text": "Load a data set\n\nlibrary(tidyverse)\n\nLet’s load the data from the 2020 Durham City and County Resident Survey, where each row is a Durham resident:\n\ndurham &lt;- read_csv(\"durham-2020.csv\")\n\nRows: 803 Columns: 49\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr  (7): please_define_other_32_5, primary_language, please_define_other_34...\ndbl (42): id, overall_quality_of_services_3_01, overall_quality_of_services_...\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n\n\n\n\n\n\nNote\n\n\n\nRecalling the information here, be prepared to adjust the file path to match how you have organized your files and folders.\n\n\nOne of the columns in this data set is a categorical variable called would_you_say_your_total_annual_hous_35, with four levels corresponding to the resident’s income:\n\nUnder $30,000;\n$30,000-$59,999\n$60,000-$99,999\n$100,000 or more\n\nFurthermore, some folks left this part of the survey blank, and so there income information is missing, which effectively creates a fifth category. Before plotting, let us quickly modify the data to give this income variable a more concise name, as well as making it a proper factor type in R:\n\ndurham &lt;- durham |&gt;\n  rename(income = would_you_say_your_total_annual_hous_35) |&gt;\n  mutate(income = as_factor(income))"
+    "text": "Load a data set\n\nlibrary(tidyverse)\n\nLet’s load the data from the 2020 Durham City and County Resident Survey, where each row is a Durham resident:\n\ndurham &lt;- read_csv(\"durham-2020.csv\")\n\n\n\n\n\n\n\nNote\n\n\n\nRecalling the information here, be prepared to adjust the file path to match how you have organized your files and folders.\n\n\nOne of the columns in this data set is a categorical variable called would_you_say_your_total_annual_hous_35, with four levels corresponding to the resident’s income:\n\nUnder $30,000;\n$30,000-$59,999\n$60,000-$99,999\n$100,000 or more\n\nFurthermore, some folks left this part of the survey blank, and so their income information is missing, which effectively creates a fifth category. Before plotting, let us quickly modify the data to give this income variable a more concise name, as well as making it a proper factor type in R:\n\ndurham &lt;- durham |&gt;\n  rename(income = would_you_say_your_total_annual_hous_35) |&gt;\n  mutate(income = as_factor(income))",
+    "crumbs": [
+      "Computing primers",
+      "Barplot basics"
+    ]
   },
   {
     "objectID": "computing/computing-barplot.html#the-basic-plot",
     "href": "computing/computing-barplot.html#the-basic-plot",
     "title": "Barplot basics",
     "section": "The basic plot",
-    "text": "The basic plot\n\nggplot(durham, aes(x = income)) +\n  geom_bar()\n\n\n\n\n\n\n\n\nThe basic template here is very similar to what we saw for the histogram. The first layer uses ggplot to indicate what data you wish to plot. Then the next layer uses geom_bar to specifically make it a bar plot.\nIn the first layer we used x = inside aes to make the bars vertical, but we could have made them horizontal as well:\n\nggplot(durham, aes(y = income)) +\n  geom_bar()\n\n\n\n\n\n\n\n\nDo you see what changed?"
+    "text": "The basic plot\n\nggplot(durham, aes(x = income)) +\n  geom_bar()\n\n\n\n\n\n\n\n\nThe basic template here is very similar to what we saw for the histogram. The first layer uses ggplot to indicate what data you wish to plot. Then the next layer uses geom_bar to specifically make it a bar plot.\nIn the first layer we used x = inside aes to make the bars vertical, but we could have made them horizontal as well:\n\nggplot(durham, aes(y = income)) +\n  geom_bar()\n\n\n\n\n\n\n\n\nDo you see what changed?",
+    "crumbs": [
+      "Computing primers",
+      "Barplot basics"
+    ]
   },
   {
     "objectID": "computing/computing-barplot.html#adding-layers-to-prettify-it",
     "href": "computing/computing-barplot.html#adding-layers-to-prettify-it",
     "title": "Barplot basics",
     "section": "Adding layers to prettify it",
-    "text": "Adding layers to prettify it\nWe could call it a day at this point, but the basic plot is rather drab. Here is some code that would zhuzh it up in a big way:\n\ndurham |&gt;\n  ggplot(aes(y = income, fill = income)) +\n  geom_bar(show.legend = FALSE) +\n  labs(\n    x = \"Count\",\n    y = NULL,\n    title = \"Would you say your total annual household income is...\"\n  ) + \n  scale_y_discrete(\n    labels = c(\n      \"1\" = \"Under $30,000\",\n      \"2\" = \"$30,000-$59,999\",\n      \"3\" = \"$60,000-$99,999\",\n      \"4\" = \"$100,000 or more\"\n    )\n  )\n\n\n\n\n\n\n\n\n\nThe first ggplot layer tells it what data to use. We also added the fill = argument inside aes to apply a default color scheme;\nthe labs layer allows us to add a title and label the axes;\nthe scale_y_discrete layer allows us to replace the bar labels 1, 2, 3, 4 with more informative text that explains what the levels of the variable actually mean."
+    "text": "Adding layers to prettify it\nWe could call it a day at this point, but the basic plot is rather drab. Here is some code that would zhuzh it up in a big way:\n\ndurham |&gt;\n  ggplot(aes(y = income, fill = income)) +\n  geom_bar(show.legend = FALSE) +\n  labs(\n    x = \"Count\",\n    y = NULL,\n    title = \"Would you say your total annual household income is...\"\n  ) + \n  scale_y_discrete(\n    labels = c(\n      \"1\" = \"Under $30,000\",\n      \"2\" = \"$30,000-$59,999\",\n      \"3\" = \"$60,000-$99,999\",\n      \"4\" = \"$100,000 or more\"\n    )\n  )\n\n\n\n\n\n\n\n\n\nThe first ggplot layer tells it what data to use. We also added the fill = argument inside aes to apply a default color scheme;\nthe labs layer allows us to add a title and label the axes;\nthe scale_y_discrete layer allows us to replace the bar labels 1, 2, 3, 4 with more informative text that explains what the levels of the variable actually mean.",
+    "crumbs": [
+      "Computing primers",
+      "Barplot basics"
+    ]
   },
   {
     "objectID": "lectures/01/01-welcome.html#teaching-team",
