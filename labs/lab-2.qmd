@@ -92,7 +92,18 @@ There are two things of note here:
 ## Exercise 3
 
 ::: exercise
-First, create a visualization that displays the relationship between `home_courage` and `result`. Then, calculate the proportions of home and away games that the Courage won. Based on these, do your findings suggest a home-field advantage? Why or why not?
+a.  this code creates a visualization that displays the relationship between `home_courage` and `result`:
+
+```{r}
+ggplot(courage, aes(x = home_courage, fill = result)) +
+  geom_bar(position = "fill")
+```
+
+Explain what each piece of the code is doing. Why does it produce the plot that it produces?
+:::
+
+::: exercise
+b.  Calculate the proportions of home and away games that the Courage won. Based on these, do your findings suggest a home-field advantage? Why or why not?
 :::
 
 So far we have focused on whether the game was at home or away and whether the Courage won. Next, we dive deeper and focus on the number of points the Courage wins by, at home and away.
