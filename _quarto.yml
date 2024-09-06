@@ -69,10 +69,12 @@ website:
             text: Moving files around
           - href: computing/computing-file-paths.qmd
             text: Adjusting file paths
-          - href: computing/computing-histograms.qmd
-            text: Histogram basics
           - href: computing/computing-pipe.qmd
             text: Piping
+          - href: computing/computing-histograms.qmd
+            text: Histogram basics
+          - href: computing/computing-barplot.qmd
+            text: Barplot basics
           - href: computing/computing-cheatsheets.qmd
             text: Cheatsheets
 
