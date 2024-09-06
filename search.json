@@ -918,7 +918,7 @@
     "href": "labs/lab-2.html#exercise-1",
     "title": "Lab 2",
     "section": "Exercise 1",
-    "text": "Exercise 1\n\nCreate a bar plot of the results of games for NC Courage. Additionally, calculate the numbers of wins, losses, and ties. Write a one sentence narrative for your findings.\n\nHint: result is a categorical variable, so use a bar plot for the visualization and the count() function for calculating the frequencies of levels of this variable.",
+    "text": "Exercise 1\n\nCreate a bar plot of the results of games for NC Courage. Additionally, calculate the numbers of wins, losses, and ties. Write a one sentence narrative for your findings.\n\nHint: result is a categorical variable, so use a bar plot for the visualization and the count() function for calculating the frequencies of levels of this variable. Once you have that, this primer may help you get started with the plot.",
     "crumbs": [
       "Labs",
       "Lab 2"
@@ -1526,7 +1526,7 @@
     "href": "computing/computing-barplot.html#adding-layers-to-prettify-it",
     "title": "Barplot basics",
     "section": "Adding layers to prettify it",
-    "text": "Adding layers to prettify it\nWe could call it a day at this point, but the basic plot is rather drab. Here is some code that would zhuzh it up in a big way:\n\ndurham |&gt;\n  ggplot(aes(y = income, fill = income)) +\n  geom_bar(show.legend = FALSE) +\n  labs(\n    x = \"Count\",\n    y = NULL,\n    title = \"Would you say your total annual household income is...\"\n  ) + \n  scale_y_discrete(\n    labels = c(\n      \"1\" = \"Under $30,000\",\n      \"2\" = \"$30,000-$59,999\",\n      \"3\" = \"$60,000-$99,999\",\n      \"4\" = \"$100,000 or more\"\n    )\n  )\n\n\n\n\n\n\n\n\n\nThe first ggplot layer tells it what data to use. We also added the fill = argument inside aes to apply a default color scheme;\nthe labs layer allows us to add a title and label the axes;\nthe scale_y_discrete layer allows us to replace the bar labels 1, 2, 3, 4 with more informative text that explains what the levels of the variable actually mean.",
+    "text": "Adding layers to prettify it\nWe could call it a day at this point, but the basic plot is rather drab. Here is some code that would zhuzh it up in a big way:\n\ndurham |&gt;\n  ggplot(aes(y = income, fill = income)) +\n  geom_bar(show.legend = FALSE) +\n  labs(\n    x = \"Count\",\n    y = NULL,\n    title = \"Would you say your total annual household income is...\"\n  ) + \n  scale_y_discrete(\n    labels = c(\n      \"1\" = \"Under $30,000\",\n      \"2\" = \"$30,000-$59,999\",\n      \"3\" = \"$60,000-$99,999\",\n      \"4\" = \"$100,000 or more\"\n    )\n  )\n\n\n\n\n\n\n\n\n\nThe first ggplot layer tells it what data to use. We also added the fill = argument inside aes to apply a default color scheme;\nthe labs layer allows us to add a title and label the axes;\nthe scale_y_discrete layer allows us to replace the bar labels 1, 2, 3, 4 with more informative text that explains what the levels of the variable actually mean;\nin between every layer, we have a +. Gotta have that icing!",
     "crumbs": [
       "Computing primers",
       "Barplot basics"
