@@ -62,7 +62,7 @@ The `courage` dataset has `r nrow(courage)` rows and `r ncol(courage)` variables
 Create a bar plot of the `result`s of games for NC Courage. Additionally, calculate the numbers of wins, losses, and ties. Write a one sentence narrative for your findings.
 :::
 
-**Hint:** `result` is a categorical variable, so use a bar plot for the visualization and the `count()` function for calculating the frequencies of *levels* of this variable.
+**Hint:** `result` is a categorical variable, so use a bar plot for the visualization and the `count()` function for calculating the frequencies of *levels* of this variable. Once you have that, this [primer](https://sta101-f24.github.io/computing/computing-barplot.html) may help you get started with the plot.
 
 ## Exercise 2
 
