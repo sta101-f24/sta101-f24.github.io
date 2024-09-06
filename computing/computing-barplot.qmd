@@ -88,4 +88,5 @@ durham |>
 
 -   The first `ggplot` layer tells it what data to use. We also added the `fill =` argument inside `aes` to apply a default color scheme;
 -   the `labs` layer allows us to add a title and label the axes;
--   the `scale_y_discrete` layer allows us to replace the bar labels 1, 2, 3, 4 with more informative text that explains what the levels of the variable actually mean.
+-   the `scale_y_discrete` layer allows us to replace the bar labels 1, 2, 3, 4 with more informative text that explains what the levels of the variable actually mean;
+-   in between every layer, we have a `+`. Gotta have that icing!
