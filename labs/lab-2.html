@@ -422,7 +422,7 @@ Note
 <div class="exercise">
 <p>Create a bar plot of the <code>result</code>s of games for NC Courage. Additionally, calculate the numbers of wins, losses, and ties. Write a one sentence narrative for your findings.</p>
 </div>
-<p><strong>Hint:</strong> <code>result</code> is a categorical variable, so use a bar plot for the visualization and the <code><a href="https://dplyr.tidyverse.org/reference/count.html">count()</a></code> function for calculating the frequencies of <em>levels</em> of this variable. Once you have that, this <a href="https://sta101-f24.github.io/computing/computing-barplot.html">primer</a> may help you get started with the plot.</p>
+<p><strong>Hint:</strong> <code>result</code> is a categorical variable, so use a bar plot for the visualization and the <code><a href="https://dplyr.tidyverse.org/reference/count.html">count()</a></code> function for calculating the frequencies of <em>levels</em> of this variable. This <a href="https://sta101-f24.github.io/computing/computing-barplot.html">primer</a> may help you get started with the plot.</p>
 </section><section id="exercise-2" class="level2"><h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
 <div class="exercise">
 <p>Create a new variable indicating whether the game was played at home or away for NC Courage. This variable should be called <code>home_courage</code> and take the value “home” if NC Courage is the home team and “away” if NC Courage is the away team. (Instructions for how to do this are given below.)</p>
@@ -495,8 +495,7 @@ Note
 </div>
 </section><section id="exercise-6" class="level2"><h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
 <div class="exercise">
-<p>Next we’ll investigate visually whether or not NC Courage has a home-field advantage. To start, let’s build on the courage2 data frame. Add a new column called home_courage that takes the value “home” if Courage is the home team and “away” if Courage is the away team. Hint: use the ifelse logic from exercise 4.</p>
-<p>Mutate the <code>courage</code> data frame to create two new variables:</p>
+<p>Next we’ll investigate visually whether or not NC Courage has a home-field advantage. Mutate the <code>courage</code> data frame to create two new variables:</p>
 <ul>
 <li><p><code>total_pts</code>: Sum of points scored by both teams, i.e.&nbsp;<code>home_pts + away_pts</code>.</p></li>
 <li><p><code>opponent_pts</code>: Points scored by the opposing team, i.e., <code>total_pts - courage_pts</code>.</p></li>

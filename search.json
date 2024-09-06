@@ -918,7 +918,7 @@
     "href": "labs/lab-2.html#exercise-1",
     "title": "Lab 2",
     "section": "Exercise 1",
-    "text": "Exercise 1\n\nCreate a bar plot of the results of games for NC Courage. Additionally, calculate the numbers of wins, losses, and ties. Write a one sentence narrative for your findings.\n\nHint: result is a categorical variable, so use a bar plot for the visualization and the count() function for calculating the frequencies of levels of this variable. Once you have that, this primer may help you get started with the plot.",
+    "text": "Exercise 1\n\nCreate a bar plot of the results of games for NC Courage. Additionally, calculate the numbers of wins, losses, and ties. Write a one sentence narrative for your findings.\n\nHint: result is a categorical variable, so use a bar plot for the visualization and the count() function for calculating the frequencies of levels of this variable. This primer may help you get started with the plot.",
     "crumbs": [
       "Labs",
       "Lab 2"
@@ -973,7 +973,7 @@
     "href": "labs/lab-2.html#exercise-6",
     "title": "Lab 2",
     "section": "Exercise 6",
-    "text": "Exercise 6\n\nNext we’ll investigate visually whether or not NC Courage has a home-field advantage. To start, let’s build on the courage2 data frame. Add a new column called home_courage that takes the value “home” if Courage is the home team and “away” if Courage is the away team. Hint: use the ifelse logic from exercise 4.\nMutate the courage data frame to create two new variables:\n\ntotal_pts: Sum of points scored by both teams, i.e. home_pts + away_pts.\nopponent_pts: Points scored by the opposing team, i.e., total_pts - courage_pts.\n\nSave the resulting data frame as courage again and print the three points columns (total_pts, opponent_pts, courage_pts) to screen.\n\nHint:\n\nUse the mutate() function to create the columns.\n\n\ncourage &lt;- courage |&gt;\n  mutate(\n    total_pts = ___,\n    opponent_pts = ___\n    )\n\n\nUse the select() function to print them to screen:\n\n\ncourage |&gt;\n  select(total_pts, opponent_pts, courage_pts)",
+    "text": "Exercise 6\n\nNext we’ll investigate visually whether or not NC Courage has a home-field advantage. Mutate the courage data frame to create two new variables:\n\ntotal_pts: Sum of points scored by both teams, i.e. home_pts + away_pts.\nopponent_pts: Points scored by the opposing team, i.e., total_pts - courage_pts.\n\nSave the resulting data frame as courage again and print the three points columns (total_pts, opponent_pts, courage_pts) to screen.\n\nHint:\n\nUse the mutate() function to create the columns.\n\n\ncourage &lt;- courage |&gt;\n  mutate(\n    total_pts = ___,\n    opponent_pts = ___\n    )\n\n\nUse the select() function to print them to screen:\n\n\ncourage |&gt;\n  select(total_pts, opponent_pts, courage_pts)",
     "crumbs": [
       "Labs",
       "Lab 2"
