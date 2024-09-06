@@ -92,7 +92,7 @@ There are two things of note here:
 ## Exercise 3
 
 ::: exercise
-a.  this code creates a visualization that displays the relationship between `home_courage` and `result`:
+a.  This code creates a visualization that displays the relationship between `home_courage` and `result`:
 
 ```{r}
 ggplot(courage, aes(x = home_courage, fill = result)) +
@@ -100,6 +100,8 @@ ggplot(courage, aes(x = home_courage, fill = result)) +
 ```
 
 Explain what each piece of the code is doing. Why does it produce the plot that it produces?
+
+**Hint**: to understand what the different ingredients do, try removing or altering some of them, and see how it changes the plot.
 :::
 
 ::: exercise
