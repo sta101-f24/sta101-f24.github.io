@@ -13,7 +13,7 @@ A barplot is similar to a histogram, but instead of visualizing numerical data, 
 library(tidyverse)
 ```
 
-Let's load the data from the 2020 Durham City and County Resident Survey, where each row is a Durham resident:
+Let's load the data from the 2020 Durham City and County Resident Survey (originally in the Canvas lecture 4 folder), where each row is a Durham resident:
 
 ```{r}
 #| label: load-data
