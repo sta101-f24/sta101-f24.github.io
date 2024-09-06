@@ -62,7 +62,7 @@ The `courage` dataset has `r nrow(courage)` rows and `r ncol(courage)` variables
 Create a bar plot of the `result`s of games for NC Courage. Additionally, calculate the numbers of wins, losses, and ties. Write a one sentence narrative for your findings.
 :::
 
-**Hint:** `result` is a categorical variable, so use a bar plot for the visualization and the `count()` function for calculating the frequencies of *levels* of this variable. Once you have that, this [primer](https://sta101-f24.github.io/computing/computing-barplot.html) may help you get started with the plot.
+**Hint:** `result` is a categorical variable, so use a bar plot for the visualization and the `count()` function for calculating the frequencies of *levels* of this variable. This [primer](https://sta101-f24.github.io/computing/computing-barplot.html) may help you get started with the plot.
 
 ## Exercise 2
 
@@ -149,9 +149,7 @@ courage |>
 ## Exercise 6
 
 ::: exercise
-Next we'll investigate visually whether or not NC Courage has a home-field advantage. To start, let's build on the courage2 data frame. Add a new column called home_courage that takes the value "home" if Courage is the home team and "away" if Courage is the away team. Hint: use the ifelse logic from exercise 4.
-
-Mutate the `courage` data frame to create two new variables:
+Next we'll investigate visually whether or not NC Courage has a home-field advantage. Mutate the `courage` data frame to create two new variables:
 
 -   `total_pts`: Sum of points scored by both teams, i.e. `home_pts + away_pts`.
 
