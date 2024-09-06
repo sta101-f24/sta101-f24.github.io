@@ -928,7 +928,7 @@
     "href": "labs/lab-2.html#exercise-3",
     "title": "Lab 2",
     "section": "Exercise 3",
-    "text": "Exercise 3\n\nFirst, create a visualization that displays the relationship between home_courage and result. Then, calculate the proportions of home and away games that the Courage won. Based on these, do your findings suggest a home-field advantage? Why or why not?\n\nSo far we have focused on whether the game was at home or away and whether the Courage won. Next, we dive deeper and focus on the number of points the Courage wins by, at home and away."
+    "text": "Exercise 3\n\n\nthis code creates a visualization that displays the relationship between home_courage and result:\n\n\nggplot(courage, aes(x = home_courage, fill = result)) +\n  geom_bar(position = \"fill\")\n\n\n\n\n\n\n\nExplain what each piece of the code is doing. Why does it produce the plot that it produces?\n\n\n\nCalculate the proportions of home and away games that the Courage won. Based on these, do your findings suggest a home-field advantage? Why or why not?\n\n\nSo far we have focused on whether the game was at home or away and whether the Courage won. Next, we dive deeper and focus on the number of points the Courage wins by, at home and away."
   },
   {
     "objectID": "labs/lab-2.html#exercise-4",
