@@ -2,6 +2,7 @@ project:
   type: website
   resources:
     - lectures/zito_sta101_09_03_2024_slides.pdf
+    - lectures/zito_sta101_09_10_2024_slides.pdf
 
 website:
   page-navigation: true
