@@ -6,11 +6,11 @@ The goal of this lab is to solidify some of the skills and concepts from the fir
 
 # Getting started
 
-1.  Use [these steps](https://sta101-f24.github.io/computing/computing-access.html) to navigate to `RStudio` using the [Duke Container Manager](https://cmgr.oit.duke.edu/containers);
+1.  Use [these steps](https://sta101-f24.github.io/computing/computing-access.html) to navigate to the STA101 version of `RStudio` using the [Duke Container Manager](https://cmgr.oit.duke.edu/containers);
 
-2.  Use [these steps](https://sta101-f24.github.io/computing/computing-moving.html) to download the blank template `lab-2.qmd` and the data set `courage.csv` from our [Canvas page](https://canvas.duke.edu/courses/36641), upload them to your `RStudio` files, and move them into an appropriately named folder (`lab-2`, for instance);
+2.  Use [these steps](https://sta101-f24.github.io/computing/computing-moving.html) to download all of the lab 3 files from our [Canvas page](https://canvas.duke.edu/courses/36641), upload them to your `RStudio` files, and move them into an appropriately named folder (`lab-3`, for instance);
 
-3.  Once `lab-2.qmd` is where it needs to be, open it, and verify that you can click the "Render" button in `RStudio` and get a PDF file. See [this answer](https://edstem.org/us/courses/64268/discussion/5216372?answer=12080244) on Ed if you want more guidance here;
+3.  Once `lab-3.qmd` is where it needs to be, open it, and verify that you can click the "Render" button in `RStudio` and get a PDF file. See [this answer](https://edstem.org/us/courses/64268/discussion/5216372?answer=12080244) on Ed if you want more guidance here;
 
 4.  Now proceed to complete the exercises in this lab.
 
@@ -41,9 +41,17 @@ library(tidyverse)
 
 ## Exercise 1
 
+The file `nsw-crime.csv` contains monthly data on all criminal incidents recorded by police in New South Wales, Australia (the state that includes the city of Sydney). So a row in this data set corresponds to a month, and a column corresponds to a crime (murder, dealing cannabis, escaping custody, etc). The data count the number of cases of each crime in each month. In this exercise we will consider the variable `offensive_language` (an incident of disorderly conduct where the perpetrator...said some things). 
+
+::: exercise
+Load the crime data into `R` and create four histogram plots of the variable `offensive_language`. In each plot, use a different number of histogram bins: 20, 40, 80, and 160. Decide which picture you think best visualizes the distribution of the crime counts, and explain why you think this.
+:::
+
 ## Exercise 2
 
-# Part 2: IMS Exercises
+
+
+# Part 2: 
 
 ## Exercise 3
 
