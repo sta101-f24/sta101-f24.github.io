@@ -4,7 +4,7 @@ title: "Lab 3"
 
 The goal of this lab is to solidify some of the skills and concepts from the first two weeks of the course.
 
-# Getting started
+## Getting started
 
 1.  Use [these steps](https://sta101-f24.github.io/computing/computing-access.html) to navigate to the STA101 version of `RStudio` using the [Duke Container Manager](https://cmgr.oit.duke.edu/containers);
 
@@ -14,7 +14,7 @@ The goal of this lab is to solidify some of the skills and concepts from the fir
 
 4.  Now proceed to complete the exercises in this lab.
 
-# Pointers
+## Pointers
 
 -   For all visualizations you create, be sure to include informative titles for the plot, axes, and legend;
 -   Respond in complete sentences as much as possible;
@@ -26,7 +26,7 @@ The goal of this lab is to solidify some of the skills and concepts from the fir
     -   Code doesn't exceed 80 characters in each line, longer lines of code are spread across multiple lines with appropriately placed line breaks (so in the rendered PDF, your code shouldn't run off the page);
     -   Code chunks are labeled, informatively and without spaces.
 
-# Packages
+## Packages
 
 In this lab we will work with the tidyverse packages, which is a collection of packages for doing data analysis in a "tidy" way.
 
@@ -37,55 +37,55 @@ In this lab we will work with the tidyverse packages, which is a collection of p
 library(tidyverse) 
 ```
 
-# Part 1: practicing our basic coding skills
+## Part 1: practicing our basic coding skills
 
-## Exercise 1
+### Exercise 1
 
-The file `nsw-crime.csv` contains monthly data on all criminal incidents recorded by police in New South Wales, Australia (the state that includes the city of Sydney). So a row in this data set corresponds to a month, and a column corresponds to a crime (murder, dealing cannabis, escaping custody, etc). The data count the number of cases of each crime in each month. In this exercise we will consider the variable `offensive_language` (an incident of disorderly conduct where the perpetrator...said some things). 
+The file `nsw-crime.csv` contains [monthly data](https://bocsar.nsw.gov.au/statistics-dashboards/open-datasets/criminal-offences-data.html) on all criminal incidents recorded by police in New South Wales, Australia (the state that includes the city of Sydney). So a row in this data set corresponds to a month, and a column corresponds to a crime (murder, dealing cannabis, escaping custody, etc). The data count the number of cases of each crime in each month. In this exercise we will consider the variable `offensive_language` (an incident of disorderly conduct where the perpetrator...said some things). 
 
 ::: exercise
 Load the crime data into `R` and create four histogram plots of the variable `offensive_language`. In each plot, use a different number of histogram bins: 20, 40, 80, and 160. Decide which picture you think best visualizes the distribution of the crime counts, and explain why you think this.
 :::
 
-## Exercise 2
+### Exercise 2
 
 
 
-# Part 2: 
+## Part 2: 
 
-## Exercise 3
+### Exercise 3
 
-## Exercise 4
+### Exercise 4
 
-# Part 3: JZ pesters you about the big picture
+## Part 3: JZ pesters you about the big picture
 
-## Exercise 5
+### Exercise 5
 
-## Exercise 6
+### Exercise 6
 
-# Part 4: IMS Exercises
+## Part 4: IMS Exercises
 
 The exercises in this section do not require code. Make sure to answer the questions in full sentences.
 
-## Exercise 7
+### Exercise 7
 
 ::: exercise
 IMS - [Chapter 4 exercises](https://openintro-ims.netlify.app/explore-categorical#sec-chp4-exercises), #4: Raise taxes.
 :::
 
-## Exercise 8
+### Exercise 8
 
 ::: exercise
 IMS - [Chapter 5 exercises](https://openintro-ims.netlify.app/explore-numerical#sec-chp5-exercises), #4: Office productivity.
 :::
 
-## Exercise 9
+### Exercise 9
 
 ::: exercise
 IMS - [Chapter 5 exercises](https://openintro-ims.netlify.app/explore-numerical#sec-chp5-exercises), #15: Distributions and appropriate statistics.
 :::
 
-## Exercise 10
+### Exercise 10
 
 ::: exercise
 IMS - [Chapter 5 exercises](https://openintro-ims.netlify.app/explore-numerical#sec-chp5-exercises), #26: NYC marathon winners.
@@ -237,9 +237,9 @@ Which of these visualizations is a better fit for answering the following questi
 In a single pipeline, filter the `nobel_living_science` data frame for laureates who won their prize in the US, but were born outside of the US, and then create a frequency table (with the `count()` function) for their birth country (`born_country`) and arrange the resulting data frame in descending order of number of observations for each country. Which country is the most common?
 :::
 
-# Wrap up
+## Wrap up
 
-## Submitting
+### Submitting
 
 ::: callout-important
 Before you proceed, first, make sure that you have updated the document YAML with your name! Then, render your document one last time, for good measure.
