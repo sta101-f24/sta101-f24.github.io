@@ -520,7 +520,7 @@
     "href": "labs/lab-3.html#exercise-1",
     "title": "Lab 3",
     "section": "Exercise 1",
-    "text": "Exercise 1"
+    "text": "Exercise 1\nThe file nsw-crime.csv contains monthly data on all criminal incidents recorded by police in New South Wales, Australia (the state that includes the city of Sydney). So a row in this data set corresponds to a month, and a column corresponds to a crime (murder, dealing cannabis, escaping custody, etc). The data count the number of cases of each crime in each month. In this exercise we will consider the variable offensive_language (an incident of disorderly conduct where the perpetrator…said some things).\n\nLoad the crime data into R and create four histogram plots of the variable offensive_language. In each plot, use a different number of histogram bins: 20, 40, 80, and 160. Decide which picture you think best visualizes the distribution of the crime counts, and explain why you think this."
   },
   {
     "objectID": "labs/lab-3.html#exercise-2",
