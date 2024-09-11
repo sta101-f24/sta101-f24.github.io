@@ -516,74 +516,53 @@
     "text": "The goal of this lab is to solidify some of the skills and concepts from the first two weeks of the course."
   },
   {
-    "objectID": "labs/lab-3.html#exercise-1",
-    "href": "labs/lab-3.html#exercise-1",
+    "objectID": "labs/lab-3.html#getting-started",
+    "href": "labs/lab-3.html#getting-started",
     "title": "Lab 3",
-    "section": "Exercise 1",
-    "text": "Exercise 1\nThe file nsw-crime.csv contains monthly data on all criminal incidents recorded by police in New South Wales, Australia (the state that includes the city of Sydney). So a row in this data set corresponds to a month, and a column corresponds to a crime (murder, dealing cannabis, escaping custody, etc). The data count the number of cases of each crime in each month. In this exercise we will consider the variable offensive_language (an incident of disorderly conduct where the perpetrator…said some things).\n\nLoad the crime data into R and create four histogram plots of the variable offensive_language. In each plot, use a different number of histogram bins: 20, 40, 80, and 160. Decide which picture you think best visualizes the distribution of the crime counts, and explain why you think this."
+    "section": "Getting started",
+    "text": "Getting started\n\nUse these steps to navigate to the STA101 version of RStudio using the Duke Container Manager;\nUse these steps to download all of the lab 3 files from our Canvas page, upload them to your RStudio files, and move them into an appropriately named folder (lab-3, for instance);\nOnce lab-3.qmd is where it needs to be, open it, and verify that you can click the “Render” button in RStudio and get a PDF file. See this answer on Ed if you want more guidance here;\nNow proceed to complete the exercises in this lab."
   },
   {
-    "objectID": "labs/lab-3.html#exercise-2",
-    "href": "labs/lab-3.html#exercise-2",
+    "objectID": "labs/lab-3.html#pointers",
+    "href": "labs/lab-3.html#pointers",
     "title": "Lab 3",
-    "section": "Exercise 2",
-    "text": "Exercise 2"
+    "section": "Pointers",
+    "text": "Pointers\n\nFor all visualizations you create, be sure to include informative titles for the plot, axes, and legend;\nRespond in complete sentences as much as possible;\nBe sure to observe good code style:\n\nThere is a line break after each |&gt; in a pipeline or + in a ggplot;\nThere are spaces around = signs;\nThere is a space after each ,;\nCode is properly indented;\nCode doesn’t exceed 80 characters in each line, longer lines of code are spread across multiple lines with appropriately placed line breaks (so in the rendered PDF, your code shouldn’t run off the page);\nCode chunks are labeled, informatively and without spaces."
   },
   {
-    "objectID": "labs/lab-3.html#exercise-3",
-    "href": "labs/lab-3.html#exercise-3",
+    "objectID": "labs/lab-3.html#packages",
+    "href": "labs/lab-3.html#packages",
     "title": "Lab 3",
-    "section": "Exercise 3",
-    "text": "Exercise 3"
+    "section": "Packages",
+    "text": "Packages\nIn this lab we will work with the tidyverse packages, which is a collection of packages for doing data analysis in a “tidy” way.\n\nlibrary(tidyverse)"
   },
   {
-    "objectID": "labs/lab-3.html#exercise-4",
-    "href": "labs/lab-3.html#exercise-4",
+    "objectID": "labs/lab-3.html#part-1-practicing-our-basic-coding-skills",
+    "href": "labs/lab-3.html#part-1-practicing-our-basic-coding-skills",
     "title": "Lab 3",
-    "section": "Exercise 4",
-    "text": "Exercise 4"
+    "section": "Part 1: practicing our basic coding skills",
+    "text": "Part 1: practicing our basic coding skills\nExercise 1\nThe file nsw-crime.csv contains monthly data on all criminal incidents recorded by police in New South Wales, Australia (the state that includes the city of Sydney). So a row in this data set corresponds to a month, and a column corresponds to a crime (murder, dealing cannabis, escaping custody, etc). The data count the number of cases of each crime in each month. In this exercise we will consider the variable offensive_language (an incident of disorderly conduct where the perpetrator…said some things).\n\nLoad the crime data into R and create four histogram plots of the variable offensive_language. In each plot, use a different number of histogram bins: 20, 40, 80, and 160. Decide which picture you think best visualizes the distribution of the crime counts, and explain why you think this.\n\nExercise 2"
   },
   {
-    "objectID": "labs/lab-3.html#exercise-5",
-    "href": "labs/lab-3.html#exercise-5",
+    "objectID": "labs/lab-3.html#part-2",
+    "href": "labs/lab-3.html#part-2",
     "title": "Lab 3",
-    "section": "Exercise 5",
-    "text": "Exercise 5"
+    "section": "Part 2:",
+    "text": "Part 2:\nExercise 3\nExercise 4"
   },
   {
-    "objectID": "labs/lab-3.html#exercise-6",
-    "href": "labs/lab-3.html#exercise-6",
+    "objectID": "labs/lab-3.html#part-3-jz-pesters-you-about-the-big-picture",
+    "href": "labs/lab-3.html#part-3-jz-pesters-you-about-the-big-picture",
     "title": "Lab 3",
-    "section": "Exercise 6",
-    "text": "Exercise 6"
+    "section": "Part 3: JZ pesters you about the big picture",
+    "text": "Part 3: JZ pesters you about the big picture\nExercise 5\nExercise 6"
   },
   {
-    "objectID": "labs/lab-3.html#exercise-7",
-    "href": "labs/lab-3.html#exercise-7",
+    "objectID": "labs/lab-3.html#part-4-ims-exercises",
+    "href": "labs/lab-3.html#part-4-ims-exercises",
     "title": "Lab 3",
-    "section": "Exercise 7",
-    "text": "Exercise 7\n\nIMS - Chapter 4 exercises, #4: Raise taxes."
-  },
-  {
-    "objectID": "labs/lab-3.html#exercise-8",
-    "href": "labs/lab-3.html#exercise-8",
-    "title": "Lab 3",
-    "section": "Exercise 8",
-    "text": "Exercise 8\n\nIMS - Chapter 5 exercises, #4: Office productivity."
-  },
-  {
-    "objectID": "labs/lab-3.html#exercise-9",
-    "href": "labs/lab-3.html#exercise-9",
-    "title": "Lab 3",
-    "section": "Exercise 9",
-    "text": "Exercise 9\n\nIMS - Chapter 5 exercises, #15: Distributions and appropriate statistics."
-  },
-  {
-    "objectID": "labs/lab-3.html#exercise-10",
-    "href": "labs/lab-3.html#exercise-10",
-    "title": "Lab 3",
-    "section": "Exercise 10",
-    "text": "Exercise 10\n\nIMS - Chapter 5 exercises, #26: NYC marathon winners."
+    "section": "Part 4: IMS Exercises",
+    "text": "Part 4: IMS Exercises\nThe exercises in this section do not require code. Make sure to answer the questions in full sentences.\nExercise 7\n\nIMS - Chapter 4 exercises, #4: Raise taxes.\n\nExercise 8\n\nIMS - Chapter 5 exercises, #4: Office productivity.\n\nExercise 9\n\nIMS - Chapter 5 exercises, #15: Distributions and appropriate statistics.\n\nExercise 10\n\nIMS - Chapter 5 exercises, #26: NYC marathon winners."
   },
   {
     "objectID": "labs/lab-3.html#exercise-1-1",
@@ -628,11 +607,11 @@
     "text": "Exercise 6\n\nIn a single pipeline, filter the nobel_living_science data frame for laureates who won their prize in the US, but were born outside of the US, and then create a frequency table (with the count() function) for their birth country (born_country) and arrange the resulting data frame in descending order of number of observations for each country. Which country is the most common?"
   },
   {
-    "objectID": "labs/lab-3.html#submitting",
-    "href": "labs/lab-3.html#submitting",
+    "objectID": "labs/lab-3.html#wrap-up",
+    "href": "labs/lab-3.html#wrap-up",
     "title": "Lab 3",
-    "section": "Submitting",
-    "text": "Submitting\n\n\n\n\n\n\nImportant\n\n\n\nBefore you proceed, first, make sure that you have updated the document YAML with your name! Then, render your document one last time, for good measure.\n\n\nTo submit your assignment to Gradescope:\n\nGo to your Files pane and check the box next to the PDF output of your document (lab-3.pdf).\nThen, in the Files pane, go to More &gt; Export. This will download the PDF file to your computer. Save it somewhere you can easily locate, e.g., your Downloads folder or your Desktop.\nGo to the course Canvas page and click on Gradescope and then click on the assignment. You’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the papers of your lab should be associated with at least one question (i.e., should be “checked”).\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you fail to mark the pages associated with an exercise, that exercise won’t be graded. This means, if you fail to mark the pages for all exercises, you will receive a 0 on the assignment. The TAs can’t mark your pages for you, and for them to be able to grade, you must mark them."
+    "section": "Wrap up",
+    "text": "Wrap up\nSubmitting\n\n\n\n\n\n\nImportant\n\n\n\nBefore you proceed, first, make sure that you have updated the document YAML with your name! Then, render your document one last time, for good measure.\n\n\nTo submit your assignment to Gradescope:\n\nGo to your Files pane and check the box next to the PDF output of your document (lab-3.pdf).\nThen, in the Files pane, go to More &gt; Export. This will download the PDF file to your computer. Save it somewhere you can easily locate, e.g., your Downloads folder or your Desktop.\nGo to the course Canvas page and click on Gradescope and then click on the assignment. You’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the papers of your lab should be associated with at least one question (i.e., should be “checked”).\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you fail to mark the pages associated with an exercise, that exercise won’t be graded. This means, if you fail to mark the pages for all exercises, you will receive a 0 on the assignment. The TAs can’t mark your pages for you, and for them to be able to grade, you must mark them."
   },
   {
     "objectID": "labs/lab-3.html#grading",

@@ -304,12 +304,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#exercise-4-1" id="toc-exercise-4-1" class="nav-link" data-scroll-target="#exercise-4-1">Exercise 4</a></li>
   <li><a href="#exercise-5-1" id="toc-exercise-5-1" class="nav-link" data-scroll-target="#exercise-5-1">Exercise 5</a></li>
   <li><a href="#exercise-6-1" id="toc-exercise-6-1" class="nav-link" data-scroll-target="#exercise-6-1">Exercise 6</a></li>
-  </ul>
-</li>
   <li>
 <a href="#wrap-up" id="toc-wrap-up" class="nav-link" data-scroll-target="#wrap-up">Wrap up</a>
   <ul class="collapse">
 <li><a href="#submitting" id="toc-submitting" class="nav-link" data-scroll-target="#submitting">Submitting</a></li>
+  </ul>
+</li>
   <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
   </ul>
 </li>
@@ -332,13 +332,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 </header><p>The goal of this lab is to solidify some of the skills and concepts from the first two weeks of the course.</p>
-<section id="getting-started" class="level1"><h1>Getting started</h1>
+<section id="getting-started" class="level2"><h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
 <ol type="1">
 <li><p>Use <a href="https://sta101-f24.github.io/computing/computing-access.html">these steps</a> to navigate to the STA101 version of <code>RStudio</code> using the <a href="https://cmgr.oit.duke.edu/containers">Duke Container Manager</a>;</p></li>
 <li><p>Use <a href="https://sta101-f24.github.io/computing/computing-moving.html">these steps</a> to download all of the lab 3 files from our <a href="https://canvas.duke.edu/courses/36641">Canvas page</a>, upload them to your <code>RStudio</code> files, and move them into an appropriately named folder (<code>lab-3</code>, for instance);</p></li>
 <li><p>Once <code>lab-3.qmd</code> is where it needs to be, open it, and verify that you can click the “Render” button in <code>RStudio</code> and get a PDF file. See <a href="https://edstem.org/us/courses/64268/discussion/5216372?answer=12080244">this answer</a> on Ed if you want more guidance here;</p></li>
 <li><p>Now proceed to complete the exercises in this lab.</p></li>
-</ol></section><section id="pointers" class="level1"><h1>Pointers</h1>
+</ol></section><section id="pointers" class="level2"><h2 class="anchored" data-anchor-id="pointers">Pointers</h2>
 <ul>
 <li>For all visualizations you create, be sure to include informative titles for the plot, axes, and legend;</li>
 <li>Respond in complete sentences as much as possible;</li>
@@ -352,39 +352,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Code chunks are labeled, informatively and without spaces.</li>
 </ul>
 </li>
-</ul></section><section id="packages" class="level1"><h1>Packages</h1>
+</ul></section><section id="packages" class="level2"><h2 class="anchored" data-anchor-id="packages">Packages</h2>
 <p>In this lab we will work with the tidyverse packages, which is a collection of packages for doing data analysis in a “tidy” way.</p>
 <div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="part-1-practicing-our-basic-coding-skills" class="level1"><h1>Part 1: practicing our basic coding skills</h1>
-<section id="exercise-1" class="level2"><h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
-<p>The file <code>nsw-crime.csv</code> contains monthly data on all criminal incidents recorded by police in New South Wales, Australia (the state that includes the city of Sydney). So a row in this data set corresponds to a month, and a column corresponds to a crime (murder, dealing cannabis, escaping custody, etc). The data count the number of cases of each crime in each month. In this exercise we will consider the variable <code>offensive_language</code> (an incident of disorderly conduct where the perpetrator…said some things).</p>
+</section><section id="part-1-practicing-our-basic-coding-skills" class="level2"><h2 class="anchored" data-anchor-id="part-1-practicing-our-basic-coding-skills">Part 1: practicing our basic coding skills</h2>
+<section id="exercise-1" class="level3"><h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
+<p>The file <code>nsw-crime.csv</code> contains <a href="https://bocsar.nsw.gov.au/statistics-dashboards/open-datasets/criminal-offences-data.html">monthly data</a> on all criminal incidents recorded by police in New South Wales, Australia (the state that includes the city of Sydney). So a row in this data set corresponds to a month, and a column corresponds to a crime (murder, dealing cannabis, escaping custody, etc). The data count the number of cases of each crime in each month. In this exercise we will consider the variable <code>offensive_language</code> (an incident of disorderly conduct where the perpetrator…said some things).</p>
 <div class="exercise">
 <p>Load the crime data into <code>R</code> and create four histogram plots of the variable <code>offensive_language</code>. In each plot, use a different number of histogram bins: 20, 40, 80, and 160. Decide which picture you think best visualizes the distribution of the crime counts, and explain why you think this.</p>
 </div>
-</section><section id="exercise-2" class="level2"><h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
-</section></section><section id="part-2" class="level1"><h1>Part 2:</h1>
-<section id="exercise-3" class="level2"><h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
-</section><section id="exercise-4" class="level2"><h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
-</section></section><section id="part-3-jz-pesters-you-about-the-big-picture" class="level1"><h1>Part 3: JZ pesters you about the big picture</h1>
-<section id="exercise-5" class="level2"><h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
-</section><section id="exercise-6" class="level2"><h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
-</section></section><section id="part-4-ims-exercises" class="level1"><h1>Part 4: IMS Exercises</h1>
+</section><section id="exercise-2" class="level3"><h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
+</section></section><section id="part-2" class="level2"><h2 class="anchored" data-anchor-id="part-2">Part 2:</h2>
+<section id="exercise-3" class="level3"><h3 class="anchored" data-anchor-id="exercise-3">Exercise 3</h3>
+</section><section id="exercise-4" class="level3"><h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
+</section></section><section id="part-3-jz-pesters-you-about-the-big-picture" class="level2"><h2 class="anchored" data-anchor-id="part-3-jz-pesters-you-about-the-big-picture">Part 3: JZ pesters you about the big picture</h2>
+<section id="exercise-5" class="level3"><h3 class="anchored" data-anchor-id="exercise-5">Exercise 5</h3>
+</section><section id="exercise-6" class="level3"><h3 class="anchored" data-anchor-id="exercise-6">Exercise 6</h3>
+</section></section><section id="part-4-ims-exercises" class="level2"><h2 class="anchored" data-anchor-id="part-4-ims-exercises">Part 4: IMS Exercises</h2>
 <p>The exercises in this section do not require code. Make sure to answer the questions in full sentences.</p>
-<section id="exercise-7" class="level2"><h2 class="anchored" data-anchor-id="exercise-7">Exercise 7</h2>
+<section id="exercise-7" class="level3"><h3 class="anchored" data-anchor-id="exercise-7">Exercise 7</h3>
 <div class="exercise">
 <p>IMS - <a href="https://openintro-ims.netlify.app/explore-categorical#sec-chp4-exercises">Chapter 4 exercises</a>, #4: Raise taxes.</p>
 </div>
-</section><section id="exercise-8" class="level2"><h2 class="anchored" data-anchor-id="exercise-8">Exercise 8</h2>
+</section><section id="exercise-8" class="level3"><h3 class="anchored" data-anchor-id="exercise-8">Exercise 8</h3>
 <div class="exercise">
 <p>IMS - <a href="https://openintro-ims.netlify.app/explore-numerical#sec-chp5-exercises">Chapter 5 exercises</a>, #4: Office productivity.</p>
 </div>
-</section><section id="exercise-9" class="level2"><h2 class="anchored" data-anchor-id="exercise-9">Exercise 9</h2>
+</section><section id="exercise-9" class="level3"><h3 class="anchored" data-anchor-id="exercise-9">Exercise 9</h3>
 <div class="exercise">
 <p>IMS - <a href="https://openintro-ims.netlify.app/explore-numerical#sec-chp5-exercises">Chapter 5 exercises</a>, #15: Distributions and appropriate statistics.</p>
 </div>
-</section><section id="exercise-10" class="level2"><h2 class="anchored" data-anchor-id="exercise-10">Exercise 10</h2>
+</section><section id="exercise-10" class="level3"><h3 class="anchored" data-anchor-id="exercise-10">Exercise 10</h3>
 <div class="exercise">
 <p>IMS - <a href="https://openintro-ims.netlify.app/explore-numerical#sec-chp5-exercises">Chapter 5 exercises</a>, #26: NYC marathon winners.</p>
 </div>
@@ -521,8 +521,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="exercise">
 <p>In a single pipeline, filter the <code>nobel_living_science</code> data frame for laureates who won their prize in the US, but were born outside of the US, and then create a frequency table (with the <code><a href="https://dplyr.tidyverse.org/reference/count.html">count()</a></code> function) for their birth country (<code>born_country</code>) and arrange the resulting data frame in descending order of number of observations for each country. Which country is the most common?</p>
 </div>
-</section></section><section id="wrap-up" class="level1"><h1>Wrap up</h1>
-<section id="submitting" class="level2"><h2 class="anchored" data-anchor-id="submitting">Submitting</h2>
+</section><section id="wrap-up" class="level2"><h2 class="anchored" data-anchor-id="wrap-up">Wrap up</h2>
+<section id="submitting" class="level3"><h3 class="anchored" data-anchor-id="submitting">Submitting</h3>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -556,7 +556,7 @@ Warning
 <p>If you fail to mark the pages associated with an exercise, that exercise won’t be graded. This means, if you fail to mark the pages for all exercises, you will receive a 0 on the assignment. The TAs can’t mark your pages for you, and for them to be able to grade, you must mark them.</p>
 </div>
 </div>
-</section><section id="grading" class="level2"><h2 class="anchored" data-anchor-id="grading">Grading</h2>
+</section></section><section id="grading" class="level2"><h2 class="anchored" data-anchor-id="grading">Grading</h2>
 <table class="caption-top table">
 <thead><tr class="header">
 <th>Exercise</th>
