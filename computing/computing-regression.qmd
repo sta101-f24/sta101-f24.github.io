@@ -28,7 +28,7 @@ Next, we need something to model, so let us load in a data set. We will consider
 #| label: load-data
 #| message: false
 
-flint <- read_csv("stocks.csv")
+stocks <- read_csv("stocks.csv")
 ```
 
 ::: callout-note
