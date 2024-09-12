@@ -72,5 +72,4 @@ tidy(stock_fit)
 
 There is a lot going on in that table, and we will explore some of it later, but focus on the first column for now. This column gives the estimates $\hat{\beta}_0,\,\hat{\beta}_1$. The first row has the estimate $\hat{\beta}_0$ of the intercept, and the second row has the estimate $\hat{\beta}_1$ of the slope.
 
-The syntax in the `fit` commands is like `fit(y ~ x)`. So the variable to the left of the `~` will be treated as the 
-response variable ($y$), and the variable to the right will be treated as predictor ($x$).
+The syntax in the `fit` commands is like `fit(y ~ x)`. So the variable to the left of the `~` will be treated as the response variable ($y$), and the variable to the right will be treated as predictor ($x$).
