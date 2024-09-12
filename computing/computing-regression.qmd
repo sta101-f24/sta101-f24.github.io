@@ -1,0 +1,71 @@
+---
+  title: "Simple linear regression"
+---
+
+The simple linear regression model relates a predictor $x$ to a response $y$ via a linear function with error:
+
+$$
+y=\beta_0+\beta_1x+\varepsilon.
+$$
+
+This primer leads you down the path of least resistance to fitting this model, creating a scatterplot with the best fit line added to it, and producing a table with the coefficient estimates ($\hat{\beta}_0,\,\hat{\beta}_1$).
+
+## Setup 
+
+The commands for working with linear regressions are in the `tidymodels` package, so load that:
+
+```{r}
+#| label: load-tidyverse
+#| message: false
+
+library(tidyverse) 
+library(tidymodels) 
+```
+
+Next, we need something to model, so let us load in a data set. We will consider this data set on the stock price of Microsoft and Apple (introduced during Lecture 6 on 9/12/2024):
+
+```{r}
+#| label: load-data
+#| message: false
+
+flint <- read_csv("stocks.csv")
+```
+
+::: callout-note
+Recalling the information [here](https://sta101-f24.github.io/computing/computing-file-paths.html), be prepared to adjust the file path to match how you have organized your files and folders.
+:::
+
+To keep things simple, we’ll work with a subset of the data, stock prices in January 2020.
+
+```{r}
+stocks_jan2020 <- stocks |>
+  filter(month(date) == 1 & year(date) == 2020)
+```
+
+## Plotting the least squares regression line ("line of best fit")
+
+This chunk of code creates a scatter plot of the Microsoft and Apple opening stock prices on the various trading days of January 2020, and it adds the line of best fit:
+
+```{r}
+ggplot(stocks_jan2020, aes(x = MSFT.Open, y = AAPL.Open)) +
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE, color = "red") +
+  labs(
+    title = "Daily stock price data",
+    subtitle = "January 2020",
+    x = "Microsoft opening price",
+    y = "Apple opening price"
+  )
+```
+So, all we have to do is add a new `geom_WHAT` layer to a scatterplot to add the line. This is what `geom_smooth` is doing. If you set `se = TRUE`, you get the band indicating the margin of error. Try it out!
+
+## What are the coefficient estimates?
+
+```{r}
+stock_fit <- linear_reg() |>
+  fit(AAPL.Open ~ MSFT.Open, data = stocks_jan2020)
+
+tidy(stock_fit)
+```
+
+There is a lot going on in that table, and we will explore some of it later, but focus on the first column for now. This column gives the estimates $\hat{\beta}_0,\,\hat{\beta}_1$. The first row has the estimate $\hat{\beta}_0$ of the intercept, and the second row has the estimate $\hat{\beta}_1$ of the slope.
