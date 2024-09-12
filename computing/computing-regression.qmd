@@ -61,6 +61,8 @@ So, all we have to do is add a new `geom_WHAT` layer to a scatterplot to add the
 
 ## What are the coefficient estimates?
 
+This code will give you a table with the estimates:
+
 ```{r}
 stock_fit <- linear_reg() |>
   fit(AAPL.Open ~ MSFT.Open, data = stocks_jan2020)
@@ -69,3 +71,6 @@ tidy(stock_fit)
 ```
 
 There is a lot going on in that table, and we will explore some of it later, but focus on the first column for now. This column gives the estimates $\hat{\beta}_0,\,\hat{\beta}_1$. The first row has the estimate $\hat{\beta}_0$ of the intercept, and the second row has the estimate $\hat{\beta}_1$ of the slope.
+
+The syntax in the `fit` commands is like `fit(y ~ x)`. So the variable to the left of the `~` will be treated as the 
+response variable ($y$), and the variable to the right will be treated as predictor ($x$).
