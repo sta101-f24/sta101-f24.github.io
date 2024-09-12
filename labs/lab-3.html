@@ -248,6 +248,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../computing/computing-regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simple linear regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../computing/computing-cheatsheets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Cheatsheets</span></a>
   </div>
@@ -272,22 +278,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
   </ul>
 </li>
+  <li><a href="#part-2-nobel-laureates" id="toc-part-2-nobel-laureates" class="nav-link" data-scroll-target="#part-2-nobel-laureates">Part 2: Nobel laureates</a></li>
   <li>
-<a href="#part-2" id="toc-part-2" class="nav-link" data-scroll-target="#part-2">Part 2:</a>
-  <ul class="collapse">
-<li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
-  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#part-3-jz-pesters-you-about-the-big-picture" id="toc-part-3-jz-pesters-you-about-the-big-picture" class="nav-link" data-scroll-target="#part-3-jz-pesters-you-about-the-big-picture">Part 3: JZ pesters you about the big picture</a>
-  <ul class="collapse">
-<li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
-  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#part-4-ims-exercises" id="toc-part-4-ims-exercises" class="nav-link" data-scroll-target="#part-4-ims-exercises">Part 4: IMS Exercises</a>
+<a href="#part-3-ims-exercises" id="toc-part-3-ims-exercises" class="nav-link" data-scroll-target="#part-3-ims-exercises">Part 3: IMS Exercises</a>
   <ul class="collapse">
 <li><a href="#exercise-7" id="toc-exercise-7" class="nav-link" data-scroll-target="#exercise-7">Exercise 7</a></li>
   <li><a href="#exercise-8" id="toc-exercise-8" class="nav-link" data-scroll-target="#exercise-8">Exercise 8</a></li>
@@ -300,10 +293,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
 <li><a href="#exercise-1-1" id="toc-exercise-1-1" class="nav-link" data-scroll-target="#exercise-1-1">Exercise 1</a></li>
   <li><a href="#exercise-2-1" id="toc-exercise-2-1" class="nav-link" data-scroll-target="#exercise-2-1">Exercise 2</a></li>
-  <li><a href="#exercise-3-1" id="toc-exercise-3-1" class="nav-link" data-scroll-target="#exercise-3-1">Exercise 3</a></li>
-  <li><a href="#exercise-4-1" id="toc-exercise-4-1" class="nav-link" data-scroll-target="#exercise-4-1">Exercise 4</a></li>
-  <li><a href="#exercise-5-1" id="toc-exercise-5-1" class="nav-link" data-scroll-target="#exercise-5-1">Exercise 5</a></li>
-  <li><a href="#exercise-6-1" id="toc-exercise-6-1" class="nav-link" data-scroll-target="#exercise-6-1">Exercise 6</a></li>
+  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
+  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
+  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
+  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
   <li>
 <a href="#wrap-up" id="toc-wrap-up" class="nav-link" data-scroll-target="#wrap-up">Wrap up</a>
   <ul class="collapse">
@@ -359,18 +352,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="part-1-practicing-our-basic-coding-skills" class="level2"><h2 class="anchored" data-anchor-id="part-1-practicing-our-basic-coding-skills">Part 1: practicing our basic coding skills</h2>
 <section id="exercise-1" class="level3"><h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
-<p>The file <code>nsw-crime.csv</code> contains <a href="https://bocsar.nsw.gov.au/statistics-dashboards/open-datasets/criminal-offences-data.html">monthly data</a> on all criminal incidents recorded by police in New South Wales, Australia (the state that includes the city of Sydney). So a row in this data set corresponds to a month, and a column corresponds to a crime (murder, dealing cannabis, escaping custody, etc). The data count the number of cases of each crime in each month. In this exercise we will consider the variable <code>offensive_language</code> (an incident of disorderly conduct where the perpetrator…said some things).</p>
+<p>The file <code>nsw-crime.csv</code> contains <a href="https://bocsar.nsw.gov.au/statistics-dashboards/open-datasets/criminal-offences-data.html">monthly data</a> on all criminal incidents recorded by police in New South Wales, Australia (the state that includes the city of Sydney). So a row in this data set corresponds to a month, and a column corresponds to a crime (murder, dealing cannabis, escaping custody, etc). The data count the number of cases of each crime in each month. In this exercise we will consider the variable <code>offensive_language</code>, an incident of disorderly conduct where the perpetrator…said some things.</p>
 <div class="exercise">
 <p>Load the crime data into <code>R</code> and create four histogram plots of the variable <code>offensive_language</code>. In each plot, use a different number of histogram bins: 20, 40, 80, and 160. Decide which picture you think best visualizes the distribution of the crime counts, and explain why you think this.</p>
 </div>
 </section><section id="exercise-2" class="level3"><h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
-</section></section><section id="part-2" class="level2"><h2 class="anchored" data-anchor-id="part-2">Part 2:</h2>
-<section id="exercise-3" class="level3"><h3 class="anchored" data-anchor-id="exercise-3">Exercise 3</h3>
-</section><section id="exercise-4" class="level3"><h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
-</section></section><section id="part-3-jz-pesters-you-about-the-big-picture" class="level2"><h2 class="anchored" data-anchor-id="part-3-jz-pesters-you-about-the-big-picture">Part 3: JZ pesters you about the big picture</h2>
-<section id="exercise-5" class="level3"><h3 class="anchored" data-anchor-id="exercise-5">Exercise 5</h3>
-</section><section id="exercise-6" class="level3"><h3 class="anchored" data-anchor-id="exercise-6">Exercise 6</h3>
-</section></section><section id="part-4-ims-exercises" class="level2"><h2 class="anchored" data-anchor-id="part-4-ims-exercises">Part 4: IMS Exercises</h2>
+<p>GROUP BY PRACTICE</p>
+</section></section><section id="part-2-nobel-laureates" class="level2"><h2 class="anchored" data-anchor-id="part-2-nobel-laureates">Part 2: Nobel laureates</h2>
+</section><section id="part-3-ims-exercises" class="level2"><h2 class="anchored" data-anchor-id="part-3-ims-exercises">Part 3: IMS Exercises</h2>
 <p>The exercises in this section do not require code. Make sure to answer the questions in full sentences.</p>
 <section id="exercise-7" class="level3"><h3 class="anchored" data-anchor-id="exercise-7">Exercise 7</h3>
 <div class="exercise">
@@ -487,7 +476,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">category</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Physics"</span>, <span class="st">"Medicine"</span>, <span class="st">"Chemistry"</span>, <span class="st">"Economics"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>For the following exercises, work with the <code>nobel_living_science</code> data frame you created above. This means you’ll need to define this data frame in your Quarto document, even though the next exercise doesn’t explicitly ask you to do so.</p>
-</section><section id="exercise-3-1" class="level2"><h2 class="anchored" data-anchor-id="exercise-3-1">Exercise 3</h2>
+</section><section id="exercise-3" class="level2"><h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
 <div class="exercise">
 <p>Create a faceted bar plot visualizing the relationship between the category of prize and whether the laureate was in the US when they won the nobel prize. Interpret your visualization, and say a few words about whether the Buzzfeed headline is supported by the data.</p>
 <ul>
@@ -496,12 +485,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Flip the coordinates so the bars are horizontal, not vertical.</li>
 </ul>
 </div>
-</section><section id="exercise-4-1" class="level2"><h2 class="anchored" data-anchor-id="exercise-4-1">Exercise 4</h2>
+</section><section id="exercise-4" class="level2"><h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
 <p>Next, let’s investigate, of those US-based Nobel laureates, what proportion were born in other countries.</p>
 <div class="exercise">
 <p>Create a new variable called <code>born_country_us</code> in <code>nobel_living_science</code> that has the value <code>"USA"</code> if the laureate is born in the US, and <code>"Other"</code> otherwise. How many of the winners are born in the US?</p>
 </div>
-</section><section id="exercise-5-1" class="level2"><h2 class="anchored" data-anchor-id="exercise-5-1">Exercise 5</h2>
+</section><section id="exercise-5" class="level2"><h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
 <div class="exercise">
 <p>Add a second variable to your visualization from Exercise 3 based on whether the laureate was born in the US or not.</p>
 <p>Create two visualizations with this new variable added:</p>
@@ -517,7 +506,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>Which of these visualizations is a better fit for answering the following question: “Do the data appear to support Buzzfeed’s claim that of those US-based Nobel laureates, many were born in other countries?” First, state which plot you’re using to answer the question. Then, answer the question, explaining your reasoning in 1-2 sentences.</p>
 </div>
-</section><section id="exercise-6-1" class="level2"><h2 class="anchored" data-anchor-id="exercise-6-1">Exercise 6</h2>
+</section><section id="exercise-6" class="level2"><h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
 <div class="exercise">
 <p>In a single pipeline, filter the <code>nobel_living_science</code> data frame for laureates who won their prize in the US, but were born outside of the US, and then create a frequency table (with the <code><a href="https://dplyr.tidyverse.org/reference/count.html">count()</a></code> function) for their birth country (<code>born_country</code>) and arrange the resulting data frame in descending order of number of observations for each country. Which country is the most common?</p>
 </div>
