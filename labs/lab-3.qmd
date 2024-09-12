@@ -37,72 +37,9 @@ In this lab we will work with the tidyverse packages, which is a collection of p
 library(tidyverse) 
 ```
 
-## Part 1: practicing our basic coding skills
+## Part X: Nobel laureates
 
-### Exercise 1
-
-The file `nsw-crime.csv` contains [monthly data](https://bocsar.nsw.gov.au/statistics-dashboards/open-datasets/criminal-offences-data.html) on all criminal incidents recorded by police in New South Wales, Australia (the state that includes the city of Sydney). So a row in this data set corresponds to a month, and a column corresponds to a crime (murder, dealing cannabis, escaping custody, etc). The data count the number of cases of each crime in each month. In this exercise we will consider the variable `offensive_language` (an incident of disorderly conduct where the perpetrator...said some things). 
-
-::: exercise
-Load the crime data into `R` and create four histogram plots of the variable `offensive_language`. In each plot, use a different number of histogram bins: 20, 40, 80, and 160. Decide which picture you think best visualizes the distribution of the crime counts, and explain why you think this.
-:::
-
-### Exercise 2
-
-
-
-## Part 2: 
-
-### Exercise 3
-
-### Exercise 4
-
-## Part 3: JZ pesters you about the big picture
-
-### Exercise 5
-
-### Exercise 6
-
-## Part 4: IMS Exercises
-
-The exercises in this section do not require code. Make sure to answer the questions in full sentences.
-
-### Exercise 7
-
-::: exercise
-IMS - [Chapter 4 exercises](https://openintro-ims.netlify.app/explore-categorical#sec-chp4-exercises), #4: Raise taxes.
-:::
-
-### Exercise 8
-
-::: exercise
-IMS - [Chapter 5 exercises](https://openintro-ims.netlify.app/explore-numerical#sec-chp5-exercises), #4: Office productivity.
-:::
-
-### Exercise 9
-
-::: exercise
-IMS - [Chapter 5 exercises](https://openintro-ims.netlify.app/explore-numerical#sec-chp5-exercises), #15: Distributions and appropriate statistics.
-:::
-
-### Exercise 10
-
-::: exercise
-IMS - [Chapter 5 exercises](https://openintro-ims.netlify.app/explore-numerical#sec-chp5-exercises), #26: NYC marathon winners.
-:::
-
-
-
-
-
-
-
-
-
-
-# Part 1: Nobel laurates
-
-The dataset for this lab can be found in `nobel.csv` file in the `data` folder of your repository. You can read it in using the following.
+We will now consider a data set on the characteristics of winners (laureates) of a Nobel prize: `nobel.csv`. You can read it in using the following.
 
 ```{r}
 #| label: load-data
@@ -110,6 +47,10 @@ The dataset for this lab can be found in `nobel.csv` file in the `data` folder o
 
 nobel <- read_csv("data/nobel.csv")
 ```
+
+::: callout-note
+[Recall](https://sta101-f24.github.io/computing/computing-file-paths.html) that you may have to adjust the file path to match how you have organized your files and folders.
+:::
 
 The descriptions of the variables are as follows:
 
@@ -143,68 +84,50 @@ In a few cases the name of the city/country changed after laureate was given (e.
 25. `city_original`: Original city where laureate lived at the time of winning the award
 26. `country_original`: Original country where laureate lived at the time of winning the award
 
-## Exercise 1
+There are some observations in this dataset that we will exclude from our analysis. This code creates a new data frame called `nobel_living_science` that filters for
 
-::: exercise
-How many observations and how many variables are in the dataset? Use inline code to answer this question. What does each row represent?
-:::
-
-## Exercise 2
-
-There are some observations in this dataset that we will exclude from our analysis to match the Buzzfeed results.
-
-::: exercise
-Create a new data frame called `nobel_living` that filters for
-
--   laureates for whom `country` is available: `!is.na(country)`
--   laureates who are people as opposed to organizations, i.e., organizations are denoted with `"org"` as their `gender`: `gender != "org"`
--   laureates who are still alive, i.e., their `died_date` is `NA`: `is.na(died_date)`
+-   laureates for whom `country` is available: `!is.na(country)`;
+-   laureates who are people as opposed to organizations, i.e., organizations are denoted with `"org"` as their `gender`: `gender != "org"`;
+-   laureates who are still alive, i.e., their `died_date` is `NA`: `is.na(died_date)`.
+-   laureates in the sciences (so not literature or peace).
 
 ```{r}
-#| echo: false
+#| message: false
 
-nobel_living <- nobel |>
-  filter(!is.na(country) & gender != "org" & is.na(died_date))
+nobel_living_science <- nobel |>
+  filter(!is.na(country) & gender != "org" & is.na(died_date)) |>
+  filter(category %in% c("Physics", "Medicine", "Chemistry", "Economics"))
 ```
 
-Confirm that once you have filtered for these characteristics you are left with a data frame with `r nrow(nobel_living)` observations, once again using inline code.
-:::
-
-<br>
+Once you have filtered for these characteristics you are left with a data frame with `r nrow(nobel_living_science)` observations (check this!).
 
 > Most living Nobel laureates were based in the US when they won their prizes
 
-... says the Buzzfeed article. Let's see if that's true.
+... says [this](https://www.buzzfeednews.com/article/peteraldhous/immigration-and-science) Buzzfeed article. Let's see if that's true.
 
-First, we'll create a new variable to identify whether the laureate was in the US when they won their prize. We'll use the `mutate()` function for this. The following pipeline mutates the `nobel_living` data frame by adding a new variable called `country_us`. We use an if statement to create this variable. The first argument in the `if_else()` function we're using to write this if statement is the condition we're testing for. If `country` is equal to `"USA"`, we set `country_us` to `"USA"`. If not, we set the `country_us` to `"Other"`.
+First, we'll create a new variable to identify whether the laureate was in the US when they won their prize. We'll use the `mutate()` function for this. The following pipeline mutates the `nobel_living_science` data frame by adding a new variable called `country_us`. We use an if statement to create this variable. The first argument in the `if_else()` function we're using to write this if statement is the condition we're testing for. If `country` is equal to `"USA"`, we set `country_us` to `"USA"`. If not, we set the `country_us` to `"Other"`.
 
 ```{r}
-nobel_living <- nobel_living |>
+nobel_living_science <- nobel_living_science |>
   mutate(
     country_us = if_else(country == "USA", "USA", "Other")
   )
 ```
 
-Next, we will limit our analysis to only the following categories: Physics, Medicine, Chemistry, and Economics.
+For the following exercises, work with the `nobel_living_science` data frame you created above.
 
-```{r}
-nobel_living_science <- nobel_living |>
-  filter(category %in% c("Physics", "Medicine", "Chemistry", "Economics"))
-```
-
-For the following exercises, work with the `nobel_living_science` data frame you created above. This means you'll need to define this data frame in your Quarto document, even though the next exercise doesn't explicitly ask you to do so.
-
-## Exercise 3
+### Exercise 1
 
 ::: exercise
-Create a faceted bar plot visualizing the relationship between the category of prize and whether the laureate was in the US when they won the nobel prize. Interpret your visualization, and say a few words about whether the Buzzfeed headline is supported by the data.
+Create a faceted bar plot visualizing the relationship between the category of prize and whether the laureate was in the US when they won the Nobel prize. Interpret your visualization, and say a few words about whether the Buzzfeed headline is supported by the data.
 
--   Your visualization should be faceted by category.
--   For each facet you should have two bars, one for winners in the US and one for Other.
--   Flip the coordinates so the bars are horizontal, not vertical.
+-   Your visualization should be faceted by category;
+-   For each facet you should have two bars, one for winners in the US and one for Other;
+-   Flip the coordinates so the bars are horizontal, not vertical;
+-   Make sure everything is clearly labeled!
 :::
 
-## Exercise 4
+### Exercise 2
 
 Next, let's investigate, of those US-based Nobel laureates, what proportion were born in other countries.
 
@@ -212,7 +135,7 @@ Next, let's investigate, of those US-based Nobel laureates, what proportion were
 Create a new variable called `born_country_us` in `nobel_living_science` that has the value `"USA"` if the laureate is born in the US, and `"Other"` otherwise. How many of the winners are born in the US?
 :::
 
-## Exercise 5
+### Exercise 3
 
 ::: exercise
 Add a second variable to your visualization from Exercise 3 based on whether the laureate was born in the US or not.
@@ -231,11 +154,63 @@ Here are some instructions that apply to both of these visualizations:
 Which of these visualizations is a better fit for answering the following question: "Do the data appear to support Buzzfeed's claim that of those US-based Nobel laureates, many were born in other countries?" First, state which plot you're using to answer the question. Then, answer the question, explaining your reasoning in 1-2 sentences.
 :::
 
-## Exercise 6
+## Part X: practicing our basic coding skills
+
+### Exercise 4 (histograms)
+
+The file `nsw-crime.csv` contains [monthly data](https://bocsar.nsw.gov.au/statistics-dashboards/open-datasets/criminal-offences-data.html) on all criminal incidents recorded by police in New South Wales, Australia (the state that includes the city of Sydney). So a row in this data set corresponds to a month, and a column corresponds to a crime (murder, dealing cannabis, escaping custody, etc). The data count the number of cases of each crime in each month. In this exercise we will consider the variable `offensive_language`, an incident of disorderly conduct where the perpetrator...said some things.
 
 ::: exercise
-In a single pipeline, filter the `nobel_living_science` data frame for laureates who won their prize in the US, but were born outside of the US, and then create a frequency table (with the `count()` function) for their birth country (`born_country`) and arrange the resulting data frame in descending order of number of observations for each country. Which country is the most common?
+Load the crime data into `R` and create four histogram plots of the variable `offensive_language`. In each plot, use a different number of histogram bins: 20, 40, 80, and 160. Decide which picture you think best visualizes the distribution of the crime counts, and explain why you think this.
 :::
+
+### Exercise 5 (`group_by`)
+
+GAAAAAH.
+
+## Part 3: IMS Exercises
+
+The exercises in this section do not require code. Make sure to answer the questions in full sentences.
+
+### Exercise 6
+
+::: exercise
+IMS - [Chapter 4 exercises](https://openintro-ims.netlify.app/explore-categorical#sec-chp4-exercises), #4: Raise taxes.
+:::
+
+### Exercise 7
+
+::: exercise
+IMS - [Chapter 5 exercises](https://openintro-ims.netlify.app/explore-numerical#sec-chp5-exercises), #4: Office productivity.
+:::
+
+### Exercise 8
+
+::: exercise
+IMS - [Chapter 5 exercises](https://openintro-ims.netlify.app/explore-numerical#sec-chp5-exercises), #15: Distributions and appropriate statistics.
+:::
+
+### Exercise 9
+
+::: exercise
+IMS - [Chapter 5 exercises](https://openintro-ims.netlify.app/explore-numerical#sec-chp5-exercises), #26: NYC marathon winners.
+:::
+
+## Part 4: waxing poetic
+
+### Exercise 10
+
+::: exercise
+Describe a situation from your everyday life where you have to make a decision, but it is difficult to make a good decision because you face some uncertainty about the world. Common examples (which you should not now use!) might include deciding when to get food at the dining hall, because you are uncertain about the length of the lines, or deciding when to have a picnic, because you are uncertain about the weather. Next, describe some data (information) that, if you had access to it, would resolve some of the uncertainty you face and help you make a better decision. Describe two versions of the data: an ideal version that would theoretically resolve all of the uncertainty, and an imperfect version that you are more likely to actually encounter in practice. How would you use these data to guide your decision making.
+:::
+
+::: callout-note
+This is basically going to be graded for completion, but I hope some of you will get creative, and I look forward to reading these!
+:::
+
+## Lastly
+
+Recommend some music for us to listen to while we grade this.
 
 ## Wrap up
 
@@ -263,14 +238,15 @@ If you fail to mark the pages associated with an exercise, that exercise won't b
 
 | Exercise    | Points |
 |-------------|--------|
-| Exercise 1  | 3      |
-| Exercise 2  | 4      |
+| Exercise 1  | 8      |
+| Exercise 2  | 6      |
 | Exercise 3  | 8      |
 | Exercise 4  | 6      |
-| Exercise 5  | 8      |
-| Exercise 6  | 8      |
+| Exercise 5  | 6      |
+| Exercise 6  | 2      |
 | Exercise 7  | 2      |
-| Exercise 8  | 2      |
-| Exercise 9  | 5      |
-| Exercise 10 | 4      |
+| Exercise 8  | 5      |
+| Exercise 9  | 4      |
+| Exercise 10 | 3      |
 | **Total**   | 50     |
+
