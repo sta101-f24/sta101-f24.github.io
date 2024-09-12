@@ -37,7 +37,7 @@ In this lab we will work with the tidyverse packages, which is a collection of p
 library(tidyverse) 
 ```
 
-## Part X: Nobel laureates
+## Part 1: Nobel laureates
 
 We will now consider a data set on the characteristics of winners (laureates) of a Nobel prize: `nobel.csv`. You can read it in using the following.
 
@@ -154,7 +154,7 @@ Here are some instructions that apply to both of these visualizations:
 Which of these visualizations is a better fit for answering the following question: "Do the data appear to support Buzzfeed's claim that of those US-based Nobel laureates, many were born in other countries?" First, state which plot you're using to answer the question. Then, answer the question, explaining your reasoning in 1-2 sentences.
 :::
 
-## Part X: practicing our basic coding skills
+## Part 2: practicing our basic coding skills
 
 ### Exercise 4 (histograms)
 
