@@ -274,29 +274,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li>
 <a href="#part-1-practicing-our-basic-coding-skills" id="toc-part-1-practicing-our-basic-coding-skills" class="nav-link" data-scroll-target="#part-1-practicing-our-basic-coding-skills">Part 1: practicing our basic coding skills</a>
   <ul class="collapse">
-<li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
-  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
+<li><a href="#exercise-1-histograms" id="toc-exercise-1-histograms" class="nav-link" data-scroll-target="#exercise-1-histograms">Exercise 1 (histograms)</a></li>
+  <li><a href="#exercise-2-group_by" id="toc-exercise-2-group_by" class="nav-link" data-scroll-target="#exercise-2-group_by">Exercise 2 (<code>group_by</code>)</a></li>
   </ul>
 </li>
-  <li><a href="#part-2-nobel-laureates" id="toc-part-2-nobel-laureates" class="nav-link" data-scroll-target="#part-2-nobel-laureates">Part 2: Nobel laureates</a></li>
+  <li>
+<a href="#part-2-nobel-laureates" id="toc-part-2-nobel-laureates" class="nav-link" data-scroll-target="#part-2-nobel-laureates">Part 2: Nobel laureates</a>
+  <ul class="collapse">
+<li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
+  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
+  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
+  </ul>
+</li>
   <li>
 <a href="#part-3-ims-exercises" id="toc-part-3-ims-exercises" class="nav-link" data-scroll-target="#part-3-ims-exercises">Part 3: IMS Exercises</a>
   <ul class="collapse">
-<li><a href="#exercise-7" id="toc-exercise-7" class="nav-link" data-scroll-target="#exercise-7">Exercise 7</a></li>
+<li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
+  <li><a href="#exercise-7" id="toc-exercise-7" class="nav-link" data-scroll-target="#exercise-7">Exercise 7</a></li>
   <li><a href="#exercise-8" id="toc-exercise-8" class="nav-link" data-scroll-target="#exercise-8">Exercise 8</a></li>
   <li><a href="#exercise-9" id="toc-exercise-9" class="nav-link" data-scroll-target="#exercise-9">Exercise 9</a></li>
-  <li><a href="#exercise-10" id="toc-exercise-10" class="nav-link" data-scroll-target="#exercise-10">Exercise 10</a></li>
   </ul>
 </li>
-  <li>
-<a href="#part-1-nobel-laurates" id="toc-part-1-nobel-laurates" class="nav-link" data-scroll-target="#part-1-nobel-laurates">Part 1: Nobel laurates</a>
-  <ul class="collapse">
-<li><a href="#exercise-1-1" id="toc-exercise-1-1" class="nav-link" data-scroll-target="#exercise-1-1">Exercise 1</a></li>
-  <li><a href="#exercise-2-1" id="toc-exercise-2-1" class="nav-link" data-scroll-target="#exercise-2-1">Exercise 2</a></li>
-  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
-  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
-  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
-  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
+  <li><a href="#lastly" id="toc-lastly" class="nav-link" data-scroll-target="#lastly">Lastly</a></li>
   <li>
 <a href="#wrap-up" id="toc-wrap-up" class="nav-link" data-scroll-target="#wrap-up">Wrap up</a>
   <ul class="collapse">
@@ -304,8 +303,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul>
 </li>
   <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
-  </ul>
-</li>
   </ul></nav>
     </div>
 <!-- main -->
@@ -351,36 +348,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="part-1-practicing-our-basic-coding-skills" class="level2"><h2 class="anchored" data-anchor-id="part-1-practicing-our-basic-coding-skills">Part 1: practicing our basic coding skills</h2>
-<section id="exercise-1" class="level3"><h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
+<section id="exercise-1-histograms" class="level3"><h3 class="anchored" data-anchor-id="exercise-1-histograms">Exercise 1 (histograms)</h3>
 <p>The file <code>nsw-crime.csv</code> contains <a href="https://bocsar.nsw.gov.au/statistics-dashboards/open-datasets/criminal-offences-data.html">monthly data</a> on all criminal incidents recorded by police in New South Wales, Australia (the state that includes the city of Sydney). So a row in this data set corresponds to a month, and a column corresponds to a crime (murder, dealing cannabis, escaping custody, etc). The data count the number of cases of each crime in each month. In this exercise we will consider the variable <code>offensive_language</code>, an incident of disorderly conduct where the perpetrator…said some things.</p>
 <div class="exercise">
 <p>Load the crime data into <code>R</code> and create four histogram plots of the variable <code>offensive_language</code>. In each plot, use a different number of histogram bins: 20, 40, 80, and 160. Decide which picture you think best visualizes the distribution of the crime counts, and explain why you think this.</p>
 </div>
-</section><section id="exercise-2" class="level3"><h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
-<p>GROUP BY PRACTICE</p>
+</section><section id="exercise-2-group_by" class="level3"><h3 class="anchored" data-anchor-id="exercise-2-group_by">Exercise 2 (<code>group_by</code>)</h3>
 </section></section><section id="part-2-nobel-laureates" class="level2"><h2 class="anchored" data-anchor-id="part-2-nobel-laureates">Part 2: Nobel laureates</h2>
-</section><section id="part-3-ims-exercises" class="level2"><h2 class="anchored" data-anchor-id="part-3-ims-exercises">Part 3: IMS Exercises</h2>
-<p>The exercises in this section do not require code. Make sure to answer the questions in full sentences.</p>
-<section id="exercise-7" class="level3"><h3 class="anchored" data-anchor-id="exercise-7">Exercise 7</h3>
-<div class="exercise">
-<p>IMS - <a href="https://openintro-ims.netlify.app/explore-categorical#sec-chp4-exercises">Chapter 4 exercises</a>, #4: Raise taxes.</p>
-</div>
-</section><section id="exercise-8" class="level3"><h3 class="anchored" data-anchor-id="exercise-8">Exercise 8</h3>
-<div class="exercise">
-<p>IMS - <a href="https://openintro-ims.netlify.app/explore-numerical#sec-chp5-exercises">Chapter 5 exercises</a>, #4: Office productivity.</p>
-</div>
-</section><section id="exercise-9" class="level3"><h3 class="anchored" data-anchor-id="exercise-9">Exercise 9</h3>
-<div class="exercise">
-<p>IMS - <a href="https://openintro-ims.netlify.app/explore-numerical#sec-chp5-exercises">Chapter 5 exercises</a>, #15: Distributions and appropriate statistics.</p>
-</div>
-</section><section id="exercise-10" class="level3"><h3 class="anchored" data-anchor-id="exercise-10">Exercise 10</h3>
-<div class="exercise">
-<p>IMS - <a href="https://openintro-ims.netlify.app/explore-numerical#sec-chp5-exercises">Chapter 5 exercises</a>, #26: NYC marathon winners.</p>
-</div>
-</section></section><section id="part-1-nobel-laurates" class="level1"><h1>Part 1: Nobel laurates</h1>
-<p>The dataset for this lab can be found in <code>nobel.csv</code> file in the <code>data</code> folder of your repository. You can read it in using the following.</p>
+<p>We will now consider a data set on the characteristics of winners (laureates) of a Nobel prize: <code>nobel.csv</code>. You can read it in using the following.</p>
 <div class="cell">
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">nobel</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/nobel.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Recalling the information <a href="https://sta101-f24.github.io/computing/computing-file-paths.html">here</a>, be prepared to adjust the file path to match how you have organized your files and folders.</p>
+</div>
 </div>
 <p>The descriptions of the variables are as follows:</p>
 <ol type="1">
@@ -440,57 +430,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>
 <code>country_original</code>: Original country where laureate lived at the time of winning the award</li>
 </ol>
-<section id="exercise-1-1" class="level2"><h2 class="anchored" data-anchor-id="exercise-1-1">Exercise 1</h2>
-<div class="exercise">
-<p>How many observations and how many variables are in the dataset? Use inline code to answer this question. What does each row represent?</p>
-</div>
-</section><section id="exercise-2-1" class="level2"><h2 class="anchored" data-anchor-id="exercise-2-1">Exercise 2</h2>
-<p>There are some observations in this dataset that we will exclude from our analysis to match the Buzzfeed results.</p>
-<div class="exercise">
-<p>Create a new data frame called <code>nobel_living</code> that filters for</p>
+<p>There are some observations in this dataset that we will exclude from our analysis. This code creates a new data frame called <code>nobel_living_science</code> that filters for</p>
 <ul>
-<li>laureates for whom <code>country</code> is available: <code>!is.na(country)</code>
-</li>
-<li>laureates who are people as opposed to organizations, i.e., organizations are denoted with <code>"org"</code> as their <code>gender</code>: <code>gender != "org"</code>
-</li>
-<li>laureates who are still alive, i.e., their <code>died_date</code> is <code>NA</code>: <code>is.na(died_date)</code>
-</li>
+<li>laureates for whom <code>country</code> is available: <code>!is.na(country)</code>;</li>
+<li>laureates who are people as opposed to organizations, i.e., organizations are denoted with <code>"org"</code> as their <code>gender</code>: <code>gender != "org"</code>;</li>
+<li>laureates who are still alive, i.e., their <code>died_date</code> is <code>NA</code>: <code>is.na(died_date)</code>.</li>
+<li>laureates in the sciences (so not literature or peace).</li>
 </ul>
-<p>Confirm that once you have filtered for these characteristics you are left with a data frame with 228 observations, once again using inline code.</p>
+<div class="cell">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">nobel_living_science</span> <span class="op">&lt;-</span> <span class="va">nobel</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">country</span><span class="op">)</span> <span class="op">&amp;</span> <span class="va">gender</span> <span class="op">!=</span> <span class="st">"org"</span> <span class="op">&amp;</span> <span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">died_date</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">category</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Physics"</span>, <span class="st">"Medicine"</span>, <span class="st">"Chemistry"</span>, <span class="st">"Economics"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><br></p>
+<p>Once you have filtered for these characteristics you are left with a data frame with 228 observations (check this!).</p>
 <blockquote class="blockquote">
 <p>Most living Nobel laureates were based in the US when they won their prizes</p>
 </blockquote>
-<p>… says the Buzzfeed article. Let’s see if that’s true.</p>
-<p>First, we’ll create a new variable to identify whether the laureate was in the US when they won their prize. We’ll use the <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> function for this. The following pipeline mutates the <code>nobel_living</code> data frame by adding a new variable called <code>country_us</code>. We use an if statement to create this variable. The first argument in the <code><a href="https://dplyr.tidyverse.org/reference/if_else.html">if_else()</a></code> function we’re using to write this if statement is the condition we’re testing for. If <code>country</code> is equal to <code>"USA"</code>, we set <code>country_us</code> to <code>"USA"</code>. If not, we set the <code>country_us</code> to <code>"Other"</code>.</p>
+<p>… says <a href="https://www.buzzfeednews.com/article/peteraldhous/immigration-and-science">this</a> Buzzfeed article. Let’s see if that’s true.</p>
+<p>First, we’ll create a new variable to identify whether the laureate was in the US when they won their prize. We’ll use the <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> function for this. The following pipeline mutates the <code>nobel_living_science</code> data frame by adding a new variable called <code>country_us</code>. We use an if statement to create this variable. The first argument in the <code><a href="https://dplyr.tidyverse.org/reference/if_else.html">if_else()</a></code> function we’re using to write this if statement is the condition we’re testing for. If <code>country</code> is equal to <code>"USA"</code>, we set <code>country_us</code> to <code>"USA"</code>. If not, we set the <code>country_us</code> to <code>"Other"</code>.</p>
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">nobel_living</span> <span class="op">&lt;-</span> <span class="va">nobel_living</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">nobel_living_science</span> <span class="op">&lt;-</span> <span class="va">nobel_living_science</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
 <span>    country_us <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/if_else.html">if_else</a></span><span class="op">(</span><span class="va">country</span> <span class="op">==</span> <span class="st">"USA"</span>, <span class="st">"USA"</span>, <span class="st">"Other"</span><span class="op">)</span></span>
 <span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Next, we will limit our analysis to only the following categories: Physics, Medicine, Chemistry, and Economics.</p>
-<div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">nobel_living_science</span> <span class="op">&lt;-</span> <span class="va">nobel_living</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">category</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Physics"</span>, <span class="st">"Medicine"</span>, <span class="st">"Chemistry"</span>, <span class="st">"Economics"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>For the following exercises, work with the <code>nobel_living_science</code> data frame you created above. This means you’ll need to define this data frame in your Quarto document, even though the next exercise doesn’t explicitly ask you to do so.</p>
-</section><section id="exercise-3" class="level2"><h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
+<p>For the following exercises, work with the <code>nobel_living_science</code> data frame you created above.</p>
+<section id="exercise-3" class="level3"><h3 class="anchored" data-anchor-id="exercise-3">Exercise 3</h3>
 <div class="exercise">
-<p>Create a faceted bar plot visualizing the relationship between the category of prize and whether the laureate was in the US when they won the nobel prize. Interpret your visualization, and say a few words about whether the Buzzfeed headline is supported by the data.</p>
+<p>Create a faceted bar plot visualizing the relationship between the category of prize and whether the laureate was in the US when they won the Nobel prize. Interpret your visualization, and say a few words about whether the Buzzfeed headline is supported by the data.</p>
 <ul>
-<li>Your visualization should be faceted by category.</li>
-<li>For each facet you should have two bars, one for winners in the US and one for Other.</li>
-<li>Flip the coordinates so the bars are horizontal, not vertical.</li>
+<li>Your visualization should be faceted by category;</li>
+<li>For each facet you should have two bars, one for winners in the US and one for Other;</li>
+<li>Flip the coordinates so the bars are horizontal, not vertical;</li>
+<li>Make sure everything is clearly labeled!</li>
 </ul>
 </div>
-</section><section id="exercise-4" class="level2"><h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
+</section><section id="exercise-4" class="level3"><h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
 <p>Next, let’s investigate, of those US-based Nobel laureates, what proportion were born in other countries.</p>
 <div class="exercise">
 <p>Create a new variable called <code>born_country_us</code> in <code>nobel_living_science</code> that has the value <code>"USA"</code> if the laureate is born in the US, and <code>"Other"</code> otherwise. How many of the winners are born in the US?</p>
 </div>
-</section><section id="exercise-5" class="level2"><h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
+</section><section id="exercise-5" class="level3"><h3 class="anchored" data-anchor-id="exercise-5">Exercise 5</h3>
 <div class="exercise">
 <p>Add a second variable to your visualization from Exercise 3 based on whether the laureate was born in the US or not.</p>
 <p>Create two visualizations with this new variable added:</p>
@@ -506,10 +486,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>Which of these visualizations is a better fit for answering the following question: “Do the data appear to support Buzzfeed’s claim that of those US-based Nobel laureates, many were born in other countries?” First, state which plot you’re using to answer the question. Then, answer the question, explaining your reasoning in 1-2 sentences.</p>
 </div>
-</section><section id="exercise-6" class="level2"><h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
+</section></section><section id="part-3-ims-exercises" class="level2"><h2 class="anchored" data-anchor-id="part-3-ims-exercises">Part 3: IMS Exercises</h2>
+<p>The exercises in this section do not require code. Make sure to answer the questions in full sentences.</p>
+<section id="exercise-6" class="level3"><h3 class="anchored" data-anchor-id="exercise-6">Exercise 6</h3>
 <div class="exercise">
-<p>In a single pipeline, filter the <code>nobel_living_science</code> data frame for laureates who won their prize in the US, but were born outside of the US, and then create a frequency table (with the <code><a href="https://dplyr.tidyverse.org/reference/count.html">count()</a></code> function) for their birth country (<code>born_country</code>) and arrange the resulting data frame in descending order of number of observations for each country. Which country is the most common?</p>
+<p>IMS - <a href="https://openintro-ims.netlify.app/explore-categorical#sec-chp4-exercises">Chapter 4 exercises</a>, #4: Raise taxes.</p>
 </div>
+</section><section id="exercise-7" class="level3"><h3 class="anchored" data-anchor-id="exercise-7">Exercise 7</h3>
+<div class="exercise">
+<p>IMS - <a href="https://openintro-ims.netlify.app/explore-numerical#sec-chp5-exercises">Chapter 5 exercises</a>, #4: Office productivity.</p>
+</div>
+</section><section id="exercise-8" class="level3"><h3 class="anchored" data-anchor-id="exercise-8">Exercise 8</h3>
+<div class="exercise">
+<p>IMS - <a href="https://openintro-ims.netlify.app/explore-numerical#sec-chp5-exercises">Chapter 5 exercises</a>, #15: Distributions and appropriate statistics.</p>
+</div>
+</section><section id="exercise-9" class="level3"><h3 class="anchored" data-anchor-id="exercise-9">Exercise 9</h3>
+<div class="exercise">
+<p>IMS - <a href="https://openintro-ims.netlify.app/explore-numerical#sec-chp5-exercises">Chapter 5 exercises</a>, #26: NYC marathon winners.</p>
+</div>
+</section></section><section id="lastly" class="level2"><h2 class="anchored" data-anchor-id="lastly">Lastly</h2>
+<p>Recommend some music for us to listen to while we grade this.</p>
 </section><section id="wrap-up" class="level2"><h2 class="anchored" data-anchor-id="wrap-up">Wrap up</h2>
 <section id="submitting" class="level3"><h3 class="anchored" data-anchor-id="submitting">Submitting</h3>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -600,7 +596,7 @@ Warning
 </table>
 
 
-</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
