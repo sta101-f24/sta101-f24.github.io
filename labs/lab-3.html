@@ -272,7 +272,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#pointers" id="toc-pointers" class="nav-link" data-scroll-target="#pointers">Pointers</a></li>
   <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
   <li>
-<a href="#part-x-nobel-laureates" id="toc-part-x-nobel-laureates" class="nav-link" data-scroll-target="#part-x-nobel-laureates">Part X: Nobel laureates</a>
+<a href="#part-1-nobel-laureates" id="toc-part-1-nobel-laureates" class="nav-link" data-scroll-target="#part-1-nobel-laureates">Part 1: Nobel laureates</a>
   <ul class="collapse">
 <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
   <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
@@ -280,7 +280,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul>
 </li>
   <li>
-<a href="#part-x-practicing-our-basic-coding-skills" id="toc-part-x-practicing-our-basic-coding-skills" class="nav-link" data-scroll-target="#part-x-practicing-our-basic-coding-skills">Part X: practicing our basic coding skills</a>
+<a href="#part-2-practicing-our-basic-coding-skills" id="toc-part-2-practicing-our-basic-coding-skills" class="nav-link" data-scroll-target="#part-2-practicing-our-basic-coding-skills">Part 2: practicing our basic coding skills</a>
   <ul class="collapse">
 <li><a href="#exercise-4-histograms" id="toc-exercise-4-histograms" class="nav-link" data-scroll-target="#exercise-4-histograms">Exercise 4 (histograms)</a></li>
   <li><a href="#exercise-5-group_by" id="toc-exercise-5-group_by" class="nav-link" data-scroll-target="#exercise-5-group_by">Exercise 5 (<code>group_by</code>)</a></li>
@@ -353,7 +353,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="part-x-nobel-laureates" class="level2"><h2 class="anchored" data-anchor-id="part-x-nobel-laureates">Part X: Nobel laureates</h2>
+</section><section id="part-1-nobel-laureates" class="level2"><h2 class="anchored" data-anchor-id="part-1-nobel-laureates">Part 1: Nobel laureates</h2>
 <p>We will now consider a data set on the characteristics of winners (laureates) of a Nobel prize: <code>nobel.csv</code>. You can read it in using the following.</p>
 <div class="cell">
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">nobel</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/nobel.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -485,7 +485,7 @@ Note
 </ul>
 <p>Which of these visualizations is a better fit for answering the following question: “Do the data appear to support Buzzfeed’s claim that of those US-based Nobel laureates, many were born in other countries?” First, state which plot you’re using to answer the question. Then, answer the question, explaining your reasoning in 1-2 sentences.</p>
 </div>
-</section></section><section id="part-x-practicing-our-basic-coding-skills" class="level2"><h2 class="anchored" data-anchor-id="part-x-practicing-our-basic-coding-skills">Part X: practicing our basic coding skills</h2>
+</section></section><section id="part-2-practicing-our-basic-coding-skills" class="level2"><h2 class="anchored" data-anchor-id="part-2-practicing-our-basic-coding-skills">Part 2: practicing our basic coding skills</h2>
 <section id="exercise-4-histograms" class="level3"><h3 class="anchored" data-anchor-id="exercise-4-histograms">Exercise 4 (histograms)</h3>
 <p>The file <code>nsw-crime.csv</code> contains <a href="https://bocsar.nsw.gov.au/statistics-dashboards/open-datasets/criminal-offences-data.html">monthly data</a> on all criminal incidents recorded by police in New South Wales, Australia (the state that includes the city of Sydney). So a row in this data set corresponds to a month, and a column corresponds to a crime (murder, dealing cannabis, escaping custody, etc). The data count the number of cases of each crime in each month. In this exercise we will consider the variable <code>offensive_language</code>, an incident of disorderly conduct where the perpetrator…said some things.</p>
 <div class="exercise">
