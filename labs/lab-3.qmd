@@ -169,6 +169,7 @@ Load the crime data into `R` and create four histogram plots of the variable `of
 Load the data about the COVID delta variant (adjusting your file path as needed):
 
 ```{r}
+#| eval: false
 delta <- read_csv("delta.csv")
 ```
 
