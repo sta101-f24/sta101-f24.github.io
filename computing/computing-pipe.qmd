@@ -37,12 +37,12 @@ Recalling the information [here](https://sta101-f24.github.io/computing/computin
 
 A row in this data set is a person, and we record whether or not that person died from/with COVID, and whether or not they were vaccinated. So there are four categories in all:
 
-- unvaccinated and died
-- unvaccinated and survived
-- vaccinated and died
-- vaccinated and survived
+-   unvaccinated and died
+-   unvaccinated and survived
+-   vaccinated and died
+-   vaccinated and survived
 
-The following code creates a nifty lil' table that tallies up the proportion of people that belong in each of the four categories: 
+The following code creates a nifty lil' table that tallies up the proportion of people that died versus survived *within each vaccination group*:
 
 ```{r}
 delta |>
@@ -51,7 +51,7 @@ delta |>
   mutate(prop = n / sum(n))
 ```
 
-This code is equivalent, but it provides a truly horrific reading experience:
+So within each vaccination group, the numbers sum to one. This code is equivalent, but it provides a truly horrific reading experience:
 
 ```{r}
   mutate(group_by(count(delta, vaccine, outcome), vaccine), prop = n / sum(n))
