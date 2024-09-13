@@ -362,7 +362,7 @@ Note
 <li>vaccinated and died</li>
 <li>vaccinated and survived</li>
 </ul>
-<p>The following code creates a nifty lil’ table that tallies up the proportion of people that belong in each of the four categories:</p>
+<p>The following code creates a nifty lil’ table that tallies up the proportion of people that died versus survived <em>within each vaccination group</em>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>delta <span class="sc">|&gt;</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(vaccine, outcome) <span class="sc">|&gt;</span></span>
@@ -379,7 +379,7 @@ Note
 4 Vaccinated   survived 116637 0.996  </code></pre>
 </div>
 </div>
-<p>This code is equivalent, but it provides a truly horrific reading experience:</p>
+<p>So within each vaccination group, the numbers sum to one. This code is equivalent, but it provides a truly horrific reading experience:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">group_by</span>(<span class="fu">count</span>(delta, vaccine, outcome), vaccine), <span class="at">prop =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">

@@ -280,10 +280,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul>
 </li>
   <li>
-<a href="#part-2-practicing-our-basic-coding-skills" id="toc-part-2-practicing-our-basic-coding-skills" class="nav-link" data-scroll-target="#part-2-practicing-our-basic-coding-skills">Part 2: practicing our basic coding skills</a>
+<a href="#part-2-practicing-our-coding-basics" id="toc-part-2-practicing-our-coding-basics" class="nav-link" data-scroll-target="#part-2-practicing-our-coding-basics">Part 2: practicing our coding basics</a>
   <ul class="collapse">
-<li><a href="#exercise-4-histograms" id="toc-exercise-4-histograms" class="nav-link" data-scroll-target="#exercise-4-histograms">Exercise 4 (histograms)</a></li>
-  <li><a href="#exercise-5-group_by" id="toc-exercise-5-group_by" class="nav-link" data-scroll-target="#exercise-5-group_by">Exercise 5 (<code>group_by</code>)</a></li>
+<li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
+  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
   </ul>
 </li>
   <li>
@@ -485,14 +485,76 @@ Note
 </ul>
 <p>Which of these visualizations is a better fit for answering the following question: “Do the data appear to support Buzzfeed’s claim that of those US-based Nobel laureates, many were born in other countries?” First, state which plot you’re using to answer the question. Then, answer the question, explaining your reasoning in 1-2 sentences.</p>
 </div>
-</section></section><section id="part-2-practicing-our-basic-coding-skills" class="level2"><h2 class="anchored" data-anchor-id="part-2-practicing-our-basic-coding-skills">Part 2: practicing our basic coding skills</h2>
-<section id="exercise-4-histograms" class="level3"><h3 class="anchored" data-anchor-id="exercise-4-histograms">Exercise 4 (histograms)</h3>
+</section></section><section id="part-2-practicing-our-coding-basics" class="level2"><h2 class="anchored" data-anchor-id="part-2-practicing-our-coding-basics">Part 2: practicing our coding basics</h2>
+<section id="exercise-4" class="level3"><h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
 <p>The file <code>nsw-crime.csv</code> contains <a href="https://bocsar.nsw.gov.au/statistics-dashboards/open-datasets/criminal-offences-data.html">monthly data</a> on all criminal incidents recorded by police in New South Wales, Australia (the state that includes the city of Sydney). So a row in this data set corresponds to a month, and a column corresponds to a crime (murder, dealing cannabis, escaping custody, etc). The data count the number of cases of each crime in each month. In this exercise we will consider the variable <code>offensive_language</code>, an incident of disorderly conduct where the perpetrator…said some things.</p>
 <div class="exercise">
 <p>Load the crime data into <code>R</code> and create four histogram plots of the variable <code>offensive_language</code>. In each plot, use a different number of histogram bins: 20, 40, 80, and 160. Decide which picture you think best visualizes the distribution of the crime counts, and explain why you think this.</p>
 </div>
-</section><section id="exercise-5-group_by" class="level3"><h3 class="anchored" data-anchor-id="exercise-5-group_by">Exercise 5 (<code>group_by</code>)</h3>
-<p>GAAAAAH.</p>
+</section><section id="exercise-5" class="level3"><h3 class="anchored" data-anchor-id="exercise-5">Exercise 5</h3>
+<p>Load the data about the COVID delta variant (adjusting your file path as needed):</p>
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">delta</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"delta.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 268166 Columns: 3
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (3): vaccine, age, outcome
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+<div class="exercise">
+<p>Consider this sequence of commands:</p>
+<div class="cell">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># part 1</span></span>
+<span></span>
+<span><span class="va">delta</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">vaccine</span>, <span class="va">outcome</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 3
+  vaccine      outcome       n
+  &lt;chr&gt;        &lt;chr&gt;     &lt;int&gt;
+1 Unvaccinated died        250
+2 Unvaccinated survived 150802
+3 Vaccinated   died        477
+4 Vaccinated   survived 116637</code></pre>
+</div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># part 2</span></span>
+<span></span>
+<span><span class="va">delta</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">vaccine</span>, <span class="va">outcome</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">vaccine</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 3
+# Groups:   vaccine [2]
+  vaccine      outcome       n
+  &lt;chr&gt;        &lt;chr&gt;     &lt;int&gt;
+1 Unvaccinated died        250
+2 Unvaccinated survived 150802
+3 Vaccinated   died        477
+4 Vaccinated   survived 116637</code></pre>
+</div>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># part 3</span></span>
+<span></span>
+<span><span class="va">delta</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">vaccine</span>, <span class="va">outcome</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">vaccine</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>prop <span class="op">=</span> <span class="va">n</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 4
+# Groups:   vaccine [2]
+  vaccine      outcome       n    prop
+  &lt;chr&gt;        &lt;chr&gt;     &lt;int&gt;   &lt;dbl&gt;
+1 Unvaccinated died        250 0.00166
+2 Unvaccinated survived 150802 0.998  
+3 Vaccinated   died        477 0.00407
+4 Vaccinated   survived 116637 0.996  </code></pre>
+</div>
+</div>
+<p>Pick this code apart like a vulture and explain in complete sentences what is going on in each part. The more detail, the better.</p>
+</div>
 </section></section><section id="part-3-ims-exercises" class="level2"><h2 class="anchored" data-anchor-id="part-3-ims-exercises">Part 3: IMS Exercises</h2>
 <p>The exercises in this section do not require code. Make sure to answer the questions in full sentences.</p>
 <section id="exercise-6" class="level3"><h3 class="anchored" data-anchor-id="exercise-6">Exercise 6</h3>
@@ -514,7 +576,7 @@ Note
 </section></section><section id="part-4-waxing-poetic" class="level2"><h2 class="anchored" data-anchor-id="part-4-waxing-poetic">Part 4: waxing poetic</h2>
 <section id="exercise-10" class="level3"><h3 class="anchored" data-anchor-id="exercise-10">Exercise 10</h3>
 <div class="exercise">
-<p>Describe a situation from your everyday life where you have to make a decision, but it is difficult to make a good decision because you face some uncertainty about the world. Common examples (which you should not now use!) might include deciding when to get food at the dining hall, because you are uncertain about the length of the lines, or deciding when to have a picnic, because you are uncertain about the weather. Next, describe some data (information) that, if you had access to it, would resolve some of the uncertainty you face and help you make a better decision. Describe two versions of the data: an ideal version that would theoretically resolve all of the uncertainty, and an imperfect version that you are more likely to actually encounter in practice. How would you use these data to guide your decision making.</p>
+<p>Describe a situation from your everyday life where you have to make a decision, but it is difficult to make a good decision because you face some uncertainty about the world. Common examples (which you should not now use!) might include deciding when to get food at the dining hall, because you are uncertain about the length of the lines, or deciding when to have a picnic, because you are uncertain about the weather. Next, describe some data (information) that, if you had access to it, would resolve some of the uncertainty you face and help you make a better decision. Describe two versions of the data: an ideal version that would theoretically resolve all of the uncertainty, and an imperfect version that you are more likely to actually encounter in practice. How would you use these data to guide your decision making?</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
