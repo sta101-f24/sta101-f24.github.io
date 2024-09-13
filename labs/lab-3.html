@@ -511,47 +511,20 @@ chr (3): vaccine, age, outcome
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># part 1</span></span>
 <span></span>
 <span><span class="va">delta</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">vaccine</span>, <span class="va">outcome</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4 × 3
-  vaccine      outcome       n
-  &lt;chr&gt;        &lt;chr&gt;     &lt;int&gt;
-1 Unvaccinated died        250
-2 Unvaccinated survived 150802
-3 Vaccinated   died        477
-4 Vaccinated   survived 116637</code></pre>
-</div>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># part 2</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">vaccine</span>, <span class="va">outcome</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># part 2</span></span>
 <span></span>
 <span><span class="va">delta</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">vaccine</span>, <span class="va">outcome</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">vaccine</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4 × 3
-# Groups:   vaccine [2]
-  vaccine      outcome       n
-  &lt;chr&gt;        &lt;chr&gt;     &lt;int&gt;
-1 Unvaccinated died        250
-2 Unvaccinated survived 150802
-3 Vaccinated   died        477
-4 Vaccinated   survived 116637</code></pre>
-</div>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># part 3</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">vaccine</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># part 3</span></span>
 <span></span>
 <span><span class="va">delta</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">vaccine</span>, <span class="va">outcome</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">vaccine</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>prop <span class="op">=</span> <span class="va">n</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4 × 4
-# Groups:   vaccine [2]
-  vaccine      outcome       n    prop
-  &lt;chr&gt;        &lt;chr&gt;     &lt;int&gt;   &lt;dbl&gt;
-1 Unvaccinated died        250 0.00166
-2 Unvaccinated survived 150802 0.998  
-3 Vaccinated   died        477 0.00407
-4 Vaccinated   survived 116637 0.996  </code></pre>
-</div>
 </div>
 <p>Pick this code apart like a vulture and explain in complete sentences what is going on in each part. The more detail, the better.</p>
 </div>
