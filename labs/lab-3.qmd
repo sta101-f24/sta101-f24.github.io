@@ -176,7 +176,7 @@ delta <- read_csv("delta.csv")
 Consider this sequence of commands:
 
 ```{r}
-#| message: false
+#| eval: false
 
 # part 1
 
