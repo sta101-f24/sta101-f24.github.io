@@ -174,7 +174,9 @@ delta <- read_csv("delta.csv")
 
 ::: exercise
 Consider this sequence of commands:
+
 ```{r}
+#| message: false
 
 # part 1
 
@@ -194,6 +196,7 @@ delta |>
   group_by(vaccine) |>
   mutate(prop = n / sum(n))
 ```
+
 Pick this code apart like a vulture and explain in complete sentences what is going on in each part. The more detail, the better.
 :::
 
