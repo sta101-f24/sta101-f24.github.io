@@ -42,7 +42,7 @@ A row in this data set is a person, and we record whether or not that person die
 -   vaccinated and died
 -   vaccinated and survived
 
-The following code creates a nifty lil' table that tallies up the proportion of people that died versus survived *within each vaccination group*:
+The following code creates a nifty lil' table that tallies up the number of people in each group and calculated the proportion of people that died versus survived *within each vaccination group*:
 
 ```{r}
 delta |>
