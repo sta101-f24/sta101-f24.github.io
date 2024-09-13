@@ -154,9 +154,9 @@ Here are some instructions that apply to both of these visualizations:
 Which of these visualizations is a better fit for answering the following question: "Do the data appear to support Buzzfeed's claim that of those US-based Nobel laureates, many were born in other countries?" First, state which plot you're using to answer the question. Then, answer the question, explaining your reasoning in 1-2 sentences.
 :::
 
-## Part 2: practicing our basic coding skills
+## Part 2: practicing our coding basics
 
-### Exercise 4 (histograms)
+### Exercise 4
 
 The file `nsw-crime.csv` contains [monthly data](https://bocsar.nsw.gov.au/statistics-dashboards/open-datasets/criminal-offences-data.html) on all criminal incidents recorded by police in New South Wales, Australia (the state that includes the city of Sydney). So a row in this data set corresponds to a month, and a column corresponds to a crime (murder, dealing cannabis, escaping custody, etc). The data count the number of cases of each crime in each month. In this exercise we will consider the variable `offensive_language`, an incident of disorderly conduct where the perpetrator...said some things.
 
@@ -164,9 +164,38 @@ The file `nsw-crime.csv` contains [monthly data](https://bocsar.nsw.gov.au/stati
 Load the crime data into `R` and create four histogram plots of the variable `offensive_language`. In each plot, use a different number of histogram bins: 20, 40, 80, and 160. Decide which picture you think best visualizes the distribution of the crime counts, and explain why you think this.
 :::
 
-### Exercise 5 (`group_by`)
+### Exercise 5
 
-GAAAAAH.
+Load the data about the COVID delta variant (adjusting your file path as needed):
+
+```{r}
+delta <- read_csv("delta.csv")
+```
+
+::: exercise
+Consider this sequence of commands:
+```{r}
+
+# part 1
+
+delta |>
+  count(vaccine, outcome)
+
+# part 2
+
+delta |>
+  count(vaccine, outcome) |>
+  group_by(vaccine)
+
+# part 3
+
+delta |>
+  count(vaccine, outcome) |>
+  group_by(vaccine) |>
+  mutate(prop = n / sum(n))
+```
+Pick this code apart like a vulture and explain in complete sentences what is going on in each part. The more detail, the better.
+:::
 
 ## Part 3: IMS Exercises
 
@@ -201,7 +230,7 @@ IMS - [Chapter 5 exercises](https://openintro-ims.netlify.app/explore-numerical#
 ### Exercise 10
 
 ::: exercise
-Describe a situation from your everyday life where you have to make a decision, but it is difficult to make a good decision because you face some uncertainty about the world. Common examples (which you should not now use!) might include deciding when to get food at the dining hall, because you are uncertain about the length of the lines, or deciding when to have a picnic, because you are uncertain about the weather. Next, describe some data (information) that, if you had access to it, would resolve some of the uncertainty you face and help you make a better decision. Describe two versions of the data: an ideal version that would theoretically resolve all of the uncertainty, and an imperfect version that you are more likely to actually encounter in practice. How would you use these data to guide your decision making.
+Describe a situation from your everyday life where you have to make a decision, but it is difficult to make a good decision because you face some uncertainty about the world. Common examples (which you should not now use!) might include deciding when to get food at the dining hall, because you are uncertain about the length of the lines, or deciding when to have a picnic, because you are uncertain about the weather. Next, describe some data (information) that, if you had access to it, would resolve some of the uncertainty you face and help you make a better decision. Describe two versions of the data: an ideal version that would theoretically resolve all of the uncertainty, and an imperfect version that you are more likely to actually encounter in practice. How would you use these data to guide your decision making?
 :::
 
 ::: callout-note
@@ -249,4 +278,3 @@ If you fail to mark the pages associated with an exercise, that exercise won't b
 | Exercise 9  | 4      |
 | Exercise 10 | 3      |
 | **Total**   | 50     |
-
