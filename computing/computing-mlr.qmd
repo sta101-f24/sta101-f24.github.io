@@ -1,0 +1,99 @@
+---
+  title: "Multiple linear regression (with two predictors)"
+---
+
+The multiple linear regression model relates several predictors to a single response via a linear function with error. Here is what it looks like with two predictors:
+
+$$
+y=\beta_0+\beta_1x_1+\beta_2x_2+\varepsilon.
+$$
+
+This primer leads you down the path of least resistance to fitting this model when one of the predictors ($x_1$) is a numerical variable and the other ($x_2$) is a categorical variable with two levels. You will learn how to...
+
+-   create a scatter plot of $x_1$ versus $y$ that differentiates between the levels of $x_2$;
+-   add several best fitting lines to this plot;
+-   produce a table with the coefficient estimates ($\hat{\beta}_0,\,\hat{\beta}_1,\,\hat{\beta}_2$).
+
+## Setup
+
+The commands for plotting are in the `tidyverse` package, and the commands for working with linear regressions are in the `tidymodels` package, so we crank that up:
+
+```{r}
+#| label: load-tidyverse
+#| message: false
+
+library(tidyverse) 
+library(tidymodels) 
+```
+
+Next consider the dataset `allbacks` from the `DAAG` package (you may need to install this):
+
+```{r}
+#| label: load-data
+#| message: false
+
+library(DAAG) 
+
+allbacks
+```
+
+The dataset has `r nrow(allbacks)` observations and `r ncol(allbacks)` columns. Each observation represents a book. Note that `volume` is measured in cubic centimeters and `weight` is measured in grams. More information on the dataset can be found in the documentation for `allbacks`, with `?allbacks`.
+
+We are interested in the relationship between book volume ($x_1$) and book weight ($y$), but as you can see if you view the spreadsheet, some of the books are hardcover and some are paperback. We might expect a hardcover book to weigh more than a paperback book with the same volume because of the different materials used, and so we should account for that.
+
+## Creating a grouped scatterplot
+
+This code creates a scatterplot of `volume` vs. `weight` where the points have different color and shape depending on the value of `cover`:
+
+```{r}
+ggplot(allbacks, aes(x = volume, y = weight)) +
+  geom_point(aes(color = cover, shape = cover)) +
+  labs(
+    x = "Volume (cubic centimeters)",
+    y = "Weight (grams)"
+  )
+```
+
+The only difference between this code and a simple scatter plot is that we included an aesthetic mapping `aes(color = cover, shape = cover)` inside the call to `geom_point`. You're asking it to alter the color and shape of the points depending on the value of the variable `cover`. The computer then made some default choices for you about what the different colors and shapes will be.
+
+## Adding lines of best fit
+
+If we want to add lines of best fit *for each group*, we just have to add one new layer to our code above:
+
+```{r}
+#| label: plot-weight-volume
+#| message: false
+
+ggplot(allbacks, aes(x = volume, y = weight)) +
+  geom_point(aes(color = cover, shape = cover)) + 
+  geom_smooth(aes(color = cover), method = "lm", se = F) +
+  labs(
+    x = "Volume (cubic centimeters)",
+    y = "Weight (grams)"
+  )
+```
+
+Again, the only difference between this code and the code that would generate one line of best fit is that we added an aesthetic mapping `aes(color = cover)` to the arguments of `geom_smooth`, and the computer knows to plot several lines for each level of the variable `cover`, which only has two levels in this case.
+
+As we expected, the line of best fit for the paperback books is below the line for the hardcover books, capturing our intuition that, for the same volume, a hardcover book will weigh a bit more.
+
+## Getting the actual coefficient estimates
+
+This code will give you a table with the estimates:
+
+```{r}
+weight_cover_fit <- linear_reg() |>
+  fit(weight ~ volume + cover, data = allbacks)
+
+tidy(weight_cover_fit)
+```
+
+The only difference from the code for simple linear regression is that we added variables to the formula `weight ~ volume + cover` in the `fit` command. So in general, if you have a data frame `df` with columns `y`, `x1`, `x2`, and so on, you can fit a multiple linear regression with code that will look something like this:
+
+```{r}
+#| eval: false
+my_regression_fit <- linear_reg() |>
+  fit(y ~ x1 + x2 + x3, data = df)
+```
+
+To add more predictors, you just add them to the formula `y ~ x1 + x2 + x3 + ...`.

@@ -4,6 +4,7 @@ project:
     - lectures/zito_sta101_09_03_2024_slides.pdf
     - lectures/zito_sta101_09_10_2024_slides.pdf
     - lectures/zito_sta101_09_12_2024_slides.pdf
+    - lectures/zito_sta101_09_17_2024_slides.pdf
 
 website:
   page-navigation: true
@@ -81,6 +82,8 @@ website:
             text: Barplot basics
           - href: computing/computing-regression.qmd
             text: Simple linear regression
+          - href: computing/computing-mlr.qmd
+            text: Multiple linear regression
           - href: computing/computing-cheatsheets.qmd
             text: Cheatsheets
 
