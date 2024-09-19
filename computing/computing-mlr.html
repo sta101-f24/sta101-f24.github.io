@@ -332,6 +332,7 @@ window.Quarto = {
   <li><a href="#creating-a-grouped-scatterplot" id="toc-creating-a-grouped-scatterplot" class="nav-link" data-scroll-target="#creating-a-grouped-scatterplot">Creating a grouped scatterplot</a></li>
   <li><a href="#adding-lines-of-best-fit" id="toc-adding-lines-of-best-fit" class="nav-link" data-scroll-target="#adding-lines-of-best-fit">Adding lines of best fit</a></li>
   <li><a href="#getting-the-actual-coefficient-estimates" id="toc-getting-the-actual-coefficient-estimates" class="nav-link" data-scroll-target="#getting-the-actual-coefficient-estimates">Getting the actual coefficient estimates</a></li>
+  <li><a href="#compute-the-r2-values" id="toc-compute-the-r2-values" class="nav-link" data-scroll-target="#compute-the-r2-values">Compute the <span class="math inline">\(R^2\)</span> values</a></li>
   </ul>
 </nav>
     </div>
@@ -365,7 +366,8 @@ y=\beta_0+\beta_1x_1+\beta_2x_2+\varepsilon.
 <ul>
 <li>create a scatter plot of <span class="math inline">\(x_1\)</span> versus <span class="math inline">\(y\)</span> that differentiates between the levels of <span class="math inline">\(x_2\)</span>;</li>
 <li>add several best fitting lines to this plot;</li>
-<li>produce a table with the coefficient estimates (<span class="math inline">\(\hat{\beta}_0,\,\hat{\beta}_1,\,\hat{\beta}_2\)</span>).</li>
+<li>produce a table with the coefficient estimates (<span class="math inline">\(\hat{\beta}_0,\,\hat{\beta}_1,\,\hat{\beta}_2\)</span>);</li>
+<li>calculate <span class="math inline">\(R^2\)</span> and adjusted <span class="math inline">\(R^2\)</span> for assessing model fit.</li>
 </ul>
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
@@ -466,6 +468,38 @@ y=\beta_0+\beta_1x_1+\beta_2x_2+\varepsilon.
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>(y <span class="sc">~</span> x1 <span class="sc">+</span> x2 <span class="sc">+</span> x3, <span class="at">data =</span> df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To add more predictors, you just add them to the formula <code>y ~ x1 + x2 + x3 + ...</code>.</p>
+</section>
+<section id="compute-the-r2-values" class="level2">
+<h2 class="anchored" data-anchor-id="compute-the-r2-values">Compute the <span class="math inline">\(R^2\)</span> values</h2>
+<p>Once you have created a regression object with the code like <code>linear_reg() |&gt; fit()</code>, you can view the <span class="math inline">\(R^2\)</span> values with the <code>glance</code> function to assess the goodness-of-fit of the model. Here they are for the simple linear regression that just has <code>volume</code> as a predictor:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>weight_fit <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>(weight <span class="sc">~</span> volume, <span class="at">data =</span> allbacks)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(weight_fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 12
+  r.squared adj.r.squared sigma statistic    p.value    df logLik   AIC   BIC
+      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1     0.803         0.787  124.      52.9 0.00000626     1  -92.5  191.  193.
+# ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;</code></pre>
+</div>
+</div>
+<p>Here they are for the multiple linear regression that has <code>volume</code> and <code>cover</code> as predictors:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>weight_fit <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>(weight <span class="sc">~</span> volume <span class="sc">+</span> cover, <span class="at">data =</span> allbacks)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(weight_cover_fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 12
+  r.squared adj.r.squared sigma statistic     p.value    df logLik   AIC   BIC
+      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1     0.927         0.915  78.2      76.7 0.000000145     2  -85.0  178.  181.
+# ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;</code></pre>
+</div>
+</div>
+<p>We see that adjusted <span class="math inline">\(R^2\)</span> increased substantially when we added <code>cover</code> as a predictor, supporting our intuition that including this covariate to the modle improves fit.</p>
 
 
 </section>
