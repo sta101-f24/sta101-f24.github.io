@@ -119,4 +119,4 @@ weight_fit <- linear_reg() |>
 glance(weight_cover_fit)
 ```
 
-We see that adjusted $R^2$ increased substantially when we added `cover` as a predictor, supporting our intuition that including this covariate to the model improves fit.
+We see that adjusted $R^2$ increased substantially when we added `cover` as a predictor, supporting our intuition that including this covariate to the model ought to improve fit.
