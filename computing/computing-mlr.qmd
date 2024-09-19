@@ -99,7 +99,6 @@ my_regression_fit <- linear_reg() |>
 
 To add more predictors, you just add them to the formula `y ~ x1 + x2 + x3 + ...`.
 
-
 ## Compute the $R^2$ values
 
 Once you have created a regression object with the code like `linear_reg() |> fit()`, you can view the $R^2$ values with the `glance` function to assess the goodness-of-fit of the model. Here they are for the simple linear regression that just has `volume` as a predictor:
@@ -119,4 +118,5 @@ weight_fit <- linear_reg() |>
 
 glance(weight_cover_fit)
 ```
-We see that adjusted $R^2$ increased substantially when we added `cover` as a predictor, supporting our intuition that including this covariate to the modle improves fit.
+
+We see that adjusted $R^2$ increased substantially when we added `cover` as a predictor, supporting our intuition that including this covariate to the model improves fit.
