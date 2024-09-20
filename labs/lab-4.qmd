@@ -183,12 +183,6 @@ Next, let's turn our attention to **dead lifting** records.
 Recreate the plot below. Make sure axes and title labels are exactly matching, including spelling, capitalization, etc. Based on the plot below, which impacts deadlift weight more, age category or sex?
 :::
 
-::: callout-note
-## Hint
-
-You will need to create a couple of new columns. One to classify age appropriately and one to convert `best3deadlift_kg` to the plotted units (lbs). Notice that there are no negative deadlift values on the x-axis.
-:::
-
 ```{r}
 #| label: deadlift-age-sex-plot
 #| fig-width: 6
@@ -214,7 +208,13 @@ ggplot(new_df, aes(x = best3deadlift_lbs, fill = sex, color = sex))  +
 ```
 
 ::: callout-tip
-## Hint
+## Hint 1
+
+You will need to create a couple of new columns. One to classify age appropriately and one to convert `best3deadlift_kg` to the plotted units (lbs). Notice that there are no negative deadlift values on the x-axis.
+:::
+
+::: callout-tip
+## Hint 2
 These plots are called **density plots**. It's just a smoothed out version of a histogram, and like the histogram it lets you visualize the distribution (center, spread, skew, etc) of a dataset. The `geom_...` that creates density plots is `geom_density`. Try it out!
 :::
 
