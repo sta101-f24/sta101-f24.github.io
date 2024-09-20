@@ -1,6 +1,5 @@
 ---
 title: "Lab 4"
-draft: true
 ---
 
 ## Getting started
@@ -45,6 +44,10 @@ Today, we will be working with data from [www.openpowerlifting.org](https://www.
 
 ipf <- read_csv("data/ipf.csv")
 ```
+
+::: callout-note
+[Recall](https://sta101-f24.github.io/computing/computing-file-paths.html) that you may have to adjust the file path to match how you have organized your files and folders.
+:::
 
 The data dictionary for this dataset from TidyTuesday is reproduced below:
 
@@ -133,7 +136,7 @@ For all of the following exercises, you should include units on axes labels, e.g
 ::: exercise
 Let's begin by taking a look at the **squat lifting** records.
 
-To begin, remove any observations that are negative for squat. Next, create a new column called `best3_squat_lbs` that converts the record from kg to lbs (you may have to google the conversion). Save your data frame as `ipf_squat`. Report the number of rows and columns of this new data frame using inline code.
+To begin, remove any observations that are negative for squat. Next, create a new column called `best3_squat_lbs` that converts the record from kg to lbs (you may have to Google the conversion). Save your data frame as `ipf_squat`. Report the number of rows and columns of this new data frame.
 :::
 
 ::: callout-tip
@@ -169,19 +172,7 @@ To raise a value to a power, use `^` in R, e.g.: `2 ^ 2` gives you 4, `2 ^ 3` gi
 ### Exercise 5
 
 ::: exercise
-One metric to assess the fit of a model is the correlation squared, also known as $R^2$. Fit the age$^2$ model and save the object as `age2_fit`. Subsequently run
-
-```{r}
-#| eval: false
-
-glance(age2_fit)$r.squared
-```
-
-to examine the $R^2$. Compare $R^2$ of the age$^2$ model to the $R^2$ of the model from Exercise 3. Which has a higher $R^2$?
-:::
-
-::: callout-note
-$R^2$ values range from 0 to 1. Values close to 0 means weak correlation between the variables whereas $R^2 = 1$ implies perfect correlation. You can (optionally) read more about $R^2$ in section [7.2.5 of the book](https://openintro-ims2.netlify.app/model-slr.html#r-squared). We'll pick up here in the next class.
+One metric to assess the fit of a model is $R^2$. Fit the age$^2$ model and save the object as `age2_fit`. Compare $R^2$ of the age$^2$ model to the $R^2$ of the model from Exercise 3. Which has a higher $R^2$?
 :::
 
 ### Exercise 6
@@ -204,12 +195,14 @@ You will need to create a couple of new columns. One to classify age appropriate
 #| fig-asp: 0.8
 #| echo: false
 
-ipf |>
+new_df <- ipf |>
   mutate(Age = ifelse(age < 40, "Under 40", "40 or older")) |>
   filter(!is.na(Age)) |>
   filter(best3deadlift_kg > 0 ) |>
-  mutate(best3deadlift_lbs = best3deadlift_kg * 2.20462) |>
-  ggplot(aes(x = best3deadlift_lbs, fill = sex, color = sex))  +
+  mutate(best3deadlift_lbs = best3deadlift_kg * 2.20462)
+
+
+ggplot(new_df, aes(x = best3deadlift_lbs, fill = sex, color = sex))  +
   geom_density(alpha = 0.5) +
   facet_wrap(~ Age, ncol = 1) +
   labs(
@@ -219,6 +212,11 @@ ipf |>
     color = "Sex", fill = "Sex"
   )
 ```
+
+::: callout-tip
+## Hint
+These plots are called **density plots**. It's just a smoothed out version of a histogram, and like the histogram it lets you visualize the distribution (center, spread, skew, etc) of a dataset. The `geom_...` that creates density plots is `geom_density`. Try it out!
+:::
 
 ### Exercise 7
 
@@ -289,5 +287,3 @@ If you fail to mark the pages associated with an exercise, that exercise won't b
 | Exercise 9  | 4      |
 | Exercise 10 | 2      |
 | **Total**   | 50     |
-
-
