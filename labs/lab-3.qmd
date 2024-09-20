@@ -138,7 +138,7 @@ Create a new variable called `born_country_us` in `nobel_living_science` that ha
 ### Exercise 3
 
 ::: exercise
-Add a second variable to your visualization from Exercise 3 based on whether the laureate was born in the US or not.
+Add a second variable to your visualization from Exercise 1 based on whether the laureate was born in the US or not.
 
 Create two visualizations with this new variable added:
 
