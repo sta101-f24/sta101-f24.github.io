@@ -439,7 +439,16 @@ Note
 2 MSFT.Open      0.454    0.0541     8.40  0.0000000808</code></pre>
 </div>
 </div>
-<p>There is a lot going on in that table, and we will explore some of it later, but focus on the first column for now. This column gives the estimates <span class="math inline">\(\hat{\beta}_0,\,\hat{\beta}_1\)</span>. The first row has the estimate <span class="math inline">\(\hat{\beta}_0\)</span> of the intercept, and the second row has the estimate <span class="math inline">\(\hat{\beta}_1\)</span> of the slope.</p>
+<p>There is a lot going on in that table, and we will explore some of it later, but focus on the first column for now. This column gives the estimates <span class="math inline">\(\hat{\beta}_0,\,\hat{\beta}_1\)</span>. The first row has the estimate <span class="math inline">\(\hat{\beta}_0\)</span> of the intercept, and the second row has the estimate <span class="math inline">\(\hat{\beta}_1\)</span> of the slope. So the fitted model here is: <span class="math display">\[
+\begin{align*}
+\widehat{\text{AAPL}}&amp;=\hat{\beta}_0+\hat{\beta}_1\widehat{\text{MSFT}}\\
+&amp;\approx3.31+0.45\cdot\widehat{\text{MSFT}}.
+\end{align*}
+\]</span> So</p>
+<ul>
+<li>3.31 is the price you would predict for Apple stock if you knew Microsoft stock was opening at $0;</li>
+<li>0.45 is the price increase in Apple stock that you would predict if Microsoft stock became more expensive by $1 (remember, slope = rise/run, so <span class="math inline">\(\Delta\text{AAPL}/\Delta\text{MSFT}\)</span> in this case).</li>
+</ul>
 <p>The syntax in the <code>fit</code> commands is like <code>fit(y ~ x)</code>. So the variable to the left of the <code>~</code> will be treated as the response variable (<span class="math inline">\(y\)</span>), and the variable to the right will be treated as the predictor (<span class="math inline">\(x\)</span>).</p>
 
 

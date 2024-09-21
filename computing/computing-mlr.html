@@ -468,6 +468,18 @@ y=\beta_0+\beta_1x_1+\beta_2x_2+\varepsilon.
 3 coverpb     -184.      40.5        -4.55 0.000672    </code></pre>
 </div>
 </div>
+<p>So the fitted model is</p>
+<p><span class="math display">\[
+\begin{align*}
+\widehat{\text{weight}}&amp;=\hat{\beta}_0+\hat{\beta}_1\widehat{\text{volume}}+\hat{\beta}_2\widehat{\text{cover}}\\
+&amp;\approx197.96+0.71\cdot\widehat{\text{volume}}-184.05\cdot\widehat{\text{cover}}.
+\end{align*}
+\]</span> The interpretation of these estimates is:</p>
+<ul>
+<li>197.96 is the weight you would predict for a hardback book with zero volume (it’s a little silly that this is not zero, which highlights one limitation of a linear model here);</li>
+<li>0.71 is the amount (in grams) you would predict the weight to increase by if the volume of the book increased by 1 cubic centimeter (remember, slope = rise/run, so <span class="math inline">\(\Delta\text{weight}/\Delta\text{volume}\)</span> in this case);</li>
+<li>-184.05 is the amount by which the line shifts <em>downward</em> (because it’s negative) to account for the fact that paperback books will typically be lighter than hardcover, even keeping the volume constant.</li>
+</ul>
 <p>The only difference from the code for simple linear regression is that we added variables to the formula <code>weight ~ volume + cover</code> in the <code>fit</code> command. So in general, if you have a data frame <code>df</code> with columns <code>y</code>, <code>x1</code>, <code>x2</code>, and so on, you can fit a multiple linear regression with code that will look something like this:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>my_regression_fit <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
