@@ -89,6 +89,20 @@ weight_cover_fit <- linear_reg() |>
 tidy(weight_cover_fit)
 ```
 
+So the fitted model is
+
+$$
+\begin{align*}
+\widehat{\text{weight}}&=\hat{\beta}_0+\hat{\beta}_1\widehat{\text{volume}}+\hat{\beta}_2\widehat{\text{cover}}\\
+&\approx197.96+0.71\cdot\widehat{\text{volume}}-184.05\cdot\widehat{\text{cover}}.
+\end{align*}
+$$
+The interpretation of these estimates is:
+
+- 197.96 is the weight you would predict for a hardback book with zero volume (it's a little silly that this is not zero, which highlights one limitation of a linear model here);
+- 0.71 is the amount (in grams) you would predict the weight to increase by if the volume of the book increased by 1 cubic centimeter (remember, slope = rise/run, so $\Delta\text{weight}/\Delta\text{volume}$ in this case);
+- -184.05 is the amount by which the line shifts *downward* (because it's negative) to account for the fact that paperback books will typically be lighter than hardcover, even keeping the volume constant.
+
 The only difference from the code for simple linear regression is that we added variables to the formula `weight ~ volume + cover` in the `fit` command. So in general, if you have a data frame `df` with columns `y`, `x1`, `x2`, and so on, you can fit a multiple linear regression with code that will look something like this:
 
 ```{r}

@@ -10,7 +10,7 @@ $$
 
 This primer leads you down the path of least resistance to fitting this model, creating a scatterplot with the best fit line added to it, and producing a table with the coefficient estimates ($\hat{\beta}_0,\,\hat{\beta}_1$).
 
-## Setup 
+## Setup
 
 The commands for working with linear regressions are in the `tidymodels` package, so load that:
 
@@ -57,6 +57,7 @@ ggplot(stocks_jan2020, aes(x = MSFT.Open, y = AAPL.Open)) +
     y = "Apple opening price"
   )
 ```
+
 So, all we have to do is add a new `geom_WHAT` layer to a scatterplot to add the line. This is what `geom_smooth` is doing. If you set `se = TRUE`, you get the band indicating the margin of error. Try it out!
 
 ## What are the coefficient estimates?
@@ -70,6 +71,17 @@ stock_fit <- linear_reg() |>
 tidy(stock_fit)
 ```
 
-There is a lot going on in that table, and we will explore some of it later, but focus on the first column for now. This column gives the estimates $\hat{\beta}_0,\,\hat{\beta}_1$. The first row has the estimate $\hat{\beta}_0$ of the intercept, and the second row has the estimate $\hat{\beta}_1$ of the slope.
+There is a lot going on in that table, and we will explore some of it later, but focus on the first column for now. This column gives the estimates $\hat{\beta}_0,\,\hat{\beta}_1$. The first row has the estimate $\hat{\beta}_0$ of the intercept, and the second row has the estimate $\hat{\beta}_1$ of the slope. So the fitted model here is:
+$$
+\begin{align*}
+\widehat{\text{AAPL}}&=\hat{\beta}_0+\hat{\beta}_1\widehat{\text{MSFT}}\\
+&\approx3.31+0.45\cdot\widehat{\text{MSFT}}.
+\end{align*}
+$$
+So 
+
+- 3.31 is the price you would predict for Apple stock if you knew Microsoft stock was opening at \$0;
+- 0.45 is the price increase in Apple stock that you would predict if Microsoft stock became more expensive by \$1 (remember, slope = rise/run, so $\Delta\text{AAPL}/\Delta\text{MSFT}$ in this case).
+
 
 The syntax in the `fit` commands is like `fit(y ~ x)`. So the variable to the left of the `~` will be treated as the response variable ($y$), and the variable to the right will be treated as the predictor ($x$).
