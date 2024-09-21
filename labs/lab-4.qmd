@@ -213,6 +213,7 @@ You will need to create a couple of new columns. One to classify age appropriate
 
 ::: callout-tip
 ## Hint 2
+
 These plots are called **density plots**. It's just a smoothed out version of a histogram, and like the histogram it lets you visualize the distribution (center, spread, skew, etc) of a dataset. The `geom_...` that creates density plots is `geom_density`. Try it out!
 :::
 
@@ -247,6 +248,10 @@ IMS - [Chapter 7 exercises](https://openintro-ims2.netlify.app/07-model-slr#chp7
 ::: exercise
 IMS - [Chapter 7 exercises](https://openintro-ims2.netlify.app/07-model-slr#chp7-exercises), #24: Cats weights.
 :::
+
+## Lastly
+
+Recommend some music for us to listen to while we grade this.
 
 ## Wrap up
 
