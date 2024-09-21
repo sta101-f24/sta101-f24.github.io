@@ -185,8 +185,6 @@ Recreate the plot below. Make sure axes and title labels are exactly matching, i
 
 ```{r}
 #| label: deadlift-age-sex-plot
-#| fig-width: 6
-#| fig-asp: 0.8
 #| echo: false
 
 new_df <- ipf |>
