@@ -68,6 +68,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <meta property="og:title" content="STA 101 Fall 2024 - STA 101 Data Analysis and Statistical Inference">
 <meta property="og:description" content="Homepage for STA 101 Data Analysis and Statistical Inference at Duke University, Fall 2024.">
@@ -294,23 +323,23 @@ ul.task-list li input[type="checkbox"] {
 <p>Below is a prospective outline for the course, but things may change with advanced notice:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="cvertwrvkk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#cvertwrvkk table {
+<div id="orleasmzbv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#orleasmzbv table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#cvertwrvkk thead, #cvertwrvkk tbody, #cvertwrvkk tfoot, #cvertwrvkk tr, #cvertwrvkk td, #cvertwrvkk th {
+#orleasmzbv thead, #orleasmzbv tbody, #orleasmzbv tfoot, #orleasmzbv tr, #orleasmzbv td, #orleasmzbv th {
   border-style: none;
 }
 
-#cvertwrvkk p {
+#orleasmzbv p {
   margin: 0;
   padding: 0;
 }
 
-#cvertwrvkk .gt_table {
+#orleasmzbv .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -336,12 +365,12 @@ ul.task-list li input[type="checkbox"] {
   border-left-color: #D3D3D3;
 }
 
-#cvertwrvkk .gt_caption {
+#orleasmzbv .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#cvertwrvkk .gt_title {
+#orleasmzbv .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -353,7 +382,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-width: 0;
 }
 
-#cvertwrvkk .gt_subtitle {
+#orleasmzbv .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -365,7 +394,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-width: 0;
 }
 
-#cvertwrvkk .gt_heading {
+#orleasmzbv .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -377,13 +406,13 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#cvertwrvkk .gt_bottom_border {
+#orleasmzbv .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#cvertwrvkk .gt_col_headings {
+#orleasmzbv .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -398,7 +427,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#cvertwrvkk .gt_col_heading {
+#orleasmzbv .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -418,7 +447,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#cvertwrvkk .gt_column_spanner_outer {
+#orleasmzbv .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -430,15 +459,15 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 4px;
 }
 
-#cvertwrvkk .gt_column_spanner_outer:first-child {
+#orleasmzbv .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#cvertwrvkk .gt_column_spanner_outer:last-child {
+#orleasmzbv .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#cvertwrvkk .gt_column_spanner {
+#orleasmzbv .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -450,11 +479,11 @@ ul.task-list li input[type="checkbox"] {
   width: 100%;
 }
 
-#cvertwrvkk .gt_spanner_row {
+#orleasmzbv .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#cvertwrvkk .gt_group_heading {
+#orleasmzbv .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -480,7 +509,7 @@ ul.task-list li input[type="checkbox"] {
   text-align: left;
 }
 
-#cvertwrvkk .gt_empty_group_heading {
+#orleasmzbv .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -495,15 +524,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 
-#cvertwrvkk .gt_from_md > :first-child {
+#orleasmzbv .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#cvertwrvkk .gt_from_md > :last-child {
+#orleasmzbv .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#cvertwrvkk .gt_row {
+#orleasmzbv .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -522,7 +551,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#cvertwrvkk .gt_stub {
+#orleasmzbv .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -535,7 +564,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#cvertwrvkk .gt_stub_row_group {
+#orleasmzbv .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -549,15 +578,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: top;
 }
 
-#cvertwrvkk .gt_row_group_first td {
+#orleasmzbv .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#cvertwrvkk .gt_row_group_first th {
+#orleasmzbv .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#cvertwrvkk .gt_summary_row {
+#orleasmzbv .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -567,16 +596,16 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#cvertwrvkk .gt_first_summary_row {
+#orleasmzbv .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#cvertwrvkk .gt_first_summary_row.thick {
+#orleasmzbv .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#cvertwrvkk .gt_last_summary_row {
+#orleasmzbv .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -586,7 +615,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#cvertwrvkk .gt_grand_summary_row {
+#orleasmzbv .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -596,7 +625,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#cvertwrvkk .gt_first_grand_summary_row {
+#orleasmzbv .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -606,7 +635,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-color: #D3D3D3;
 }
 
-#cvertwrvkk .gt_last_grand_summary_row_top {
+#orleasmzbv .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -616,11 +645,11 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#cvertwrvkk .gt_striped {
+#orleasmzbv .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#cvertwrvkk .gt_table_body {
+#orleasmzbv .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -629,7 +658,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#cvertwrvkk .gt_footnotes {
+#orleasmzbv .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -643,7 +672,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#cvertwrvkk .gt_footnote {
+#orleasmzbv .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -652,7 +681,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#cvertwrvkk .gt_sourcenotes {
+#orleasmzbv .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -666,7 +695,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#cvertwrvkk .gt_sourcenote {
+#orleasmzbv .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -674,72 +703,72 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#cvertwrvkk .gt_left {
+#orleasmzbv .gt_left {
   text-align: left;
 }
 
-#cvertwrvkk .gt_center {
+#orleasmzbv .gt_center {
   text-align: center;
 }
 
-#cvertwrvkk .gt_right {
+#orleasmzbv .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#cvertwrvkk .gt_font_normal {
+#orleasmzbv .gt_font_normal {
   font-weight: normal;
 }
 
-#cvertwrvkk .gt_font_bold {
+#orleasmzbv .gt_font_bold {
   font-weight: bold;
 }
 
-#cvertwrvkk .gt_font_italic {
+#orleasmzbv .gt_font_italic {
   font-style: italic;
 }
 
-#cvertwrvkk .gt_super {
+#orleasmzbv .gt_super {
   font-size: 65%;
 }
 
-#cvertwrvkk .gt_footnote_marks {
+#orleasmzbv .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#cvertwrvkk .gt_asterisk {
+#orleasmzbv .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#cvertwrvkk .gt_indent_1 {
+#orleasmzbv .gt_indent_1 {
   text-indent: 5px;
 }
 
-#cvertwrvkk .gt_indent_2 {
+#orleasmzbv .gt_indent_2 {
   text-indent: 10px;
 }
 
-#cvertwrvkk .gt_indent_3 {
+#orleasmzbv .gt_indent_3 {
   text-indent: 15px;
 }
 
-#cvertwrvkk .gt_indent_4 {
+#orleasmzbv .gt_indent_4 {
   text-indent: 20px;
 }
 
-#cvertwrvkk .gt_indent_5 {
+#orleasmzbv .gt_indent_5 {
   text-indent: 25px;
 }
 
-#cvertwrvkk .katex-display {
+#orleasmzbv .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#cvertwrvkk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#orleasmzbv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -834,7 +863,7 @@ ul.task-list li input[type="checkbox"] {
 <td class="gt_row gt_center gt_striped" headers="week"><br>
 </td>
 <td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Thu, Sep 12</td>
-<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Regression 1</p></td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Simple linear regression</p></td>
 <td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>📖 <a href="https://openintro-ims.netlify.app/model-slr">ims: Ch 7</a> <br> 💻 <a href="https://openintro.shinyapps.io/ims-03-model-01/">tutorial: 03-model-01</a> <br> 💻 <a href="https://openintro.shinyapps.io/ims-03-model-02/">tutorial: 03-model-02</a></p></td>
 <td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><a href="https://sta101-f24.github.io/lectures/zito_sta101_09_12_2024_slides.pdf">slides</a> <br> <a href="https://www.tylervigen.com/spurious-correlations">Play around!</a> <br> <a href="https://seeing-theory.brown.edu/regression-analysis/#section1">Play around some more!</a> <br> <a href="https://sta101-f24.github.io/computing/computing-regression.html">Primer</a></p></td>
 <td class="gt_row gt_left gt_striped" headers="due"><br>
@@ -852,7 +881,7 @@ ul.task-list li input[type="checkbox"] {
 <tr class="even">
 <td class="gt_row gt_center gt_striped" headers="week">4</td>
 <td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Tue, Sep 17</td>
-<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Regression 2</p></td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Multiple linear regression</p></td>
 <td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>📖 <a href="https://openintro-ims.netlify.app/model-mlr">ims: Ch 8.1 - 8.2</a></p></td>
 <td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><a href="https://sta101-f24.github.io/lectures/zito_sta101_09_17_2024_slides.pdf">slides</a> <br> <a href="https://sta101-f24.github.io/computing/computing-mlr.html">Primer</a></p></td>
 <td class="gt_row gt_left gt_striped" headers="due"><br>
@@ -862,7 +891,7 @@ ul.task-list li input[type="checkbox"] {
 <td class="gt_row gt_center" headers="week"><br>
 </td>
 <td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Thu, Sep 19</td>
-<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Model selection</p></td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><span class="math inline">\(R^2\)</span></p></td>
 <td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>📖 <a href="https://openintro-ims.netlify.app/model-mlr">ims: Ch 8.3 - 8.4</a></p></td>
 <td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><a href="https://sta101-f24.github.io/lectures/zito_sta101_09_19_2024_slides.pdf">slides</a> <br> <a href="https://sta101-f24.github.io/computing/computing-mlr.html">Primer</a></p></td>
 <td class="gt_row gt_left" headers="due"><br>
@@ -881,7 +910,7 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td class="gt_row gt_center" headers="week">5</td>
 <td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Tue, Sep 24</td>
-<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Regression overview</p></td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Model selection</p></td>
 <td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>📖 <a href="https://openintro-ims.netlify.app/model-mlr">ims: Ch 8.4 - 8.5</a></p></td>
 <td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><em>To be posted</em></p></td>
 <td class="gt_row gt_left" headers="due"><br>
@@ -891,7 +920,7 @@ ul.task-list li input[type="checkbox"] {
 <td class="gt_row gt_center gt_striped" headers="week"><br>
 </td>
 <td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Thu, Sep 26</td>
-<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Logistic regression 1</p></td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Checkpoint: Regression</p></td>
 <td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><em>To be posted</em></p></td>
 <td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><em>To be posted</em></p></td>
 <td class="gt_row gt_left gt_striped" headers="due"><br>
@@ -944,7 +973,7 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td class="gt_row gt_center" headers="week">7</td>
 <td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Tue, Oct 8</td>
-<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Logistic Regression 2</p></td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Logistic Regression 1</p></td>
 <td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><em>To be posted</em></p></td>
 <td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><em>To be posted</em></p></td>
 <td class="gt_row gt_left" headers="due"><br>
@@ -954,7 +983,7 @@ ul.task-list li input[type="checkbox"] {
 <td class="gt_row gt_center gt_striped" headers="week"><br>
 </td>
 <td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Thu, Oct 10</td>
-<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Hypothesis testing</p></td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Logistic Regression 2</p></td>
 <td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><em>To be posted</em></p></td>
 <td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><em>To be posted</em></p></td>
 <td class="gt_row gt_left gt_striped" headers="due"><br>
@@ -987,7 +1016,7 @@ ul.task-list li input[type="checkbox"] {
 <td class="gt_row gt_center" headers="week"><br>
 </td>
 <td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Thu, Oct 17</td>
-<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Confidence intervals</p></td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Hypothesis testing</p></td>
 <td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><em>To be posted</em></p></td>
 <td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><em>To be posted</em></p></td>
 <td class="gt_row gt_left" headers="due"><br>
@@ -1006,7 +1035,7 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td class="gt_row gt_center" headers="week">9</td>
 <td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Tue, Oct 22</td>
-<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Decision errors</p></td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Confidence intervals</p></td>
 <td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><em>To be posted</em></p></td>
 <td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><em>To be posted</em></p></td>
 <td class="gt_row gt_left" headers="due"><br>
@@ -1016,7 +1045,7 @@ ul.task-list li input[type="checkbox"] {
 <td class="gt_row gt_center gt_striped" headers="week"><br>
 </td>
 <td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Thu, Oct 24</td>
-<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Inference with mathematical models</p></td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Decision errors</p></td>
 <td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><em>To be posted</em></p></td>
 <td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><em>To be posted</em></p></td>
 <td class="gt_row gt_left gt_striped" headers="due"><br>
@@ -1034,7 +1063,7 @@ ul.task-list li input[type="checkbox"] {
 <tr class="even">
 <td class="gt_row gt_center gt_striped" headers="week">10</td>
 <td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Tue, Oct 29</td>
-<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Inference for one proportion</p></td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Inference with mathematical models</p></td>
 <td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><em>To be posted</em></p></td>
 <td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><em>To be posted</em></p></td>
 <td class="gt_row gt_left gt_striped" headers="due"><br>
@@ -1044,7 +1073,7 @@ ul.task-list li input[type="checkbox"] {
 <td class="gt_row gt_center" headers="week"><br>
 </td>
 <td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Thu, Oct 31</td>
-<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Comparing two proportions</p></td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Inference for one proportion</p></td>
 <td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><em>To be posted</em></p></td>
 <td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><em>To be posted</em></p></td>
 <td class="gt_row gt_left" headers="due"><br>
@@ -1062,7 +1091,7 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td class="gt_row gt_center" headers="week">11</td>
 <td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Tue, Nov 5</td>
-<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Inference for two-way tables</p></td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Comparing two proportions</p></td>
 <td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><em>To be posted</em></p></td>
 <td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><em>To be posted</em></p></td>
 <td class="gt_row gt_left" headers="due"><br>
@@ -1072,7 +1101,7 @@ ul.task-list li input[type="checkbox"] {
 <td class="gt_row gt_center gt_striped" headers="week"><br>
 </td>
 <td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Thu, Nov 7</td>
-<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Proportions overview</p></td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Inference for two-way tables</p></td>
 <td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><em>To be posted</em></p></td>
 <td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><em>To be posted</em></p></td>
 <td class="gt_row gt_left gt_striped" headers="due"><br>
@@ -1122,7 +1151,7 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td class="gt_row gt_center" headers="week">13</td>
 <td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Tue, Nov 19</td>
-<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Inference for one mean</p></td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Proportions overview</p></td>
 <td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><em>To be posted</em></p></td>
 <td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><em>To be posted</em></p></td>
 <td class="gt_row gt_left" headers="due"><br>
@@ -1132,7 +1161,7 @@ ul.task-list li input[type="checkbox"] {
 <td class="gt_row gt_center gt_striped" headers="week"><br>
 </td>
 <td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Thu, Nov 21</td>
-<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Inference for two means</p></td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Inference for one mean</p></td>
 <td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><em>To be posted</em></p></td>
 <td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><em>To be posted</em></p></td>
 <td class="gt_row gt_left gt_striped" headers="due"><br>
@@ -1152,7 +1181,7 @@ ul.task-list li input[type="checkbox"] {
 <tr class="even">
 <td class="gt_row gt_center gt_striped" headers="week">14</td>
 <td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Tue, Nov 26</td>
-<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>ANOVA</p></td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Inference for two means</p></td>
 <td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><em>To be posted</em></p></td>
 <td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><em>To be posted</em></p></td>
 <td class="gt_row gt_left gt_striped" headers="due"><br>
@@ -1185,7 +1214,7 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td class="gt_row gt_center" headers="week">15</td>
 <td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Tue, Dec 3</td>
-<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Ethics</p></td>
+<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>ANOVA</p></td>
 <td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><em>To be posted</em></p></td>
 <td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><em>To be posted</em></p></td>
 <td class="gt_row gt_left" headers="due"><br>
@@ -1195,7 +1224,8 @@ ul.task-list li input[type="checkbox"] {
 <td class="gt_row gt_center gt_striped" headers="week"><br>
 </td>
 <td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Thu, Dec 5</td>
-<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p>Telling a (data) story</p></td>
+<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
+</td>
 <td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><em>To be posted</em></p></td>
 <td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><p><em>To be posted</em></p></td>
 <td class="gt_row gt_left gt_striped" headers="due"><br>
