@@ -40,7 +40,7 @@ Your lowest lab score will be dropped.
 
 There will be two exams. Each exam will be comprised of two components:
 
--   In class: 75 minute in-class exam. This exam is closed book, however you are allowed to use one sheet of notes ("cheat sheet") to the midterm and the final. This sheet must be no larger than 8 1/2 x 11, and **must be prepared by you**. You may use both sides of the sheet. (70% of the grade)
+-   In class: 75 minute in-class exam. This exam is closed book, however you are allowed to use one sheet of notes ("cheat sheet") to the midterm and the final. This sheet must be no larger than 8.5 inches x 11 inches, and **must be prepared by you**. You may use both sides of the sheet. (70% of the grade)
 
 -   Take home: Following the in class exam, you'll have 48 hours to complete the take home portion of your exam. The take home portion will follow from the in class exam and focus on the analysis of a dataset introduced in the take home exam. (30% of the grade)
 
