@@ -1,0 +1,149 @@
+
+---
+  title: "Logistic regression"
+---
+
+The logistic regression model uses a set of predictors ($x_1$, $x_2$, ..., $x_p$) to model the probability that a binary response $y$ is equal to one:
+
+$$
+\text{Prob}(y=1)=\frac{1}{1+e^{-(\beta_0+\beta_1x_1+...+\beta_px_p)}}.
+$$
+
+This primer leads you down the path of least resistance to fitting this model, plotting the best-fitting S-curve in the single-predictor case, and plotting the decision boundary in the bivariate case. 
+
+## Setup
+
+The commands for working with logistic regressions are in the `tidymodels` package, so load that:
+
+```{r}
+#| label: load-tidyverse
+#| message: false
+
+library(tidyverse) 
+library(tidymodels) 
+```
+
+Next, we need something to model, so let us load in a data set. We will consider this data set from Hewlett-Packard on spam emails:
+
+```{r}
+#| label: load-data
+#| message: false
+
+hp_spam <- read_csv("hp-spam.csv")
+
+hp_spam <- hp_spam |>
+  mutate(type = as.factor(type))
+```
+
+::: callout-note
+Be prepared to [adjust the file path](https://sta101-f24.github.io/computing/computing-file-paths.html) to match how you have organized your files and folders.
+:::
+
+```{r}
+#| label: preview-data
+
+hp_spam |>
+  select(type, george, capitalTotal, you, charDollar)
+```
+
+Each observation (row) represents an email that was sent to a person named George, and the variables (columns) include:
+
+- `type`: is the email spam or not?
+- `george`: percentage of words in email that are "George";
+- `you`: percentage of words in email that are "you";
+- `capitalTotal`: number of capitalized letters in email;
+- `charDollar`: percentage of characters that are a dollar sign.
+
+Intuition suggests that a less personalized email (does not mention George by name) with lots of capital letters (I'M NOT SCREAMING) and dollar signs is more likely to be spam. Can we capture this in a model?
+
+
+## Run a "simple" logistic regression and plot the best-fitting S-curve
+
+Take the same code we've seen before, change `linear_reg` to `logistic_reg`, and bada bing:
+
+```{r}
+#| label: fit-simple-logistic
+
+type_you_fit <- logistic_reg() |>
+  fit(type ~ you, data = hp_spam)
+  
+tidy(type_you_fit)
+```
+
+This code plots the S-curve. Apart from the weird and ugly `y = as.numeric(type) - 1)` part at the beginning, the only difference with plotting a straight best fit line is we changed the method (and some other things) inside `geom_smooth`:
+
+```{r}
+#| message: false
+ggplot(hp_spam, aes(x = you, y = as.numeric(type) - 1)) + 
+  geom_point() + 
+  geom_smooth(
+    method = "glm", 
+    se = FALSE, 
+    method.args = list(family = binomial)
+  ) + 
+  labs(
+    x = "Percent of words equal to `you`",
+    y = "Probability the email is spam"
+  )
+```
+
+## Run a "multiple" logistic regression and plot the decision boundary
+
+Just like there is nothing special about a single predictor in linear regression, there is nothing special about a single predictor in logistic regression. To add more predictors to the model, we just add them to the formula (`y ~ x`) inside `fit`:
+
+```{r}
+#| label: fit-multiple-logistic
+
+type_you_capital_fit <- logistic_reg() |>
+  fit(type ~ you + capitalTotal, data = hp_spam)
+  
+tidy(type_you_capital_fit)
+```
+After doing some itchy algebra that you don't necessarily have to concern yourself with, we plot a scatter plot of our two predictors, color the points according to the type of the email, and then add a straight line (`geom_abline`) to visualize the decision boundary when we threshold $\text{Prob}(y=1)$ at 1/2:
+
+```{r}
+#| label: plot-decision-boundary
+
+# extract the estimates from their tidy clutches
+b0 <- tidy(type_you_capital_fit)$estimate[1]
+b1 <- tidy(type_you_capital_fit)$estimate[2]
+b2 <- tidy(type_you_capital_fit)$estimate[3]
+
+# set the threshold for classification
+p_thresh <- 0.5
+
+# compute intercept and slope of decision boundary
+bd_incpt <- (log(p_thresh / (1 - p_thresh)) - b0) / b2
+bd_slp <- -b1 / b2
+
+# plot that thing
+hp_spam |>
+  mutate(type = if_else(type == 1, "Spam", "Not Spam")) |>
+  ggplot(aes(x = you, y = capitalTotal, color = type)) +
+  geom_point(alpha = 0.5) +
+  coord_cartesian(xlim = c(0, 6), ylim = c(0, 6000)) + 
+  geom_abline(slope = bd_slp, intercept = bd_incpt) + 
+  labs(
+    x = "Percent of words equal to `you`",
+    y = "Number of capitalized letters",
+    title = "Is this email spam?"
+  )
+```
+
+If an email has features that place it above the line, we predict that it is a spam email. If an email have features that place it below the line, we predict that it is not. As you can see, this boundary is not perfect -- there are red points above and blue points below. But nevertheless, it captures our intuitions pretty well. If you keep studying statistics and machine learning, you will learn all sorts of fancy methods for drawing funky, nonlinear decision boundaries that account for all sorts of contingencies.
+
+## Make a prediction when a new email arrives
+
+The scatterplot with the colored points and the linear decision boundary is cute, but if we have more than two predictors, this stuff becomes difficult or impossible to visualize. Fortunately, we do not have to eyeball a picture in order to use this machinery to make decisions.
+
+If we get a new email where the frequency of you is 5% and there are 2,500 capital letters, what is the probability that this email is spam?
+
+```{r}
+new_email <- tibble(
+  you = 5,
+  capitalTotal = 2500
+)
+
+predict(type_you_capital_fit, new_data = new_email, type = "prob")
+```
+According to our model, the probability is pretty much 100%, which is above any reasonable threshold we might choose. Send it to the trash!
