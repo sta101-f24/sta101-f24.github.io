@@ -373,7 +373,7 @@ window.Quarto = {
 <p><span class="math display">\[
 \text{Prob}(y=1)=\frac{1}{1+e^{-(\beta_0+\beta_1x_1+...+\beta_px_p)}}.
 \]</span></p>
-<p>This primer leads you down the path of least resistance to fitting this model, plotting the best-fitting S-curve in the single-predictor case, and plotting the decision boundary in the bivariate case.</p>
+<p>This primer leads you down the path of least resistance to fitting this model, plotting the best-fitting S-curve in the single-predictor case, plotting the decision boundary in the bivariate case, and generating predictions.</p>
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <p>The commands for working with logistic regressions are in the <code>tidymodels</code> package, so load that:</p>
@@ -447,6 +447,7 @@ Note
 2 you            0.341    0.0193      17.6 1.68e- 69</code></pre>
 </div>
 </div>
+<p>These estimates determine the shape of the best fitting S-curve for these data. Chapter Nine in our textbook provides further discussion of how we might interpret the estimates probabilistically, but we will not concern ourselves with this at the present. For us, estimating these will simply be a means to an end of determining a model that we can use as a black box for prediction.</p>
 <p>This code plots the S-curve. Apart from the weird and ugly <code>y = as.numeric(type) - 1)</code> part at the beginning, the only difference with plotting a straight best fit line is we changed the method (and some other things) inside <code>geom_smooth</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(hp_spam, <span class="fu">aes</span>(<span class="at">x =</span> you, <span class="at">y =</span> <span class="fu">as.numeric</span>(type) <span class="sc">-</span> <span class="dv">1</span>)) <span class="sc">+</span> </span>
@@ -468,6 +469,7 @@ Note
 </div>
 </div>
 </div>
+<p>The logistic regression model is a special case of a <em>generalized linear model</em> (<em>glm</em>), so <code>method = "glm"</code> is us telling <code>R</code> that we want to do…that. But there are many generalized linear models out there, and so <code>method.args = list(family = binomial)</code> is us telling it we want the logistic one.</p>
 </section>
 <section id="run-a-multiple-logistic-regression-and-plot-the-decision-boundary" class="level2">
 <h2 class="anchored" data-anchor-id="run-a-multiple-logistic-regression-and-plot-the-decision-boundary">Run a “multiple” logistic regression and plot the decision boundary</h2>
@@ -486,7 +488,7 @@ Note
 3 capitalTotal  0.00173  0.000104      16.6 5.66e- 62</code></pre>
 </div>
 </div>
-<p>After doing some itchy algebra that you don’t necessarily have to concern yourself with, we plot a scatter plot of our two predictors, color the points according to the type of the email, and then add a straight line (<code>geom_abline</code>) to visualize the decision boundary when we threshold <span class="math inline">\(\text{Prob}(y=1)\)</span> at 1/2:</p>
+<p>After doing some itchy algebra that you don’t necessarily have to concern yourself with<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, we plot a scatter plot of our two predictors, color the points according to the type of the email, and then add a straight line (<code>geom_abline</code>) to visualize the decision boundary when we threshold <span class="math inline">\(\text{Prob}(y=1)\)</span> at 1/2:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># extract the estimates from their tidy clutches</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="fu">tidy</span>(type_you_capital_fit)<span class="sc">$</span>estimate[<span class="dv">1</span>]</span>
@@ -494,7 +496,7 @@ Note
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>b2 <span class="ot">&lt;-</span> <span class="fu">tidy</span>(type_you_capital_fit)<span class="sc">$</span>estimate[<span class="dv">3</span>]</span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># set the threshold for classification</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>p_thresh <span class="ot">&lt;-</span> <span class="fl">0.8</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>p_thresh <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
 <span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># compute intercept and slope of decision boundary</span></span>
 <span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>bd_incpt <span class="ot">&lt;-</span> (<span class="fu">log</span>(p_thresh <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">-</span> p_thresh)) <span class="sc">-</span> b0) <span class="sc">/</span> b2</span>
@@ -520,7 +522,8 @@ Note
 </div>
 </div>
 </div>
-<p>If an email has features that place it above the line, we predict that it is a spam email. If an email have features that place it below the line, we predict that it is not. As you can see, this boundary is not perfect – there are red points above and blue points below. But nevertheless, it captures our intuitions pretty well. If you keep studying statistics and machine learning, you will learn all sorts of fancy methods for drawing funky, nonlinear decision boundaries that account for all sorts of contingencies.</p>
+<p>If an email has features that place it above the line, we predict that it is a spam email. If an email have features that place it below the line, we predict that it is not. As you can see, this boundary is not perfect – there are red points above and blue points below. But nevertheless, it captures our intuitions pretty well; an email with a high fraction of “you” and many capital letters is more likely spam. If you keep studying statistics and machine learning, you will learn plenty of fancy methods for drawing funky, nonlinear decision boundaries that account for all sorts of contingencies.</p>
+<p>Something to play around with: adjust the threshold <code>p_thresh</code> and see how it changes the decision boundary.</p>
 </section>
 <section id="make-a-prediction-when-a-new-email-arrives" class="level2">
 <h2 class="anchored" data-anchor-id="make-a-prediction-when-a-new-email-arrives">Make a prediction when a new email arrives</h2>
@@ -540,12 +543,18 @@ Note
 1 0.00963   0.990</code></pre>
 </div>
 </div>
-<p>According to our model, the probability is pretty much 100%, which is above any reasonable threshold we might choose. Send it to the trash!</p>
+<p>According to our model, the probability is pretty much 100%, which is above any normal threshold we might choose. Send it to the trash!</p>
 
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>This is not hard to derive. Set <span class="math inline">\((1+e^{-(\beta_0+\beta_1x_1+\beta_2x_2)})^{-1}\)</span> equal to your chosen threshold <span class="math inline">\(p^\star\)</span>, and then solve for <span class="math inline">\(x_2\)</span> as a function of <span class="math inline">\(x_1\)</span>. You’ll get a line.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
