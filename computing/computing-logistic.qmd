@@ -154,4 +154,4 @@ new_email <- tibble(
 predict(type_you_capital_fit, new_data = new_email, type = "prob")
 ```
 
-According to our model, the probability is 99%, which is above any normal threshold we might choose. Send it to the trash!
+According to our model, the probability of this email being spam is 99%, which is above any normal threshold we might choose. Send it to the trash!
