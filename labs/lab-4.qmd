@@ -287,6 +287,6 @@ If you fail to mark the pages associated with an exercise, that exercise won't b
 | Exercise 6  | 8      |
 | Exercise 7  | 6      |
 | Exercise 8  | 7      |
-| Exercise 9  | 4      |
-| Exercise 10 | 2      |
+| Exercise 9  | 1      |
+| Exercise 10 | 5      |
 | **Total**   | 50     |
