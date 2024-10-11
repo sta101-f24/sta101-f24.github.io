@@ -133,7 +133,7 @@ hp_spam |>
   )
 ```
 
-If an email has features that place it above the line, we predict that it is a spam email. If an email have features that place it below the line, we predict that it is not. As you can see, this boundary is not perfect -- there are red points above and blue points below. But nevertheless, it captures our intuitions pretty well; an email with a high fraction of "you" and many capital letters is more likely spam. If you keep studying statistics and machine learning, you will learn plenty of fancy methods for drawing funky, nonlinear decision boundaries that account for all sorts of contingencies.
+If an email has features that place it above the line, we predict that it is a spam email. If an email has features that place it below the line, we predict that it is not. As you can see, this boundary is not perfect -- there are red points above and blue points below. But nevertheless, it captures our intuitions pretty well; an email with a high fraction of "you" and many capital letters is more likely spam. If you keep studying statistics and machine learning, you will learn plenty of fancy methods for drawing funky, nonlinear decision boundaries that account for all sorts of contingencies.
 
 Something to play around with: adjust the threshold `p_thresh` and see how it changes the decision boundary.
 
