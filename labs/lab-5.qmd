@@ -2,6 +2,8 @@
 title: "Lab 5"
 ---
 
+By the end of this lab you will construct and interpret confidence intervals via bootstrapping.
+
 ## Getting started
 
 1.  Use [these steps](https://sta101-f24.github.io/computing/computing-access.html) to navigate to the STA101 version of `RStudio` using the [Duke Container Manager](https://cmgr.oit.duke.edu/containers);
