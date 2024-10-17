@@ -1,0 +1,99 @@
+---
+  title: "Confidence intervals with the bootstrap"
+---
+
+A $100\times(1-\alpha)\%$ confidence interval is an interval $(L_n,\,U_n)$ that contains the true value $\theta$ of some quantity of interest with high probability across repeated sampling. In order to approximate such an interval in general, we use the bootstrap to approximate the sampling distribution of an estimator $\hat{\theta}$, and then we use the quantiles of that boostrap distribution to determine the bounds of our interval.
+
+This primer leads you down the path of least resistance to...doing all that.
+
+## Setup
+
+Load our packages as usual:
+
+```{r}
+#| label: load-tidyverse
+#| message: false
+
+library(tidyverse) 
+library(tidymodels) 
+```
+
+Next, consider this lil' dataset:
+
+```{r}
+#| label: load-data
+#| message: false
+
+abb <- read_csv("asheville.csv")
+
+abb
+```
+
+These are data on the price per guest in USD (`ppg`) for a random sample of fifty Airbnb listings in 2020 for Asheville, NC. We are going to use these data to investigate what we would of expected to pay for an Airbnb in in Asheville, NC in June 2020. Here is what the data look like:
+
+```{r}
+#| message: false
+ggplot(abb, aes(x = ppg)) + 
+  geom_histogram() +
+  labs(x = "Price per guest ($)")
+```
+To answer the question "what was the typical or expected price," we can calculate a point estimate like the sample mean or sample median:
+
+```{r}
+abb |> 
+  summarize(ppg.mean = mean(ppg),
+            ppg.median = median(ppg))
+```
+In this case they disagree quite a bit, which in general is something you should think about, but for the purposes of this primer, we will set the issue aside and focus just on the sample mean as our estimate.
+
+## Approximating the sampling distribution of the mean with the bootstrap
+
+The sampling distribution of the mean refers to the random variation we would observe in our mean estimate if we recomputed it based on many different hypothetical samples from the population (June 2020 Airbnb listings in Asheville, in this case). Unfortunately, we do not have many different samples from this population. We only have one sample. But *if* that sample is a decent approximation to the population (debateable, in this case), we can randomly generate different hypothetical samples from our sample (resamples), calculate a different mean for each, and look at the variation in those estimates. 
+
+This is dirty work, but thankfully the computer handles it with aplomb:
+
+```{r}
+set.seed(8675309) 
+
+boot_dist_abb <- abb |>
+  specify(response = ppg) |>
+  generate(reps = 5000, type = "bootstrap") |>
+  calculate(stat = "mean")
+
+boot_dist_abb
+```
+
+```{r}
+#| message: false
+ggplot(boot_dist_abb, aes(x = stat)) + 
+  geom_histogram()
+```
+
+## Calculating an approximate confidence interval
+
+Armed with our bootstrap sample of different means, we can calculate a 95% confidence interval using the `quantile` function:
+
+```{r}
+boot_dist_abb |>
+  summarize(
+    lower = quantile(stat, 0.025),
+    upper = quantile(stat, 0.975)
+  )
+```
+Alternatively, we can use this nifty command which gives the same numbers:
+
+```{r}
+ci_95_abb <- boot_dist_abb |>
+  get_confidence_interval(
+    point_estimate = mean(abb$ppg), 
+    level = 0.95
+  )
+ci_95_abb
+```
+
+Lastly, we can summarize it all with a picture:
+
+```{r}
+visualize(boot_dist_abb) +
+  shade_confidence_interval(ci_95_abb)
+```
