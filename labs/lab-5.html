@@ -51,27 +51,7 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -84,12 +64,10 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -164,30 +142,6 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
       <img src="../images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
-      <div class="sidebar-tools-main tools-wide">
-    <div class="dropdown">
-      <a href="" title="Canvas" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Canvas"><i class="bi bi-person-fill"></i></a>
-      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
-<li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/4625/announcements">
-            Announcements
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/4625/gradebook">
-            Grades
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://canvas.duke.edu/courses/4625/quizzes">
-            Tutorial submission
-            </a>
-          </li>
-      </ul>
-</div>
-    <a href="https://github.com/sta101-f24/sta101-f24.github.io" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-</div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -199,7 +153,7 @@ window.Quarto = {
 <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
- <span class="menu-text">Course information</span></a>
+ <span class="menu-text">Syllabus</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -213,38 +167,38 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../course-syllabus.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Syllabus</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../course-support.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Support</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../course-team.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Teaching team</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../course-materials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course materials</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-grading.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignments and grading</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-policies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course policies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">University resources</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schedule</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../course-links.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Useful links</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../course-faq.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">FAQ</span></a>
   </div>
 </li>
       </ul>
@@ -264,12 +218,30 @@ window.Quarto = {
  <span class="menu-text">Lab 1</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 4</span></a>
+  </div>
+</li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
- <span class="menu-text">Projects</span></a>
+ <span class="menu-text">Computing primers</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -277,37 +249,56 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../project/project-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Project 1</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../project/project-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Project 2</span></a>
-  </div>
-</li>
-      </ul>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
- <span class="menu-text">Computing</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../computing/computing-access.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Access</span></a>
+ <span class="menu-text">Accessing RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computing/computing-troubleshooting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Troubleshooting</span></a>
+  <a href="../computing/computing-moving.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Moving files around</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing/computing-file-paths.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Adjusting file paths</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing/computing-pipe.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Piping</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing/computing-histograms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Histogram basics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing/computing-barplot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Barplot basics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing/computing-regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simple linear regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing/computing-mlr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multiple linear regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing/computing-logistic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Logistic regression</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -318,12 +309,6 @@ window.Quarto = {
 </li>
       </ul>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../extra-credit.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Extra credit</span></a>
-  </div>
-</li>
     </ul>
 </div>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
@@ -333,31 +318,29 @@ window.Quarto = {
    
   <ul>
 <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting started</a></li>
+  <li><a href="#pointers" id="toc-pointers" class="nav-link" data-scroll-target="#pointers">Pointers</a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
   <li>
-<a href="#part-1-ims-exercises" id="toc-part-1-ims-exercises" class="nav-link" data-scroll-target="#part-1-ims-exercises">Part 1: IMS Exercises</a>
+<a href="#part-1-lemurs" id="toc-part-1-lemurs" class="nav-link" data-scroll-target="#part-1-lemurs">Part 1: Lemurs</a>
   <ul class="collapse">
 <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
   <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
   <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#part-2-heart-transplants---outcome" id="toc-part-2-heart-transplants---outcome" class="nav-link" data-scroll-target="#part-2-heart-transplants---outcome">Part 2: Heart transplants - <code>outcome</code></a>
-  <ul class="collapse">
-<li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
+  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
   <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
   <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
   <li><a href="#exercise-7" id="toc-exercise-7" class="nav-link" data-scroll-target="#exercise-7">Exercise 7</a></li>
-  <li><a href="#exercise-8" id="toc-exercise-8" class="nav-link" data-scroll-target="#exercise-8">Exercise 8</a></li>
   </ul>
 </li>
   <li>
-<a href="#part-3-heart-transplants---survtime" id="toc-part-3-heart-transplants---survtime" class="nav-link" data-scroll-target="#part-3-heart-transplants---survtime">Part 3: Heart transplants - <code>survtime</code></a>
+<a href="#part-2-ims-exercises" id="toc-part-2-ims-exercises" class="nav-link" data-scroll-target="#part-2-ims-exercises">Part 2: IMS Exercises</a>
   <ul class="collapse">
-<li><a href="#exercise-9" id="toc-exercise-9" class="nav-link" data-scroll-target="#exercise-9">Exercise 9</a></li>
+<li><a href="#exercise-8" id="toc-exercise-8" class="nav-link" data-scroll-target="#exercise-8">Exercise 8</a></li>
+  <li><a href="#exercise-9" id="toc-exercise-9" class="nav-link" data-scroll-target="#exercise-9">Exercise 9</a></li>
   <li><a href="#exercise-10" id="toc-exercise-10" class="nav-link" data-scroll-target="#exercise-10">Exercise 10</a></li>
   </ul>
 </li>
+  <li><a href="#lastly" id="toc-lastly" class="nav-link" data-scroll-target="#lastly">Lastly</a></li>
   <li>
 <a href="#wrap-up" id="toc-wrap-up" class="nav-link" data-scroll-target="#wrap-up">Wrap up</a>
   <ul class="collapse">
@@ -365,7 +348,7 @@ window.Quarto = {
   <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
   </ul>
 </li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta101-f24/sta101-f24.github.io/edit/main/labs/lab-5.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta101-f24/sta101-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+  </ul></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
@@ -383,214 +366,127 @@ window.Quarto = {
   
 
 
-</header><p>By the end of this lab you will create formulate and conduct hypothesis tests using randomization.</p>
-<p>For all visualizations you create, be sure to include informative titles for the plot, axes, and legend!</p>
-<section id="getting-started" class="level1"><h1>Getting started</h1>
+</header><section id="getting-started" class="level2"><h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
 <ol type="1">
-<li><p>Go to <a href="https://posit.cloud/spaces/405361">Posit Cloud</a> and start the project titled <strong>lab-5 - Hypothesis testing</strong>.</p></li>
-<li><p>Under the <em>Files</em> tab on the lower right, click on <code>lab-5.qmd</code> to open the lab template.</p></li>
-<li><p>Complete the exercises in this document.</p></li>
-</ol></section><section id="part-1-ims-exercises" class="level1"><h1>Part 1: IMS Exercises</h1>
+<li><p>Use <a href="https://sta101-f24.github.io/computing/computing-access.html">these steps</a> to navigate to the STA101 version of <code>RStudio</code> using the <a href="https://cmgr.oit.duke.edu/containers">Duke Container Manager</a>;</p></li>
+<li><p>Use <a href="https://sta101-f24.github.io/computing/computing-moving.html">these steps</a> to download all of the lab 5 files from our <a href="https://canvas.duke.edu/courses/36641">Canvas page</a>, upload them to your <code>RStudio</code> files, and move them into an appropriately named folder (<code>lab-5</code>, for instance);</p></li>
+<li><p>Once <code>lab-5.qmd</code> is where it needs to be, open it, and verify that you can click the “Render” button in <code>RStudio</code> and get a PDF file. See <a href="https://edstem.org/us/courses/64268/discussion/5216372?answer=12080244">this answer</a> on Ed if you want more guidance here;</p></li>
+<li><p>Now proceed to complete the exercises in this lab.</p></li>
+</ol></section><section id="pointers" class="level2"><h2 class="anchored" data-anchor-id="pointers">Pointers</h2>
+<ul>
+<li>For all visualizations you create, be sure to include informative titles for the plot, axes, and legend;</li>
+<li>Respond in complete sentences as much as possible;</li>
+<li>Be sure to observe good code style:
+<ul>
+<li>There is a line break after each <code>|&gt;</code> in a pipeline or <code>+</code> in a ggplot;</li>
+<li>There are spaces around <code>=</code> signs;</li>
+<li>There is a space after each <code>,</code>;</li>
+<li>Code is properly indented;</li>
+<li>Code doesn’t exceed 80 characters in each line, longer lines of code are spread across multiple lines with appropriately placed line breaks (so in the rendered PDF, your code shouldn’t run off the page);</li>
+<li>Code chunks are labeled, informatively and without spaces.</li>
+</ul>
+</li>
+</ul></section><section id="packages" class="level2"><h2 class="anchored" data-anchor-id="packages">Packages</h2>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span> </span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidymodels.tidymodels.org">tidymodels</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="part-1-lemurs" class="level2"><h2 class="anchored" data-anchor-id="part-1-lemurs">Part 1: Lemurs</h2>
+<p>This week we’ll be working with data from the <a href="https://lemur.duke.edu/">Duke Lemur Center</a>, which houses over 200 lemurs across 14 species – the most diverse population of lemurs on Earth, outside their native Madagascar.</p>
+<blockquote class="blockquote">
+<p>Lemurs are the most threatened group of mammals on the planet, and 95% of lemur species are at risk of extinction. Our mission is to learn everything we can about lemurs – because the more we learn, the better we can work to save them from extinction. They are endemic only to Madagascar, so it’s essentially a one-shot deal: once lemurs are gone from Madagascar, they are gone from the wild.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>By studying the variables that most affect their health, reproduction, and social dynamics, the Duke Lemur Center learns how to most effectively focus <a href="https://lemur.duke.edu/protect/overview-madagascar-conservation-programs/">their conservation efforts</a>. And the more we learn about lemurs, the better we can educate the public around the world about just how amazing these animals are, why they need to be protected, and how each and every one of us can make a difference in their survival.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Source: <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24/readme.md">TidyTuesday</a></p>
+</blockquote>
+<p>The codebook for the deataset can be found <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24/readme.md#lemur_datacsv">here</a>. While the TidyTuesday project used the full dataset, we’ll be working with a subset.</p>
+<section id="exercise-1" class="level3"><h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
+<div class="exercise">
+<p>Load the <code>lemurs</code> data from your <code>data</code> folder and save it as <code>lemurs</code>. Then, report which “types” of lemurs are represented in the sample and how many of each. Note that this information is in the <code>taxon</code> variable. You should refer back to the linked data dictionary to understand what the different values of <code>taxon</code> mean.</p>
+</div>
+</section><section id="exercise-2" class="level3"><h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
+<div class="exercise">
+<p>What is the <strong>mean</strong> weight of <strong>ring-tailed lemurs</strong>? Calculate, visualize, and interpret a 95% bootstrap confidence interval together with your point estimate. Use <code>set.seed(123)</code> and <code>reps = 1000</code> to create your bootstrap confidence interval.</p>
+</div>
+<p><strong>Hints:</strong></p>
+<p>Below is a step-by-step recipe for constructing and visualizing a confidence interval. The code snippets shown are not “complete”, they’re intended to guide you in the right direction.</p>
+<ul>
+<li><p>Step 1: Create a dataset of ring-tailed lemurs, and call it <code>lemurs_rt</code>. Note, these are <code>taxon == "LCAT"</code>.</p></li>
+<li><p>Step 2: Calculate the mean weight of ring-tailed lemurs.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">obs_stat_mean_rt</span> <span class="op">&lt;-</span> <span class="va">lemurs_rt</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">specify</span><span class="op">(</span>response <span class="op">=</span> <span class="va">weight_g</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">calculate</span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"mean"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Step 3: Construct a bootstrap distribution. Note: There is a <code>generate()</code> step, so you also need to set a seed before running the following.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">boot_dist_mean_rt</span> <span class="op">&lt;-</span> <span class="va">lemurs_rt</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">specify</span><span class="op">(</span>response <span class="op">=</span> <span class="va">weight_g</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">generate</span><span class="op">(</span>reps <span class="op">=</span> <span class="fl">1000</span>, type <span class="op">=</span> <span class="st">"bootstrap"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">calculate</span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"mean"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Step 4: Calculate the bounds of the confidence interval. Don’t forget to interpret it as well!</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ci_95_mean_rt</span> <span class="op">&lt;-</span> <span class="va">boot_dist_mean_rt</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">get_confidence_interval</span><span class="op">(</span></span>
+<span>    point_estimate <span class="op">=</span> <span class="va">obs_stat_mean_rt</span>, </span>
+<span>    level <span class="op">=</span> <span class="fl">0.95</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Step 5: Visualize the confidence interval, overlaying it on the bootstrap distribution.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">visualize</span><span class="op">(</span><span class="va">boot_dist_mean_rt</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">shade_confidence_interval</span><span class="op">(</span>endpoints <span class="op">=</span> <span class="va">ci_95_mean_rt</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="exercise-3" class="level3"><h3 class="anchored" data-anchor-id="exercise-3">Exercise 3</h3>
+<div class="exercise">
+<p>What is the <strong>median</strong> weight of ring-tailed lemurs? What is the <strong>median</strong> weight of mongoose lemurs? Report a 95% bootstrap confidence interval together with your point estimates. Use <code>set.seed(123)</code> and <code>reps = 10000</code> to create your bootstrap confidence intervals.</p>
+</div>
+</section><section id="exercise-4" class="level3"><h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
+<div class="exercise">
+<p>Your friend has never taken a statistics course. Describe to your friend the process of “bootstrap sampling” in the previous exercise to create a bootstrap confidence interval in your own words. Walk your friend through the process of collecting a bootstrap sample, computing a statistic and then repeating). You may find it helpful to describe it as drawing pieces of paper from a bag like we did in class.</p>
+</div>
+<p><strong>Hint:</strong> What would you write on the slips of paper? How many pieces of paper would be in the bag(s)? How many bag(s) would you need for the above exercise?</p>
+</section><section id="exercise-5" class="level3"><h3 class="anchored" data-anchor-id="exercise-5">Exercise 5</h3>
+<div class="exercise">
+<p>Do female lemurs differ in weight from male lemurs? Report the difference in mean weights between groups. Next, construct a 99% bootstrap distribution for the difference in means between groups and interpret it. If the interval covers 0, you might think there is no difference between groups. Does the interval cover 0? Use <code>set.seed(123)</code> and <code>reps = 10000.</code></p>
+</div>
+</section><section id="exercise-6" class="level3"><h3 class="anchored" data-anchor-id="exercise-6">Exercise 6</h3>
+<div class="exercise">
+<p>Create a new column that tells you whether or not a lemur was born in the first or second half of the year (January through June vs July through December). Create a meaningful plot to illustrate the weights of each group of lemurs. Use <code><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw()</a></code> to replace the default gray plot background. Based on your figure, which group of lemurs weighs more? Is the distribution of one or both groups skewed or symmetric? See <a href="https://openintro-ims2.netlify.app/05-explore-numerical#sec-histograms">here</a> for more information about skew vs symmetric distributions.</p>
+</div>
+</section><section id="exercise-7" class="level3"><h3 class="anchored" data-anchor-id="exercise-7">Exercise 7</h3>
+<div class="exercise">
+<p>Is there more variability in weight for lemurs born in the first half or second half of the year? Report the estimated standard deviation of each group. Report a 90% bootstrap confidence interval of s.d. for each group. Interpret the confidence intervals in context. Use <code>set.seed(123)</code> and remember to set <code>reps = 10000</code>.</p>
+</div>
+</section></section><section id="part-2-ims-exercises" class="level2"><h2 class="anchored" data-anchor-id="part-2-ims-exercises">Part 2: IMS Exercises</h2>
 <p>The exercises in this section do not require code. Make sure to answer the questions in full sentences.</p>
-<section id="exercise-1" class="level2"><h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
+<section id="exercise-8" class="level3"><h3 class="anchored" data-anchor-id="exercise-8">Exercise 8</h3>
 <div class="exercise">
-<p>IMS - <a href="https://openintro-ims2.netlify.app/11-foundations-randomization#chp11-exercises">Chapter 11 exercises</a>, #2: Identify the parameter, II.</p>
+<p>IMS - <a href="https://openintro-ims.netlify.app/foundations-bootstrapping#sec-chp12-exercises">Chapter 12 exercises</a>, #2: Chronic illness.</p>
 </div>
-</section><section id="exercise-2" class="level2"><h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
+</section><section id="exercise-9" class="level3"><h3 class="anchored" data-anchor-id="exercise-9">Exercise 9</h3>
 <div class="exercise">
-<p>IMS - <a href="https://openintro-ims2.netlify.app/11-foundations-randomization#chp11-exercises">Chapter 11 exercises</a>, #6: Identify hypotheses, II.</p>
+<p>IMS - <a href="https://openintro-ims.netlify.app/foundations-bootstrapping#sec-chp12-exercises">Chapter 12 exercises</a>, #6: Bootstrap distributions of <span class="math inline">\(\hat{p}\)</span>, III.</p>
 </div>
-</section><section id="exercise-3" class="level2"><h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
+</section><section id="exercise-10" class="level3"><h3 class="anchored" data-anchor-id="exercise-10">Exercise 10</h3>
 <div class="exercise">
-<p>IMS - <a href="https://openintro-ims2.netlify.app/11-foundations-randomization#chp11-exercises">Chapter 11 exercises</a>, #8: Heart transplants.</p>
+<p>IMS - <a href="https://openintro-ims.netlify.app/foundations-bootstrapping#sec-chp12-exercises">Chapter 12 exercises</a>, #8: Waiting at an ER.</p>
 </div>
-</section></section><section id="part-2-heart-transplants---outcome" class="level1"><h1>Part 2: Heart transplants - <code>outcome</code>
-</h1>
-<p>Today, we will be working with data from The Stanford University Heart Transplant Study<span class="citation" data-cites="turnbull1974">(<a href="#ref-turnbull1974" role="doc-biblioref">Turnbull, Brown, and Hu 1974</a>)</span>.</p>
-<p>We’ll use the tidyverse and tidymodels packages for our analysis, so let’s load those first.</p>
-<div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidymodels.tidymodels.org">tidymodels</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://openintrostat.github.io/openintro/">openintro</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>And then, let’s read the data and take a peak at it:</p>
-<div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">heart_transplant</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/heart-transplant.csv"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">heart_transplant</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Rows: 103
-Columns: 8
-$ id         &lt;dbl&gt; 15, 43, 61, 75, 6, 42, 54, 38, 85, 2, 103, 12, 48, 102, 35,…
-$ outcome    &lt;chr&gt; "deceased", "deceased", "deceased", "deceased", "deceased",…
-$ transplant &lt;chr&gt; "control", "control", "control", "control", "control", "con…
-$ age        &lt;dbl&gt; 53, 43, 52, 52, 54, 36, 47, 41, 47, 51, 39, 53, 56, 40, 43,…
-$ survtime   &lt;dbl&gt; 1, 2, 2, 2, 3, 3, 3, 5, 5, 6, 6, 8, 9, 11, 12, 16, 16, 16, …
-$ acceptyear &lt;dbl&gt; 68, 70, 71, 72, 68, 70, 71, 70, 73, 68, 67, 68, 71, 74, 70,…
-$ prior      &lt;chr&gt; "no", "no", "no", "no", "no", "no", "no", "no", "no", "no",…
-$ wait       &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, 5, NA, NA, NA, NA, NA, NA, NA, …</code></pre>
-</div>
-</div>
-<p>The data dictionary is as follows:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 7%">
-<col style="width: 92%">
-</colgroup>
-<thead><tr class="header">
-<th>Variable</th>
-<th>Description</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>id</td>
-<td>ID number of the patient</td>
-</tr>
-<tr class="even">
-<td>outcome</td>
-<td>Survival status with levels <code>alive</code> and <code>deceased</code>
-</td>
-</tr>
-<tr class="odd">
-<td>transplant</td>
-<td>Transplant group with levels <code>control</code> (did not receive a transplant) and <code>treatment</code> (received a transplant)</td>
-</tr>
-<tr class="even">
-<td>age</td>
-<td>Age of the patient at the beginning of the study</td>
-</tr>
-<tr class="odd">
-<td>survtime</td>
-<td>Number of days patients were alive after the date they were determined to be a candidate for a heart transplant until the termination date of the study</td>
-</tr>
-<tr class="even">
-<td>acceptyear</td>
-<td>Year of acceptance as a heart transplant candidate</td>
-</tr>
-<tr class="odd">
-<td>prior</td>
-<td>Whether or not the patient had prior surgery with levels <code>yes</code> and <code>no</code>
-</td>
-</tr>
-<tr class="even">
-<td>wait</td>
-<td>Waiting time for transplant</td>
-</tr>
-</tbody>
-</table>
-<section id="exercise-4" class="level2"><h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
-<div class="exercise">
-<p>Recreate the stacked bar plot in Exercise 3.</p>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The colors are <code>#569BBD</code> and <code>#114B5F</code>. Use <code><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_fill_manual()</a></code> to indicate these are the colors you want to use.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Pause and render
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Now that you’ve completed a few exercises, pause and render your document. If it renders without any issues, great! Move on to the next exercise. If it does not, debug the issue before moving on. Ask for help from your TA if you need. Do not proceed without rendering your document.</p>
-</div>
-</div>
-</section><section id="exercise-5" class="level2"><h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
-<div class="exercise">
-<p>Calculate the point estimate for the difference in proportions of patients who died between the treatment and control groups: <span class="math inline">\(\hat{p}_{treatment} - \hat{p}_{control}\)</span>, where <span class="math inline">\(\hat{p}\)</span> is the observed probability of dying in each group. Do this in two ways:</p>
-<ol type="1">
-<li>Construct a frequency table of <code>survived</code> by <code>transplant</code> and calculate the difference in proportions “by hand”.</li>
-<li>Use <code>specify()</code> and <code>calculate()</code> to calculate the difference in proportions as shown below.</li>
-</ol>
-<div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">obs_diff_outcome</span> <span class="op">&lt;-</span> <span class="va">heart_transplant</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">specify</span><span class="op">(</span>response <span class="op">=</span> <span class="va">outcome</span>, explanatory <span class="op">=</span> <span class="va">transplant</span>, success <span class="op">=</span> <span class="st">"deceased"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">calculate</span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"diff in props"</span>, order <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"treatment"</span>, <span class="st">"control"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Then, confirm that you obtained the same results with the two methods.</p>
-</div>
-</section><section id="exercise-6" class="level2"><h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
-<div class="exercise">
-<p>Using the code below, generate a null distribution for the hypothesis test for the hypothesis you formulated in Exercise 3. Use 100 resamples (<code>reps</code>). However, change the seed to use a different seed.</p>
-<div class="cell">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1234</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">null_dist_outcome</span> <span class="op">&lt;-</span> <span class="va">heart_transplant</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">specify</span><span class="op">(</span>response <span class="op">=</span> <span class="va">outcome</span>, explanatory <span class="op">=</span> <span class="va">transplant</span>, success <span class="op">=</span> <span class="st">"deceased"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">hypothesize</span><span class="op">(</span>null <span class="op">=</span> <span class="st">"independence"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">generate</span><span class="op">(</span>reps <span class="op">=</span> <span class="fl">100</span>, type <span class="op">=</span> <span class="st">"permute"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">calculate</span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"diff in props"</span>, order <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"treatment"</span>, <span class="st">"control"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Then, inspect the object <code>null_dist_outcome</code> using either <code><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse()</a></code> or just printing it to screen. How many rows and how many columns does it have? What does each row represent? What does each variable represent?</p>
-</div>
-</section><section id="exercise-7" class="level2"><h2 class="anchored" data-anchor-id="exercise-7">Exercise 7</h2>
-<div class="exercise">
-<p>Visualize the distribution of simulated differences in proportions of deceased between treatment and control groups. What is the shape of this distribution? What is the center of this distribution? Are these results expected? Explain your reasoning.</p>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>These simulated values are in the <code>stat</code> column of <code>null_dist_outcome</code>.</p>
-</div>
-</div>
-</section><section id="exercise-8" class="level2"><h2 class="anchored" data-anchor-id="exercise-8">Exercise 8</h2>
-<div class="exercise">
-<p>Calculate the p-value. Do this in two ways:</p>
-<ol type="1">
-<li>Filter <code>null_dist_outcome</code> for <code>stat</code> values that are at least as far away from the null value as the observed value you calculated in Exercise 4. Make sure you’re considering both directions! Note how many such values there are, and calculate the proportion out of the total number of resamples.</li>
-<li>Use <code>get_p_value()</code>:</li>
-</ol>
-<div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p_value_outcome</span> <span class="op">&lt;-</span> <span class="va">null_dist_outcome</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">get_p_value</span><span class="op">(</span>obs_stat <span class="op">=</span> <span class="va">obs_diff_outcome</span>, direction <span class="op">=</span> <span class="st">"two-sided"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Then, confirm that you obtained the same results with the two methods. Finally, interpret the p-value in context of the data and the research question and comment on the statistical discernability of this result using a discernability level of 5%.</p>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Pause and render
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Now that you’ve completed a few exercises, pause and render your document. If it renders without any issues, great! Move on to the next exercise. If it does not, debug the issue before moving on. Ask for help from your TA if you need. Do not proceed without rendering your document.</p>
-</div>
-</div>
-</section></section><section id="part-3-heart-transplants---survtime" class="level1"><h1>Part 3: Heart transplants - <code>survtime</code>
-</h1>
-<section id="exercise-9" class="level2"><h2 class="anchored" data-anchor-id="exercise-9">Exercise 9</h2>
-<div class="exercise">
-<p>Recreate the side-by–side box plots in Exercise 3. The variable of interest is <code>survtime</code>, which is the number of days patients were alive after the date they were determined to be a candidate for a heart transplant until the termination date of the study.</p>
-</div>
-</section><section id="exercise-10" class="level2"><h2 class="anchored" data-anchor-id="exercise-10">Exercise 10</h2>
-<div class="exercise">
-<p>Do these data provide convincing evidence of a difference between average survival times of patient who did and did not get a heart transplant?</p>
-<p>Write the hypotheses for answering this question and conduct the hypothesis test using randomization. Use 1,000 resamples. In order to avoid name collision, use object names like <code>obs_diff_survtime</code>, <code>null_dist_survtime</code>, and <code>p_value_survtime</code>. Find and interpret the p-value in context of the data and the research question and comment on the statistical discernability of this result using a discernability level of 5%.</p>
-</div>
-</section></section><section id="wrap-up" class="level1"><h1>Wrap up</h1>
-<section id="submitting" class="level2"><h2 class="anchored" data-anchor-id="submitting">Submitting</h2>
+</section></section><section id="lastly" class="level2"><h2 class="anchored" data-anchor-id="lastly">Lastly</h2>
+<p>Recommend some music for us to listen to while we grade this.</p>
+</section><section id="wrap-up" class="level2"><h2 class="anchored" data-anchor-id="wrap-up">Wrap up</h2>
+<section id="submitting" class="level3"><h3 class="anchored" data-anchor-id="submitting">Submitting</h3>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -624,7 +520,7 @@ Warning
 <p>If you fail to mark the pages associated with an exercise, that exercise won’t be graded. This means, if you fail to mark the pages for all exercises, you will receive a 0 on the assignment. The TAs can’t mark your pages for you, and for them to be able to grade, you must mark them.</p>
 </div>
 </div>
-</section><section id="grading" class="level2"><h2 class="anchored" data-anchor-id="grading">Grading</h2>
+</section><section id="grading" class="level3"><h3 class="anchored" data-anchor-id="grading">Grading</h3>
 <table class="caption-top table">
 <thead><tr class="header">
 <th>Exercise</th>
@@ -633,43 +529,43 @@ Warning
 <tbody>
 <tr class="odd">
 <td>Exercise 1</td>
-<td>5</td>
+<td>3</td>
 </tr>
 <tr class="even">
 <td>Exercise 2</td>
-<td>4</td>
+<td>6</td>
 </tr>
 <tr class="odd">
 <td>Exercise 3</td>
-<td>6</td>
+<td>7</td>
 </tr>
 <tr class="even">
 <td>Exercise 4</td>
-<td>4</td>
+<td>5</td>
 </tr>
 <tr class="odd">
 <td>Exercise 5</td>
-<td>4</td>
+<td>5</td>
 </tr>
 <tr class="even">
 <td>Exercise 6</td>
-<td>6</td>
+<td>7</td>
 </tr>
 <tr class="odd">
 <td>Exercise 7</td>
-<td>5</td>
+<td>8</td>
 </tr>
 <tr class="even">
 <td>Exercise 8</td>
-<td>4</td>
+<td>3</td>
 </tr>
 <tr class="odd">
 <td>Exercise 9</td>
-<td>5</td>
+<td>3</td>
 </tr>
 <tr class="even">
 <td>Exercise 10</td>
-<td>7</td>
+<td>3</td>
 </tr>
 <tr class="odd">
 <td><strong>Total</strong></td>
@@ -679,12 +575,7 @@ Warning
 </table>
 
 
-
-</section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-turnbull1974" class="csl-entry" role="listitem">
-Turnbull, Bruce W., Byron Wm. Brown, and Marie Hu. 1974. <span>“Survivorship Analysis of Heart Transplant Data.”</span> <em>Journal of the American Statistical Association</em> 69 (345): 74–80. <a href="https://doi.org/10.1080/01621459.1974.10480130">https://doi.org/10.1080/01621459.1974.10480130</a>.
-</div>
-</div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -704,150 +595,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
-      }
-    }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-      }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
-        }
-      });
-    }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -1240,11 +987,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
-<p>© Copyright 2023, Mine Çetinkaya-Rundel; 2024, John Zito</p>
+<p>© Copyright 2024, Mine Çetinkaya-Rundel and John Zito</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta101-f24/sta101-f24.github.io/edit/main/labs/lab-5.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta101-f24/sta101-f24.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    </div>
     <div class="nav-footer-right">
 <p>This page is built with 🤍 and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

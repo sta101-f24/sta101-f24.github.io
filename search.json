@@ -616,6 +616,380 @@
     ]
   },
   {
+    "objectID": "labs/lab-4.html",
+    "href": "labs/lab-4.html",
+    "title": "Lab 4",
+    "section": "",
+    "text": "Use these steps to navigate to the STA101 version of RStudio using the Duke Container Manager;\nUse these steps to download all of the lab 4 files from our Canvas page, upload them to your RStudio files, and move them into an appropriately named folder (lab-4, for instance);\nOnce lab-4.qmd is where it needs to be, open it, and verify that you can click the “Render” button in RStudio and get a PDF file. See this answer on Ed if you want more guidance here;\nNow proceed to complete the exercises in this lab.",
+    "crumbs": [
+      "Labs",
+      "Lab 4"
+    ]
+  },
+  {
+    "objectID": "labs/lab-4.html#getting-started",
+    "href": "labs/lab-4.html#getting-started",
+    "title": "Lab 4",
+    "section": "",
+    "text": "Use these steps to navigate to the STA101 version of RStudio using the Duke Container Manager;\nUse these steps to download all of the lab 4 files from our Canvas page, upload them to your RStudio files, and move them into an appropriately named folder (lab-4, for instance);\nOnce lab-4.qmd is where it needs to be, open it, and verify that you can click the “Render” button in RStudio and get a PDF file. See this answer on Ed if you want more guidance here;\nNow proceed to complete the exercises in this lab.",
+    "crumbs": [
+      "Labs",
+      "Lab 4"
+    ]
+  },
+  {
+    "objectID": "labs/lab-4.html#pointers",
+    "href": "labs/lab-4.html#pointers",
+    "title": "Lab 4",
+    "section": "Pointers",
+    "text": "Pointers\n\nFor all visualizations you create, be sure to include informative titles for the plot, axes, and legend;\nRespond in complete sentences as much as possible;\nBe sure to observe good code style:\n\nThere is a line break after each |&gt; in a pipeline or + in a ggplot;\nThere are spaces around = signs;\nThere is a space after each ,;\nCode is properly indented;\nCode doesn’t exceed 80 characters in each line, longer lines of code are spread across multiple lines with appropriately placed line breaks (so in the rendered PDF, your code shouldn’t run off the page);\nCode chunks are labeled, informatively and without spaces.",
+    "crumbs": [
+      "Labs",
+      "Lab 4"
+    ]
+  },
+  {
+    "objectID": "labs/lab-4.html#packages",
+    "href": "labs/lab-4.html#packages",
+    "title": "Lab 4",
+    "section": "Packages",
+    "text": "Packages\n\nlibrary(tidyverse) \nlibrary(tidymodels)",
+    "crumbs": [
+      "Labs",
+      "Lab 4"
+    ]
+  },
+  {
+    "objectID": "labs/lab-4.html#part-1-do-you-even-lift",
+    "href": "labs/lab-4.html#part-1-do-you-even-lift",
+    "title": "Lab 4",
+    "section": "Part 1: Do you even lift?",
+    "text": "Part 1: Do you even lift?\nToday, we will be working with data from www.openpowerlifting.org. This data was sourced from Tidy Tuesday and contains international powerlifting records at various meets. At each meet, each lifter gets three attempts at lifting max weight on three lifts: the bench press, squat and deadlift.\n\nipf &lt;- read_csv(\"data/ipf.csv\")\n\n\n\n\n\n\n\nNote\n\n\n\nRecall that you may have to adjust the file path to match how you have organized your files and folders.\n\n\nThe data dictionary for this dataset from TidyTuesday is reproduced below:\n\n\n\n\n\n\nvariable\ndescription\n\n\n\nname\nIndividual lifter name\n\n\nsex\nBinary gender (M/F)\n\n\nevent\n\nThe type of competition that the lifter entered. Values are as follows:\n\nSBD: Squat-Bench-Deadlift, also commonly called “Full Power”\nBD: Bench-Deadlift, also commonly called “Ironman” or “Push-Pull”\nSD: Squat-Deadlift, very uncommon\nSB: Squat-Bench, very uncommon\nS: Squat-only\nB: Bench-only\nD: Deadlift-only\n\n\n\n\nequipment\n\nThe equipment category under which the lifts were performed. Values are as follows:\n\nRaw: Bare knees or knee sleeves\nWraps: Knee wraps were allowed\nSingle-ply: Equipped, single-ply suits\nMulti-ply: Equipped, multi-ply suits (includes Double-ply)\nStraps: Allowed straps on the deadlift (used mostly for exhibitions, not real meets)\n\n\n\n\nage\nThe age of the lifter on the start date of the meet, if known.\n\n\nage_class\nThe age class in which the filter falls, for example 40-45\n\n\n\ndivision\nFree-form UTF-8 text describing the division of competition, like Open or Juniors 20-23 or Professional.\n\n\nbodyweight_kg\nThe recorded bodyweight of the lifter at the time of competition, to two decimal places.\n\n\nweight_class_kg\n\nThe weight class in which the lifter competed, to two decimal places.\nWeight classes can be specified as a maximum or as a minimum. Maximums are specified by just the number, for example 90 means “up to (and including) 90kg.” minimums are specified by a + to the right of the number, for example 90+ means “above (and excluding) 90kg.”\n\n\n\nbest3squat_kg\n\nMaximum of the first three successful attempts for the lift.\nRarely may be negative: that is used by some federations to report the lowest weight the lifter attempted and failed.\n\n\n\nbest3bench_kg\n\nMaximum of the first three successful attempts for the lift.\nRarely may be negative: that is used by some federations to report the lowest weight the lifter attempted and failed.\n\n\n\nbest3deadlift_kg\n\nMaximum of the first three successful attempts for the lift.\nRarely may be negative: that is used by some federations to report the lowest weight the lifter attempted and failed.\n\n\n\nplace\n\nThe recorded place of the lifter in the given division at the end of the meet. Values are as follows:\n\nPositive number: the place the lifter came in.\nG: Guest lifter. The lifter succeeded, but wasn’t eligible for awards.\nDQ: Disqualified. Note that DQ could be for procedural reasons, not just failed attempts.\nDD: Doping Disqualification. The lifter failed a drug test.\nNS: No-Show. The lifter did not show up on the meet day.\n\n\n\n\ndate\nISO 8601 Date of the event\n\n\nfederation\nThe federation that hosted the meet. (limited to IPF for this data subset)\n\n\nmeet_name\nThe name of the meet. The name is defined to never include the year or the federation. For example, the meet officially called 2019 USAPL Raw National Championships would have the MeetName Raw National Championshps.\n\n\n\nFor all of the following exercises, you should include units on axes labels, e.g. “Bench press (lbs)” or “Bench press (kg)”. “Age (years)” etc. This is good practice.\nExercise 1\n\nLet’s begin by taking a look at the squat lifting records.\nTo begin, remove any observations that are negative for squat. Next, create a new column called best3_squat_lbs that converts the record from kg to lbs (you may have to Google the conversion). Save your data frame as ipf_squat. Report the number of rows and columns of this new data frame.\n\n\n\n\n\n\n\nHint\n\n\n\nFirst, you’re taking a dataset and filtering it for certain records, and then you’re mutate-ing that dataset to gain a new column, and you’re assigning the resulting dataset to a new object called ipf_squat.\n\n\nExercise 2\n\nUsing ipf_squat from the previous exercise, create a scatter plot to investigate the relationship between squat (in lbs) and age. Age should be on the x-axis. Adjust the alpha level of your points to get a better sense of the density of the data. Add a linear trend-line. Be sure to label all axes and give the plot a title. Comment on what you observe.\n\nExercise 3\n\nWrite down the linear model to predict lift squat lbs from age in \\(x\\), \\(y\\), \\(\\beta\\) notation. What is \\(x\\)? What is \\(y\\)? Next, fit the linear model, and save it as age_fit. Re-write your previous equation replacing \\(\\beta\\) with the numeric estimates. This is called the “fitted” linear model. Interpret each estimate of \\(\\beta\\). Are the interpretations sensible?\n\nExercise 4\n\nBuilding on your ipf_squat data frame, create a new column called age2 that takes the age of each lifter and squares it. Save it to your data frame ipf_squat. Next, plot squat in lbs vs age2 and add a linear best fit line. Does this model look like it fits the data better?\n\n\n\n\n\n\n\nHint\n\n\n\nTo raise a value to a power, use ^ in R, e.g.: 2 ^ 2 gives you 4, 2 ^ 3 gives you 8, etc.\n\n\nExercise 5\n\nOne metric to assess the fit of a model is \\(R^2\\). Fit the age\\(^2\\) model and save the object as age2_fit. Compare \\(R^2\\) of the age\\(^2\\) model to the \\(R^2\\) of the model from Exercise 3. Which has a higher \\(R^2\\)?\n\nExercise 6\n\nNext, let’s turn our attention to dead lifting records.\nRecreate the plot below. Make sure axes and title labels are exactly matching, including spelling, capitalization, etc. Based on the plot below, which impacts deadlift weight more, age category or sex?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\nYou will need to create a couple of new columns. One to classify age appropriately and one to convert best3deadlift_kg to the plotted units (lbs). Notice that there are no negative deadlift values on the x-axis.\n\n\n\n\n\n\n\n\nHint 2\n\n\n\nThese plots are called density plots. It’s just a smoothed out version of a histogram, and like the histogram it lets you visualize the distribution (center, spread, skew, etc) of a dataset. The geom_... that creates density plots is geom_density. Try it out!\n\n\nExercise 7\n\nFinally, let’s turn our attention to bench press records.\nTo begin, remove any observations that are negative for bench press, create two new columns: best3bench_lbs and bodyweight_lbs. Save the result in a new data frame called ipf_bench.\nThen, create a scatter plot to investigate the relationship between best bench press (in lbs) and the lifter’s bodyweight (in lbs). Bodyweight should be on the x-axis. Add a linear trend-line. Be sure to label all axes and give the plot a title. Comment on what you observe.\n\nExercise 8\n\nFit the linear model displayed in the previous exercise and write down the fitted model equation only, replacing \\(\\hat{\\beta}\\)s with their fitted estimates. Interpret the \\(\\hat{\\beta}\\)s (intercept and slope). Report \\(R^2\\). Is body weight an important predictor of bench press ability? Why or why not?",
+    "crumbs": [
+      "Labs",
+      "Lab 4"
+    ]
+  },
+  {
+    "objectID": "labs/lab-4.html#part-2-ims-exercises",
+    "href": "labs/lab-4.html#part-2-ims-exercises",
+    "title": "Lab 4",
+    "section": "Part 2: IMS Exercises",
+    "text": "Part 2: IMS Exercises\nThe exercises in this section do not require code. Make sure to answer the questions in full sentences.\nExercise 9\n\nIMS - Chapter 7 exercises, #18: Over-under, II.\n\nExercise 10\n\nIMS - Chapter 7 exercises, #24: Cats weights.",
+    "crumbs": [
+      "Labs",
+      "Lab 4"
+    ]
+  },
+  {
+    "objectID": "labs/lab-4.html#lastly",
+    "href": "labs/lab-4.html#lastly",
+    "title": "Lab 4",
+    "section": "Lastly",
+    "text": "Lastly\nRecommend some music for us to listen to while we grade this.",
+    "crumbs": [
+      "Labs",
+      "Lab 4"
+    ]
+  },
+  {
+    "objectID": "labs/lab-4.html#wrap-up",
+    "href": "labs/lab-4.html#wrap-up",
+    "title": "Lab 4",
+    "section": "Wrap up",
+    "text": "Wrap up\nSubmitting\n\n\n\n\n\n\nImportant\n\n\n\nBefore you proceed, first, make sure that you have updated the document YAML with your name! Then, render your document one last time, for good measure.\n\n\nTo submit your assignment to Gradescope:\n\nGo to your Files pane and check the box next to the PDF output of your document (lab-4.pdf).\nThen, in the Files pane, go to More &gt; Export. This will download the PDF file to your computer. Save it somewhere you can easily locate, e.g., your Downloads folder or your Desktop.\nGo to the course Canvas page and click on Gradescope and then click on the assignment. You’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the papers of your lab should be associated with at least one question (i.e., should be “checked”).\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you fail to mark the pages associated with an exercise, that exercise won’t be graded. This means, if you fail to mark the pages for all exercises, you will receive a 0 on the assignment. The TAs can’t mark your pages for you, and for them to be able to grade, you must mark them.\n\n\nGrading\n\n\nExercise\nPoints\n\n\n\nExercise 1\n3\n\n\nExercise 2\n5\n\n\nExercise 3\n5\n\n\nExercise 4\n5\n\n\nExercise 5\n5\n\n\nExercise 6\n8\n\n\nExercise 7\n6\n\n\nExercise 8\n7\n\n\nExercise 9\n1\n\n\nExercise 10\n5\n\n\nTotal\n50",
+    "crumbs": [
+      "Labs",
+      "Lab 4"
+    ]
+  },
+  {
+    "objectID": "labs/lab-3.html",
+    "href": "labs/lab-3.html",
+    "title": "Lab 3",
+    "section": "",
+    "text": "The goal of this lab is to solidify some of the skills and concepts from the first two weeks of the course.",
+    "crumbs": [
+      "Labs",
+      "Lab 3"
+    ]
+  },
+  {
+    "objectID": "labs/lab-3.html#getting-started",
+    "href": "labs/lab-3.html#getting-started",
+    "title": "Lab 3",
+    "section": "Getting started",
+    "text": "Getting started\n\nUse these steps to navigate to the STA101 version of RStudio using the Duke Container Manager;\nUse these steps to download all of the lab 3 files from our Canvas page, upload them to your RStudio files, and move them into an appropriately named folder (lab-3, for instance);\nOnce lab-3.qmd is where it needs to be, open it, and verify that you can click the “Render” button in RStudio and get a PDF file. See this answer on Ed if you want more guidance here;\nNow proceed to complete the exercises in this lab.",
+    "crumbs": [
+      "Labs",
+      "Lab 3"
+    ]
+  },
+  {
+    "objectID": "labs/lab-3.html#pointers",
+    "href": "labs/lab-3.html#pointers",
+    "title": "Lab 3",
+    "section": "Pointers",
+    "text": "Pointers\n\nFor all visualizations you create, be sure to include informative titles for the plot, axes, and legend;\nRespond in complete sentences as much as possible;\nBe sure to observe good code style:\n\nThere is a line break after each |&gt; in a pipeline or + in a ggplot;\nThere are spaces around = signs;\nThere is a space after each ,;\nCode is properly indented;\nCode doesn’t exceed 80 characters in each line, longer lines of code are spread across multiple lines with appropriately placed line breaks (so in the rendered PDF, your code shouldn’t run off the page);\nCode chunks are labeled, informatively and without spaces.",
+    "crumbs": [
+      "Labs",
+      "Lab 3"
+    ]
+  },
+  {
+    "objectID": "labs/lab-3.html#packages",
+    "href": "labs/lab-3.html#packages",
+    "title": "Lab 3",
+    "section": "Packages",
+    "text": "Packages\nIn this lab we will work with the tidyverse packages, which is a collection of packages for doing data analysis in a “tidy” way.\n\nlibrary(tidyverse)",
+    "crumbs": [
+      "Labs",
+      "Lab 3"
+    ]
+  },
+  {
+    "objectID": "labs/lab-3.html#part-1-nobel-laureates",
+    "href": "labs/lab-3.html#part-1-nobel-laureates",
+    "title": "Lab 3",
+    "section": "Part 1: Nobel laureates",
+    "text": "Part 1: Nobel laureates\nWe will now consider a data set on the characteristics of winners (laureates) of a Nobel prize: nobel.csv. You can read it in using the following.\n\nnobel &lt;- read_csv(\"data/nobel.csv\")\n\n\n\n\n\n\n\nNote\n\n\n\nRecall that you may have to adjust the file path to match how you have organized your files and folders.\n\n\nThe descriptions of the variables are as follows:\n\n\nid: ID number\n\nfirstname: First name of laureate\n\nsurname: Surname\n\nyear: Year prize won\n\ncategory: Category of prize\n\naffiliation: Affiliation of laureate\n\ncity: City of laureate in prize year\n\ncountry: Country of laureate in prize year\n\nborn_date: Birth date of laureate\n\ndied_date: Death date of laureate\n\ngender: Gender of laureate\n\nborn_city: City where laureate was born\n\nborn_country: Country where laureate was born\n\nborn_country_code: Code of country where laureate was born\n\ndied_city: City where laureate died\n\ndied_country: Country where laureate died\n\ndied_country_code: Code of country where laureate died\n\noverall_motivation: Overall motivation for recognition\n\nshare: Number of other winners award is shared with\n\nmotivation: Motivation for recognition\n\nIn a few cases the name of the city/country changed after laureate was given (e.g. in 1975 Bosnia and Herzegovina was called the Socialist Federative Republic of Yugoslavia). In these cases the variables below reflect a different name than their counterparts without the suffix _original.\n\n\nborn_country_original: Original country where laureate was born\n\nborn_city_original: Original city where laureate was born\n\ndied_country_original: Original country where laureate died\n\ndied_city_original: Original city where laureate died\n\ncity_original: Original city where laureate lived at the time of winning the award\n\ncountry_original: Original country where laureate lived at the time of winning the award\n\nThere are some observations in this dataset that we will exclude from our analysis. This code creates a new data frame called nobel_living_science that filters for\n\nlaureates for whom country is available: !is.na(country);\nlaureates who are people as opposed to organizations, i.e., organizations are denoted with \"org\" as their gender: gender != \"org\";\nlaureates who are still alive, i.e., their died_date is NA: is.na(died_date).\nlaureates in the sciences (so not literature or peace).\n\n\nnobel_living_science &lt;- nobel |&gt;\n  filter(!is.na(country) & gender != \"org\" & is.na(died_date)) |&gt;\n  filter(category %in% c(\"Physics\", \"Medicine\", \"Chemistry\", \"Economics\"))\n\nOnce you have filtered for these characteristics you are left with a data frame with 228 observations (check this!).\n\nMost living Nobel laureates were based in the US when they won their prizes\n\n… says this Buzzfeed article. Let’s see if that’s true.\nFirst, we’ll create a new variable to identify whether the laureate was in the US when they won their prize. We’ll use the mutate() function for this. The following pipeline mutates the nobel_living_science data frame by adding a new variable called country_us. We use an if statement to create this variable. The first argument in the if_else() function we’re using to write this if statement is the condition we’re testing for. If country is equal to \"USA\", we set country_us to \"USA\". If not, we set the country_us to \"Other\".\n\nnobel_living_science &lt;- nobel_living_science |&gt;\n  mutate(\n    country_us = if_else(country == \"USA\", \"USA\", \"Other\")\n  )\n\nFor the following exercises, work with the nobel_living_science data frame you created above.\nExercise 1\n\nCreate a faceted bar plot visualizing the relationship between the category of prize and whether the laureate was in the US when they won the Nobel prize. Interpret your visualization, and say a few words about whether the Buzzfeed headline is supported by the data.\n\nYour visualization should be faceted by category;\nFor each facet you should have two bars, one for winners in the US and one for Other;\nFlip the coordinates so the bars are horizontal, not vertical;\nMake sure everything is clearly labeled!\n\n\nExercise 2\nNext, let’s investigate, of those US-based Nobel laureates, what proportion were born in other countries.\n\nCreate a new variable called born_country_us in nobel_living_science that has the value \"USA\" if the laureate is born in the US, and \"Other\" otherwise. How many of the winners are born in the US?\n\nExercise 3\n\nAdd a second variable to your visualization from Exercise 1 based on whether the laureate was born in the US or not.\nCreate two visualizations with this new variable added:\n\nPlot 1: Segmented frequency bar plot\nPlot 2: Segmented relative frequency bar plot (Hint: Add position = \"fill\" to geom_bar().)\n\nHere are some instructions that apply to both of these visualizations:\n\nYour final visualization should contain a facet for each category.\nWithin each facet, there should be two bars for whether the laureate won the award in the US or not.\nEach bar should have segments for whether the laureate was born in the US or not.\n\nWhich of these visualizations is a better fit for answering the following question: “Do the data appear to support Buzzfeed’s claim that of those US-based Nobel laureates, many were born in other countries?” First, state which plot you’re using to answer the question. Then, answer the question, explaining your reasoning in 1-2 sentences.",
+    "crumbs": [
+      "Labs",
+      "Lab 3"
+    ]
+  },
+  {
+    "objectID": "labs/lab-3.html#part-2-practicing-our-coding-basics",
+    "href": "labs/lab-3.html#part-2-practicing-our-coding-basics",
+    "title": "Lab 3",
+    "section": "Part 2: practicing our coding basics",
+    "text": "Part 2: practicing our coding basics\nExercise 4\nThe file nsw-crime.csv contains monthly data on all criminal incidents recorded by police in New South Wales, Australia (the state that includes the city of Sydney). So a row in this data set corresponds to a month, and a column corresponds to a crime (murder, dealing cannabis, escaping custody, etc). The data count the number of cases of each crime in each month. In this exercise we will consider the variable offensive_language, an incident of disorderly conduct where the perpetrator…said some things.\n\nLoad the crime data into R and create four histogram plots of the variable offensive_language. In each plot, use a different number of histogram bins: 20, 40, 80, and 160. Decide which picture you think best visualizes the distribution of the crime counts, and explain why you think this.\n\nExercise 5\nLoad the data about the COVID delta variant (adjusting your file path as needed):\n\ndelta &lt;- read_csv(\"delta.csv\")\n\n\nConsider this sequence of commands:\n\n# part 1\n\ndelta |&gt;\n  count(vaccine, outcome)\n\n# part 2\n\ndelta |&gt;\n  count(vaccine, outcome) |&gt;\n  group_by(vaccine)\n\n# part 3\n\ndelta |&gt;\n  count(vaccine, outcome) |&gt;\n  group_by(vaccine) |&gt;\n  mutate(prop = n / sum(n))\n\nPick this code apart like a vulture and explain in complete sentences what is going on in each part. The more detail, the better.",
+    "crumbs": [
+      "Labs",
+      "Lab 3"
+    ]
+  },
+  {
+    "objectID": "labs/lab-3.html#part-3-ims-exercises",
+    "href": "labs/lab-3.html#part-3-ims-exercises",
+    "title": "Lab 3",
+    "section": "Part 3: IMS Exercises",
+    "text": "Part 3: IMS Exercises\nThe exercises in this section do not require code. Make sure to answer the questions in full sentences.\nExercise 6\n\nIMS - Chapter 4 exercises, #4: Raise taxes.\n\nExercise 7\n\nIMS - Chapter 5 exercises, #4: Office productivity.\n\nExercise 8\n\nIMS - Chapter 5 exercises, #15: Distributions and appropriate statistics.\n\nExercise 9\n\nIMS - Chapter 5 exercises, #26: NYC marathon winners.",
+    "crumbs": [
+      "Labs",
+      "Lab 3"
+    ]
+  },
+  {
+    "objectID": "labs/lab-3.html#part-4-waxing-poetic",
+    "href": "labs/lab-3.html#part-4-waxing-poetic",
+    "title": "Lab 3",
+    "section": "Part 4: waxing poetic",
+    "text": "Part 4: waxing poetic\nExercise 10\n\nDescribe a situation from your everyday life where you have to make a decision, but it is difficult to make a good decision because you face some uncertainty about the world. Common examples (which you should not now use!) might include deciding when to get food at the dining hall, because you are uncertain about the length of the lines, or deciding when to have a picnic, because you are uncertain about the weather. Next, describe some data (information) that, if you had access to it, would resolve some of the uncertainty you face and help you make a better decision. Describe two versions of the data: an ideal version that would theoretically resolve all of the uncertainty, and an imperfect version that you are more likely to actually encounter in practice. How would you use these data to guide your decision making?\n\n\n\n\n\n\n\nNote\n\n\n\nThis is basically going to be graded for completion, but I hope some of you will get creative, and I look forward to reading these!",
+    "crumbs": [
+      "Labs",
+      "Lab 3"
+    ]
+  },
+  {
+    "objectID": "labs/lab-3.html#lastly",
+    "href": "labs/lab-3.html#lastly",
+    "title": "Lab 3",
+    "section": "Lastly",
+    "text": "Lastly\nRecommend some music for us to listen to while we grade this.",
+    "crumbs": [
+      "Labs",
+      "Lab 3"
+    ]
+  },
+  {
+    "objectID": "labs/lab-3.html#wrap-up",
+    "href": "labs/lab-3.html#wrap-up",
+    "title": "Lab 3",
+    "section": "Wrap up",
+    "text": "Wrap up\nSubmitting\n\n\n\n\n\n\nImportant\n\n\n\nBefore you proceed, first, make sure that you have updated the document YAML with your name! Then, render your document one last time, for good measure.\n\n\nTo submit your assignment to Gradescope:\n\nGo to your Files pane and check the box next to the PDF output of your document (lab-3.pdf).\nThen, in the Files pane, go to More &gt; Export. This will download the PDF file to your computer. Save it somewhere you can easily locate, e.g., your Downloads folder or your Desktop.\nGo to the course Canvas page and click on Gradescope and then click on the assignment. You’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the papers of your lab should be associated with at least one question (i.e., should be “checked”).\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you fail to mark the pages associated with an exercise, that exercise won’t be graded. This means, if you fail to mark the pages for all exercises, you will receive a 0 on the assignment. The TAs can’t mark your pages for you, and for them to be able to grade, you must mark them.",
+    "crumbs": [
+      "Labs",
+      "Lab 3"
+    ]
+  },
+  {
+    "objectID": "labs/lab-3.html#grading",
+    "href": "labs/lab-3.html#grading",
+    "title": "Lab 3",
+    "section": "Grading",
+    "text": "Grading\n\n\nExercise\nPoints\n\n\n\nExercise 1\n8\n\n\nExercise 2\n6\n\n\nExercise 3\n8\n\n\nExercise 4\n6\n\n\nExercise 5\n6\n\n\nExercise 6\n2\n\n\nExercise 7\n2\n\n\nExercise 8\n5\n\n\nExercise 9\n4\n\n\nExercise 10\n3\n\n\nTotal\n50",
+    "crumbs": [
+      "Labs",
+      "Lab 3"
+    ]
+  },
+  {
+    "objectID": "labs/lab-2.html",
+    "href": "labs/lab-2.html",
+    "title": "Lab 2",
+    "section": "",
+    "text": "The goal of this lab is to effectively visualize numerical and categorical data.\nFor all visualizations you create, be sure to include informative titles for the plot, axes, and legend!",
+    "crumbs": [
+      "Labs",
+      "Lab 2"
+    ]
+  },
+  {
+    "objectID": "labs/lab-2.html#exercise-1",
+    "href": "labs/lab-2.html#exercise-1",
+    "title": "Lab 2",
+    "section": "Exercise 1",
+    "text": "Exercise 1\n\nCreate a bar plot of the results of games for NC Courage. Additionally, calculate the numbers of wins, losses, and ties. Write a one sentence narrative for your findings.\n\nHint: result is a categorical variable, so use a bar plot for the visualization and the count() function for calculating the frequencies of levels of this variable. This primer may help you get started with the plot.",
+    "crumbs": [
+      "Labs",
+      "Lab 2"
+    ]
+  },
+  {
+    "objectID": "labs/lab-2.html#exercise-2",
+    "href": "labs/lab-2.html#exercise-2",
+    "title": "Lab 2",
+    "section": "Exercise 2",
+    "text": "Exercise 2\n\nCreate a new variable indicating whether the game was played at home or away for NC Courage. This variable should be called home_courage and take the value “home” if NC Courage is the home team and “away” if NC Courage is the away team. (Instructions for how to do this are given below.)\nThen, calculate the number of home and away games, and write a one sentence narrative for your findings.\n\nUse the example code below to get started.\n\ncourage &lt;- courage |&gt;\n  mutate(home_courage = if_else(home_team == \"NC\", \"home\", \"away\"))\n\nThere are two things of note here:\n\nThe use of the assignment operator (&lt;-) to assign the resulting data frame to courage, thus overwriting the courage dataset to contain this new column. We do this because we will use this new variable, home_courage, in a subsequent exercise.\n\nThe use of a new function, if_else() to determine whether the game is played at home or away.\n\n\nhome_team == \"NC\" finds all rows where the home team is NC Courage.\nIf the home team is NC Courage, then we set the value of home_courage to `“home”.\nOtherwise (else) Courage must be the away team and we set the value of home_courage to \"away\".",
+    "crumbs": [
+      "Labs",
+      "Lab 2"
+    ]
+  },
+  {
+    "objectID": "labs/lab-2.html#exercise-3",
+    "href": "labs/lab-2.html#exercise-3",
+    "title": "Lab 2",
+    "section": "Exercise 3",
+    "text": "Exercise 3\n\n\nThis code creates a visualization that displays the relationship between home_courage and result:\n\n\nggplot(courage, aes(x = home_courage, fill = result)) +\n  geom_bar(position = \"fill\")\n\n\n\n\n\n\n\nExplain what each piece of the code is doing. Why does it produce the plot that it produces?\nHint: to understand what the different ingredients do, try removing or altering some of them, and see how it changes the plot.\n\n\n\nCalculate the proportions of home and away games that the Courage won. Based on these, do your findings suggest a home-field advantage? Why or why not?\n\n\nSo far we have focused on whether the game was at home or away and whether the Courage won. Next, we dive deeper and focus on the number of points the Courage wins by, at home and away.",
+    "crumbs": [
+      "Labs",
+      "Lab 2"
+    ]
+  },
+  {
+    "objectID": "labs/lab-2.html#exercise-4",
+    "href": "labs/lab-2.html#exercise-4",
+    "title": "Lab 2",
+    "section": "Exercise 4",
+    "text": "Exercise 4\n\nHow many points do the Courage typically win by (on average)? Use the example code below to get started. You’ll encounter a new function: abs() is the absolute value function. It takes the absolute value of a number. Why do we want to use this absolute value function here?\n\nHint: We are only interested in games the Courage wins, therefore we should filter() for those games first.\n\ncourage |&gt;\n  filter(___) |&gt;\n  mutate(win_pts = abs(home_pts - away_pts)) |&gt;\n  summarize(___)",
+    "crumbs": [
+      "Labs",
+      "Lab 2"
+    ]
+  },
+  {
+    "objectID": "labs/lab-2.html#exercise-5",
+    "href": "labs/lab-2.html#exercise-5",
+    "title": "Lab 2",
+    "section": "Exercise 5",
+    "text": "Exercise 5\n\nHow many points do NC Courage score when they win (on average)? Note this is different than how many points they “win by”. How many points do the Courage score when they lose on average?\n\nTo calculate this we first need to determine how many points NC Courage scored in every game. We can use if_else() logic again to find this value for each game, and store it in a new column, courage_pts.\n\ncourage &lt;- courage |&gt;\n  mutate(courage_pts = if_else(home_team == \"NC\", home_pts, away_pts))\n\ncourage |&gt;\n  group_by(___) |&gt;\n  summarize(___)",
+    "crumbs": [
+      "Labs",
+      "Lab 2"
+    ]
+  },
+  {
+    "objectID": "labs/lab-2.html#exercise-6",
+    "href": "labs/lab-2.html#exercise-6",
+    "title": "Lab 2",
+    "section": "Exercise 6",
+    "text": "Exercise 6\n\nNext we’ll investigate visually whether or not NC Courage has a home-field advantage. Mutate the courage data frame to create two new variables:\n\ntotal_pts: Sum of points scored by both teams, i.e. home_pts + away_pts.\nopponent_pts: Points scored by the opposing team, i.e., total_pts - courage_pts.\n\nSave the resulting data frame as courage again and print the three points columns (total_pts, opponent_pts, courage_pts) to screen.\n\nHint:\n\nUse the mutate() function to create the columns.\n\n\ncourage &lt;- courage |&gt;\n  mutate(\n    total_pts = ___,\n    opponent_pts = ___\n    )\n\n\nUse the select() function to print them to screen:\n\n\ncourage |&gt;\n  select(total_pts, opponent_pts, courage_pts)",
+    "crumbs": [
+      "Labs",
+      "Lab 2"
+    ]
+  },
+  {
+    "objectID": "labs/lab-2.html#exercise-7",
+    "href": "labs/lab-2.html#exercise-7",
+    "title": "Lab 2",
+    "section": "Exercise 7",
+    "text": "Exercise 7\n\nCreate a scatter plot:\n\nopponent_pts (y) vs. courage_pts (x)\nColor the scatter plot by whether NC Courage are home or away.\nRepresent the data with “jittered” points wth geom_jitter().\nOverlay a \\(y = x\\) line with geom_abline().\nFaceted by season.\n\nWhat does the line represent? What does it mean for a point to fall above the line? Below the line?\n\n\nggplot(courage, aes(x = ___, y = ___, color = ___)) + \n  geom_jitter(width = 0.1, height = 0.1) + \n  geom_abline(slope = 1, intercept = 0) +\n  facet_wrap(~ ___) +\n  labs(\n    x = \"___\", \n    y = \"___\", \n    title = \"___\", \n    color = \"___\"\n  )",
+    "crumbs": [
+      "Labs",
+      "Lab 2"
+    ]
+  },
+  {
+    "objectID": "labs/lab-2.html#exercise-8",
+    "href": "labs/lab-2.html#exercise-8",
+    "title": "Lab 2",
+    "section": "Exercise 8",
+    "text": "Exercise 8\n\nIf we want to formally test whether the Courage have a home-field advantage, then we must first define what this means! In your own words, what do you think a home-field advantage means? Then, now that you’ve defined what it means to have a home field advantage, define what it means to not have a home-field advantage.\n\n\n\n\n\n\n\nNote\n\n\n\nWhile there is a right answer, this part is graded for completion, so don’t worry too much about answering this in exactly the right way. Although graded for completion, your response must make sense to receive full points.",
+    "crumbs": [
+      "Labs",
+      "Lab 2"
+    ]
+  },
+  {
+    "objectID": "labs/lab-2.html#exercise-9",
+    "href": "labs/lab-2.html#exercise-9",
+    "title": "Lab 2",
+    "section": "Exercise 9",
+    "text": "Exercise 9\n\nIMS - Chapter 2 exercises, #20: Vitamin supplements.",
+    "crumbs": [
+      "Labs",
+      "Lab 2"
+    ]
+  },
+  {
+    "objectID": "labs/lab-2.html#exercise-10",
+    "href": "labs/lab-2.html#exercise-10",
+    "title": "Lab 2",
+    "section": "Exercise 10",
+    "text": "Exercise 10\n\nIMS - Chapter 2 exercises, #30: Screens, teens, and psychological well-being.",
+    "crumbs": [
+      "Labs",
+      "Lab 2"
+    ]
+  },
+  {
+    "objectID": "labs/lab-2.html#lastly",
+    "href": "labs/lab-2.html#lastly",
+    "title": "Lab 2",
+    "section": "Lastly…",
+    "text": "Lastly…\nRecommend some music for us to listen to while we grade this.",
+    "crumbs": [
+      "Labs",
+      "Lab 2"
+    ]
+  },
+  {
+    "objectID": "labs/lab-2.html#submitting",
+    "href": "labs/lab-2.html#submitting",
+    "title": "Lab 2",
+    "section": "Submitting",
+    "text": "Submitting\n\n\n\n\n\n\nImportant\n\n\n\nBefore you proceed, first, make sure that you have updated the document YAML with your name! Then, render your document one last time, for good measure.\n\n\nTo submit your assignment to Gradescope:\n\nGo to your Files pane and check the box next to the PDF output of your document (lab-2.pdf).\nThen, in the Files pane, go to More &gt; Export. This will download the PDF file to your computer. Save it somewhere you can easily locate, e.g., your Downloads folder or your Desktop.\nGo to the course Canvas page and click on Gradescope and then click on the assignment. You’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the papers of your lab should be associated with at least one question (i.e., should be “checked”).\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you fail to mark the pages associated with an exercise, that exercise won’t be graded. This means, if you fail to mark the pages for all exercises, you will receive a 0 on the assignment. The TAs can’t mark your pages for you, and for them to be able to grade, you must mark them.",
+    "crumbs": [
+      "Labs",
+      "Lab 2"
+    ]
+  },
+  {
+    "objectID": "labs/lab-2.html#grading",
+    "href": "labs/lab-2.html#grading",
+    "title": "Lab 2",
+    "section": "Grading",
+    "text": "Grading\n\n\nExercise\nPoints\n\n\n\nExercise 1\n5\n\n\nExercise 2\n5\n\n\nExercise 3\n6\n\n\nExercise 4\n6\n\n\nExercise 5\n6\n\n\nExercise 6\n4\n\n\nExercise 7\n6\n\n\nExercise 8\n2\n\n\nExercise 9\n5\n\n\nExercise 10\n5\n\n\nTotal\n50",
+    "crumbs": [
+      "Labs",
+      "Lab 2"
+    ]
+  },
+  {
+    "objectID": "labs/lab-2.html#acknowledgements",
+    "href": "labs/lab-2.html#acknowledgements",
+    "title": "Lab 2",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nThis assignment was adapted from a similar exercise by Dr. Alex Fisher.",
+    "crumbs": [
+      "Labs",
+      "Lab 2"
+    ]
+  },
+  {
     "objectID": "labs/lab-1.html",
     "href": "labs/lab-1.html",
     "title": "Lab 1: Hello R!",
@@ -814,378 +1188,60 @@
     ]
   },
   {
-    "objectID": "labs/lab-2.html",
-    "href": "labs/lab-2.html",
-    "title": "Lab 2",
+    "objectID": "labs/lab-5.html",
+    "href": "labs/lab-5.html",
+    "title": "Lab 5",
     "section": "",
-    "text": "The goal of this lab is to effectively visualize numerical and categorical data.\nFor all visualizations you create, be sure to include informative titles for the plot, axes, and legend!",
-    "crumbs": [
-      "Labs",
-      "Lab 2"
-    ]
+    "text": "Use these steps to navigate to the STA101 version of RStudio using the Duke Container Manager;\nUse these steps to download all of the lab 5 files from our Canvas page, upload them to your RStudio files, and move them into an appropriately named folder (lab-5, for instance);\nOnce lab-5.qmd is where it needs to be, open it, and verify that you can click the “Render” button in RStudio and get a PDF file. See this answer on Ed if you want more guidance here;\nNow proceed to complete the exercises in this lab."
   },
   {
-    "objectID": "labs/lab-2.html#exercise-1",
-    "href": "labs/lab-2.html#exercise-1",
-    "title": "Lab 2",
-    "section": "Exercise 1",
-    "text": "Exercise 1\n\nCreate a bar plot of the results of games for NC Courage. Additionally, calculate the numbers of wins, losses, and ties. Write a one sentence narrative for your findings.\n\nHint: result is a categorical variable, so use a bar plot for the visualization and the count() function for calculating the frequencies of levels of this variable. This primer may help you get started with the plot.",
-    "crumbs": [
-      "Labs",
-      "Lab 2"
-    ]
-  },
-  {
-    "objectID": "labs/lab-2.html#exercise-2",
-    "href": "labs/lab-2.html#exercise-2",
-    "title": "Lab 2",
-    "section": "Exercise 2",
-    "text": "Exercise 2\n\nCreate a new variable indicating whether the game was played at home or away for NC Courage. This variable should be called home_courage and take the value “home” if NC Courage is the home team and “away” if NC Courage is the away team. (Instructions for how to do this are given below.)\nThen, calculate the number of home and away games, and write a one sentence narrative for your findings.\n\nUse the example code below to get started.\n\ncourage &lt;- courage |&gt;\n  mutate(home_courage = if_else(home_team == \"NC\", \"home\", \"away\"))\n\nThere are two things of note here:\n\nThe use of the assignment operator (&lt;-) to assign the resulting data frame to courage, thus overwriting the courage dataset to contain this new column. We do this because we will use this new variable, home_courage, in a subsequent exercise.\n\nThe use of a new function, if_else() to determine whether the game is played at home or away.\n\n\nhome_team == \"NC\" finds all rows where the home team is NC Courage.\nIf the home team is NC Courage, then we set the value of home_courage to `“home”.\nOtherwise (else) Courage must be the away team and we set the value of home_courage to \"away\".",
-    "crumbs": [
-      "Labs",
-      "Lab 2"
-    ]
-  },
-  {
-    "objectID": "labs/lab-2.html#exercise-3",
-    "href": "labs/lab-2.html#exercise-3",
-    "title": "Lab 2",
-    "section": "Exercise 3",
-    "text": "Exercise 3\n\n\nThis code creates a visualization that displays the relationship between home_courage and result:\n\n\nggplot(courage, aes(x = home_courage, fill = result)) +\n  geom_bar(position = \"fill\")\n\n\n\n\n\n\n\nExplain what each piece of the code is doing. Why does it produce the plot that it produces?\nHint: to understand what the different ingredients do, try removing or altering some of them, and see how it changes the plot.\n\n\n\nCalculate the proportions of home and away games that the Courage won. Based on these, do your findings suggest a home-field advantage? Why or why not?\n\n\nSo far we have focused on whether the game was at home or away and whether the Courage won. Next, we dive deeper and focus on the number of points the Courage wins by, at home and away.",
-    "crumbs": [
-      "Labs",
-      "Lab 2"
-    ]
-  },
-  {
-    "objectID": "labs/lab-2.html#exercise-4",
-    "href": "labs/lab-2.html#exercise-4",
-    "title": "Lab 2",
-    "section": "Exercise 4",
-    "text": "Exercise 4\n\nHow many points do the Courage typically win by (on average)? Use the example code below to get started. You’ll encounter a new function: abs() is the absolute value function. It takes the absolute value of a number. Why do we want to use this absolute value function here?\n\nHint: We are only interested in games the Courage wins, therefore we should filter() for those games first.\n\ncourage |&gt;\n  filter(___) |&gt;\n  mutate(win_pts = abs(home_pts - away_pts)) |&gt;\n  summarize(___)",
-    "crumbs": [
-      "Labs",
-      "Lab 2"
-    ]
-  },
-  {
-    "objectID": "labs/lab-2.html#exercise-5",
-    "href": "labs/lab-2.html#exercise-5",
-    "title": "Lab 2",
-    "section": "Exercise 5",
-    "text": "Exercise 5\n\nHow many points do NC Courage score when they win (on average)? Note this is different than how many points they “win by”. How many points do the Courage score when they lose on average?\n\nTo calculate this we first need to determine how many points NC Courage scored in every game. We can use if_else() logic again to find this value for each game, and store it in a new column, courage_pts.\n\ncourage &lt;- courage |&gt;\n  mutate(courage_pts = if_else(home_team == \"NC\", home_pts, away_pts))\n\ncourage |&gt;\n  group_by(___) |&gt;\n  summarize(___)",
-    "crumbs": [
-      "Labs",
-      "Lab 2"
-    ]
-  },
-  {
-    "objectID": "labs/lab-2.html#exercise-6",
-    "href": "labs/lab-2.html#exercise-6",
-    "title": "Lab 2",
-    "section": "Exercise 6",
-    "text": "Exercise 6\n\nNext we’ll investigate visually whether or not NC Courage has a home-field advantage. Mutate the courage data frame to create two new variables:\n\ntotal_pts: Sum of points scored by both teams, i.e. home_pts + away_pts.\nopponent_pts: Points scored by the opposing team, i.e., total_pts - courage_pts.\n\nSave the resulting data frame as courage again and print the three points columns (total_pts, opponent_pts, courage_pts) to screen.\n\nHint:\n\nUse the mutate() function to create the columns.\n\n\ncourage &lt;- courage |&gt;\n  mutate(\n    total_pts = ___,\n    opponent_pts = ___\n    )\n\n\nUse the select() function to print them to screen:\n\n\ncourage |&gt;\n  select(total_pts, opponent_pts, courage_pts)",
-    "crumbs": [
-      "Labs",
-      "Lab 2"
-    ]
-  },
-  {
-    "objectID": "labs/lab-2.html#exercise-7",
-    "href": "labs/lab-2.html#exercise-7",
-    "title": "Lab 2",
-    "section": "Exercise 7",
-    "text": "Exercise 7\n\nCreate a scatter plot:\n\nopponent_pts (y) vs. courage_pts (x)\nColor the scatter plot by whether NC Courage are home or away.\nRepresent the data with “jittered” points wth geom_jitter().\nOverlay a \\(y = x\\) line with geom_abline().\nFaceted by season.\n\nWhat does the line represent? What does it mean for a point to fall above the line? Below the line?\n\n\nggplot(courage, aes(x = ___, y = ___, color = ___)) + \n  geom_jitter(width = 0.1, height = 0.1) + \n  geom_abline(slope = 1, intercept = 0) +\n  facet_wrap(~ ___) +\n  labs(\n    x = \"___\", \n    y = \"___\", \n    title = \"___\", \n    color = \"___\"\n  )",
-    "crumbs": [
-      "Labs",
-      "Lab 2"
-    ]
-  },
-  {
-    "objectID": "labs/lab-2.html#exercise-8",
-    "href": "labs/lab-2.html#exercise-8",
-    "title": "Lab 2",
-    "section": "Exercise 8",
-    "text": "Exercise 8\n\nIf we want to formally test whether the Courage have a home-field advantage, then we must first define what this means! In your own words, what do you think a home-field advantage means? Then, now that you’ve defined what it means to have a home field advantage, define what it means to not have a home-field advantage.\n\n\n\n\n\n\n\nNote\n\n\n\nWhile there is a right answer, this part is graded for completion, so don’t worry too much about answering this in exactly the right way. Although graded for completion, your response must make sense to receive full points.",
-    "crumbs": [
-      "Labs",
-      "Lab 2"
-    ]
-  },
-  {
-    "objectID": "labs/lab-2.html#exercise-9",
-    "href": "labs/lab-2.html#exercise-9",
-    "title": "Lab 2",
-    "section": "Exercise 9",
-    "text": "Exercise 9\n\nIMS - Chapter 2 exercises, #20: Vitamin supplements.",
-    "crumbs": [
-      "Labs",
-      "Lab 2"
-    ]
-  },
-  {
-    "objectID": "labs/lab-2.html#exercise-10",
-    "href": "labs/lab-2.html#exercise-10",
-    "title": "Lab 2",
-    "section": "Exercise 10",
-    "text": "Exercise 10\n\nIMS - Chapter 2 exercises, #30: Screens, teens, and psychological well-being.",
-    "crumbs": [
-      "Labs",
-      "Lab 2"
-    ]
-  },
-  {
-    "objectID": "labs/lab-2.html#lastly",
-    "href": "labs/lab-2.html#lastly",
-    "title": "Lab 2",
-    "section": "Lastly…",
-    "text": "Lastly…\nRecommend some music for us to listen to while we grade this.",
-    "crumbs": [
-      "Labs",
-      "Lab 2"
-    ]
-  },
-  {
-    "objectID": "labs/lab-2.html#submitting",
-    "href": "labs/lab-2.html#submitting",
-    "title": "Lab 2",
-    "section": "Submitting",
-    "text": "Submitting\n\n\n\n\n\n\nImportant\n\n\n\nBefore you proceed, first, make sure that you have updated the document YAML with your name! Then, render your document one last time, for good measure.\n\n\nTo submit your assignment to Gradescope:\n\nGo to your Files pane and check the box next to the PDF output of your document (lab-2.pdf).\nThen, in the Files pane, go to More &gt; Export. This will download the PDF file to your computer. Save it somewhere you can easily locate, e.g., your Downloads folder or your Desktop.\nGo to the course Canvas page and click on Gradescope and then click on the assignment. You’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the papers of your lab should be associated with at least one question (i.e., should be “checked”).\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you fail to mark the pages associated with an exercise, that exercise won’t be graded. This means, if you fail to mark the pages for all exercises, you will receive a 0 on the assignment. The TAs can’t mark your pages for you, and for them to be able to grade, you must mark them.",
-    "crumbs": [
-      "Labs",
-      "Lab 2"
-    ]
-  },
-  {
-    "objectID": "labs/lab-2.html#grading",
-    "href": "labs/lab-2.html#grading",
-    "title": "Lab 2",
-    "section": "Grading",
-    "text": "Grading\n\n\nExercise\nPoints\n\n\n\nExercise 1\n5\n\n\nExercise 2\n5\n\n\nExercise 3\n6\n\n\nExercise 4\n6\n\n\nExercise 5\n6\n\n\nExercise 6\n4\n\n\nExercise 7\n6\n\n\nExercise 8\n2\n\n\nExercise 9\n5\n\n\nExercise 10\n5\n\n\nTotal\n50",
-    "crumbs": [
-      "Labs",
-      "Lab 2"
-    ]
-  },
-  {
-    "objectID": "labs/lab-2.html#acknowledgements",
-    "href": "labs/lab-2.html#acknowledgements",
-    "title": "Lab 2",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\nThis assignment was adapted from a similar exercise by Dr. Alex Fisher.",
-    "crumbs": [
-      "Labs",
-      "Lab 2"
-    ]
-  },
-  {
-    "objectID": "labs/lab-3.html",
-    "href": "labs/lab-3.html",
-    "title": "Lab 3",
+    "objectID": "labs/lab-5.html#getting-started",
+    "href": "labs/lab-5.html#getting-started",
+    "title": "Lab 5",
     "section": "",
-    "text": "The goal of this lab is to solidify some of the skills and concepts from the first two weeks of the course.",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
+    "text": "Use these steps to navigate to the STA101 version of RStudio using the Duke Container Manager;\nUse these steps to download all of the lab 5 files from our Canvas page, upload them to your RStudio files, and move them into an appropriately named folder (lab-5, for instance);\nOnce lab-5.qmd is where it needs to be, open it, and verify that you can click the “Render” button in RStudio and get a PDF file. See this answer on Ed if you want more guidance here;\nNow proceed to complete the exercises in this lab."
   },
   {
-    "objectID": "labs/lab-3.html#getting-started",
-    "href": "labs/lab-3.html#getting-started",
-    "title": "Lab 3",
-    "section": "Getting started",
-    "text": "Getting started\n\nUse these steps to navigate to the STA101 version of RStudio using the Duke Container Manager;\nUse these steps to download all of the lab 3 files from our Canvas page, upload them to your RStudio files, and move them into an appropriately named folder (lab-3, for instance);\nOnce lab-3.qmd is where it needs to be, open it, and verify that you can click the “Render” button in RStudio and get a PDF file. See this answer on Ed if you want more guidance here;\nNow proceed to complete the exercises in this lab.",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
-  },
-  {
-    "objectID": "labs/lab-3.html#pointers",
-    "href": "labs/lab-3.html#pointers",
-    "title": "Lab 3",
+    "objectID": "labs/lab-5.html#pointers",
+    "href": "labs/lab-5.html#pointers",
+    "title": "Lab 5",
     "section": "Pointers",
-    "text": "Pointers\n\nFor all visualizations you create, be sure to include informative titles for the plot, axes, and legend;\nRespond in complete sentences as much as possible;\nBe sure to observe good code style:\n\nThere is a line break after each |&gt; in a pipeline or + in a ggplot;\nThere are spaces around = signs;\nThere is a space after each ,;\nCode is properly indented;\nCode doesn’t exceed 80 characters in each line, longer lines of code are spread across multiple lines with appropriately placed line breaks (so in the rendered PDF, your code shouldn’t run off the page);\nCode chunks are labeled, informatively and without spaces.",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
+    "text": "Pointers\n\nFor all visualizations you create, be sure to include informative titles for the plot, axes, and legend;\nRespond in complete sentences as much as possible;\nBe sure to observe good code style:\n\nThere is a line break after each |&gt; in a pipeline or + in a ggplot;\nThere are spaces around = signs;\nThere is a space after each ,;\nCode is properly indented;\nCode doesn’t exceed 80 characters in each line, longer lines of code are spread across multiple lines with appropriately placed line breaks (so in the rendered PDF, your code shouldn’t run off the page);\nCode chunks are labeled, informatively and without spaces."
   },
   {
-    "objectID": "labs/lab-3.html#packages",
-    "href": "labs/lab-3.html#packages",
-    "title": "Lab 3",
+    "objectID": "labs/lab-5.html#packages",
+    "href": "labs/lab-5.html#packages",
+    "title": "Lab 5",
     "section": "Packages",
-    "text": "Packages\nIn this lab we will work with the tidyverse packages, which is a collection of packages for doing data analysis in a “tidy” way.\n\nlibrary(tidyverse)",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
+    "text": "Packages\n\nlibrary(tidyverse) \nlibrary(tidymodels)"
   },
   {
-    "objectID": "labs/lab-3.html#part-1-nobel-laureates",
-    "href": "labs/lab-3.html#part-1-nobel-laureates",
-    "title": "Lab 3",
-    "section": "Part 1: Nobel laureates",
-    "text": "Part 1: Nobel laureates\nWe will now consider a data set on the characteristics of winners (laureates) of a Nobel prize: nobel.csv. You can read it in using the following.\n\nnobel &lt;- read_csv(\"data/nobel.csv\")\n\n\n\n\n\n\n\nNote\n\n\n\nRecall that you may have to adjust the file path to match how you have organized your files and folders.\n\n\nThe descriptions of the variables are as follows:\n\n\nid: ID number\n\nfirstname: First name of laureate\n\nsurname: Surname\n\nyear: Year prize won\n\ncategory: Category of prize\n\naffiliation: Affiliation of laureate\n\ncity: City of laureate in prize year\n\ncountry: Country of laureate in prize year\n\nborn_date: Birth date of laureate\n\ndied_date: Death date of laureate\n\ngender: Gender of laureate\n\nborn_city: City where laureate was born\n\nborn_country: Country where laureate was born\n\nborn_country_code: Code of country where laureate was born\n\ndied_city: City where laureate died\n\ndied_country: Country where laureate died\n\ndied_country_code: Code of country where laureate died\n\noverall_motivation: Overall motivation for recognition\n\nshare: Number of other winners award is shared with\n\nmotivation: Motivation for recognition\n\nIn a few cases the name of the city/country changed after laureate was given (e.g. in 1975 Bosnia and Herzegovina was called the Socialist Federative Republic of Yugoslavia). In these cases the variables below reflect a different name than their counterparts without the suffix _original.\n\n\nborn_country_original: Original country where laureate was born\n\nborn_city_original: Original city where laureate was born\n\ndied_country_original: Original country where laureate died\n\ndied_city_original: Original city where laureate died\n\ncity_original: Original city where laureate lived at the time of winning the award\n\ncountry_original: Original country where laureate lived at the time of winning the award\n\nThere are some observations in this dataset that we will exclude from our analysis. This code creates a new data frame called nobel_living_science that filters for\n\nlaureates for whom country is available: !is.na(country);\nlaureates who are people as opposed to organizations, i.e., organizations are denoted with \"org\" as their gender: gender != \"org\";\nlaureates who are still alive, i.e., their died_date is NA: is.na(died_date).\nlaureates in the sciences (so not literature or peace).\n\n\nnobel_living_science &lt;- nobel |&gt;\n  filter(!is.na(country) & gender != \"org\" & is.na(died_date)) |&gt;\n  filter(category %in% c(\"Physics\", \"Medicine\", \"Chemistry\", \"Economics\"))\n\nOnce you have filtered for these characteristics you are left with a data frame with 228 observations (check this!).\n\nMost living Nobel laureates were based in the US when they won their prizes\n\n… says this Buzzfeed article. Let’s see if that’s true.\nFirst, we’ll create a new variable to identify whether the laureate was in the US when they won their prize. We’ll use the mutate() function for this. The following pipeline mutates the nobel_living_science data frame by adding a new variable called country_us. We use an if statement to create this variable. The first argument in the if_else() function we’re using to write this if statement is the condition we’re testing for. If country is equal to \"USA\", we set country_us to \"USA\". If not, we set the country_us to \"Other\".\n\nnobel_living_science &lt;- nobel_living_science |&gt;\n  mutate(\n    country_us = if_else(country == \"USA\", \"USA\", \"Other\")\n  )\n\nFor the following exercises, work with the nobel_living_science data frame you created above.\nExercise 1\n\nCreate a faceted bar plot visualizing the relationship between the category of prize and whether the laureate was in the US when they won the Nobel prize. Interpret your visualization, and say a few words about whether the Buzzfeed headline is supported by the data.\n\nYour visualization should be faceted by category;\nFor each facet you should have two bars, one for winners in the US and one for Other;\nFlip the coordinates so the bars are horizontal, not vertical;\nMake sure everything is clearly labeled!\n\n\nExercise 2\nNext, let’s investigate, of those US-based Nobel laureates, what proportion were born in other countries.\n\nCreate a new variable called born_country_us in nobel_living_science that has the value \"USA\" if the laureate is born in the US, and \"Other\" otherwise. How many of the winners are born in the US?\n\nExercise 3\n\nAdd a second variable to your visualization from Exercise 1 based on whether the laureate was born in the US or not.\nCreate two visualizations with this new variable added:\n\nPlot 1: Segmented frequency bar plot\nPlot 2: Segmented relative frequency bar plot (Hint: Add position = \"fill\" to geom_bar().)\n\nHere are some instructions that apply to both of these visualizations:\n\nYour final visualization should contain a facet for each category.\nWithin each facet, there should be two bars for whether the laureate won the award in the US or not.\nEach bar should have segments for whether the laureate was born in the US or not.\n\nWhich of these visualizations is a better fit for answering the following question: “Do the data appear to support Buzzfeed’s claim that of those US-based Nobel laureates, many were born in other countries?” First, state which plot you’re using to answer the question. Then, answer the question, explaining your reasoning in 1-2 sentences.",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
+    "objectID": "labs/lab-5.html#part-1-lemurs",
+    "href": "labs/lab-5.html#part-1-lemurs",
+    "title": "Lab 5",
+    "section": "Part 1: Lemurs",
+    "text": "Part 1: Lemurs\nThis week we’ll be working with data from the Duke Lemur Center, which houses over 200 lemurs across 14 species – the most diverse population of lemurs on Earth, outside their native Madagascar.\n\nLemurs are the most threatened group of mammals on the planet, and 95% of lemur species are at risk of extinction. Our mission is to learn everything we can about lemurs – because the more we learn, the better we can work to save them from extinction. They are endemic only to Madagascar, so it’s essentially a one-shot deal: once lemurs are gone from Madagascar, they are gone from the wild.\n\n\nBy studying the variables that most affect their health, reproduction, and social dynamics, the Duke Lemur Center learns how to most effectively focus their conservation efforts. And the more we learn about lemurs, the better we can educate the public around the world about just how amazing these animals are, why they need to be protected, and how each and every one of us can make a difference in their survival.\n\n\nSource: TidyTuesday\n\nThe codebook for the deataset can be found here. While the TidyTuesday project used the full dataset, we’ll be working with a subset.\nExercise 1\n\nLoad the lemurs data from your data folder and save it as lemurs. Then, report which “types” of lemurs are represented in the sample and how many of each. Note that this information is in the taxon variable. You should refer back to the linked data dictionary to understand what the different values of taxon mean.\n\nExercise 2\n\nWhat is the mean weight of ring-tailed lemurs? Calculate, visualize, and interpret a 95% bootstrap confidence interval together with your point estimate. Use set.seed(123) and reps = 1000 to create your bootstrap confidence interval.\n\nHints:\nBelow is a step-by-step recipe for constructing and visualizing a confidence interval. The code snippets shown are not “complete”, they’re intended to guide you in the right direction.\n\nStep 1: Create a dataset of ring-tailed lemurs, and call it lemurs_rt. Note, these are taxon == \"LCAT\".\nStep 2: Calculate the mean weight of ring-tailed lemurs.\n\n\nobs_stat_mean_rt &lt;- lemurs_rt |&gt;\n  specify(response = weight_g) |&gt;\n  calculate(stat = \"mean\")\n\n\nStep 3: Construct a bootstrap distribution. Note: There is a generate() step, so you also need to set a seed before running the following.\n\n\nboot_dist_mean_rt &lt;- lemurs_rt |&gt;\n  specify(response = weight_g) |&gt;\n  generate(reps = 1000, type = \"bootstrap\") |&gt;\n  calculate(stat = \"mean\")\n\n\nStep 4: Calculate the bounds of the confidence interval. Don’t forget to interpret it as well!\n\n\nci_95_mean_rt &lt;- boot_dist_mean_rt |&gt;\n  get_confidence_interval(\n    point_estimate = obs_stat_mean_rt, \n    level = 0.95\n  )\n\n\nStep 5: Visualize the confidence interval, overlaying it on the bootstrap distribution.\n\n\nvisualize(boot_dist_mean_rt) +\n  shade_confidence_interval(endpoints = ci_95_mean_rt)\n\nExercise 3\n\nWhat is the median weight of ring-tailed lemurs? What is the median weight of mongoose lemurs? Report a 95% bootstrap confidence interval together with your point estimates. Use set.seed(123) and reps = 10000 to create your bootstrap confidence intervals.\n\nExercise 4\n\nYour friend has never taken a statistics course. Describe to your friend the process of “bootstrap sampling” in the previous exercise to create a bootstrap confidence interval in your own words. Walk your friend through the process of collecting a bootstrap sample, computing a statistic and then repeating). You may find it helpful to describe it as drawing pieces of paper from a bag like we did in class.\n\nHint: What would you write on the slips of paper? How many pieces of paper would be in the bag(s)? How many bag(s) would you need for the above exercise?\nExercise 5\n\nDo female lemurs differ in weight from male lemurs? Report the difference in mean weights between groups. Next, construct a 99% bootstrap distribution for the difference in means between groups and interpret it. If the interval covers 0, you might think there is no difference between groups. Does the interval cover 0? Use set.seed(123) and reps = 10000.\n\nExercise 6\n\nCreate a new column that tells you whether or not a lemur was born in the first or second half of the year (January through June vs July through December). Create a meaningful plot to illustrate the weights of each group of lemurs. Use theme_bw() to replace the default gray plot background. Based on your figure, which group of lemurs weighs more? Is the distribution of one or both groups skewed or symmetric? See here for more information about skew vs symmetric distributions.\n\nExercise 7\n\nIs there more variability in weight for lemurs born in the first half or second half of the year? Report the estimated standard deviation of each group. Report a 90% bootstrap confidence interval of s.d. for each group. Interpret the confidence intervals in context. Use set.seed(123) and remember to set reps = 10000."
   },
   {
-    "objectID": "labs/lab-3.html#part-2-practicing-our-coding-basics",
-    "href": "labs/lab-3.html#part-2-practicing-our-coding-basics",
-    "title": "Lab 3",
-    "section": "Part 2: practicing our coding basics",
-    "text": "Part 2: practicing our coding basics\nExercise 4\nThe file nsw-crime.csv contains monthly data on all criminal incidents recorded by police in New South Wales, Australia (the state that includes the city of Sydney). So a row in this data set corresponds to a month, and a column corresponds to a crime (murder, dealing cannabis, escaping custody, etc). The data count the number of cases of each crime in each month. In this exercise we will consider the variable offensive_language, an incident of disorderly conduct where the perpetrator…said some things.\n\nLoad the crime data into R and create four histogram plots of the variable offensive_language. In each plot, use a different number of histogram bins: 20, 40, 80, and 160. Decide which picture you think best visualizes the distribution of the crime counts, and explain why you think this.\n\nExercise 5\nLoad the data about the COVID delta variant (adjusting your file path as needed):\n\ndelta &lt;- read_csv(\"delta.csv\")\n\n\nConsider this sequence of commands:\n\n# part 1\n\ndelta |&gt;\n  count(vaccine, outcome)\n\n# part 2\n\ndelta |&gt;\n  count(vaccine, outcome) |&gt;\n  group_by(vaccine)\n\n# part 3\n\ndelta |&gt;\n  count(vaccine, outcome) |&gt;\n  group_by(vaccine) |&gt;\n  mutate(prop = n / sum(n))\n\nPick this code apart like a vulture and explain in complete sentences what is going on in each part. The more detail, the better.",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
-  },
-  {
-    "objectID": "labs/lab-3.html#part-3-ims-exercises",
-    "href": "labs/lab-3.html#part-3-ims-exercises",
-    "title": "Lab 3",
-    "section": "Part 3: IMS Exercises",
-    "text": "Part 3: IMS Exercises\nThe exercises in this section do not require code. Make sure to answer the questions in full sentences.\nExercise 6\n\nIMS - Chapter 4 exercises, #4: Raise taxes.\n\nExercise 7\n\nIMS - Chapter 5 exercises, #4: Office productivity.\n\nExercise 8\n\nIMS - Chapter 5 exercises, #15: Distributions and appropriate statistics.\n\nExercise 9\n\nIMS - Chapter 5 exercises, #26: NYC marathon winners.",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
-  },
-  {
-    "objectID": "labs/lab-3.html#part-4-waxing-poetic",
-    "href": "labs/lab-3.html#part-4-waxing-poetic",
-    "title": "Lab 3",
-    "section": "Part 4: waxing poetic",
-    "text": "Part 4: waxing poetic\nExercise 10\n\nDescribe a situation from your everyday life where you have to make a decision, but it is difficult to make a good decision because you face some uncertainty about the world. Common examples (which you should not now use!) might include deciding when to get food at the dining hall, because you are uncertain about the length of the lines, or deciding when to have a picnic, because you are uncertain about the weather. Next, describe some data (information) that, if you had access to it, would resolve some of the uncertainty you face and help you make a better decision. Describe two versions of the data: an ideal version that would theoretically resolve all of the uncertainty, and an imperfect version that you are more likely to actually encounter in practice. How would you use these data to guide your decision making?\n\n\n\n\n\n\n\nNote\n\n\n\nThis is basically going to be graded for completion, but I hope some of you will get creative, and I look forward to reading these!",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
-  },
-  {
-    "objectID": "labs/lab-3.html#lastly",
-    "href": "labs/lab-3.html#lastly",
-    "title": "Lab 3",
-    "section": "Lastly",
-    "text": "Lastly\nRecommend some music for us to listen to while we grade this.",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
-  },
-  {
-    "objectID": "labs/lab-3.html#wrap-up",
-    "href": "labs/lab-3.html#wrap-up",
-    "title": "Lab 3",
-    "section": "Wrap up",
-    "text": "Wrap up\nSubmitting\n\n\n\n\n\n\nImportant\n\n\n\nBefore you proceed, first, make sure that you have updated the document YAML with your name! Then, render your document one last time, for good measure.\n\n\nTo submit your assignment to Gradescope:\n\nGo to your Files pane and check the box next to the PDF output of your document (lab-3.pdf).\nThen, in the Files pane, go to More &gt; Export. This will download the PDF file to your computer. Save it somewhere you can easily locate, e.g., your Downloads folder or your Desktop.\nGo to the course Canvas page and click on Gradescope and then click on the assignment. You’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the papers of your lab should be associated with at least one question (i.e., should be “checked”).\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you fail to mark the pages associated with an exercise, that exercise won’t be graded. This means, if you fail to mark the pages for all exercises, you will receive a 0 on the assignment. The TAs can’t mark your pages for you, and for them to be able to grade, you must mark them.",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
-  },
-  {
-    "objectID": "labs/lab-3.html#grading",
-    "href": "labs/lab-3.html#grading",
-    "title": "Lab 3",
-    "section": "Grading",
-    "text": "Grading\n\n\nExercise\nPoints\n\n\n\nExercise 1\n8\n\n\nExercise 2\n6\n\n\nExercise 3\n8\n\n\nExercise 4\n6\n\n\nExercise 5\n6\n\n\nExercise 6\n2\n\n\nExercise 7\n2\n\n\nExercise 8\n5\n\n\nExercise 9\n4\n\n\nExercise 10\n3\n\n\nTotal\n50",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
-  },
-  {
-    "objectID": "labs/lab-4.html",
-    "href": "labs/lab-4.html",
-    "title": "Lab 4",
-    "section": "",
-    "text": "Use these steps to navigate to the STA101 version of RStudio using the Duke Container Manager;\nUse these steps to download all of the lab 4 files from our Canvas page, upload them to your RStudio files, and move them into an appropriately named folder (lab-4, for instance);\nOnce lab-4.qmd is where it needs to be, open it, and verify that you can click the “Render” button in RStudio and get a PDF file. See this answer on Ed if you want more guidance here;\nNow proceed to complete the exercises in this lab.",
-    "crumbs": [
-      "Labs",
-      "Lab 4"
-    ]
-  },
-  {
-    "objectID": "labs/lab-4.html#getting-started",
-    "href": "labs/lab-4.html#getting-started",
-    "title": "Lab 4",
-    "section": "",
-    "text": "Use these steps to navigate to the STA101 version of RStudio using the Duke Container Manager;\nUse these steps to download all of the lab 4 files from our Canvas page, upload them to your RStudio files, and move them into an appropriately named folder (lab-4, for instance);\nOnce lab-4.qmd is where it needs to be, open it, and verify that you can click the “Render” button in RStudio and get a PDF file. See this answer on Ed if you want more guidance here;\nNow proceed to complete the exercises in this lab.",
-    "crumbs": [
-      "Labs",
-      "Lab 4"
-    ]
-  },
-  {
-    "objectID": "labs/lab-4.html#pointers",
-    "href": "labs/lab-4.html#pointers",
-    "title": "Lab 4",
-    "section": "Pointers",
-    "text": "Pointers\n\nFor all visualizations you create, be sure to include informative titles for the plot, axes, and legend;\nRespond in complete sentences as much as possible;\nBe sure to observe good code style:\n\nThere is a line break after each |&gt; in a pipeline or + in a ggplot;\nThere are spaces around = signs;\nThere is a space after each ,;\nCode is properly indented;\nCode doesn’t exceed 80 characters in each line, longer lines of code are spread across multiple lines with appropriately placed line breaks (so in the rendered PDF, your code shouldn’t run off the page);\nCode chunks are labeled, informatively and without spaces.",
-    "crumbs": [
-      "Labs",
-      "Lab 4"
-    ]
-  },
-  {
-    "objectID": "labs/lab-4.html#packages",
-    "href": "labs/lab-4.html#packages",
-    "title": "Lab 4",
-    "section": "Packages",
-    "text": "Packages\n\nlibrary(tidyverse) \nlibrary(tidymodels)",
-    "crumbs": [
-      "Labs",
-      "Lab 4"
-    ]
-  },
-  {
-    "objectID": "labs/lab-4.html#part-1-do-you-even-lift",
-    "href": "labs/lab-4.html#part-1-do-you-even-lift",
-    "title": "Lab 4",
-    "section": "Part 1: Do you even lift?",
-    "text": "Part 1: Do you even lift?\nToday, we will be working with data from www.openpowerlifting.org. This data was sourced from Tidy Tuesday and contains international powerlifting records at various meets. At each meet, each lifter gets three attempts at lifting max weight on three lifts: the bench press, squat and deadlift.\n\nipf &lt;- read_csv(\"data/ipf.csv\")\n\n\n\n\n\n\n\nNote\n\n\n\nRecall that you may have to adjust the file path to match how you have organized your files and folders.\n\n\nThe data dictionary for this dataset from TidyTuesday is reproduced below:\n\n\n\n\n\n\nvariable\ndescription\n\n\n\nname\nIndividual lifter name\n\n\nsex\nBinary gender (M/F)\n\n\nevent\n\nThe type of competition that the lifter entered. Values are as follows:\n\nSBD: Squat-Bench-Deadlift, also commonly called “Full Power”\nBD: Bench-Deadlift, also commonly called “Ironman” or “Push-Pull”\nSD: Squat-Deadlift, very uncommon\nSB: Squat-Bench, very uncommon\nS: Squat-only\nB: Bench-only\nD: Deadlift-only\n\n\n\n\nequipment\n\nThe equipment category under which the lifts were performed. Values are as follows:\n\nRaw: Bare knees or knee sleeves\nWraps: Knee wraps were allowed\nSingle-ply: Equipped, single-ply suits\nMulti-ply: Equipped, multi-ply suits (includes Double-ply)\nStraps: Allowed straps on the deadlift (used mostly for exhibitions, not real meets)\n\n\n\n\nage\nThe age of the lifter on the start date of the meet, if known.\n\n\nage_class\nThe age class in which the filter falls, for example 40-45\n\n\n\ndivision\nFree-form UTF-8 text describing the division of competition, like Open or Juniors 20-23 or Professional.\n\n\nbodyweight_kg\nThe recorded bodyweight of the lifter at the time of competition, to two decimal places.\n\n\nweight_class_kg\n\nThe weight class in which the lifter competed, to two decimal places.\nWeight classes can be specified as a maximum or as a minimum. Maximums are specified by just the number, for example 90 means “up to (and including) 90kg.” minimums are specified by a + to the right of the number, for example 90+ means “above (and excluding) 90kg.”\n\n\n\nbest3squat_kg\n\nMaximum of the first three successful attempts for the lift.\nRarely may be negative: that is used by some federations to report the lowest weight the lifter attempted and failed.\n\n\n\nbest3bench_kg\n\nMaximum of the first three successful attempts for the lift.\nRarely may be negative: that is used by some federations to report the lowest weight the lifter attempted and failed.\n\n\n\nbest3deadlift_kg\n\nMaximum of the first three successful attempts for the lift.\nRarely may be negative: that is used by some federations to report the lowest weight the lifter attempted and failed.\n\n\n\nplace\n\nThe recorded place of the lifter in the given division at the end of the meet. Values are as follows:\n\nPositive number: the place the lifter came in.\nG: Guest lifter. The lifter succeeded, but wasn’t eligible for awards.\nDQ: Disqualified. Note that DQ could be for procedural reasons, not just failed attempts.\nDD: Doping Disqualification. The lifter failed a drug test.\nNS: No-Show. The lifter did not show up on the meet day.\n\n\n\n\ndate\nISO 8601 Date of the event\n\n\nfederation\nThe federation that hosted the meet. (limited to IPF for this data subset)\n\n\nmeet_name\nThe name of the meet. The name is defined to never include the year or the federation. For example, the meet officially called 2019 USAPL Raw National Championships would have the MeetName Raw National Championshps.\n\n\n\nFor all of the following exercises, you should include units on axes labels, e.g. “Bench press (lbs)” or “Bench press (kg)”. “Age (years)” etc. This is good practice.\nExercise 1\n\nLet’s begin by taking a look at the squat lifting records.\nTo begin, remove any observations that are negative for squat. Next, create a new column called best3_squat_lbs that converts the record from kg to lbs (you may have to Google the conversion). Save your data frame as ipf_squat. Report the number of rows and columns of this new data frame.\n\n\n\n\n\n\n\nHint\n\n\n\nFirst, you’re taking a dataset and filtering it for certain records, and then you’re mutate-ing that dataset to gain a new column, and you’re assigning the resulting dataset to a new object called ipf_squat.\n\n\nExercise 2\n\nUsing ipf_squat from the previous exercise, create a scatter plot to investigate the relationship between squat (in lbs) and age. Age should be on the x-axis. Adjust the alpha level of your points to get a better sense of the density of the data. Add a linear trend-line. Be sure to label all axes and give the plot a title. Comment on what you observe.\n\nExercise 3\n\nWrite down the linear model to predict lift squat lbs from age in \\(x\\), \\(y\\), \\(\\beta\\) notation. What is \\(x\\)? What is \\(y\\)? Next, fit the linear model, and save it as age_fit. Re-write your previous equation replacing \\(\\beta\\) with the numeric estimates. This is called the “fitted” linear model. Interpret each estimate of \\(\\beta\\). Are the interpretations sensible?\n\nExercise 4\n\nBuilding on your ipf_squat data frame, create a new column called age2 that takes the age of each lifter and squares it. Save it to your data frame ipf_squat. Next, plot squat in lbs vs age2 and add a linear best fit line. Does this model look like it fits the data better?\n\n\n\n\n\n\n\nHint\n\n\n\nTo raise a value to a power, use ^ in R, e.g.: 2 ^ 2 gives you 4, 2 ^ 3 gives you 8, etc.\n\n\nExercise 5\n\nOne metric to assess the fit of a model is \\(R^2\\). Fit the age\\(^2\\) model and save the object as age2_fit. Compare \\(R^2\\) of the age\\(^2\\) model to the \\(R^2\\) of the model from Exercise 3. Which has a higher \\(R^2\\)?\n\nExercise 6\n\nNext, let’s turn our attention to dead lifting records.\nRecreate the plot below. Make sure axes and title labels are exactly matching, including spelling, capitalization, etc. Based on the plot below, which impacts deadlift weight more, age category or sex?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\nYou will need to create a couple of new columns. One to classify age appropriately and one to convert best3deadlift_kg to the plotted units (lbs). Notice that there are no negative deadlift values on the x-axis.\n\n\n\n\n\n\n\n\nHint 2\n\n\n\nThese plots are called density plots. It’s just a smoothed out version of a histogram, and like the histogram it lets you visualize the distribution (center, spread, skew, etc) of a dataset. The geom_... that creates density plots is geom_density. Try it out!\n\n\nExercise 7\n\nFinally, let’s turn our attention to bench press records.\nTo begin, remove any observations that are negative for bench press, create two new columns: best3bench_lbs and bodyweight_lbs. Save the result in a new data frame called ipf_bench.\nThen, create a scatter plot to investigate the relationship between best bench press (in lbs) and the lifter’s bodyweight (in lbs). Bodyweight should be on the x-axis. Add a linear trend-line. Be sure to label all axes and give the plot a title. Comment on what you observe.\n\nExercise 8\n\nFit the linear model displayed in the previous exercise and write down the fitted model equation only, replacing \\(\\hat{\\beta}\\)s with their fitted estimates. Interpret the \\(\\hat{\\beta}\\)s (intercept and slope). Report \\(R^2\\). Is body weight an important predictor of bench press ability? Why or why not?",
-    "crumbs": [
-      "Labs",
-      "Lab 4"
-    ]
-  },
-  {
-    "objectID": "labs/lab-4.html#part-2-ims-exercises",
-    "href": "labs/lab-4.html#part-2-ims-exercises",
-    "title": "Lab 4",
+    "objectID": "labs/lab-5.html#part-2-ims-exercises",
+    "href": "labs/lab-5.html#part-2-ims-exercises",
+    "title": "Lab 5",
     "section": "Part 2: IMS Exercises",
-    "text": "Part 2: IMS Exercises\nThe exercises in this section do not require code. Make sure to answer the questions in full sentences.\nExercise 9\n\nIMS - Chapter 7 exercises, #18: Over-under, II.\n\nExercise 10\n\nIMS - Chapter 7 exercises, #24: Cats weights.",
-    "crumbs": [
-      "Labs",
-      "Lab 4"
-    ]
+    "text": "Part 2: IMS Exercises\nThe exercises in this section do not require code. Make sure to answer the questions in full sentences.\nExercise 8\n\nIMS - Chapter 12 exercises, #2: Chronic illness.\n\nExercise 9\n\nIMS - Chapter 12 exercises, #6: Bootstrap distributions of \\(\\hat{p}\\), III.\n\nExercise 10\n\nIMS - Chapter 12 exercises, #8: Waiting at an ER."
   },
   {
-    "objectID": "labs/lab-4.html#lastly",
-    "href": "labs/lab-4.html#lastly",
-    "title": "Lab 4",
+    "objectID": "labs/lab-5.html#lastly",
+    "href": "labs/lab-5.html#lastly",
+    "title": "Lab 5",
     "section": "Lastly",
-    "text": "Lastly\nRecommend some music for us to listen to while we grade this.",
-    "crumbs": [
-      "Labs",
-      "Lab 4"
-    ]
+    "text": "Lastly\nRecommend some music for us to listen to while we grade this."
   },
   {
-    "objectID": "labs/lab-4.html#wrap-up",
-    "href": "labs/lab-4.html#wrap-up",
-    "title": "Lab 4",
+    "objectID": "labs/lab-5.html#wrap-up",
+    "href": "labs/lab-5.html#wrap-up",
+    "title": "Lab 5",
     "section": "Wrap up",
-    "text": "Wrap up\nSubmitting\n\n\n\n\n\n\nImportant\n\n\n\nBefore you proceed, first, make sure that you have updated the document YAML with your name! Then, render your document one last time, for good measure.\n\n\nTo submit your assignment to Gradescope:\n\nGo to your Files pane and check the box next to the PDF output of your document (lab-4.pdf).\nThen, in the Files pane, go to More &gt; Export. This will download the PDF file to your computer. Save it somewhere you can easily locate, e.g., your Downloads folder or your Desktop.\nGo to the course Canvas page and click on Gradescope and then click on the assignment. You’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the papers of your lab should be associated with at least one question (i.e., should be “checked”).\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you fail to mark the pages associated with an exercise, that exercise won’t be graded. This means, if you fail to mark the pages for all exercises, you will receive a 0 on the assignment. The TAs can’t mark your pages for you, and for them to be able to grade, you must mark them.\n\n\nGrading\n\n\nExercise\nPoints\n\n\n\nExercise 1\n3\n\n\nExercise 2\n5\n\n\nExercise 3\n5\n\n\nExercise 4\n5\n\n\nExercise 5\n5\n\n\nExercise 6\n8\n\n\nExercise 7\n6\n\n\nExercise 8\n7\n\n\nExercise 9\n1\n\n\nExercise 10\n5\n\n\nTotal\n50",
-    "crumbs": [
-      "Labs",
-      "Lab 4"
-    ]
+    "text": "Wrap up\nSubmitting\n\n\n\n\n\n\nImportant\n\n\n\nBefore you proceed, first, make sure that you have updated the document YAML with your name! Then, render your document one last time, for good measure.\n\n\nTo submit your assignment to Gradescope:\n\nGo to your Files pane and check the box next to the PDF output of your document (lab-5.pdf).\nThen, in the Files pane, go to More &gt; Export. This will download the PDF file to your computer. Save it somewhere you can easily locate, e.g., your Downloads folder or your Desktop.\nGo to the course Canvas page and click on Gradescope and then click on the assignment. You’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the papers of your lab should be associated with at least one question (i.e., should be “checked”).\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you fail to mark the pages associated with an exercise, that exercise won’t be graded. This means, if you fail to mark the pages for all exercises, you will receive a 0 on the assignment. The TAs can’t mark your pages for you, and for them to be able to grade, you must mark them.\n\n\nGrading\n\n\nExercise\nPoints\n\n\n\nExercise 1\n3\n\n\nExercise 2\n6\n\n\nExercise 3\n7\n\n\nExercise 4\n5\n\n\nExercise 5\n5\n\n\nExercise 6\n7\n\n\nExercise 7\n8\n\n\nExercise 8\n3\n\n\nExercise 9\n3\n\n\nExercise 10\n3\n\n\nTotal\n50"
   },
   {
     "objectID": "course-policies.html",
