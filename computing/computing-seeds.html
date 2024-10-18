@@ -347,24 +347,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]  0.2856697 -0.8557090  1.5092480 -0.5098391  0.3676650</code></pre>
+<pre><code>[1]  1.6984696 -1.9921836  0.9958789  1.7047162 -0.1204076</code></pre>
 </div>
 </div>
 <p>Or this:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]  0.223152025 -0.002074722  0.287399464  0.983684166 -1.124882003</code></pre>
+<pre><code>[1]  0.9623144 -0.2743925  0.2863585 -0.5218133 -0.8388455</code></pre>
 </div>
 </div>
 <p>Or this:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]  0.4243543  1.3654731 -0.2371261 -0.4588851  0.8744624</code></pre>
+<pre><code>[1] -0.3497099 -0.2072089 -0.1210543 -0.2903679 -0.2474930</code></pre>
 </div>
 </div>
-<p>Look pretty random to me. This allows us to perform simulations (eg. the bootstrap), which is an enormously important part of the modern statistician’s toolkit. Having said that, when you’re working with computer-generated random numbers, you want your work to be reproducible so that other people can check it. This means that you want to set a random number seed before you do a simulation. This ensures that the stream of random numbers in your simulation are the same every time, and someone else could run your code and get the exact same results that you did.</p>
+<p>Look pretty random to me. This allows us to perform simulations (eg. the bootstrap), which is an enormously important part of the modern statistician’s toolkit. Having said that, when you’re working with computer-generated random numbers, you want your work to be reproducible so that other people can check it. This means that you want to set a random number seed before you do a simulation. This ensures that the stream of random numbers in your simulation is the same every time, and someone else could run your code and get the exact same results that you did.</p>
 <p>Setting a seed looks like this:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">8675309</span>)</span>
@@ -385,8 +385,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>So, if you ever write a code chunk that generates random numbers (eg. using the <code>generate</code> function), you should begin the code chunk by setting a random number seed so that you get the same results every time you run your stuff. The syntax as you saw above is <code>set.seed(INTEGER)</code>. You can put any integer inside that you want. If you require inspiration, try these:</p>
 <ul>
+<li><a href="https://www.youtube.com/watch?v=OiBIXa_-7Vo">1</a></li>
 <li><a href="https://www.youtube.com/watch?v=pf8yHr4rHaY"><code>20</code></a></li>
 <li><a href="https://www.youtube.com/watch?v=MHFuaaGpGKQ"><code>988</code></a></li>
+<li><code>24601</code></li>
+<li><a href="https://youtu.be/HhPu6GEoad8?feature=shared"><code>362436</code></a></li>
+<li><code>525600</code></li>
 <li><a href="https://www.youtube.com/watch?v=6WTdTwcmxyo"><code>8675309</code></a></li>
 <li><a href="https://www.youtube.com/watch?v=uwJQQux0TF0"><code>8005882300</code></a></li>
 </ul>
