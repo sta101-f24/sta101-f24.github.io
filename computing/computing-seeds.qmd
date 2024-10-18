@@ -38,7 +38,7 @@ set.seed(8675309)
 rnorm(5)
 ```
 
-So, if you ever write a code chunk that generates random numbers (eg. using the `generate` function), you should begin the code chunk by setting a random number seed so that you get the same results every time you run your stuff. The syntax as you saw above is `set.seed(INTEGER)`. You can put any integer inside that you want. If you require inspiration, try these:
+So, if you ever write a code chunk that generates random numbers (eg. using the `generate` function), you should begin the code chunk by setting a random number seed so that you get the same results every time you run your stuff. The syntax as you saw above is `set.seed(INTEGER)`. Sometimes we will tell you what number to put. Other times (and once you exit the course), you can put whatever you want. If you require inspiration, try these:
 
 -   [1](https://www.youtube.com/watch?v=OiBIXa_-7Vo)
 -   [`20`](https://www.youtube.com/watch?v=pf8yHr4rHaY)
