@@ -421,13 +421,13 @@ window.Quarto = {
 <p>To answer the question “what was the typical or expected price,” we can calculate a point estimate like the sample mean or sample median:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>abb <span class="sc">|&gt;</span> </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">ppg.mean =</span> <span class="fu">mean</span>(ppg),</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">ppg.median =</span> <span class="fu">median</span>(ppg))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean =</span> <span class="fu">mean</span>(ppg),</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">median =</span> <span class="fu">median</span>(ppg))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 2
-  ppg.mean ppg.median
-     &lt;dbl&gt;      &lt;dbl&gt;
-1     76.6       62.5</code></pre>
+   mean median
+  &lt;dbl&gt;  &lt;dbl&gt;
+1  76.6   62.5</code></pre>
 </div>
 </div>
 <p>In this case they disagree quite a bit, which in general is something you should think about, but for the purposes of this primer, we will set the issue aside and focus just on the sample mean as our estimate.</p>
