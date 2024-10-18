@@ -353,21 +353,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]  1.6984696 -1.9921836  0.9958789  1.7047162 -0.1204076</code></pre>
+<pre><code>[1] -0.3932406  1.2852251 -0.5689218 -0.4123566  1.2358167</code></pre>
 </div>
 </div>
 <p>Or this:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]  0.9623144 -0.2743925  0.2863585 -0.5218133 -0.8388455</code></pre>
+<pre><code>[1] -1.9392724 -0.9563330 -1.3858488 -0.4422137 -0.4598596</code></pre>
 </div>
 </div>
 <p>Or this:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.3497099 -0.2072089 -0.1210543 -0.2903679 -0.2474930</code></pre>
+<pre><code>[1] -0.3931979 -0.8684721 -1.0429014 -1.6626016  1.3405364</code></pre>
 </div>
 </div>
 <p>Look pretty random to me. This allows us to perform simulations (eg. the bootstrap), which is an enormously important part of the modern statistician’s toolkit. Having said that, when you’re working with computer-generated random numbers, you want your work to be reproducible so that other people can check it. This means that you want to set a random number seed before you do a simulation. This ensures that the stream of random numbers in your simulation is the same every time, and someone else could run your code and get the exact same results that you did.</p>
@@ -389,7 +389,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>[1] -0.9965824  0.7218241 -0.6172088  2.0293916  1.0654161</code></pre>
 </div>
 </div>
-<p>So, if you ever write a code chunk that generates random numbers (eg. using the <code>generate</code> function), you should begin the code chunk by setting a random number seed so that you get the same results every time you run your stuff. The syntax as you saw above is <code>set.seed(INTEGER)</code>. You can put any integer inside that you want. If you require inspiration, try these:</p>
+<p>So, if you ever write a code chunk that generates random numbers (eg. using the <code>generate</code> function), you should begin the code chunk by setting a random number seed so that you get the same results every time you run your stuff. The syntax as you saw above is <code>set.seed(INTEGER)</code>. Sometimes we will tell you what number to put. Other times (and once you exit the course), you can put whatever you want. It doesn’t really matter. If you require inspiration, try these:</p>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=OiBIXa_-7Vo">1</a></li>
 <li><a href="https://www.youtube.com/watch?v=pf8yHr4rHaY"><code>20</code></a></li>
