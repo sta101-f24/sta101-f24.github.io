@@ -1,0 +1,46 @@
+---
+  title: "Random number seeds"
+---
+
+Statistical computing software like `R` can generate (pseudo)random numbers, like this:
+
+```{r}
+rnorm(5)
+```
+
+Or this:
+
+```{r}
+rnorm(5)
+```
+
+Or this:
+
+```{r}
+rnorm(5)
+```
+
+Look pretty random to me. This allows us to perform simulations (eg. the bootstrap), which is an enormously important part of the modern statistician's toolkit. Having said that, when you're working with computer-generated random numbers, you want your work to be reproducible so that other people can check it. This means that you want to set a random number seed before you do a simulation. This ensures that the stream of random numbers in your simulation are the same every time, and someone else could run your code and get the exact same results that you did.
+
+Setting a seed looks like this:
+
+```{r}
+set.seed(8675309)
+
+rnorm(5)
+```
+
+Every time you run that code, you will get the same numbers:
+
+```{r}
+set.seed(8675309)
+
+rnorm(5)
+```
+
+So, if you ever write a code chunk that generates random numbers (eg. using the `generate` function), you should begin the code chunk by setting a random number seed so that you get the same results every time you run your stuff. The syntax as you saw above is `set.seed(INTEGER)`. You can put any integer inside that you want. If you require inspiration, try these:
+
+-   [`20`](https://www.youtube.com/watch?v=pf8yHr4rHaY)
+-   [`988`](https://www.youtube.com/watch?v=MHFuaaGpGKQ)
+-   [`8675309`](https://www.youtube.com/watch?v=6WTdTwcmxyo)
+-   [`8005882300`](https://www.youtube.com/watch?v=uwJQQux0TF0)

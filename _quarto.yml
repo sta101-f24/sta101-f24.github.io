@@ -92,6 +92,8 @@ website:
             text: Multiple linear regression
           - href: computing/computing-logistic.qmd
             text: Logistic regression
+          - href: computing/computing-seeds.qmd
+            text: Random number seed
           - href: computing/computing-confidence.qmd
             text: Confidence intervals
           - href: computing/computing-cheatsheets.qmd
