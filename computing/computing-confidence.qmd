@@ -37,18 +37,20 @@ ggplot(abb, aes(x = ppg)) +
   geom_histogram() +
   labs(x = "Price per guest ($)")
 ```
+
 To answer the question "what was the typical or expected price," we can calculate a point estimate like the sample mean or sample median:
 
 ```{r}
 abb |> 
-  summarize(ppg.mean = mean(ppg),
-            ppg.median = median(ppg))
+  summarize(mean = mean(ppg),
+            median = median(ppg))
 ```
+
 In this case they disagree quite a bit, which in general is something you should think about, but for the purposes of this primer, we will set the issue aside and focus just on the sample mean as our estimate.
 
 ## Approximating the sampling distribution of the mean with the bootstrap
 
-The sampling distribution of the mean refers to the random variation we would observe in our mean estimate if we recomputed it based on many different hypothetical samples from the population (June 2020 Airbnb listings in Asheville, in this case). Unfortunately, we do not have many different samples from this population. We only have one sample. But *if* that sample is a decent approximation to the population (debateable, in this case), we can randomly generate different hypothetical samples from our sample (resamples), calculate a different mean for each, and look at the variation in those estimates. 
+The sampling distribution of the mean refers to the random variation we would observe in our mean estimate if we recomputed it based on many different hypothetical samples from the population (June 2020 Airbnb listings in Asheville, in this case). Unfortunately, we do not have many different samples from this population. We only have one sample. But *if* that sample is a decent approximation to the population (debateable, in this case), we can randomly generate different hypothetical samples from our sample (resamples), calculate a different mean for each, and look at the variation in those estimates.
 
 This is dirty work, but thankfully the computer handles it with aplomb:
 
@@ -80,6 +82,7 @@ boot_dist_abb |>
     upper = quantile(stat, 0.975)
   )
 ```
+
 Alternatively, we can use this nifty command which gives the same numbers:
 
 ```{r}
