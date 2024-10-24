@@ -62,7 +62,7 @@ IMS - [Chapter 11 exercises](https://openintro-ims.netlify.app/foundations-rando
 
 ## Part 2: Heart transplants - `outcome`
 
-Today, we will be working with data from The Stanford University Heart Transplant Study[@turnbull1974]:
+Today, we will be working with data from The Stanford University Heart Transplant Study [@turnbull1974]:
 
 ```{r}
 #| label: load-glimpse-data
