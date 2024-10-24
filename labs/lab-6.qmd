@@ -62,20 +62,7 @@ IMS - [Chapter 11 exercises](https://openintro-ims.netlify.app/foundations-rando
 
 ## Part 2: Heart transplants - `outcome`
 
-Today, we will be working with data from The Stanford University Heart Transplant Study[@turnbull1974].
-
-We'll use the tidyverse and tidymodels packages for our analysis, so let's load those first.
-
-```{r}
-#| label: load-packages
-#| message: false
-
-library(tidyverse)
-library(tidymodels)
-library(openintro)
-```
-
-And then, let's read the data and take a peak at it:
+Today, we will be working with data from The Stanford University Heart Transplant Study[@turnbull1974]:
 
 ```{r}
 #| label: load-glimpse-data
