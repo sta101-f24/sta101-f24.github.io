@@ -1,7 +1,6 @@
 ---
-title: "colors_in_R"
+title: "Colors"
 format: html
-editor: visual
 ---
 
 ## Coloring in R
