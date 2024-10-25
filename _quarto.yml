@@ -73,6 +73,8 @@ website:
             text: Lab 4
           - href: labs/lab-5.qmd
             text: Lab 5
+          - href: labs/lab-6.qmd
+            text: Lab 6
 #      - href: project/project-2.qmd
 #        text: Project
       - section: "Computing primers"
