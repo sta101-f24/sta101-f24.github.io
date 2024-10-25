@@ -99,10 +99,10 @@ website:
             text: Random number seed
           - href: computing/computing-confidence.qmd
             text: Confidence intervals
-          - href: computing/computing-cheatsheets.qmd
-            text: Cheatsheets
           - href: computing/computing-colors.qmd
             text: Colors
+          - href: computing/computing-cheatsheets.qmd
+            text: Cheatsheets
 
   page-footer:
     right: "This page is built with 🤍 and [Quarto](https://quarto.org/)."
