@@ -9,8 +9,7 @@ $$
 \text{H}_0&:p=p_0\\
 \text{H}_A&:p\neq p_0
 \end{align*}
-$$
-So the question becomes "is the true value equal to the hypothesized value, or is it not?" To answer this, we must judge how compatible our point estimate $\hat{p}$ is with $p_0$, and we do this by calculating a $p$-value and deciding if it is small enough.
+$$ So the question becomes "is the true value equal to the hypothesized value, or is it not?" To answer this, we must judge how compatible our point estimate $\hat{p}$ is with $p_0$, and we do this by calculating a $p$-value and deciding if it is small enough.
 
 This primer leads you down the path of least resistance to calculating the $p$-value.
 
@@ -38,8 +37,7 @@ $$
 \text{H}_0&:p=0.10\\
 \text{H}_A&:p\neq 0.10.
 \end{align*}
-$$
-In order to evaluate these competing claims about the effectiveness of the consultant, we have historical data on her track record:
+$$ In order to evaluate these competing claims about the effectiveness of the consultant, we have historical data on her track record:
 
 ```{r}
 #| label: load-organ-donor
@@ -58,6 +56,7 @@ obs_stat_donor <- organ_donor |>
 
 obs_stat_donor
 ```
+
 So 3 out her 62 clients, or about 4.8%, have experienced complications. 4.8% is smaller than 10%, so she would appear to be better than average and worth hiring. But 4.8% is a noisy estimate based on imperfect data, and we might wonder if we have enough information to confidently conclude that she is better than average. Maybe these results are simply due to chance, and if instead she had worked with 200 clients, it would become clear that her skills actually correspond to 9% complications, or 11% complications. How can we tell with the information we have? That's what hypothesis testing is all about.
 
 ## Simulating the null distribution
@@ -79,11 +78,11 @@ null_dist_donor
 
 So this code generates 15,000 fake data sets, and calculates the sample proportion of "complications" for each one. Here is what each line is doing:
 
-- `set.seed(25)`: we are setting the random number seed to ensure that our results are perfectly replicable;
-- `specify(response = outcome, success = "complication")`: first we specify which column in our data frame we are using, which is easy in this case because there is only one: `outcome`. That column is a categorical variable with two levels, so next we have to tell the computer which level ("complication" versus "no complication") we are calculating the proportions of;
-- `hypothesize(null = "point", p = 0.10)`: since our null hypothesis is checking a single hypothesized value (as opposed to many), we have a point null hypothesis, and then we tell it the hypothesized value -- 10% in this case;
-- `generate(reps = 15000, type = "draw")`: the null distribution is a sampling distribution, the same as when we studied confidence intervals and bootstrapping. So here we tell it how many alternative, hypothetical datasets we wish to simulate in order to get a pretty-looking histogram. The more the merrier, I say;
-- `calculate(stat = "prop")`: the statistic we are estimate is the sample proportion in this case. On Lab 5 we considered other statistics of interest: sample means, medians, standard deviations, and so forth.
+-   `set.seed(25)`: we are setting the random number seed to ensure that our results are perfectly replicable;
+-   `specify(response = outcome, success = "complication")`: first we specify which column in our data frame we are using, which is easy in this case because there is only one: `outcome`. That column is a categorical variable with two levels, so next we have to tell the computer which level ("complication" versus "no complication") we are calculating the proportions of;
+-   `hypothesize(null = "point", p = 0.10)`: since our null hypothesis is checking a single hypothesized value (as opposed to many), we have a point null hypothesis, and then we tell it the hypothesized value -- 10% in this case;
+-   `generate(reps = 15000, type = "draw")`: the null distribution is a sampling distribution, the same as when we studied confidence intervals and bootstrapping. So here we tell it how many alternative, hypothetical datasets we wish to simulate in order to get a pretty-looking histogram. The more the merrier, I say;
+-   `calculate(stat = "prop")`: the statistic we are estimate is the sample proportion in this case. On Lab 5 we considered other statistics of interest: sample means, medians, standard deviations, and so forth.
 
 ## Visualizing the null distribution and observed statistic
 
@@ -107,7 +106,7 @@ null_dist_donor |>
   shade_p_value(obs_stat = obs_stat_donor, direction = "two-sided")
 ```
 
-The area of the red shaded part of the histogram is the $p$-value.
+The fraction of the area shaded red is the $p$-value.
 
 ## Computing the p-value
 
@@ -118,7 +117,6 @@ null_dist_donor |>
   get_p_value(obs_stat = obs_stat_donor, direction = "two-sided")
 ```
 
-The $p$-value is quantifying how far out our estimate is in the tails of the null distribution. If the estimate is far out in the tails, the $p$-value will be small, and this provides evidence that the estimate and the null are incompatible, and therefore the null should be rejected in favor of the alternative. If the estimate is closer to the middle of the null distribution, the $p$-value will be large, and this means that we cannot rule out the null hypothesis. 
+The $p$-value is quantifying how far out our estimate is in the tails of the null distribution. If the estimate is far out in the tails, the $p$-value will be small, and this provides evidence that the estimate and the null are incompatible, and therefore the null should be rejected in favor of the alternative. If the estimate is closer to the middle of the null distribution, the $p$-value will be large, and this means that we cannot rule out the null hypothesis.
 
 In this case, we calculated a $p$-value of 24.1%. Is that small enough to jump to a conclusion? It ain't 80%. It's less than 50%. But it ain't 1% either. How small is small? We will pick this question up in lecture.
-
