@@ -53,7 +53,7 @@ glimpse(heart_transplant)
 The data dictionary is as follows:
 
 | Variable   | Description                                                                                                                                             |
-|----------------|--------------------------------------------------------|
+|------------------|------------------------------------------------------|
 | id         | ID number of the patient                                                                                                                                |
 | outcome    | Survival status with levels `alive` and `deceased`                                                                                                      |
 | transplant | Transplant group with levels `control` (did not receive a transplant) and `treatment` (received a transplant)                                           |
@@ -62,6 +62,7 @@ The data dictionary is as follows:
 | acceptyear | Year of acceptance as a heart transplant candidate                                                                                                      |
 | prior      | Whether or not the patient had prior surgery with levels `yes` and `no`                                                                                 |
 | wait       | Waiting time for transplant                                                                                                                             |
+
 ### Exercise 1
 
 ::: exercise
@@ -95,7 +96,7 @@ Now that you've completed a few exercises, pause and render your document. If it
 ::: exercise
 Calculate the point estimate for the difference in proportions of patients who died between the treatment and control groups: $\hat{p}_{treatment} - \hat{p}_{control}$, where $\hat{p}$ is the observed probability of dying in each group. Do this in two ways:
 
-1.  Construct a frequency table of `survived` by `transplant` and calculate the difference in proportions "by hand".
+1.  Construct a frequency table of `outcome` by `transplant` and calculate the difference in proportions "by hand".
 2.  Use `specify()` and `calculate()` to calculate the difference in proportions as shown below.
 
 ```{r}
@@ -221,7 +222,7 @@ If you fail to mark the pages associated with an exercise, that exercise won't b
 
 | Exercise    | Points |
 |-------------|--------|
-| Exercise 1 | 6      |
+| Exercise 1  | 6      |
 | Exercise 2  | 4      |
 | Exercise 3  | 4      |
 | Exercise 4  | 6      |
@@ -230,5 +231,5 @@ If you fail to mark the pages associated with an exercise, that exercise won't b
 | Exercise 7  | 5      |
 | Exercise 8  | 7      |
 | Exercise 9  | 5      |
-| Exercise 10  | 4      |
+| Exercise 10 | 4      |
 | **Total**   | 50     |
