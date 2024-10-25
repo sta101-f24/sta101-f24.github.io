@@ -2151,7 +2151,7 @@
     "href": "computing/computing-hypotheses.html#visualizing-the-p-value",
     "title": "Hypothesis testing with randomization",
     "section": "Visualizing the p-value",
-    "text": "Visualizing the p-value\nThe \\(p\\)-value is the probability, assuming the null is true, of observing a sample statistic as or more extreme then the one we actually got. So it’s the probability under the null of seeing something even farther to the left of 4.8%, or something correspondingly far to the right. Here’s what that looks like:\n\nnull_dist_donor |&gt;\n  visualize() +\n  shade_p_value(obs_stat = obs_stat_donor, direction = \"two-sided\")\n\n\n\n\n\n\n\n\nThe area of the red shaded part of the histogram is the \\(p\\)-value.",
+    "text": "Visualizing the p-value\nThe \\(p\\)-value is the probability, assuming the null is true, of observing a sample statistic as or more extreme then the one we actually got. So it’s the probability under the null of seeing something even farther to the left of 4.8%, or something correspondingly far to the right. Here’s what that looks like:\n\nnull_dist_donor |&gt;\n  visualize() +\n  shade_p_value(obs_stat = obs_stat_donor, direction = \"two-sided\")\n\n\n\n\n\n\n\n\nThe fraction of the area shaded red is the \\(p\\)-value.",
     "crumbs": [
       "Computing primers",
       "Hypothesis testing"
