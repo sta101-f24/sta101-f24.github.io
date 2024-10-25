@@ -103,6 +103,8 @@ website:
             text: Confidence intervals
           - href: computing/computing-colors.qmd
             text: Colors
+          - href: computing/computing-hypotheses.qmd
+            text: Hypothesis testing
           - href: computing/computing-cheatsheets.qmd
             text: Cheatsheets
 
