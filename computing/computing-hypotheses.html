@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STA 101 Fall 2024 - Piping</title>
+<title>STA 101 Fall 2024 - Hypothesis testing with randomization</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -63,8 +63,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../computing/computing-histograms.html" rel="next">
-<link href="../computing/computing-file-paths.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -103,8 +101,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<meta property="og:title" content="STA 101 Fall 2024 - Piping">
-<meta property="og:description" content="Homepage for STA 101 Data Analysis and Statistical Inference at Duke University, Fall 2024.">
+<meta property="og:title" content="STA 101 Fall 2024 - Hypothesis testing with randomization">
 <meta property="og:site_name" content="STA 101 Fall 2024">
 </head>
 
@@ -117,7 +114,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../computing/computing-access.html">Computing primers</a></li><li class="breadcrumb-item"><a href="../computing/computing-pipe.html">Piping</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Hypothesis testing with randomization</li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -244,13 +241,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
  <span class="menu-text">Computing primers</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../computing/computing-access.html" class="sidebar-item-text sidebar-link">
@@ -271,7 +268,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computing/computing-pipe.html" class="sidebar-item-text sidebar-link active">
+  <a href="../computing/computing-pipe.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Piping</span></a>
   </div>
 </li>
@@ -341,18 +338,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#a-very-silly-example" id="toc-a-very-silly-example" class="nav-link active" data-scroll-target="#a-very-silly-example">A very silly example</a></li>
-  <li><a href="#tallying-stuff-up-in-a-spreadsheet" id="toc-tallying-stuff-up-in-a-spreadsheet" class="nav-link" data-scroll-target="#tallying-stuff-up-in-a-spreadsheet">Tallying stuff up in a spreadsheet</a></li>
-  <li><a href="#now-you-try" id="toc-now-you-try" class="nav-link" data-scroll-target="#now-you-try">Now you try</a></li>
+  <li><a href="#load-packages" id="toc-load-packages" class="nav-link active" data-scroll-target="#load-packages">Load packages</a></li>
+  <li><a href="#example-organ-donors" id="toc-example-organ-donors" class="nav-link" data-scroll-target="#example-organ-donors">Example: organ donors</a>
+  <ul class="collapse">
+  <li><a href="#load-data" id="toc-load-data" class="nav-link" data-scroll-target="#load-data">Load data</a></li>
+  <li><a href="#simulate-sampling-distribution" id="toc-simulate-sampling-distribution" class="nav-link" data-scroll-target="#simulate-sampling-distribution">Simulate sampling distribution</a></li>
+  <li><a href="#visualize-null-distribution-and-observed-statistic" id="toc-visualize-null-distribution-and-observed-statistic" class="nav-link" data-scroll-target="#visualize-null-distribution-and-observed-statistic">Visualize null distribution and observed statistic</a></li>
+  <li><a href="#compute-and-visualize-p-value" id="toc-compute-and-visualize-p-value" class="nav-link" data-scroll-target="#compute-and-visualize-p-value">Compute and visualize p-value</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../computing/computing-access.html">Computing primers</a></li><li class="breadcrumb-item"><a href="../computing/computing-pipe.html">Piping</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Piping</h1>
+<h1 class="title">Hypothesis testing with randomization</h1>
 </div>
 
 
@@ -369,90 +371,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>A <em>pipe</em> in <code>R</code> is a way of stitching together many commands to make your code easier for a human to read, and to keep it from running off the pages of the PDF documents you will submit to us.</p>
-<section id="a-very-silly-example" class="level2">
-<h2 class="anchored" data-anchor-id="a-very-silly-example">A very silly example</h2>
-<p>These two code chunks do exactly the same thing:</p>
+<section id="load-packages" class="level2">
+<h2 class="anchored" data-anchor-id="load-packages">Load packages</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 3</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">|&gt;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 3</code></pre>
-</div>
-</div>
-<p>So the pipe operator <code>|&gt;</code> passes (or <em>pipes</em>), the number <code>1</code> into the <code>sum</code> function as the first input. In a simple example like this, <code>sum(1, 2)</code> is <em>definitely</em> the way I would write the code, but as things get more elaborate, you will want to pipe.</p>
-</section>
-<section id="tallying-stuff-up-in-a-spreadsheet" class="level2">
-<h2 class="anchored" data-anchor-id="tallying-stuff-up-in-a-spreadsheet">Tallying stuff up in a spreadsheet</h2>
-<p>Let’s consider the COVID data set from class on 9/3/2024:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>delta <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"delta.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Recalling the information <a href="https://sta101-f24.github.io/computing/computing-file-paths.html">here</a>, be prepared to adjust the file path to match how you have organized your files and folders.</p>
-</div>
-</div>
-<p>A row in this data set is a person, and we record whether or not that person died from/with COVID, and whether or not they were vaccinated. So there are four categories in all:</p>
-<ul>
-<li>unvaccinated and died</li>
-<li>unvaccinated and survived</li>
-<li>vaccinated and died</li>
-<li>vaccinated and survived</li>
-</ul>
-<p>The following code creates a nifty lil’ table that tallies up the number of people in each group and calculates the proportion of people that died versus survived <em>within each vaccination group</em>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>delta <span class="sc">|&gt;</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(vaccine, outcome) <span class="sc">|&gt;</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(vaccine) <span class="sc">|&gt;</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4 × 4
-# Groups:   vaccine [2]
-  vaccine      outcome       n    prop
-  &lt;chr&gt;        &lt;chr&gt;     &lt;int&gt;   &lt;dbl&gt;
-1 Unvaccinated died        250 0.00166
-2 Unvaccinated survived 150802 0.998  
-3 Vaccinated   died        477 0.00407
-4 Vaccinated   survived 116637 0.996  </code></pre>
-</div>
-</div>
-<p>So within each vaccination group, the numbers sum to one. This code is equivalent, but it provides a truly horrific reading experience:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">group_by</span>(<span class="fu">count</span>(delta, vaccine, outcome), vaccine), <span class="at">prop =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4 × 4
-# Groups:   vaccine [2]
-  vaccine      outcome       n    prop
-  &lt;chr&gt;        &lt;chr&gt;     &lt;int&gt;   &lt;dbl&gt;
-1 Unvaccinated died        250 0.00166
-2 Unvaccinated survived 150802 0.998  
-3 Vaccinated   died        477 0.00407
-4 Vaccinated   survived 116637 0.996  </code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels) </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openintro)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="now-you-try" class="level2">
-<h2 class="anchored" data-anchor-id="now-you-try">Now you try</h2>
-<p>The COVID data contains another variable indicating whether or not the person was older or younger than fifty. Write some code (it will be <em>very</em> similar to the code above) that produces a table that breaks things down by vaccination status, outcome, <em>and</em> age. How many rows should this table contain?</p>
+<section id="example-organ-donors" class="level2">
+<h2 class="anchored" data-anchor-id="example-organ-donors">Example: organ donors</h2>
+<section id="load-data" class="level3">
+<h3 class="anchored" data-anchor-id="load-data">Load data</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>organ_donor <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"organ-donor.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="simulate-sampling-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="simulate-sampling-distribution">Simulate sampling distribution</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">25</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="visualize-null-distribution-and-observed-statistic" class="level3">
+<h3 class="anchored" data-anchor-id="visualize-null-distribution-and-observed-statistic">Visualize null distribution and observed statistic</h3>
+<p>Compute observed statistic (proportion):</p>
+</section>
+<section id="compute-and-visualize-p-value" class="level3">
+<h3 class="anchored" data-anchor-id="compute-and-visualize-p-value">Compute and visualize p-value</h3>
+<p>Compute:</p>
+<p>Visualize:</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -865,18 +816,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../computing/computing-file-paths.html" class="pagination-link" aria-label="Adjusting file paths">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Adjusting file paths</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../computing/computing-histograms.html" class="pagination-link" aria-label="Histogram basics">
-        <span class="nav-page-text">Histogram basics</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
