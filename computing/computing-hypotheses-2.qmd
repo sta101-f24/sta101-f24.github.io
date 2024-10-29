@@ -65,10 +65,11 @@ This code computes the differences in the yawning proportions:
 obs_stat_yawner <- yawn |>
   specify(response = result, explanatory = group, success = "yawn") |>
   calculate(stat = "diff in props", order = c("trmt", "ctrl"))
+obs_stat_yawner
 ```
 
 
-We see that there is *some* difference in the proportion of yawners in each group, but how can we tell if it is merely an artifact of random sampling, or if we are actually picking up on a meaningful difference? That is what hypothesis testing is all about.
+We see that there is *some* positive difference in the proportion of yawners in each group, but how can we tell if it is merely an artifact of random sampling, or if we are actually picking up on a meaningful difference? That is what hypothesis testing is all about.
 
 ## Simulating the null distribution
 
