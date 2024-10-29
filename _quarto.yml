@@ -107,6 +107,8 @@ website:
             text: Colors
           - href: computing/computing-hypotheses.qmd
             text: Hypothesis testing
+          - href: computing/computing-hypotheses-2.qmd
+            text: More hypothesis testing
           - href: computing/computing-cheatsheets.qmd
             text: Cheatsheets
 

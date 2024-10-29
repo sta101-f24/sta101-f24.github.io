@@ -1,0 +1,122 @@
+---
+  title: "More hypothesis testing"
+---
+
+An hypothesis test is a way of determining which of two competing claims a dataset is most consistent with. If, for example, we are investigating whether two experimental groups (treatment and control) have the same probability of exhibiting some characteristic, we state the claims as null and alternative hypotheses:
+
+$$
+\begin{align*}
+\text{H}_0&:p_{\text{trt}} = p_{\text{ctr}}\\
+\text{H}_A&:p_{\text{trt}} \neq p_{\text{ctr}}.
+\end{align*}
+$$
+
+So the question becomes "do these groups have the same probability, or not?" An alternative way of writing these hypotheses is
+
+$$
+\begin{align*}
+\text{H}_0&:p_{\text{trt}} - p_{\text{ctr}} =0\\
+\text{H}_A&:p_{\text{trt}} - p_{\text{ctr}}\neq 0.
+\end{align*}
+$$
+
+To answer this question, we must judge how compatible our point estimates $\hat{p}_{\text{trt}}$ and $\hat{p}_{\text{ctr}}$ are with the null hypothesis, and we do this by calculating a $p$-value and deciding if it is small enough.
+
+This primer leads you down the path of least resistance to calculating the $p$-value.
+
+## Load packages
+
+```{r}
+#| label: load-tidyverse
+#| message: false
+
+library(tidyverse) 
+library(tidymodels) 
+library(openintro)
+```
+
+## Dataset: is yawning contagious?
+
+An experiment conducted by the MythBusters tested if a person can be subconsciously influenced into yawning if another person near them yawns. In this study 50 people were randomly assigned to two groups: 34 to a group where a person near them yawned (treatment) and 16 to a control group where they didn’t see someone yawn (control). This is the `yawn` dataset, pre-loaded in the `openintro` package:
+
+```{r}
+yawn
+```
+In this case, we are interested in a *one-sided* alternative. We want to know if there is evidence to suggest that proximity to a yawner specifically *increases* your probability of yawning. So we are testing:
+
+$$
+\begin{align*}
+\text{H}_0&:p_{\text{trt}} - p_{\text{ctr}} =0\\
+\text{H}_A&:p_{\text{trt}} - p_{\text{ctr}}> 0.
+\end{align*}
+$$
+
+The sample proportions in each experimental group are as follows
+
+```{r}
+yawn |>
+  count(group, result) |>
+  group_by(group) |>
+  mutate(p_hat = n / sum(n))
+```
+This code computes the differences in the yawning proportions:
+
+```{r}
+obs_stat_yawner <- yawn |>
+  specify(response = result, explanatory = group, success = "yawn") |>
+  calculate(stat = "diff in props", order = c("trmt", "ctrl"))
+```
+
+
+We see that there is *some* difference in the proportion of yawners in each group, but how can we tell if it is merely an artifact of random sampling, or if we are actually picking up on a meaningful difference? That is what hypothesis testing is all about.
+
+## Simulating the null distribution
+
+In order to assess whether or not the estimated difference of 29.4% - 25% = 4.4% is compatible with the hypothesized difference of 0%, we look at the *null distribution* of the estimator. This is the *hypothetical* sampling distribution that the sample difference would possess if the null hypothesis happened to be true. When we visualize this distribution, it displays the range of values that our estimate would be likely to have if the null were true. We then compare this to the actual estimate that our actual data actually gave us, and if the actual estimate and the null distribution appear to be incompatible with one another, then we reject the null hypothesis and accept the alternative.
+
+The following code simulates the null distribution of the sample difference in proportions:
+
+```{r}
+set.seed(25)
+
+null_dist_yawner <- yawn |>
+  specify(response = result, explanatory = group, success = "yawn") |>
+  hypothesize(null = "independence") |>
+  generate(reps = 1000, type = "permute") |>
+  calculate(stat = "diff in props", order = c("trmt", "ctrl"))
+null_dist_yawner
+```
+
+So this code generates 1,000 fake data sets, and calculates the difference in sample proportions for each one. Here is what each line is doing:
+
+-   `set.seed(25)`: we are setting the random number seed to ensure that our results are perfectly replicable;
+-   `specify(response = result, explanatory = group, success = "yawn")`: first we specify which columns in our data frame we are using. These columns are categorical variables, each with two levels, so next we have to tell the computer which level of the response ("yawn" versus "not yawn") we are calculating the proportions of;
+-   `hypothesize(null = "independence")`: since our null hypothesis states that there is no difference between these groups. In other words, the groups are "independent;"
+-   `generate(reps = 1000, type = "permute")`: the null distribution is a sampling distribution, the same as when we studied confidence intervals and bootstrapping. So here we tell it how many alternative, hypothetical datasets we wish to simulate in order to get a pretty-looking histogram. The more the merrier, I say;
+-   `calculate(stat = "diff in props", order = c("trmt", "ctrl"))`: the statistic we are estimating in this case is the difference in group proportions. On Lab 5 we considered other statistics of interest: sample means, medians, standard deviations, and so forth.
+
+## Visualizing the null distribution, observed statistic, and $p$-value
+
+Here is the code:
+
+```{r}
+null_dist_yawner |>
+  visualize() +
+  shade_p_value(obs_stat = obs_stat_yawner, direction = "greater")
+```
+There are three aspects to it:
+
+- When we simulate the null distribution of the sample proportion as above, we get a list of 1,000 numbers. To visualize the null distribution, we can simply plot a histogram of these;
+- to visualize where the actual estimated difference of 4.4% falls in that distribution, we can add a vertical line;
+- The $p$-value is the probability, assuming the null is true, of observing a sample statistic as or more extreme then the one we actually got. So it's the probability under the null of seeing something *even farther* to the right of 4.4%, or something correspondingly far to the left. The fraction of the area shaded red is the $p$-value.
+
+Inspecting the picture, we see that our estimated difference is pretty much smack in the middle of the null distribution. So the null hypothesis of no difference is very much in play. Evidence is insufficient to reject it.
+
+## Computing the p-value
+
+To quantify that intuition, this code calculates the $p$-value:
+
+```{r}
+null_dist_yawner |>
+  get_p_value(obs_stat = obs_stat_yawner, "greater")
+```
