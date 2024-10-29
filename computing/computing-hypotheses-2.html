@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STA 101 Fall 2024 - R cheatsheets</title>
+<title>STA 101 Fall 2024 - More hypothesis testing</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -29,7 +63,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../computing/computing-hypotheses-2.html" rel="prev">
+<link href="../computing/computing-cheatsheets.html" rel="next">
+<link href="../computing/computing-hypotheses.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -67,8 +102,37 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="STA 101 Fall 2024 - R cheatsheets">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="STA 101 Fall 2024 - More hypothesis testing">
 <meta property="og:description" content="Homepage for STA 101 Data Analysis and Statistical Inference at Duke University, Fall 2024.">
 <meta property="og:site_name" content="STA 101 Fall 2024">
 </head>
@@ -82,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../computing/computing-access.html">Computing primers</a></li><li class="breadcrumb-item"><a href="../computing/computing-cheatsheets.html">Cheatsheets</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../computing/computing-access.html">Computing primers</a></li><li class="breadcrumb-item"><a href="../computing/computing-hypotheses-2.html">More hypothesis testing</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -296,13 +360,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computing/computing-hypotheses-2.html" class="sidebar-item-text sidebar-link">
+  <a href="../computing/computing-hypotheses-2.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">More hypothesis testing</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computing/computing-cheatsheets.html" class="sidebar-item-text sidebar-link active">
+  <a href="../computing/computing-cheatsheets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Cheatsheets</span></a>
   </div>
 </li>
@@ -314,14 +378,24 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#load-packages" id="toc-load-packages" class="nav-link active" data-scroll-target="#load-packages">Load packages</a></li>
+  <li><a href="#dataset-is-yawning-contagious" id="toc-dataset-is-yawning-contagious" class="nav-link" data-scroll-target="#dataset-is-yawning-contagious">Dataset: is yawning contagious?</a></li>
+  <li><a href="#simulating-the-null-distribution" id="toc-simulating-the-null-distribution" class="nav-link" data-scroll-target="#simulating-the-null-distribution">Simulating the null distribution</a></li>
+  <li><a href="#visualizing-the-null-distribution-observed-statistic-and-p-value" id="toc-visualizing-the-null-distribution-observed-statistic-and-p-value" class="nav-link" data-scroll-target="#visualizing-the-null-distribution-observed-statistic-and-p-value">Visualizing the null distribution, observed statistic, and <span class="math inline">\(p\)</span>-value</a></li>
+  <li><a href="#computing-the-p-value" id="toc-computing-the-p-value" class="nav-link" data-scroll-target="#computing-the-p-value">Computing the p-value</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../computing/computing-access.html">Computing primers</a></li><li class="breadcrumb-item"><a href="../computing/computing-cheatsheets.html">Cheatsheets</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../computing/computing-access.html">Computing primers</a></li><li class="breadcrumb-item"><a href="../computing/computing-hypotheses-2.html">More hypothesis testing</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">R cheatsheets</h1>
+<h1 class="title">More hypothesis testing</h1>
 </div>
 
 
@@ -338,60 +412,174 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The following cheatsheets come from <a href="https://posit.co/resources/cheatsheets" class="uri">https://posit.co/resources/cheatsheets</a>. We haven’t covered every function and functionality listed on them, but you might still find them useful as references.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-left">
+<p>An hypothesis test is a way of determining which of two competing claims a dataset is most consistent with. If, for example, we are investigating whether two experimental groups (treatment and control) have the same probability of exhibiting some characteristic, we state the claims as null and alternative hypotheses:</p>
+<p><span class="math display">\[
+\begin{align*}
+\text{H}_0&amp;:p_{\text{trt}} = p_{\text{ctr}}\\
+\text{H}_A&amp;:p_{\text{trt}} \neq p_{\text{ctr}}.
+\end{align*}
+\]</span></p>
+<p>So the question becomes “do these groups have the same probability, or not?” An alternative way of writing these hypotheses is</p>
+<p><span class="math display">\[
+\begin{align*}
+\text{H}_0&amp;:p_{\text{trt}} - p_{\text{ctr}} =0\\
+\text{H}_A&amp;:p_{\text{trt}} - p_{\text{ctr}}\neq 0.
+\end{align*}
+\]</span></p>
+<p>To answer this question, we must judge how compatible our point estimates <span class="math inline">\(\hat{p}_{\text{trt}}\)</span> and <span class="math inline">\(\hat{p}_{\text{ctr}}\)</span> are with the null hypothesis, and we do this by calculating a <span class="math inline">\(p\)</span>-value and deciding if it is small enough.</p>
+<p>This primer leads you down the path of least resistance to calculating the <span class="math inline">\(p\)</span>-value.</p>
+<section id="load-packages" class="level2">
+<h2 class="anchored" data-anchor-id="load-packages">Load packages</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels) </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openintro)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="dataset-is-yawning-contagious" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-is-yawning-contagious">Dataset: is yawning contagious?</h2>
+<p>An experiment conducted by the MythBusters tested if a person can be subconsciously influenced into yawning if another person near them yawns. In this study 50 people were randomly assigned to two groups: 34 to a group where a person near them yawned (treatment) and 16 to a control group where they didn’t see someone yawn (control). This is the <code>yawn</code> dataset, pre-loaded in the <code>openintro</code> package:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>yawn</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 50 × 2
+   result group
+   &lt;fct&gt;  &lt;fct&gt;
+ 1 yawn   trmt 
+ 2 yawn   trmt 
+ 3 yawn   trmt 
+ 4 yawn   trmt 
+ 5 yawn   trmt 
+ 6 yawn   trmt 
+ 7 yawn   trmt 
+ 8 yawn   trmt 
+ 9 yawn   trmt 
+10 yawn   trmt 
+# ℹ 40 more rows</code></pre>
+</div>
+</div>
+<p>In this case, we are interested in a <em>one-sided</em> alternative. We want to know if there is evidence to suggest that proximity to a yawner specifically <em>increases</em> your probability of yawning. So we are testing:</p>
+<p><span class="math display">\[
+\begin{align*}
+\text{H}_0&amp;:p_{\text{trt}} - p_{\text{ctr}} =0\\
+\text{H}_A&amp;:p_{\text{trt}} - p_{\text{ctr}}&gt; 0.
+\end{align*}
+\]</span></p>
+<p>The sample proportions in each experimental group are as follows</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>yawn <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(group, result) <span class="sc">|&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(group) <span class="sc">|&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">p_hat =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 4
+# Groups:   group [2]
+  group result       n p_hat
+  &lt;fct&gt; &lt;fct&gt;    &lt;int&gt; &lt;dbl&gt;
+1 ctrl  not yawn    12 0.75 
+2 ctrl  yawn         4 0.25 
+3 trmt  not yawn    24 0.706
+4 trmt  yawn        10 0.294</code></pre>
+</div>
+</div>
+<p>This code computes the differences in the yawning proportions:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>obs_stat_yawner <span class="ot">&lt;-</span> yawn <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> result, <span class="at">explanatory =</span> group, <span class="at">success =</span> <span class="st">"yawn"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"diff in props"</span>, <span class="at">order =</span> <span class="fu">c</span>(<span class="st">"trmt"</span>, <span class="st">"ctrl"</span>))</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>obs_stat_yawner</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Response: result (factor)
+Explanatory: group (factor)
+# A tibble: 1 × 1
+    stat
+   &lt;dbl&gt;
+1 0.0441</code></pre>
+</div>
+</div>
+<p>We see that there is <em>some</em> positive difference in the proportion of yawners in each group, but how can we tell if it is merely an artifact of random sampling, or if we are actually picking up on a meaningful difference? That is what hypothesis testing is all about.</p>
+</section>
+<section id="simulating-the-null-distribution" class="level2">
+<h2 class="anchored" data-anchor-id="simulating-the-null-distribution">Simulating the null distribution</h2>
+<p>In order to assess whether or not the estimated difference of 29.4% - 25% = 4.4% is compatible with the hypothesized difference of 0%, we look at the <em>null distribution</em> of the estimator. This is the <em>hypothetical</em> sampling distribution that the sample difference would possess if the null hypothesis happened to be true. When we visualize this distribution, it displays the range of values that our estimate would be likely to have if the null were true. We then compare this to the actual estimate that our actual data actually gave us, and if the actual estimate and the null distribution appear to be incompatible with one another, then we reject the null hypothesis and accept the alternative.</p>
+<p>The following code simulates the null distribution of the sample difference in proportions:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">25</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>null_dist_yawner <span class="ot">&lt;-</span> yawn <span class="sc">|&gt;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> result, <span class="at">explanatory =</span> group, <span class="at">success =</span> <span class="st">"yawn"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hypothesize</span>(<span class="at">null =</span> <span class="st">"independence"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"permute"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"diff in props"</span>, <span class="at">order =</span> <span class="fu">c</span>(<span class="st">"trmt"</span>, <span class="st">"ctrl"</span>))</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>null_dist_yawner</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Response: result (factor)
+Explanatory: group (factor)
+Null Hypothesis: independence
+# A tibble: 1,000 × 2
+   replicate    stat
+       &lt;int&gt;   &lt;dbl&gt;
+ 1         1  0.0441
+ 2         2 -0.140 
+ 3         3 -0.0478
+ 4         4 -0.232 
+ 5         5  0.0441
+ 6         6 -0.232 
+ 7         7 -0.0478
+ 8         8 -0.0478
+ 9         9  0.136 
+10        10 -0.0478
+# ℹ 990 more rows</code></pre>
+</div>
+</div>
+<p>So this code generates 1,000 fake data sets, and calculates the difference in sample proportions for each one. Here is what each line is doing:</p>
+<ul>
+<li><code>set.seed(25)</code>: we are setting the random number seed to ensure that our results are perfectly replicable;</li>
+<li><code>specify(response = result, explanatory = group, success = "yawn")</code>: first we specify which columns in our data frame we are using. These columns are categorical variables, each with two levels, so next we have to tell the computer which level of the response (“yawn” versus “not yawn”) we are calculating the proportions of;</li>
+<li><code>hypothesize(null = "independence")</code>: since our null hypothesis states that there is no difference between these groups. In other words, the groups are “independent;”</li>
+<li><code>generate(reps = 1000, type = "permute")</code>: the null distribution is a sampling distribution, the same as when we studied confidence intervals and bootstrapping. So here we tell it how many alternative, hypothetical datasets we wish to simulate in order to get a pretty-looking histogram. The more the merrier, I say;</li>
+<li><code>calculate(stat = "diff in props", order = c("trmt", "ctrl"))</code>: the statistic we are estimating in this case is the difference in group proportions. On Lab 5 we considered other statistics of interest: sample means, medians, standard deviations, and so forth.</li>
+</ul>
+</section>
+<section id="visualizing-the-null-distribution-observed-statistic-and-p-value" class="level2">
+<h2 class="anchored" data-anchor-id="visualizing-the-null-distribution-observed-statistic-and-p-value">Visualizing the null distribution, observed statistic, and <span class="math inline">\(p\)</span>-value</h2>
+<p>Here is the code:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>null_dist_yawner <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">visualize</span>() <span class="sc">+</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">shade_p_value</span>(<span class="at">obs_stat =</span> obs_stat_yawner, <span class="at">direction =</span> <span class="st">"greater"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
 <figure class="figure">
-<p><a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf"><img src="cheatsheets/data-visualization.png" class="img-fluid quarto-figure quarto-figure-left figure-img" alt="ggplot2 cheat sheet" width="300"></a></p>
+<p><img src="computing-hypotheses-2_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
-<p><br></p>
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/tidyr.pdf"><img src="cheatsheets/tidyr.png" class="img-fluid quarto-figure quarto-figure-left figure-img" alt="ggplot2 cheat sheet" width="300"></a></p>
-</figure>
 </div>
-<p><br></p>
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/strings.pdf"><img src="cheatsheets/strings.png" class="img-fluid quarto-figure quarto-figure-left figure-img" alt="ggplot2 cheat sheet" width="300"></a></p>
-</figure>
 </div>
-<p><br></p>
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/lubridate.pdf"><img src="cheatsheets/lubridate.png" class="img-fluid quarto-figure quarto-figure-left figure-img" alt="ggplot2 cheat sheet" width="300"></a></p>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-right">
-<figure class="figure">
-<p><a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf"><img src="cheatsheets/data-transformation.png" class="img-fluid quarto-figure quarto-figure-right figure-img" alt="ggplot2 cheat sheet" width="300"></a></p>
-</figure>
-</div>
-<p><br></p>
-<div class="quarto-figure quarto-figure-right">
-<figure class="figure">
-<p><a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-import.pdf"><img src="cheatsheets/data-import.png" class="img-fluid quarto-figure quarto-figure-right figure-img" alt="ggplot2 cheat sheet" width="300"></a></p>
-</figure>
-</div>
-<p><br></p>
-<div class="quarto-figure quarto-figure-right">
-<figure class="figure">
-<p><a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/factors.pdf"><img src="cheatsheets/factors.png" class="img-fluid quarto-figure quarto-figure-right figure-img" alt="ggplot2 cheat sheet" width="300"></a></p>
-</figure>
-</div>
-<p><br></p>
-<div class="quarto-figure quarto-figure-right">
-<figure class="figure">
-<p><a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/rstudio-ide.pdf"><img src="cheatsheets/rstudio-ide.png" class="img-fluid quarto-figure quarto-figure-right figure-img" alt="ggplot2 cheat sheet" width="300"></a></p>
-</figure>
-</div>
+<p>There are three aspects to it:</p>
+<ul>
+<li>When we simulate the null distribution of the sample proportion as above, we get a list of 1,000 numbers. To visualize the null distribution, we can simply plot a histogram of these;</li>
+<li>to visualize where the actual estimated difference of 4.4% falls in that distribution, we can add a vertical line;</li>
+<li>The <span class="math inline">\(p\)</span>-value is the probability, assuming the null is true, of observing a sample statistic as or more extreme then the one we actually got. So it’s the probability under the null of seeing something <em>even farther</em> to the right of 4.4%, or something correspondingly far to the left. The fraction of the area shaded red is the <span class="math inline">\(p\)</span>-value.</li>
+</ul>
+<p>Inspecting the picture, we see that our estimated difference is pretty much smack in the middle of the null distribution. So the null hypothesis of no difference is very much in play. Evidence is insufficient to reject it.</p>
+</section>
+<section id="computing-the-p-value" class="level2">
+<h2 class="anchored" data-anchor-id="computing-the-p-value">Computing the p-value</h2>
+<p>To quantify that intuition, this code calculates the <span class="math inline">\(p\)</span>-value:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>null_dist_yawner <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_p_value</span>(<span class="at">obs_stat =</span> obs_stat_yawner, <span class="st">"greater"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  p_value
+    &lt;dbl&gt;
+1   0.522</code></pre>
 </div>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -805,11 +993,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../computing/computing-hypotheses-2.html" class="pagination-link" aria-label="More hypothesis testing">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">More hypothesis testing</span>
+      <a href="../computing/computing-hypotheses.html" class="pagination-link" aria-label="Hypothesis testing">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Hypothesis testing</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../computing/computing-cheatsheets.html" class="pagination-link" aria-label="Cheatsheets">
+        <span class="nav-page-text">Cheatsheets</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
