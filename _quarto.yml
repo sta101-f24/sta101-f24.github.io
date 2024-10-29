@@ -10,6 +10,8 @@ project:
     - lectures/zito_sta101_10_08_2024_slides.pdf
     - lectures/zito_sta101_10_10_2024_slides.pdf
     - lectures/zito_sta101_10_17_2024_slides.pdf
+    - lectures/zito_sta101_10_22_2024_slides.pdf
+    - lectures/zito_sta101_10_24_2024_slides.pdf
 
 website:
   page-navigation: true
