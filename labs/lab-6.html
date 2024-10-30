@@ -484,8 +484,8 @@ $ wait       &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, 5, NA, NA, NA, NA, NA, NA, 
 <p>The data dictionary is as follows:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 75%">
+<col style="width: 26%">
+<col style="width: 73%">
 </colgroup>
 <thead><tr class="header">
 <th>Variable</th>
@@ -531,19 +531,6 @@ $ wait       &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, 5, NA, NA, NA, NA, NA, NA, 
 <section id="exercise-1" class="level3"><h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
 <div class="exercise">
 <p>IMS - <a href="https://openintro-ims.netlify.app/foundations-randomization#sec-chp11-exercises">Chapter 11 exercises</a>, #8: Heart transplants.</p>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>As of 10/25/2024, you cannot do Part d.ii, so skip it and come back.</p>
-</div>
 </div>
 </section><section id="exercise-2" class="level3"><h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
 <div class="exercise">
@@ -622,16 +609,7 @@ Hint
 </div>
 </section><section id="exercise-6" class="level3"><h3 class="anchored" data-anchor-id="exercise-6">Exercise 6</h3>
 <div class="exercise">
-<p>Calculate the p-value. Do this in two ways:</p>
-<ol type="1">
-<li>Filter <code>null_dist_outcome</code> for <code>stat</code> values that are at least as far away from the null value as the observed value you calculated in Exercise 4. Make sure you’re considering both directions! Note how many such values there are, and calculate the proportion out of the total number of resamples.</li>
-<li>Use <code>get_p_value()</code>:</li>
-</ol>
-<div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p_value_outcome</span> <span class="op">&lt;-</span> <span class="va">null_dist_outcome</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">get_p_value</span><span class="op">(</span>obs_stat <span class="op">=</span> <span class="va">obs_diff_outcome</span>, direction <span class="op">=</span> <span class="st">"two-sided"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Then, confirm that you obtained the same results with the two methods. Finally, interpret the p-value in context of the data and the research question and comment on the statistical discernability of this result using a discernability level of 5%.</p>
+<p>Calculate the p-value using the <code>get_p_value</code> function. Interpret the p-value in context of the data and the research question and comment on the statistical discernibility of this result using a discernibility level of 5%.</p>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
