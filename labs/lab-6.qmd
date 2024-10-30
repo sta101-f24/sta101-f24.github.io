@@ -53,7 +53,7 @@ glimpse(heart_transplant)
 The data dictionary is as follows:
 
 | Variable   | Description                                                                                                                                             |
-|------------------|------------------------------------------------------|
+|-------------------|-----------------------------------------------------|
 | id         | ID number of the patient                                                                                                                                |
 | outcome    | Survival status with levels `alive` and `deceased`                                                                                                      |
 | transplant | Transplant group with levels `control` (did not receive a transplant) and `treatment` (received a transplant)                                           |
@@ -67,10 +67,6 @@ The data dictionary is as follows:
 
 ::: exercise
 IMS - [Chapter 11 exercises](https://openintro-ims.netlify.app/foundations-randomization#sec-chp11-exercises), #8: Heart transplants.
-:::
-
-::: callout-tip
-As of 10/25/2024, you cannot do Part d.ii, so skip it and come back.
 :::
 
 ### Exercise 2
@@ -141,17 +137,7 @@ These simulated values are in the `stat` column of `null_dist_outcome`.
 ### Exercise 6
 
 ::: exercise
-Calculate the p-value. Do this in two ways:
-
-1.  Filter `null_dist_outcome` for `stat` values that are at least as far away from the null value as the observed value you calculated in Exercise 4. Make sure you're considering both directions! Note how many such values there are, and calculate the proportion out of the total number of resamples.
-2.  Use `get_p_value()`:
-
-```{r}
-p_value_outcome <- null_dist_outcome |>
-  get_p_value(obs_stat = obs_diff_outcome, direction = "two-sided")
-```
-
-Then, confirm that you obtained the same results with the two methods. Finally, interpret the p-value in context of the data and the research question and comment on the statistical discernability of this result using a discernability level of 5%.
+Calculate the p-value using the `get_p_value` function. Interpret the p-value in context of the data and the research question and comment on the statistical discernibility of this result using a discernibility level of 5%.
 :::
 
 ::: callout-important
