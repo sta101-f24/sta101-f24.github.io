@@ -1,0 +1,110 @@
+---
+  title: "The normal distribution"
+---
+
+The **normal distribution** is the familiar bell curve. The central limit theorem says that the sampling distribution of a statistic (sample mean, proportion, difference, etc) looks more and more like a normal distribution the more data we have. This gives us permission to use a normal distribution to approximate the sampling distribution, and use the convenient properties of the bell curve to compute confidence intervals and hypothesis tests.
+
+This primer introduces you to the basic commands for working with the normal distribution.
+
+## Load packages
+
+The `openintro` package has tools for working with the normal distribution:
+
+```{r}
+#| label: load-tidyverse
+#| message: false
+
+library(tidyverse) 
+library(openintro)
+```
+
+## Example: bone density
+
+Suppose the bone density of 65-year-old women is normally distributed with mean 809 $mg/cm^3$ and standard deviation of 140 $mg/cm^3$. For reference, here are the densities for three types of wood:
+
+-   Plywood: 540 $mg/cm^3$
+
+-   Pine: 600 $mg/cm^3$
+
+-   Mahogany: 710 $mg/cm^3$
+
+If $X$ represents the bone density of 65-year-old women, then we can summarize the situation mathematically by writing:
+
+$$
+X \sim N(\mu = 809, \sigma = 140).
+$$
+
+Let's give all of the numbers above names and store them in the computer for later:
+
+```{r}
+#| label: population-parameters
+
+bone_density_mean <- 809
+bone_density_sd <- 140
+
+plywood <- 540
+pine <- 600
+mahogany <- 710
+```
+
+## Plot the bell curve
+
+This handy-dandy function plots a bell curve:
+
+```{r}
+#| label: plot-bell
+
+normTail(m = 0, s = 1)
+```
+
+You can add several arguments to customize:
+
+```{r}
+normTail(m = bone_density_mean, 
+         s = bone_density_sd, 
+         main = "Distribution of bone density of 65-year-old women",
+         xlab = "mg/cm^3",
+         xlim = c(200, 1400))
+```
+
+## Compute quantiles under the normal distribution
+
+The `qnorm` function computes the quantiles of a normal distribution. If we wanted the 50% quantile (AKA the median), we would say
+
+```{r}
+#| label: qnorm
+qnorm(0.5, mean = 0, sd = 1)
+```
+
+In this case we just get back the mean, because the normal distribution is perfectly symmetric, and mean and median are equal for symmetric distributions.
+
+If we wanted the inner quartile range (IQR) for a normal distribution, here it goes:
+
+```{r}
+#| label: IQR
+q25 <- qnorm(0.25, mean = 0, sd = 1)
+q75 <- qnorm(0.75, mean = 0, sd = 1)
+
+IQR <- q75 - q25
+IQR
+```
+
+## Compute and visualize probabilities under the normal distribution
+
+What is the probability that a randomly selected 65-year-old woman has bones that are less dense than pine? If we add an `L` argument to `normTail`, we can visualize the answer:
+
+```{r}
+#| label: shade-tail
+
+normTail(m = bone_density_mean, s = bone_density_sd, L = pine,
+         main = "Distribution of bone density of 65-year-old women",
+         xlab = "mg/cm^3",)
+```
+
+In order to compute the probability (area) under the bell curve of being less than 600 $mg/cm^3$, we can use the `pnorm` function:
+
+```{r}
+#| label: pnorm
+pnorm(pine, mean = bone_density_mean, sd = bone_density_sd)
+```
+Notice how this may come in handy when we have to compute $p$-values, for instance.
