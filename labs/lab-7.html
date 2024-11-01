@@ -59,6 +59,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../computing/computing-access.html" rel="next">
+<link href="../labs/lab-6.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -130,7 +132,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 7 - Inference for proportions and means</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/lab-1.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/lab-7.html">Lab 7</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -205,13 +207,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
  <span class="menu-text">Labs</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../labs/lab-1.html" class="sidebar-item-text sidebar-link">
@@ -246,6 +248,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../labs/lab-6.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 6</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-7.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lab 7</span></a>
   </div>
 </li>
       </ul>
@@ -360,6 +368,7 @@ window.Quarto = {
    
   <ul>
 <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting started</a></li>
+  <li><a href="#pointers" id="toc-pointers" class="nav-link" data-scroll-target="#pointers">Pointers</a></li>
   <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
   <li>
 <a href="#part-1-general-social-survey" id="toc-part-1-general-social-survey" class="nav-link" data-scroll-target="#part-1-general-social-survey">Part 1: General Social Survey</a>
@@ -386,6 +395,7 @@ window.Quarto = {
   <li><a href="#exercise-10" id="toc-exercise-10" class="nav-link" data-scroll-target="#exercise-10">Exercise 10</a></li>
   </ul>
 </li>
+  <li><a href="#lastly" id="toc-lastly" class="nav-link" data-scroll-target="#lastly">Lastly</a></li>
   <li>
 <a href="#wrap-up" id="toc-wrap-up" class="nav-link" data-scroll-target="#wrap-up">Wrap up</a>
   <ul class="collapse">
@@ -396,7 +406,7 @@ window.Quarto = {
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/lab-1.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/lab-7.html">Lab 7</a></li></ol></nav><div class="quarto-title">
 <h1 class="title">Lab 7 - Inference for proportions and means</h1>
 </div>
 
@@ -411,62 +421,34 @@ window.Quarto = {
   
 
 
-</header><p>By the end of this lab you will</p>
-<ul>
-<li><p>calculate probabilities under the normal distribution</p></li>
-<li><p>construct and interpret confidence intervals via bootstrapping</p></li>
-</ul>
-<p>For all visualizations you create, be sure to include informative titles for the plot, axes, and legend!</p>
-<section id="getting-started" class="level1"><h1>Getting started</h1>
+</header><section id="getting-started" class="level2"><h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
 <ol type="1">
-<li><p>Go to <a href="https://posit.cloud/spaces/405361">Posit Cloud</a> and start the project titled <strong>lab-7 - Inference for proportions and means</strong>.</p></li>
-<li><p>Under the <em>Files</em> tab on the lower right, click on <code>lab-7.qmd</code> to open the lab template.</p></li>
-<li><p>Complete the exercises in this document.</p></li>
-</ol></section><section id="packages" class="level1"><h1>Packages</h1>
-<p>We’ll use the following packages in this lab:</p>
+<li><p>Use <a href="https://sta101-f24.github.io/computing/computing-access.html">these steps</a> to navigate to the STA101 version of <code>RStudio</code> using the <a href="https://cmgr.oit.duke.edu/containers">Duke Container Manager</a>;</p></li>
+<li><p>Use <a href="https://sta101-f24.github.io/computing/computing-moving.html">these steps</a> to download all of the lab 7 files from our <a href="https://canvas.duke.edu/courses/36641">Canvas page</a>, upload them to your <code>RStudio</code> files, and move them into an appropriately named folder (<code>lab-7</code>, for instance);</p></li>
+<li><p>Once <code>lab-7.qmd</code> is where it needs to be, open it, and verify that you can click the “Render” button in <code>RStudio</code> and get a PDF file. See <a href="https://edstem.org/us/courses/64268/discussion/5216372?answer=12080244">this answer</a> on Ed if you want more guidance here;</p></li>
+<li><p>Now proceed to complete the exercises in this lab.</p></li>
+</ol></section><section id="pointers" class="level2"><h2 class="anchored" data-anchor-id="pointers">Pointers</h2>
+<ul>
+<li>For all visualizations you create, be sure to include informative titles for the plot, axes, and legend;</li>
+<li>Respond in complete sentences as much as possible;</li>
+<li>Be sure to observe good code style:
+<ul>
+<li>There is a line break after each <code>|&gt;</code> in a pipeline or <code>+</code> in a ggplot;</li>
+<li>There are spaces around <code>=</code> signs;</li>
+<li>There is a space after each <code>,</code>;</li>
+<li>Code is properly indented;</li>
+<li>Code doesn’t exceed 80 characters in each line, longer lines of code are spread across multiple lines with appropriately placed line breaks (so in the rendered PDF, your code shouldn’t run off the page);</li>
+<li>Code chunks are labeled, informatively and without spaces.</li>
+</ul>
+</li>
+</ul></section><section id="packages" class="level2"><h2 class="anchored" data-anchor-id="packages">Packages</h2>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.3     ✔ readr     2.1.4
-✔ forcats   1.0.0     ✔ stringr   1.5.0
-✔ ggplot2   3.4.3     ✔ tibble    3.2.1
-✔ lubridate 1.9.2     ✔ tidyr     1.3.0
-✔ purrr     1.0.2     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span> </span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidymodels.tidymodels.org">tidymodels</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://openintrostat.github.io/openintro/">openintro</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rstudio-education.github.io/dsbox/">dsbox</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidymodels.tidymodels.org">tidymodels</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching packages ────────────────────────────────────── tidymodels 1.1.1 ──
-✔ broom        1.0.5     ✔ rsample      1.2.0
-✔ dials        1.2.0     ✔ tune         1.1.2
-✔ infer        1.0.4     ✔ workflows    1.1.3
-✔ modeldata    1.2.0     ✔ workflowsets 1.0.1
-✔ parsnip      1.1.1     ✔ yardstick    1.2.0
-✔ recipes      1.0.8     
-── Conflicts ───────────────────────────────────────── tidymodels_conflicts() ──
-✖ scales::discard() masks purrr::discard()
-✖ dplyr::filter()   masks stats::filter()
-✖ recipes::fixed()  masks stringr::fixed()
-✖ dplyr::lag()      masks stats::lag()
-✖ yardstick::spec() masks readr::spec()
-✖ recipes::step()   masks stats::step()
-• Learn how to get started at https://www.tidymodels.org/start/</code></pre>
-</div>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rstudio-education.github.io/dsbox/">dsbox</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'dsbox'
-
-The following object is masked from 'package:infer':
-
-    gss</code></pre>
-</div>
-</div>
-</section><section id="part-1-general-social-survey" class="level1"><h1>Part 1: General Social Survey</h1>
+</section><section id="part-1-general-social-survey" class="level2"><h2 class="anchored" data-anchor-id="part-1-general-social-survey">Part 1: General Social Survey</h2>
 <p>The <a href="https://gss.norc.org/">General Social Survey (GSS)</a> is a sociological survey used to collect data on demographic characteristics and attitudes of residents of the United States. The GSS has been conducted each year since 1972 by the National Opinion Research Center at the University of Chicago. The GSS collects data on demographic characteristics and attitudes of residents of the United States. The GSS sample is designed as a multistage stratified sample.</p>
 <p>For the exercises in this part, we’ll use the <code>gss16</code> data set from the <code>dsbox</code> package. You can find out more about the dataset by inspecting its documentation, which you can access by running <code><a href="https://rdrr.io/pkg/dsbox/man/gss16.html">?gss16</a></code> in the Console or using the Help menu in RStudio to search for <code>gss16</code>. You can also find this information <a href="https://tidyverse.github.io/dsbox/reference/gss16.html">here</a>.</p>
 <p>In 2016, the GSS added a new question on harassment at work. The question is phrased as the following.</p>
@@ -474,15 +456,15 @@ The following object is masked from 'package:infer':
 <p>Over the past five years, have you been harassed by your superiors or co-workers at your job, for example, have you experienced any bullying, physical or psychological abuse?</p>
 </blockquote>
 <p>Answers to this question are stored in the <code>harass5</code> variable in <code>gss16</code> set.</p>
-<section id="exercise-1" class="level2"><h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
+<section id="exercise-1" class="level3"><h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
 <div class="exercise">
 <p>Create a subset of the data that only contains Yes and No answers for the harassment question. How many responses chose each of these answers?</p>
 </div>
-</section><section id="exercise-2" class="level2"><h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
+</section><section id="exercise-2" class="level3"><h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
 <div class="exercise">
 <p>Describe how bootstrapping can be used to estimate the proportion of all Americans who have been harassed by their superiors or co-workers at their job.</p>
 </div>
-</section><section id="exercise-3" class="level2"><h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
+</section><section id="exercise-3" class="level3"><h3 class="anchored" data-anchor-id="exercise-3">Exercise 3</h3>
 <div class="exercise">
 <ol type="a">
 <li>Calculate a 95% bootstrap confidence interval for the proportion of Americans who have been harassed by their superiors or co-workers at their job. Use 1,000 iterations when creating your bootstrap distribution. Set the seed to <code>1234</code>. Interpret this interval in context of the data. Make sure to visualize this interval as well.</li>
@@ -504,9 +486,9 @@ Pause and render
 <p>Now that you’ve completed the second part of the exercises, pause and render your document. If it renders without any issues, great! Move on to the next exercise. If it does not, debug the issue before moving on. Ask for help from your TA if you need. Do not proceed without rendering your document.</p>
 </div>
 </div>
-</section></section><section id="part-2-course-scores" class="level1"><h1>Part 2: Course scores</h1>
+</section></section><section id="part-2-course-scores" class="level2"><h2 class="anchored" data-anchor-id="part-2-course-scores">Part 2: Course scores</h2>
 <p>Students in large university course that is offered each semester average 32 (out of 50) on the midterm, with a standard deviation of 4. The scores are distributed normally.</p>
-<section id="exercise-4" class="level2"><h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
+<section id="exercise-4" class="level3"><h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
 <div class="exercise">
 <ol type="a">
 <li><p>What is the probability a randomly selected student scored less than 28?</p></li>
@@ -514,7 +496,7 @@ Pause and render
 <li><p>What score did only 20 percent of the class exceed?</p></li>
 </ol>
 </div>
-</section><section id="exercise-5" class="level2"><h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
+</section><section id="exercise-5" class="level3"><h3 class="anchored" data-anchor-id="exercise-5">Exercise 5</h3>
 <div class="execise">
 <p>I pick 10 students at random from the class.</p>
 <ol type="a">
@@ -537,30 +519,32 @@ Pause and render
 <p>Now that you’ve completed the first part of the exercises, pause and render your document. If it renders without any issues, great! Move on to the next exercise. If it does not, debug the issue before moving on. Ask for help from your TA if you need. Do not proceed without rendering your document.</p>
 </div>
 </div>
-</section></section><section id="part-3-ims-exercises" class="level1"><h1>Part 3: IMS exercises</h1>
+</section></section><section id="part-3-ims-exercises" class="level2"><h2 class="anchored" data-anchor-id="part-3-ims-exercises">Part 3: IMS exercises</h2>
 <p>The exercises in this section do not require code. Make sure to answer the questions in full sentences.</p>
-<section id="exercise-6" class="level2"><h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
+<section id="exercise-6" class="level3"><h3 class="anchored" data-anchor-id="exercise-6">Exercise 6</h3>
 <div class="exercise">
-<p>IMS - <a href="https://openintro-ims2.netlify.app/16-inference-one-prop#chp16-exercises">Chapter 16 exercises</a>, #2: Married at 25.</p>
+<p>IMS - <a href="https://openintro-ims.netlify.app/inference-one-prop#sec-chp16-exercises">Chapter 16 exercises</a>, #2: Married at 25.</p>
 </div>
-</section><section id="exercise-7" class="level2"><h2 class="anchored" data-anchor-id="exercise-7">Exercise 7</h2>
+</section><section id="exercise-7" class="level3"><h3 class="anchored" data-anchor-id="exercise-7">Exercise 7</h3>
 <div class="exercise">
-<p>IMS - <a href="https://openintro-ims2.netlify.app/16-inference-one-prop#chp16-exercises">Chapter 16 exercises</a>, #5: If I fits, I sits, bootstrap test.</p>
+<p>IMS - <a href="https://openintro-ims.netlify.app/inference-one-prop#sec-chp16-exercises">Chapter 16 exercises</a>, #5: If I fits, I sits, bootstrap test.</p>
 </div>
-</section><section id="exercise-8" class="level2"><h2 class="anchored" data-anchor-id="exercise-8">Exercise 8</h2>
+</section><section id="exercise-8" class="level3"><h3 class="anchored" data-anchor-id="exercise-8">Exercise 8</h3>
 <div class="exercise">
-<p>IMS - <a href="https://openintro-ims2.netlify.app/16-inference-one-prop#chp16-exercises">Chapter 16 exercises</a>, #6: Legalization of marijuana, bootstrap test.</p>
+<p>IMS - <a href="https://openintro-ims.netlify.app/inference-one-prop#sec-chp16-exercises">Chapter 16 exercises</a>, #6: Legalization of marijuana, bootstrap test.</p>
 </div>
-</section><section id="exercise-9" class="level2"><h2 class="anchored" data-anchor-id="exercise-9">Exercise 9</h2>
+</section><section id="exercise-9" class="level3"><h3 class="anchored" data-anchor-id="exercise-9">Exercise 9</h3>
 <div class="exercise">
-<p>IMS - <a href="https://openintro-ims2.netlify.app/16-inference-one-prop#chp16-exercises">Chapter 16 exercises</a>, #8: Legalization of marijuana, standard errors.</p>
+<p>IMS - <a href="https://openintro-ims.netlify.app/inference-one-prop#sec-chp16-exercises">Chapter 16 exercises</a>, #8: Legalization of marijuana, standard errors.</p>
 </div>
-</section><section id="exercise-10" class="level2"><h2 class="anchored" data-anchor-id="exercise-10">Exercise 10</h2>
+</section><section id="exercise-10" class="level3"><h3 class="anchored" data-anchor-id="exercise-10">Exercise 10</h3>
 <div class="exercise">
-<p>IMS - <a href="https://openintro-ims2.netlify.app/16-inference-one-prop#chp16-exercises">Chapter 16 exercises</a>, #22: Legalization of marijuana, mathematical interval.</p>
+<p>IMS - <a href="https://openintro-ims.netlify.app/inference-one-prop#sec-chp16-exercises">Chapter 16 exercises</a>, #22: Legalization of marijuana, mathematical interval.</p>
 </div>
-</section></section><section id="wrap-up" class="level1"><h1>Wrap up</h1>
-<section id="submitting" class="level2"><h2 class="anchored" data-anchor-id="submitting">Submitting</h2>
+</section></section><section id="lastly" class="level2"><h2 class="anchored" data-anchor-id="lastly">Lastly</h2>
+<p>Recommend some music for us to listen to while we grade this.</p>
+</section><section id="wrap-up" class="level2"><h2 class="anchored" data-anchor-id="wrap-up">Wrap up</h2>
+<section id="submitting" class="level3"><h3 class="anchored" data-anchor-id="submitting">Submitting</h3>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -594,7 +578,7 @@ Warning
 <p>If you fail to mark the pages associated with an exercise, that exercise won’t be graded. This means, if you fail to mark the pages for all exercises, you will receive a 0 on the assignment. The TAs can’t mark your pages for you, and for them to be able to grade, you must mark them.</p>
 </div>
 </div>
-</section><section id="grading" class="level2"><h2 class="anchored" data-anchor-id="grading">Grading</h2>
+</section><section id="grading" class="level3"><h3 class="anchored" data-anchor-id="grading">Grading</h3>
 <p>The lab will be graded out of 50 total points.</p>
 <!--
 | Exercise    | Points |
@@ -1021,7 +1005,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+      <a href="../labs/lab-6.html" class="pagination-link" aria-label="Lab 6">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lab 6</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../computing/computing-access.html" class="pagination-link" aria-label="Accessing RStudio">
+        <span class="nav-page-text">Accessing RStudio</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
