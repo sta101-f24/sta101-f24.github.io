@@ -104,7 +104,7 @@ normTail(m = bone_density_mean, s = bone_density_sd, L = pine,
 Notice how this may come in handy when we have to compute something like a $p$-value. In order to compute the probability (area) under the bell curve of being less than 600 $mg/cm^3$, we can use the `pnorm` function:
 
 ```{r}
-#| label: pnorm
+#| label: pnorm-lower
 pnorm(pine, mean = bone_density_mean, sd = bone_density_sd, lower.tail = TRUE)
 ```
 Above, we asked about being *under* 600 in the distribution. But we could just have easily looked at being *over* 600 by adding a `U` argument (for "upper"):
@@ -120,8 +120,8 @@ normTail(m = bone_density_mean, s = bone_density_sd, U = pine,
 To get the number, we change the `lower.tail` argument:
 
 ```{r}
-#| label: pnorm
+#| label: pnorm-upper
 pnorm(pine, mean = bone_density_mean, sd = bone_density_sd, lower.tail = FALSE)
 ```
 
-Notice that the probability of being at or below 600 is 6.77%. The probability of being above 600 is 93.23% The total area under the bell curve therefore adds up to 100%.
+Notice that the probability of being at or below 600 is 6.77%. The probability of being above 600 is 93.23% That covers everything, so taken together you get 100%, which is the total area under the bell curve.
