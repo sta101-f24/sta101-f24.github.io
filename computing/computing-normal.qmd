@@ -91,20 +91,37 @@ IQR
 
 ## Compute and visualize probabilities under the normal distribution
 
-What is the probability that a randomly selected 65-year-old woman has bones that are less dense than pine? If we add an `L` argument to `normTail`, we can visualize the answer:
+What is the probability that a randomly selected 65-year-old woman has bones that are as or less dense than pine? If we add an `L` argument (for "lower") to `normTail`, we can visualize the answer:
 
 ```{r}
-#| label: shade-tail
+#| label: shade-lower-tail
 
 normTail(m = bone_density_mean, s = bone_density_sd, L = pine,
          main = "Distribution of bone density of 65-year-old women",
          xlab = "mg/cm^3",)
 ```
 
-In order to compute the probability (area) under the bell curve of being less than 600 $mg/cm^3$, we can use the `pnorm` function:
+Notice how this may come in handy when we have to compute something like a $p$-value. In order to compute the probability (area) under the bell curve of being less than 600 $mg/cm^3$, we can use the `pnorm` function:
 
 ```{r}
 #| label: pnorm
-pnorm(pine, mean = bone_density_mean, sd = bone_density_sd)
+pnorm(pine, mean = bone_density_mean, sd = bone_density_sd, lower.tail = TRUE)
 ```
-Notice how this may come in handy when we have to compute $p$-values, for instance.
+Above, we asked about being *under* 600 in the distribution. But we could just have easily looked at being *over* 600 by adding a `U` argument (for "upper"):
+
+```{r}
+#| label: shade-upper-tail
+
+normTail(m = bone_density_mean, s = bone_density_sd, U = pine,
+         main = "Distribution of bone density of 65-year-old women",
+         xlab = "mg/cm^3",)
+```
+
+To get the number, we change the `lower.tail` argument:
+
+```{r}
+#| label: pnorm
+pnorm(pine, mean = bone_density_mean, sd = bone_density_sd, lower.tail = FALSE)
+```
+
+Notice that the probability of being at or below 600 is 6.77%. The probability of being above 600 is 93.23% The total area under the bell curve therefore adds up to 100%.
