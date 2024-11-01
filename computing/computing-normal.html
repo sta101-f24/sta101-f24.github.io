@@ -509,7 +509,7 @@ X \sim N(\mu = 809, \sigma = 140).
 </section>
 <section id="compute-and-visualize-probabilities-under-the-normal-distribution" class="level2">
 <h2 class="anchored" data-anchor-id="compute-and-visualize-probabilities-under-the-normal-distribution">Compute and visualize probabilities under the normal distribution</h2>
-<p>What is the probability that a randomly selected 65-year-old woman has bones that are less dense than pine? If we add an <code>L</code> argument to <code>normTail</code>, we can visualize the answer:</p>
+<p>What is the probability that a randomly selected 65-year-old woman has bones that are as or less dense than pine? If we add an <code>L</code> argument (for “lower”) to <code>normTail</code>, we can visualize the answer:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">normTail</span>(<span class="at">m =</span> bone_density_mean, <span class="at">s =</span> bone_density_sd, <span class="at">L =</span> pine,</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">main =</span> <span class="st">"Distribution of bone density of 65-year-old women"</span>,</span>
@@ -517,19 +517,39 @@ X \sim N(\mu = 809, \sigma = 140).
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="computing-normal_files/figure-html/shade-tail-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="computing-normal_files/figure-html/shade-lower-tail-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>In order to compute the probability (area) under the bell curve of being less than 600 <span class="math inline">\(mg/cm^3\)</span>, we can use the <code>pnorm</code> function:</p>
+<p>Notice how this may come in handy when we have to compute something like a <span class="math inline">\(p\)</span>-value. In order to compute the probability (area) under the bell curve of being less than 600 <span class="math inline">\(mg/cm^3\)</span>, we can use the <code>pnorm</code> function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(pine, <span class="at">mean =</span> bone_density_mean, <span class="at">sd =</span> bone_density_sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(pine, <span class="at">mean =</span> bone_density_mean, <span class="at">sd =</span> bone_density_sd, <span class="at">lower.tail =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.06773729</code></pre>
 </div>
 </div>
-<p>Notice how this may come in handy when we have to compute <span class="math inline">\(p\)</span>-values, for instance.</p>
+<p>Above, we asked about being <em>under</em> 600 in the distribution. But we could just have easily looked at being <em>over</em> 600 by adding a <code>U</code> argument (for “upper”):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">normTail</span>(<span class="at">m =</span> bone_density_mean, <span class="at">s =</span> bone_density_sd, <span class="at">U =</span> pine,</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">main =</span> <span class="st">"Distribution of bone density of 65-year-old women"</span>,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">xlab =</span> <span class="st">"mg/cm^3"</span>,)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="computing-normal_files/figure-html/shade-upper-tail-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>To get the number, we change the <code>lower.tail</code> argument:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(pine, <span class="at">mean =</span> bone_density_mean, <span class="at">sd =</span> bone_density_sd, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9322627</code></pre>
+</div>
+</div>
+<p>Notice that the probability of being at or below 600 is 6.77%. The probability of being above 600 is 93.23% That covers everything, so taken together you get 100%, which is the total area under the bell curve.</p>
 
 
 </section>
