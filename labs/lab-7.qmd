@@ -2,35 +2,41 @@
 title: "Lab 7 - Inference for proportions and means"
 ---
 
-By the end of this lab you will
+## Getting started
 
--   calculate probabilities under the normal distribution
+1.  Use [these steps](https://sta101-f24.github.io/computing/computing-access.html) to navigate to the STA101 version of `RStudio` using the [Duke Container Manager](https://cmgr.oit.duke.edu/containers);
 
--   construct and interpret confidence intervals via bootstrapping
+2.  Use [these steps](https://sta101-f24.github.io/computing/computing-moving.html) to download all of the lab 7 files from our [Canvas page](https://canvas.duke.edu/courses/36641), upload them to your `RStudio` files, and move them into an appropriately named folder (`lab-7`, for instance);
 
-For all visualizations you create, be sure to include informative titles for the plot, axes, and legend!
+3.  Once `lab-7.qmd` is where it needs to be, open it, and verify that you can click the "Render" button in `RStudio` and get a PDF file. See [this answer](https://edstem.org/us/courses/64268/discussion/5216372?answer=12080244) on Ed if you want more guidance here;
 
-# Getting started
+4.  Now proceed to complete the exercises in this lab.
 
-1.  Go to [Posit Cloud](https://posit.cloud/spaces/405361) and start the project titled **lab-7 - Inference for proportions and means**.
+## Pointers
 
-2.  Under the *Files* tab on the lower right, click on `lab-7.qmd` to open the lab template.
+-   For all visualizations you create, be sure to include informative titles for the plot, axes, and legend;
+-   Respond in complete sentences as much as possible;
+-   Be sure to observe good code style:
+    -   There is a line break after each `|>` in a pipeline or `+` in a ggplot;
+    -   There are spaces around `=` signs;
+    -   There is a space after each `,`;
+    -   Code is properly indented;
+    -   Code doesn't exceed 80 characters in each line, longer lines of code are spread across multiple lines with appropriately placed line breaks (so in the rendered PDF, your code shouldn't run off the page);
+    -   Code chunks are labeled, informatively and without spaces.
 
-3.  Complete the exercises in this document.
-
-# Packages
-
-We'll use the following packages in this lab:
+## Packages
 
 ```{r}
 #| label: load-packages
+#| message: false
 
-library(tidyverse)
+library(tidyverse) 
 library(tidymodels)
+library(openintro)
 library(dsbox)
 ```
 
-# Part 1: General Social Survey
+## Part 1: General Social Survey
 
 The [General Social Survey (GSS)](https://gss.norc.org/) is a sociological survey used to collect data on demographic characteristics and attitudes of residents of the United States. The GSS has been conducted each year since 1972 by the National Opinion Research Center at the University of Chicago. The GSS collects data on demographic characteristics and attitudes of residents of the United States. The GSS sample is designed as a multistage stratified sample.
 
@@ -42,19 +48,19 @@ In 2016, the GSS added a new question on harassment at work. The question is phr
 
 Answers to this question are stored in the `harass5` variable in `gss16` set.
 
-## Exercise 1
+### Exercise 1
 
 ::: exercise
 Create a subset of the data that only contains Yes and No answers for the harassment question. How many responses chose each of these answers?
 :::
 
-## Exercise 2
+### Exercise 2
 
 ::: exercise
 Describe how bootstrapping can be used to estimate the proportion of all Americans who have been harassed by their superiors or co-workers at their job.
 :::
 
-## Exercise 3
+### Exercise 3
 
 ::: exercise
 a.  Calculate a 95% bootstrap confidence interval for the proportion of Americans who have been harassed by their superiors or co-workers at their job. Use 1,000 iterations when creating your bootstrap distribution. Set the seed to `1234`. Interpret this interval in context of the data. Make sure to visualize this interval as well.
@@ -69,11 +75,11 @@ d.  Now, suppose you created a bootstrap distribution with 50,000 simulations in
 Now that you've completed the second part of the exercises, pause and render your document. If it renders without any issues, great! Move on to the next exercise. If it does not, debug the issue before moving on. Ask for help from your TA if you need. Do not proceed without rendering your document.
 :::
 
-# Part 2: Course scores
+## Part 2: Course scores
 
 Students in large university course that is offered each semester average 32 (out of 50) on the midterm, with a standard deviation of 4. The scores are distributed normally.
 
-## Exercise 4
+### Exercise 4
 
 ::: exercise
 a.  What is the probability a randomly selected student scored less than 28?
@@ -83,7 +89,7 @@ b.  What is the probability a randomly selected student scored higher than than 
 c.  What score did only 20 percent of the class exceed?
 :::
 
-## Exercise 5
+### Exercise 5
 
 ::: execise
 I pick 10 students at random from the class.
@@ -98,48 +104,52 @@ d.  How do the probabilities you calculated in the previous two questions (less 
 :::
 
 ::: callout-important
-## Pause and render
+### Pause and render
 
 Now that you've completed the first part of the exercises, pause and render your document. If it renders without any issues, great! Move on to the next exercise. If it does not, debug the issue before moving on. Ask for help from your TA if you need. Do not proceed without rendering your document.
 :::
 
-# Part 3: IMS exercises
+## Part 3: IMS exercises
 
 The exercises in this section do not require code. Make sure to answer the questions in full sentences.
 
-## Exercise 6
+### Exercise 6
 
 ::: exercise
-IMS - [Chapter 16 exercises](https://openintro-ims2.netlify.app/16-inference-one-prop#chp16-exercises), #2: Married at 25.
+IMS - [Chapter 16 exercises](https://openintro-ims.netlify.app/inference-one-prop#sec-chp16-exercises), #2: Married at 25.
 :::
 
-## Exercise 7
+### Exercise 7
 
 ::: exercise
-IMS - [Chapter 16 exercises](https://openintro-ims2.netlify.app/16-inference-one-prop#chp16-exercises), #5: If I fits, I sits, bootstrap test.
+IMS - [Chapter 16 exercises](https://openintro-ims.netlify.app/inference-one-prop#sec-chp16-exercises), #5: If I fits, I sits, bootstrap test.
 :::
 
-## Exercise 8
+### Exercise 8
 
 ::: exercise
-IMS - [Chapter 16 exercises](https://openintro-ims2.netlify.app/16-inference-one-prop#chp16-exercises), #6: Legalization of marijuana, bootstrap test.
+IMS - [Chapter 16 exercises](https://openintro-ims.netlify.app/inference-one-prop#sec-chp16-exercises), #6: Legalization of marijuana, bootstrap test.
 :::
 
-## Exercise 9
+### Exercise 9
 
 ::: exercise
-IMS - [Chapter 16 exercises](https://openintro-ims2.netlify.app/16-inference-one-prop#chp16-exercises), #8: Legalization of marijuana, standard errors.
+IMS - [Chapter 16 exercises](https://openintro-ims.netlify.app/inference-one-prop#sec-chp16-exercises), #8: Legalization of marijuana, standard errors.
 :::
 
-## Exercise 10
+### Exercise 10
 
 ::: exercise
-IMS - [Chapter 16 exercises](https://openintro-ims2.netlify.app/16-inference-one-prop#chp16-exercises), #22: Legalization of marijuana, mathematical interval.
+IMS - [Chapter 16 exercises](https://openintro-ims.netlify.app/inference-one-prop#sec-chp16-exercises), #22: Legalization of marijuana, mathematical interval.
 :::
 
-# Wrap up
+## Lastly
 
-## Submitting
+Recommend some music for us to listen to while we grade this.
+
+## Wrap up
+
+### Submitting
 
 ::: callout-important
 Before you proceed, first, make sure that you have updated the document YAML with your name! Then, render your document one last time, for good measure.
@@ -159,7 +169,7 @@ To submit your assignment to Gradescope:
 If you fail to mark the pages associated with an exercise, that exercise won't be graded. This means, if you fail to mark the pages for all exercises, you will receive a 0 on the assignment. The TAs can't mark your pages for you, and for them to be able to grade, you must mark them.
 :::
 
-## Grading
+### Grading
 
 The lab will be graded out of 50 total points.
 
