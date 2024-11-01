@@ -48,42 +48,66 @@
     "href": "computing/computing-normal.html",
     "title": "The normal distribution",
     "section": "",
-    "text": "The normal distribution is the familiar bell curve. The central limit theorem says that the sampling distribution of a statistic (sample mean, proportion, difference, etc) looks more and more like a normal distribution the more data we have. This gives us permission to use a normal distribution to approximate the sampling distribution, and use the convenient properties of the bell curve to compute confidence intervals and hypothesis tests.\nThis primer introduces you to the basic commands for working with the normal distribution."
+    "text": "The normal distribution is the familiar bell curve. The central limit theorem says that the sampling distribution of a statistic (sample mean, proportion, difference, etc) looks more and more like a normal distribution the more data we have. This gives us permission to use a normal distribution to approximate the sampling distribution, and use the convenient properties of the bell curve to compute confidence intervals and hypothesis tests.\nThis primer introduces you to the basic commands for working with the normal distribution.",
+    "crumbs": [
+      "Computing primers",
+      "Normal distribution"
+    ]
   },
   {
     "objectID": "computing/computing-normal.html#load-packages",
     "href": "computing/computing-normal.html#load-packages",
     "title": "The normal distribution",
     "section": "Load packages",
-    "text": "Load packages\nThe openintro package has tools for working with the normal distribution:\n\nlibrary(tidyverse) \nlibrary(openintro)"
+    "text": "Load packages\nThe openintro package has tools for working with the normal distribution:\n\nlibrary(tidyverse) \nlibrary(openintro)",
+    "crumbs": [
+      "Computing primers",
+      "Normal distribution"
+    ]
   },
   {
     "objectID": "computing/computing-normal.html#example-bone-density",
     "href": "computing/computing-normal.html#example-bone-density",
     "title": "The normal distribution",
     "section": "Example: bone density",
-    "text": "Example: bone density\nSuppose the bone density of 65-year-old women is normally distributed with mean 809 \\(mg/cm^3\\) and standard deviation of 140 \\(mg/cm^3\\). For reference, here are the densities for three types of wood:\n\nPlywood: 540 \\(mg/cm^3\\)\nPine: 600 \\(mg/cm^3\\)\nMahogany: 710 \\(mg/cm^3\\)\n\nIf \\(X\\) represents the bone density of 65-year-old women, then we can summarize the situation mathematically by writing:\n\\[\nX \\sim N(\\mu = 809, \\sigma = 140).\n\\]\nLet’s give all of the numbers above names and store them in the computer for later:\n\nbone_density_mean &lt;- 809\nbone_density_sd &lt;- 140\n\nplywood &lt;- 540\npine &lt;- 600\nmahogany &lt;- 710"
+    "text": "Example: bone density\nSuppose the bone density of 65-year-old women is normally distributed with mean 809 \\(mg/cm^3\\) and standard deviation of 140 \\(mg/cm^3\\). For reference, here are the densities for three types of wood:\n\nPlywood: 540 \\(mg/cm^3\\)\nPine: 600 \\(mg/cm^3\\)\nMahogany: 710 \\(mg/cm^3\\)\n\nIf \\(X\\) represents the bone density of 65-year-old women, then we can summarize the situation mathematically by writing:\n\\[\nX \\sim N(\\mu = 809, \\sigma = 140).\n\\]\nLet’s give all of the numbers above names and store them in the computer for later:\n\nbone_density_mean &lt;- 809\nbone_density_sd &lt;- 140\n\nplywood &lt;- 540\npine &lt;- 600\nmahogany &lt;- 710",
+    "crumbs": [
+      "Computing primers",
+      "Normal distribution"
+    ]
   },
   {
     "objectID": "computing/computing-normal.html#plot-the-bell-curve",
     "href": "computing/computing-normal.html#plot-the-bell-curve",
     "title": "The normal distribution",
     "section": "Plot the bell curve",
-    "text": "Plot the bell curve\n\nnormTail(m = 0, s = 1)"
+    "text": "Plot the bell curve\nThis handy-dandy function plots a bell curve:\n\nnormTail(m = 0, s = 1)\n\n\n\n\n\n\n\n\nYou can add several arguments to customize:\n\nnormTail(m = bone_density_mean, \n         s = bone_density_sd, \n         main = \"Distribution of bone density of 65-year-old women\",\n         xlab = \"mg/cm^3\",\n         xlim = c(200, 1400))",
+    "crumbs": [
+      "Computing primers",
+      "Normal distribution"
+    ]
   },
   {
     "objectID": "computing/computing-normal.html#compute-quantiles-under-the-normal-distribution",
     "href": "computing/computing-normal.html#compute-quantiles-under-the-normal-distribution",
     "title": "The normal distribution",
     "section": "Compute quantiles under the normal distribution",
-    "text": "Compute quantiles under the normal distribution\n\nqnorm(0.25, mean = 98, sd = 102)\n\n[1] 29.20205\n\nqnorm(0.75, mean = 98, sd = 102)\n\n[1] 166.798\n\n\n\nIQR = qnorm(0.75, mean = 98, sd = 102) - qnorm(0.25, mean = 98, sd = 102)"
+    "text": "Compute quantiles under the normal distribution\nThe qnorm function computes the quantiles of a normal distribution. If we wanted the 50% quantile (AKA the median), we would say\n\nqnorm(0.5, mean = 0, sd = 1)\n\n[1] 0\n\n\nIn this case we just get back the mean, because the normal distribution is perfectly symmetric, and mean and median are equal for symmetric distributions.\nIf we wanted the inner quartile range (IQR) for a normal distribution, here it goes:\n\nq25 &lt;- qnorm(0.25, mean = 0, sd = 1)\nq75 &lt;- qnorm(0.75, mean = 0, sd = 1)\n\nIQR &lt;- q75 - q25\nIQR\n\n[1] 1.34898",
+    "crumbs": [
+      "Computing primers",
+      "Normal distribution"
+    ]
   },
   {
     "objectID": "computing/computing-normal.html#compute-and-visualize-probabilities-under-the-normal-distribution",
     "href": "computing/computing-normal.html#compute-and-visualize-probabilities-under-the-normal-distribution",
     "title": "The normal distribution",
     "section": "Compute and visualize probabilities under the normal distribution",
-    "text": "Compute and visualize probabilities under the normal distribution\n\nnormTail(m = 0, s = 1, L = -1)\n\n\n\n\n\n\n\n\n\npnorm(-1, mean = 0, s = 1)\n\n[1] 0.1586553"
+    "text": "Compute and visualize probabilities under the normal distribution\nWhat is the probability that a randomly selected 65-year-old woman has bones that are less dense than pine? If we add an L argument to normTail, we can visualize the answer:\n\nnormTail(m = bone_density_mean, s = bone_density_sd, L = pine,\n         main = \"Distribution of bone density of 65-year-old women\",\n         xlab = \"mg/cm^3\",)\n\n\n\n\n\n\n\n\nIn order to compute the probability (area) under the bell curve of being less than 600 \\(mg/cm^3\\), we can use the pnorm function:\n\npnorm(pine, mean = bone_density_mean, sd = bone_density_sd)\n\n[1] 0.06773729\n\n\nNotice how this may come in handy when we have to compute \\(p\\)-values, for instance.",
+    "crumbs": [
+      "Computing primers",
+      "Normal distribution"
+    ]
   },
   {
     "objectID": "computing/computing-barplot.html",
@@ -391,7 +415,7 @@
     "href": "index.html",
     "title": "STA 101 Data Analysis and Statistical Inference",
     "section": "",
-    "text": "Below is a prospective outline for the course, but things may change with advanced notice:\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nPREPARE\nMATERIALS\nDUE\n\n\n\n\n1\nTue, Aug 27\nWelcome!\n\n\n\n\n\n\n\n\n\n\nThu, Aug 29\nGetting started\n📖 ims: Ch 1  💻 tutorial: 01-data-01\nlecture-2  (filled-in)\nGetting to know you @ 3PM\n\n\n\n\nFri, Aug 30\nLab 1: Hello R!\n\n\nlab-1\n\n\n\n\n2\nTue, Sep 3\nNumerical data and study design\n📖 ims: Ch 2  💻 tutorial: 01-data-02  💻 tutorial: 01-data-03\nslides lecture-3  (filled-in)\n\n\n\n\n\n\nThu, Sep 5\nCategorical data\n📖 ims: Ch 4  💻 tutorial: 02-explore-01\nlecture-4  (filled-in)\n\n\n\n\n\n\nFri, Sep 6\nLab 2: data\n📖 ims: Ch 3  💻 tutorial: 01-data-04\nlab-2\nLab 1 @ 8AM\n\n\n3\nTue, Sep 10\nCheckpoint: exploratory data analysis\n📖 ims: Ch 5  💻 tutorial: 02-explore-02\nslides\n\n\n\n\n\n\nThu, Sep 12\nSimple linear regression\n📖 ims: Ch 7  💻 tutorial: 03-model-01  💻 tutorial: 03-model-02\nslides  Play around!  Play around some more!  Primer\n\n\n\n\n\n\nFri, Sep 13\nLab 3: exploratory data analysis\n📖 ims: Ch 6  💻 tutorial: 02-explore-03\nlab-3\nLab 2 @ 8AM\n\n\n4\nTue, Sep 17\nMultiple linear regression\n📖 ims: Ch 8.1 - 8.2\nslides  Primer\n\n\n\n\n\n\nThu, Sep 19\n\\(R^2\\)\n📖 ims: Ch 8.3 - 8.4\nslides  Primer\n\n\n\n\n\n\nFri, Sep 20\nLab 4: regression\n\n\nlab-4\nLab 3 @ 8AM\n\n\n5\nTue, Sep 24\nModel selection\n📖 ims: Ch 8.4 - 8.5\n\n\n\n\n\n\n\n\nThu, Sep 26\nModel selection\n📖 ims: Ch 7  📖 ims: Ch 8\nslides\n\n\n\n\n\n\nFri, Sep 27\nLab: exam review\n\n\n\n\nLab 4 @ 8AM\n\n\n6\nTue, Oct 1\nIn-class Exam 1\nPractice exams (Canvas)  Make your cheet sheet!\n\n\n\n\n\n\n\n\nThu, Oct 3\nNo lecture\n\n\n\n\nTake-home Exam 1 @ 5PM\n\n\n\n\nFri, Oct 4\nNo lab\n\n\n\n\n\n\n\n\n7\nTue, Oct 8\nLogistic Regression 1\n📖 ims: Ch 9\nslides\n\n\n\n\n\n\nThu, Oct 10\nLogistic Regression 2  Ethics\n📖 ims: Ch 9\nslides  Primer\n\n\n\n\n\n\nFri, Oct 11\nNo lab\n\n\n\n\n\n\n\n\n8\nTue, Oct 15\nNo lecture\n\n\n\n\n\n\n\n\n\n\nThu, Oct 17\nIntroduction to statistics  Interval estimation 1\n📖 ims: Ch 12  💻 tutorial: 04-foundations-04\nslides  Primer  Play around!\n\n\n\n\n\n\nFri, Oct 18\nLab 5: confidence intervals\n\n\nlab-5\n\n\n\n\n9\nTue, Oct 22\nInterval estimation 2\n📖 ims: Ch 12  💻 tutorial: 04-foundations-04\nslides\n\n\n\n\n\n\nThu, Oct 24\nHypothesis testing 1\n📖 ims: Ch 11  📖 ims: Ch 14\nslides\n\n\n\n\n\n\nFri, Oct 25\nLab 6: hypothesis testing\n\n\nlab-6  Primer\nLab 5 @ 8AM\n\n\n10\nTue, Oct 29\nHypothesis testing 2\n📖 ims: Ch 11  📖 ims: Ch 14  💻 tutorial: 04-foundations-01  💻 tutorial: 04-foundations-02  💻 tutorial: 04-foundations-03\nslides  Primer\n\n\n\n\n\n\nThu, Oct 31\nInference with mathematical models\n📖 ims: Ch 13\nTo be posted\n\n\n\n\n\n\nFri, Nov 1\nLab 7: foundations of inference\n\n\nlab-7\nLab 6 @ 8AM\n\n\n11\nTue, Nov 5\nInference for one proportion\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Nov 7\nComparing two proportions\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Nov 8\nLab: exam review\n\n\nTo be posted\nLab 7 @ 8AM\n\n\n12\nTue, Nov 12\nIn-class Exam 2\n\n\nTo be posted\n\n\n\n\n\n\nThu, Nov 14\nNo lecture\n\n\nTo be posted\nTake-home Exam 2 @ 5PM\n\n\n\n\nFri, Nov 15\n\n\n\n\n\n\n\n\n\n\n13\nTue, Nov 19\nInference for two-way tables\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Nov 21\nProportions overview\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Nov 22\n\n\n\n\n\n\nProject proposal @ 5PM\n\n\n14\nTue, Nov 26\nInference for one mean\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Nov 28\nNo lecture\n\n\n\n\n\n\n\n\n\n\nFri, Nov 29\nNo lab\n\n\n\n\n\n\n\n\n15\nTue, Dec 3\nInference for two means\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Dec 5\nANOVA\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Dec 6\nNo lab\n\n\n\n\nPeer review @ 5PM\n\n\n16\nSun, Dec 15\nNo meeting\n\n\n\n\nFinal project @ 2PM",
+    "text": "Below is a prospective outline for the course, but things may change with advanced notice:\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nPREPARE\nMATERIALS\nDUE\n\n\n\n\n1\nTue, Aug 27\nWelcome!\n\n\n\n\n\n\n\n\n\n\nThu, Aug 29\nGetting started\n📖 ims: Ch 1  💻 tutorial: 01-data-01\nlecture-2  (filled-in)\nGetting to know you @ 3PM\n\n\n\n\nFri, Aug 30\nLab 1: Hello R!\n\n\nlab-1\n\n\n\n\n2\nTue, Sep 3\nNumerical data and study design\n📖 ims: Ch 2  💻 tutorial: 01-data-02  💻 tutorial: 01-data-03\nslides lecture-3  (filled-in)\n\n\n\n\n\n\nThu, Sep 5\nCategorical data\n📖 ims: Ch 4  💻 tutorial: 02-explore-01\nlecture-4  (filled-in)\n\n\n\n\n\n\nFri, Sep 6\nLab 2: data\n📖 ims: Ch 3  💻 tutorial: 01-data-04\nlab-2\nLab 1 @ 8AM\n\n\n3\nTue, Sep 10\nCheckpoint: exploratory data analysis\n📖 ims: Ch 5  💻 tutorial: 02-explore-02\nslides\n\n\n\n\n\n\nThu, Sep 12\nSimple linear regression\n📖 ims: Ch 7  💻 tutorial: 03-model-01  💻 tutorial: 03-model-02\nslides  Play around!  Play around some more!  Primer\n\n\n\n\n\n\nFri, Sep 13\nLab 3: exploratory data analysis\n📖 ims: Ch 6  💻 tutorial: 02-explore-03\nlab-3\nLab 2 @ 8AM\n\n\n4\nTue, Sep 17\nMultiple linear regression\n📖 ims: Ch 8.1 - 8.2\nslides  Primer\n\n\n\n\n\n\nThu, Sep 19\n\\(R^2\\)\n📖 ims: Ch 8.3 - 8.4\nslides  Primer\n\n\n\n\n\n\nFri, Sep 20\nLab 4: regression\n\n\nlab-4\nLab 3 @ 8AM\n\n\n5\nTue, Sep 24\nModel selection\n📖 ims: Ch 8.4 - 8.5\n\n\n\n\n\n\n\n\nThu, Sep 26\nModel selection\n📖 ims: Ch 7  📖 ims: Ch 8\nslides\n\n\n\n\n\n\nFri, Sep 27\nLab: exam review\n\n\n\n\nLab 4 @ 8AM\n\n\n6\nTue, Oct 1\nIn-class Exam 1\nPractice exams (Canvas)  Make your cheet sheet!\n\n\n\n\n\n\n\n\nThu, Oct 3\nNo lecture\n\n\n\n\nTake-home Exam 1 @ 5PM\n\n\n\n\nFri, Oct 4\nNo lab\n\n\n\n\n\n\n\n\n7\nTue, Oct 8\nLogistic Regression 1\n📖 ims: Ch 9\nslides\n\n\n\n\n\n\nThu, Oct 10\nLogistic Regression 2  Ethics\n📖 ims: Ch 9\nslides  Primer\n\n\n\n\n\n\nFri, Oct 11\nNo lab\n\n\n\n\n\n\n\n\n8\nTue, Oct 15\nNo lecture\n\n\n\n\n\n\n\n\n\n\nThu, Oct 17\nIntroduction to statistics  Interval estimation 1\n📖 ims: Ch 12  💻 tutorial: 04-foundations-04\nslides  Primer  Play around!\n\n\n\n\n\n\nFri, Oct 18\nLab 5: confidence intervals\n\n\nlab-5\n\n\n\n\n9\nTue, Oct 22\nInterval estimation 2\n📖 ims: Ch 12  💻 tutorial: 04-foundations-04\nslides\n\n\n\n\n\n\nThu, Oct 24\nHypothesis testing 1\n📖 ims: Ch 11  📖 ims: Ch 14\nslides\n\n\n\n\n\n\nFri, Oct 25\nLab 6: hypothesis testing\n\n\nlab-6  Primer\nLab 5 @ 8AM\n\n\n10\nTue, Oct 29\nHypothesis testing 2\n📖 ims: Ch 11  📖 ims: Ch 14  💻 tutorial: 04-foundations-01  💻 tutorial: 04-foundations-02  💻 tutorial: 04-foundations-03\nslides  Primer\n\n\n\n\n\n\nThu, Oct 31\nInference with mathematical models\n📖 ims: Ch 13\nPrimer\n\n\n\n\n\n\nFri, Nov 1\nLab 7: foundations of inference\n\n\nlab-7\nLab 6 @ 8AM\n\n\n11\nTue, Nov 5\nInference for one proportion\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Nov 7\nComparing two proportions\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Nov 8\nLab: exam review\n\n\nTo be posted\nLab 7 @ 8AM\n\n\n12\nTue, Nov 12\nIn-class Exam 2\n\n\nTo be posted\n\n\n\n\n\n\nThu, Nov 14\nNo lecture\n\n\nTo be posted\nTake-home Exam 2 @ 5PM\n\n\n\n\nFri, Nov 15\n\n\n\n\n\n\n\n\n\n\n13\nTue, Nov 19\nInference for two-way tables\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Nov 21\nProportions overview\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Nov 22\n\n\n\n\n\n\nProject proposal @ 5PM\n\n\n14\nTue, Nov 26\nInference for one mean\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Nov 28\nNo lecture\n\n\n\n\n\n\n\n\n\n\nFri, Nov 29\nNo lab\n\n\n\n\n\n\n\n\n15\nTue, Dec 3\nInference for two means\nTo be posted\nTo be posted\n\n\n\n\n\n\nThu, Dec 5\nANOVA\nTo be posted\nTo be posted\n\n\n\n\n\n\nFri, Dec 6\nNo lab\n\n\n\n\nPeer review @ 5PM\n\n\n16\nSun, Dec 15\nNo meeting\n\n\n\n\nFinal project @ 2PM",
     "crumbs": [
       "Syllabus",
       "Schedule"
