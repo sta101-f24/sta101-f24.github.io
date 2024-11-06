@@ -2240,88 +2240,56 @@
     "href": "computing/computing-proportion.html",
     "title": "Worked example: estimating a single proportion",
     "section": "",
-    "text": "library(tidyverse)\nlibrary(tidymodels)",
-    "crumbs": [
-      "Computing primers",
-      "Inference for one proportion"
-    ]
+    "text": "library(tidyverse)\nlibrary(tidymodels)"
   },
   {
     "objectID": "computing/computing-proportion.html#packages",
     "href": "computing/computing-proportion.html#packages",
     "title": "Worked example: estimating a single proportion",
     "section": "",
-    "text": "library(tidyverse)\nlibrary(tidymodels)",
-    "crumbs": [
-      "Computing primers",
-      "Inference for one proportion"
-    ]
+    "text": "library(tidyverse)\nlibrary(tidymodels)"
   },
   {
     "objectID": "computing/computing-proportion.html#data",
     "href": "computing/computing-proportion.html#data",
     "title": "Worked example: estimating a single proportion",
     "section": "Data",
-    "text": "Data\nIn a survey conducted by Survey USA between September 30, 2023 and October 3, 2023, 2759 registered voters from all 50 US states were asked\n\nAmerica will hold an election for President of the United States next November. Not everyone makes the time to vote in every election. Which best describes you? Are you certain to vote? Will you probably vote? Are the chances you will vote about 50/50? Or will you probably not vote?\n\nThe data from this survey can be found in voting-survey.csv:\n\nvoting_survey &lt;- read_csv(\"voting-survey.csv\")\n\nRows: 2759 Columns: 2\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): vote\ndbl (1): id\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\nglimpse(voting_survey)\n\nRows: 2,759\nColumns: 2\n$ id   &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19…\n$ vote &lt;chr&gt; \"Certain to vote\", \"Certain to vote\", \"Certain to vote\", \"Certain…",
-    "crumbs": [
-      "Computing primers",
-      "Inference for one proportion"
-    ]
+    "text": "Data\nIn a survey conducted by Survey USA between September 30, 2023 and October 3, 2023, 2759 registered voters from all 50 US states were asked\n\nAmerica will hold an election for President of the United States next November. Not everyone makes the time to vote in every election. Which best describes you? Are you certain to vote? Will you probably vote? Are the chances you will vote about 50/50? Or will you probably not vote?\n\nThe data from this survey can be found in voting-survey.csv:\n\nvoting_survey &lt;- read_csv(\"voting-survey.csv\")\n\nRows: 2759 Columns: 2\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): vote\ndbl (1): id\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\nglimpse(voting_survey)\n\nRows: 2,759\nColumns: 2\n$ id   &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19…\n$ vote &lt;chr&gt; \"Certain to vote\", \"Certain to vote\", \"Certain to vote\", \"Certain…"
   },
   {
     "objectID": "computing/computing-proportion.html#visualize-and-summarize-the-data",
     "href": "computing/computing-proportion.html#visualize-and-summarize-the-data",
     "title": "Worked example: estimating a single proportion",
     "section": "Visualize and summarize the data",
-    "text": "Visualize and summarize the data\nThis simple bar plot displays the number of respondents who gave each of the five possible answers:\n\nggplot(voting_survey, aes(y = vote)) + \n  geom_bar()\n\n\n\n\n\n\n\n\nThis code calculates the proportion of respondents that gave each answer:\n\nvoting_survey |&gt;\n  count(vote) |&gt;\n  mutate(props = n / sum(n))\n\n# A tibble: 5 × 3\n  vote                       n  props\n  &lt;chr&gt;                  &lt;int&gt;  &lt;dbl&gt;\n1 About 50/50 chance       293 0.106 \n2 Certain to vote         1921 0.696 \n3 Not sure                  44 0.0159\n4 Probably will not vote    92 0.0333\n5 Will probably vote       409 0.148",
-    "crumbs": [
-      "Computing primers",
-      "Inference for one proportion"
-    ]
+    "text": "Visualize and summarize the data\nThis simple bar plot displays the number of respondents who gave each of the five possible answers:\n\nggplot(voting_survey, aes(y = vote)) + \n  geom_bar()\n\n\n\n\n\n\n\n\nThis code calculates the proportion of respondents that gave each answer:\n\nvoting_survey |&gt;\n  count(vote) |&gt;\n  mutate(props = n / sum(n))\n\n# A tibble: 5 × 3\n  vote                       n  props\n  &lt;chr&gt;                  &lt;int&gt;  &lt;dbl&gt;\n1 About 50/50 chance       293 0.106 \n2 Certain to vote         1921 0.696 \n3 Not sure                  44 0.0159\n4 Probably will not vote    92 0.0333\n5 Will probably vote       409 0.148"
   },
   {
     "objectID": "computing/computing-proportion.html#interval-estimation",
     "href": "computing/computing-proportion.html#interval-estimation",
     "title": "Worked example: estimating a single proportion",
     "section": "Interval estimation",
-    "text": "Interval estimation\nBased on these data, we want to estimate the true proportion of registered US voters who are certain to vote in the next presidential election. Our point estimate based on the survey responses is 69.6%, but how reliably estimated is that? To answer this, we need to construct a confidence interval.\n\n# Prepare the data for analysis (pre-processing)\n\nvoting_survey &lt;- voting_survey |&gt;\n  mutate(vote = if_else(vote == \"Certain to vote\", \"Certain to vote\", \"Not certain to vote\"))\n\nset.seed(20)\n\nboot_dist &lt;- voting_survey |&gt;\n  specify(response = vote, success = \"Certain to vote\") |&gt;\n  generate(reps = 1000, type = \"bootstrap\") |&gt;\n  calculate(stat = \"prop\")\n\nci &lt;- boot_dist |&gt;\n  get_ci()\nci\n\n# A tibble: 1 × 2\n  lower_ci upper_ci\n     &lt;dbl&gt;    &lt;dbl&gt;\n1    0.679    0.714\n\nvisualize(boot_dist) + \n  shade_ci(ci)",
-    "crumbs": [
-      "Computing primers",
-      "Inference for one proportion"
-    ]
+    "text": "Interval estimation\nBased on these data, we want to estimate the true proportion of registered US voters who are certain to vote in the next presidential election. Our point estimate based on the survey responses is 69.6%, but how reliably estimated is that? To answer this, we need to construct a confidence interval.\n\n# Prepare the data for analysis (pre-processing)\n\nvoting_survey &lt;- voting_survey |&gt;\n  mutate(vote = if_else(vote == \"Certain to vote\", \"Certain to vote\", \"Not certain to vote\"))\n\nset.seed(20)\n\nboot_dist &lt;- voting_survey |&gt;\n  specify(response = vote, success = \"Certain to vote\") |&gt;\n  generate(reps = 1000, type = \"bootstrap\") |&gt;\n  calculate(stat = \"prop\")\n\nci &lt;- boot_dist |&gt;\n  get_ci()\nci\n\n# A tibble: 1 × 2\n  lower_ci upper_ci\n     &lt;dbl&gt;    &lt;dbl&gt;\n1    0.679    0.714\n\nvisualize(boot_dist) + \n  shade_ci(ci)"
   },
   {
     "objectID": "computing/computing-proportion.html#task-3",
     "href": "computing/computing-proportion.html#task-3",
     "title": "Worked example: estimating a single proportion",
     "section": "Task 3",
-    "text": "Task 3\nBAD: “There is a 95% probability that the true proportion is between 67.9% and 71.4%.”\nNOT SO BAD: “95% of the time, the true proportion is between 67.9% and 71.4%.”\nCORRECT, BUT SHADY: “We are 95% confident that the true proportion is between 67.9% and 71.4%.”\nCorrect: “95% of the time, an interval constructed like this one will contain the true proportion.”",
-    "crumbs": [
-      "Computing primers",
-      "Inference for one proportion"
-    ]
+    "text": "Task 3\nBAD: “There is a 95% probability that the true proportion is between 67.9% and 71.4%.”\nNOT SO BAD: “95% of the time, the true proportion is between 67.9% and 71.4%.”\nCORRECT, BUT SHADY: “We are 95% confident that the true proportion is between 67.9% and 71.4%.”\nCorrect: “95% of the time, an interval constructed like this one will contain the true proportion.”"
   },
   {
     "objectID": "computing/computing-proportion.html#hypothesis-testing",
     "href": "computing/computing-proportion.html#hypothesis-testing",
     "title": "Worked example: estimating a single proportion",
     "section": "Hypothesis testing",
-    "text": "Hypothesis testing\nPew says that 66% of eligible US voters turned out for the 2020 presidential election. A newspaper claims that even more people will turnout in 2024, and cites this survey as evidence. Do these data provide convincing evidence for this claim?\nDo two things:\n- state the hypotheses\np = proportion of voters that turn out in 2024\nH_0: p = 0.66\nH_1: p &gt; 0.66\nOne-sided test\n- conduct a randomization test, at 5% discernability level. What is the conclusion of the test?\n\nobs_stat &lt;- voting_survey |&gt;\n    specify(response = vote, success = \"Certain to vote\") |&gt;\n    calculate(stat = \"prop\")\n\nset.seed(525600)\n\nnull_dist &lt;- voting_survey |&gt;\n  specify(response = vote, success = \"Certain to vote\") |&gt;\n  hypothesize(null = \"point\", p = 0.66) |&gt;\n  generate(reps = 1000, type = \"draw\") |&gt;\n  calculate(stat = \"prop\")\n\nnull_dist |&gt;\n  get_p_value(obs_stat, direction = \"greater\")\n\nWarning: Please be cautious in reporting a p-value of 0. This result is an approximation\nbased on the number of `reps` chosen in the `generate()` step.\nℹ See `get_p_value()` (`?infer::get_p_value()`) for more information.\n\n\n# A tibble: 1 × 1\n  p_value\n    &lt;dbl&gt;\n1       0",
-    "crumbs": [
-      "Computing primers",
-      "Inference for one proportion"
-    ]
+    "text": "Hypothesis testing\nPew says that 66% of eligible US voters turned out for the 2020 presidential election. A newspaper claims that even more people will turnout in 2024, and cites this survey as evidence. Do these data provide convincing evidence for this claim?\nDo two things:\n- state the hypotheses\np = proportion of voters that turn out in 2024\nH_0: p = 0.66\nH_1: p &gt; 0.66\nOne-sided test\n- conduct a randomization test, at 5% discernability level. What is the conclusion of the test?\n\nobs_stat &lt;- voting_survey |&gt;\n    specify(response = vote, success = \"Certain to vote\") |&gt;\n    calculate(stat = \"prop\")\n\nset.seed(525600)\n\nnull_dist &lt;- voting_survey |&gt;\n  specify(response = vote, success = \"Certain to vote\") |&gt;\n  hypothesize(null = \"point\", p = 0.66) |&gt;\n  generate(reps = 1000, type = \"draw\") |&gt;\n  calculate(stat = \"prop\")\n\nnull_dist |&gt;\n  get_p_value(obs_stat, direction = \"greater\")\n\nWarning: Please be cautious in reporting a p-value of 0. This result is an approximation\nbased on the number of `reps` chosen in the `generate()` step.\nℹ See `get_p_value()` (`?infer::get_p_value()`) for more information.\n\n\n# A tibble: 1 × 1\n  p_value\n    &lt;dbl&gt;\n1       0"
   },
   {
     "objectID": "computing/computing-proportion.html#task-5",
     "href": "computing/computing-proportion.html#task-5",
     "title": "Worked example: estimating a single proportion",
     "section": "Task 5",
-    "text": "Task 5\n“There is a 0% chance that the null is true.”\n“If the null were true, there is a 0% chance of seeing data like what we saw.”",
-    "crumbs": [
-      "Computing primers",
-      "Inference for one proportion"
-    ]
+    "text": "Task 5\n“There is a 0% chance that the null is true.”\n“If the null were true, there is a 0% chance of seeing data like what we saw.”"
   },
   {
     "objectID": "computing/computing-pipe.html",
