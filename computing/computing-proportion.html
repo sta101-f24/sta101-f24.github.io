@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STA 101 Fall 2024 - Histogram basics</title>
+<title>STA 101 Fall 2024 - Worked example: estimating a single proportion</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -63,8 +63,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../computing/computing-barplot.html" rel="next">
-<link href="../computing/computing-pipe.html" rel="prev">
+<link href="../computing/computing-normal.html" rel="next">
+<link href="../computing/computing-hypotheses-2.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -102,37 +102,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<meta property="og:title" content="STA 101 Fall 2024 - Histogram basics">
+<meta property="og:title" content="STA 101 Fall 2024 - Worked example: estimating a single proportion">
 <meta property="og:description" content="Homepage for STA 101 Data Analysis and Statistical Inference at Duke University, Fall 2024.">
 <meta property="og:site_name" content="STA 101 Fall 2024">
 </head>
@@ -146,7 +117,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../computing/computing-access.html">Computing primers</a></li><li class="breadcrumb-item"><a href="../computing/computing-histograms.html">Histogram basics</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../computing/computing-access.html">Computing primers</a></li><li class="breadcrumb-item"><a href="../computing/computing-proportion.html">Inference for one proportion</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -312,7 +283,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computing/computing-histograms.html" class="sidebar-item-text sidebar-link active">
+  <a href="../computing/computing-histograms.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Histogram basics</span></a>
   </div>
 </li>
@@ -372,7 +343,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computing/computing-proportion.html" class="sidebar-item-text sidebar-link">
+  <a href="../computing/computing-proportion.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Inference for one proportion</span></a>
   </div>
 </li>
@@ -400,20 +371,22 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#loading-a-package" id="toc-loading-a-package" class="nav-link active" data-scroll-target="#loading-a-package">Loading a package</a></li>
-  <li><a href="#loading-a-dataset" id="toc-loading-a-dataset" class="nav-link" data-scroll-target="#loading-a-dataset">Loading a dataset</a></li>
-  <li><a href="#plotting-a-histogram" id="toc-plotting-a-histogram" class="nav-link" data-scroll-target="#plotting-a-histogram">Plotting a histogram</a></li>
-  <li><a href="#adding-a-vertical-line-to-the-histogram" id="toc-adding-a-vertical-line-to-the-histogram" class="nav-link" data-scroll-target="#adding-a-vertical-line-to-the-histogram">Adding a vertical line to the histogram</a></li>
-  <li><a href="#now-you-try" id="toc-now-you-try" class="nav-link" data-scroll-target="#now-you-try">Now you try</a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link active" data-scroll-target="#packages">Packages</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#visualize-and-summarize-the-data" id="toc-visualize-and-summarize-the-data" class="nav-link" data-scroll-target="#visualize-and-summarize-the-data">Visualize and summarize the data</a></li>
+  <li><a href="#interval-estimation" id="toc-interval-estimation" class="nav-link" data-scroll-target="#interval-estimation">Interval estimation</a></li>
+  <li><a href="#task-3" id="toc-task-3" class="nav-link" data-scroll-target="#task-3">Task 3</a></li>
+  <li><a href="#hypothesis-testing" id="toc-hypothesis-testing" class="nav-link" data-scroll-target="#hypothesis-testing">Hypothesis testing</a></li>
+  <li><a href="#task-5" id="toc-task-5" class="nav-link" data-scroll-target="#task-5">Task 5</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../computing/computing-access.html">Computing primers</a></li><li class="breadcrumb-item"><a href="../computing/computing-histograms.html">Histogram basics</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../computing/computing-access.html">Computing primers</a></li><li class="breadcrumb-item"><a href="../computing/computing-proportion.html">Inference for one proportion</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Histogram basics</h1>
+<h1 class="title">Worked example: estimating a single proportion</h1>
 </div>
 
 
@@ -430,98 +403,157 @@ window.Quarto = {
 </header>
 
 
-<p>A <strong>histogram</strong> displays the <em>distribution</em> or <em>variability</em> of numerical data. It shows you where the data values are typically concentrated, how spread out they are, and whether or not there are any asymmetries.</p>
-<p>This primer leads you down the path of least resistance to producing a histogram plot using <code>R</code>. Trust me; you would not want to do this by hand.</p>
-<section id="loading-a-package" class="level2">
-<h2 class="anchored" data-anchor-id="loading-a-package">Loading a package</h2>
-<p>The command for plotting a histogram is contained inside the <code>tidyverse</code> package, so you need to load that first:</p>
+<section id="packages" class="level2">
+<h2 class="anchored" data-anchor-id="packages">Packages</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="loading-a-dataset" class="level2">
-<h2 class="anchored" data-anchor-id="loading-a-dataset">Loading a dataset</h2>
-<p>Next, we need something to plot, so let us load in a data set. We will consider the flint water data that was mentioned during the second lecture on 8/29/2024:</p>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>In a <a href="https://www.surveyusa.com/client/PollReport.aspx?g=4d09191d-b0b5-42cd-91c8-bd1bdf587199">survey conducted by Survey USA</a> between September 30, 2023 and October 3, 2023, 2759 registered voters from all 50 US states were asked</p>
+<blockquote class="blockquote">
+<p>America will hold an election for President of the United States next November. Not everyone makes the time to vote in every election. Which best describes you? Are you certain to vote? Will you probably vote? Are the chances you will vote about 50/50? Or will you probably not vote?</p>
+</blockquote>
+<p>The data from this survey can be found in <code>voting-survey.csv</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>flint <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"flint.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>voting_survey <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"voting-survey.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 2759 Columns: 2
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): vote
+dbl (1): id
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
-<p>Let us unpack what this is doing:</p>
-<ul>
-<li><code>read_csv</code> is a <em>function</em>, just like <span class="math inline">\(f(x)=x^2\)</span> or <span class="math inline">\(f(x)=ax+b\)</span> from your math class. It receives an input, and returns an output. The input is the name of a file: <code>"flint.csv"</code>. The output is a data frame (a spreadsheet) in <code>R</code>;</li>
-<li>When you run <code>read_csv</code>, it returns a data frame. But if you don’t give that data frame a name and store it someplace, then you can’t actually use it. So that’s what the <code>flint &lt;-</code> part is doing. You are <em>assigning</em> the output of <code>read_csv</code> to a variable named “flint.” If this went as planned, you should see <code>flint</code> listed in the upper right Environment tab of <code>RStudio</code>:<br>
-<br>
-<img src="data_in_environment.png" class="img-fluid" width="347"></li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Recalling the information <a href="https://sta101-f24.github.io/computing/computing-file-paths.html">here</a>, you may have to modify the file path to something like <code>"~/lecture-2/flint.csv"</code> to match the particular way you have chosen to name and organize your files and folders.</p>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(voting_survey)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 2,759
+Columns: 2
+$ id   &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19…
+$ vote &lt;chr&gt; "Certain to vote", "Certain to vote", "Certain to vote", "Certain…</code></pre>
 </div>
 </div>
 </section>
-<section id="plotting-a-histogram" class="level2">
-<h2 class="anchored" data-anchor-id="plotting-a-histogram">Plotting a histogram</h2>
-<p>Here is the basic command in all its glory:</p>
+<section id="visualize-and-summarize-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="visualize-and-summarize-the-data">Visualize and summarize the data</h2>
+<p>This simple bar plot displays the number of respondents who gave each of the five possible answers:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(flint, <span class="fu">aes</span>(<span class="at">x =</span> lead)) <span class="sc">+</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">250</span>) <span class="sc">+</span> </span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(voting_survey, <span class="fu">aes</span>(<span class="at">y =</span> vote)) <span class="sc">+</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="computing-histograms_files/figure-html/histogram-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="computing-proportion_files/figure-html/bar-plot-1.png" class="img-fluid figure-img" width="576"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>Now let’s talk about it:</p>
-<ul>
-<li><code>ggplot(flint, aes(x = lead))</code> is where we tell <code>R</code> what data frame we are using (<code>flint</code>) and which variable (column) in that data set we want to plot (<code>lead</code>);</li>
-<li>Next, we use <code>geom_histogram(bins = 250)</code> to tell it that we specifically want a histogram with 250 bins;</li>
-<li>Last, we use <code>coord_cartesian(xlim = c(0, 100))</code> to adjust the bounds of the horizontal axis: start at x = 0 and end at x = 100;</li>
-<li>We stitch all of these requests together using the <code>+</code> sign, and to make things more readable (not run off the page), we put a new line after each <code>+</code>.</li>
-</ul>
-</section>
-<section id="adding-a-vertical-line-to-the-histogram" class="level2">
-<h2 class="anchored" data-anchor-id="adding-a-vertical-line-to-the-histogram">Adding a vertical line to the histogram</h2>
-<p>When plotting a histogram, it can also be useful to indicate on the plot the location of some particularly meaningful summary statistics, such as the mean or median. In order to do this, we can use the same basic command from the previous section, but then add some extra <em>layers</em> that will place vertical lines on the plot at those values:</p>
+<p>This code calculates the proportion of respondents that gave each answer:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>mean_value <span class="ot">&lt;-</span> <span class="fu">mean</span>(flint<span class="sc">$</span>lead)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>median_value <span class="ot">&lt;-</span> <span class="fu">median</span>(flint<span class="sc">$</span>lead)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(flint, <span class="fu">aes</span>(<span class="at">x =</span> lead)) <span class="sc">+</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">250</span>) <span class="sc">+</span> </span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>)) <span class="sc">+</span> </span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> mean_value, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span> </span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> median_value, <span class="at">color =</span> <span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>voting_survey <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(vote) <span class="sc">|&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">props =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 3
+  vote                       n  props
+  &lt;chr&gt;                  &lt;int&gt;  &lt;dbl&gt;
+1 About 50/50 chance       293 0.106 
+2 Certain to vote         1921 0.696 
+3 Not sure                  44 0.0159
+4 Probably will not vote    92 0.0333
+5 Will probably vote       409 0.148 </code></pre>
+</div>
+</div>
+</section>
+<section id="interval-estimation" class="level2">
+<h2 class="anchored" data-anchor-id="interval-estimation">Interval estimation</h2>
+<p>Based on these data, we want to estimate the true proportion of registered US voters who are certain to vote in the next presidential election. Our point estimate based on the survey responses is 69.6%, but how reliably estimated is that? To answer this, we need to construct a confidence interval.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare the data for analysis (pre-processing)</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>voting_survey <span class="ot">&lt;-</span> voting_survey <span class="sc">|&gt;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">vote =</span> <span class="fu">if_else</span>(vote <span class="sc">==</span> <span class="st">"Certain to vote"</span>, <span class="st">"Certain to vote"</span>, <span class="st">"Not certain to vote"</span>))</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">20</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>boot_dist <span class="ot">&lt;-</span> voting_survey <span class="sc">|&gt;</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> vote, <span class="at">success =</span> <span class="st">"Certain to vote"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"bootstrap"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"prop"</span>)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>ci <span class="ot">&lt;-</span> boot_dist <span class="sc">|&gt;</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_ci</span>()</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>ci</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  lower_ci upper_ci
+     &lt;dbl&gt;    &lt;dbl&gt;
+1    0.679    0.714</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">visualize</span>(boot_dist) <span class="sc">+</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">shade_ci</span>(ci)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="computing-histograms_files/figure-html/histogram-with-line-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="computing-proportion_files/figure-html/bootstrap-ci-1.png" class="img-fluid figure-img" width="576"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>Notice that the distribution of lead levels is positively skewed, which results in the mean being larger than the median.</p>
 </section>
-<section id="now-you-try" class="level2">
-<h2 class="anchored" data-anchor-id="now-you-try">Now you try</h2>
-<p>To double check that you can follow these instructions, redo everything above using a different data set. This may require you to modify the code in various ways:</p>
-<ul>
-<li>the file path you provide to <code>read_csv</code>;</li>
-<li>the name you assign to the resulting data frame;</li>
-<li>the variable you plot in <code>aes(x = lead)</code>;</li>
-<li>the number of histogram bins;</li>
-<li>the range of the horizontal axis.</li>
-</ul>
-<p>Check that you are comfortable making these changes.</p>
+<section id="task-3" class="level2">
+<h2 class="anchored" data-anchor-id="task-3">Task 3</h2>
+<p>BAD: “There is a 95% probability that the true proportion is between 67.9% and 71.4%.”</p>
+<p>NOT SO BAD: “95% of the time, the true proportion is between 67.9% and 71.4%.”</p>
+<p>CORRECT, BUT SHADY: “We are 95% confident that the true proportion is between 67.9% and 71.4%.”</p>
+<p>Correct: “95% of the time, an interval constructed like this one will contain the true proportion.”</p>
+</section>
+<section id="hypothesis-testing" class="level2">
+<h2 class="anchored" data-anchor-id="hypothesis-testing">Hypothesis testing</h2>
+<p>Pew says that 66% of eligible US voters turned out for the 2020 presidential election. A newspaper claims that even more people will turnout in 2024, and cites this survey as evidence. Do these data provide convincing evidence for this claim?</p>
+<p>Do two things:</p>
+<p>- state the hypotheses</p>
+<p>p = proportion of voters that turn out in 2024</p>
+<p>H_0: p = 0.66</p>
+<p>H_1: p &gt; 0.66</p>
+<p>One-sided test</p>
+<p>- conduct a randomization test, at 5% discernability level. What is the conclusion of the test?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>obs_stat <span class="ot">&lt;-</span> voting_survey <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">specify</span>(<span class="at">response =</span> vote, <span class="at">success =</span> <span class="st">"Certain to vote"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"prop"</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">525600</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>null_dist <span class="ot">&lt;-</span> voting_survey <span class="sc">|&gt;</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> vote, <span class="at">success =</span> <span class="st">"Certain to vote"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hypothesize</span>(<span class="at">null =</span> <span class="st">"point"</span>, <span class="at">p =</span> <span class="fl">0.66</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"draw"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"prop"</span>)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>null_dist <span class="sc">|&gt;</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_p_value</span>(obs_stat, <span class="at">direction =</span> <span class="st">"greater"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Please be cautious in reporting a p-value of 0. This result is an approximation
+based on the number of `reps` chosen in the `generate()` step.
+ℹ See `get_p_value()` (`?infer::get_p_value()`) for more information.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  p_value
+    &lt;dbl&gt;
+1       0</code></pre>
+</div>
+</div>
+</section>
+<section id="task-5" class="level2">
+<h2 class="anchored" data-anchor-id="task-5">Task 5</h2>
+<p>“There is a 0% chance that the null is true.”</p>
+<p>“If the null were true, there is a 0% chance of seeing data like what we saw.”</p>
 
 
 </section>
@@ -938,13 +970,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../computing/computing-pipe.html" class="pagination-link" aria-label="Piping">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Piping</span>
+      <a href="../computing/computing-hypotheses-2.html" class="pagination-link" aria-label="More hypothesis testing">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">More hypothesis testing</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../computing/computing-barplot.html" class="pagination-link" aria-label="Barplot basics">
-        <span class="nav-page-text">Barplot basics</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../computing/computing-normal.html" class="pagination-link" aria-label="Normal distribution">
+        <span class="nav-page-text">Normal distribution</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
