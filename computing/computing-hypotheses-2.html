@@ -63,7 +63,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../computing/computing-normal.html" rel="next">
+<link href="../computing/computing-proportion.html" rel="next">
 <link href="../computing/computing-hypotheses.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -372,6 +372,12 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../computing/computing-proportion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Inference for one proportion</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../computing/computing-normal.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Normal distribution</span></a>
   </div>
@@ -572,7 +578,7 @@ Null Hypothesis: independence
 <ul>
 <li>When we simulate the null distribution of the sample proportion as above, we get a list of 1,000 numbers. To visualize the null distribution, we can simply plot a histogram of these;</li>
 <li>to visualize where the actual estimated difference of 4.4% falls in that distribution, we can add a vertical line;</li>
-<li>The <span class="math inline">\(p\)</span>-value is the probability, assuming the null is true, of observing a sample statistic as or more extreme then the one we actually got. So it’s the probability under the null of seeing something <em>even farther</em> to the right of 4.4%, or something correspondingly far to the left. The fraction of the area shaded red is the <span class="math inline">\(p\)</span>-value.</li>
+<li>The <span class="math inline">\(p\)</span>-value is the probability, assuming the null is true, of observing a sample statistic as or more extreme then the one we actually got. So it’s the probability under the null of seeing something <em>even farther</em> to the right of 4.4%. The fraction of the area shaded red is the <span class="math inline">\(p\)</span>-value. We say <code>direction = "greater"</code> because our alternative hypothesis is one-sided.</li>
 </ul>
 <p>Inspecting the picture, we see that our estimated difference is pretty much smack in the middle of the null distribution. So the null hypothesis of no difference is very much in play. Evidence is insufficient to reject it.</p>
 </section>
@@ -589,6 +595,7 @@ Null Hypothesis: independence
 1   0.522</code></pre>
 </div>
 </div>
+<p>The interpretation of this number is “if there were in fact no difference between treatment and control, there is a 52.2% chance that we would observe a difference even greater than the one we actually observed when we ran the experiment.” This p-value is above every standard discernibility level, and so we fail to reject the null. If the null hypothesis were indeed true, the results we got would not be super surprising, so we cannot rule the null out.</p>
 
 
 </section>
@@ -1010,8 +1017,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../computing/computing-normal.html" class="pagination-link" aria-label="Normal distribution">
-        <span class="nav-page-text">Normal distribution</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../computing/computing-proportion.html" class="pagination-link" aria-label="Inference for one proportion">
+        <span class="nav-page-text">Inference for one proportion</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

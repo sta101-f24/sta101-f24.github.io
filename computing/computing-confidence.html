@@ -372,6 +372,12 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../computing/computing-proportion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Inference for one proportion</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../computing/computing-normal.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Normal distribution</span></a>
   </div>
@@ -453,7 +459,7 @@ window.Quarto = {
 # ℹ 40 more rows</code></pre>
 </div>
 </div>
-<p>These are data on the price per guest in USD (<code>ppg</code>) for a random sample of fifty Airbnb listings in 2020 for Asheville, NC. We are going to use these data to investigate what we would of expected to pay for an Airbnb in in Asheville, NC in June 2020. Here is what the data look like:</p>
+<p>These are data on the price per guest in USD (<code>ppg</code>) for a random sample of fifty Airbnb listings in 2020 for Asheville, NC. We are going to use these data to investigate what we would be expected to pay for an Airbnb in in Asheville, NC in June 2020. Here is what the data look like:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(abb, <span class="fu">aes</span>(<span class="at">x =</span> ppg)) <span class="sc">+</span> </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
@@ -511,6 +517,12 @@ window.Quarto = {
 # ℹ 4,990 more rows</code></pre>
 </div>
 </div>
+<p>The code works like this:</p>
+<ul>
+<li><code>specify(response = ppg)</code>: this is a bookkeeping step where we tell the computer which column in our data frame we are studying. It’s simple in this case because there is only one;</li>
+<li><code>generate(reps = 5000, type = "bootstrap")</code>: this generates 5000 bootstrap datasets. In general, we want the numbers of replicates/repetitions to be large enough for the approximation to be good, but not so large that it takes a while to run or hogs all the memory on our computer. For the small applications in our course, 1000 - 5000 replicates should suffice;</li>
+<li><code>calculate(stat = "mean")</code>: once we have the bootstrap datasets, we need to calculate the value of our desired statistic for each one. The variation in these estimates captures what we mean by “sampling uncertainty.” For these Airbnb data, the statistic we care about is the sample average or mean, so that’s what we ask for, but there are several options: “mean”, “median”, “sd”, “prop”, “diff in means”, “diff in props”, and so on.</li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(boot_dist_abb, <span class="fu">aes</span>(<span class="at">x =</span> stat)) <span class="sc">+</span> </span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -566,6 +578,12 @@ window.Quarto = {
 </div>
 </div>
 </div>
+<p>The correct language for interpreting our interval goes something like this:</p>
+<blockquote class="blockquote">
+<p>We are 95% confident that the true mean price lies in between $65.55 and $88.45.</p>
+</blockquote>
+<p>But what does “95% confident” actually mean? It refers to the reliability in repeated use of the method that was used to generate the interval. It does not say anything about the reliability of the specific interval (65.55, 88.45), which is a tad disappointing.</p>
+<p>Think of it this way: if each day for 1000 days, we collected a new random sample of prices, and calculated a 95% confidence interval for each of those samples, approximately 950 of those 1000 intervals would contain the truth. That’s the sense in which the interval estimation method is 95% reliable. In practice however, we have one dataset and one interval. So how do we know if our interval is one of those lucky 950, or if we’re one of the 50 that went astray? Welcome to statistics, folks.</p>
 
 
 </section>
