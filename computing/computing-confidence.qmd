@@ -29,7 +29,7 @@ abb <- read_csv("asheville.csv")
 abb
 ```
 
-These are data on the price per guest in USD (`ppg`) for a random sample of fifty Airbnb listings in 2020 for Asheville, NC. We are going to use these data to investigate what we would of expected to pay for an Airbnb in in Asheville, NC in June 2020. Here is what the data look like:
+These are data on the price per guest in USD (`ppg`) for a random sample of fifty Airbnb listings in 2020 for Asheville, NC. We are going to use these data to investigate what we would be expected to pay for an Airbnb in in Asheville, NC in June 2020. Here is what the data look like:
 
 ```{r}
 #| message: false
@@ -64,6 +64,12 @@ boot_dist_abb <- abb |>
 
 boot_dist_abb
 ```
+
+The code works like this:
+
+-   `specify(response = ppg)`: this is a bookkeeping step where we tell the computer which column in our data frame we are studying. It's simple in this case because there is only one;
+-   `generate(reps = 5000, type = "bootstrap")`: this generates 5000 bootstrap datasets. In general, we want the numbers of replicates/repetitions to be large enough for the approximation to be good, but not so large that it takes a while to run or hogs all the memory on our computer. For the small applications in our course, 1000 - 5000 replicates should suffice;
+-   `calculate(stat = "mean")`: once we have the bootstrap datasets, we need to calculate the value of our desired statistic for each one. The variation in these estimates captures what we mean by "sampling uncertainty." For these Airbnb data, the statistic we care about is the sample average or mean, so that's what we ask for, but there are several options: "mean", "median", "sd", "prop", "diff in means", "diff in props", and so on.
 
 ```{r}
 #| message: false
@@ -100,3 +106,11 @@ Lastly, we can summarize it all with a picture:
 visualize(boot_dist_abb) +
   shade_confidence_interval(ci_95_abb)
 ```
+
+The correct language for interpreting our interval goes something like this:
+
+> We are 95% confident that the true mean price lies in between $65.55 and $88.45.
+
+But what does "95% confident" actually mean? It refers to the reliability in repeated use of the method that was used to generate the interval. It does not say anything about the reliability of the specific interval (65.55, 88.45), which is a tad disappointing.
+
+Think of it this way: if each day for 1000 days, we collected a new random sample of prices, and calculated a 95% confidence interval for each of those samples, approximately 950 of those 1000 intervals would contain the truth. That's the sense in which the interval estimation method is 95% reliable. In practice however, we have one dataset and one interval. So how do we know if our interval is one of those lucky 950, or if we're one of the 50 that went astray? Welcome to statistics, folks. 
