@@ -1,0 +1,123 @@
+---
+title: "Worked example: estimating a single proportion"
+fig-width: 6
+fig-asp: 0.618
+---
+
+## Packages
+
+```{r}
+#| label: load-packages
+#| message: false
+
+library(tidyverse)
+library(tidymodels)
+```
+
+## Data
+
+In a [survey conducted by Survey USA](https://www.surveyusa.com/client/PollReport.aspx?g=4d09191d-b0b5-42cd-91c8-bd1bdf587199) between September 30, 2023 and October 3, 2023, 2759 registered voters from all 50 US states were asked
+
+> America will hold an election for President of the United States next November. Not everyone makes the time to vote in every election. Which best describes you? Are you certain to vote? Will you probably vote? Are the chances you will vote about 50/50? Or will you probably not vote?
+
+The data from this survey can be found in `voting-survey.csv`:
+
+```{r}
+#| label: load-data
+voting_survey <- read_csv("voting-survey.csv")
+glimpse(voting_survey)
+```
+
+## Visualize and summarize the data
+
+This simple bar plot displays the number of respondents who gave each of the five possible answers:
+
+```{r}
+#| label: bar-plot
+
+ggplot(voting_survey, aes(y = vote)) + 
+  geom_bar()
+```
+
+This code calculates the proportion of respondents that gave each answer:
+
+```{r}
+#| label: summarize-data
+
+voting_survey |>
+  count(vote) |>
+  mutate(props = n / sum(n))
+```
+
+## Interval estimation
+
+Based on these data, we want to estimate the true proportion of registered US voters who are certain to vote in the next presidential election. Our point estimate based on the survey responses is 69.6%, but how reliably estimated is that? To answer this, we need to construct a confidence interval.
+
+```{r}
+#| label: bootstrap-ci
+
+# Prepare the data for analysis (pre-processing)
+
+voting_survey <- voting_survey |>
+  mutate(vote = if_else(vote == "Certain to vote", "Certain to vote", "Not certain to vote"))
+
+set.seed(20)
+
+boot_dist <- voting_survey |>
+  specify(response = vote, success = "Certain to vote") |>
+  generate(reps = 1000, type = "bootstrap") |>
+  calculate(stat = "prop")
+
+ci <- boot_dist |>
+  get_ci()
+ci
+
+visualize(boot_dist) + 
+  shade_ci(ci)
+```
+
+## Hypothesis testing
+
+Pew says that 66% of eligible US voters turned out for the 2020 presidential election. A newspaper claims that even more people will turnout in 2024, and cites this survey as evidence. Do these data provide convincing evidence for this claim?
+
+The formal hypotheses are 
+
+$$
+\begin{aligned}
+\text{H}_0: p&=0.66\\
+\text{H}_A: p&>0.66,
+\end{aligned}
+$$
+where $p$ is the true proportion that say they are guaranteed to turn out in 2024. 
+
+```{r}
+#| label: randomization-test
+
+# compute the observed proportion
+
+obs_stat <- voting_survey |>
+    specify(response = vote, success = "Certain to vote") |>
+    calculate(stat = "prop")
+
+# simulate the null distribution
+
+set.seed(525600)
+
+null_dist <- voting_survey |>
+  specify(response = vote, success = "Certain to vote") |>
+  hypothesize(null = "point", p = 0.66) |>
+  generate(reps = 1000, type = "draw") |>
+  calculate(stat = "prop")
+
+# visualize and compute the p-value
+
+null_dist |>
+  visualize() +
+  shade_p_value(obs_stat = obs_stat, direction = "greater")
+
+null_dist |>
+  get_p_value(obs_stat, direction = "greater")
+```
+Our p-value is approximately zero, which is below every standard discernibility level, and therefore we reject the null. The interpretation is:
+
+> If the null were true and there were just as many certain voters in 2023 as in 2020, then there is a 0% chance we would get an estimate as or more extreme (greater) than the one we actually got. As such, the null is probably a bunch of balderdash.
