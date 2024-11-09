@@ -111,7 +111,7 @@ There are three aspects to it:
 
 -   When we simulate the null distribution of the sample proportion as above, we get a list of 1,000 numbers. To visualize the null distribution, we can simply plot a histogram of these;
 -   to visualize where the actual estimated difference of 4.4% falls in that distribution, we can add a vertical line;
--   The $p$-value is the probability, assuming the null is true, of observing a sample statistic as or more extreme then the one we actually got. So it's the probability under the null of seeing something *even farther* to the right of 4.4%. The fraction of the area shaded red is the $p$-value.
+-   The $p$-value is the probability, assuming the null is true, of observing a sample statistic as or more extreme then the one we actually got. So it's the probability under the null of seeing something *even farther* to the right of 4.4%. The fraction of the area shaded red is the $p$-value. We say `direction = "greater"` because our alternative hypothesis is one-sided.
 
 Inspecting the picture, we see that our estimated difference is pretty much smack in the middle of the null distribution. So the null hypothesis of no difference is very much in play. Evidence is insufficient to reject it.
 
