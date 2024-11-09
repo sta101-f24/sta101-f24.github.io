@@ -42,6 +42,7 @@ An experiment conducted by the MythBusters tested if a person can be subconsciou
 ```{r}
 yawn
 ```
+
 In this case, we are interested in a *one-sided* alternative. We want to know if there is evidence to suggest that proximity to a yawner specifically *increases* your probability of yawning. So we are testing:
 
 $$
@@ -59,6 +60,7 @@ yawn |>
   group_by(group) |>
   mutate(p_hat = n / sum(n))
 ```
+
 This code computes the differences in the yawning proportions:
 
 ```{r}
@@ -67,7 +69,6 @@ obs_stat_yawner <- yawn |>
   calculate(stat = "diff in props", order = c("trmt", "ctrl"))
 obs_stat_yawner
 ```
-
 
 We see that there is *some* positive difference in the proportion of yawners in each group, but how can we tell if it is merely an artifact of random sampling, or if we are actually picking up on a meaningful difference? That is what hypothesis testing is all about.
 
@@ -105,11 +106,12 @@ null_dist_yawner |>
   visualize() +
   shade_p_value(obs_stat = obs_stat_yawner, direction = "greater")
 ```
+
 There are three aspects to it:
 
-- When we simulate the null distribution of the sample proportion as above, we get a list of 1,000 numbers. To visualize the null distribution, we can simply plot a histogram of these;
-- to visualize where the actual estimated difference of 4.4% falls in that distribution, we can add a vertical line;
-- The $p$-value is the probability, assuming the null is true, of observing a sample statistic as or more extreme then the one we actually got. So it's the probability under the null of seeing something *even farther* to the right of 4.4%, or something correspondingly far to the left. The fraction of the area shaded red is the $p$-value.
+-   When we simulate the null distribution of the sample proportion as above, we get a list of 1,000 numbers. To visualize the null distribution, we can simply plot a histogram of these;
+-   to visualize where the actual estimated difference of 4.4% falls in that distribution, we can add a vertical line;
+-   The $p$-value is the probability, assuming the null is true, of observing a sample statistic as or more extreme then the one we actually got. So it's the probability under the null of seeing something *even farther* to the right of 4.4%. The fraction of the area shaded red is the $p$-value.
 
 Inspecting the picture, we see that our estimated difference is pretty much smack in the middle of the null distribution. So the null hypothesis of no difference is very much in play. Evidence is insufficient to reject it.
 
@@ -121,3 +123,5 @@ To quantify that intuition, this code calculates the $p$-value:
 null_dist_yawner |>
   get_p_value(obs_stat = obs_stat_yawner, "greater")
 ```
+
+The interpretation of this number is "if there were in fact no difference between treatment and control, there is a 52.2% chance that we would observe a difference even greater than the one we actually observed when we ran the experiment." This p-value is above every standard discernibility level, and so we fail to reject the null. If the null hypothesis were indeed true, the results we got would not be super surprising, so we cannot rule the null out.
