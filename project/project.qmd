@@ -1,20 +1,21 @@
 ---
-title: "Project 2"
+title: "Final project"
 ---
 
-Team assignments are posted at <https://canvas.duke.edu/courses/4625/files?preview=549493>.
+In this project, you and your teammates will select a data set that you are interested in studying and compose an original data analysis. This will culminate in the submission of two things:
 
-The deliverable for this project (what you will turn in) is a written report and a pre-recorded presentation. See below for more details.
+- a five page written report;
+- a five minute pre-recorded presentation.
 
 # Timeline
 
-[Proposal](#project-proposal-conversation) in lab on Fri, Dec 1
+[Proposal](#project-proposal) due Fri Nov 22 at 5 PM;
 
-[Peer review](#peer-review) in lab on Fri, Dec 8
+[Peer review](#peer-review) due Fri Dec 6 at 5 PM;
 
-[Presentation](#presentation) due Thur, Dec 14 at 5 pm
+[Presentation](#presentation) due Sun Dec 15 at 5 PM;
 
-[Final report](#project-report) due Thur, Dec 14 at 5 pm
+[Final report](#project-report) due Sun Dec 15 at 5 PM.
 
 # Description
 
@@ -29,30 +30,32 @@ The goal is not to do an exhaustive data analysis i.e., do not calculate every s
 The project is very open ended. You should
 
 -   create some kind of compelling visualization(s) of this data, and
--   perform statistical inference and/or fit a model or descriptive or predictive purposes
+-   perform statistical inference and/or fit a model for descriptive or predictive purposes
 
 There is no limit on what tools or packages you may use but sticking to packages we learned in class is required. You do not need to visualize all of the data at once. A single high-quality visualization will receive a much higher grade than a large number of poor-quality visualizations. Also pay attention to your presentation. Neatness, coherency, and clarity will count. All analyses must be done in RStudio, using R, and all components of the project **must be reproducible** (with the exception of the presentation).
 
-You will work on the project with your lab teams.
-
 The four primary deliverables for the final project are
 
-1.  A project **proposal conversation** with your TA in your lab section on Friday, December 1.
-2.  Formal **peer review** on another team's project in your lab section on Friday, December 8.
-3.  A reproducible project **writeup** of your analysis submitted on Gradescope by Thursday, December 14.
-4.  A **presentation video** submitted on Canvas by Thursday, December 14.
+1.  A project **proposal** due Friday, November 22.
+2.  Formal **peer review** of another team's project due Friday, December 6;
+3.  A reproducible project **writeup** of your analysis submitted in Gradescope by Sunday, December 15;
+4.  A **presentation video** submitted on Canvas by Sunday, December 15.
 
-# Proposal conversation (5 pts) {#project-proposal-conversation}
+# Proposal (6 pts) {#project-proposal}
 
-There are two main purposes of the project proposal conversation with your TA:
+No later than Friday November 22 at 5PM, one member of your team will upload to Gradescope a short project proposal document where you describe two candidate data sets to work with. For each data set, do the following:
 
--   To help you think about the project thoroughly before you go too far down a path and form an analysis plan that is feasible and that will allow you to be successful for this project.
--   To ensure all members of the team are on the same page about the status of the project and the remaining work to be done and how it will be distributed among yourselves.
+1. describe the data -- where they come from, how they were collected, what variables are included, etc;
+2. ask a research question -- what question are you trying to answer with these data? Why is that question important? Why does it interest you?
+3. sketch a research plan -- describe what you think you will do with these data in order to answer your question. What sorts of visualizations will you create? What models might you fit? What summary statistics might you look at? This sketch does not need to be extensive or comprehensive, but it needs to demonstrate that you have given some thought to how you will use the tools from our course to actually analyze the data.
 
-To prepare for this conversation:
+You are writing a proposal for two data sets, and for each data set you are performing three tasks, so the proposal part of the final project earns you six points, one for each task. Each task will be graded on a 0.0 - 0.5 - 1.0 scale according to completeness. 
 
--   Make sure all team members are present in lab on Friday, December 1.
--   Identify a data set and a research question for the final project. If you're unsure where to find data, you can use the list of potential data sources in the [Resources for datasets](#resources) section as a starting point. It may also help to think of topics you're interested in investigating and find data sets on those topics.
+## Proposal feedback
+
+We will review your project proposals and give you feedback before Thanksgiving recess. We will comment about feasibility of each proposal, and gently nudge you in a particular direction. We will also advise you about technical hurdles we anticipate that you will encounter, and give you tools for tackling them. This may involve coaching you on how to implement computational or statistical methods that go beyond the things we teach in this course. 
+
+Based on this feedback, you will make the final decision about which data set to use, and you will proceed to complete the remainder of your project.
 
 ## Criteria for datasets
 
@@ -79,58 +82,47 @@ If you set your hearts on a dataset that has fewer observations or variables tha
 
 You can find data wherever you like, but here are some recommendations to get you started. You shouldn't feel constrained to datasets that are already in a tidy format, you can start with data that needs cleaning and tidying, scrape data off the web, or collect your own data.
 
--   [Awesome public datasets](https://github.com/awesomedata/awesome-public-datasets)
--   [Bikeshare data portal](https://www.bikeshare.com/data/)
--   [CDC](https://www.cdc.gov/datastatistics/)
--   [Data.gov](https://www.data.gov/)
--   [Data is Plural](https://docs.google.com/spreadsheets/d/1wZhPLMCHKJvwOkP4juclhjFgqIY8fQFMemwKL2c64vk/edit#gid=0)
--   [Durham Open Data Portal](https://live-durhamnc.opendata.arcgis.com/)
--   [Edinburgh Open Data](https://edinburghopendata.info/)
--   [Election Studies](https://electionstudies.org//)
--   [European Statistics](https://ec.europa.eu/eurostat/)
--   [CORGIS: The Collection of Really Great, Interesting, Situated Datasets](https://think.cs.vt.edu/corgis/csv/)
--   [General Social Survey](https://gss.norc.org/)
+-   [UNICEF Data](https://data.unicef.org/)
+-   [Youth Risk Behavior Surveillance System (YRBSS)](https://chronicdata.cdc.gov/Youth-Risk-Behaviors/DASH-Youth-Risk-Behavior-Surveillance-System-YRBSS/q6p7-56au)
 -   [Google Dataset Search](https://datasetsearch.research.google.com/)
+-   [Data is Plural](https://docs.google.com/spreadsheets/d/1wZhPLMCHKJvwOkP4juclhjFgqIY8fQFMemwKL2c64vk/edit#gid=0)
+-   [Election Studies](https://electionstudies.org//)
+-   [US Census Data](https://www.census.gov/data.html)
+-   [World Bank Data](https://datacatalog.worldbank.org/home)
+-   [CDC](https://www.cdc.gov/datastatistics/)
+-   [European Statistics](https://ec.europa.eu/eurostat/)
+-   [CORGIS: The Collection of Really ](https://think.cs.vt.edu/corgis/csv/)[Great](https://corgis-edu.github.io/corgis/csv/)[, Interesting, Situated Datasets](https://think.cs.vt.edu/corgis/csv/)
+-   [General Social Survey](https://gss.norc.org/)
 -   [Harvard Dataverse](https://dataverse.harvard.edu/)
 -   [International Monetary Fund](https://data.imf.org/?sk=388DFA60-1D26-4ADE-B505-A05A558D9A42&sId=1479329328660)
 -   [IPUMS survey data from around the world](https://ipums.org/)
 -   [Los Angeles Open Data](https://data.lacity.org/browse)
--   [National Crime Victimization Survey](https://www.icpsr.umich.edu/web/NACJD/studies/38090/summary)
 -   [NHS Scotland Open Data](https://www.opendata.nhs.scot/)
 -   [NYC OpenData](https://opendata.cityofnewyork.us/)
 -   [Open access to Scotland's official statistics](https://statistics.gov.scot/home)
 -   [Pew Research](https://www.pewresearch.org/download-datasets/)
--   [PRISM Data Archive Project](https://www.icpsr.umich.edu/icpsrweb/content/ICPSR/fenway.html)
+-   [PRISM Data Archive Project](https://www.icpsr.umich.edu/web/pages/index.html)
+-   [Responsible Datasets in Context](https://www.responsible-datasets-in-context.com/datasets.html)
 -   [Statistics Canada](https://www.statcan.gc.ca/en/start)
--   [The National Bureau of Economic Research](https://www.nber.org/research/data?page=1&perPage=50)
 -   [TidyTuesday](https://github.com/rfordatascience/tidytuesday)
--   [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/index.php)
+-   [The National Bureau of Economic Research](https://www.nber.org/research/data?page=1&perPage=50)
+-   [UCI Machine Learning Repository](https://archive.ics.uci.edu)
 -   [UK Government Data](https://data.gov.uk/)
--   [UNICEF Data](https://data.unicef.org/)
 -   [United Nations Data](http://data.un.org/)
 -   [United Nations Statistics Division](https://unstats.un.org/UNSDWebsite/)
--   [US Census Data](https://www.census.gov/data.html)
 -   [US Government Data](https://sctyner.github.io/static/presentations/Misc/GraphicsGroupISU/2018-11-16-us-govt-data.html)
--   [World Bank Data](https://datacatalog.worldbank.org/home)
--   [Youth Risk Behavior Surveillance System (YRBSS)](https://chronicdata.cdc.gov/Youth-Risk-Behaviors/DASH-Youth-Risk-Behavior-Surveillance-System-YRBSS/q6p7-56au)
-
-## Proposal conversation grading
-
-Each component will be graded as follows:
-
--   **Meets expectations (full credit)**: All team members are present and contribute to the conversation. The team has a dataset and research question identified. There is a plan for completing the project as envisioned.
-
--   **Close to expectations (half credit)**: Not all team members are present and contribute to the conversation (without any excused absences). The team does not have a dataset and/or research question identified. The plan for completing the project as envisioned is not well designed.
-
--   **Does not meet expectations (no credit)**: Not all team members are present and contribute to the conversation (without any excused absences). The team does not have a dataset or research question identified. There is no plan for completing the project as envisioned.
-
-Even if you earn full credit, it may not mean that your proposal is perfect.
+-   [FRED Economic Data](https://fred.stlouisfed.org/)
+-   [Data.gov](https://www.data.gov/)
+-   [Awesome public datasets](https://github.com/awesomedata/awesome-public-datasets)
+-   [Durham Open Data Portal](https://live-durhamnc.opendata.arcgis.com/)
+-   [Edinburgh Open Data](https://edinburghopendata.info/)
+-   [FiveThirtyEight](https://data.fivethirtyeight.com/)
 
 # Peer review (5 pts) {#peer-review}
 
 Critically reviewing others' work is a crucial part of the scientific process, and STA 101 is no exception. You will be assigned one team's project to review. This feedback is intended to help you create a high quality final project, as well as give you experience reading and constructively critiquing the work of others.
 
-At the beginning of the peer feedback process, you will be asked to email your project (PDF of your report) to one team. The code should be visible in the PDF you share with your reviewers. Then, you will work with your team to read and provide feedback in the form of an email (with your TA cc'ed) to the team whose work you're reviewing, answering the following questions:
+At the beginning of the peer feedback process, you will be asked to email your project (PDF of your report) to one team. The code should be visible in the PDF you share with your reviewers. Then, you will work with your team to read and provide feedback in the form of an email (with the instructor cc'ed) to the team whose work you're reviewing, answering the following questions:
 
 -   Peer review by: \[NAME OF TEAM DOING THE REVIEW\]
 -   Names of team members that participated in this review: \[FULL NAMES OF TEAM MEMBERS PARTICIPATING IN THE REVIEW DURING THE LAB SESSION\]
@@ -147,7 +139,11 @@ Peer reviews will be graded on the extent to which it comprehensively and constr
 
 # Report (50 pts) {#project-report}
 
-Your report must be written using Quarto. Your written report should not exceed five pages inclusive of all tables and figures. You can access a template for that report in [Posit Cloud](https://posit.cloud/spaces/405361) in the project titled `project-2`.
+Your report must be written using Quarto. Your written report should not exceed five pages inclusive of all tables and figures. After the proposal phase of the project, we will provide you with a template document for completing this.
+
+All team members must contribute to the report.
+
+<!--
 
 To begin, edit the YAML at the top to specify a project title, your team name (get creative!), and the names of each group member, e.g.,
 
@@ -158,9 +154,10 @@ author: "The Last Rbenders: Aang, Katara, Sokka, Momo"
 ---
 ```
 
-All team members must contribute to the report.
 
 Before you finalize your report, make sure the printing of code chunks is turned off by setting `echo` to `false` in your document YAML.
+
+-->
 
 ## Components
 
@@ -254,21 +251,21 @@ You can also use Quarto to make your slides! While we won't be covering making s
 
 Presentations will be submitted as a pre-recorded video by the due date.
 
-For recording, you may use can use any platform that works best for your group to record your presentation. Below are a few resources on recording videos:
+For recording, you may use any platform that works best for your group to record your presentation. Below are a few resources on recording videos:
 
 -   [Recording presentations in Zoom](https://kb.siue.edu/61721)
 -   [Apple Quicktime for screen recording](https://support.apple.com/en-gb/guide/quicktime-player/qtp97b08e666/mac)
 -   [Windows 10 built-in screen recording functionality](https://www.youtube.com/watch?v=OfPbr1mRDuo)
 -   [Kap for screen recording](https://getkap.co/)
 
-Once your video is ready, upload the video to Warpwire or another video platform (e.g., YouTube), then add a link to your video at <https://docs.google.com/spreadsheets/d/1mGLkIqhtUEylFR4Ovlpuysv4xWCz6L4FdWqFGmjUKPw/edit?usp=sharing>.
+Once your video is ready, upload the video to Warpwire in Canvas or another video platform (e.g., YouTube). To upload your video to Warpwire:
 
-To upload your video to Warpwire:
-
--   Click the [Warpwire tab](https://canvas.duke.edu/courses/4625/external_tools/214) in the course Canvas site.
+-   Click the Warpwire tab in the course Canvas site.
 -   Click the "+" and select "Upload files".
 -   Locate the video on your computer and click to upload.
--   Once you've uploaded the video to Warpwire, click to share the video and copy the video's URL. You will need this when you post the video in the [Project 2 spreadsheet](https://docs.google.com/spreadsheets/d/1mGLkIqhtUEylFR4Ovlpuysv4xWCz6L4FdWqFGmjUKPw/edit?usp=sharing).
+-   Once you've uploaded the video to Warpwire, click to share the video and copy the video's URL.
+
+Once you have URL for the video (from YouTube, Warpwire, whatever), you will send it to us in a format TBD.
 
 # Teamwork (10 pts)
 
@@ -282,8 +279,8 @@ The grade breakdown is as follows:
 
 | Total                             | 100 pts |
 |-----------------------------------|---------|
-| **Project proposal conversation** | 5 pts   |
-| **Peer review**                   | 5 pts   |
+| **Project proposal conversation** | 6 pts   |
+| **Peer review**                   | 4 pts   |
 | **Final report**                  | 50 pts  |
 | **Presentation**                  | 30 pts  |
 | **Teamwork**                      | 10 pts  |
