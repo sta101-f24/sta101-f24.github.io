@@ -2177,7 +2177,7 @@
     "href": "project/project.html#proposal-feedback",
     "title": "Final project",
     "section": "Proposal feedback",
-    "text": "Proposal feedback\nWe will review your project proposals and give you feedback before Thanksgiving recess. We will comment about feasibility of each proposal, and gently nudge you in a particular direction. We will also advise you about technical hurdles we anticipate that you will encounter, and give you tools for tackling them. This may involve coaching you on how to implement computational or statistical methods that go beyond the things we teach in this course.\nBased on this feedback, you will make the final decision about which data set to use, and you will proceed to complete the remainder of your project."
+    "text": "Proposal feedback\nWe will review your project proposals and give you feedback before Thanksgiving recess. We will comment about feasibility of each proposal, and gently nudge you in a particular direction. We will also advise you about technical hurdles we anticipate that you will encounter, and give you tools for tackling them. This may involve coaching you on how to implement computational or statistical methods that go beyond the things we teach in this course, cleaning your data, loading an excel sheet into R, etc.\nBased on this feedback, you will make the final decision about which data set to use, and you will proceed to complete the remainder of your project."
   },
   {
     "objectID": "project/project.html#criteria-for-datasets",
