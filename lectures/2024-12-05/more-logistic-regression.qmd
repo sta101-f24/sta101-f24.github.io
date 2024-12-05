@@ -534,13 +534,20 @@ Q: How do we decide if a logistic regression model is “good”?
 
 A: Look at the error rates of its predictions. There are two kinds...
 
-INSERT TABLE HERE!
+![](images/confusion-matrix.png)
 
 ## Too much vocabulary
 
-TABLE WITH ALL THE JARGON
+| Truth | Prediction | Rate           | Equivalently... | Want? |
+|-------|------------|----------------|-----------------|-------|
+| 0     | 0          | True negative  | specificity     | High  |
+| 0     | 1          | False positive | 1 - specificity | Low   |
+| 1     | 0          | False negative | 1 - sensitivity | Low   |
+| 1     | 1          | True positive  | sensitivity     | High  |
 
 ## Trading off between the errors
+
+When you change the classification threshold, you change the error rates.
 
 ## ROC curve
 
@@ -550,7 +557,9 @@ The **receiver operating characteristic (ROC) curve** allows to assess the model
 
 ## ROC curve {.smaller}
 
-![](images/roc-curve-annotated.png) \## ROC curve
+![](images/roc-curve-annotated.png)
+
+## ROC curve
 
 ![](images/roc-curve.png)
 

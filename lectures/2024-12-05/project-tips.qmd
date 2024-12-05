@@ -4,8 +4,6 @@ format: revealjs
 auto-stretch: false
 ---
 
-# Warm up
-
 ## Announcements {.smaller}
 
 - Check Lab 7 and Take-Home 2 and submit regrade requests;
@@ -82,8 +80,6 @@ b.  Instant reveal
 c.  Our approach doesn't fit either of these paradigms
 
 d.  No idea
-
-Submit your answer on Canvas for 12-06 Check-in (access code: `___`)
 :::
 
 # Designing effective visualizations
