@@ -189,33 +189,6 @@ $$
 
 Ethical concerns?
 
-## Example: will they re-offend? {.smaller}
-
-$$
-\mathbf{x}: \text{info about a criminal suspect and their case.}
-$$
-
-::: columns
-::: {.column width="50%"}
-![](images/machine-bias-petty-theft-1.png){fig-align="center" width="300" height="250"}
-:::
-
-::: {.column width="50%"}
-![](images/machine-bias-drug-posession-1.png){fig-align="center" width="300" height="250"}
-:::
-:::
-
-$$
-y
-= 
-\begin{cases}
-1 & \text{suspect is at risk of re-offending pre-trial}\\
-0 & \text{suspect is safe}
-\end{cases}
-$$
-
-Ethical concerns?
-
 ## How do we model this type of data?
 
 ```{r}
