@@ -542,7 +542,6 @@ TABLE WITH ALL THE JARGON
 
 ## Trading off between the errors
 
-
 ## ROC curve
 
 The **receiver operating characteristic (ROC) curve** allows to assess the model performance across a range of thresholds.
@@ -551,10 +550,9 @@ The **receiver operating characteristic (ROC) curve** allows to assess the model
 
 ## ROC curve {.smaller}
 
-![](images/roc-curve-annotated.png)
-## ROC curve
+![](images/roc-curve-annotated.png) \## ROC curve
 
 ![](images/roc-curve.png)
 
-- The more "up and to the left," the better;
-- Up-and-to-the-left-ness can be quantified with the area under the ROC curve.
+-   The more "up and to the left," the better;
+-   Up-and-to-the-left-ness can be quantified with the area under the ROC curve.
