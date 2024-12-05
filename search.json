@@ -258,7 +258,14 @@
     "href": "lectures/2024-12-05/more-logistic-regression.html#roc-curve-1",
     "title": "Model selection for logistic regression",
     "section": "ROC curve",
-    "text": "ROC curve\n ## ROC curve\n\n\nThe more “up and to the left,” the better;\nUp-and-to-the-left-ness can be quantified with the area under the ROC curve."
+    "text": "ROC curve"
+  },
+  {
+    "objectID": "lectures/2024-12-05/more-logistic-regression.html#roc-curve-2",
+    "href": "lectures/2024-12-05/more-logistic-regression.html#roc-curve-2",
+    "title": "Model selection for logistic regression",
+    "section": "ROC curve",
+    "text": "ROC curve\n\n\nThe more “up and to the left,” the better;\nUp-and-to-the-left-ness can be quantified with the area under the ROC curve."
   },
   {
     "objectID": "computing/computing-normal.html",
@@ -3046,7 +3053,14 @@
     "href": "lectures/2024-12-05/project-tips.html#announcements",
     "title": "Telling a data story",
     "section": "Announcements",
-    "text": "Announcements\n\nCheck grades on Canvas, if anything seems off let me know asap. Your final grade will be calculated based on what’s on Canvas. No grades will be changed after the project is due.\nMy office hours next week by appointment.\nDon’t forget to fill out course and TA evaluations.\nProject 2:\n\nFriday - Peer review. You must be in your lab section to participate in the peer review (and be eligible for the points for it).\nNext Thursday - Video (upload to YouTube/Warpwire/etc. and share link on Google sheet) + writeup (on Gradescope) due."
+    "text": "Announcements\n\nCheck Lab 7 and Take-Home 2 and submit regrade requests;\nCourse and TA evaluations;\nI will hold office hours every day next week (M - F). When?\nProject reminders…\n\nWe’re skipping the peer review. +4 all around!\nFor technical help on outside material, Ed is best at first;\nFinal paper in the ballpark of five pages. Code should not appear!\nVideo: hop on a Zoom call and record it live;\nDue 5PM on 12/15. Grades due 48 hours later."
+  },
+  {
+    "objectID": "lectures/2024-12-05/project-tips.html#where-to-now",
+    "href": "lectures/2024-12-05/project-tips.html#where-to-now",
+    "title": "Telling a data story",
+    "section": "Where to now?",
+    "text": "Where to now?\n\nSTA 210 Regression Analysis: similar technical level, delivery style, and coding toolkit as 101;\nSTA 240 Probability for Inference: calculus-based introduction to probability and the mathematical theory of statistics."
   },
   {
     "objectID": "lectures/2024-12-05/project-tips.html#setup",
