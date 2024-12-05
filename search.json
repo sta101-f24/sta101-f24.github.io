@@ -44,193 +44,221 @@
     ]
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#announcements",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#announcements",
-    "title": "Telling a data story",
-    "section": "Announcements",
-    "text": "Announcements\n\nCheck grades on Canvas, if anything seems off let me know asap. Your final grade will be calculated based on what’s on Canvas. No grades will be changed after the project is due.\nMy office hours next week by appointment.\nDon’t forget to fill out course and TA evaluations.\nProject 2:\n\nFriday - Peer review. You must be in your lab section to participate in the peer review (and be eligible for the points for it).\nNext Thursday - Video (upload to YouTube/Warpwire/etc. and share link on Google sheet) + writeup (on Gradescope) due."
+    "objectID": "lectures/2024-12-05/more-logistic-regression.html#when-last-we-left-our-heros",
+    "href": "lectures/2024-12-05/more-logistic-regression.html#when-last-we-left-our-heros",
+    "title": "Model selection for logistic regression",
+    "section": "When last we left our heros…",
+    "text": "When last we left our heros…\nWe have been studying regression:\n\nWhat combinations of data types have we seen?\nWhat did the picture look like?"
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#setup",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#setup",
-    "title": "Telling a data story",
-    "section": "Setup",
-    "text": "Setup\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(ggrepel)\nlibrary(ggthemes)\nlibrary(palmerpenguins)"
+    "objectID": "lectures/2024-12-05/more-logistic-regression.html#recap-simple-linear-regression",
+    "href": "lectures/2024-12-05/more-logistic-regression.html#recap-simple-linear-regression",
+    "title": "Model selection for logistic regression",
+    "section": "Recap: simple linear regression",
+    "text": "Recap: simple linear regression\nNumerical response and one numerical predictor:"
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#multiple-ways-of-telling-a-story",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#multiple-ways-of-telling-a-story",
-    "title": "Telling a data story",
-    "section": "Multiple ways of telling a story",
-    "text": "Multiple ways of telling a story\n\nSequential reveal: Motivation, then resolution\nInstant reveal: Resolution, and hidden in it motivation"
+    "objectID": "lectures/2024-12-05/more-logistic-regression.html#recap-simple-linear-regression-1",
+    "href": "lectures/2024-12-05/more-logistic-regression.html#recap-simple-linear-regression-1",
+    "title": "Model selection for logistic regression",
+    "section": "Recap: simple linear regression",
+    "text": "Recap: simple linear regression\nNumerical response and one categorical predictor (two levels):"
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#simplicity-vs.-complexity",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#simplicity-vs.-complexity",
-    "title": "Telling a data story",
-    "section": "Simplicity vs. complexity",
-    "text": "Simplicity vs. complexity\n\nWhen you’re trying to show too much data at once you may end up not showing anything.\n\n\nNever assume your audience can rapidly process complex visual displays\nDon’t add variables to your plot that are tangential to your story\nDon’t jump straight to a highly complex figure; first show an easily digestible subset (e.g., show one facet first)\nAim for memorable, but clear\n\n\n\n\nProject note: Make sure to leave time to iterate on your plots after you practice your presentation. If certain plots or outputs are getting too wordy to explain, take time to simplify them!"
+    "objectID": "lectures/2024-12-05/more-logistic-regression.html#recap-multiple-linear-regression",
+    "href": "lectures/2024-12-05/more-logistic-regression.html#recap-multiple-linear-regression",
+    "title": "Model selection for logistic regression",
+    "section": "Recap: multiple linear regression",
+    "text": "Recap: multiple linear regression\nNumerical response; numerical and categorical predictors:"
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#consistency-vs.-repetitiveness",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#consistency-vs.-repetitiveness",
-    "title": "Telling a data story",
-    "section": "Consistency vs. repetitiveness",
-    "text": "Consistency vs. repetitiveness\n\nBe consistent but don’t be repetitive.\n\n\nUse consistent features throughout plots (e.g., same color represents same level on all plots)\nAim to use a different type of summary or visualization for each distinct analysis\n\n\n\n\nProject note: If possible, ask a friend who is not in the class to listen to your presentation and then ask them what they remember. Then, ask yourself: is that what you wanted them to remember?"
+    "objectID": "lectures/2024-12-05/more-logistic-regression.html#today-a-binary-response",
+    "href": "lectures/2024-12-05/more-logistic-regression.html#today-a-binary-response",
+    "title": "Model selection for logistic regression",
+    "section": "Today: a binary response",
+    "text": "Today: a binary response\n\\[\ny =\n\\begin{cases}\n1 & &&\\text{eg. Yes, Win, True, Heads, Success}\\\\\n0 & &&\\text{eg. No, Lose, False, Tails, Failure}.\n\\end{cases}\n\\]"
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#your-project-plans",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#your-project-plans",
-    "title": "Telling a data story",
-    "section": "Your project plans",
-    "text": "Your project plans\n\nHow are you telling your story?\n\nSequential reveal\nInstant reveal\nOur approach doesn’t fit either of these paradigms\nNo idea\n\nSubmit your answer on Canvas for 12-06 Check-in (access code: ___)"
+    "objectID": "lectures/2024-12-05/more-logistic-regression.html#who-cares",
+    "href": "lectures/2024-12-05/more-logistic-regression.html#who-cares",
+    "title": "Model selection for logistic regression",
+    "section": "Who cares?",
+    "text": "Who cares?\nIf we can model the relationship between predictors (\\(x\\)) and a binary response (\\(y\\)), we can use the model to do a special kind of prediction called classification."
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#data",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#data",
-    "title": "Telling a data story",
-    "section": "Data",
-    "text": "Data\n\n\nd &lt;- tribble(\n  ~category,                     ~value,\n  \"Cutting tools\"                , 0.03,\n  \"Buildings and administration\" , 0.22,\n  \"Labor\"                        , 0.31,\n  \"Machinery\"                    , 0.27,\n  \"Workplace materials\"          , 0.17\n)\nd\n\n\n# A tibble: 5 × 2\n  category                     value\n  &lt;chr&gt;                        &lt;dbl&gt;\n1 Cutting tools                 0.03\n2 Buildings and administration  0.22\n3 Labor                         0.31\n4 Machinery                     0.27\n5 Workplace materials           0.17"
+    "objectID": "lectures/2024-12-05/more-logistic-regression.html#example-is-the-e-mail-spam-or-not",
+    "href": "lectures/2024-12-05/more-logistic-regression.html#example-is-the-e-mail-spam-or-not",
+    "title": "Model selection for logistic regression",
+    "section": "Example: is the e-mail spam or not?",
+    "text": "Example: is the e-mail spam or not?\n\\[\n\\mathbf{x}: \\text{word and character counts in an e-mail.}\n\\]\n\n\\[\ny\n=\n\\begin{cases}\n1 & \\text{it's spam}\\\\\n0 & \\text{it's legit}\n\\end{cases}\n\\]\nEthical concerns?"
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#keep-it-simple",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#keep-it-simple",
-    "title": "Telling a data story",
-    "section": "Keep it simple",
-    "text": "Keep it simple"
+    "objectID": "lectures/2024-12-05/more-logistic-regression.html#example-is-it-cancer-or-not",
+    "href": "lectures/2024-12-05/more-logistic-regression.html#example-is-it-cancer-or-not",
+    "title": "Model selection for logistic regression",
+    "section": "Example: is it cancer or not?",
+    "text": "Example: is it cancer or not?\n\\[\n\\mathbf{x}: \\text{features in a medical image.}\n\\]\n\n\\[\ny\n=\n\\begin{cases}\n1 & \\text{it's cancer}\\\\\n0 & \\text{it's healthy}\n\\end{cases}\n\\]\nEthical concerns?"
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#judging-relative-area",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#judging-relative-area",
-    "title": "Telling a data story",
-    "section": "Judging relative area",
-    "text": "Judging relative area\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFrom Data to Viz caveat collection - The issue with pie chart"
+    "objectID": "lectures/2024-12-05/more-logistic-regression.html#example-will-they-default",
+    "href": "lectures/2024-12-05/more-logistic-regression.html#example-will-they-default",
+    "title": "Model selection for logistic regression",
+    "section": "Example: will they default?",
+    "text": "Example: will they default?\n\\[\n\\mathbf{x}: \\text{financial and demographic info about a loan applicant.}\n\\]\n\n\\[\ny\n=\n\\begin{cases}\n1 & \\text{applicant is at risk of defaulting on loan}\\\\\n0 & \\text{applicant is safe}\n\\end{cases}\n\\]\nEthical concerns?"
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#use-color-to-draw-attention",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#use-color-to-draw-attention",
-    "title": "Telling a data story",
-    "section": "Use color to draw attention",
-    "text": "Use color to draw attention"
+    "objectID": "lectures/2024-12-05/more-logistic-regression.html#example-will-they-re-offend",
+    "href": "lectures/2024-12-05/more-logistic-regression.html#example-will-they-re-offend",
+    "title": "Model selection for logistic regression",
+    "section": "Example: will they re-offend?",
+    "text": "Example: will they re-offend?\n\\[\n\\mathbf{x}: \\text{info about a criminal suspect and their case.}\n\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\[\ny\n=\n\\begin{cases}\n1 & \\text{suspect is at risk of re-offending pre-trial}\\\\\n0 & \\text{suspect is safe}\n\\end{cases}\n\\]\nEthical concerns?"
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#play-with-themes-for-a-non-standard-look",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#play-with-themes-for-a-non-standard-look",
-    "title": "Telling a data story",
-    "section": "Play with themes for a non-standard look",
-    "text": "Play with themes for a non-standard look"
+    "objectID": "lectures/2024-12-05/more-logistic-regression.html#how-do-we-model-this-type-of-data",
+    "href": "lectures/2024-12-05/more-logistic-regression.html#how-do-we-model-this-type-of-data",
+    "title": "Model selection for logistic regression",
+    "section": "How do we model this type of data?",
+    "text": "How do we model this type of data?"
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#go-beyond-ggplot2-themes-ggthemes",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#go-beyond-ggplot2-themes-ggthemes",
-    "title": "Telling a data story",
-    "section": "Go beyond ggplot2 themes – ggthemes",
-    "text": "Go beyond ggplot2 themes – ggthemes"
+    "objectID": "lectures/2024-12-05/more-logistic-regression.html#straight-line-of-best-fit-is-a-little-silly",
+    "href": "lectures/2024-12-05/more-logistic-regression.html#straight-line-of-best-fit-is-a-little-silly",
+    "title": "Model selection for logistic regression",
+    "section": "Straight line of best fit is a little silly",
+    "text": "Straight line of best fit is a little silly"
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#tell-a-story",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#tell-a-story",
-    "title": "Telling a data story",
-    "section": "Tell a story",
-    "text": "Tell a story\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit: Angela Zoss and Eric Monson, Duke DVS"
+    "objectID": "lectures/2024-12-05/more-logistic-regression.html#instead-s-curve-of-best-fit",
+    "href": "lectures/2024-12-05/more-logistic-regression.html#instead-s-curve-of-best-fit",
+    "title": "Model selection for logistic regression",
+    "section": "Instead: S-curve of best fit",
+    "text": "Instead: S-curve of best fit\nInstead of modeling \\(y\\) directly, we model the probability that \\(y=1\\):\n\n\n“Given new email, what’s the probability that it’s spam?’’\n“Given new image, what’s the probability that it’s cancer?’’\n“Given new loan application, what’s the probability that they default?’’"
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#leave-out-non-story-details",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#leave-out-non-story-details",
-    "title": "Telling a data story",
-    "section": "Leave out non-story details",
-    "text": "Leave out non-story details\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit: Angela Zoss and Eric Monson, Duke DVS"
+    "objectID": "lectures/2024-12-05/more-logistic-regression.html#why-dont-we-model-y-directly",
+    "href": "lectures/2024-12-05/more-logistic-regression.html#why-dont-we-model-y-directly",
+    "title": "Model selection for logistic regression",
+    "section": "Why don’t we model y directly?",
+    "text": "Why don’t we model y directly?\n\nRecall regression with a numerical response:\n\nOur models do not output guarantees for \\(y\\), they output predictions that describe behavior on average;\n\nSimilar when modeling a binary response:\n\nOur models cannot directly guarantee that \\(y\\) will be zero or one. The correct analog to “on average” for a 0/1 response is “what’s the probability?”"
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#order-matters",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#order-matters",
-    "title": "Telling a data story",
-    "section": "Order matters",
-    "text": "Order matters\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit: Angela Zoss and Eric Monson, Duke DVS"
+    "objectID": "lectures/2024-12-05/more-logistic-regression.html#so-what-is-this-s-curve-anyway",
+    "href": "lectures/2024-12-05/more-logistic-regression.html#so-what-is-this-s-curve-anyway",
+    "title": "Model selection for logistic regression",
+    "section": "So, what is this S-curve, anyway?",
+    "text": "So, what is this S-curve, anyway?\nIt’s the logistic function:\n\\[\n\\text{Prob}(y = 1)\n=\n\\frac{e^{\\beta_0+\\beta_1x}}{1+e^{\\beta_0+\\beta_1x}}.\n\\]\nIf you set p = Prob(y = 1) and do some algebra, you get the simple linear model for the log-odds:\n\\[\n\\log\\left(\\frac{p}{1-p}\\right)\n=\n\\beta_0+\\beta_1x.\n\\]\nThis is called the logistic regression model."
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#clearly-indicate-missing-data",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#clearly-indicate-missing-data",
-    "title": "Telling a data story",
-    "section": "Clearly indicate missing data",
-    "text": "Clearly indicate missing data\n\n\n\n\n\n\n\nhttp://ivi.sagepub.com/content/10/4/271, Angela Zoss and Eric Monson, Duke DVS"
+    "objectID": "lectures/2024-12-05/more-logistic-regression.html#log-odds",
+    "href": "lectures/2024-12-05/more-logistic-regression.html#log-odds",
+    "title": "Model selection for logistic regression",
+    "section": "Log-odds?",
+    "text": "Log-odds?\n\np = Prob(y = 1) is a probability. A number between 0 and 1;\np / (1 - p) is the odds. A number between 0 and \\(\\infty\\);\n\n“The odds of this lecture going well are 10 to 1.”\n\nThe log odds log(p / (1 - p)) is a number between \\(-\\infty\\) and \\(\\infty\\), which is suitable for the linear model."
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#reduce-cognitive-load",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#reduce-cognitive-load",
-    "title": "Telling a data story",
-    "section": "Reduce cognitive load",
-    "text": "Reduce cognitive load\n\n\n\n\n\n\n\nhttp://www.storytellingwithdata.com/2012/09/some-finer-points-of-data-visualization.html"
+    "objectID": "lectures/2024-12-05/more-logistic-regression.html#logistic-regression",
+    "href": "lectures/2024-12-05/more-logistic-regression.html#logistic-regression",
+    "title": "Model selection for logistic regression",
+    "section": "Logistic regression",
+    "text": "Logistic regression\n\\[\n\\log\\left(\\frac{p}{1-p}\\right)\n=\n\\beta_0+\\beta_1x.\n\\]\n\nThe logit function log(p / (1-p)) is an example of a link function that transforms the linear model to have an appropriate range;\nThis is an example of a generalized linear model;"
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#use-descriptive-titles",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#use-descriptive-titles",
-    "title": "Telling a data story",
-    "section": "Use descriptive titles",
-    "text": "Use descriptive titles\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit: Angela Zoss and Eric Monson, Duke DVS"
+    "objectID": "lectures/2024-12-05/more-logistic-regression.html#estimation",
+    "href": "lectures/2024-12-05/more-logistic-regression.html#estimation",
+    "title": "Model selection for logistic regression",
+    "section": "Estimation",
+    "text": "Estimation\n\nWe estimate the parameters \\(\\beta_0,\\,\\beta_1\\) using maximum likelihood (don’t worry about it) to get the “best fitting” S-curve;\nThe fitted model is\n\n\\[\n\\log\\left(\\frac{\\widehat{p}}{1-\\widehat{p}}\\right)\n=\nb_0+b_1x.\n\\]"
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#annotate-figures",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#annotate-figures",
-    "title": "Telling a data story",
-    "section": "Annotate figures",
-    "text": "Annotate figures\n\n\n\n\n\n\n\nhttps://bl.ocks.org/susielu/23dc3082669ee026c552b85081d90976"
+    "objectID": "lectures/2024-12-05/more-logistic-regression.html#logistic-regression---classification",
+    "href": "lectures/2024-12-05/more-logistic-regression.html#logistic-regression---classification",
+    "title": "Model selection for logistic regression",
+    "section": "Logistic regression -> classification?",
+    "text": "Logistic regression -&gt; classification?"
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#sample-plots",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#sample-plots",
-    "title": "Telling a data story",
-    "section": "Sample plots",
-    "text": "Sample plots\n\np_hist &lt;- ggplot(mtcars, aes(x = mpg)) +\n  geom_histogram(binwidth = 2)\n\np_text &lt;- mtcars |&gt;\n  rownames_to_column() |&gt;\n  ggplot(aes(x = disp, y = mpg)) +\n  geom_text_repel(aes(label = rowname)) +\n  coord_cartesian(clip = \"off\")"
+    "objectID": "lectures/2024-12-05/more-logistic-regression.html#step-1-pick-a-threshold",
+    "href": "lectures/2024-12-05/more-logistic-regression.html#step-1-pick-a-threshold",
+    "title": "Model selection for logistic regression",
+    "section": "Step 1: pick a threshold",
+    "text": "Step 1: pick a threshold\nSelect a number \\(0 &lt; p^* &lt; 1\\):\n\n\nif \\(\\text{Prob}(y=1)\\leq p^*\\), then predict \\(\\widehat{y}=0\\);\nif \\(\\text{Prob}(y=1)&gt; p^*\\), then predict \\(\\widehat{y}=1\\)."
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#small-fig-width",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#small-fig-width",
-    "title": "Telling a data story",
-    "section": "Small fig-width",
-    "text": "Small fig-width\nFor a zoomed-in look\n\n```{r}\n#| fig-width: 3\n#| fig-asp: 0.618\n\np_hist\n```"
+    "objectID": "lectures/2024-12-05/more-logistic-regression.html#step-2-find-the-decision-boundary",
+    "href": "lectures/2024-12-05/more-logistic-regression.html#step-2-find-the-decision-boundary",
+    "title": "Model selection for logistic regression",
+    "section": "Step 2: find the “decision boundary”",
+    "text": "Step 2: find the “decision boundary”\nSolve for the x-value that matches the threshold:\n\n\nif \\(\\text{Prob}(y=1)\\leq p^*\\), then predict \\(\\widehat{y}=0\\);\nif \\(\\text{Prob}(y=1)&gt; p^*\\), then predict \\(\\widehat{y}=1\\)."
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#large-fig-width",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#large-fig-width",
-    "title": "Telling a data story",
-    "section": "Large fig-width",
-    "text": "Large fig-width\nFor a zoomed-out look\n\n```{r}\n#| fig-width: 6\n#| fig-asp: 0.618\n\np_hist\n```"
+    "objectID": "lectures/2024-12-05/more-logistic-regression.html#step-3-classify-a-new-arrival",
+    "href": "lectures/2024-12-05/more-logistic-regression.html#step-3-classify-a-new-arrival",
+    "title": "Model selection for logistic regression",
+    "section": "Step 3: classify a new arrival",
+    "text": "Step 3: classify a new arrival\nA new person shows up with \\(x_{\\text{new}}\\). Which side of the boundary are they on?\n\n\nif \\(x_{\\text{new}} \\leq x^\\star\\), then \\(\\text{Prob}(y=1)\\leq p^*\\), so predict \\(\\widehat{y}=0\\) for the new person;\nif \\(x_{\\text{new}} &gt; x^\\star\\), then \\(\\text{Prob}(y=1)&gt; p^*\\), so predict \\(\\widehat{y}=1\\) for the new person."
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#fig-width-affects-text-size",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#fig-width-affects-text-size",
-    "title": "Telling a data story",
-    "section": "fig-width affects text size",
-    "text": "fig-width affects text size"
+    "objectID": "lectures/2024-12-05/more-logistic-regression.html#lets-change-the-threshold",
+    "href": "lectures/2024-12-05/more-logistic-regression.html#lets-change-the-threshold",
+    "title": "Model selection for logistic regression",
+    "section": "Let’s change the threshold",
+    "text": "Let’s change the threshold\nA new person shows up with \\(x_{\\text{new}}\\). Which side of the boundary are they on?\n\n\nif \\(x_{\\text{new}} \\leq x^\\star\\), then \\(\\text{Prob}(y=1)\\leq p^*\\), so predict \\(\\widehat{y}=0\\) for the new person;\nif \\(x_{\\text{new}} &gt; x^\\star\\), then \\(\\text{Prob}(y=1)&gt; p^*\\), so predict \\(\\widehat{y}=1\\) for the new person."
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#multiple-plots-on-a-slide",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#multiple-plots-on-a-slide",
-    "title": "Telling a data story",
-    "section": "Multiple plots on a slide",
-    "text": "Multiple plots on a slide\n\n\n\nFirst, ask yourself, must you include multiple plots on a slide? For example, is your narrative about comparing results from two plots?\n\n\n\n\nIf no, then don’t! Move the second plot to to the next slide!\nIf yes, use columns and sequential reveal."
+    "objectID": "lectures/2024-12-05/more-logistic-regression.html#nothing-special-about-one-predictor",
+    "href": "lectures/2024-12-05/more-logistic-regression.html#nothing-special-about-one-predictor",
+    "title": "Model selection for logistic regression",
+    "section": "Nothing special about one predictor…",
+    "text": "Nothing special about one predictor…\nTwo numerical predictors and one binary response:"
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#writing-your-project-report-with-quarto",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#writing-your-project-report-with-quarto",
-    "title": "Telling a data story",
-    "section": "Writing your project report with Quarto",
-    "text": "Writing your project report with Quarto\n\nFigure sizing: fig-width, fig-height, etc. in code chunks.\nFigure layout: layout-ncol for placing multiple figures in a chunk.\nFurther control over figure layout with the patchwork package.\nChunk options around what makes it in your final report: message, echo, etc.\nCross referencing figures and tables.\nAdding footnotes and citations."
+    "objectID": "lectures/2024-12-05/more-logistic-regression.html#multiple-logistic-regression",
+    "href": "lectures/2024-12-05/more-logistic-regression.html#multiple-logistic-regression",
+    "title": "Model selection for logistic regression",
+    "section": "“Multiple” logistic regression",
+    "text": "“Multiple” logistic regression\nOn the probability scale:\n\\[\n\\text{Prob}(y = 1)\n=\n\\frac{e^{\\beta_0+\\beta_1x_1+\\beta_2x_2+...+\\beta_mx_m}}{1+e^{\\beta_0+\\beta_1x_1+\\beta_2x_2+...+\\beta_mx_m}}.\n\\]\nFor the log-odds, a multiple linear regression:\n\\[\n\\log\\left(\\frac{p}{1-p}\\right)\n=\n\\beta_0+\\beta_1x_1+\\beta_2x_2+...+\\beta_mx_m.\n\\]"
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#cross-referencing-figures",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#cross-referencing-figures",
-    "title": "Telling a data story",
-    "section": "Cross referencing figures",
-    "text": "Cross referencing figures\n\nOutputInput\n\n\nAs seen in Figure 1, there is a positive and relatively strong relationship between body mass and flipper length of penguins.\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point()\n\n\n\n\n\n\n\nFigure 1: The relationship between body mass and flipper length of penguins.\n\n\n\n\n\n\n\nAs seen in @fig-penguins, there is a positive and relatively strong relationship between body mass and flipper length of penguins.\n\n```{r}\n#| label: fig-penguins\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point()\n```"
+    "objectID": "lectures/2024-12-05/more-logistic-regression.html#decision-boundary-again",
+    "href": "lectures/2024-12-05/more-logistic-regression.html#decision-boundary-again",
+    "title": "Model selection for logistic regression",
+    "section": "Decision boundary, again",
+    "text": "Decision boundary, again\nIt’s linear! Consider two numerical predictors:\n\n\nif new \\((x_1,\\,x_2)\\) below, \\(\\text{Prob}(y=1)\\leq p^*\\). Predict \\(\\widehat{y}=0\\) for the new person;\nif new \\((x_1,\\,x_2)\\) above, \\(\\text{Prob}(y=1)&gt; p^*\\). Predict \\(\\widehat{y}=1\\) for the new person."
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#cross-referencing-tables",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#cross-referencing-tables",
-    "title": "Telling a data story",
-    "section": "Cross referencing tables",
-    "text": "Cross referencing tables\n\nOutputInput\n\n\nThe regression output is shown in Table 1.\n\npenguins_fit &lt;- linear_reg() |&gt;\n  fit(body_mass_g ~ flipper_length_mm, data = penguins)\n\ntidy(penguins_fit) |&gt;\n  knitr::kable(digits = 3)\n\n\n\nTable 1: The regression output for predicting body mass from flipper length of penguins.\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-5780.831\n305.815\n-18.903\n0\n\n\nflipper_length_mm\n49.686\n1.518\n32.722\n0\n\n\n\n\n\n\n\n\n\n\nThe regression output is shown in @tbl-penguins-lm.\n\n```{r}\n#| label: tbl-penguins-lm\n#| tbl-cap: The regression output for predicting body mass from flipper length of penguins.\n\npenguins_fit &lt;- linear_reg() |&gt;\n  fit(body_mass_g ~ flipper_length_mm, data = penguins)\n\ntidy(penguins_fit) |&gt;\n  knitr::kable(digits = 3)\n```"
+    "objectID": "lectures/2024-12-05/more-logistic-regression.html#model-selection-for-logistic-regression",
+    "href": "lectures/2024-12-05/more-logistic-regression.html#model-selection-for-logistic-regression",
+    "title": "Model selection for logistic regression",
+    "section": "Model selection for logistic regression",
+    "text": "Model selection for logistic regression\nQ: How do we decide if a logistic regression model is “good”?\nA: Look at the error rates of its predictions. There are two kinds…\nINSERT TABLE HERE!"
+  },
+  {
+    "objectID": "lectures/2024-12-05/more-logistic-regression.html#too-much-vocabulary",
+    "href": "lectures/2024-12-05/more-logistic-regression.html#too-much-vocabulary",
+    "title": "Model selection for logistic regression",
+    "section": "Too much vocabulary",
+    "text": "Too much vocabulary\nTABLE WITH ALL THE JARGON"
+  },
+  {
+    "objectID": "lectures/2024-12-05/more-logistic-regression.html#trading-off-between-the-errors",
+    "href": "lectures/2024-12-05/more-logistic-regression.html#trading-off-between-the-errors",
+    "title": "Model selection for logistic regression",
+    "section": "Trading off between the errors",
+    "text": "Trading off between the errors"
+  },
+  {
+    "objectID": "lectures/2024-12-05/more-logistic-regression.html#roc-curve",
+    "href": "lectures/2024-12-05/more-logistic-regression.html#roc-curve",
+    "title": "Model selection for logistic regression",
+    "section": "ROC curve",
+    "text": "ROC curve\nThe receiver operating characteristic (ROC) curve allows to assess the model performance across a range of thresholds."
+  },
+  {
+    "objectID": "lectures/2024-12-05/more-logistic-regression.html#roc-curve-1",
+    "href": "lectures/2024-12-05/more-logistic-regression.html#roc-curve-1",
+    "title": "Model selection for logistic regression",
+    "section": "ROC curve",
+    "text": "ROC curve\n ## ROC curve\n\n\nThe more “up and to the left,” the better;\nUp-and-to-the-left-ness can be quantified with the area under the ROC curve."
   },
   {
     "objectID": "computing/computing-normal.html",
@@ -2381,7 +2409,7 @@
     "href": "index.html",
     "title": "STA 101 Data Analysis and Statistical Inference",
     "section": "",
-    "text": "Below is a prospective outline for the course, but things may change with advanced notice:\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nPREPARE\nMATERIALS\nDUE\n\n\n\n\n1\nTue, Aug 27\nWelcome!\n\n\n\n\n\n\n\n\n\n\nThu, Aug 29\nGetting started\n📖 ims: Ch 1  💻 tutorial: 01-data-01\nlecture-2  (filled-in)\nGetting to know you @ 3PM\n\n\n\n\nFri, Aug 30\nLab 1: Hello R!\n\n\nlab-1\n\n\n\n\n2\nTue, Sep 3\nNumerical data and study design\n📖 ims: Ch 2  💻 tutorial: 01-data-02  💻 tutorial: 01-data-03\nslides lecture-3  (filled-in)\n\n\n\n\n\n\nThu, Sep 5\nCategorical data\n📖 ims: Ch 4  💻 tutorial: 02-explore-01\nlecture-4  (filled-in)\n\n\n\n\n\n\nFri, Sep 6\nLab 2: data\n📖 ims: Ch 3  💻 tutorial: 01-data-04\nlab-2\nLab 1 @ 8AM\n\n\n3\nTue, Sep 10\nCheckpoint: exploratory data analysis\n📖 ims: Ch 5  💻 tutorial: 02-explore-02\nslides\n\n\n\n\n\n\nThu, Sep 12\nSimple linear regression\n📖 ims: Ch 7  💻 tutorial: 03-model-01  💻 tutorial: 03-model-02\nslides  Play around!  Play around some more!  Primer\n\n\n\n\n\n\nFri, Sep 13\nLab 3: exploratory data analysis\n📖 ims: Ch 6  💻 tutorial: 02-explore-03\nlab-3\nLab 2 @ 8AM\n\n\n4\nTue, Sep 17\nMultiple linear regression\n📖 ims: Ch 8.1 - 8.2\nslides  Primer\n\n\n\n\n\n\nThu, Sep 19\n\\(R^2\\)\n📖 ims: Ch 8.3 - 8.4\nslides  Primer\n\n\n\n\n\n\nFri, Sep 20\nLab 4: regression\n\n\nlab-4\nLab 3 @ 8AM\n\n\n5\nTue, Sep 24\nModel selection\n📖 ims: Ch 8.4 - 8.5\n\n\n\n\n\n\n\n\nThu, Sep 26\nModel selection\n📖 ims: Ch 7  📖 ims: Ch 8\nslides\n\n\n\n\n\n\nFri, Sep 27\nLab: exam review\n\n\n\n\nLab 4 @ 8AM\n\n\n6\nTue, Oct 1\nIn-class Exam 1\nPractice exams (Canvas)  Make your cheet sheet!\n\n\n\n\n\n\n\n\nThu, Oct 3\nNo lecture\n\n\n\n\nTake-home Exam 1 @ 5PM\n\n\n\n\nFri, Oct 4\nNo lab\n\n\n\n\n\n\n\n\n7\nTue, Oct 8\nLogistic Regression 1\n📖 ims: Ch 9\nslides\n\n\n\n\n\n\nThu, Oct 10\nLogistic Regression 2  Ethics\n📖 ims: Ch 9\nslides  Primer\n\n\n\n\n\n\nFri, Oct 11\nNo lab\n\n\n\n\n\n\n\n\n8\nTue, Oct 15\nNo lecture\n\n\n\n\n\n\n\n\n\n\nThu, Oct 17\nIntroduction to statistics  Interval estimation 1\n📖 ims: Ch 12  💻 tutorial: 04-foundations-04\nslides  Primer  Play around!\n\n\n\n\n\n\nFri, Oct 18\nLab 5: confidence intervals\n\n\nlab-5\n\n\n\n\n9\nTue, Oct 22\nInterval estimation 2\n📖 ims: Ch 12  💻 tutorial: 04-foundations-04\nslides\n\n\n\n\n\n\nThu, Oct 24\nHypothesis testing 1\n📖 ims: Ch 11  📖 ims: Ch 14\nslides\n\n\n\n\n\n\nFri, Oct 25\nLab 6: hypothesis testing\n\n\nlab-6  Primer\nLab 5 @ 8AM\n\n\n10\nTue, Oct 29\nHypothesis testing 2\n📖 ims: Ch 11  📖 ims: Ch 14  💻 tutorial: 04-foundations-01  💻 tutorial: 04-foundations-02  💻 tutorial: 04-foundations-03\nslides  Primer\n\n\n\n\n\n\nThu, Oct 31\nHypothesis testing recap  Intro to central limit theorem\n📖 ims: Ch 13\nslides  Primer\n\n\n\n\n\n\nFri, Nov 1\nLab 7: statistical inference overview\n\n\nlab-7\nLab 6 @ 8AM\n\n\n11\nTue, Nov 5\nInference for one proportion\n📖 ims: Ch 16\nPrimer\n\n\n\n\n\n\nThu, Nov 7\nInference for mathematical models\n📖 ims: Ch 13  📖 ims: Ch 16\nnotes\n\n\n\n\n\n\nFri, Nov 8\nLab: exam review\n\n\n\n\nLab 7 @ 8AM\n\n\n12\nTue, Nov 12\nIn-class Exam 2\nPractice exams (Canvas)  Make your cheet sheet!\n\n\n\n\n\n\n\n\nThu, Nov 14\nNo lecture\n\n\n\n\nTake-home Exam 2 @ 5PM\n\n\n\n\nFri, Nov 15\nNo lab\n\n\n\n\n\n\n\n\n13\nTue, Nov 19\nInference for one mean\n📖 ims: Chp 19\n\n\n\n\n\n\n\n\nThu, Nov 21\nThe t-test for one mean\n📖 ims: Chp 19  💻 tutorial: 05-infer-05  💻 tutorial: 05-infer-06\nSlides  Primer\n\n\n\n\n\n\nFri, Nov 22\n(project work period)\n\n\n\n\nProject proposal @ 5PM\n\n\n14\nTue, Nov 26\nProbability potpourri, or,  “Humans stink at reasoning  about this stuff.”\n\n\nThe birthday problem  The Galton board  Prediction markets  The Monty Hall problem\n\n\n\n\n\n\nThu, Nov 28\nNo lecture\n\n\n\n\n\n\n\n\n\n\nFri, Nov 29\nNo lab\n\n\n\n\n\n\n\n\n15\nTue, Dec 3\nInference for two means\n📖 ims: Chp 20  📖 ims: Chp 21  💻 tutorial: 05-infer-07\nSlides  Primer\n\n\n\n\n\n\nThu, Dec 5\nWrap-up\n📖 fdv: Chp 29\nTo be posted\n\n\n\n\n\n\nFri, Dec 6\n(project work period)\n\n\n\n\n\n\n\n\n16\nSun, Dec 15\nNo meeting\n\n\n\n\nFinal project @ 5PM",
+    "text": "Below is a prospective outline for the course, but things may change with advanced notice:\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nPREPARE\nMATERIALS\nDUE\n\n\n\n\n1\nTue, Aug 27\nWelcome!\n\n\n\n\n\n\n\n\n\n\nThu, Aug 29\nGetting started\n📖 ims: Ch 1  💻 tutorial: 01-data-01\nlecture-2  (filled-in)\nGetting to know you @ 3PM\n\n\n\n\nFri, Aug 30\nLab 1: Hello R!\n\n\nlab-1\n\n\n\n\n2\nTue, Sep 3\nNumerical data and study design\n📖 ims: Ch 2  💻 tutorial: 01-data-02  💻 tutorial: 01-data-03\nslides lecture-3  (filled-in)\n\n\n\n\n\n\nThu, Sep 5\nCategorical data\n📖 ims: Ch 4  💻 tutorial: 02-explore-01\nlecture-4  (filled-in)\n\n\n\n\n\n\nFri, Sep 6\nLab 2: data\n📖 ims: Ch 3  💻 tutorial: 01-data-04\nlab-2\nLab 1 @ 8AM\n\n\n3\nTue, Sep 10\nCheckpoint: exploratory data analysis\n📖 ims: Ch 5  💻 tutorial: 02-explore-02\nslides\n\n\n\n\n\n\nThu, Sep 12\nSimple linear regression\n📖 ims: Ch 7  💻 tutorial: 03-model-01  💻 tutorial: 03-model-02\nslides  Play around!  Play around some more!  Primer\n\n\n\n\n\n\nFri, Sep 13\nLab 3: exploratory data analysis\n📖 ims: Ch 6  💻 tutorial: 02-explore-03\nlab-3\nLab 2 @ 8AM\n\n\n4\nTue, Sep 17\nMultiple linear regression\n📖 ims: Ch 8.1 - 8.2\nslides  Primer\n\n\n\n\n\n\nThu, Sep 19\n\\(R^2\\)\n📖 ims: Ch 8.3 - 8.4\nslides  Primer\n\n\n\n\n\n\nFri, Sep 20\nLab 4: regression\n\n\nlab-4\nLab 3 @ 8AM\n\n\n5\nTue, Sep 24\nModel selection\n📖 ims: Ch 8.4 - 8.5\n\n\n\n\n\n\n\n\nThu, Sep 26\nModel selection\n📖 ims: Ch 7  📖 ims: Ch 8\nslides\n\n\n\n\n\n\nFri, Sep 27\nLab: exam review\n\n\n\n\nLab 4 @ 8AM\n\n\n6\nTue, Oct 1\nIn-class Exam 1\nPractice exams (Canvas)  Make your cheet sheet!\n\n\n\n\n\n\n\n\nThu, Oct 3\nNo lecture\n\n\n\n\nTake-home Exam 1 @ 5PM\n\n\n\n\nFri, Oct 4\nNo lab\n\n\n\n\n\n\n\n\n7\nTue, Oct 8\nLogistic Regression 1\n📖 ims: Ch 9\nslides\n\n\n\n\n\n\nThu, Oct 10\nLogistic Regression 2  Ethics\n📖 ims: Ch 9\nslides  Primer\n\n\n\n\n\n\nFri, Oct 11\nNo lab\n\n\n\n\n\n\n\n\n8\nTue, Oct 15\nNo lecture\n\n\n\n\n\n\n\n\n\n\nThu, Oct 17\nIntroduction to statistics  Interval estimation 1\n📖 ims: Ch 12  💻 tutorial: 04-foundations-04\nslides  Primer  Play around!\n\n\n\n\n\n\nFri, Oct 18\nLab 5: confidence intervals\n\n\nlab-5\n\n\n\n\n9\nTue, Oct 22\nInterval estimation 2\n📖 ims: Ch 12  💻 tutorial: 04-foundations-04\nslides\n\n\n\n\n\n\nThu, Oct 24\nHypothesis testing 1\n📖 ims: Ch 11  📖 ims: Ch 14\nslides\n\n\n\n\n\n\nFri, Oct 25\nLab 6: hypothesis testing\n\n\nlab-6  Primer\nLab 5 @ 8AM\n\n\n10\nTue, Oct 29\nHypothesis testing 2\n📖 ims: Ch 11  📖 ims: Ch 14  💻 tutorial: 04-foundations-01  💻 tutorial: 04-foundations-02  💻 tutorial: 04-foundations-03\nslides  Primer\n\n\n\n\n\n\nThu, Oct 31\nHypothesis testing recap  Intro to central limit theorem\n📖 ims: Ch 13\nslides  Primer\n\n\n\n\n\n\nFri, Nov 1\nLab 7: statistical inference overview\n\n\nlab-7\nLab 6 @ 8AM\n\n\n11\nTue, Nov 5\nInference for one proportion\n📖 ims: Ch 16\nPrimer\n\n\n\n\n\n\nThu, Nov 7\nInference for mathematical models\n📖 ims: Ch 13  📖 ims: Ch 16\nnotes\n\n\n\n\n\n\nFri, Nov 8\nLab: exam review\n\n\n\n\nLab 7 @ 8AM\n\n\n12\nTue, Nov 12\nIn-class Exam 2\nPractice exams (Canvas)  Make your cheet sheet!\n\n\n\n\n\n\n\n\nThu, Nov 14\nNo lecture\n\n\n\n\nTake-home Exam 2 @ 5PM\n\n\n\n\nFri, Nov 15\nNo lab\n\n\n\n\n\n\n\n\n13\nTue, Nov 19\nInference for one mean\n📖 ims: Chp 19\n\n\n\n\n\n\n\n\nThu, Nov 21\nThe t-test for one mean\n📖 ims: Chp 19  💻 tutorial: 05-infer-05  💻 tutorial: 05-infer-06\nSlides  Primer\n\n\n\n\n\n\nFri, Nov 22\n(project work period)\n\n\n\n\nProject proposal @ 5PM\n\n\n14\nTue, Nov 26\nProbability potpourri, or,  “Humans stink at reasoning  about this stuff.”\n\n\nThe birthday problem  The Galton board  Prediction markets  The Monty Hall problem\n\n\n\n\n\n\nThu, Nov 28\nNo lecture\n\n\n\n\n\n\n\n\n\n\nFri, Nov 29\nNo lab\n\n\n\n\n\n\n\n\n15\nTue, Dec 3\nInference for two means\n📖 ims: Chp 20  📖 ims: Chp 21  💻 tutorial: 05-infer-07\nSlides  Primer\n\n\n\n\n\n\nThu, Dec 5\nProject tips  More logistic regression\n📖 fdv: Chp 29\nTo be posted\n\n\n\n\n\n\nFri, Dec 6\n(project work period)\n\n\n\n\n\n\n\n\n16\nSun, Dec 15\nNo meeting\n\n\n\n\nFinal project @ 5PM",
     "crumbs": [
       "Syllabus",
       "Schedule"
@@ -3014,206 +3042,192 @@
     ]
   },
   {
-    "objectID": "lectures/2024-12-05/19-logistic-regression.html#when-last-we-left-our-heros",
-    "href": "lectures/2024-12-05/19-logistic-regression.html#when-last-we-left-our-heros",
-    "title": "Model selection for logistic regression",
-    "section": "When last we left our heros…",
-    "text": "When last we left our heros…\nWe have been studying regression:\n\nWhat combinations of data types have we seen?\nWhat did the picture look like?"
+    "objectID": "lectures/2024-12-05/project-tips.html#announcements",
+    "href": "lectures/2024-12-05/project-tips.html#announcements",
+    "title": "Telling a data story",
+    "section": "Announcements",
+    "text": "Announcements\n\nCheck grades on Canvas, if anything seems off let me know asap. Your final grade will be calculated based on what’s on Canvas. No grades will be changed after the project is due.\nMy office hours next week by appointment.\nDon’t forget to fill out course and TA evaluations.\nProject 2:\n\nFriday - Peer review. You must be in your lab section to participate in the peer review (and be eligible for the points for it).\nNext Thursday - Video (upload to YouTube/Warpwire/etc. and share link on Google sheet) + writeup (on Gradescope) due."
   },
   {
-    "objectID": "lectures/2024-12-05/19-logistic-regression.html#recap-simple-linear-regression",
-    "href": "lectures/2024-12-05/19-logistic-regression.html#recap-simple-linear-regression",
-    "title": "Model selection for logistic regression",
-    "section": "Recap: simple linear regression",
-    "text": "Recap: simple linear regression\nNumerical response and one numerical predictor:"
+    "objectID": "lectures/2024-12-05/project-tips.html#setup",
+    "href": "lectures/2024-12-05/project-tips.html#setup",
+    "title": "Telling a data story",
+    "section": "Setup",
+    "text": "Setup\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(ggrepel)\nlibrary(ggthemes)\nlibrary(palmerpenguins)"
   },
   {
-    "objectID": "lectures/2024-12-05/19-logistic-regression.html#recap-simple-linear-regression-1",
-    "href": "lectures/2024-12-05/19-logistic-regression.html#recap-simple-linear-regression-1",
-    "title": "Model selection for logistic regression",
-    "section": "Recap: simple linear regression",
-    "text": "Recap: simple linear regression\nNumerical response and one categorical predictor (two levels):"
+    "objectID": "lectures/2024-12-05/project-tips.html#multiple-ways-of-telling-a-story",
+    "href": "lectures/2024-12-05/project-tips.html#multiple-ways-of-telling-a-story",
+    "title": "Telling a data story",
+    "section": "Multiple ways of telling a story",
+    "text": "Multiple ways of telling a story\n\nSequential reveal: Motivation, then resolution\nInstant reveal: Resolution, and hidden in it motivation"
   },
   {
-    "objectID": "lectures/2024-12-05/19-logistic-regression.html#recap-multiple-linear-regression",
-    "href": "lectures/2024-12-05/19-logistic-regression.html#recap-multiple-linear-regression",
-    "title": "Model selection for logistic regression",
-    "section": "Recap: multiple linear regression",
-    "text": "Recap: multiple linear regression\nNumerical response; numerical and categorical predictors:"
+    "objectID": "lectures/2024-12-05/project-tips.html#simplicity-vs.-complexity",
+    "href": "lectures/2024-12-05/project-tips.html#simplicity-vs.-complexity",
+    "title": "Telling a data story",
+    "section": "Simplicity vs. complexity",
+    "text": "Simplicity vs. complexity\n\nWhen you’re trying to show too much data at once you may end up not showing anything.\n\n\nNever assume your audience can rapidly process complex visual displays\nDon’t add variables to your plot that are tangential to your story\nDon’t jump straight to a highly complex figure; first show an easily digestible subset (e.g., show one facet first)\nAim for memorable, but clear\n\n\n\n\nProject note: Make sure to leave time to iterate on your plots after you practice your presentation. If certain plots or outputs are getting too wordy to explain, take time to simplify them!"
   },
   {
-    "objectID": "lectures/2024-12-05/19-logistic-regression.html#today-a-binary-response",
-    "href": "lectures/2024-12-05/19-logistic-regression.html#today-a-binary-response",
-    "title": "Model selection for logistic regression",
-    "section": "Today: a binary response",
-    "text": "Today: a binary response\n\\[\ny =\n\\begin{cases}\n1 & &&\\text{eg. Yes, Win, True, Heads, Success}\\\\\n0 & &&\\text{eg. No, Lose, False, Tails, Failure}.\n\\end{cases}\n\\]"
+    "objectID": "lectures/2024-12-05/project-tips.html#consistency-vs.-repetitiveness",
+    "href": "lectures/2024-12-05/project-tips.html#consistency-vs.-repetitiveness",
+    "title": "Telling a data story",
+    "section": "Consistency vs. repetitiveness",
+    "text": "Consistency vs. repetitiveness\n\nBe consistent but don’t be repetitive.\n\n\nUse consistent features throughout plots (e.g., same color represents same level on all plots)\nAim to use a different type of summary or visualization for each distinct analysis\n\n\n\n\nProject note: If possible, ask a friend who is not in the class to listen to your presentation and then ask them what they remember. Then, ask yourself: is that what you wanted them to remember?"
   },
   {
-    "objectID": "lectures/2024-12-05/19-logistic-regression.html#who-cares",
-    "href": "lectures/2024-12-05/19-logistic-regression.html#who-cares",
-    "title": "Model selection for logistic regression",
-    "section": "Who cares?",
-    "text": "Who cares?\nIf we can model the relationship between predictors (\\(x\\)) and a binary response (\\(y\\)), we can use the model to do a special kind of prediction called classification."
+    "objectID": "lectures/2024-12-05/project-tips.html#your-project-plans",
+    "href": "lectures/2024-12-05/project-tips.html#your-project-plans",
+    "title": "Telling a data story",
+    "section": "Your project plans",
+    "text": "Your project plans\n\nHow are you telling your story?\n\nSequential reveal\nInstant reveal\nOur approach doesn’t fit either of these paradigms\nNo idea\n\nSubmit your answer on Canvas for 12-06 Check-in (access code: ___)"
   },
   {
-    "objectID": "lectures/2024-12-05/19-logistic-regression.html#example-is-the-e-mail-spam-or-not",
-    "href": "lectures/2024-12-05/19-logistic-regression.html#example-is-the-e-mail-spam-or-not",
-    "title": "Model selection for logistic regression",
-    "section": "Example: is the e-mail spam or not?",
-    "text": "Example: is the e-mail spam or not?\n\\[\n\\mathbf{x}: \\text{word and character counts in an e-mail.}\n\\]\n\n\\[\ny\n=\n\\begin{cases}\n1 & \\text{it's spam}\\\\\n0 & \\text{it's legit}\n\\end{cases}\n\\]\nEthical concerns?"
+    "objectID": "lectures/2024-12-05/project-tips.html#data",
+    "href": "lectures/2024-12-05/project-tips.html#data",
+    "title": "Telling a data story",
+    "section": "Data",
+    "text": "Data\n\n\nd &lt;- tribble(\n  ~category,                     ~value,\n  \"Cutting tools\"                , 0.03,\n  \"Buildings and administration\" , 0.22,\n  \"Labor\"                        , 0.31,\n  \"Machinery\"                    , 0.27,\n  \"Workplace materials\"          , 0.17\n)\nd\n\n\n# A tibble: 5 × 2\n  category                     value\n  &lt;chr&gt;                        &lt;dbl&gt;\n1 Cutting tools                 0.03\n2 Buildings and administration  0.22\n3 Labor                         0.31\n4 Machinery                     0.27\n5 Workplace materials           0.17"
   },
   {
-    "objectID": "lectures/2024-12-05/19-logistic-regression.html#example-is-it-cancer-or-not",
-    "href": "lectures/2024-12-05/19-logistic-regression.html#example-is-it-cancer-or-not",
-    "title": "Model selection for logistic regression",
-    "section": "Example: is it cancer or not?",
-    "text": "Example: is it cancer or not?\n\\[\n\\mathbf{x}: \\text{features in a medical image.}\n\\]\n\n\\[\ny\n=\n\\begin{cases}\n1 & \\text{it's cancer}\\\\\n0 & \\text{it's healthy}\n\\end{cases}\n\\]\nEthical concerns?"
+    "objectID": "lectures/2024-12-05/project-tips.html#keep-it-simple",
+    "href": "lectures/2024-12-05/project-tips.html#keep-it-simple",
+    "title": "Telling a data story",
+    "section": "Keep it simple",
+    "text": "Keep it simple"
   },
   {
-    "objectID": "lectures/2024-12-05/19-logistic-regression.html#example-will-they-default",
-    "href": "lectures/2024-12-05/19-logistic-regression.html#example-will-they-default",
-    "title": "Model selection for logistic regression",
-    "section": "Example: will they default?",
-    "text": "Example: will they default?\n\\[\n\\mathbf{x}: \\text{financial and demographic info about a loan applicant.}\n\\]\n\n\\[\ny\n=\n\\begin{cases}\n1 & \\text{applicant is at risk of defaulting on loan}\\\\\n0 & \\text{applicant is safe}\n\\end{cases}\n\\]\nEthical concerns?"
+    "objectID": "lectures/2024-12-05/project-tips.html#judging-relative-area",
+    "href": "lectures/2024-12-05/project-tips.html#judging-relative-area",
+    "title": "Telling a data story",
+    "section": "Judging relative area",
+    "text": "Judging relative area\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFrom Data to Viz caveat collection - The issue with pie chart"
   },
   {
-    "objectID": "lectures/2024-12-05/19-logistic-regression.html#example-will-they-re-offend",
-    "href": "lectures/2024-12-05/19-logistic-regression.html#example-will-they-re-offend",
-    "title": "Model selection for logistic regression",
-    "section": "Example: will they re-offend?",
-    "text": "Example: will they re-offend?\n\\[\n\\mathbf{x}: \\text{info about a criminal suspect and their case.}\n\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\[\ny\n=\n\\begin{cases}\n1 & \\text{suspect is at risk of re-offending pre-trial}\\\\\n0 & \\text{suspect is safe}\n\\end{cases}\n\\]\nEthical concerns?"
+    "objectID": "lectures/2024-12-05/project-tips.html#use-color-to-draw-attention",
+    "href": "lectures/2024-12-05/project-tips.html#use-color-to-draw-attention",
+    "title": "Telling a data story",
+    "section": "Use color to draw attention",
+    "text": "Use color to draw attention"
   },
   {
-    "objectID": "lectures/2024-12-05/19-logistic-regression.html#how-do-we-model-this-type-of-data",
-    "href": "lectures/2024-12-05/19-logistic-regression.html#how-do-we-model-this-type-of-data",
-    "title": "Model selection for logistic regression",
-    "section": "How do we model this type of data?",
-    "text": "How do we model this type of data?"
+    "objectID": "lectures/2024-12-05/project-tips.html#play-with-themes-for-a-non-standard-look",
+    "href": "lectures/2024-12-05/project-tips.html#play-with-themes-for-a-non-standard-look",
+    "title": "Telling a data story",
+    "section": "Play with themes for a non-standard look",
+    "text": "Play with themes for a non-standard look"
   },
   {
-    "objectID": "lectures/2024-12-05/19-logistic-regression.html#straight-line-of-best-fit-is-a-little-silly",
-    "href": "lectures/2024-12-05/19-logistic-regression.html#straight-line-of-best-fit-is-a-little-silly",
-    "title": "Model selection for logistic regression",
-    "section": "Straight line of best fit is a little silly",
-    "text": "Straight line of best fit is a little silly"
+    "objectID": "lectures/2024-12-05/project-tips.html#go-beyond-ggplot2-themes-ggthemes",
+    "href": "lectures/2024-12-05/project-tips.html#go-beyond-ggplot2-themes-ggthemes",
+    "title": "Telling a data story",
+    "section": "Go beyond ggplot2 themes – ggthemes",
+    "text": "Go beyond ggplot2 themes – ggthemes"
   },
   {
-    "objectID": "lectures/2024-12-05/19-logistic-regression.html#instead-s-curve-of-best-fit",
-    "href": "lectures/2024-12-05/19-logistic-regression.html#instead-s-curve-of-best-fit",
-    "title": "Model selection for logistic regression",
-    "section": "Instead: S-curve of best fit",
-    "text": "Instead: S-curve of best fit\nInstead of modeling \\(y\\) directly, we model the probability that \\(y=1\\):\n\n\n“Given new email, what’s the probability that it’s spam?’’\n“Given new image, what’s the probability that it’s cancer?’’\n“Given new loan application, what’s the probability that they default?’’"
+    "objectID": "lectures/2024-12-05/project-tips.html#tell-a-story",
+    "href": "lectures/2024-12-05/project-tips.html#tell-a-story",
+    "title": "Telling a data story",
+    "section": "Tell a story",
+    "text": "Tell a story\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit: Angela Zoss and Eric Monson, Duke DVS"
   },
   {
-    "objectID": "lectures/2024-12-05/19-logistic-regression.html#why-dont-we-model-y-directly",
-    "href": "lectures/2024-12-05/19-logistic-regression.html#why-dont-we-model-y-directly",
-    "title": "Model selection for logistic regression",
-    "section": "Why don’t we model y directly?",
-    "text": "Why don’t we model y directly?\n\nRecall regression with a numerical response:\n\nOur models do not output guarantees for \\(y\\), they output predictions that describe behavior on average;\n\nSimilar when modeling a binary response:\n\nOur models cannot directly guarantee that \\(y\\) will be zero or one. The correct analog to “on average” for a 0/1 response is “what’s the probability?”"
+    "objectID": "lectures/2024-12-05/project-tips.html#leave-out-non-story-details",
+    "href": "lectures/2024-12-05/project-tips.html#leave-out-non-story-details",
+    "title": "Telling a data story",
+    "section": "Leave out non-story details",
+    "text": "Leave out non-story details\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit: Angela Zoss and Eric Monson, Duke DVS"
   },
   {
-    "objectID": "lectures/2024-12-05/19-logistic-regression.html#so-what-is-this-s-curve-anyway",
-    "href": "lectures/2024-12-05/19-logistic-regression.html#so-what-is-this-s-curve-anyway",
-    "title": "Model selection for logistic regression",
-    "section": "So, what is this S-curve, anyway?",
-    "text": "So, what is this S-curve, anyway?\nIt’s the logistic function:\n\\[\n\\text{Prob}(y = 1)\n=\n\\frac{e^{\\beta_0+\\beta_1x}}{1+e^{\\beta_0+\\beta_1x}}.\n\\]\nIf you set p = Prob(y = 1) and do some algebra, you get the simple linear model for the log-odds:\n\\[\n\\log\\left(\\frac{p}{1-p}\\right)\n=\n\\beta_0+\\beta_1x.\n\\]\nThis is called the logistic regression model."
+    "objectID": "lectures/2024-12-05/project-tips.html#order-matters",
+    "href": "lectures/2024-12-05/project-tips.html#order-matters",
+    "title": "Telling a data story",
+    "section": "Order matters",
+    "text": "Order matters\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit: Angela Zoss and Eric Monson, Duke DVS"
   },
   {
-    "objectID": "lectures/2024-12-05/19-logistic-regression.html#log-odds",
-    "href": "lectures/2024-12-05/19-logistic-regression.html#log-odds",
-    "title": "Model selection for logistic regression",
-    "section": "Log-odds?",
-    "text": "Log-odds?\n\np = Prob(y = 1) is a probability. A number between 0 and 1;\np / (1 - p) is the odds. A number between 0 and \\(\\infty\\);\n\n“The odds of this lecture going well are 10 to 1.”\n\nThe log odds log(p / (1 - p)) is a number between \\(-\\infty\\) and \\(\\infty\\), which is suitable for the linear model."
+    "objectID": "lectures/2024-12-05/project-tips.html#clearly-indicate-missing-data",
+    "href": "lectures/2024-12-05/project-tips.html#clearly-indicate-missing-data",
+    "title": "Telling a data story",
+    "section": "Clearly indicate missing data",
+    "text": "Clearly indicate missing data\n\n\n\n\n\n\n\nhttp://ivi.sagepub.com/content/10/4/271, Angela Zoss and Eric Monson, Duke DVS"
   },
   {
-    "objectID": "lectures/2024-12-05/19-logistic-regression.html#logistic-regression",
-    "href": "lectures/2024-12-05/19-logistic-regression.html#logistic-regression",
-    "title": "Model selection for logistic regression",
-    "section": "Logistic regression",
-    "text": "Logistic regression\n\\[\n\\log\\left(\\frac{p}{1-p}\\right)\n=\n\\beta_0+\\beta_1x.\n\\]\n\nThe logit function log(p / (1-p)) is an example of a link function that transforms the linear model to have an appropriate range;\nThis is an example of a generalized linear model;"
+    "objectID": "lectures/2024-12-05/project-tips.html#reduce-cognitive-load",
+    "href": "lectures/2024-12-05/project-tips.html#reduce-cognitive-load",
+    "title": "Telling a data story",
+    "section": "Reduce cognitive load",
+    "text": "Reduce cognitive load\n\n\n\n\n\n\n\nhttp://www.storytellingwithdata.com/2012/09/some-finer-points-of-data-visualization.html"
   },
   {
-    "objectID": "lectures/2024-12-05/19-logistic-regression.html#estimation",
-    "href": "lectures/2024-12-05/19-logistic-regression.html#estimation",
-    "title": "Model selection for logistic regression",
-    "section": "Estimation",
-    "text": "Estimation\n\nWe estimate the parameters \\(\\beta_0,\\,\\beta_1\\) using maximum likelihood (don’t worry about it) to get the “best fitting” S-curve;\nThe fitted model is\n\n\\[\n\\log\\left(\\frac{\\widehat{p}}{1-\\widehat{p}}\\right)\n=\nb_0+b_1x.\n\\]"
+    "objectID": "lectures/2024-12-05/project-tips.html#use-descriptive-titles",
+    "href": "lectures/2024-12-05/project-tips.html#use-descriptive-titles",
+    "title": "Telling a data story",
+    "section": "Use descriptive titles",
+    "text": "Use descriptive titles\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit: Angela Zoss and Eric Monson, Duke DVS"
   },
   {
-    "objectID": "lectures/2024-12-05/19-logistic-regression.html#logistic-regression---classification",
-    "href": "lectures/2024-12-05/19-logistic-regression.html#logistic-regression---classification",
-    "title": "Model selection for logistic regression",
-    "section": "Logistic regression -> classification?",
-    "text": "Logistic regression -&gt; classification?"
+    "objectID": "lectures/2024-12-05/project-tips.html#annotate-figures",
+    "href": "lectures/2024-12-05/project-tips.html#annotate-figures",
+    "title": "Telling a data story",
+    "section": "Annotate figures",
+    "text": "Annotate figures\n\n\n\n\n\n\n\nhttps://bl.ocks.org/susielu/23dc3082669ee026c552b85081d90976"
   },
   {
-    "objectID": "lectures/2024-12-05/19-logistic-regression.html#step-1-pick-a-threshold",
-    "href": "lectures/2024-12-05/19-logistic-regression.html#step-1-pick-a-threshold",
-    "title": "Model selection for logistic regression",
-    "section": "Step 1: pick a threshold",
-    "text": "Step 1: pick a threshold\nSelect a number \\(0 &lt; p^* &lt; 1\\):\n\n\nif \\(\\text{Prob}(y=1)\\leq p^*\\), then predict \\(\\widehat{y}=0\\);\nif \\(\\text{Prob}(y=1)&gt; p^*\\), then predict \\(\\widehat{y}=1\\)."
+    "objectID": "lectures/2024-12-05/project-tips.html#sample-plots",
+    "href": "lectures/2024-12-05/project-tips.html#sample-plots",
+    "title": "Telling a data story",
+    "section": "Sample plots",
+    "text": "Sample plots\n\np_hist &lt;- ggplot(mtcars, aes(x = mpg)) +\n  geom_histogram(binwidth = 2)\n\np_text &lt;- mtcars |&gt;\n  rownames_to_column() |&gt;\n  ggplot(aes(x = disp, y = mpg)) +\n  geom_text_repel(aes(label = rowname)) +\n  coord_cartesian(clip = \"off\")"
   },
   {
-    "objectID": "lectures/2024-12-05/19-logistic-regression.html#step-2-find-the-decision-boundary",
-    "href": "lectures/2024-12-05/19-logistic-regression.html#step-2-find-the-decision-boundary",
-    "title": "Model selection for logistic regression",
-    "section": "Step 2: find the “decision boundary”",
-    "text": "Step 2: find the “decision boundary”\nSolve for the x-value that matches the threshold:\n\n\nif \\(\\text{Prob}(y=1)\\leq p^*\\), then predict \\(\\widehat{y}=0\\);\nif \\(\\text{Prob}(y=1)&gt; p^*\\), then predict \\(\\widehat{y}=1\\)."
+    "objectID": "lectures/2024-12-05/project-tips.html#small-fig-width",
+    "href": "lectures/2024-12-05/project-tips.html#small-fig-width",
+    "title": "Telling a data story",
+    "section": "Small fig-width",
+    "text": "Small fig-width\nFor a zoomed-in look\n\n```{r}\n#| fig-width: 3\n#| fig-asp: 0.618\n\np_hist\n```"
   },
   {
-    "objectID": "lectures/2024-12-05/19-logistic-regression.html#step-3-classify-a-new-arrival",
-    "href": "lectures/2024-12-05/19-logistic-regression.html#step-3-classify-a-new-arrival",
-    "title": "Model selection for logistic regression",
-    "section": "Step 3: classify a new arrival",
-    "text": "Step 3: classify a new arrival\nA new person shows up with \\(x_{\\text{new}}\\). Which side of the boundary are they on?\n\n\nif \\(x_{\\text{new}} \\leq x^\\star\\), then \\(\\text{Prob}(y=1)\\leq p^*\\), so predict \\(\\widehat{y}=0\\) for the new person;\nif \\(x_{\\text{new}} &gt; x^\\star\\), then \\(\\text{Prob}(y=1)&gt; p^*\\), so predict \\(\\widehat{y}=1\\) for the new person."
+    "objectID": "lectures/2024-12-05/project-tips.html#large-fig-width",
+    "href": "lectures/2024-12-05/project-tips.html#large-fig-width",
+    "title": "Telling a data story",
+    "section": "Large fig-width",
+    "text": "Large fig-width\nFor a zoomed-out look\n\n```{r}\n#| fig-width: 6\n#| fig-asp: 0.618\n\np_hist\n```"
   },
   {
-    "objectID": "lectures/2024-12-05/19-logistic-regression.html#lets-change-the-threshold",
-    "href": "lectures/2024-12-05/19-logistic-regression.html#lets-change-the-threshold",
-    "title": "Model selection for logistic regression",
-    "section": "Let’s change the threshold",
-    "text": "Let’s change the threshold\nA new person shows up with \\(x_{\\text{new}}\\). Which side of the boundary are they on?\n\n\nif \\(x_{\\text{new}} \\leq x^\\star\\), then \\(\\text{Prob}(y=1)\\leq p^*\\), so predict \\(\\widehat{y}=0\\) for the new person;\nif \\(x_{\\text{new}} &gt; x^\\star\\), then \\(\\text{Prob}(y=1)&gt; p^*\\), so predict \\(\\widehat{y}=1\\) for the new person."
+    "objectID": "lectures/2024-12-05/project-tips.html#fig-width-affects-text-size",
+    "href": "lectures/2024-12-05/project-tips.html#fig-width-affects-text-size",
+    "title": "Telling a data story",
+    "section": "fig-width affects text size",
+    "text": "fig-width affects text size"
   },
   {
-    "objectID": "lectures/2024-12-05/19-logistic-regression.html#nothing-special-about-one-predictor",
-    "href": "lectures/2024-12-05/19-logistic-regression.html#nothing-special-about-one-predictor",
-    "title": "Model selection for logistic regression",
-    "section": "Nothing special about one predictor…",
-    "text": "Nothing special about one predictor…\nTwo numerical predictors and one binary response:"
+    "objectID": "lectures/2024-12-05/project-tips.html#multiple-plots-on-a-slide",
+    "href": "lectures/2024-12-05/project-tips.html#multiple-plots-on-a-slide",
+    "title": "Telling a data story",
+    "section": "Multiple plots on a slide",
+    "text": "Multiple plots on a slide\n\n\n\nFirst, ask yourself, must you include multiple plots on a slide? For example, is your narrative about comparing results from two plots?\n\n\n\n\nIf no, then don’t! Move the second plot to to the next slide!\nIf yes, use columns and sequential reveal."
   },
   {
-    "objectID": "lectures/2024-12-05/19-logistic-regression.html#multiple-logistic-regression",
-    "href": "lectures/2024-12-05/19-logistic-regression.html#multiple-logistic-regression",
-    "title": "Model selection for logistic regression",
-    "section": "“Multiple” logistic regression",
-    "text": "“Multiple” logistic regression\nOn the probability scale:\n\\[\n\\text{Prob}(y = 1)\n=\n\\frac{e^{\\beta_0+\\beta_1x_1+\\beta_2x_2+...+\\beta_mx_m}}{1+e^{\\beta_0+\\beta_1x_1+\\beta_2x_2+...+\\beta_mx_m}}.\n\\]\nFor the log-odds, a multiple linear regression:\n\\[\n\\log\\left(\\frac{p}{1-p}\\right)\n=\n\\beta_0+\\beta_1x_1+\\beta_2x_2+...+\\beta_mx_m.\n\\]"
+    "objectID": "lectures/2024-12-05/project-tips.html#writing-your-project-report-with-quarto",
+    "href": "lectures/2024-12-05/project-tips.html#writing-your-project-report-with-quarto",
+    "title": "Telling a data story",
+    "section": "Writing your project report with Quarto",
+    "text": "Writing your project report with Quarto\n\nFigure sizing: fig-width, fig-height, etc. in code chunks.\nFigure layout: layout-ncol for placing multiple figures in a chunk.\nFurther control over figure layout with the patchwork package.\nChunk options around what makes it in your final report: message, echo, etc.\nCross referencing figures and tables.\nAdding footnotes and citations."
   },
   {
-    "objectID": "lectures/2024-12-05/19-logistic-regression.html#decision-boundary-again",
-    "href": "lectures/2024-12-05/19-logistic-regression.html#decision-boundary-again",
-    "title": "Model selection for logistic regression",
-    "section": "Decision boundary, again",
-    "text": "Decision boundary, again\nIt’s linear! Consider two numerical predictors:\n\n\nif new \\((x_1,\\,x_2)\\) below, \\(\\text{Prob}(y=1)\\leq p^*\\). Predict \\(\\widehat{y}=0\\) for the new person;\nif new \\((x_1,\\,x_2)\\) above, \\(\\text{Prob}(y=1)&gt; p^*\\). Predict \\(\\widehat{y}=1\\) for the new person."
+    "objectID": "lectures/2024-12-05/project-tips.html#cross-referencing-figures",
+    "href": "lectures/2024-12-05/project-tips.html#cross-referencing-figures",
+    "title": "Telling a data story",
+    "section": "Cross referencing figures",
+    "text": "Cross referencing figures\n\nOutputInput\n\n\nAs seen in Figure 1, there is a positive and relatively strong relationship between body mass and flipper length of penguins.\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point()\n\n\n\n\n\n\n\nFigure 1: The relationship between body mass and flipper length of penguins.\n\n\n\n\n\n\n\nAs seen in @fig-penguins, there is a positive and relatively strong relationship between body mass and flipper length of penguins.\n\n```{r}\n#| label: fig-penguins\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point()\n```"
   },
   {
-    "objectID": "lectures/2024-12-05/19-logistic-regression.html#model-selection-for-logistic-regression",
-    "href": "lectures/2024-12-05/19-logistic-regression.html#model-selection-for-logistic-regression",
-    "title": "Model selection for logistic regression",
-    "section": "Model selection for logistic regression",
-    "text": "Model selection for logistic regression\nQ: How do we decide if a logistic regression model is “good”?\nA: Look at the error rates of its predictions. There are two kinds…\nINSERT TABLE HERE!"
-  },
-  {
-    "objectID": "lectures/2024-12-05/19-logistic-regression.html#too-much-vocabulary",
-    "href": "lectures/2024-12-05/19-logistic-regression.html#too-much-vocabulary",
-    "title": "Model selection for logistic regression",
-    "section": "Too much vocabulary",
-    "text": "Too much vocabulary\nTABLE WITH ALL THE JARGON"
-  },
-  {
-    "objectID": "lectures/2024-12-05/19-logistic-regression.html#trading-off-between-the-errors",
-    "href": "lectures/2024-12-05/19-logistic-regression.html#trading-off-between-the-errors",
-    "title": "Model selection for logistic regression",
-    "section": "Trading off between the errors",
-    "text": "Trading off between the errors"
+    "objectID": "lectures/2024-12-05/project-tips.html#cross-referencing-tables",
+    "href": "lectures/2024-12-05/project-tips.html#cross-referencing-tables",
+    "title": "Telling a data story",
+    "section": "Cross referencing tables",
+    "text": "Cross referencing tables\n\nOutputInput\n\n\nThe regression output is shown in Table 1.\n\npenguins_fit &lt;- linear_reg() |&gt;\n  fit(body_mass_g ~ flipper_length_mm, data = penguins)\n\ntidy(penguins_fit) |&gt;\n  knitr::kable(digits = 3)\n\n\n\nTable 1: The regression output for predicting body mass from flipper length of penguins.\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-5780.831\n305.815\n-18.903\n0\n\n\nflipper_length_mm\n49.686\n1.518\n32.722\n0\n\n\n\n\n\n\n\n\n\n\nThe regression output is shown in @tbl-penguins-lm.\n\n```{r}\n#| label: tbl-penguins-lm\n#| tbl-cap: The regression output for predicting body mass from flipper length of penguins.\n\npenguins_fit &lt;- linear_reg() |&gt;\n  fit(body_mass_g ~ flipper_length_mm, data = penguins)\n\ntidy(penguins_fit) |&gt;\n  knitr::kable(digits = 3)\n```"
   }
 ]
