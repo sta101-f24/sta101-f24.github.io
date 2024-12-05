@@ -1,7 +1,5 @@
 institute: "Duke University <br> STA 101 Fall 2024"
 author: "John Zito"
-footer: "[🔗 sta101-f24.github.io](https://sta101-f24.github.io/)"
-logo: "../logo.png"
 format:
   revealjs:
     html-math-method: mathjax
@@ -9,7 +7,6 @@ format:
     transition: fade
     slide-number: true
     chalkboard: true
-editor: visual
 execute:
   freeze: auto
   echo: true
