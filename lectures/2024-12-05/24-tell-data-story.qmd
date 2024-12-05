@@ -1,6 +1,5 @@
 ---
 title: "Telling a data story"
-subtitle: Lecture 24
 format: revealjs
 auto-stretch: false
 ---
