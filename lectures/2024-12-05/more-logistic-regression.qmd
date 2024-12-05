@@ -1,7 +1,6 @@
 ---
 title: "Model selection for logistic regression"
 format: revealjs
-auto-stretch: false
 ---
 
 ```{r}
@@ -60,7 +59,7 @@ ggplot(movie_scores, aes(x = critics, y = audience)) +
   labs(
     x = "Critics Score" , 
     y = "Audience Score",
-    title = "Rotten Tomatoes Scores from Thursday October 24 Lecture"
+    title = "Rotten Tomatoes Scores"
   )
 ```
 
@@ -79,7 +78,7 @@ plot(births14$habit == "smoker", births14$weight,
      ylab = "Birth weight (lbs)",
      xlab = "",
      xaxt = "n",
-     main = "Smoking during pregnancy dataset from Lab 5",
+     main = "Smoking during pregnancy dataset",
      xlim = c(-0.25, 1.25))
 abline(lab_5_fit, col = "red", lwd = 3)
 axis(side = 1, at = c(0, 1), labels = c("Non-smoker (0)", "Smoker (1)"))
@@ -103,7 +102,7 @@ ggplot(
   geom_point(alpha = 0.5) +
   geom_smooth(aes(y = .pred), method = "lm") +
   labs(
-    title = "Penguins dataset from AE 14",
+    title = "Penguins dataset",
     x = "Flipper length (mm)",
     y = "Body mass (g)"
     ) +
@@ -528,3 +527,34 @@ points(X, pch = 19,
 
 -   if new $(x_1,\,x_2)$ below, $\text{Prob}(y=1)\leq p^*$. Predict $\widehat{y}=0$ for the new person;
 -   if new $(x_1,\,x_2)$ above, $\text{Prob}(y=1)> p^*$. Predict $\widehat{y}=1$ for the new person.
+
+## Model selection for logistic regression
+
+Q: How do we decide if a logistic regression model is “good”?
+
+A: Look at the error rates of its predictions. There are two kinds...
+
+INSERT TABLE HERE!
+
+## Too much vocabulary
+
+TABLE WITH ALL THE JARGON
+
+## Trading off between the errors
+
+
+## ROC curve
+
+The **receiver operating characteristic (ROC) curve** allows to assess the model performance across a range of thresholds.
+
+![](images/roc-curve.png)
+
+## ROC curve {.smaller}
+
+![](images/roc-curve-annotated.png)
+## ROC curve
+
+![](images/roc-curve.png)
+
+- The more "up and to the left," the better;
+- Up-and-to-the-left-ness can be quantified with the area under the ROC curve.
