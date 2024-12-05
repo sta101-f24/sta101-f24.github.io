@@ -138,7 +138,7 @@ $$
 \mathbf{x}: \text{word and character counts in an e-mail.}
 $$
 
-![](images/19/spam.png){fig-align="center"}
+![](images/spam.png){fig-align="center"}
 
 $$
 y
@@ -157,7 +157,7 @@ $$
 \mathbf{x}: \text{features in a medical image.}
 $$
 
-![](images/19/head-neck.jpg){fig-align="center"}
+![](images/head-neck.jpg){fig-align="center"}
 
 $$
 y
@@ -176,7 +176,7 @@ $$
 \mathbf{x}: \text{financial and demographic info about a loan applicant.}
 $$
 
-![](images/19/fico.jpg){fig-align="center"}
+![](images/fico.jpg){fig-align="center"}
 
 $$
 y
@@ -197,11 +197,11 @@ $$
 
 ::: columns
 ::: {.column width="50%"}
-![](images/19/machine-bias-petty-theft-1.png){fig-align="center" width="300" height="250"}
+![](images/machine-bias-petty-theft-1.png){fig-align="center" width="300" height="250"}
 :::
 
 ::: {.column width="50%"}
-![](images/19/machine-bias-drug-posession-1.png){fig-align="center" width="300" height="250"}
+![](images/machine-bias-drug-posession-1.png){fig-align="center" width="300" height="250"}
 :::
 :::
 
@@ -564,4 +564,4 @@ The **receiver operating characteristic (ROC) curve** allows to assess the model
 ![](images/roc-curve.png)
 
 -   The more "up and to the left," the better;
--   Up-and-to-the-left-ness can be quantified with the area under the ROC curve.
+-   Up-and-to-the-left-ness can be quantified with the area under the ROC curve (a number between zero and one).
