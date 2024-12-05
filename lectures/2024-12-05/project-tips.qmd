@@ -8,12 +8,21 @@ auto-stretch: false
 
 ## Announcements {.smaller}
 
--   Check grades on Canvas, if anything seems off let me know asap. Your final grade will be calculated based on what's on Canvas. No grades will be changed after the project is due.
--   My office hours next week by appointment.
--   Don't forget to fill out course and TA evaluations.
--   Project 2:
-    -   Friday - Peer review. You must be in your lab section to participate in the peer review (and be eligible for the points for it).
-    -   Next Thursday - Video (upload to YouTube/Warpwire/etc. and share link on Google sheet) + writeup (on Gradescope) due.
+- Check Lab 7 and Take-Home 2 and submit regrade requests;
+- Course and TA evaluations;
+- I will hold office hours every day next week (M - F). When?
+- Project reminders...
+  - We're skipping the peer review. +4 all around!
+  - For technical help on outside material, Ed is best at first;
+  - Final paper in the ballpark of five pages. Code should not appear!
+  - Video: hop on a Zoom call and record it live;
+  - Due 5PM on 12/15. Grades due 48 hours later.
+
+## Where to now?
+
+- **STA 210 Regression Analysis**: similar technical level, delivery style, and coding toolkit as 101;
+
+- **STA 240 Probability for Inference**: calculus-based introduction to probability and the mathematical theory of statistics.
 
 ## Setup
 
