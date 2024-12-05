@@ -44,141 +44,335 @@
     ]
   },
   {
-    "objectID": "computing/computing-histograms.html",
-    "href": "computing/computing-histograms.html",
-    "title": "Histogram basics",
-    "section": "",
-    "text": "A histogram displays the distribution or variability of numerical data. It shows you where the data values are typically concentrated, how spread out they are, and whether or not there are any asymmetries.\nThis primer leads you down the path of least resistance to producing a histogram plot using R. Trust me; you would not want to do this by hand.",
-    "crumbs": [
-      "Computing primers",
-      "Histogram basics"
-    ]
+    "objectID": "lectures/2024-12-05/24-tell-data-story.html#announcements",
+    "href": "lectures/2024-12-05/24-tell-data-story.html#announcements",
+    "title": "Telling a data story",
+    "section": "Announcements",
+    "text": "Announcements\n\nCheck grades on Canvas, if anything seems off let me know asap. Your final grade will be calculated based on what’s on Canvas. No grades will be changed after the project is due.\nMy office hours next week by appointment.\nDon’t forget to fill out course and TA evaluations.\nProject 2:\n\nFriday - Peer review. You must be in your lab section to participate in the peer review (and be eligible for the points for it).\nNext Thursday - Video (upload to YouTube/Warpwire/etc. and share link on Google sheet) + writeup (on Gradescope) due."
   },
   {
-    "objectID": "computing/computing-histograms.html#loading-a-package",
-    "href": "computing/computing-histograms.html#loading-a-package",
-    "title": "Histogram basics",
-    "section": "Loading a package",
-    "text": "Loading a package\nThe command for plotting a histogram is contained inside the tidyverse package, so you need to load that first:\n\nlibrary(tidyverse)",
-    "crumbs": [
-      "Computing primers",
-      "Histogram basics"
-    ]
+    "objectID": "lectures/2024-12-05/24-tell-data-story.html#setup",
+    "href": "lectures/2024-12-05/24-tell-data-story.html#setup",
+    "title": "Telling a data story",
+    "section": "Setup",
+    "text": "Setup\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(ggrepel)\nlibrary(ggthemes)\nlibrary(palmerpenguins)"
   },
   {
-    "objectID": "computing/computing-histograms.html#loading-a-dataset",
-    "href": "computing/computing-histograms.html#loading-a-dataset",
-    "title": "Histogram basics",
-    "section": "Loading a dataset",
-    "text": "Loading a dataset\nNext, we need something to plot, so let us load in a data set. We will consider the flint water data that was mentioned during the second lecture on 8/29/2024:\n\nflint &lt;- read_csv(\"flint.csv\")\n\nLet us unpack what this is doing:\n\nread_csv is a function, just like \\(f(x)=x^2\\) or \\(f(x)=ax+b\\) from your math class. It receives an input, and returns an output. The input is the name of a file: \"flint.csv\". The output is a data frame (a spreadsheet) in R;\nWhen you run read_csv, it returns a data frame. But if you don’t give that data frame a name and store it someplace, then you can’t actually use it. So that’s what the flint &lt;- part is doing. You are assigning the output of read_csv to a variable named “flint.” If this went as planned, you should see flint listed in the upper right Environment tab of RStudio:\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nRecalling the information here, you may have to modify the file path to something like \"~/lecture-2/flint.csv\" to match the particular way you have chosen to name and organize your files and folders.",
-    "crumbs": [
-      "Computing primers",
-      "Histogram basics"
-    ]
+    "objectID": "lectures/2024-12-05/24-tell-data-story.html#multiple-ways-of-telling-a-story",
+    "href": "lectures/2024-12-05/24-tell-data-story.html#multiple-ways-of-telling-a-story",
+    "title": "Telling a data story",
+    "section": "Multiple ways of telling a story",
+    "text": "Multiple ways of telling a story\n\nSequential reveal: Motivation, then resolution\nInstant reveal: Resolution, and hidden in it motivation"
   },
   {
-    "objectID": "computing/computing-histograms.html#plotting-a-histogram",
-    "href": "computing/computing-histograms.html#plotting-a-histogram",
-    "title": "Histogram basics",
-    "section": "Plotting a histogram",
-    "text": "Plotting a histogram\nHere is the basic command in all its glory:\n\nggplot(flint, aes(x = lead)) +\n  geom_histogram(bins = 250) + \n  coord_cartesian(xlim = c(0, 100))\n\n\n\n\n\n\n\n\nNow let’s talk about it:\n\nggplot(flint, aes(x = lead)) is where we tell R what data frame we are using (flint) and which variable (column) in that data set we want to plot (lead);\nNext, we use geom_histogram(bins = 250) to tell it that we specifically want a histogram with 250 bins;\nLast, we use coord_cartesian(xlim = c(0, 100)) to adjust the bounds of the horizontal axis: start at x = 0 and end at x = 100;\nWe stitch all of these requests together using the + sign, and to make things more readable (not run off the page), we put a new line after each +.",
-    "crumbs": [
-      "Computing primers",
-      "Histogram basics"
-    ]
+    "objectID": "lectures/2024-12-05/24-tell-data-story.html#simplicity-vs.-complexity",
+    "href": "lectures/2024-12-05/24-tell-data-story.html#simplicity-vs.-complexity",
+    "title": "Telling a data story",
+    "section": "Simplicity vs. complexity",
+    "text": "Simplicity vs. complexity\n\nWhen you’re trying to show too much data at once you may end up not showing anything.\n\n\nNever assume your audience can rapidly process complex visual displays\nDon’t add variables to your plot that are tangential to your story\nDon’t jump straight to a highly complex figure; first show an easily digestible subset (e.g., show one facet first)\nAim for memorable, but clear\n\n\n\n\nProject note: Make sure to leave time to iterate on your plots after you practice your presentation. If certain plots or outputs are getting too wordy to explain, take time to simplify them!"
   },
   {
-    "objectID": "computing/computing-histograms.html#adding-a-vertical-line-to-the-histogram",
-    "href": "computing/computing-histograms.html#adding-a-vertical-line-to-the-histogram",
-    "title": "Histogram basics",
-    "section": "Adding a vertical line to the histogram",
-    "text": "Adding a vertical line to the histogram\nWhen plotting a histogram, it can also be useful to indicate on the plot the location of some particularly meaningful summary statistics, such as the mean or median. In order to do this, we can use the same basic command from the previous section, but then add some extra layers that will place vertical lines on the plot at those values:\n\nmean_value &lt;- mean(flint$lead)\nmedian_value &lt;- median(flint$lead)\n\nggplot(flint, aes(x = lead)) +\n  geom_histogram(bins = 250) + \n  coord_cartesian(xlim = c(0, 100)) + \n  geom_vline(xintercept = mean_value, color = \"red\") + \n  geom_vline(xintercept = median_value, color = \"blue\")\n\n\n\n\n\n\n\n\nNotice that the distribution of lead levels is positively skewed, which results in the mean being larger than the median.",
-    "crumbs": [
-      "Computing primers",
-      "Histogram basics"
-    ]
+    "objectID": "lectures/2024-12-05/24-tell-data-story.html#consistency-vs.-repetitiveness",
+    "href": "lectures/2024-12-05/24-tell-data-story.html#consistency-vs.-repetitiveness",
+    "title": "Telling a data story",
+    "section": "Consistency vs. repetitiveness",
+    "text": "Consistency vs. repetitiveness\n\nBe consistent but don’t be repetitive.\n\n\nUse consistent features throughout plots (e.g., same color represents same level on all plots)\nAim to use a different type of summary or visualization for each distinct analysis\n\n\n\n\nProject note: If possible, ask a friend who is not in the class to listen to your presentation and then ask them what they remember. Then, ask yourself: is that what you wanted them to remember?"
   },
   {
-    "objectID": "computing/computing-histograms.html#now-you-try",
-    "href": "computing/computing-histograms.html#now-you-try",
-    "title": "Histogram basics",
-    "section": "Now you try",
-    "text": "Now you try\nTo double check that you can follow these instructions, redo everything above using a different data set. This may require you to modify the code in various ways:\n\nthe file path you provide to read_csv;\nthe name you assign to the resulting data frame;\nthe variable you plot in aes(x = lead);\nthe number of histogram bins;\nthe range of the horizontal axis.\n\nCheck that you are comfortable making these changes.",
-    "crumbs": [
-      "Computing primers",
-      "Histogram basics"
-    ]
+    "objectID": "lectures/2024-12-05/24-tell-data-story.html#your-project-plans",
+    "href": "lectures/2024-12-05/24-tell-data-story.html#your-project-plans",
+    "title": "Telling a data story",
+    "section": "Your project plans",
+    "text": "Your project plans\n\nHow are you telling your story?\n\nSequential reveal\nInstant reveal\nOur approach doesn’t fit either of these paradigms\nNo idea\n\nSubmit your answer on Canvas for 12-06 Check-in (access code: ___)"
   },
   {
-    "objectID": "computing/computing-students-t.html",
-    "href": "computing/computing-students-t.html",
-    "title": "Using the t-distribution",
-    "section": "",
-    "text": "library(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)"
-  },
-  {
-    "objectID": "computing/computing-students-t.html#packages",
-    "href": "computing/computing-students-t.html#packages",
-    "title": "Using the t-distribution",
-    "section": "",
-    "text": "library(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)"
-  },
-  {
-    "objectID": "computing/computing-students-t.html#data",
-    "href": "computing/computing-students-t.html#data",
-    "title": "Using the t-distribution",
+    "objectID": "lectures/2024-12-05/24-tell-data-story.html#data",
+    "href": "lectures/2024-12-05/24-tell-data-story.html#data",
+    "title": "Telling a data story",
     "section": "Data",
-    "text": "Data\nEvery year, the United States Department of Health and Human Services releases to the public a large dataset containing information on births recorded in the country. This dataset has been of interest to medical researchers who are studying the relation between habits and practices of expectant mothers and the birth of their children. In this case study we work with a random sample of 1,000 cases from the dataset released in 2014. The length of pregnancy, measured in weeks, is commonly referred to as gestation.\n\nglimpse(births14)\n\nRows: 1,000\nColumns: 13\n$ fage           &lt;int&gt; 34, 36, 37, NA, 32, 32, 37, 29, 30, 29, 30, 34, 28, 28,…\n$ mage           &lt;dbl&gt; 34, 31, 36, 16, 31, 26, 36, 24, 32, 26, 34, 27, 22, 31,…\n$ mature         &lt;chr&gt; \"younger mom\", \"younger mom\", \"mature mom\", \"younger mo…\n$ weeks          &lt;dbl&gt; 37, 41, 37, 38, 36, 39, 36, 40, 39, 39, 42, 40, 40, 39,…\n$ premie         &lt;chr&gt; \"full term\", \"full term\", \"full term\", \"full term\", \"pr…\n$ visits         &lt;dbl&gt; 14, 12, 10, NA, 12, 14, 10, 13, 15, 11, 14, 16, 20, 15,…\n$ gained         &lt;dbl&gt; 28, 41, 28, 29, 48, 45, 20, 65, 25, 22, 40, 30, 31, NA,…\n$ weight         &lt;dbl&gt; 6.96, 8.86, 7.51, 6.19, 6.75, 6.69, 6.13, 6.74, 8.94, 9…\n$ lowbirthweight &lt;chr&gt; \"not low\", \"not low\", \"not low\", \"not low\", \"not low\", …\n$ sex            &lt;chr&gt; \"male\", \"female\", \"female\", \"male\", \"female\", \"female\",…\n$ habit          &lt;chr&gt; \"nonsmoker\", \"nonsmoker\", \"nonsmoker\", \"nonsmoker\", \"no…\n$ marital        &lt;chr&gt; \"married\", \"married\", \"married\", \"not married\", \"marrie…\n$ whitemom       &lt;chr&gt; \"white\", \"white\", \"not white\", \"white\", \"white\", \"white…"
+    "text": "Data\n\n\nd &lt;- tribble(\n  ~category,                     ~value,\n  \"Cutting tools\"                , 0.03,\n  \"Buildings and administration\" , 0.22,\n  \"Labor\"                        , 0.31,\n  \"Machinery\"                    , 0.27,\n  \"Workplace materials\"          , 0.17\n)\nd\n\n\n# A tibble: 5 × 2\n  category                     value\n  &lt;chr&gt;                        &lt;dbl&gt;\n1 Cutting tools                 0.03\n2 Buildings and administration  0.22\n3 Labor                         0.31\n4 Machinery                     0.27\n5 Workplace materials           0.17"
   },
   {
-    "objectID": "computing/computing-students-t.html#t_test",
-    "href": "computing/computing-students-t.html#t_test",
-    "title": "Using the t-distribution",
-    "section": "t_test",
-    "text": "t_test\n\nt_test(births14, \n       response = weeks, \n       alternative = \"two-sided\",\n       mu = 40,\n       conf_int = TRUE, \n       conf_level = 0.95)\n\n# A tibble: 1 × 7\n  statistic  t_df  p_value alternative estimate lower_ci upper_ci\n      &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1     -16.4   999 5.71e-54 two.sided       38.7     38.5     38.8\n\nbirths14 |&gt;\n  summarize(\n    n = n(),\n    xbar = mean(weeks),\n    s = sd(weeks),\n    se = s / sqrt(n),\n    alpha = 0.05,\n    df = n - 1,\n    t_star = qt(1 - (alpha / 2), df = df),\n    L = xbar - t_star * se,\n    U = xbar + t_star * se\n  )\n\n# A tibble: 1 × 9\n      n  xbar     s     se alpha    df t_star     L     U\n  &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1  1000  38.7  2.56 0.0811  0.05   999   1.96  38.5  38.8"
+    "objectID": "lectures/2024-12-05/24-tell-data-story.html#keep-it-simple",
+    "href": "lectures/2024-12-05/24-tell-data-story.html#keep-it-simple",
+    "title": "Telling a data story",
+    "section": "Keep it simple",
+    "text": "Keep it simple"
   },
   {
-    "objectID": "computing/computing-barplot.html",
-    "href": "computing/computing-barplot.html",
-    "title": "Barplot basics",
+    "objectID": "lectures/2024-12-05/24-tell-data-story.html#judging-relative-area",
+    "href": "lectures/2024-12-05/24-tell-data-story.html#judging-relative-area",
+    "title": "Telling a data story",
+    "section": "Judging relative area",
+    "text": "Judging relative area\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFrom Data to Viz caveat collection - The issue with pie chart"
+  },
+  {
+    "objectID": "lectures/2024-12-05/24-tell-data-story.html#use-color-to-draw-attention",
+    "href": "lectures/2024-12-05/24-tell-data-story.html#use-color-to-draw-attention",
+    "title": "Telling a data story",
+    "section": "Use color to draw attention",
+    "text": "Use color to draw attention"
+  },
+  {
+    "objectID": "lectures/2024-12-05/24-tell-data-story.html#play-with-themes-for-a-non-standard-look",
+    "href": "lectures/2024-12-05/24-tell-data-story.html#play-with-themes-for-a-non-standard-look",
+    "title": "Telling a data story",
+    "section": "Play with themes for a non-standard look",
+    "text": "Play with themes for a non-standard look"
+  },
+  {
+    "objectID": "lectures/2024-12-05/24-tell-data-story.html#go-beyond-ggplot2-themes-ggthemes",
+    "href": "lectures/2024-12-05/24-tell-data-story.html#go-beyond-ggplot2-themes-ggthemes",
+    "title": "Telling a data story",
+    "section": "Go beyond ggplot2 themes – ggthemes",
+    "text": "Go beyond ggplot2 themes – ggthemes"
+  },
+  {
+    "objectID": "lectures/2024-12-05/24-tell-data-story.html#tell-a-story",
+    "href": "lectures/2024-12-05/24-tell-data-story.html#tell-a-story",
+    "title": "Telling a data story",
+    "section": "Tell a story",
+    "text": "Tell a story\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit: Angela Zoss and Eric Monson, Duke DVS"
+  },
+  {
+    "objectID": "lectures/2024-12-05/24-tell-data-story.html#leave-out-non-story-details",
+    "href": "lectures/2024-12-05/24-tell-data-story.html#leave-out-non-story-details",
+    "title": "Telling a data story",
+    "section": "Leave out non-story details",
+    "text": "Leave out non-story details\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit: Angela Zoss and Eric Monson, Duke DVS"
+  },
+  {
+    "objectID": "lectures/2024-12-05/24-tell-data-story.html#order-matters",
+    "href": "lectures/2024-12-05/24-tell-data-story.html#order-matters",
+    "title": "Telling a data story",
+    "section": "Order matters",
+    "text": "Order matters\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit: Angela Zoss and Eric Monson, Duke DVS"
+  },
+  {
+    "objectID": "lectures/2024-12-05/24-tell-data-story.html#clearly-indicate-missing-data",
+    "href": "lectures/2024-12-05/24-tell-data-story.html#clearly-indicate-missing-data",
+    "title": "Telling a data story",
+    "section": "Clearly indicate missing data",
+    "text": "Clearly indicate missing data\n\n\n\n\n\n\n\nhttp://ivi.sagepub.com/content/10/4/271, Angela Zoss and Eric Monson, Duke DVS"
+  },
+  {
+    "objectID": "lectures/2024-12-05/24-tell-data-story.html#reduce-cognitive-load",
+    "href": "lectures/2024-12-05/24-tell-data-story.html#reduce-cognitive-load",
+    "title": "Telling a data story",
+    "section": "Reduce cognitive load",
+    "text": "Reduce cognitive load\n\n\n\n\n\n\n\nhttp://www.storytellingwithdata.com/2012/09/some-finer-points-of-data-visualization.html"
+  },
+  {
+    "objectID": "lectures/2024-12-05/24-tell-data-story.html#use-descriptive-titles",
+    "href": "lectures/2024-12-05/24-tell-data-story.html#use-descriptive-titles",
+    "title": "Telling a data story",
+    "section": "Use descriptive titles",
+    "text": "Use descriptive titles\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit: Angela Zoss and Eric Monson, Duke DVS"
+  },
+  {
+    "objectID": "lectures/2024-12-05/24-tell-data-story.html#annotate-figures",
+    "href": "lectures/2024-12-05/24-tell-data-story.html#annotate-figures",
+    "title": "Telling a data story",
+    "section": "Annotate figures",
+    "text": "Annotate figures\n\n\n\n\n\n\n\nhttps://bl.ocks.org/susielu/23dc3082669ee026c552b85081d90976"
+  },
+  {
+    "objectID": "lectures/2024-12-05/24-tell-data-story.html#sample-plots",
+    "href": "lectures/2024-12-05/24-tell-data-story.html#sample-plots",
+    "title": "Telling a data story",
+    "section": "Sample plots",
+    "text": "Sample plots\n\np_hist &lt;- ggplot(mtcars, aes(x = mpg)) +\n  geom_histogram(binwidth = 2)\n\np_text &lt;- mtcars |&gt;\n  rownames_to_column() |&gt;\n  ggplot(aes(x = disp, y = mpg)) +\n  geom_text_repel(aes(label = rowname)) +\n  coord_cartesian(clip = \"off\")"
+  },
+  {
+    "objectID": "lectures/2024-12-05/24-tell-data-story.html#small-fig-width",
+    "href": "lectures/2024-12-05/24-tell-data-story.html#small-fig-width",
+    "title": "Telling a data story",
+    "section": "Small fig-width",
+    "text": "Small fig-width\nFor a zoomed-in look\n\n```{r}\n#| fig-width: 3\n#| fig-asp: 0.618\n\np_hist\n```"
+  },
+  {
+    "objectID": "lectures/2024-12-05/24-tell-data-story.html#large-fig-width",
+    "href": "lectures/2024-12-05/24-tell-data-story.html#large-fig-width",
+    "title": "Telling a data story",
+    "section": "Large fig-width",
+    "text": "Large fig-width\nFor a zoomed-out look\n\n```{r}\n#| fig-width: 6\n#| fig-asp: 0.618\n\np_hist\n```"
+  },
+  {
+    "objectID": "lectures/2024-12-05/24-tell-data-story.html#fig-width-affects-text-size",
+    "href": "lectures/2024-12-05/24-tell-data-story.html#fig-width-affects-text-size",
+    "title": "Telling a data story",
+    "section": "fig-width affects text size",
+    "text": "fig-width affects text size"
+  },
+  {
+    "objectID": "lectures/2024-12-05/24-tell-data-story.html#multiple-plots-on-a-slide",
+    "href": "lectures/2024-12-05/24-tell-data-story.html#multiple-plots-on-a-slide",
+    "title": "Telling a data story",
+    "section": "Multiple plots on a slide",
+    "text": "Multiple plots on a slide\n\n\n\nFirst, ask yourself, must you include multiple plots on a slide? For example, is your narrative about comparing results from two plots?\n\n\n\n\nIf no, then don’t! Move the second plot to to the next slide!\nIf yes, use columns and sequential reveal."
+  },
+  {
+    "objectID": "lectures/2024-12-05/24-tell-data-story.html#writing-your-project-report-with-quarto",
+    "href": "lectures/2024-12-05/24-tell-data-story.html#writing-your-project-report-with-quarto",
+    "title": "Telling a data story",
+    "section": "Writing your project report with Quarto",
+    "text": "Writing your project report with Quarto\n\nFigure sizing: fig-width, fig-height, etc. in code chunks.\nFigure layout: layout-ncol for placing multiple figures in a chunk.\nFurther control over figure layout with the patchwork package.\nChunk options around what makes it in your final report: message, echo, etc.\nCross referencing figures and tables.\nAdding footnotes and citations."
+  },
+  {
+    "objectID": "lectures/2024-12-05/24-tell-data-story.html#cross-referencing-figures",
+    "href": "lectures/2024-12-05/24-tell-data-story.html#cross-referencing-figures",
+    "title": "Telling a data story",
+    "section": "Cross referencing figures",
+    "text": "Cross referencing figures\n\nOutputInput\n\n\nAs seen in Figure 1, there is a positive and relatively strong relationship between body mass and flipper length of penguins.\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point()\n\n\n\n\n\n\n\nFigure 1: The relationship between body mass and flipper length of penguins.\n\n\n\n\n\n\n\nAs seen in @fig-penguins, there is a positive and relatively strong relationship between body mass and flipper length of penguins.\n\n```{r}\n#| label: fig-penguins\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point()\n```"
+  },
+  {
+    "objectID": "lectures/2024-12-05/24-tell-data-story.html#cross-referencing-tables",
+    "href": "lectures/2024-12-05/24-tell-data-story.html#cross-referencing-tables",
+    "title": "Telling a data story",
+    "section": "Cross referencing tables",
+    "text": "Cross referencing tables\n\nOutputInput\n\n\nThe regression output is shown in Table 1.\n\npenguins_fit &lt;- linear_reg() |&gt;\n  fit(body_mass_g ~ flipper_length_mm, data = penguins)\n\ntidy(penguins_fit) |&gt;\n  knitr::kable(digits = 3)\n\n\n\nTable 1: The regression output for predicting body mass from flipper length of penguins.\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-5780.831\n305.815\n-18.903\n0\n\n\nflipper_length_mm\n49.686\n1.518\n32.722\n0\n\n\n\n\n\n\n\n\n\n\nThe regression output is shown in @tbl-penguins-lm.\n\n```{r}\n#| label: tbl-penguins-lm\n#| tbl-cap: The regression output for predicting body mass from flipper length of penguins.\n\npenguins_fit &lt;- linear_reg() |&gt;\n  fit(body_mass_g ~ flipper_length_mm, data = penguins)\n\ntidy(penguins_fit) |&gt;\n  knitr::kable(digits = 3)\n```"
+  },
+  {
+    "objectID": "computing/computing-normal.html",
+    "href": "computing/computing-normal.html",
+    "title": "The normal distribution",
     "section": "",
-    "text": "A barplot is similar to a histogram, but instead of visualizing numerical data, we are visualizing categorical data. Each bar in the chart is counting the number of observations (rows) that correspond to each level of the categorical variable.",
+    "text": "The normal distribution is the familiar bell curve. The central limit theorem says that the sampling distribution of a statistic (sample mean, proportion, difference, etc) looks more and more like a normal distribution the more data we have. This gives us permission to use a normal distribution to approximate the sampling distribution, and use the convenient properties of the bell curve to compute confidence intervals and hypothesis tests.\nThis primer introduces you to the basic commands for working with the normal distribution.",
     "crumbs": [
       "Computing primers",
-      "Barplot basics"
+      "Normal distribution"
     ]
   },
   {
-    "objectID": "computing/computing-barplot.html#load-a-data-set",
-    "href": "computing/computing-barplot.html#load-a-data-set",
-    "title": "Barplot basics",
-    "section": "Load a data set",
-    "text": "Load a data set\n\nlibrary(tidyverse)\n\nLet’s load the data from the 2020 Durham City and County Resident Survey (originally in the Canvas lecture 4 folder), where each row is a Durham resident:\n\ndurham &lt;- read_csv(\"durham-2020.csv\")\n\n\n\n\n\n\n\nNote\n\n\n\nRecalling the information here, be prepared to adjust the file path to match how you have organized your files and folders.\n\n\nOne of the columns in this data set is a categorical variable called would_you_say_your_total_annual_hous_35, with four levels corresponding to the resident’s income:\n\nUnder $30,000;\n$30,000-$59,999\n$60,000-$99,999\n$100,000 or more\n\nFurthermore, some folks left this part of the survey blank, and so their income information is missing, which effectively creates a fifth category. Before plotting, let us quickly modify the data to give this income variable a more concise name, as well as making it a proper factor type in R:\n\ndurham &lt;- durham |&gt;\n  rename(income = would_you_say_your_total_annual_hous_35) |&gt;\n  mutate(income = as_factor(income))",
+    "objectID": "computing/computing-normal.html#load-packages",
+    "href": "computing/computing-normal.html#load-packages",
+    "title": "The normal distribution",
+    "section": "Load packages",
+    "text": "Load packages\nThe openintro package has tools for working with the normal distribution:\n\nlibrary(tidyverse) \nlibrary(openintro)",
     "crumbs": [
       "Computing primers",
-      "Barplot basics"
+      "Normal distribution"
     ]
   },
   {
-    "objectID": "computing/computing-barplot.html#the-basic-plot",
-    "href": "computing/computing-barplot.html#the-basic-plot",
-    "title": "Barplot basics",
-    "section": "The basic plot",
-    "text": "The basic plot\n\nggplot(durham, aes(x = income)) +\n  geom_bar()\n\n\n\n\n\n\n\n\nThe basic template here is very similar to what we saw for the histogram. The first layer uses ggplot to indicate what data you wish to plot. Then the next layer uses geom_bar to specifically make it a bar plot.\nIn the first layer we used x = inside aes to make the bars vertical, but we could have made them horizontal as well:\n\nggplot(durham, aes(y = income)) +\n  geom_bar()\n\n\n\n\n\n\n\n\nDo you see what changed?",
+    "objectID": "computing/computing-normal.html#example-bone-density",
+    "href": "computing/computing-normal.html#example-bone-density",
+    "title": "The normal distribution",
+    "section": "Example: bone density",
+    "text": "Example: bone density\nSuppose the bone density of 65-year-old women is normally distributed with mean 809 \\(mg/cm^3\\) and standard deviation of 140 \\(mg/cm^3\\). For reference, here are the densities for three types of wood:\n\nPlywood: 540 \\(mg/cm^3\\)\nPine: 600 \\(mg/cm^3\\)\nMahogany: 710 \\(mg/cm^3\\)\n\nIf \\(X\\) represents the bone density of 65-year-old women, then we can summarize the situation mathematically by writing:\n\\[\nX \\sim N(\\mu = 809, \\sigma = 140).\n\\]\nLet’s give all of the numbers above names and store them in the computer for later:\n\nbone_density_mean &lt;- 809\nbone_density_sd &lt;- 140\n\nplywood &lt;- 540\npine &lt;- 600\nmahogany &lt;- 710",
     "crumbs": [
       "Computing primers",
-      "Barplot basics"
+      "Normal distribution"
     ]
   },
   {
-    "objectID": "computing/computing-barplot.html#adding-layers-to-prettify-it",
-    "href": "computing/computing-barplot.html#adding-layers-to-prettify-it",
-    "title": "Barplot basics",
-    "section": "Adding layers to prettify it",
-    "text": "Adding layers to prettify it\nWe could call it a day at this point, but the basic plot is rather drab. Here is some code that would zhuzh it up in a big way:\n\ndurham |&gt;\n  ggplot(aes(y = income, fill = income)) +\n  geom_bar(show.legend = FALSE) +\n  labs(\n    x = \"Count\",\n    y = NULL,\n    title = \"Would you say your total annual household income is...\"\n  ) + \n  scale_y_discrete(\n    labels = c(\n      \"1\" = \"Under $30,000\",\n      \"2\" = \"$30,000-$59,999\",\n      \"3\" = \"$60,000-$99,999\",\n      \"4\" = \"$100,000 or more\"\n    )\n  )\n\n\n\n\n\n\n\n\n\nThe first ggplot layer tells it what data to use. We also added the fill = argument inside aes to apply a default color scheme;\nthe labs layer allows us to add a title and label the axes;\nthe scale_y_discrete layer allows us to replace the bar labels 1, 2, 3, 4 with more informative text that explains what the levels of the variable actually mean;\nin between every layer, we have a +. Gotta have that icing!",
+    "objectID": "computing/computing-normal.html#plot-the-bell-curve",
+    "href": "computing/computing-normal.html#plot-the-bell-curve",
+    "title": "The normal distribution",
+    "section": "Plot the bell curve",
+    "text": "Plot the bell curve\nThis handy-dandy function plots a bell curve:\n\nnormTail(m = 0, s = 1)\n\n\n\n\n\n\n\n\nYou can add several arguments to customize:\n\nnormTail(m = bone_density_mean, \n         s = bone_density_sd, \n         main = \"Distribution of bone density of 65-year-old women\",\n         xlab = \"mg/cm^3\",\n         xlim = c(200, 1400))",
     "crumbs": [
       "Computing primers",
-      "Barplot basics"
+      "Normal distribution"
+    ]
+  },
+  {
+    "objectID": "computing/computing-normal.html#compute-quantiles-under-the-normal-distribution",
+    "href": "computing/computing-normal.html#compute-quantiles-under-the-normal-distribution",
+    "title": "The normal distribution",
+    "section": "Compute quantiles under the normal distribution",
+    "text": "Compute quantiles under the normal distribution\nThe qnorm function computes the quantiles of a normal distribution. If we wanted the 50% quantile (AKA the median), we would say\n\nqnorm(0.5, mean = 0, sd = 1)\n\n[1] 0\n\n\nIn this case we just get back the mean, because the normal distribution is perfectly symmetric, and mean and median are equal for symmetric distributions.\nIf we wanted the inner quartile range (IQR) for a normal distribution, here it goes:\n\nq25 &lt;- qnorm(0.25, mean = 0, sd = 1)\nq75 &lt;- qnorm(0.75, mean = 0, sd = 1)\n\nIQR &lt;- q75 - q25\nIQR\n\n[1] 1.34898",
+    "crumbs": [
+      "Computing primers",
+      "Normal distribution"
+    ]
+  },
+  {
+    "objectID": "computing/computing-normal.html#compute-and-visualize-probabilities-under-the-normal-distribution",
+    "href": "computing/computing-normal.html#compute-and-visualize-probabilities-under-the-normal-distribution",
+    "title": "The normal distribution",
+    "section": "Compute and visualize probabilities under the normal distribution",
+    "text": "Compute and visualize probabilities under the normal distribution\nWhat is the probability that a randomly selected 65-year-old woman has bones that are as or less dense than pine? If we add an L argument (for “lower”) to normTail, we can visualize the answer:\n\nnormTail(m = bone_density_mean, s = bone_density_sd, L = pine,\n         main = \"Distribution of bone density of 65-year-old women\",\n         xlab = \"mg/cm^3\",)\n\n\n\n\n\n\n\n\nNotice how this may come in handy when we have to compute something like a \\(p\\)-value. In order to compute the probability (area) under the bell curve of being less than 600 \\(mg/cm^3\\), we can use the pnorm function:\n\npnorm(pine, mean = bone_density_mean, sd = bone_density_sd, lower.tail = TRUE)\n\n[1] 0.06773729\n\n\nAbove, we asked about being under 600 in the distribution. But we could just have easily looked at being over 600 by adding a U argument (for “upper”):\n\nnormTail(m = bone_density_mean, s = bone_density_sd, U = pine,\n         main = \"Distribution of bone density of 65-year-old women\",\n         xlab = \"mg/cm^3\",)\n\n\n\n\n\n\n\n\nTo get the number, we change the lower.tail argument:\n\npnorm(pine, mean = bone_density_mean, sd = bone_density_sd, lower.tail = FALSE)\n\n[1] 0.9322627\n\n\nNotice that the probability of being at or below 600 is 6.77%. The probability of being above 600 is 93.23% That covers everything, so taken together you get 100%, which is the total area under the bell curve.",
+    "crumbs": [
+      "Computing primers",
+      "Normal distribution"
+    ]
+  },
+  {
+    "objectID": "computing/computing-logistic.html",
+    "href": "computing/computing-logistic.html",
+    "title": "Logistic regression",
+    "section": "",
+    "text": "The logistic regression model uses a set of predictors (\\(x_1\\), \\(x_2\\), …, \\(x_p\\)) to model the probability that a binary response \\(y\\) is equal to one:\n\\[\n\\text{Prob}(y=1)=\\frac{1}{1+e^{-(\\beta_0+\\beta_1x_1+...+\\beta_px_p)}}.\n\\]\nThis primer leads you down the path of least resistance to fitting this model, plotting the best-fitting S-curve in the single-predictor case, plotting the decision boundary in the bivariate case, and generating predictions.",
+    "crumbs": [
+      "Computing primers",
+      "Logistic regression"
+    ]
+  },
+  {
+    "objectID": "computing/computing-logistic.html#setup",
+    "href": "computing/computing-logistic.html#setup",
+    "title": "Logistic regression",
+    "section": "Setup",
+    "text": "Setup\nThe commands for working with logistic regressions are in the tidymodels package, so load that:\n\nlibrary(tidyverse) \nlibrary(tidymodels) \n\nNext, we need something to model, so let us load in a data set. We will consider this data set from Hewlett-Packard on spam emails:\n\nhp_spam &lt;- read_csv(\"hp-spam.csv\")\n\nhp_spam &lt;- hp_spam |&gt;\n  mutate(type = as.factor(type))\n\n\n\n\n\n\n\nNote\n\n\n\nBe prepared to adjust the file path to match how you have organized your files and folders.\n\n\n\nhp_spam |&gt;\n  select(type, george, capitalTotal, you, charDollar)\n\n# A tibble: 4,601 × 5\n   type  george capitalTotal   you charDollar\n   &lt;fct&gt;  &lt;dbl&gt;        &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;\n 1 1          0          278  1.93      0    \n 2 1          0         1028  3.47      0.18 \n 3 1          0         2259  1.36      0.184\n 4 1          0          191  3.18      0    \n 5 1          0          191  3.18      0    \n 6 1          0           54  0         0    \n 7 1          0          112  3.85      0.054\n 8 1          0           49  0         0    \n 9 1          0         1257  1.23      0.203\n10 1          0          749  1.67      0.081\n# ℹ 4,591 more rows\n\n\nEach observation (row) represents an email that was sent to a person named George, and the variables (columns) include:\n\ntype: is the email spam or not?\ngeorge: percentage of words in email that are “George”;\nyou: percentage of words in email that are “you”;\ncapitalTotal: number of capitalized letters in email;\ncharDollar: percentage of characters that are a dollar sign.\n\nIntuition suggests that a less personalized email (does not mention George by name) with lots of capital letters (I’M NOT SCREAMING) and dollar signs is more likely to be spam. Can we capture this in a model?",
+    "crumbs": [
+      "Computing primers",
+      "Logistic regression"
+    ]
+  },
+  {
+    "objectID": "computing/computing-logistic.html#run-a-simple-logistic-regression-and-plot-the-best-fitting-s-curve",
+    "href": "computing/computing-logistic.html#run-a-simple-logistic-regression-and-plot-the-best-fitting-s-curve",
+    "title": "Logistic regression",
+    "section": "Run a “simple” logistic regression and plot the best-fitting S-curve",
+    "text": "Run a “simple” logistic regression and plot the best-fitting S-curve\nTake the same code we’ve seen before, change linear_reg to logistic_reg, and bada bing:\n\ntype_you_fit &lt;- logistic_reg() |&gt;\n  fit(type ~ you, data = hp_spam)\n  \ntidy(type_you_fit)\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic   p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)   -1.01     0.0456     -22.2 4.72e-109\n2 you            0.341    0.0193      17.6 1.68e- 69\n\n\nThese estimates determine the shape of the best fitting S-curve for these data. Chapter Nine in our textbook provides further discussion of how we might interpret the estimates probabilistically, but we will not concern ourselves with this at the present. For us, estimating these will simply be a means to an end of determining a model that we can use as a black box for prediction.\nThis code plots the S-curve. Apart from the weird and ugly y = as.numeric(type) - 1) part at the beginning, the only difference with plotting a straight best fit line is we changed the method (and some other things) inside geom_smooth:\n\nggplot(hp_spam, aes(x = you, y = as.numeric(type) - 1)) + \n  geom_point() + \n  geom_smooth(\n    method = \"glm\", \n    se = FALSE, \n    method.args = list(family = binomial)\n  ) + \n  labs(\n    x = \"Percent of words equal to `you`\",\n    y = \"Probability the email is spam\"\n  )\n\n\n\n\n\n\n\n\nThe logistic regression model is a special case of a generalized linear model (glm), so method = \"glm\" is us telling R that we want to do…that. But there are many generalized linear models out there, and so method.args = list(family = binomial) is us telling it we want the logistic one.",
+    "crumbs": [
+      "Computing primers",
+      "Logistic regression"
+    ]
+  },
+  {
+    "objectID": "computing/computing-logistic.html#run-a-multiple-logistic-regression-and-plot-the-decision-boundary",
+    "href": "computing/computing-logistic.html#run-a-multiple-logistic-regression-and-plot-the-decision-boundary",
+    "title": "Logistic regression",
+    "section": "Run a “multiple” logistic regression and plot the decision boundary",
+    "text": "Run a “multiple” logistic regression and plot the decision boundary\nJust like there is nothing special about a single predictor in linear regression, there is nothing special about a single predictor in logistic regression. To add more predictors to the model, we just add them to the formula (y ~ x) inside fit:\n\ntype_you_capital_fit &lt;- logistic_reg() |&gt;\n  fit(type ~ you + capitalTotal, data = hp_spam)\n  \ntidy(type_you_capital_fit)\n\n# A tibble: 3 × 5\n  term         estimate std.error statistic   p.value\n  &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)  -1.50     0.0554       -27.1 2.97e-162\n2 you           0.361    0.0198        18.3 1.84e- 74\n3 capitalTotal  0.00173  0.000104      16.6 5.66e- 62\n\n\nAfter doing some itchy algebra that you don’t necessarily have to concern yourself with1, we plot a scatter plot of our two predictors, color the points according to the type of the email, and then add a straight line (geom_abline) to visualize the decision boundary when we threshold \\(\\text{Prob}(y=1)\\) at 1/2:\n\n# extract the estimates from their tidy clutches\nb0 &lt;- tidy(type_you_capital_fit)$estimate[1]\nb1 &lt;- tidy(type_you_capital_fit)$estimate[2]\nb2 &lt;- tidy(type_you_capital_fit)$estimate[3]\n\n# set the threshold for classification\np_thresh &lt;- 0.5\n\n# compute intercept and slope of decision boundary\nbd_incpt &lt;- (log(p_thresh / (1 - p_thresh)) - b0) / b2\nbd_slp &lt;- -b1 / b2\n\n# plot that thing\nhp_spam |&gt;\n  mutate(type = if_else(type == 1, \"Spam\", \"Not Spam\")) |&gt;\n  ggplot(aes(x = you, y = capitalTotal, color = type)) +\n  geom_point(alpha = 0.1) +\n  coord_cartesian(xlim = c(0, 6), ylim = c(0, 6000)) + \n  geom_abline(slope = bd_slp, intercept = bd_incpt) + \n  labs(\n    x = \"Percent of words equal to `you`\",\n    y = \"Number of capitalized letters\",\n    title = \"Is this email spam?\"\n  )\n\n\n\n\n\n\n\n\nIf an email has features that place it above the line, we predict that it is a spam email. If an email has features that place it below the line, we predict that it is not. As you can see, this boundary is not perfect – there are red points above and blue points below. But nevertheless, it captures our intuitions pretty well; an email with a high fraction of “you” and many capital letters is more likely spam. If you keep studying statistics and machine learning, you will learn plenty of fancy methods for drawing funky, nonlinear decision boundaries that account for all sorts of contingencies.\nSomething to play around with: adjust the threshold p_thresh and see how it changes the decision boundary.",
+    "crumbs": [
+      "Computing primers",
+      "Logistic regression"
+    ]
+  },
+  {
+    "objectID": "computing/computing-logistic.html#make-a-prediction-when-a-new-email-arrives",
+    "href": "computing/computing-logistic.html#make-a-prediction-when-a-new-email-arrives",
+    "title": "Logistic regression",
+    "section": "Make a prediction when a new email arrives",
+    "text": "Make a prediction when a new email arrives\nThe scatterplot with the colored points and the linear decision boundary is cute, but if we have more than two predictors, this stuff becomes difficult or impossible to visualize. Fortunately, we do not have to eyeball a picture in order to use this machinery to make decisions.\nIf we get a new email where the frequency of you is 5% and there are 2,500 capital letters, what is the probability that this email is spam?\n\nnew_email &lt;- tibble(\n  you = 5,\n  capitalTotal = 2500\n)\n\npredict(type_you_capital_fit, new_data = new_email, type = \"prob\")\n\n# A tibble: 1 × 2\n  .pred_0 .pred_1\n    &lt;dbl&gt;   &lt;dbl&gt;\n1 0.00963   0.990\n\n\nAccording to our model, the probability of this email being spam is 99%, which is above any normal threshold we might choose. Send it to the trash!",
+    "crumbs": [
+      "Computing primers",
+      "Logistic regression"
+    ]
+  },
+  {
+    "objectID": "computing/computing-logistic.html#footnotes",
+    "href": "computing/computing-logistic.html#footnotes",
+    "title": "Logistic regression",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThis is not hard to derive. Set \\((1+e^{-(\\beta_0+\\beta_1x_1+\\beta_2x_2)})^{-1}\\) equal to your chosen threshold \\(p^\\star\\), and then solve for \\(x_2\\) as a function of \\(x_1\\). You’ll get a line.↩︎",
+    "crumbs": [
+      "Computing primers",
+      "Logistic regression"
+    ]
+  },
+  {
+    "objectID": "computing/computing-cheatsheets.html",
+    "href": "computing/computing-cheatsheets.html",
+    "title": "R cheatsheets",
+    "section": "",
+    "text": "The following cheatsheets come from https://posit.co/resources/cheatsheets. We haven’t covered every function and functionality listed on them, but you might still find them useful as references.",
+    "crumbs": [
+      "Computing primers",
+      "Cheatsheets"
     ]
   },
   {
@@ -2591,335 +2785,435 @@
     ]
   },
   {
-    "objectID": "computing/computing-cheatsheets.html",
-    "href": "computing/computing-cheatsheets.html",
-    "title": "R cheatsheets",
+    "objectID": "computing/computing-logistic-2.html",
+    "href": "computing/computing-logistic-2.html",
+    "title": "Model selection for logistic regression",
     "section": "",
-    "text": "The following cheatsheets come from https://posit.co/resources/cheatsheets. We haven’t covered every function and functionality listed on them, but you might still find them useful as references.",
-    "crumbs": [
-      "Computing primers",
-      "Cheatsheets"
-    ]
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(tidymodels)\n\n── Attaching packages ────────────────────────────────────── tidymodels 1.2.0 ──\n✔ broom        1.0.6     ✔ rsample      1.2.1\n✔ dials        1.3.0     ✔ tune         1.2.1\n✔ infer        1.0.7     ✔ workflows    1.1.4\n✔ modeldata    1.4.0     ✔ workflowsets 1.1.0\n✔ parsnip      1.2.1     ✔ yardstick    1.3.1\n✔ recipes      1.1.0     \n── Conflicts ───────────────────────────────────────── tidymodels_conflicts() ──\n✖ scales::discard() masks purrr::discard()\n✖ dplyr::filter()   masks stats::filter()\n✖ recipes::fixed()  masks stringr::fixed()\n✖ dplyr::lag()      masks stats::lag()\n✖ yardstick::spec() masks readr::spec()\n✖ recipes::step()   masks stats::step()\n• Learn how to get started at https://www.tidymodels.org/start/\n\nlibrary(forested)\n\nglimpse(forested)\n\nRows: 7,107\nColumns: 19\n$ forested         &lt;fct&gt; Yes, Yes, No, Yes, Yes, Yes, Yes, Yes, Yes, Yes, Yes,…\n$ year             &lt;dbl&gt; 2005, 2005, 2005, 2005, 2005, 2005, 2005, 2005, 2005,…\n$ elevation        &lt;dbl&gt; 881, 113, 164, 299, 806, 736, 636, 224, 52, 2240, 104…\n$ eastness         &lt;dbl&gt; 90, -25, -84, 93, 47, -27, -48, -65, -62, -67, 96, -4…\n$ northness        &lt;dbl&gt; 43, 96, 53, 34, -88, -96, 87, -75, 78, -74, -26, 86, …\n$ roughness        &lt;dbl&gt; 63, 30, 13, 6, 35, 53, 3, 9, 42, 99, 51, 190, 95, 212…\n$ tree_no_tree     &lt;fct&gt; Tree, Tree, Tree, No tree, Tree, Tree, No tree, Tree,…\n$ dew_temp         &lt;dbl&gt; 0.04, 6.40, 6.06, 4.43, 1.06, 1.35, 1.42, 6.39, 6.50,…\n$ precip_annual    &lt;dbl&gt; 466, 1710, 1297, 2545, 609, 539, 702, 1195, 1312, 103…\n$ temp_annual_mean &lt;dbl&gt; 6.42, 10.64, 10.07, 9.86, 7.72, 7.89, 7.61, 10.45, 10…\n$ temp_annual_min  &lt;dbl&gt; -8.32, 1.40, 0.19, -1.20, -5.98, -6.00, -5.76, 1.11, …\n$ temp_annual_max  &lt;dbl&gt; 12.91, 15.84, 14.42, 15.78, 13.84, 14.66, 14.23, 15.3…\n$ temp_january_min &lt;dbl&gt; -0.08, 5.44, 5.72, 3.95, 1.60, 1.12, 0.99, 5.54, 6.20…\n$ vapor_min        &lt;dbl&gt; 78, 34, 49, 67, 114, 67, 67, 31, 60, 79, 172, 162, 70…\n$ vapor_max        &lt;dbl&gt; 1194, 938, 754, 1164, 1254, 1331, 1275, 944, 892, 549…\n$ canopy_cover     &lt;dbl&gt; 50, 79, 47, 42, 59, 36, 14, 27, 82, 12, 74, 66, 83, 6…\n$ lon              &lt;dbl&gt; -118.6865, -123.0825, -122.3468, -121.9144, -117.8841…\n$ lat              &lt;dbl&gt; 48.69537, 47.07991, 48.77132, 45.80776, 48.07396, 48.…\n$ land_type        &lt;fct&gt; Tree, Tree, Tree, Tree, Tree, Tree, Non-tree vegetati…"
   },
   {
-    "objectID": "computing/computing-logistic.html",
-    "href": "computing/computing-logistic.html",
-    "title": "Logistic regression",
+    "objectID": "computing/computing-logistic-2.html#load-packages-and-data",
+    "href": "computing/computing-logistic-2.html#load-packages-and-data",
+    "title": "Model selection for logistic regression",
     "section": "",
-    "text": "The logistic regression model uses a set of predictors (\\(x_1\\), \\(x_2\\), …, \\(x_p\\)) to model the probability that a binary response \\(y\\) is equal to one:\n\\[\n\\text{Prob}(y=1)=\\frac{1}{1+e^{-(\\beta_0+\\beta_1x_1+...+\\beta_px_p)}}.\n\\]\nThis primer leads you down the path of least resistance to fitting this model, plotting the best-fitting S-curve in the single-predictor case, plotting the decision boundary in the bivariate case, and generating predictions.",
-    "crumbs": [
-      "Computing primers",
-      "Logistic regression"
-    ]
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(tidymodels)\n\n── Attaching packages ────────────────────────────────────── tidymodels 1.2.0 ──\n✔ broom        1.0.6     ✔ rsample      1.2.1\n✔ dials        1.3.0     ✔ tune         1.2.1\n✔ infer        1.0.7     ✔ workflows    1.1.4\n✔ modeldata    1.4.0     ✔ workflowsets 1.1.0\n✔ parsnip      1.2.1     ✔ yardstick    1.3.1\n✔ recipes      1.1.0     \n── Conflicts ───────────────────────────────────────── tidymodels_conflicts() ──\n✖ scales::discard() masks purrr::discard()\n✖ dplyr::filter()   masks stats::filter()\n✖ recipes::fixed()  masks stringr::fixed()\n✖ dplyr::lag()      masks stats::lag()\n✖ yardstick::spec() masks readr::spec()\n✖ recipes::step()   masks stats::step()\n• Learn how to get started at https://www.tidymodels.org/start/\n\nlibrary(forested)\n\nglimpse(forested)\n\nRows: 7,107\nColumns: 19\n$ forested         &lt;fct&gt; Yes, Yes, No, Yes, Yes, Yes, Yes, Yes, Yes, Yes, Yes,…\n$ year             &lt;dbl&gt; 2005, 2005, 2005, 2005, 2005, 2005, 2005, 2005, 2005,…\n$ elevation        &lt;dbl&gt; 881, 113, 164, 299, 806, 736, 636, 224, 52, 2240, 104…\n$ eastness         &lt;dbl&gt; 90, -25, -84, 93, 47, -27, -48, -65, -62, -67, 96, -4…\n$ northness        &lt;dbl&gt; 43, 96, 53, 34, -88, -96, 87, -75, 78, -74, -26, 86, …\n$ roughness        &lt;dbl&gt; 63, 30, 13, 6, 35, 53, 3, 9, 42, 99, 51, 190, 95, 212…\n$ tree_no_tree     &lt;fct&gt; Tree, Tree, Tree, No tree, Tree, Tree, No tree, Tree,…\n$ dew_temp         &lt;dbl&gt; 0.04, 6.40, 6.06, 4.43, 1.06, 1.35, 1.42, 6.39, 6.50,…\n$ precip_annual    &lt;dbl&gt; 466, 1710, 1297, 2545, 609, 539, 702, 1195, 1312, 103…\n$ temp_annual_mean &lt;dbl&gt; 6.42, 10.64, 10.07, 9.86, 7.72, 7.89, 7.61, 10.45, 10…\n$ temp_annual_min  &lt;dbl&gt; -8.32, 1.40, 0.19, -1.20, -5.98, -6.00, -5.76, 1.11, …\n$ temp_annual_max  &lt;dbl&gt; 12.91, 15.84, 14.42, 15.78, 13.84, 14.66, 14.23, 15.3…\n$ temp_january_min &lt;dbl&gt; -0.08, 5.44, 5.72, 3.95, 1.60, 1.12, 0.99, 5.54, 6.20…\n$ vapor_min        &lt;dbl&gt; 78, 34, 49, 67, 114, 67, 67, 31, 60, 79, 172, 162, 70…\n$ vapor_max        &lt;dbl&gt; 1194, 938, 754, 1164, 1254, 1331, 1275, 944, 892, 549…\n$ canopy_cover     &lt;dbl&gt; 50, 79, 47, 42, 59, 36, 14, 27, 82, 12, 74, 66, 83, 6…\n$ lon              &lt;dbl&gt; -118.6865, -123.0825, -122.3468, -121.9144, -117.8841…\n$ lat              &lt;dbl&gt; 48.69537, 47.07991, 48.77132, 45.80776, 48.07396, 48.…\n$ land_type        &lt;fct&gt; Tree, Tree, Tree, Tree, Tree, Tree, Non-tree vegetati…"
   },
   {
-    "objectID": "computing/computing-logistic.html#setup",
-    "href": "computing/computing-logistic.html#setup",
-    "title": "Logistic regression",
-    "section": "Setup",
-    "text": "Setup\nThe commands for working with logistic regressions are in the tidymodels package, so load that:\n\nlibrary(tidyverse) \nlibrary(tidymodels) \n\nNext, we need something to model, so let us load in a data set. We will consider this data set from Hewlett-Packard on spam emails:\n\nhp_spam &lt;- read_csv(\"hp-spam.csv\")\n\nhp_spam &lt;- hp_spam |&gt;\n  mutate(type = as.factor(type))\n\n\n\n\n\n\n\nNote\n\n\n\nBe prepared to adjust the file path to match how you have organized your files and folders.\n\n\n\nhp_spam |&gt;\n  select(type, george, capitalTotal, you, charDollar)\n\n# A tibble: 4,601 × 5\n   type  george capitalTotal   you charDollar\n   &lt;fct&gt;  &lt;dbl&gt;        &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;\n 1 1          0          278  1.93      0    \n 2 1          0         1028  3.47      0.18 \n 3 1          0         2259  1.36      0.184\n 4 1          0          191  3.18      0    \n 5 1          0          191  3.18      0    \n 6 1          0           54  0         0    \n 7 1          0          112  3.85      0.054\n 8 1          0           49  0         0    \n 9 1          0         1257  1.23      0.203\n10 1          0          749  1.67      0.081\n# ℹ 4,591 more rows\n\n\nEach observation (row) represents an email that was sent to a person named George, and the variables (columns) include:\n\ntype: is the email spam or not?\ngeorge: percentage of words in email that are “George”;\nyou: percentage of words in email that are “you”;\ncapitalTotal: number of capitalized letters in email;\ncharDollar: percentage of characters that are a dollar sign.\n\nIntuition suggests that a less personalized email (does not mention George by name) with lots of capital letters (I’M NOT SCREAMING) and dollar signs is more likely to be spam. Can we capture this in a model?",
-    "crumbs": [
-      "Computing primers",
-      "Logistic regression"
-    ]
+    "objectID": "computing/computing-logistic-2.html#split-data",
+    "href": "computing/computing-logistic-2.html#split-data",
+    "title": "Model selection for logistic regression",
+    "section": "Split data",
+    "text": "Split data\n\nset.seed(1234)\nforested_split &lt;- initial_split(forested)\nforested_train &lt;- training(forested_split)\nforested_test &lt;- testing(forested_split)"
   },
   {
-    "objectID": "computing/computing-logistic.html#run-a-simple-logistic-regression-and-plot-the-best-fitting-s-curve",
-    "href": "computing/computing-logistic.html#run-a-simple-logistic-regression-and-plot-the-best-fitting-s-curve",
-    "title": "Logistic regression",
-    "section": "Run a “simple” logistic regression and plot the best-fitting S-curve",
-    "text": "Run a “simple” logistic regression and plot the best-fitting S-curve\nTake the same code we’ve seen before, change linear_reg to logistic_reg, and bada bing:\n\ntype_you_fit &lt;- logistic_reg() |&gt;\n  fit(type ~ you, data = hp_spam)\n  \ntidy(type_you_fit)\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic   p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)   -1.01     0.0456     -22.2 4.72e-109\n2 you            0.341    0.0193      17.6 1.68e- 69\n\n\nThese estimates determine the shape of the best fitting S-curve for these data. Chapter Nine in our textbook provides further discussion of how we might interpret the estimates probabilistically, but we will not concern ourselves with this at the present. For us, estimating these will simply be a means to an end of determining a model that we can use as a black box for prediction.\nThis code plots the S-curve. Apart from the weird and ugly y = as.numeric(type) - 1) part at the beginning, the only difference with plotting a straight best fit line is we changed the method (and some other things) inside geom_smooth:\n\nggplot(hp_spam, aes(x = you, y = as.numeric(type) - 1)) + \n  geom_point() + \n  geom_smooth(\n    method = \"glm\", \n    se = FALSE, \n    method.args = list(family = binomial)\n  ) + \n  labs(\n    x = \"Percent of words equal to `you`\",\n    y = \"Probability the email is spam\"\n  )\n\n\n\n\n\n\n\n\nThe logistic regression model is a special case of a generalized linear model (glm), so method = \"glm\" is us telling R that we want to do…that. But there are many generalized linear models out there, and so method.args = list(family = binomial) is us telling it we want the logistic one.",
-    "crumbs": [
-      "Computing primers",
-      "Logistic regression"
-    ]
+    "objectID": "computing/computing-logistic-2.html#exploratory-data-analysis",
+    "href": "computing/computing-logistic-2.html#exploratory-data-analysis",
+    "title": "Model selection for logistic regression",
+    "section": "Exploratory data analysis",
+    "text": "Exploratory data analysis\n\nggplot(\n  forested_train,\n  aes(x = precip_annual, fill = forested, group = forested)\n  ) +\n  geom_histogram(binwidth = 200, position = \"identity\", alpha = 0.7) +\n  scale_fill_manual(values = c(\"Yes\" = \"forestgreen\", \"No\" = \"gold2\")) +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\nggplot(forested_train, aes(x = tree_no_tree, fill = forested)) +\n  geom_bar(position = \"fill\") +\n  scale_fill_manual(values = c(\"Yes\" = \"forestgreen\", \"No\" = \"gold2\")) +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\nggplot(\n  forested_train,\n  aes(x = temp_annual_mean, fill = forested, group = forested)\n  ) +\n  geom_histogram(position = \"identity\", alpha = 0.7) +\n  scale_fill_manual(values = c(\"Yes\" = \"forestgreen\", \"No\" = \"gold2\")) +\n  facet_wrap(~land_type, ncol = 1) +\n  theme_minimal()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
   },
   {
-    "objectID": "computing/computing-logistic.html#run-a-multiple-logistic-regression-and-plot-the-decision-boundary",
-    "href": "computing/computing-logistic.html#run-a-multiple-logistic-regression-and-plot-the-decision-boundary",
-    "title": "Logistic regression",
-    "section": "Run a “multiple” logistic regression and plot the decision boundary",
-    "text": "Run a “multiple” logistic regression and plot the decision boundary\nJust like there is nothing special about a single predictor in linear regression, there is nothing special about a single predictor in logistic regression. To add more predictors to the model, we just add them to the formula (y ~ x) inside fit:\n\ntype_you_capital_fit &lt;- logistic_reg() |&gt;\n  fit(type ~ you + capitalTotal, data = hp_spam)\n  \ntidy(type_you_capital_fit)\n\n# A tibble: 3 × 5\n  term         estimate std.error statistic   p.value\n  &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)  -1.50     0.0554       -27.1 2.97e-162\n2 you           0.361    0.0198        18.3 1.84e- 74\n3 capitalTotal  0.00173  0.000104      16.6 5.66e- 62\n\n\nAfter doing some itchy algebra that you don’t necessarily have to concern yourself with1, we plot a scatter plot of our two predictors, color the points according to the type of the email, and then add a straight line (geom_abline) to visualize the decision boundary when we threshold \\(\\text{Prob}(y=1)\\) at 1/2:\n\n# extract the estimates from their tidy clutches\nb0 &lt;- tidy(type_you_capital_fit)$estimate[1]\nb1 &lt;- tidy(type_you_capital_fit)$estimate[2]\nb2 &lt;- tidy(type_you_capital_fit)$estimate[3]\n\n# set the threshold for classification\np_thresh &lt;- 0.5\n\n# compute intercept and slope of decision boundary\nbd_incpt &lt;- (log(p_thresh / (1 - p_thresh)) - b0) / b2\nbd_slp &lt;- -b1 / b2\n\n# plot that thing\nhp_spam |&gt;\n  mutate(type = if_else(type == 1, \"Spam\", \"Not Spam\")) |&gt;\n  ggplot(aes(x = you, y = capitalTotal, color = type)) +\n  geom_point(alpha = 0.1) +\n  coord_cartesian(xlim = c(0, 6), ylim = c(0, 6000)) + \n  geom_abline(slope = bd_slp, intercept = bd_incpt) + \n  labs(\n    x = \"Percent of words equal to `you`\",\n    y = \"Number of capitalized letters\",\n    title = \"Is this email spam?\"\n  )\n\n\n\n\n\n\n\n\nIf an email has features that place it above the line, we predict that it is a spam email. If an email has features that place it below the line, we predict that it is not. As you can see, this boundary is not perfect – there are red points above and blue points below. But nevertheless, it captures our intuitions pretty well; an email with a high fraction of “you” and many capital letters is more likely spam. If you keep studying statistics and machine learning, you will learn plenty of fancy methods for drawing funky, nonlinear decision boundaries that account for all sorts of contingencies.\nSomething to play around with: adjust the threshold p_thresh and see how it changes the decision boundary.",
-    "crumbs": [
-      "Computing primers",
-      "Logistic regression"
-    ]
+    "objectID": "computing/computing-logistic-2.html#crude-map",
+    "href": "computing/computing-logistic-2.html#crude-map",
+    "title": "Model selection for logistic regression",
+    "section": "Crude map!",
+    "text": "Crude map!\n\nggplot(forested_train, aes(x = lon, y = lat, color = forested)) +\n  geom_point(alpha = 0.7) +\n  scale_color_manual(values = c(\"Yes\" = \"forestgreen\", \"No\" = \"gold2\")) +\n  theme_minimal()"
   },
   {
-    "objectID": "computing/computing-logistic.html#make-a-prediction-when-a-new-email-arrives",
-    "href": "computing/computing-logistic.html#make-a-prediction-when-a-new-email-arrives",
-    "title": "Logistic regression",
-    "section": "Make a prediction when a new email arrives",
-    "text": "Make a prediction when a new email arrives\nThe scatterplot with the colored points and the linear decision boundary is cute, but if we have more than two predictors, this stuff becomes difficult or impossible to visualize. Fortunately, we do not have to eyeball a picture in order to use this machinery to make decisions.\nIf we get a new email where the frequency of you is 5% and there are 2,500 capital letters, what is the probability that this email is spam?\n\nnew_email &lt;- tibble(\n  you = 5,\n  capitalTotal = 2500\n)\n\npredict(type_you_capital_fit, new_data = new_email, type = \"prob\")\n\n# A tibble: 1 × 2\n  .pred_0 .pred_1\n    &lt;dbl&gt;   &lt;dbl&gt;\n1 0.00963   0.990\n\n\nAccording to our model, the probability of this email being spam is 99%, which is above any normal threshold we might choose. Send it to the trash!",
-    "crumbs": [
-      "Computing primers",
-      "Logistic regression"
-    ]
+    "objectID": "computing/computing-logistic-2.html#fit-a-model",
+    "href": "computing/computing-logistic-2.html#fit-a-model",
+    "title": "Model selection for logistic regression",
+    "section": "Fit a model",
+    "text": "Fit a model\n\nforested_custom_fit &lt;- logistic_reg() |&gt;\n  fit(forested ~ elevation + tree_no_tree + lat + lon + temp_annual_mean, data = forested_train)\ntidy(forested_custom_fit)\n\n# A tibble: 6 × 5\n  term                 estimate std.error statistic   p.value\n  &lt;chr&gt;                   &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)         48.2       6.06         7.96  1.71e- 15\n2 elevation           -0.000311  0.000384    -0.811 4.17e-  1\n3 tree_no_treeNo tree  3.35      0.0925      36.3   4.02e-288\n4 lat                 -0.313     0.0642      -4.87  1.09e-  6\n5 lon                  0.311     0.0288      10.8   3.81e- 27\n6 temp_annual_mean     0.270     0.0819       3.30  9.78e-  4"
   },
   {
-    "objectID": "computing/computing-logistic.html#footnotes",
-    "href": "computing/computing-logistic.html#footnotes",
-    "title": "Logistic regression",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nThis is not hard to derive. Set \\((1+e^{-(\\beta_0+\\beta_1x_1+\\beta_2x_2)})^{-1}\\) equal to your chosen threshold \\(p^\\star\\), and then solve for \\(x_2\\) as a function of \\(x_1\\). You’ll get a line.↩︎",
-    "crumbs": [
-      "Computing primers",
-      "Logistic regression"
-    ]
+    "objectID": "computing/computing-logistic-2.html#predict-on-testing",
+    "href": "computing/computing-logistic-2.html#predict-on-testing",
+    "title": "Model selection for logistic regression",
+    "section": "Predict on testing",
+    "text": "Predict on testing\n\nforested_custom_aug &lt;- augment(forested_custom_fit, new_data = forested_test)\nforested_custom_aug\n\n# A tibble: 1,777 × 22\n   .pred_class .pred_Yes .pred_No forested  year elevation eastness northness\n   &lt;fct&gt;           &lt;dbl&gt;    &lt;dbl&gt; &lt;fct&gt;    &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n 1 Yes            0.877    0.123  Yes       2005       113      -25        96\n 2 Yes            0.829    0.171  Yes       2005       736      -27       -96\n 3 Yes            0.855    0.145  Yes       2005       224      -65       -75\n 4 Yes            0.957    0.0431 Yes       2003      1031      -49        86\n 5 Yes            0.728    0.272  No        2005      1713      -66        75\n 6 Yes            0.982    0.0175 Yes       2014      1612       30       -95\n 7 No             0.0765   0.924  No        2014       507       44       -89\n 8 Yes            0.889    0.111  Yes       2014       940      -93        35\n 9 Yes            0.659    0.341  No        2014       246       22       -97\n10 No             0.0877   0.912  No        2014       419       86       -49\n# ℹ 1,767 more rows\n# ℹ 14 more variables: roughness &lt;dbl&gt;, tree_no_tree &lt;fct&gt;, dew_temp &lt;dbl&gt;,\n#   precip_annual &lt;dbl&gt;, temp_annual_mean &lt;dbl&gt;, temp_annual_min &lt;dbl&gt;,\n#   temp_annual_max &lt;dbl&gt;, temp_january_min &lt;dbl&gt;, vapor_min &lt;dbl&gt;,\n#   vapor_max &lt;dbl&gt;, canopy_cover &lt;dbl&gt;, lon &lt;dbl&gt;, lat &lt;dbl&gt;, land_type &lt;fct&gt;"
   },
   {
-    "objectID": "computing/computing-normal.html",
-    "href": "computing/computing-normal.html",
-    "title": "The normal distribution",
+    "objectID": "computing/computing-logistic-2.html#calculate-error-rates",
+    "href": "computing/computing-logistic-2.html#calculate-error-rates",
+    "title": "Model selection for logistic regression",
+    "section": "Calculate error rates",
+    "text": "Calculate error rates\n\nforested_custom_aug |&gt;\n  count(.pred_class, forested) |&gt;\n  arrange(forested) |&gt;\n  group_by(forested) |&gt;\n  mutate(\n    p = round(n / sum(n), 2),\n    decision = case_when(\n      .pred_class == \"Yes\" & forested == \"Yes\" ~ \"True positive\",\n      .pred_class == \"Yes\" & forested == \"No\" ~ \"False positive\",\n      .pred_class == \"No\" & forested == \"Yes\" ~ \"False negative\",\n      .pred_class == \"No\" & forested == \"No\" ~ \"True negative\"\n    )\n  )\n\n# A tibble: 4 × 5\n# Groups:   forested [2]\n  .pred_class forested     n     p decision      \n  &lt;fct&gt;       &lt;fct&gt;    &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;         \n1 Yes         Yes        864  0.9  True positive \n2 No          Yes         98  0.1  False negative\n3 Yes         No         124  0.15 False positive\n4 No          No         691  0.85 True negative"
+  },
+  {
+    "objectID": "computing/computing-logistic-2.html#change-threshold",
+    "href": "computing/computing-logistic-2.html#change-threshold",
+    "title": "Model selection for logistic regression",
+    "section": "Change threshold",
+    "text": "Change threshold"
+  },
+  {
+    "objectID": "computing/computing-logistic-2.html#plot-roc-curve",
+    "href": "computing/computing-logistic-2.html#plot-roc-curve",
+    "title": "Model selection for logistic regression",
+    "section": "Plot ROC curve",
+    "text": "Plot ROC curve\n\nforested_custom_roc &lt;- roc_curve(forested_custom_aug, truth = forested, .pred_Yes)\nforested_custom_roc\n\n# A tibble: 1,779 × 3\n   .threshold specificity sensitivity\n        &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;\n 1  -Inf          0                 1\n 2     0.0186     0                 1\n 3     0.0202     0.00123           1\n 4     0.0204     0.00245           1\n 5     0.0207     0.00368           1\n 6     0.0227     0.00491           1\n 7     0.0286     0.00613           1\n 8     0.0298     0.00736           1\n 9     0.0299     0.00859           1\n10     0.0300     0.00982           1\n# ℹ 1,769 more rows\n\nggplot(forested_custom_roc, aes(x = 1 - specificity, y = sensitivity)) +\n  geom_path() +\n  geom_abline(lty = 3) +\n  coord_equal()"
+  },
+  {
+    "objectID": "computing/computing-logistic-2.html#compute-area-under-the-curve",
+    "href": "computing/computing-logistic-2.html#compute-area-under-the-curve",
+    "title": "Model selection for logistic regression",
+    "section": "Compute area under the curve",
+    "text": "Compute area under the curve\n\ncustom_roc_auc &lt;- roc_auc(\n  forested_custom_aug,\n  truth = forested,\n  .pred_Yes\n)\ncustom_roc_auc\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 roc_auc binary         0.943"
+  },
+  {
+    "objectID": "computing/computing-logistic-2.html#repeat-for-different-model",
+    "href": "computing/computing-logistic-2.html#repeat-for-different-model",
+    "title": "Model selection for logistic regression",
+    "section": "Repeat for different model",
+    "text": "Repeat for different model\nFit full model:\n\nforested_full_fit &lt;- logistic_reg() |&gt;\n  fit(forested ~ ., data = forested_train)\ntidy(forested_full_fit)\n\n# A tibble: 20 × 5\n   term                             estimate std.error statistic  p.value\n   &lt;chr&gt;                               &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n 1 (Intercept)                  -12.1        32.6       -0.371   7.11e- 1\n 2 year                           0.00456     0.0152     0.299   7.65e- 1\n 3 elevation                     -0.00277     0.000639  -4.33    1.47e- 5\n 4 eastness                      -0.000910    0.000734  -1.24    2.15e- 1\n 5 northness                      0.00208     0.000745   2.79    5.26e- 3\n 6 roughness                     -0.00399     0.00146   -2.73    6.29e- 3\n 7 tree_no_treeNo tree            1.25        0.136      9.23    2.61e-20\n 8 dew_temp                      -0.125       0.176     -0.712   4.76e- 1\n 9 precip_annual                 -0.0000895   0.000100  -0.895   3.71e- 1\n10 temp_annual_mean              -7.30       12.4       -0.587   5.57e- 1\n11 temp_annual_min                0.819       0.103      7.93    2.20e-15\n12 temp_annual_max                2.59        6.22       0.417   6.77e- 1\n13 temp_january_min               3.34        6.21       0.538   5.91e- 1\n14 vapor_min                      0.00000990  0.00353    0.00280 9.98e- 1\n15 vapor_max                      0.00925     0.00132    7.00    2.62e-12\n16 canopy_cover                  -0.0446      0.00366  -12.2     4.18e-34\n17 lon                           -0.0953      0.0559    -1.71    8.80e- 2\n18 lat                            0.0748      0.109      0.683   4.94e- 1\n19 land_typeNon-tree vegetation  -0.735       0.282     -2.61    9.05e- 3\n20 land_typeTree                 -1.58        0.297     -5.33    9.93e- 8\n\n\n\nforested_full_aug &lt;- augment(forested_full_fit, new_data = forested_test)\nforested_full_aug\n\n# A tibble: 1,777 × 22\n   .pred_class .pred_Yes .pred_No forested  year elevation eastness northness\n   &lt;fct&gt;           &lt;dbl&gt;    &lt;dbl&gt; &lt;fct&gt;    &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n 1 Yes            0.930    0.0700 Yes       2005       113      -25        96\n 2 Yes            0.918    0.0822 Yes       2005       736      -27       -96\n 3 No             0.428    0.572  Yes       2005       224      -65       -75\n 4 Yes            0.972    0.0280 Yes       2003      1031      -49        86\n 5 Yes            0.633    0.367  No        2005      1713      -66        75\n 6 Yes            0.980    0.0201 Yes       2014      1612       30       -95\n 7 No             0.0436   0.956  No        2014       507       44       -89\n 8 Yes            0.845    0.155  Yes       2014       940      -93        35\n 9 No             0.0141   0.986  No        2014       246       22       -97\n10 No             0.0386   0.961  No        2014       419       86       -49\n# ℹ 1,767 more rows\n# ℹ 14 more variables: roughness &lt;dbl&gt;, tree_no_tree &lt;fct&gt;, dew_temp &lt;dbl&gt;,\n#   precip_annual &lt;dbl&gt;, temp_annual_mean &lt;dbl&gt;, temp_annual_min &lt;dbl&gt;,\n#   temp_annual_max &lt;dbl&gt;, temp_january_min &lt;dbl&gt;, vapor_min &lt;dbl&gt;,\n#   vapor_max &lt;dbl&gt;, canopy_cover &lt;dbl&gt;, lon &lt;dbl&gt;, lat &lt;dbl&gt;, land_type &lt;fct&gt;\n\n\n\nforested_full_roc &lt;- roc_curve(forested_full_aug, truth = forested, .pred_Yes)\nforested_full_roc\n\n# A tibble: 1,779 × 3\n   .threshold specificity sensitivity\n        &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;\n 1 -Inf           0                 1\n 2    0.00106     0                 1\n 3    0.00107     0.00123           1\n 4    0.00217     0.00245           1\n 5    0.00287     0.00368           1\n 6    0.00290     0.00491           1\n 7    0.00290     0.00613           1\n 8    0.00309     0.00736           1\n 9    0.00321     0.00859           1\n10    0.00323     0.00982           1\n# ℹ 1,769 more rows\n\n\n\nggplot(forested_full_roc, aes(x = 1 - specificity, y = sensitivity)) +\n  geom_path() +\n  geom_abline(lty = 3) +\n  coord_equal()\n\n\n\n\n\n\n\n\n\nfull_roc_auc &lt;- roc_auc(\n  forested_full_aug,\n  truth = forested,\n  .pred_Yes\n)\nfull_roc_auc\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 roc_auc binary         0.965"
+  },
+  {
+    "objectID": "computing/computing-logistic-2.html#compare",
+    "href": "computing/computing-logistic-2.html#compare",
+    "title": "Model selection for logistic regression",
+    "section": "Compare",
+    "text": "Compare\n\nforested_custom_roc &lt;- forested_custom_roc |&gt;\n  mutate(model = \"Custom\")\nforested_full_roc &lt;- forested_full_roc |&gt;\n  mutate(model = \"Full\")\nbind_rows(\n  forested_custom_roc,\n  forested_full_roc\n) |&gt;\n  ggplot(aes(x = 1 - specificity, y = sensitivity, color = model)) +\n  geom_path() +\n  geom_abline(lty = 3) +\n  coord_equal()"
+  },
+  {
+    "objectID": "computing/computing-barplot.html",
+    "href": "computing/computing-barplot.html",
+    "title": "Barplot basics",
     "section": "",
-    "text": "The normal distribution is the familiar bell curve. The central limit theorem says that the sampling distribution of a statistic (sample mean, proportion, difference, etc) looks more and more like a normal distribution the more data we have. This gives us permission to use a normal distribution to approximate the sampling distribution, and use the convenient properties of the bell curve to compute confidence intervals and hypothesis tests.\nThis primer introduces you to the basic commands for working with the normal distribution.",
+    "text": "A barplot is similar to a histogram, but instead of visualizing numerical data, we are visualizing categorical data. Each bar in the chart is counting the number of observations (rows) that correspond to each level of the categorical variable.",
     "crumbs": [
       "Computing primers",
-      "Normal distribution"
+      "Barplot basics"
     ]
   },
   {
-    "objectID": "computing/computing-normal.html#load-packages",
-    "href": "computing/computing-normal.html#load-packages",
-    "title": "The normal distribution",
-    "section": "Load packages",
-    "text": "Load packages\nThe openintro package has tools for working with the normal distribution:\n\nlibrary(tidyverse) \nlibrary(openintro)",
+    "objectID": "computing/computing-barplot.html#load-a-data-set",
+    "href": "computing/computing-barplot.html#load-a-data-set",
+    "title": "Barplot basics",
+    "section": "Load a data set",
+    "text": "Load a data set\n\nlibrary(tidyverse)\n\nLet’s load the data from the 2020 Durham City and County Resident Survey (originally in the Canvas lecture 4 folder), where each row is a Durham resident:\n\ndurham &lt;- read_csv(\"durham-2020.csv\")\n\n\n\n\n\n\n\nNote\n\n\n\nRecalling the information here, be prepared to adjust the file path to match how you have organized your files and folders.\n\n\nOne of the columns in this data set is a categorical variable called would_you_say_your_total_annual_hous_35, with four levels corresponding to the resident’s income:\n\nUnder $30,000;\n$30,000-$59,999\n$60,000-$99,999\n$100,000 or more\n\nFurthermore, some folks left this part of the survey blank, and so their income information is missing, which effectively creates a fifth category. Before plotting, let us quickly modify the data to give this income variable a more concise name, as well as making it a proper factor type in R:\n\ndurham &lt;- durham |&gt;\n  rename(income = would_you_say_your_total_annual_hous_35) |&gt;\n  mutate(income = as_factor(income))",
     "crumbs": [
       "Computing primers",
-      "Normal distribution"
+      "Barplot basics"
     ]
   },
   {
-    "objectID": "computing/computing-normal.html#example-bone-density",
-    "href": "computing/computing-normal.html#example-bone-density",
-    "title": "The normal distribution",
-    "section": "Example: bone density",
-    "text": "Example: bone density\nSuppose the bone density of 65-year-old women is normally distributed with mean 809 \\(mg/cm^3\\) and standard deviation of 140 \\(mg/cm^3\\). For reference, here are the densities for three types of wood:\n\nPlywood: 540 \\(mg/cm^3\\)\nPine: 600 \\(mg/cm^3\\)\nMahogany: 710 \\(mg/cm^3\\)\n\nIf \\(X\\) represents the bone density of 65-year-old women, then we can summarize the situation mathematically by writing:\n\\[\nX \\sim N(\\mu = 809, \\sigma = 140).\n\\]\nLet’s give all of the numbers above names and store them in the computer for later:\n\nbone_density_mean &lt;- 809\nbone_density_sd &lt;- 140\n\nplywood &lt;- 540\npine &lt;- 600\nmahogany &lt;- 710",
+    "objectID": "computing/computing-barplot.html#the-basic-plot",
+    "href": "computing/computing-barplot.html#the-basic-plot",
+    "title": "Barplot basics",
+    "section": "The basic plot",
+    "text": "The basic plot\n\nggplot(durham, aes(x = income)) +\n  geom_bar()\n\n\n\n\n\n\n\n\nThe basic template here is very similar to what we saw for the histogram. The first layer uses ggplot to indicate what data you wish to plot. Then the next layer uses geom_bar to specifically make it a bar plot.\nIn the first layer we used x = inside aes to make the bars vertical, but we could have made them horizontal as well:\n\nggplot(durham, aes(y = income)) +\n  geom_bar()\n\n\n\n\n\n\n\n\nDo you see what changed?",
     "crumbs": [
       "Computing primers",
-      "Normal distribution"
+      "Barplot basics"
     ]
   },
   {
-    "objectID": "computing/computing-normal.html#plot-the-bell-curve",
-    "href": "computing/computing-normal.html#plot-the-bell-curve",
-    "title": "The normal distribution",
-    "section": "Plot the bell curve",
-    "text": "Plot the bell curve\nThis handy-dandy function plots a bell curve:\n\nnormTail(m = 0, s = 1)\n\n\n\n\n\n\n\n\nYou can add several arguments to customize:\n\nnormTail(m = bone_density_mean, \n         s = bone_density_sd, \n         main = \"Distribution of bone density of 65-year-old women\",\n         xlab = \"mg/cm^3\",\n         xlim = c(200, 1400))",
+    "objectID": "computing/computing-barplot.html#adding-layers-to-prettify-it",
+    "href": "computing/computing-barplot.html#adding-layers-to-prettify-it",
+    "title": "Barplot basics",
+    "section": "Adding layers to prettify it",
+    "text": "Adding layers to prettify it\nWe could call it a day at this point, but the basic plot is rather drab. Here is some code that would zhuzh it up in a big way:\n\ndurham |&gt;\n  ggplot(aes(y = income, fill = income)) +\n  geom_bar(show.legend = FALSE) +\n  labs(\n    x = \"Count\",\n    y = NULL,\n    title = \"Would you say your total annual household income is...\"\n  ) + \n  scale_y_discrete(\n    labels = c(\n      \"1\" = \"Under $30,000\",\n      \"2\" = \"$30,000-$59,999\",\n      \"3\" = \"$60,000-$99,999\",\n      \"4\" = \"$100,000 or more\"\n    )\n  )\n\n\n\n\n\n\n\n\n\nThe first ggplot layer tells it what data to use. We also added the fill = argument inside aes to apply a default color scheme;\nthe labs layer allows us to add a title and label the axes;\nthe scale_y_discrete layer allows us to replace the bar labels 1, 2, 3, 4 with more informative text that explains what the levels of the variable actually mean;\nin between every layer, we have a +. Gotta have that icing!",
     "crumbs": [
       "Computing primers",
-      "Normal distribution"
+      "Barplot basics"
     ]
   },
   {
-    "objectID": "computing/computing-normal.html#compute-quantiles-under-the-normal-distribution",
-    "href": "computing/computing-normal.html#compute-quantiles-under-the-normal-distribution",
-    "title": "The normal distribution",
-    "section": "Compute quantiles under the normal distribution",
-    "text": "Compute quantiles under the normal distribution\nThe qnorm function computes the quantiles of a normal distribution. If we wanted the 50% quantile (AKA the median), we would say\n\nqnorm(0.5, mean = 0, sd = 1)\n\n[1] 0\n\n\nIn this case we just get back the mean, because the normal distribution is perfectly symmetric, and mean and median are equal for symmetric distributions.\nIf we wanted the inner quartile range (IQR) for a normal distribution, here it goes:\n\nq25 &lt;- qnorm(0.25, mean = 0, sd = 1)\nq75 &lt;- qnorm(0.75, mean = 0, sd = 1)\n\nIQR &lt;- q75 - q25\nIQR\n\n[1] 1.34898",
-    "crumbs": [
-      "Computing primers",
-      "Normal distribution"
-    ]
+    "objectID": "computing/computing-students-t.html",
+    "href": "computing/computing-students-t.html",
+    "title": "Using the t-distribution",
+    "section": "",
+    "text": "library(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)"
   },
   {
-    "objectID": "computing/computing-normal.html#compute-and-visualize-probabilities-under-the-normal-distribution",
-    "href": "computing/computing-normal.html#compute-and-visualize-probabilities-under-the-normal-distribution",
-    "title": "The normal distribution",
-    "section": "Compute and visualize probabilities under the normal distribution",
-    "text": "Compute and visualize probabilities under the normal distribution\nWhat is the probability that a randomly selected 65-year-old woman has bones that are as or less dense than pine? If we add an L argument (for “lower”) to normTail, we can visualize the answer:\n\nnormTail(m = bone_density_mean, s = bone_density_sd, L = pine,\n         main = \"Distribution of bone density of 65-year-old women\",\n         xlab = \"mg/cm^3\",)\n\n\n\n\n\n\n\n\nNotice how this may come in handy when we have to compute something like a \\(p\\)-value. In order to compute the probability (area) under the bell curve of being less than 600 \\(mg/cm^3\\), we can use the pnorm function:\n\npnorm(pine, mean = bone_density_mean, sd = bone_density_sd, lower.tail = TRUE)\n\n[1] 0.06773729\n\n\nAbove, we asked about being under 600 in the distribution. But we could just have easily looked at being over 600 by adding a U argument (for “upper”):\n\nnormTail(m = bone_density_mean, s = bone_density_sd, U = pine,\n         main = \"Distribution of bone density of 65-year-old women\",\n         xlab = \"mg/cm^3\",)\n\n\n\n\n\n\n\n\nTo get the number, we change the lower.tail argument:\n\npnorm(pine, mean = bone_density_mean, sd = bone_density_sd, lower.tail = FALSE)\n\n[1] 0.9322627\n\n\nNotice that the probability of being at or below 600 is 6.77%. The probability of being above 600 is 93.23% That covers everything, so taken together you get 100%, which is the total area under the bell curve.",
-    "crumbs": [
-      "Computing primers",
-      "Normal distribution"
-    ]
+    "objectID": "computing/computing-students-t.html#packages",
+    "href": "computing/computing-students-t.html#packages",
+    "title": "Using the t-distribution",
+    "section": "",
+    "text": "library(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)"
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#announcements",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#announcements",
-    "title": "Telling a data story",
-    "section": "Announcements",
-    "text": "Announcements\n\nCheck grades on Canvas, if anything seems off let me know asap. Your final grade will be calculated based on what’s on Canvas. No grades will be changed after the project is due.\nMy office hours next week by appointment.\nDon’t forget to fill out course and TA evaluations.\nProject 2:\n\nFriday - Peer review. You must be in your lab section to participate in the peer review (and be eligible for the points for it).\nNext Thursday - Video (upload to YouTube/Warpwire/etc. and share link on Google sheet) + writeup (on Gradescope) due."
-  },
-  {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#setup",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#setup",
-    "title": "Telling a data story",
-    "section": "Setup",
-    "text": "Setup\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(ggrepel)\nlibrary(ggthemes)\nlibrary(palmerpenguins)"
-  },
-  {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#multiple-ways-of-telling-a-story",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#multiple-ways-of-telling-a-story",
-    "title": "Telling a data story",
-    "section": "Multiple ways of telling a story",
-    "text": "Multiple ways of telling a story\n\nSequential reveal: Motivation, then resolution\nInstant reveal: Resolution, and hidden in it motivation"
-  },
-  {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#simplicity-vs.-complexity",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#simplicity-vs.-complexity",
-    "title": "Telling a data story",
-    "section": "Simplicity vs. complexity",
-    "text": "Simplicity vs. complexity\n\nWhen you’re trying to show too much data at once you may end up not showing anything.\n\n\nNever assume your audience can rapidly process complex visual displays\nDon’t add variables to your plot that are tangential to your story\nDon’t jump straight to a highly complex figure; first show an easily digestible subset (e.g., show one facet first)\nAim for memorable, but clear\n\n\n\n\nProject note: Make sure to leave time to iterate on your plots after you practice your presentation. If certain plots or outputs are getting too wordy to explain, take time to simplify them!"
-  },
-  {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#consistency-vs.-repetitiveness",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#consistency-vs.-repetitiveness",
-    "title": "Telling a data story",
-    "section": "Consistency vs. repetitiveness",
-    "text": "Consistency vs. repetitiveness\n\nBe consistent but don’t be repetitive.\n\n\nUse consistent features throughout plots (e.g., same color represents same level on all plots)\nAim to use a different type of summary or visualization for each distinct analysis\n\n\n\n\nProject note: If possible, ask a friend who is not in the class to listen to your presentation and then ask them what they remember. Then, ask yourself: is that what you wanted them to remember?"
-  },
-  {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#your-project-plans",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#your-project-plans",
-    "title": "Telling a data story",
-    "section": "Your project plans",
-    "text": "Your project plans\n\nHow are you telling your story?\n\nSequential reveal\nInstant reveal\nOur approach doesn’t fit either of these paradigms\nNo idea\n\nSubmit your answer on Canvas for 12-06 Check-in (access code: ___)"
-  },
-  {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#data",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#data",
-    "title": "Telling a data story",
+    "objectID": "computing/computing-students-t.html#data",
+    "href": "computing/computing-students-t.html#data",
+    "title": "Using the t-distribution",
     "section": "Data",
-    "text": "Data\n\n\nd &lt;- tribble(\n  ~category,                     ~value,\n  \"Cutting tools\"                , 0.03,\n  \"Buildings and administration\" , 0.22,\n  \"Labor\"                        , 0.31,\n  \"Machinery\"                    , 0.27,\n  \"Workplace materials\"          , 0.17\n)\nd\n\n\n# A tibble: 5 × 2\n  category                     value\n  &lt;chr&gt;                        &lt;dbl&gt;\n1 Cutting tools                 0.03\n2 Buildings and administration  0.22\n3 Labor                         0.31\n4 Machinery                     0.27\n5 Workplace materials           0.17"
+    "text": "Data\nEvery year, the United States Department of Health and Human Services releases to the public a large dataset containing information on births recorded in the country. This dataset has been of interest to medical researchers who are studying the relation between habits and practices of expectant mothers and the birth of their children. In this case study we work with a random sample of 1,000 cases from the dataset released in 2014. The length of pregnancy, measured in weeks, is commonly referred to as gestation.\n\nglimpse(births14)\n\nRows: 1,000\nColumns: 13\n$ fage           &lt;int&gt; 34, 36, 37, NA, 32, 32, 37, 29, 30, 29, 30, 34, 28, 28,…\n$ mage           &lt;dbl&gt; 34, 31, 36, 16, 31, 26, 36, 24, 32, 26, 34, 27, 22, 31,…\n$ mature         &lt;chr&gt; \"younger mom\", \"younger mom\", \"mature mom\", \"younger mo…\n$ weeks          &lt;dbl&gt; 37, 41, 37, 38, 36, 39, 36, 40, 39, 39, 42, 40, 40, 39,…\n$ premie         &lt;chr&gt; \"full term\", \"full term\", \"full term\", \"full term\", \"pr…\n$ visits         &lt;dbl&gt; 14, 12, 10, NA, 12, 14, 10, 13, 15, 11, 14, 16, 20, 15,…\n$ gained         &lt;dbl&gt; 28, 41, 28, 29, 48, 45, 20, 65, 25, 22, 40, 30, 31, NA,…\n$ weight         &lt;dbl&gt; 6.96, 8.86, 7.51, 6.19, 6.75, 6.69, 6.13, 6.74, 8.94, 9…\n$ lowbirthweight &lt;chr&gt; \"not low\", \"not low\", \"not low\", \"not low\", \"not low\", …\n$ sex            &lt;chr&gt; \"male\", \"female\", \"female\", \"male\", \"female\", \"female\",…\n$ habit          &lt;chr&gt; \"nonsmoker\", \"nonsmoker\", \"nonsmoker\", \"nonsmoker\", \"no…\n$ marital        &lt;chr&gt; \"married\", \"married\", \"married\", \"not married\", \"marrie…\n$ whitemom       &lt;chr&gt; \"white\", \"white\", \"not white\", \"white\", \"white\", \"white…"
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#keep-it-simple",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#keep-it-simple",
-    "title": "Telling a data story",
-    "section": "Keep it simple",
-    "text": "Keep it simple"
+    "objectID": "computing/computing-students-t.html#t_test",
+    "href": "computing/computing-students-t.html#t_test",
+    "title": "Using the t-distribution",
+    "section": "t_test",
+    "text": "t_test\n\nt_test(births14, \n       response = weeks, \n       alternative = \"two-sided\",\n       mu = 40,\n       conf_int = TRUE, \n       conf_level = 0.95)\n\n# A tibble: 1 × 7\n  statistic  t_df  p_value alternative estimate lower_ci upper_ci\n      &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1     -16.4   999 5.71e-54 two.sided       38.7     38.5     38.8\n\nbirths14 |&gt;\n  summarize(\n    n = n(),\n    xbar = mean(weeks),\n    s = sd(weeks),\n    se = s / sqrt(n),\n    alpha = 0.05,\n    df = n - 1,\n    t_star = qt(1 - (alpha / 2), df = df),\n    L = xbar - t_star * se,\n    U = xbar + t_star * se\n  )\n\n# A tibble: 1 × 9\n      n  xbar     s     se alpha    df t_star     L     U\n  &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1  1000  38.7  2.56 0.0811  0.05   999   1.96  38.5  38.8"
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#judging-relative-area",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#judging-relative-area",
-    "title": "Telling a data story",
-    "section": "Judging relative area",
-    "text": "Judging relative area\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFrom Data to Viz caveat collection - The issue with pie chart"
+    "objectID": "computing/computing-histograms.html",
+    "href": "computing/computing-histograms.html",
+    "title": "Histogram basics",
+    "section": "",
+    "text": "A histogram displays the distribution or variability of numerical data. It shows you where the data values are typically concentrated, how spread out they are, and whether or not there are any asymmetries.\nThis primer leads you down the path of least resistance to producing a histogram plot using R. Trust me; you would not want to do this by hand.",
+    "crumbs": [
+      "Computing primers",
+      "Histogram basics"
+    ]
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#use-color-to-draw-attention",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#use-color-to-draw-attention",
-    "title": "Telling a data story",
-    "section": "Use color to draw attention",
-    "text": "Use color to draw attention"
+    "objectID": "computing/computing-histograms.html#loading-a-package",
+    "href": "computing/computing-histograms.html#loading-a-package",
+    "title": "Histogram basics",
+    "section": "Loading a package",
+    "text": "Loading a package\nThe command for plotting a histogram is contained inside the tidyverse package, so you need to load that first:\n\nlibrary(tidyverse)",
+    "crumbs": [
+      "Computing primers",
+      "Histogram basics"
+    ]
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#play-with-themes-for-a-non-standard-look",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#play-with-themes-for-a-non-standard-look",
-    "title": "Telling a data story",
-    "section": "Play with themes for a non-standard look",
-    "text": "Play with themes for a non-standard look"
+    "objectID": "computing/computing-histograms.html#loading-a-dataset",
+    "href": "computing/computing-histograms.html#loading-a-dataset",
+    "title": "Histogram basics",
+    "section": "Loading a dataset",
+    "text": "Loading a dataset\nNext, we need something to plot, so let us load in a data set. We will consider the flint water data that was mentioned during the second lecture on 8/29/2024:\n\nflint &lt;- read_csv(\"flint.csv\")\n\nLet us unpack what this is doing:\n\nread_csv is a function, just like \\(f(x)=x^2\\) or \\(f(x)=ax+b\\) from your math class. It receives an input, and returns an output. The input is the name of a file: \"flint.csv\". The output is a data frame (a spreadsheet) in R;\nWhen you run read_csv, it returns a data frame. But if you don’t give that data frame a name and store it someplace, then you can’t actually use it. So that’s what the flint &lt;- part is doing. You are assigning the output of read_csv to a variable named “flint.” If this went as planned, you should see flint listed in the upper right Environment tab of RStudio:\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nRecalling the information here, you may have to modify the file path to something like \"~/lecture-2/flint.csv\" to match the particular way you have chosen to name and organize your files and folders.",
+    "crumbs": [
+      "Computing primers",
+      "Histogram basics"
+    ]
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#go-beyond-ggplot2-themes-ggthemes",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#go-beyond-ggplot2-themes-ggthemes",
-    "title": "Telling a data story",
-    "section": "Go beyond ggplot2 themes – ggthemes",
-    "text": "Go beyond ggplot2 themes – ggthemes"
+    "objectID": "computing/computing-histograms.html#plotting-a-histogram",
+    "href": "computing/computing-histograms.html#plotting-a-histogram",
+    "title": "Histogram basics",
+    "section": "Plotting a histogram",
+    "text": "Plotting a histogram\nHere is the basic command in all its glory:\n\nggplot(flint, aes(x = lead)) +\n  geom_histogram(bins = 250) + \n  coord_cartesian(xlim = c(0, 100))\n\n\n\n\n\n\n\n\nNow let’s talk about it:\n\nggplot(flint, aes(x = lead)) is where we tell R what data frame we are using (flint) and which variable (column) in that data set we want to plot (lead);\nNext, we use geom_histogram(bins = 250) to tell it that we specifically want a histogram with 250 bins;\nLast, we use coord_cartesian(xlim = c(0, 100)) to adjust the bounds of the horizontal axis: start at x = 0 and end at x = 100;\nWe stitch all of these requests together using the + sign, and to make things more readable (not run off the page), we put a new line after each +.",
+    "crumbs": [
+      "Computing primers",
+      "Histogram basics"
+    ]
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#tell-a-story",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#tell-a-story",
-    "title": "Telling a data story",
-    "section": "Tell a story",
-    "text": "Tell a story\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit: Angela Zoss and Eric Monson, Duke DVS"
+    "objectID": "computing/computing-histograms.html#adding-a-vertical-line-to-the-histogram",
+    "href": "computing/computing-histograms.html#adding-a-vertical-line-to-the-histogram",
+    "title": "Histogram basics",
+    "section": "Adding a vertical line to the histogram",
+    "text": "Adding a vertical line to the histogram\nWhen plotting a histogram, it can also be useful to indicate on the plot the location of some particularly meaningful summary statistics, such as the mean or median. In order to do this, we can use the same basic command from the previous section, but then add some extra layers that will place vertical lines on the plot at those values:\n\nmean_value &lt;- mean(flint$lead)\nmedian_value &lt;- median(flint$lead)\n\nggplot(flint, aes(x = lead)) +\n  geom_histogram(bins = 250) + \n  coord_cartesian(xlim = c(0, 100)) + \n  geom_vline(xintercept = mean_value, color = \"red\") + \n  geom_vline(xintercept = median_value, color = \"blue\")\n\n\n\n\n\n\n\n\nNotice that the distribution of lead levels is positively skewed, which results in the mean being larger than the median.",
+    "crumbs": [
+      "Computing primers",
+      "Histogram basics"
+    ]
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#leave-out-non-story-details",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#leave-out-non-story-details",
-    "title": "Telling a data story",
-    "section": "Leave out non-story details",
-    "text": "Leave out non-story details\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit: Angela Zoss and Eric Monson, Duke DVS"
+    "objectID": "computing/computing-histograms.html#now-you-try",
+    "href": "computing/computing-histograms.html#now-you-try",
+    "title": "Histogram basics",
+    "section": "Now you try",
+    "text": "Now you try\nTo double check that you can follow these instructions, redo everything above using a different data set. This may require you to modify the code in various ways:\n\nthe file path you provide to read_csv;\nthe name you assign to the resulting data frame;\nthe variable you plot in aes(x = lead);\nthe number of histogram bins;\nthe range of the horizontal axis.\n\nCheck that you are comfortable making these changes.",
+    "crumbs": [
+      "Computing primers",
+      "Histogram basics"
+    ]
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#order-matters",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#order-matters",
-    "title": "Telling a data story",
-    "section": "Order matters",
-    "text": "Order matters\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit: Angela Zoss and Eric Monson, Duke DVS"
+    "objectID": "lectures/2024-12-05/19-logistic-regression.html#when-last-we-left-our-heros",
+    "href": "lectures/2024-12-05/19-logistic-regression.html#when-last-we-left-our-heros",
+    "title": "Model selection for logistic regression",
+    "section": "When last we left our heros…",
+    "text": "When last we left our heros…\nWe have been studying regression:\n\nWhat combinations of data types have we seen?\nWhat did the picture look like?"
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#clearly-indicate-missing-data",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#clearly-indicate-missing-data",
-    "title": "Telling a data story",
-    "section": "Clearly indicate missing data",
-    "text": "Clearly indicate missing data\n\n\n\n\n\n\n\nhttp://ivi.sagepub.com/content/10/4/271, Angela Zoss and Eric Monson, Duke DVS"
+    "objectID": "lectures/2024-12-05/19-logistic-regression.html#recap-simple-linear-regression",
+    "href": "lectures/2024-12-05/19-logistic-regression.html#recap-simple-linear-regression",
+    "title": "Model selection for logistic regression",
+    "section": "Recap: simple linear regression",
+    "text": "Recap: simple linear regression\nNumerical response and one numerical predictor:"
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#reduce-cognitive-load",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#reduce-cognitive-load",
-    "title": "Telling a data story",
-    "section": "Reduce cognitive load",
-    "text": "Reduce cognitive load\n\n\n\n\n\n\n\nhttp://www.storytellingwithdata.com/2012/09/some-finer-points-of-data-visualization.html"
+    "objectID": "lectures/2024-12-05/19-logistic-regression.html#recap-simple-linear-regression-1",
+    "href": "lectures/2024-12-05/19-logistic-regression.html#recap-simple-linear-regression-1",
+    "title": "Model selection for logistic regression",
+    "section": "Recap: simple linear regression",
+    "text": "Recap: simple linear regression\nNumerical response and one categorical predictor (two levels):"
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#use-descriptive-titles",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#use-descriptive-titles",
-    "title": "Telling a data story",
-    "section": "Use descriptive titles",
-    "text": "Use descriptive titles\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit: Angela Zoss and Eric Monson, Duke DVS"
+    "objectID": "lectures/2024-12-05/19-logistic-regression.html#recap-multiple-linear-regression",
+    "href": "lectures/2024-12-05/19-logistic-regression.html#recap-multiple-linear-regression",
+    "title": "Model selection for logistic regression",
+    "section": "Recap: multiple linear regression",
+    "text": "Recap: multiple linear regression\nNumerical response; numerical and categorical predictors:"
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#annotate-figures",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#annotate-figures",
-    "title": "Telling a data story",
-    "section": "Annotate figures",
-    "text": "Annotate figures\n\n\n\n\n\n\n\nhttps://bl.ocks.org/susielu/23dc3082669ee026c552b85081d90976"
+    "objectID": "lectures/2024-12-05/19-logistic-regression.html#today-a-binary-response",
+    "href": "lectures/2024-12-05/19-logistic-regression.html#today-a-binary-response",
+    "title": "Model selection for logistic regression",
+    "section": "Today: a binary response",
+    "text": "Today: a binary response\n\\[\ny =\n\\begin{cases}\n1 & &&\\text{eg. Yes, Win, True, Heads, Success}\\\\\n0 & &&\\text{eg. No, Lose, False, Tails, Failure}.\n\\end{cases}\n\\]"
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#sample-plots",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#sample-plots",
-    "title": "Telling a data story",
-    "section": "Sample plots",
-    "text": "Sample plots\n\np_hist &lt;- ggplot(mtcars, aes(x = mpg)) +\n  geom_histogram(binwidth = 2)\n\np_text &lt;- mtcars |&gt;\n  rownames_to_column() |&gt;\n  ggplot(aes(x = disp, y = mpg)) +\n  geom_text_repel(aes(label = rowname)) +\n  coord_cartesian(clip = \"off\")"
+    "objectID": "lectures/2024-12-05/19-logistic-regression.html#who-cares",
+    "href": "lectures/2024-12-05/19-logistic-regression.html#who-cares",
+    "title": "Model selection for logistic regression",
+    "section": "Who cares?",
+    "text": "Who cares?\nIf we can model the relationship between predictors (\\(x\\)) and a binary response (\\(y\\)), we can use the model to do a special kind of prediction called classification."
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#small-fig-width",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#small-fig-width",
-    "title": "Telling a data story",
-    "section": "Small fig-width",
-    "text": "Small fig-width\nFor a zoomed-in look\n\n```{r}\n#| fig-width: 3\n#| fig-asp: 0.618\n\np_hist\n```"
+    "objectID": "lectures/2024-12-05/19-logistic-regression.html#example-is-the-e-mail-spam-or-not",
+    "href": "lectures/2024-12-05/19-logistic-regression.html#example-is-the-e-mail-spam-or-not",
+    "title": "Model selection for logistic regression",
+    "section": "Example: is the e-mail spam or not?",
+    "text": "Example: is the e-mail spam or not?\n\\[\n\\mathbf{x}: \\text{word and character counts in an e-mail.}\n\\]\n\n\\[\ny\n=\n\\begin{cases}\n1 & \\text{it's spam}\\\\\n0 & \\text{it's legit}\n\\end{cases}\n\\]\nEthical concerns?"
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#large-fig-width",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#large-fig-width",
-    "title": "Telling a data story",
-    "section": "Large fig-width",
-    "text": "Large fig-width\nFor a zoomed-out look\n\n```{r}\n#| fig-width: 6\n#| fig-asp: 0.618\n\np_hist\n```"
+    "objectID": "lectures/2024-12-05/19-logistic-regression.html#example-is-it-cancer-or-not",
+    "href": "lectures/2024-12-05/19-logistic-regression.html#example-is-it-cancer-or-not",
+    "title": "Model selection for logistic regression",
+    "section": "Example: is it cancer or not?",
+    "text": "Example: is it cancer or not?\n\\[\n\\mathbf{x}: \\text{features in a medical image.}\n\\]\n\n\\[\ny\n=\n\\begin{cases}\n1 & \\text{it's cancer}\\\\\n0 & \\text{it's healthy}\n\\end{cases}\n\\]\nEthical concerns?"
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#fig-width-affects-text-size",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#fig-width-affects-text-size",
-    "title": "Telling a data story",
-    "section": "fig-width affects text size",
-    "text": "fig-width affects text size"
+    "objectID": "lectures/2024-12-05/19-logistic-regression.html#example-will-they-default",
+    "href": "lectures/2024-12-05/19-logistic-regression.html#example-will-they-default",
+    "title": "Model selection for logistic regression",
+    "section": "Example: will they default?",
+    "text": "Example: will they default?\n\\[\n\\mathbf{x}: \\text{financial and demographic info about a loan applicant.}\n\\]\n\n\\[\ny\n=\n\\begin{cases}\n1 & \\text{applicant is at risk of defaulting on loan}\\\\\n0 & \\text{applicant is safe}\n\\end{cases}\n\\]\nEthical concerns?"
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#multiple-plots-on-a-slide",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#multiple-plots-on-a-slide",
-    "title": "Telling a data story",
-    "section": "Multiple plots on a slide",
-    "text": "Multiple plots on a slide\n\n\n\nFirst, ask yourself, must you include multiple plots on a slide? For example, is your narrative about comparing results from two plots?\n\n\n\n\nIf no, then don’t! Move the second plot to to the next slide!\nIf yes, use columns and sequential reveal."
+    "objectID": "lectures/2024-12-05/19-logistic-regression.html#example-will-they-re-offend",
+    "href": "lectures/2024-12-05/19-logistic-regression.html#example-will-they-re-offend",
+    "title": "Model selection for logistic regression",
+    "section": "Example: will they re-offend?",
+    "text": "Example: will they re-offend?\n\\[\n\\mathbf{x}: \\text{info about a criminal suspect and their case.}\n\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\[\ny\n=\n\\begin{cases}\n1 & \\text{suspect is at risk of re-offending pre-trial}\\\\\n0 & \\text{suspect is safe}\n\\end{cases}\n\\]\nEthical concerns?"
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#writing-your-project-report-with-quarto",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#writing-your-project-report-with-quarto",
-    "title": "Telling a data story",
-    "section": "Writing your project report with Quarto",
-    "text": "Writing your project report with Quarto\n\nFigure sizing: fig-width, fig-height, etc. in code chunks.\nFigure layout: layout-ncol for placing multiple figures in a chunk.\nFurther control over figure layout with the patchwork package.\nChunk options around what makes it in your final report: message, echo, etc.\nCross referencing figures and tables.\nAdding footnotes and citations."
+    "objectID": "lectures/2024-12-05/19-logistic-regression.html#how-do-we-model-this-type-of-data",
+    "href": "lectures/2024-12-05/19-logistic-regression.html#how-do-we-model-this-type-of-data",
+    "title": "Model selection for logistic regression",
+    "section": "How do we model this type of data?",
+    "text": "How do we model this type of data?"
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#cross-referencing-figures",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#cross-referencing-figures",
-    "title": "Telling a data story",
-    "section": "Cross referencing figures",
-    "text": "Cross referencing figures\n\nOutputInput\n\n\nAs seen in Figure 1, there is a positive and relatively strong relationship between body mass and flipper length of penguins.\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point()\n\n\n\n\n\n\n\nFigure 1: The relationship between body mass and flipper length of penguins.\n\n\n\n\n\n\n\nAs seen in @fig-penguins, there is a positive and relatively strong relationship between body mass and flipper length of penguins.\n\n```{r}\n#| label: fig-penguins\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point()\n```"
+    "objectID": "lectures/2024-12-05/19-logistic-regression.html#straight-line-of-best-fit-is-a-little-silly",
+    "href": "lectures/2024-12-05/19-logistic-regression.html#straight-line-of-best-fit-is-a-little-silly",
+    "title": "Model selection for logistic regression",
+    "section": "Straight line of best fit is a little silly",
+    "text": "Straight line of best fit is a little silly"
   },
   {
-    "objectID": "lectures/2024-12-05/24-tell-data-story.html#cross-referencing-tables",
-    "href": "lectures/2024-12-05/24-tell-data-story.html#cross-referencing-tables",
-    "title": "Telling a data story",
-    "section": "Cross referencing tables",
-    "text": "Cross referencing tables\n\nOutputInput\n\n\nThe regression output is shown in Table 1.\n\npenguins_fit &lt;- linear_reg() |&gt;\n  fit(body_mass_g ~ flipper_length_mm, data = penguins)\n\ntidy(penguins_fit) |&gt;\n  knitr::kable(digits = 3)\n\n\n\nTable 1: The regression output for predicting body mass from flipper length of penguins.\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-5780.831\n305.815\n-18.903\n0\n\n\nflipper_length_mm\n49.686\n1.518\n32.722\n0\n\n\n\n\n\n\n\n\n\n\nThe regression output is shown in @tbl-penguins-lm.\n\n```{r}\n#| label: tbl-penguins-lm\n#| tbl-cap: The regression output for predicting body mass from flipper length of penguins.\n\npenguins_fit &lt;- linear_reg() |&gt;\n  fit(body_mass_g ~ flipper_length_mm, data = penguins)\n\ntidy(penguins_fit) |&gt;\n  knitr::kable(digits = 3)\n```\n\n\n\n\n\n\n\n🔗 sta101-f24.github.io"
+    "objectID": "lectures/2024-12-05/19-logistic-regression.html#instead-s-curve-of-best-fit",
+    "href": "lectures/2024-12-05/19-logistic-regression.html#instead-s-curve-of-best-fit",
+    "title": "Model selection for logistic regression",
+    "section": "Instead: S-curve of best fit",
+    "text": "Instead: S-curve of best fit\nInstead of modeling \\(y\\) directly, we model the probability that \\(y=1\\):\n\n\n“Given new email, what’s the probability that it’s spam?’’\n“Given new image, what’s the probability that it’s cancer?’’\n“Given new loan application, what’s the probability that they default?’’"
+  },
+  {
+    "objectID": "lectures/2024-12-05/19-logistic-regression.html#why-dont-we-model-y-directly",
+    "href": "lectures/2024-12-05/19-logistic-regression.html#why-dont-we-model-y-directly",
+    "title": "Model selection for logistic regression",
+    "section": "Why don’t we model y directly?",
+    "text": "Why don’t we model y directly?\n\nRecall regression with a numerical response:\n\nOur models do not output guarantees for \\(y\\), they output predictions that describe behavior on average;\n\nSimilar when modeling a binary response:\n\nOur models cannot directly guarantee that \\(y\\) will be zero or one. The correct analog to “on average” for a 0/1 response is “what’s the probability?”"
+  },
+  {
+    "objectID": "lectures/2024-12-05/19-logistic-regression.html#so-what-is-this-s-curve-anyway",
+    "href": "lectures/2024-12-05/19-logistic-regression.html#so-what-is-this-s-curve-anyway",
+    "title": "Model selection for logistic regression",
+    "section": "So, what is this S-curve, anyway?",
+    "text": "So, what is this S-curve, anyway?\nIt’s the logistic function:\n\\[\n\\text{Prob}(y = 1)\n=\n\\frac{e^{\\beta_0+\\beta_1x}}{1+e^{\\beta_0+\\beta_1x}}.\n\\]\nIf you set p = Prob(y = 1) and do some algebra, you get the simple linear model for the log-odds:\n\\[\n\\log\\left(\\frac{p}{1-p}\\right)\n=\n\\beta_0+\\beta_1x.\n\\]\nThis is called the logistic regression model."
+  },
+  {
+    "objectID": "lectures/2024-12-05/19-logistic-regression.html#log-odds",
+    "href": "lectures/2024-12-05/19-logistic-regression.html#log-odds",
+    "title": "Model selection for logistic regression",
+    "section": "Log-odds?",
+    "text": "Log-odds?\n\np = Prob(y = 1) is a probability. A number between 0 and 1;\np / (1 - p) is the odds. A number between 0 and \\(\\infty\\);\n\n“The odds of this lecture going well are 10 to 1.”\n\nThe log odds log(p / (1 - p)) is a number between \\(-\\infty\\) and \\(\\infty\\), which is suitable for the linear model."
+  },
+  {
+    "objectID": "lectures/2024-12-05/19-logistic-regression.html#logistic-regression",
+    "href": "lectures/2024-12-05/19-logistic-regression.html#logistic-regression",
+    "title": "Model selection for logistic regression",
+    "section": "Logistic regression",
+    "text": "Logistic regression\n\\[\n\\log\\left(\\frac{p}{1-p}\\right)\n=\n\\beta_0+\\beta_1x.\n\\]\n\nThe logit function log(p / (1-p)) is an example of a link function that transforms the linear model to have an appropriate range;\nThis is an example of a generalized linear model;"
+  },
+  {
+    "objectID": "lectures/2024-12-05/19-logistic-regression.html#estimation",
+    "href": "lectures/2024-12-05/19-logistic-regression.html#estimation",
+    "title": "Model selection for logistic regression",
+    "section": "Estimation",
+    "text": "Estimation\n\nWe estimate the parameters \\(\\beta_0,\\,\\beta_1\\) using maximum likelihood (don’t worry about it) to get the “best fitting” S-curve;\nThe fitted model is\n\n\\[\n\\log\\left(\\frac{\\widehat{p}}{1-\\widehat{p}}\\right)\n=\nb_0+b_1x.\n\\]"
+  },
+  {
+    "objectID": "lectures/2024-12-05/19-logistic-regression.html#logistic-regression---classification",
+    "href": "lectures/2024-12-05/19-logistic-regression.html#logistic-regression---classification",
+    "title": "Model selection for logistic regression",
+    "section": "Logistic regression -> classification?",
+    "text": "Logistic regression -&gt; classification?"
+  },
+  {
+    "objectID": "lectures/2024-12-05/19-logistic-regression.html#step-1-pick-a-threshold",
+    "href": "lectures/2024-12-05/19-logistic-regression.html#step-1-pick-a-threshold",
+    "title": "Model selection for logistic regression",
+    "section": "Step 1: pick a threshold",
+    "text": "Step 1: pick a threshold\nSelect a number \\(0 &lt; p^* &lt; 1\\):\n\n\nif \\(\\text{Prob}(y=1)\\leq p^*\\), then predict \\(\\widehat{y}=0\\);\nif \\(\\text{Prob}(y=1)&gt; p^*\\), then predict \\(\\widehat{y}=1\\)."
+  },
+  {
+    "objectID": "lectures/2024-12-05/19-logistic-regression.html#step-2-find-the-decision-boundary",
+    "href": "lectures/2024-12-05/19-logistic-regression.html#step-2-find-the-decision-boundary",
+    "title": "Model selection for logistic regression",
+    "section": "Step 2: find the “decision boundary”",
+    "text": "Step 2: find the “decision boundary”\nSolve for the x-value that matches the threshold:\n\n\nif \\(\\text{Prob}(y=1)\\leq p^*\\), then predict \\(\\widehat{y}=0\\);\nif \\(\\text{Prob}(y=1)&gt; p^*\\), then predict \\(\\widehat{y}=1\\)."
+  },
+  {
+    "objectID": "lectures/2024-12-05/19-logistic-regression.html#step-3-classify-a-new-arrival",
+    "href": "lectures/2024-12-05/19-logistic-regression.html#step-3-classify-a-new-arrival",
+    "title": "Model selection for logistic regression",
+    "section": "Step 3: classify a new arrival",
+    "text": "Step 3: classify a new arrival\nA new person shows up with \\(x_{\\text{new}}\\). Which side of the boundary are they on?\n\n\nif \\(x_{\\text{new}} \\leq x^\\star\\), then \\(\\text{Prob}(y=1)\\leq p^*\\), so predict \\(\\widehat{y}=0\\) for the new person;\nif \\(x_{\\text{new}} &gt; x^\\star\\), then \\(\\text{Prob}(y=1)&gt; p^*\\), so predict \\(\\widehat{y}=1\\) for the new person."
+  },
+  {
+    "objectID": "lectures/2024-12-05/19-logistic-regression.html#lets-change-the-threshold",
+    "href": "lectures/2024-12-05/19-logistic-regression.html#lets-change-the-threshold",
+    "title": "Model selection for logistic regression",
+    "section": "Let’s change the threshold",
+    "text": "Let’s change the threshold\nA new person shows up with \\(x_{\\text{new}}\\). Which side of the boundary are they on?\n\n\nif \\(x_{\\text{new}} \\leq x^\\star\\), then \\(\\text{Prob}(y=1)\\leq p^*\\), so predict \\(\\widehat{y}=0\\) for the new person;\nif \\(x_{\\text{new}} &gt; x^\\star\\), then \\(\\text{Prob}(y=1)&gt; p^*\\), so predict \\(\\widehat{y}=1\\) for the new person."
+  },
+  {
+    "objectID": "lectures/2024-12-05/19-logistic-regression.html#nothing-special-about-one-predictor",
+    "href": "lectures/2024-12-05/19-logistic-regression.html#nothing-special-about-one-predictor",
+    "title": "Model selection for logistic regression",
+    "section": "Nothing special about one predictor…",
+    "text": "Nothing special about one predictor…\nTwo numerical predictors and one binary response:"
+  },
+  {
+    "objectID": "lectures/2024-12-05/19-logistic-regression.html#multiple-logistic-regression",
+    "href": "lectures/2024-12-05/19-logistic-regression.html#multiple-logistic-regression",
+    "title": "Model selection for logistic regression",
+    "section": "“Multiple” logistic regression",
+    "text": "“Multiple” logistic regression\nOn the probability scale:\n\\[\n\\text{Prob}(y = 1)\n=\n\\frac{e^{\\beta_0+\\beta_1x_1+\\beta_2x_2+...+\\beta_mx_m}}{1+e^{\\beta_0+\\beta_1x_1+\\beta_2x_2+...+\\beta_mx_m}}.\n\\]\nFor the log-odds, a multiple linear regression:\n\\[\n\\log\\left(\\frac{p}{1-p}\\right)\n=\n\\beta_0+\\beta_1x_1+\\beta_2x_2+...+\\beta_mx_m.\n\\]"
+  },
+  {
+    "objectID": "lectures/2024-12-05/19-logistic-regression.html#decision-boundary-again",
+    "href": "lectures/2024-12-05/19-logistic-regression.html#decision-boundary-again",
+    "title": "Model selection for logistic regression",
+    "section": "Decision boundary, again",
+    "text": "Decision boundary, again\nIt’s linear! Consider two numerical predictors:\n\n\nif new \\((x_1,\\,x_2)\\) below, \\(\\text{Prob}(y=1)\\leq p^*\\). Predict \\(\\widehat{y}=0\\) for the new person;\nif new \\((x_1,\\,x_2)\\) above, \\(\\text{Prob}(y=1)&gt; p^*\\). Predict \\(\\widehat{y}=1\\) for the new person."
+  },
+  {
+    "objectID": "lectures/2024-12-05/19-logistic-regression.html#model-selection-for-logistic-regression",
+    "href": "lectures/2024-12-05/19-logistic-regression.html#model-selection-for-logistic-regression",
+    "title": "Model selection for logistic regression",
+    "section": "Model selection for logistic regression",
+    "text": "Model selection for logistic regression\nQ: How do we decide if a logistic regression model is “good”?\nA: Look at the error rates of its predictions. There are two kinds…\nINSERT TABLE HERE!"
+  },
+  {
+    "objectID": "lectures/2024-12-05/19-logistic-regression.html#too-much-vocabulary",
+    "href": "lectures/2024-12-05/19-logistic-regression.html#too-much-vocabulary",
+    "title": "Model selection for logistic regression",
+    "section": "Too much vocabulary",
+    "text": "Too much vocabulary\nTABLE WITH ALL THE JARGON"
+  },
+  {
+    "objectID": "lectures/2024-12-05/19-logistic-regression.html#trading-off-between-the-errors",
+    "href": "lectures/2024-12-05/19-logistic-regression.html#trading-off-between-the-errors",
+    "title": "Model selection for logistic regression",
+    "section": "Trading off between the errors",
+    "text": "Trading off between the errors"
   }
 ]

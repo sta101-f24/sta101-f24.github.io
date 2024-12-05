@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.4.555">
 
   <meta name="author" content="John Zito">
-  <title>STA 101 Fall 2024 - Telling a data story</title>
+  <title>STA 101 Fall 2024 - Model selection for logistic regression</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -29,71 +29,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -387,7 +322,7 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="STA 101 Fall 2024 - Telling a data story">
+<meta property="og:title" content="STA 101 Fall 2024 - Model selection for logistic regression">
 <meta property="og:site_name" content="STA 101 Fall 2024">
 </head>
 <body class="quarto-light">
@@ -395,7 +330,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Telling a data story</h1>
+  <h1 class="title">Model selection for logistic regression</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -409,574 +344,291 @@ John Zito
 </div>
 
 </section>
-<section>
-<section id="warm-up" class="title-slide slide level1 center">
-<h1>Warm up</h1>
-
+<section id="when-last-we-left-our-heros" class="slide level2">
+<h2>When last we left our heros…</h2>
+<p>We have been studying regression:</p>
+<ul>
+<li><p>What combinations of data types have we seen?</p></li>
+<li><p>What did the picture look like?</p></li>
+</ul>
 </section>
-<section id="announcements" class="slide level2 smaller">
-<h2>Announcements</h2>
+<section id="recap-simple-linear-regression" class="slide level2 smaller">
+<h2>Recap: simple linear regression</h2>
+<p>Numerical response and one numerical predictor:</p>
+
+<img data-src="19-logistic-regression_files/figure-revealjs/slr-1-1.png" width="960" class="r-stretch"></section>
+<section id="recap-simple-linear-regression-1" class="slide level2 smaller">
+<h2>Recap: simple linear regression</h2>
+<p>Numerical response and one categorical predictor (two levels):</p>
+
+<img data-src="19-logistic-regression_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
+<section id="recap-multiple-linear-regression" class="slide level2 smaller">
+<h2>Recap: multiple linear regression</h2>
+<p>Numerical response; numerical and categorical predictors:</p>
+
+<img data-src="19-logistic-regression_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
+<section id="today-a-binary-response" class="slide level2 smaller">
+<h2>Today: a <em>binary</em> response</h2>
+<p><span class="math display">\[
+y =
+\begin{cases}
+1 &amp; &amp;&amp;\text{eg. Yes, Win, True, Heads, Success}\\
+0 &amp; &amp;&amp;\text{eg. No, Lose, False, Tails, Failure}.
+\end{cases}
+\]</span></p>
+
+<img data-src="19-logistic-regression_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
+<section id="who-cares" class="slide level2">
+<h2>Who cares?</h2>
+<p>If we can model the relationship between predictors (<span class="math inline">\(x\)</span>) and a binary response (<span class="math inline">\(y\)</span>), we can use the model to do a special kind of prediction called <em>classification</em>.</p>
+</section>
+<section id="example-is-the-e-mail-spam-or-not" class="slide level2 smaller">
+<h2>Example: is the e-mail spam or not?</h2>
+<p><span class="math display">\[
+\mathbf{x}: \text{word and character counts in an e-mail.}
+\]</span></p>
+
+<img data-src="images/19/spam.png" class="quarto-figure quarto-figure-center r-stretch"><p><span class="math display">\[
+y
+=
+\begin{cases}
+1 &amp; \text{it's spam}\\
+0 &amp; \text{it's legit}
+\end{cases}
+\]</span></p>
+<p>Ethical concerns?</p>
+</section>
+<section id="example-is-it-cancer-or-not" class="slide level2 smaller">
+<h2>Example: is it cancer or not?</h2>
+<p><span class="math display">\[
+\mathbf{x}: \text{features in a medical image.}
+\]</span></p>
+
+<img data-src="images/19/head-neck.jpg" class="quarto-figure quarto-figure-center r-stretch"><p><span class="math display">\[
+y
+=
+\begin{cases}
+1 &amp; \text{it's cancer}\\
+0 &amp; \text{it's healthy}
+\end{cases}
+\]</span></p>
+<p>Ethical concerns?</p>
+</section>
+<section id="example-will-they-default" class="slide level2 smaller">
+<h2>Example: will they default?</h2>
+<p><span class="math display">\[
+\mathbf{x}: \text{financial and demographic info about a loan applicant.}
+\]</span></p>
+
+<img data-src="images/19/fico.jpg" class="quarto-figure quarto-figure-center r-stretch"><p><span class="math display">\[
+y
+=
+\begin{cases}
+1 &amp; \text{applicant is at risk of defaulting on loan}\\
+0 &amp; \text{applicant is safe}
+\end{cases}
+\]</span></p>
+<p>Ethical concerns?</p>
+</section>
+<section id="example-will-they-re-offend" class="slide level2 smaller">
+<h2>Example: will they re-offend?</h2>
+<p><span class="math display">\[
+\mathbf{x}: \text{info about a criminal suspect and their case.}
+\]</span></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/19/machine-bias-petty-theft-1.png" class="quarto-figure quarto-figure-center" width="300" height="250"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/19/machine-bias-drug-posession-1.png" class="quarto-figure quarto-figure-center" width="300" height="250"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><span class="math display">\[
+y
+=
+\begin{cases}
+1 &amp; \text{suspect is at risk of re-offending pre-trial}\\
+0 &amp; \text{suspect is safe}
+\end{cases}
+\]</span></p>
+<p>Ethical concerns?</p>
+</section>
+<section id="how-do-we-model-this-type-of-data" class="slide level2">
+<h2>How do we model this type of data?</h2>
+
+<img data-src="19-logistic-regression_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
+<section id="straight-line-of-best-fit-is-a-little-silly" class="slide level2">
+<h2>Straight line of best fit is a little silly</h2>
+
+<img data-src="19-logistic-regression_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
+<section id="instead-s-curve-of-best-fit" class="slide level2 smaller">
+<h2>Instead: S-curve of best fit</h2>
+<p>Instead of modeling <span class="math inline">\(y\)</span> directly, we model the probability that <span class="math inline">\(y=1\)</span>:</p>
+
+<img data-src="19-logistic-regression_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"><ul>
+<li>“Given new email, what’s the probability that it’s spam?’’</li>
+<li>“Given new image, what’s the probability that it’s cancer?’’</li>
+<li>“Given new loan application, what’s the probability that they default?’’</li>
+</ul>
+</section>
+<section id="why-dont-we-model-y-directly" class="slide level2">
+<h2>Why don’t we model y directly?</h2>
 <ul>
-<li>Check grades on Canvas, if anything seems off let me know asap. Your final grade will be calculated based on what’s on Canvas. No grades will be changed after the project is due.</li>
-<li>My office hours next week by appointment.</li>
-<li>Don’t forget to fill out course and TA evaluations.</li>
-<li>Project 2:
+<li><p><strong>Recall regression with a numerical response</strong>:</p>
 <ul>
-<li>Friday - Peer review. You must be in your lab section to participate in the peer review (and be eligible for the points for it).</li>
-<li>Next Thursday - Video (upload to YouTube/Warpwire/etc. and share link on Google sheet) + writeup (on Gradescope) due.</li>
+<li>Our models do not output <em>guarantees</em> for <span class="math inline">\(y\)</span>, they output predictions that describe behavior <em>on average</em>;</li>
+</ul></li>
+<li><p><strong>Similar when modeling a binary response</strong>:</p>
+<ul>
+<li>Our models cannot directly guarantee that <span class="math inline">\(y\)</span> will be zero or one. The correct analog to “on average” for a 0/1 response is “what’s the probability?”</li>
 </ul></li>
 </ul>
 </section>
-<section id="setup" class="slide level2">
-<h2>Setup</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a></a><span class="fu">library</span>(tidymodels)</span>
-<span id="cb1-3"><a></a><span class="fu">library</span>(ggrepel)</span>
-<span id="cb1-4"><a></a><span class="fu">library</span>(ggthemes)</span>
-<span id="cb1-5"><a></a><span class="fu">library</span>(palmerpenguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section></section>
-<section>
-<section id="telling-a-story" class="title-slide slide level1 center">
-<h1>Telling a story</h1>
-
+<section id="so-what-is-this-s-curve-anyway" class="slide level2">
+<h2>So, what is this S-curve, anyway?</h2>
+<p>It’s the <em>logistic function</em>:</p>
+<p><span class="math display">\[
+\text{Prob}(y = 1)
+=
+\frac{e^{\beta_0+\beta_1x}}{1+e^{\beta_0+\beta_1x}}.
+\]</span></p>
+<p>If you set p = Prob(y = 1) and do some algebra, you get the simple linear model for the <em>log-odds</em>:</p>
+<p><span class="math display">\[
+\log\left(\frac{p}{1-p}\right)
+=
+\beta_0+\beta_1x.
+\]</span></p>
+<p>This is called the <em>logistic regression</em> model.</p>
 </section>
-<section id="multiple-ways-of-telling-a-story" class="slide level2">
-<h2>Multiple ways of telling a story</h2>
+<section id="log-odds" class="slide level2">
+<h2>Log-odds?</h2>
 <ul>
-<li><p>Sequential reveal: Motivation, then resolution</p></li>
-<li><p>Instant reveal: Resolution, and hidden in it motivation</p></li>
+<li><p>p = Prob(y = 1) is a probability. A number between 0 and 1;</p></li>
+<li><p>p / (1 - p) is the odds. A number between 0 and <span class="math inline">\(\infty\)</span>;</p></li>
+</ul>
+<p>“The odds of this lecture going well are 10 to 1.”</p>
+<ul>
+<li>The log odds log(p / (1 - p)) is a number between <span class="math inline">\(-\infty\)</span> and <span class="math inline">\(\infty\)</span>, which is suitable for the linear model.</li>
 </ul>
 </section>
-<section id="simplicity-vs.-complexity" class="slide level2 smaller">
-<h2>Simplicity vs.&nbsp;complexity</h2>
-<blockquote>
-<p>When you’re trying to show too much data at once you may end up not showing anything.</p>
-</blockquote>
+<section id="logistic-regression" class="slide level2">
+<h2>Logistic regression</h2>
+<p><span class="math display">\[
+\log\left(\frac{p}{1-p}\right)
+=
+\beta_0+\beta_1x.
+\]</span></p>
 <ul>
-<li><p>Never assume your audience can rapidly process complex visual displays</p></li>
-<li><p>Don’t add variables to your plot that are tangential to your story</p></li>
-<li><p>Don’t jump straight to a highly complex figure; first show an easily digestible subset (e.g., show one facet first)</p></li>
-<li><p>Aim for memorable, but clear</p></li>
-</ul>
-<div class="callout callout-note no-icon callout-style-simple">
-<div class="callout-body">
-<div class="callout-content">
-<p><strong>Project note:</strong> Make sure to leave time to iterate on your plots after you practice your presentation. If certain plots or outputs are getting too wordy to explain, take time to simplify them!</p>
-</div>
-</div>
-</div>
-</section>
-<section id="consistency-vs.-repetitiveness" class="slide level2">
-<h2>Consistency vs.&nbsp;repetitiveness</h2>
-<blockquote>
-<p>Be consistent but don’t be repetitive.</p>
-</blockquote>
-<ul>
-<li><p>Use consistent features throughout plots (e.g., same color represents same level on all plots)</p></li>
-<li><p>Aim to use a different type of summary or visualization for each distinct analysis</p></li>
-</ul>
-<div class="callout callout-note no-icon callout-style-simple">
-<div class="callout-body">
-<div class="callout-content">
-<p><strong>Project note:</strong> If possible, ask a friend who is not in the class to listen to your presentation and then ask them what they remember. Then, ask yourself: is that what you wanted them to remember?</p>
-</div>
-</div>
-</div>
-</section>
-<section id="your-project-plans" class="slide level2">
-<h2>Your project plans</h2>
-<div class="task">
-<p>How are you telling your story?</p>
-<ol type="a">
-<li><p>Sequential reveal</p></li>
-<li><p>Instant reveal</p></li>
-<li><p>Our approach doesn’t fit either of these paradigms</p></li>
-<li><p>No idea</p></li>
-</ol>
-<p>Submit your answer on Canvas for 12-06 Check-in (access code: <code>___</code>)</p>
-</div>
-</section></section>
-<section>
-<section id="designing-effective-visualizations" class="title-slide slide level1 center">
-<h1>Designing effective visualizations</h1>
-
-</section>
-<section id="data" class="slide level2">
-<h2>Data</h2>
-<div class="cell columns column-output-location">
-<div class="column">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>d <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
-<span id="cb2-2"><a></a>  <span class="sc">~</span>category,                     <span class="sc">~</span>value,</span>
-<span id="cb2-3"><a></a>  <span class="st">"Cutting tools"</span>                , <span class="fl">0.03</span>,</span>
-<span id="cb2-4"><a></a>  <span class="st">"Buildings and administration"</span> , <span class="fl">0.22</span>,</span>
-<span id="cb2-5"><a></a>  <span class="st">"Labor"</span>                        , <span class="fl">0.31</span>,</span>
-<span id="cb2-6"><a></a>  <span class="st">"Machinery"</span>                    , <span class="fl">0.27</span>,</span>
-<span id="cb2-7"><a></a>  <span class="st">"Workplace materials"</span>          , <span class="fl">0.17</span></span>
-<span id="cb2-8"><a></a>)</span>
-<span id="cb2-9"><a></a>d</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 2
-  category                     value
-  &lt;chr&gt;                        &lt;dbl&gt;
-1 Cutting tools                 0.03
-2 Buildings and administration  0.22
-3 Labor                         0.31
-4 Machinery                     0.27
-5 Workplace materials           0.17</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="keep-it-simple" class="slide level2">
-<h2>Keep it simple</h2>
-<div class="columns">
-<div class="column" style="width:40%;">
-<p><img data-src="images/pie.jpg"></p>
-</div><div class="column" style="width:60%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="24-tell-data-story_files/figure-revealjs/unnamed-chunk-3-1.png" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="judging-relative-area" class="slide level2">
-<h2>Judging relative area</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/pie-areas.png" class="quarto-figure quarto-figure-center" width="800"></p>
-</figure>
-</div>
-<div class="fragment">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/bar-areas.png" class="quarto-figure quarto-figure-center" width="800"></p>
-</figure>
-</div>
-
-</div>
-<aside><div>
-<p>From Data to Viz caveat collection - <a href="https://www.data-to-viz.com/caveat/pie.html">The issue with pie chart</a></p>
-</div></aside></section>
-<section id="use-color-to-draw-attention" class="slide level2">
-<h2>Use color to draw attention</h2>
-<p><br> <br></p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="24-tell-data-story_files/figure-revealjs/unnamed-chunk-4-1.png" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="24-tell-data-story_files/figure-revealjs/unnamed-chunk-5-1.png" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="play-with-themes-for-a-non-standard-look" class="slide level2 smaller">
-<h2>Play with themes for a non-standard look</h2>
-<div class="cell quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="24-tell-data-story_files/figure-revealjs/unnamed-chunk-6-1.png" style="width:100.0%"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="24-tell-data-story_files/figure-revealjs/unnamed-chunk-6-2.png" style="width:100.0%"></p>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="24-tell-data-story_files/figure-revealjs/unnamed-chunk-6-3.png" style="width:100.0%"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="24-tell-data-story_files/figure-revealjs/unnamed-chunk-6-4.png" style="width:100.0%"></p>
-</div>
-</div>
-</div>
-</section>
-<section id="go-beyond-ggplot2-themes-ggthemes" class="slide level2 smaller">
-<h2>Go beyond ggplot2 themes – ggthemes</h2>
-<div class="cell quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="24-tell-data-story_files/figure-revealjs/unnamed-chunk-7-1.png" style="width:100.0%"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="24-tell-data-story_files/figure-revealjs/unnamed-chunk-7-2.png" style="width:100.0%"></p>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="24-tell-data-story_files/figure-revealjs/unnamed-chunk-7-3.png" style="width:100.0%"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="24-tell-data-story_files/figure-revealjs/unnamed-chunk-7-4.png" style="width:100.0%"></p>
-</div>
-</div>
-</div>
-</section>
-<section id="tell-a-story" class="slide level2">
-<h2>Tell a story</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/duke-hires-1.png" class="quarto-figure quarto-figure-center"></p>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/duke-hires-2.png" class="quarto-figure quarto-figure-center"></p>
-</figure>
-</div>
-</div>
-</div>
-
-<aside><div>
-<p><em>Credit</em>: Angela Zoss and Eric Monson, Duke DVS</p>
-</div></aside></section>
-<section id="leave-out-non-story-details" class="slide level2">
-<h2>Leave out non-story details</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/too-many-details.png" class="quarto-figure quarto-figure-center"></p>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/fewer-details.png" class="quarto-figure quarto-figure-center"></p>
-</figure>
-</div>
-</div>
-</div>
-
-<aside><div>
-<p><em>Credit</em>: Angela Zoss and Eric Monson, Duke DVS</p>
-</div></aside></section>
-<section id="order-matters" class="slide level2">
-<h2>Order matters</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/unordered.png" class="quarto-figure quarto-figure-center"></p>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/ordered.png" class="quarto-figure quarto-figure-center"></p>
-</figure>
-</div>
-</div>
-</div>
-
-<aside><div>
-<p><em>Credit</em>: Angela Zoss and Eric Monson, Duke DVS</p>
-</div></aside></section>
-<section id="clearly-indicate-missing-data" class="slide level2">
-<h2>Clearly indicate missing data</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/missing-data.png" class="quarto-figure quarto-figure-center"></p>
-</figure>
-</div>
-
-<aside><div>
-<p>http://ivi.sagepub.com/content/10/4/271, Angela Zoss and Eric Monson, Duke DVS</p>
-</div></aside></section>
-<section id="reduce-cognitive-load" class="slide level2">
-<h2>Reduce cognitive load</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/cognitive-load.png" class="quarto-figure quarto-figure-center"></p>
-</figure>
-</div>
-
-<aside><div>
-<p>http://www.storytellingwithdata.com/2012/09/some-finer-points-of-data-visualization.html</p>
-</div></aside></section>
-<section id="use-descriptive-titles" class="slide level2">
-<h2>Use descriptive titles</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/title-non-descriptive.png" class="quarto-figure quarto-figure-center"></p>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/title-descriptive.png" class="quarto-figure quarto-figure-center"></p>
-</figure>
-</div>
-</div>
-</div>
-
-<aside><div>
-<p><em>Credit</em>: Angela Zoss and Eric Monson, Duke DVS</p>
-</div></aside></section>
-<section id="annotate-figures" class="slide level2">
-<h2>Annotate figures</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/annotate.png" class="quarto-figure quarto-figure-center"></p>
-</figure>
-</div>
-
-<aside><div>
-<p>https://bl.ocks.org/susielu/23dc3082669ee026c552b85081d90976</p>
-</div></aside></section></section>
-<section>
-<section id="plot-sizing-and-layout" class="title-slide slide level1 center">
-<h1>Plot sizing and layout</h1>
-
-</section>
-<section id="sample-plots" class="slide level2">
-<h2>Sample plots</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>p_hist <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> mpg)) <span class="sc">+</span></span>
-<span id="cb4-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>)</span>
-<span id="cb4-3"><a></a></span>
-<span id="cb4-4"><a></a>p_text <span class="ot">&lt;-</span> mtcars <span class="sc">|&gt;</span></span>
-<span id="cb4-5"><a></a>  <span class="fu">rownames_to_column</span>() <span class="sc">|&gt;</span></span>
-<span id="cb4-6"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> disp, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
-<span id="cb4-7"><a></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label =</span> rowname)) <span class="sc">+</span></span>
-<span id="cb4-8"><a></a>  <span class="fu">coord_cartesian</span>(<span class="at">clip =</span> <span class="st">"off"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="small-fig-width" class="slide level2">
-<h2>Small <code>fig-width</code></h2>
-<p>For a zoomed-in look</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a></a><span class="in">```{r}</span></span>
-<span id="cb5-2"><a></a><span class="in">#| fig-width: 3</span></span>
-<span id="cb5-3"><a></a><span class="in">#| fig-asp: 0.618</span></span>
-<span id="cb5-4"><a></a></span>
-<span id="cb5-5"><a></a><span class="in">p_hist</span></span>
-<span id="cb5-6"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="24-tell-data-story_files/figure-revealjs/unnamed-chunk-9-1.png" width="288"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="large-fig-width" class="slide level2">
-<h2>Large <code>fig-width</code></h2>
-<p>For a zoomed-out look</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a></a><span class="in">```{r}</span></span>
-<span id="cb6-2"><a></a><span class="in">#| fig-width: 6</span></span>
-<span id="cb6-3"><a></a><span class="in">#| fig-asp: 0.618</span></span>
-<span id="cb6-4"><a></a></span>
-<span id="cb6-5"><a></a><span class="in">p_hist</span></span>
-<span id="cb6-6"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="24-tell-data-story_files/figure-revealjs/unnamed-chunk-10-1.png" width="576"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="fig-width-affects-text-size" class="slide level2">
-<h2><code>fig-width</code> affects text size</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="24-tell-data-story_files/figure-revealjs/unnamed-chunk-11-1.png" width="480"></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="24-tell-data-story_files/figure-revealjs/unnamed-chunk-12-1.png" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="multiple-plots-on-a-slide" class="slide level2">
-<h2>Multiple plots on a slide</h2>
-<div class="callout callout-warning no-icon callout-style-simple">
-<div class="callout-body">
-<div class="callout-content">
-<p>First, ask yourself, must you include multiple plots on a slide? For example, is your narrative about comparing results from two plots?</p>
-</div>
-</div>
-</div>
-<ul>
-<li><p>If no, then don’t! Move the second plot to to the next slide!</p></li>
-<li><p>If yes, use columns and sequential reveal.</p></li>
-</ul>
-</section></section>
-<section>
-<section id="quarto" class="title-slide slide level1 center">
-<h1>Quarto</h1>
-
-</section>
-<section id="writing-your-project-report-with-quarto" class="slide level2">
-<h2>Writing your project report with Quarto</h2>
-<ul>
-<li><p>Figure sizing: <code>fig-width</code>, <code>fig-height</code>, etc. in code chunks.</p></li>
-<li><p>Figure layout: <code>layout-ncol</code> for placing multiple figures in a chunk.</p></li>
-<li><p>Further control over figure layout with the <strong>patchwork</strong> package.</p></li>
-<li><p>Chunk options around what makes it in your final report: <code>message</code>, <code>echo</code>, etc.</p></li>
-<li><p>Cross referencing figures and tables.</p></li>
-<li><p>Adding footnotes and citations.</p></li>
+<li><p>The <em>logit</em> function log(p / (1-p)) is an example of a <em>link function</em> that transforms the linear model to have an appropriate range;</p></li>
+<li><p>This is an example of a <em>generalized linear model</em>;</p></li>
 </ul>
 </section>
-<section id="cross-referencing-figures" class="slide level2 smaller">
-<h2>Cross referencing figures</h2>
-<div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Output</a></li><li><a href="#tabset-1-2">Input</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1">
-<p>As seen in <a href="#/cross-referencing-figures" class="quarto-xref">Figure&nbsp;1</a>, there is a positive and relatively strong relationship between body mass and flipper length of penguins.</p>
-<div class="cell" data-layout-align="left">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
-<span id="cb7-2"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div id="fig-penguins" class="quarto-figure quarto-figure-left quarto-float" data-fig-align="left">
-<figure class="quarto-float quarto-float-fig">
-<div aria-describedby="fig-penguins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="24-tell-data-story_files/figure-revealjs/fig-penguins-1.png" class="quarto-figure quarto-figure-left" width="480">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-penguins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: The relationship between body mass and flipper length of penguins.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-1-2">
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a></a>As seen in @fig-penguins, there is a positive and relatively strong relationship between body mass and flipper length of penguins.</span>
-<span id="cb8-2"><a></a></span>
-<span id="cb8-3"><a></a><span class="in">```{r}</span></span>
-<span id="cb8-4"><a></a><span class="in">#| label: fig-penguins</span></span>
-<span id="cb8-5"><a></a></span>
-<span id="cb8-6"><a></a><span class="in">ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +</span></span>
-<span id="cb8-7"><a></a><span class="in">  geom_point()</span></span>
-<span id="cb8-8"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
+<section id="estimation" class="slide level2">
+<h2>Estimation</h2>
+<ul>
+<li><p>We estimate the parameters <span class="math inline">\(\beta_0,\,\beta_1\)</span> using <em>maximum likelihood</em> (don’t worry about it) to get the “best fitting” S-curve;</p></li>
+<li><p>The fitted model is</p></li>
+</ul>
+<p><span class="math display">\[
+\log\left(\frac{\widehat{p}}{1-\widehat{p}}\right)
+=
+b_0+b_1x.
+\]</span></p>
 </section>
-<section id="cross-referencing-tables" class="slide level2 smaller">
-<h2>Cross referencing tables</h2>
-<div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Output</a></li><li><a href="#tabset-2-2">Input</a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1">
-<p>The regression output is shown in <a href="#/cross-referencing-tables" class="quarto-xref">Table&nbsp;1</a>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>penguins_fit <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
-<span id="cb9-2"><a></a>  <span class="fu">fit</span>(body_mass_g <span class="sc">~</span> flipper_length_mm, <span class="at">data =</span> penguins)</span>
-<span id="cb9-3"><a></a></span>
-<span id="cb9-4"><a></a><span class="fu">tidy</span>(penguins_fit) <span class="sc">|&gt;</span></span>
-<span id="cb9-5"><a></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="tbl-penguins-lm" class="cell quarto-float">
-<figure class="quarto-float quarto-float-tbl">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-penguins-lm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: The regression output for predicting body mass from flipper length of penguins.
-</figcaption>
-<div aria-describedby="tbl-penguins-lm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<table class="do-not-create-environment cell caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-<th style="text-align: right;">std.error</th>
-<th style="text-align: right;">statistic</th>
-<th style="text-align: right;">p.value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">-5780.831</td>
-<td style="text-align: right;">305.815</td>
-<td style="text-align: right;">-18.903</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">flipper_length_mm</td>
-<td style="text-align: right;">49.686</td>
-<td style="text-align: right;">1.518</td>
-<td style="text-align: right;">32.722</td>
-<td style="text-align: right;">0</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</figure>
-</div>
-</div>
-</div>
-<div id="tabset-2-2">
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a></a>The regression output is shown in @tbl-penguins-lm.</span>
-<span id="cb10-2"><a></a></span>
-<span id="cb10-3"><a></a><span class="in">```{r}</span></span>
-<span id="cb10-4"><a></a><span class="in">#| label: tbl-penguins-lm</span></span>
-<span id="cb10-5"><a></a><span class="in">#| tbl-cap: The regression output for predicting body mass from flipper length of penguins.</span></span>
-<span id="cb10-6"><a></a></span>
-<span id="cb10-7"><a></a><span class="in">penguins_fit &lt;- linear_reg() |&gt;</span></span>
-<span id="cb10-8"><a></a><span class="in">  fit(body_mass_g ~ flipper_length_mm, data = penguins)</span></span>
-<span id="cb10-9"><a></a></span>
-<span id="cb10-10"><a></a><span class="in">tidy(penguins_fit) |&gt;</span></span>
-<span id="cb10-11"><a></a><span class="in">  knitr::kable(digits = 3)</span></span>
-<span id="cb10-12"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
+<section id="logistic-regression---classification" class="slide level2">
+<h2>Logistic regression -&gt; classification?</h2>
+</section>
+<section id="step-1-pick-a-threshold" class="slide level2 smaller">
+<h2>Step 1: pick a threshold</h2>
+<p>Select a number <span class="math inline">\(0 &lt; p^* &lt; 1\)</span>:</p>
+
+<img data-src="19-logistic-regression_files/figure-revealjs/step-1-1.png" width="960" class="r-stretch"><ul>
+<li>if <span class="math inline">\(\text{Prob}(y=1)\leq p^*\)</span>, then predict <span class="math inline">\(\widehat{y}=0\)</span>;</li>
+<li>if <span class="math inline">\(\text{Prob}(y=1)&gt; p^*\)</span>, then predict <span class="math inline">\(\widehat{y}=1\)</span>.</li>
+</ul>
+</section>
+<section id="step-2-find-the-decision-boundary" class="slide level2 smaller">
+<h2>Step 2: find the “decision boundary”</h2>
+<p>Solve for the x-value that matches the threshold:</p>
+
+<img data-src="19-logistic-regression_files/figure-revealjs/step-2-1.png" width="960" class="r-stretch"><ul>
+<li>if <span class="math inline">\(\text{Prob}(y=1)\leq p^*\)</span>, then predict <span class="math inline">\(\widehat{y}=0\)</span>;</li>
+<li>if <span class="math inline">\(\text{Prob}(y=1)&gt; p^*\)</span>, then predict <span class="math inline">\(\widehat{y}=1\)</span>.</li>
+</ul>
+</section>
+<section id="step-3-classify-a-new-arrival" class="slide level2 smaller">
+<h2>Step 3: classify a new arrival</h2>
+<p>A new person shows up with <span class="math inline">\(x_{\text{new}}\)</span>. Which side of the boundary are they on?</p>
+
+<img data-src="19-logistic-regression_files/figure-revealjs/step-3-1.png" width="960" class="r-stretch"><ul>
+<li>if <span class="math inline">\(x_{\text{new}} \leq x^\star\)</span>, then <span class="math inline">\(\text{Prob}(y=1)\leq p^*\)</span>, so predict <span class="math inline">\(\widehat{y}=0\)</span> for the new person;</li>
+<li>if <span class="math inline">\(x_{\text{new}} &gt; x^\star\)</span>, then <span class="math inline">\(\text{Prob}(y=1)&gt; p^*\)</span>, so predict <span class="math inline">\(\widehat{y}=1\)</span> for the new person.</li>
+</ul>
+</section>
+<section id="lets-change-the-threshold" class="slide level2 smaller">
+<h2>Let’s change the threshold</h2>
+<p>A new person shows up with <span class="math inline">\(x_{\text{new}}\)</span>. Which side of the boundary are they on?</p>
+
+<img data-src="19-logistic-regression_files/figure-revealjs/lower-threshold-1.png" width="960" class="r-stretch"><ul>
+<li>if <span class="math inline">\(x_{\text{new}} \leq x^\star\)</span>, then <span class="math inline">\(\text{Prob}(y=1)\leq p^*\)</span>, so predict <span class="math inline">\(\widehat{y}=0\)</span> for the new person;</li>
+<li>if <span class="math inline">\(x_{\text{new}} &gt; x^\star\)</span>, then <span class="math inline">\(\text{Prob}(y=1)&gt; p^*\)</span>, so predict <span class="math inline">\(\widehat{y}=1\)</span> for the new person.</li>
+</ul>
+</section>
+<section id="nothing-special-about-one-predictor" class="slide level2 smaller">
+<h2>Nothing special about one predictor…</h2>
+<p>Two numerical predictors and one binary response:</p>
+
+<img data-src="19-logistic-regression_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"></section>
+<section id="multiple-logistic-regression" class="slide level2">
+<h2>“Multiple” logistic regression</h2>
+<p>On the probability scale:</p>
+<p><span class="math display">\[
+\text{Prob}(y = 1)
+=
+\frac{e^{\beta_0+\beta_1x_1+\beta_2x_2+...+\beta_mx_m}}{1+e^{\beta_0+\beta_1x_1+\beta_2x_2+...+\beta_mx_m}}.
+\]</span></p>
+<p>For the log-odds, a <em>multiple</em> linear regression:</p>
+<p><span class="math display">\[
+\log\left(\frac{p}{1-p}\right)
+=
+\beta_0+\beta_1x_1+\beta_2x_2+...+\beta_mx_m.
+\]</span></p>
+</section>
+<section id="decision-boundary-again" class="slide level2 smaller">
+<h2>Decision boundary, again</h2>
+<p>It’s linear! Consider two numerical predictors:</p>
+
+<img data-src="19-logistic-regression_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"><ul>
+<li>if new <span class="math inline">\((x_1,\,x_2)\)</span> below, <span class="math inline">\(\text{Prob}(y=1)\leq p^*\)</span>. Predict <span class="math inline">\(\widehat{y}=0\)</span> for the new person;</li>
+<li>if new <span class="math inline">\((x_1,\,x_2)\)</span> above, <span class="math inline">\(\text{Prob}(y=1)&gt; p^*\)</span>. Predict <span class="math inline">\(\widehat{y}=1\)</span> for the new person.</li>
+</ul>
+</section>
+<section id="model-selection-for-logistic-regression" class="slide level2">
+<h2>Model selection for logistic regression</h2>
+<p>Q: How do we decide if a logistic regression model is “good”?</p>
+<p>A: Look at the error rates of its predictions. There are two kinds…</p>
+<p>INSERT TABLE HERE!</p>
+</section>
+<section id="too-much-vocabulary" class="slide level2">
+<h2>Too much vocabulary</h2>
+<p>TABLE WITH ALL THE JARGON</p>
+</section>
+<section id="trading-off-between-the-errors" class="slide level2">
+<h2>Trading off between the errors</h2>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
 </div>
-</section></section>
+</section>
     </div>
   </div>
 
