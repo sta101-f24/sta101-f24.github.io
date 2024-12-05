@@ -1,5 +1,5 @@
 ---
-title: "Telling a data story"
+title: "Project tips"
 format: revealjs
 auto-stretch: false
 ---
