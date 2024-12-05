@@ -265,7 +265,7 @@
     "href": "lectures/2024-12-05/more-logistic-regression.html#roc-curve-2",
     "title": "Model selection for logistic regression",
     "section": "ROC curve",
-    "text": "ROC curve\n\n\nThe more “up and to the left,” the better;\nUp-and-to-the-left-ness can be quantified with the area under the ROC curve."
+    "text": "ROC curve\n\n\nThe more “up and to the left,” the better;\nUp-and-to-the-left-ness can be quantified with the area under the ROC curve (a number between zero and one)."
   },
   {
     "objectID": "computing/computing-normal.html",
@@ -2824,14 +2824,14 @@
     "href": "computing/computing-logistic-2.html",
     "title": "Model selection for logistic regression",
     "section": "",
-    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(tidymodels)\n\n── Attaching packages ────────────────────────────────────── tidymodels 1.2.0 ──\n✔ broom        1.0.6     ✔ rsample      1.2.1\n✔ dials        1.3.0     ✔ tune         1.2.1\n✔ infer        1.0.7     ✔ workflows    1.1.4\n✔ modeldata    1.4.0     ✔ workflowsets 1.1.0\n✔ parsnip      1.2.1     ✔ yardstick    1.3.1\n✔ recipes      1.1.0     \n── Conflicts ───────────────────────────────────────── tidymodels_conflicts() ──\n✖ scales::discard() masks purrr::discard()\n✖ dplyr::filter()   masks stats::filter()\n✖ recipes::fixed()  masks stringr::fixed()\n✖ dplyr::lag()      masks stats::lag()\n✖ yardstick::spec() masks readr::spec()\n✖ recipes::step()   masks stats::step()\n• Learn how to get started at https://www.tidymodels.org/start/\n\nlibrary(forested)\n\nglimpse(forested)\n\nRows: 7,107\nColumns: 19\n$ forested         &lt;fct&gt; Yes, Yes, No, Yes, Yes, Yes, Yes, Yes, Yes, Yes, Yes,…\n$ year             &lt;dbl&gt; 2005, 2005, 2005, 2005, 2005, 2005, 2005, 2005, 2005,…\n$ elevation        &lt;dbl&gt; 881, 113, 164, 299, 806, 736, 636, 224, 52, 2240, 104…\n$ eastness         &lt;dbl&gt; 90, -25, -84, 93, 47, -27, -48, -65, -62, -67, 96, -4…\n$ northness        &lt;dbl&gt; 43, 96, 53, 34, -88, -96, 87, -75, 78, -74, -26, 86, …\n$ roughness        &lt;dbl&gt; 63, 30, 13, 6, 35, 53, 3, 9, 42, 99, 51, 190, 95, 212…\n$ tree_no_tree     &lt;fct&gt; Tree, Tree, Tree, No tree, Tree, Tree, No tree, Tree,…\n$ dew_temp         &lt;dbl&gt; 0.04, 6.40, 6.06, 4.43, 1.06, 1.35, 1.42, 6.39, 6.50,…\n$ precip_annual    &lt;dbl&gt; 466, 1710, 1297, 2545, 609, 539, 702, 1195, 1312, 103…\n$ temp_annual_mean &lt;dbl&gt; 6.42, 10.64, 10.07, 9.86, 7.72, 7.89, 7.61, 10.45, 10…\n$ temp_annual_min  &lt;dbl&gt; -8.32, 1.40, 0.19, -1.20, -5.98, -6.00, -5.76, 1.11, …\n$ temp_annual_max  &lt;dbl&gt; 12.91, 15.84, 14.42, 15.78, 13.84, 14.66, 14.23, 15.3…\n$ temp_january_min &lt;dbl&gt; -0.08, 5.44, 5.72, 3.95, 1.60, 1.12, 0.99, 5.54, 6.20…\n$ vapor_min        &lt;dbl&gt; 78, 34, 49, 67, 114, 67, 67, 31, 60, 79, 172, 162, 70…\n$ vapor_max        &lt;dbl&gt; 1194, 938, 754, 1164, 1254, 1331, 1275, 944, 892, 549…\n$ canopy_cover     &lt;dbl&gt; 50, 79, 47, 42, 59, 36, 14, 27, 82, 12, 74, 66, 83, 6…\n$ lon              &lt;dbl&gt; -118.6865, -123.0825, -122.3468, -121.9144, -117.8841…\n$ lat              &lt;dbl&gt; 48.69537, 47.07991, 48.77132, 45.80776, 48.07396, 48.…\n$ land_type        &lt;fct&gt; Tree, Tree, Tree, Tree, Tree, Tree, Non-tree vegetati…"
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(tidymodels)\n\n── Attaching packages ────────────────────────────────────── tidymodels 1.2.0 ──\n✔ broom        1.0.6     ✔ rsample      1.2.1\n✔ dials        1.3.0     ✔ tune         1.2.1\n✔ infer        1.0.7     ✔ workflows    1.1.4\n✔ modeldata    1.4.0     ✔ workflowsets 1.1.0\n✔ parsnip      1.2.1     ✔ yardstick    1.3.1\n✔ recipes      1.1.0     \n── Conflicts ───────────────────────────────────────── tidymodels_conflicts() ──\n✖ scales::discard() masks purrr::discard()\n✖ dplyr::filter()   masks stats::filter()\n✖ recipes::fixed()  masks stringr::fixed()\n✖ dplyr::lag()      masks stats::lag()\n✖ yardstick::spec() masks readr::spec()\n✖ recipes::step()   masks stats::step()\n• Dig deeper into tidy modeling with R at https://www.tmwr.org\n\nlibrary(forested)\n\nglimpse(forested)\n\nRows: 7,107\nColumns: 19\n$ forested         &lt;fct&gt; Yes, Yes, No, Yes, Yes, Yes, Yes, Yes, Yes, Yes, Yes,…\n$ year             &lt;dbl&gt; 2005, 2005, 2005, 2005, 2005, 2005, 2005, 2005, 2005,…\n$ elevation        &lt;dbl&gt; 881, 113, 164, 299, 806, 736, 636, 224, 52, 2240, 104…\n$ eastness         &lt;dbl&gt; 90, -25, -84, 93, 47, -27, -48, -65, -62, -67, 96, -4…\n$ northness        &lt;dbl&gt; 43, 96, 53, 34, -88, -96, 87, -75, 78, -74, -26, 86, …\n$ roughness        &lt;dbl&gt; 63, 30, 13, 6, 35, 53, 3, 9, 42, 99, 51, 190, 95, 212…\n$ tree_no_tree     &lt;fct&gt; Tree, Tree, Tree, No tree, Tree, Tree, No tree, Tree,…\n$ dew_temp         &lt;dbl&gt; 0.04, 6.40, 6.06, 4.43, 1.06, 1.35, 1.42, 6.39, 6.50,…\n$ precip_annual    &lt;dbl&gt; 466, 1710, 1297, 2545, 609, 539, 702, 1195, 1312, 103…\n$ temp_annual_mean &lt;dbl&gt; 6.42, 10.64, 10.07, 9.86, 7.72, 7.89, 7.61, 10.45, 10…\n$ temp_annual_min  &lt;dbl&gt; -8.32, 1.40, 0.19, -1.20, -5.98, -6.00, -5.76, 1.11, …\n$ temp_annual_max  &lt;dbl&gt; 12.91, 15.84, 14.42, 15.78, 13.84, 14.66, 14.23, 15.3…\n$ temp_january_min &lt;dbl&gt; -0.08, 5.44, 5.72, 3.95, 1.60, 1.12, 0.99, 5.54, 6.20…\n$ vapor_min        &lt;dbl&gt; 78, 34, 49, 67, 114, 67, 67, 31, 60, 79, 172, 162, 70…\n$ vapor_max        &lt;dbl&gt; 1194, 938, 754, 1164, 1254, 1331, 1275, 944, 892, 549…\n$ canopy_cover     &lt;dbl&gt; 50, 79, 47, 42, 59, 36, 14, 27, 82, 12, 74, 66, 83, 6…\n$ lon              &lt;dbl&gt; -118.6865, -123.0825, -122.3468, -121.9144, -117.8841…\n$ lat              &lt;dbl&gt; 48.69537, 47.07991, 48.77132, 45.80776, 48.07396, 48.…\n$ land_type        &lt;fct&gt; Tree, Tree, Tree, Tree, Tree, Tree, Non-tree vegetati…"
   },
   {
     "objectID": "computing/computing-logistic-2.html#load-packages-and-data",
     "href": "computing/computing-logistic-2.html#load-packages-and-data",
     "title": "Model selection for logistic regression",
     "section": "",
-    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(tidymodels)\n\n── Attaching packages ────────────────────────────────────── tidymodels 1.2.0 ──\n✔ broom        1.0.6     ✔ rsample      1.2.1\n✔ dials        1.3.0     ✔ tune         1.2.1\n✔ infer        1.0.7     ✔ workflows    1.1.4\n✔ modeldata    1.4.0     ✔ workflowsets 1.1.0\n✔ parsnip      1.2.1     ✔ yardstick    1.3.1\n✔ recipes      1.1.0     \n── Conflicts ───────────────────────────────────────── tidymodels_conflicts() ──\n✖ scales::discard() masks purrr::discard()\n✖ dplyr::filter()   masks stats::filter()\n✖ recipes::fixed()  masks stringr::fixed()\n✖ dplyr::lag()      masks stats::lag()\n✖ yardstick::spec() masks readr::spec()\n✖ recipes::step()   masks stats::step()\n• Learn how to get started at https://www.tidymodels.org/start/\n\nlibrary(forested)\n\nglimpse(forested)\n\nRows: 7,107\nColumns: 19\n$ forested         &lt;fct&gt; Yes, Yes, No, Yes, Yes, Yes, Yes, Yes, Yes, Yes, Yes,…\n$ year             &lt;dbl&gt; 2005, 2005, 2005, 2005, 2005, 2005, 2005, 2005, 2005,…\n$ elevation        &lt;dbl&gt; 881, 113, 164, 299, 806, 736, 636, 224, 52, 2240, 104…\n$ eastness         &lt;dbl&gt; 90, -25, -84, 93, 47, -27, -48, -65, -62, -67, 96, -4…\n$ northness        &lt;dbl&gt; 43, 96, 53, 34, -88, -96, 87, -75, 78, -74, -26, 86, …\n$ roughness        &lt;dbl&gt; 63, 30, 13, 6, 35, 53, 3, 9, 42, 99, 51, 190, 95, 212…\n$ tree_no_tree     &lt;fct&gt; Tree, Tree, Tree, No tree, Tree, Tree, No tree, Tree,…\n$ dew_temp         &lt;dbl&gt; 0.04, 6.40, 6.06, 4.43, 1.06, 1.35, 1.42, 6.39, 6.50,…\n$ precip_annual    &lt;dbl&gt; 466, 1710, 1297, 2545, 609, 539, 702, 1195, 1312, 103…\n$ temp_annual_mean &lt;dbl&gt; 6.42, 10.64, 10.07, 9.86, 7.72, 7.89, 7.61, 10.45, 10…\n$ temp_annual_min  &lt;dbl&gt; -8.32, 1.40, 0.19, -1.20, -5.98, -6.00, -5.76, 1.11, …\n$ temp_annual_max  &lt;dbl&gt; 12.91, 15.84, 14.42, 15.78, 13.84, 14.66, 14.23, 15.3…\n$ temp_january_min &lt;dbl&gt; -0.08, 5.44, 5.72, 3.95, 1.60, 1.12, 0.99, 5.54, 6.20…\n$ vapor_min        &lt;dbl&gt; 78, 34, 49, 67, 114, 67, 67, 31, 60, 79, 172, 162, 70…\n$ vapor_max        &lt;dbl&gt; 1194, 938, 754, 1164, 1254, 1331, 1275, 944, 892, 549…\n$ canopy_cover     &lt;dbl&gt; 50, 79, 47, 42, 59, 36, 14, 27, 82, 12, 74, 66, 83, 6…\n$ lon              &lt;dbl&gt; -118.6865, -123.0825, -122.3468, -121.9144, -117.8841…\n$ lat              &lt;dbl&gt; 48.69537, 47.07991, 48.77132, 45.80776, 48.07396, 48.…\n$ land_type        &lt;fct&gt; Tree, Tree, Tree, Tree, Tree, Tree, Non-tree vegetati…"
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(tidymodels)\n\n── Attaching packages ────────────────────────────────────── tidymodels 1.2.0 ──\n✔ broom        1.0.6     ✔ rsample      1.2.1\n✔ dials        1.3.0     ✔ tune         1.2.1\n✔ infer        1.0.7     ✔ workflows    1.1.4\n✔ modeldata    1.4.0     ✔ workflowsets 1.1.0\n✔ parsnip      1.2.1     ✔ yardstick    1.3.1\n✔ recipes      1.1.0     \n── Conflicts ───────────────────────────────────────── tidymodels_conflicts() ──\n✖ scales::discard() masks purrr::discard()\n✖ dplyr::filter()   masks stats::filter()\n✖ recipes::fixed()  masks stringr::fixed()\n✖ dplyr::lag()      masks stats::lag()\n✖ yardstick::spec() masks readr::spec()\n✖ recipes::step()   masks stats::step()\n• Dig deeper into tidy modeling with R at https://www.tmwr.org\n\nlibrary(forested)\n\nglimpse(forested)\n\nRows: 7,107\nColumns: 19\n$ forested         &lt;fct&gt; Yes, Yes, No, Yes, Yes, Yes, Yes, Yes, Yes, Yes, Yes,…\n$ year             &lt;dbl&gt; 2005, 2005, 2005, 2005, 2005, 2005, 2005, 2005, 2005,…\n$ elevation        &lt;dbl&gt; 881, 113, 164, 299, 806, 736, 636, 224, 52, 2240, 104…\n$ eastness         &lt;dbl&gt; 90, -25, -84, 93, 47, -27, -48, -65, -62, -67, 96, -4…\n$ northness        &lt;dbl&gt; 43, 96, 53, 34, -88, -96, 87, -75, 78, -74, -26, 86, …\n$ roughness        &lt;dbl&gt; 63, 30, 13, 6, 35, 53, 3, 9, 42, 99, 51, 190, 95, 212…\n$ tree_no_tree     &lt;fct&gt; Tree, Tree, Tree, No tree, Tree, Tree, No tree, Tree,…\n$ dew_temp         &lt;dbl&gt; 0.04, 6.40, 6.06, 4.43, 1.06, 1.35, 1.42, 6.39, 6.50,…\n$ precip_annual    &lt;dbl&gt; 466, 1710, 1297, 2545, 609, 539, 702, 1195, 1312, 103…\n$ temp_annual_mean &lt;dbl&gt; 6.42, 10.64, 10.07, 9.86, 7.72, 7.89, 7.61, 10.45, 10…\n$ temp_annual_min  &lt;dbl&gt; -8.32, 1.40, 0.19, -1.20, -5.98, -6.00, -5.76, 1.11, …\n$ temp_annual_max  &lt;dbl&gt; 12.91, 15.84, 14.42, 15.78, 13.84, 14.66, 14.23, 15.3…\n$ temp_january_min &lt;dbl&gt; -0.08, 5.44, 5.72, 3.95, 1.60, 1.12, 0.99, 5.54, 6.20…\n$ vapor_min        &lt;dbl&gt; 78, 34, 49, 67, 114, 67, 67, 31, 60, 79, 172, 162, 70…\n$ vapor_max        &lt;dbl&gt; 1194, 938, 754, 1164, 1254, 1331, 1275, 944, 892, 549…\n$ canopy_cover     &lt;dbl&gt; 50, 79, 47, 42, 59, 36, 14, 27, 82, 12, 74, 66, 83, 6…\n$ lon              &lt;dbl&gt; -118.6865, -123.0825, -122.3468, -121.9144, -117.8841…\n$ lat              &lt;dbl&gt; 48.69537, 47.07991, 48.77132, 45.80776, 48.07396, 48.…\n$ land_type        &lt;fct&gt; Tree, Tree, Tree, Tree, Tree, Tree, Non-tree vegetati…"
   },
   {
     "objectID": "computing/computing-logistic-2.html#split-data",
@@ -2845,7 +2845,7 @@
     "href": "computing/computing-logistic-2.html#exploratory-data-analysis",
     "title": "Model selection for logistic regression",
     "section": "Exploratory data analysis",
-    "text": "Exploratory data analysis\n\nggplot(\n  forested_train,\n  aes(x = precip_annual, fill = forested, group = forested)\n  ) +\n  geom_histogram(binwidth = 200, position = \"identity\", alpha = 0.7) +\n  scale_fill_manual(values = c(\"Yes\" = \"forestgreen\", \"No\" = \"gold2\")) +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\nggplot(forested_train, aes(x = tree_no_tree, fill = forested)) +\n  geom_bar(position = \"fill\") +\n  scale_fill_manual(values = c(\"Yes\" = \"forestgreen\", \"No\" = \"gold2\")) +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\nggplot(\n  forested_train,\n  aes(x = temp_annual_mean, fill = forested, group = forested)\n  ) +\n  geom_histogram(position = \"identity\", alpha = 0.7) +\n  scale_fill_manual(values = c(\"Yes\" = \"forestgreen\", \"No\" = \"gold2\")) +\n  facet_wrap(~land_type, ncol = 1) +\n  theme_minimal()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
+    "text": "Exploratory data analysis\n\nggplot(\n  forested_train, aes(x = precip_annual, fill = forested, group = forested)\n  ) +\n  geom_histogram(binwidth = 200, position = \"identity\", alpha = 0.7) +\n  scale_fill_manual(values = c(\"Yes\" = \"forestgreen\", \"No\" = \"gold2\")) +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\nggplot(forested_train, aes(x = tree_no_tree, fill = forested)) +\n  geom_bar(position = \"fill\") +\n  scale_fill_manual(values = c(\"Yes\" = \"forestgreen\", \"No\" = \"gold2\")) +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\nggplot(\n  forested_train,\n  aes(x = temp_annual_mean, fill = forested, group = forested)\n  ) +\n  geom_histogram(position = \"identity\", alpha = 0.7) +\n  scale_fill_manual(values = c(\"Yes\" = \"forestgreen\", \"No\" = \"gold2\")) +\n  facet_wrap(~land_type, ncol = 1) +\n  theme_minimal()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
   },
   {
     "objectID": "computing/computing-logistic-2.html#crude-map",
@@ -3051,196 +3051,196 @@
   {
     "objectID": "lectures/2024-12-05/project-tips.html#announcements",
     "href": "lectures/2024-12-05/project-tips.html#announcements",
-    "title": "Telling a data story",
+    "title": "Project tips",
     "section": "Announcements",
     "text": "Announcements\n\nCheck Lab 7 and Take-Home 2 and submit regrade requests;\nCourse and TA evaluations;\nI will hold office hours every day next week (M - F). When?\nProject reminders…\n\nWe’re skipping the peer review. +4 all around!\nFor technical help on outside material, Ed is best at first;\nFinal paper in the ballpark of five pages. Code should not appear!\nVideo: hop on a Zoom call and record it live;\nDue 5PM on 12/15. Grades due 48 hours later."
   },
   {
     "objectID": "lectures/2024-12-05/project-tips.html#where-to-now",
     "href": "lectures/2024-12-05/project-tips.html#where-to-now",
-    "title": "Telling a data story",
+    "title": "Project tips",
     "section": "Where to now?",
     "text": "Where to now?\n\nSTA 210 Regression Analysis: similar technical level, delivery style, and coding toolkit as 101;\nSTA 240 Probability for Inference: calculus-based introduction to probability and the mathematical theory of statistics."
   },
   {
     "objectID": "lectures/2024-12-05/project-tips.html#setup",
     "href": "lectures/2024-12-05/project-tips.html#setup",
-    "title": "Telling a data story",
+    "title": "Project tips",
     "section": "Setup",
     "text": "Setup\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(ggrepel)\nlibrary(ggthemes)\nlibrary(palmerpenguins)"
   },
   {
     "objectID": "lectures/2024-12-05/project-tips.html#multiple-ways-of-telling-a-story",
     "href": "lectures/2024-12-05/project-tips.html#multiple-ways-of-telling-a-story",
-    "title": "Telling a data story",
+    "title": "Project tips",
     "section": "Multiple ways of telling a story",
     "text": "Multiple ways of telling a story\n\nSequential reveal: Motivation, then resolution\nInstant reveal: Resolution, and hidden in it motivation"
   },
   {
     "objectID": "lectures/2024-12-05/project-tips.html#simplicity-vs.-complexity",
     "href": "lectures/2024-12-05/project-tips.html#simplicity-vs.-complexity",
-    "title": "Telling a data story",
+    "title": "Project tips",
     "section": "Simplicity vs. complexity",
     "text": "Simplicity vs. complexity\n\nWhen you’re trying to show too much data at once you may end up not showing anything.\n\n\nNever assume your audience can rapidly process complex visual displays\nDon’t add variables to your plot that are tangential to your story\nDon’t jump straight to a highly complex figure; first show an easily digestible subset (e.g., show one facet first)\nAim for memorable, but clear\n\n\n\n\nProject note: Make sure to leave time to iterate on your plots after you practice your presentation. If certain plots or outputs are getting too wordy to explain, take time to simplify them!"
   },
   {
     "objectID": "lectures/2024-12-05/project-tips.html#consistency-vs.-repetitiveness",
     "href": "lectures/2024-12-05/project-tips.html#consistency-vs.-repetitiveness",
-    "title": "Telling a data story",
+    "title": "Project tips",
     "section": "Consistency vs. repetitiveness",
     "text": "Consistency vs. repetitiveness\n\nBe consistent but don’t be repetitive.\n\n\nUse consistent features throughout plots (e.g., same color represents same level on all plots)\nAim to use a different type of summary or visualization for each distinct analysis\n\n\n\n\nProject note: If possible, ask a friend who is not in the class to listen to your presentation and then ask them what they remember. Then, ask yourself: is that what you wanted them to remember?"
   },
   {
     "objectID": "lectures/2024-12-05/project-tips.html#your-project-plans",
     "href": "lectures/2024-12-05/project-tips.html#your-project-plans",
-    "title": "Telling a data story",
+    "title": "Project tips",
     "section": "Your project plans",
     "text": "Your project plans\n\nHow are you telling your story?\n\nSequential reveal\nInstant reveal\nOur approach doesn’t fit either of these paradigms\nNo idea"
   },
   {
     "objectID": "lectures/2024-12-05/project-tips.html#data",
     "href": "lectures/2024-12-05/project-tips.html#data",
-    "title": "Telling a data story",
+    "title": "Project tips",
     "section": "Data",
     "text": "Data\n\n\nd &lt;- tribble(\n  ~category,                     ~value,\n  \"Cutting tools\"                , 0.03,\n  \"Buildings and administration\" , 0.22,\n  \"Labor\"                        , 0.31,\n  \"Machinery\"                    , 0.27,\n  \"Workplace materials\"          , 0.17\n)\nd\n\n\n# A tibble: 5 × 2\n  category                     value\n  &lt;chr&gt;                        &lt;dbl&gt;\n1 Cutting tools                 0.03\n2 Buildings and administration  0.22\n3 Labor                         0.31\n4 Machinery                     0.27\n5 Workplace materials           0.17"
   },
   {
     "objectID": "lectures/2024-12-05/project-tips.html#keep-it-simple",
     "href": "lectures/2024-12-05/project-tips.html#keep-it-simple",
-    "title": "Telling a data story",
+    "title": "Project tips",
     "section": "Keep it simple",
     "text": "Keep it simple"
   },
   {
     "objectID": "lectures/2024-12-05/project-tips.html#judging-relative-area",
     "href": "lectures/2024-12-05/project-tips.html#judging-relative-area",
-    "title": "Telling a data story",
+    "title": "Project tips",
     "section": "Judging relative area",
     "text": "Judging relative area\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFrom Data to Viz caveat collection - The issue with pie chart"
   },
   {
     "objectID": "lectures/2024-12-05/project-tips.html#use-color-to-draw-attention",
     "href": "lectures/2024-12-05/project-tips.html#use-color-to-draw-attention",
-    "title": "Telling a data story",
+    "title": "Project tips",
     "section": "Use color to draw attention",
     "text": "Use color to draw attention"
   },
   {
     "objectID": "lectures/2024-12-05/project-tips.html#play-with-themes-for-a-non-standard-look",
     "href": "lectures/2024-12-05/project-tips.html#play-with-themes-for-a-non-standard-look",
-    "title": "Telling a data story",
+    "title": "Project tips",
     "section": "Play with themes for a non-standard look",
     "text": "Play with themes for a non-standard look"
   },
   {
     "objectID": "lectures/2024-12-05/project-tips.html#go-beyond-ggplot2-themes-ggthemes",
     "href": "lectures/2024-12-05/project-tips.html#go-beyond-ggplot2-themes-ggthemes",
-    "title": "Telling a data story",
+    "title": "Project tips",
     "section": "Go beyond ggplot2 themes – ggthemes",
     "text": "Go beyond ggplot2 themes – ggthemes"
   },
   {
     "objectID": "lectures/2024-12-05/project-tips.html#tell-a-story",
     "href": "lectures/2024-12-05/project-tips.html#tell-a-story",
-    "title": "Telling a data story",
+    "title": "Project tips",
     "section": "Tell a story",
     "text": "Tell a story\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit: Angela Zoss and Eric Monson, Duke DVS"
   },
   {
     "objectID": "lectures/2024-12-05/project-tips.html#leave-out-non-story-details",
     "href": "lectures/2024-12-05/project-tips.html#leave-out-non-story-details",
-    "title": "Telling a data story",
+    "title": "Project tips",
     "section": "Leave out non-story details",
     "text": "Leave out non-story details\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit: Angela Zoss and Eric Monson, Duke DVS"
   },
   {
     "objectID": "lectures/2024-12-05/project-tips.html#order-matters",
     "href": "lectures/2024-12-05/project-tips.html#order-matters",
-    "title": "Telling a data story",
+    "title": "Project tips",
     "section": "Order matters",
     "text": "Order matters\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit: Angela Zoss and Eric Monson, Duke DVS"
   },
   {
     "objectID": "lectures/2024-12-05/project-tips.html#clearly-indicate-missing-data",
     "href": "lectures/2024-12-05/project-tips.html#clearly-indicate-missing-data",
-    "title": "Telling a data story",
+    "title": "Project tips",
     "section": "Clearly indicate missing data",
     "text": "Clearly indicate missing data\n\n\n\n\n\n\n\nhttp://ivi.sagepub.com/content/10/4/271, Angela Zoss and Eric Monson, Duke DVS"
   },
   {
     "objectID": "lectures/2024-12-05/project-tips.html#reduce-cognitive-load",
     "href": "lectures/2024-12-05/project-tips.html#reduce-cognitive-load",
-    "title": "Telling a data story",
+    "title": "Project tips",
     "section": "Reduce cognitive load",
     "text": "Reduce cognitive load\n\n\n\n\n\n\n\nhttp://www.storytellingwithdata.com/2012/09/some-finer-points-of-data-visualization.html"
   },
   {
     "objectID": "lectures/2024-12-05/project-tips.html#use-descriptive-titles",
     "href": "lectures/2024-12-05/project-tips.html#use-descriptive-titles",
-    "title": "Telling a data story",
+    "title": "Project tips",
     "section": "Use descriptive titles",
     "text": "Use descriptive titles\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit: Angela Zoss and Eric Monson, Duke DVS"
   },
   {
     "objectID": "lectures/2024-12-05/project-tips.html#annotate-figures",
     "href": "lectures/2024-12-05/project-tips.html#annotate-figures",
-    "title": "Telling a data story",
+    "title": "Project tips",
     "section": "Annotate figures",
     "text": "Annotate figures\n\n\n\n\n\n\n\nhttps://bl.ocks.org/susielu/23dc3082669ee026c552b85081d90976"
   },
   {
     "objectID": "lectures/2024-12-05/project-tips.html#sample-plots",
     "href": "lectures/2024-12-05/project-tips.html#sample-plots",
-    "title": "Telling a data story",
+    "title": "Project tips",
     "section": "Sample plots",
     "text": "Sample plots\n\np_hist &lt;- ggplot(mtcars, aes(x = mpg)) +\n  geom_histogram(binwidth = 2)\n\np_text &lt;- mtcars |&gt;\n  rownames_to_column() |&gt;\n  ggplot(aes(x = disp, y = mpg)) +\n  geom_text_repel(aes(label = rowname)) +\n  coord_cartesian(clip = \"off\")"
   },
   {
     "objectID": "lectures/2024-12-05/project-tips.html#small-fig-width",
     "href": "lectures/2024-12-05/project-tips.html#small-fig-width",
-    "title": "Telling a data story",
+    "title": "Project tips",
     "section": "Small fig-width",
     "text": "Small fig-width\nFor a zoomed-in look\n\n```{r}\n#| fig-width: 3\n#| fig-asp: 0.618\n\np_hist\n```"
   },
   {
     "objectID": "lectures/2024-12-05/project-tips.html#large-fig-width",
     "href": "lectures/2024-12-05/project-tips.html#large-fig-width",
-    "title": "Telling a data story",
+    "title": "Project tips",
     "section": "Large fig-width",
     "text": "Large fig-width\nFor a zoomed-out look\n\n```{r}\n#| fig-width: 6\n#| fig-asp: 0.618\n\np_hist\n```"
   },
   {
     "objectID": "lectures/2024-12-05/project-tips.html#fig-width-affects-text-size",
     "href": "lectures/2024-12-05/project-tips.html#fig-width-affects-text-size",
-    "title": "Telling a data story",
+    "title": "Project tips",
     "section": "fig-width affects text size",
     "text": "fig-width affects text size"
   },
   {
     "objectID": "lectures/2024-12-05/project-tips.html#multiple-plots-on-a-slide",
     "href": "lectures/2024-12-05/project-tips.html#multiple-plots-on-a-slide",
-    "title": "Telling a data story",
+    "title": "Project tips",
     "section": "Multiple plots on a slide",
     "text": "Multiple plots on a slide\n\n\n\nFirst, ask yourself, must you include multiple plots on a slide? For example, is your narrative about comparing results from two plots?\n\n\n\n\nIf no, then don’t! Move the second plot to to the next slide!\nIf yes, use columns and sequential reveal."
   },
   {
     "objectID": "lectures/2024-12-05/project-tips.html#writing-your-project-report-with-quarto",
     "href": "lectures/2024-12-05/project-tips.html#writing-your-project-report-with-quarto",
-    "title": "Telling a data story",
+    "title": "Project tips",
     "section": "Writing your project report with Quarto",
     "text": "Writing your project report with Quarto\n\nFigure sizing: fig-width, fig-height, etc. in code chunks.\nFigure layout: layout-ncol for placing multiple figures in a chunk.\nFurther control over figure layout with the patchwork package.\nChunk options around what makes it in your final report: message, echo, etc.\nCross referencing figures and tables.\nAdding footnotes and citations."
   },
   {
     "objectID": "lectures/2024-12-05/project-tips.html#cross-referencing-figures",
     "href": "lectures/2024-12-05/project-tips.html#cross-referencing-figures",
-    "title": "Telling a data story",
+    "title": "Project tips",
     "section": "Cross referencing figures",
     "text": "Cross referencing figures\n\nOutputInput\n\n\nAs seen in Figure 1, there is a positive and relatively strong relationship between body mass and flipper length of penguins.\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point()\n\n\n\n\n\n\n\nFigure 1: The relationship between body mass and flipper length of penguins.\n\n\n\n\n\n\n\nAs seen in @fig-penguins, there is a positive and relatively strong relationship between body mass and flipper length of penguins.\n\n```{r}\n#| label: fig-penguins\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point()\n```"
   },
   {
     "objectID": "lectures/2024-12-05/project-tips.html#cross-referencing-tables",
     "href": "lectures/2024-12-05/project-tips.html#cross-referencing-tables",
-    "title": "Telling a data story",
+    "title": "Project tips",
     "section": "Cross referencing tables",
     "text": "Cross referencing tables\n\nOutputInput\n\n\nThe regression output is shown in Table 1.\n\npenguins_fit &lt;- linear_reg() |&gt;\n  fit(body_mass_g ~ flipper_length_mm, data = penguins)\n\ntidy(penguins_fit) |&gt;\n  knitr::kable(digits = 3)\n\n\n\nTable 1: The regression output for predicting body mass from flipper length of penguins.\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-5780.831\n305.815\n-18.903\n0\n\n\nflipper_length_mm\n49.686\n1.518\n32.722\n0\n\n\n\n\n\n\n\n\n\n\nThe regression output is shown in @tbl-penguins-lm.\n\n```{r}\n#| label: tbl-penguins-lm\n#| tbl-cap: The regression output for predicting body mass from flipper length of penguins.\n\npenguins_fit &lt;- linear_reg() |&gt;\n  fit(body_mass_g ~ flipper_length_mm, data = penguins)\n\ntidy(penguins_fit) |&gt;\n  knitr::kable(digits = 3)\n```"
   }
