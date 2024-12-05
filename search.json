@@ -230,21 +230,21 @@
     "href": "lectures/2024-12-05/more-logistic-regression.html#model-selection-for-logistic-regression",
     "title": "Model selection for logistic regression",
     "section": "Model selection for logistic regression",
-    "text": "Model selection for logistic regression\nQ: How do we decide if a logistic regression model is “good”?\nA: Look at the error rates of its predictions. There are two kinds…\nINSERT TABLE HERE!"
+    "text": "Model selection for logistic regression\nQ: How do we decide if a logistic regression model is “good”?\nA: Look at the error rates of its predictions. There are two kinds…"
   },
   {
     "objectID": "lectures/2024-12-05/more-logistic-regression.html#too-much-vocabulary",
     "href": "lectures/2024-12-05/more-logistic-regression.html#too-much-vocabulary",
     "title": "Model selection for logistic regression",
     "section": "Too much vocabulary",
-    "text": "Too much vocabulary\nTABLE WITH ALL THE JARGON"
+    "text": "Too much vocabulary\n\n\n\nTruth\nPrediction\nRate\nEquivalently…\nWant?\n\n\n\n\n0\n0\nTrue negative\nspecificity\nHigh\n\n\n0\n1\nFalse positive\n1 - specificity\nLow\n\n\n1\n0\nFalse negative\n1 - sensitivity\nLow\n\n\n1\n1\nTrue positive\nsensitivity\nHigh"
   },
   {
     "objectID": "lectures/2024-12-05/more-logistic-regression.html#trading-off-between-the-errors",
     "href": "lectures/2024-12-05/more-logistic-regression.html#trading-off-between-the-errors",
     "title": "Model selection for logistic regression",
     "section": "Trading off between the errors",
-    "text": "Trading off between the errors"
+    "text": "Trading off between the errors\nWhen you change the classification threshold, you change the error rates."
   },
   {
     "objectID": "lectures/2024-12-05/more-logistic-regression.html#roc-curve",
@@ -3095,7 +3095,7 @@
     "href": "lectures/2024-12-05/project-tips.html#your-project-plans",
     "title": "Telling a data story",
     "section": "Your project plans",
-    "text": "Your project plans\n\nHow are you telling your story?\n\nSequential reveal\nInstant reveal\nOur approach doesn’t fit either of these paradigms\nNo idea\n\nSubmit your answer on Canvas for 12-06 Check-in (access code: ___)"
+    "text": "Your project plans\n\nHow are you telling your story?\n\nSequential reveal\nInstant reveal\nOur approach doesn’t fit either of these paradigms\nNo idea"
   },
   {
     "objectID": "lectures/2024-12-05/project-tips.html#data",

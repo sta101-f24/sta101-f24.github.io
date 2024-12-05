@@ -614,14 +614,55 @@ b_0+b_1x.
 <h2>Model selection for logistic regression</h2>
 <p>Q: How do we decide if a logistic regression model is “good”?</p>
 <p>A: Look at the error rates of its predictions. There are two kinds…</p>
-<p>INSERT TABLE HERE!</p>
-</section>
+
+<img data-src="images/confusion-matrix.png" class="r-stretch"></section>
 <section id="too-much-vocabulary" class="slide level2">
 <h2>Too much vocabulary</h2>
-<p>TABLE WITH ALL THE JARGON</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Truth</th>
+<th>Prediction</th>
+<th>Rate</th>
+<th>Equivalently…</th>
+<th>Want?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td>True negative</td>
+<td>specificity</td>
+<td>High</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>1</td>
+<td>False positive</td>
+<td>1 - specificity</td>
+<td>Low</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>0</td>
+<td>False negative</td>
+<td>1 - sensitivity</td>
+<td>Low</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>1</td>
+<td>True positive</td>
+<td>sensitivity</td>
+<td>High</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="trading-off-between-the-errors" class="slide level2">
 <h2>Trading off between the errors</h2>
+<p>When you change the classification threshold, you change the error rates.</p>
 </section>
 <section id="roc-curve" class="slide level2">
 <h2>ROC curve</h2>
