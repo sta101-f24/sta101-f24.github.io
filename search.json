@@ -107,13 +107,6 @@
     "text": "Example: will they default?\n\\[\n\\mathbf{x}: \\text{financial and demographic info about a loan applicant.}\n\\]\n\n\\[\ny\n=\n\\begin{cases}\n1 & \\text{applicant is at risk of defaulting on loan}\\\\\n0 & \\text{applicant is safe}\n\\end{cases}\n\\]\nEthical concerns?"
   },
   {
-    "objectID": "lectures/2024-12-05/more-logistic-regression.html#example-will-they-re-offend",
-    "href": "lectures/2024-12-05/more-logistic-regression.html#example-will-they-re-offend",
-    "title": "Model selection for logistic regression",
-    "section": "Example: will they re-offend?",
-    "text": "Example: will they re-offend?\n\\[\n\\mathbf{x}: \\text{info about a criminal suspect and their case.}\n\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\[\ny\n=\n\\begin{cases}\n1 & \\text{suspect is at risk of re-offending pre-trial}\\\\\n0 & \\text{suspect is safe}\n\\end{cases}\n\\]\nEthical concerns?"
-  },
-  {
     "objectID": "lectures/2024-12-05/more-logistic-regression.html#how-do-we-model-this-type-of-data",
     "href": "lectures/2024-12-05/more-logistic-regression.html#how-do-we-model-this-type-of-data",
     "title": "Model selection for logistic regression",
