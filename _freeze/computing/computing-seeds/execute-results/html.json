@@ -1,0 +1,17 @@
+{
+  "hash": "648f25ec0cce96476018a64e41b6734b",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\n  title: \"Random number seeds\"\n---\n\n\nStatistical computing software like `R` can generate (pseudo)random numbers, like this:\n\n\n::: {.cell}\n\n```{.r .cell-code}\nrnorm(5)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] -0.3932406  1.2852251 -0.5689218 -0.4123566  1.2358167\n```\n\n\n:::\n:::\n\n\nOr this:\n\n\n::: {.cell}\n\n```{.r .cell-code}\nrnorm(5)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] -1.9392724 -0.9563330 -1.3858488 -0.4422137 -0.4598596\n```\n\n\n:::\n:::\n\n\nOr this:\n\n\n::: {.cell}\n\n```{.r .cell-code}\nrnorm(5)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] -0.3931979 -0.8684721 -1.0429014 -1.6626016  1.3405364\n```\n\n\n:::\n:::\n\n\nLook pretty random to me. This allows us to perform simulations (eg. the bootstrap), which is an enormously important part of the modern statistician's toolkit. Having said that, when you're working with computer-generated random numbers, you want your work to be reproducible so that other people can check it. This means that you want to set a random number seed before you do a simulation. This ensures that the stream of random numbers in your simulation is the same every time, and someone else could run your code and get the exact same results that you did.\n\nSetting a seed looks like this:\n\n\n::: {.cell}\n\n```{.r .cell-code}\nset.seed(8675309)\n\nrnorm(5)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] -0.9965824  0.7218241 -0.6172088  2.0293916  1.0654161\n```\n\n\n:::\n:::\n\n\nEvery time you run that code, you will get the same numbers:\n\n\n::: {.cell}\n\n```{.r .cell-code}\nset.seed(8675309)\n\nrnorm(5)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] -0.9965824  0.7218241 -0.6172088  2.0293916  1.0654161\n```\n\n\n:::\n:::\n\n\nSo, if you ever write a code chunk that generates random numbers (eg. using the `generate` function), you should begin the code chunk by setting a random number seed so that you get the same results every time you run your stuff. The syntax as you saw above is `set.seed(INTEGER)`. Sometimes we will tell you what number to put. Other times (and once you exit the course), you can put whatever you want. It doesn't really matter. If you require inspiration, try these:\n\n-   [1](https://www.youtube.com/watch?v=OiBIXa_-7Vo)\n-   [`20`](https://www.youtube.com/watch?v=pf8yHr4rHaY)\n-   [`988`](https://www.youtube.com/watch?v=MHFuaaGpGKQ)\n-   `24601`\n-   [`362436`](https://youtu.be/HhPu6GEoad8?feature=shared)\n-   `525600`\n-   [`8675309`](https://www.youtube.com/watch?v=6WTdTwcmxyo)\n-   [`8005882300`](https://www.youtube.com/watch?v=uwJQQux0TF0)\n",
+    "supporting": [
+      "computing-seeds_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

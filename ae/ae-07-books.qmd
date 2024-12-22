@@ -1,0 +1,109 @@
+---
+title: "Weights of books"
+categories: 
+  - Application exercise
+editor: visual
+---
+
+Today we'll explore the question "How do volume and weights books relate?" and "How, if at all, does that change when we take whether the book is hardback or paperback into consideration?"
+
+# Goals
+
+-   Build, fit, and interpret linear models with more than one predictor
+
+-   Use categorical variables as a predictor in a model
+
+# Packages
+
+```{r}
+#| label: load-packages
+#| message: false
+
+library(tidyverse)
+library(tidymodels)
+library(DAAG)
+```
+
+# Data
+
+The data for this application exercise comes from the `allbacks` dataset in the **DAAG** package. The dataset has `r nrow(allbacks)` observations and `r ncol(allbacks)` columns. Each observation represents a book. Note that `volume` is measured in cubic centimeters and `weight` is measured in grams. More information on the dataset can be found in the documentation for `allbacks`, with `?allbacks`.
+
+# Single predictor
+
+## Plot the best fit line
+
+Visualize the relationship between volume (on the x-axis) and weight (on the y-axis). Overlay the line of best fit. Describe the relationship between these variables.
+
+```{r}
+#| label: plot-weight-volume
+
+ggplot(allbacks, aes(x = volume, y = weight)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(
+    x = "Volume (cubic centimeters)",
+    y = "Weight (grams)"
+  )
+```
+
+> Add response here.
+
+## Get the estimated regression coefficients
+
+Fit a model predicting weight from volume for these books and save it as `weight_fit`. Display a tidy output of the model.
+
+```{r}
+#| label: fit-weight-volume
+
+weight_fit <- linear_reg() |>
+  fit(weight ~ volume, data = allbacks)
+
+tidy(weight_fit)
+```
+
+# Multiple predictors
+
+## Plot the best fit line(s)
+
+Visualize the relationship between volume (on the x-axis) and weight (on the y-axis), taking into consideration the cover type of the book. Use different colors and shapes for hardback and paperback books. Also use different colors for lines of best fit for the two types of books. In addition, add the overall line of best fit (from Exercise 1) as a gray dashed line so that you can see the difference between the lines when considering and not considering cover type.
+
+```{r}
+#| label: plot-weight-volume-cover
+
+ggplot(allbacks, aes(x = volume, y = weight)) +
+  geom_smooth(method = "lm", se = FALSE, color = "gray", linetype = "dashed") +
+  geom_point() +
+  labs(
+    x = "Volume (cubic centimeters)",
+    y = "Weight (grams)",
+    shape = "Cover", color = "Cover"
+  )
+```
+
+## Get the estimated regression coefficients
+
+Fit a model predicting weight from volume for these books and save it as `weight_cover_fit`. Display a tidy output of the model.
+
+```{r}
+#| label: fit-weight-volume-cover
+
+weight_cover_fit <- linear_reg() |>
+  fit(weight ~ volume, data = allbacks)
+
+tidy(weight_cover_fit)
+```
+
+## Prediction
+
+Using the model you chose, predict the weight of a hardcover book that is 1000 cubic centimeters (that is, roughly 25 centimeters in length, 20 centimeters in width, and 2 centimeters in height/thickness).
+
+```{r}
+#| label: predict
+
+new_book <- tibble(
+  cover = "hb",
+  volume = 1000
+)
+
+predict(weight_cover_fit, new_data = new_book)
+```

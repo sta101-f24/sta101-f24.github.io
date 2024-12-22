@@ -1,0 +1,186 @@
+---
+  title: "Model selection for logistic regression"
+---
+
+## Load packages and data
+
+```{r}
+library(tidyverse)
+library(tidymodels)
+library(forested)
+
+glimpse(forested)
+```
+
+## Split data
+
+```{r}
+set.seed(1234)
+forested_split <- initial_split(forested)
+forested_train <- training(forested_split)
+forested_test <- testing(forested_split)
+```
+
+## Exploratory data analysis
+
+```{r}
+ggplot(forested_train, aes(x = precip_annual, fill = forested, color = forested)
+  ) +
+  geom_density(alpha = 0.7) +
+  theme_minimal() + 
+  scale_fill_manual(values = c("Yes" = "forestgreen", "No" = "gold2")) +
+  scale_color_manual(values = c("Yes" = "forestgreen", "No" = "gold2"))
+```
+
+```{r}
+ggplot(forested_train, aes(x = tree_no_tree, fill = forested)) +
+  geom_bar(position = "fill") +
+  scale_fill_manual(values = c("Yes" = "forestgreen", "No" = "gold2")) +
+  theme_minimal()
+```
+
+```{r}
+ggplot(
+  forested_train,
+  aes(x = temp_annual_mean, fill = forested, color = forested)
+  ) +
+  geom_density(alpha = 0.25) +
+  scale_fill_manual(values = c("Yes" = "forestgreen", "No" = "gold2")) +
+  scale_color_manual(values = c("Yes" = "forestgreen", "No" = "gold2")) +
+  facet_wrap(~land_type, ncol = 1) +
+  theme_minimal()
+```
+
+## Crude map!
+
+(What about coloring points by a numerical quantity?)
+
+```{r}
+ggplot(forested_train, aes(x = lon, y = lat, color = precip_annual)) +
+  geom_point(alpha = 0.7) +
+  #scale_color_manual(values = c("Yes" = "forestgreen", "No" = "gold2")) +
+  theme_minimal()
+```
+
+## Fit a model
+
+```{r}
+forested_custom_fit <- logistic_reg() |>
+  fit(forested ~ elevation + tree_no_tree + lat + lon + temp_annual_mean, data = forested_train)
+tidy(forested_custom_fit)
+```
+
+## Predict on testing
+
+```{r}
+forested_custom_aug <- augment(forested_custom_fit, new_data = forested_test)
+forested_custom_aug
+```
+
+## Calculate error rates
+
+```{r}
+forested_custom_aug |>
+  count(forested, .pred_class) |>
+  arrange(forested) |>
+  group_by(forested) |>
+  mutate(
+    p = round(n / sum(n), 2)
+  )
+```
+
+## Change threshold
+
+(Use mutate and if_else to override the default and threshold the probabilities using different value)
+
+```{r}
+
+my_thresh = 0.25
+
+forested_custom_aug <- forested_custom_aug |>
+  mutate(.pred_class = if_else(.pred_Yes <= my_thresh, "No", "Yes"))
+  
+forested_custom_aug |>
+  count(forested, .pred_class) |>
+  arrange(forested) |>
+  group_by(forested) |>
+  mutate(
+    p = round(n / sum(n), 2)
+  )
+```
+
+## Plot ROC curve
+
+```{r}
+forested_custom_roc <- roc_curve(forested_custom_aug, truth = forested, .pred_Yes)
+forested_custom_roc
+
+ggplot(forested_custom_roc, aes(x = 1 - specificity, y = sensitivity)) +
+  geom_path() +
+  geom_abline(lty = 3) +
+  coord_equal()
+```
+
+## Compute area under the curve
+
+```{r}
+custom_roc_auc <- roc_auc(
+  forested_custom_aug,
+  truth = forested,
+  .pred_Yes
+)
+custom_roc_auc
+```
+
+## Repeat for different model
+
+Fit full model:
+
+```{r}
+forested_full_fit <- logistic_reg() |>
+  fit(forested ~ ., data = forested_train)
+tidy(forested_full_fit)
+```
+
+```{r}
+forested_full_aug <- augment(forested_full_fit, new_data = forested_test)
+forested_full_aug
+```
+
+```{r}
+forested_full_roc <- roc_curve(forested_full_aug, truth = forested, .pred_Yes)
+forested_full_roc
+```
+
+```{r}
+ggplot(forested_full_roc, aes(x = 1 - specificity, y = sensitivity)) +
+  geom_path() +
+  geom_abline(lty = 3) +
+  coord_equal()
+```
+
+```{r}
+full_roc_auc <- roc_auc(
+  forested_full_aug,
+  truth = forested,
+  .pred_Yes
+)
+full_roc_auc
+```
+
+## Compare
+
+```{r}
+forested_custom_roc <- forested_custom_roc |>
+  mutate(model = "Custom")
+forested_full_roc <- forested_full_roc |>
+  mutate(model = "Full")
+bind_rows(
+  forested_custom_roc,
+  forested_full_roc
+) |>
+  ggplot(aes(x = 1 - specificity, y = sensitivity, color = model)) +
+  geom_path() +
+  geom_abline(lty = 3) +
+  coord_equal()
+```

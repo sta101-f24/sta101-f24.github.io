@@ -1,0 +1,17 @@
+{
+  "hash": "9747693f1185885aead37f6aad6b4b73",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"File paths and reading in data\"\n---\n\n\nHopefully you have followed the advice [here](https://sta101-f24.github.io/computing/computing-moving.html) and organized your `RStudio` files into folders like this:\n\n![](organize.png){width=\"397\"}\n\nAnd so, for example, when you go inside your Lecture 2 folder, it looks like this:\n\n![](inside_folder.png){width=\"397\"}\n\nThis is great for organization, but it causes a small problem. A command like this may not work:\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\n\nflint <- read_csv(\"flint.csv\")\n```\n:::\n\n\nWhy not? Because the file `flint.csv` is inside one of your handy dandy folders, but you have not told `read_csv` *which* folder, and so it cannot find it. To fix this, change the code to this:\n\n\n::: {.cell}\n\n```{.r .cell-code}\nflint <- read_csv(\"~/lecture-2/flint.csv\")\n```\n:::\n\n\nThe string `\"~/lecture-2/flint.csv\"` is called a **file path** and it tells the function `read_csv` the path of folders it has to search down in order to find the file `flint.csv`. If you have chosen to give your folders slightly different names like `Lecture 2` or `Lecture-2` or `lecture 2` or `john-sucks`, that's fine. Just make sure you make the appropriate change when you run the command. So `flint <- read_csv(\"~/Lecture 2/flint.csv\")` or `flint <- read_csv(\"~/john-sucks/flint.csv\")` , etc.\n",
+    "supporting": [
+      "computing-file-paths_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

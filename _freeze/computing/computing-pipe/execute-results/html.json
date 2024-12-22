@@ -1,0 +1,17 @@
+{
+  "hash": "3111fd6ac52358f1c22c2e531f895220",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\n  title: \"Piping\"\n---\n\n\nA *pipe* in `R` is a way of stitching together many commands to make your code easier for a human to read, and to keep it from running off the pages of the PDF documents you will submit to us.\n\n## A very silly example\n\nThese two code chunks do exactly the same thing:\n\n\n::: {.cell}\n\n```{.r .cell-code}\nsum(1, 2)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 3\n```\n\n\n:::\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\n1 |>\n  sum(2)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 3\n```\n\n\n:::\n:::\n\n\nSo the pipe operator `|>` passes (or *pipes*), the number `1` into the `sum` function as the first input. In a simple example like this, `sum(1, 2)` is *definitely* the way I would write the code, but as things get more elaborate, you will want to pipe.\n\n## Tallying stuff up in a spreadsheet\n\nLet's consider the COVID data set from class on 9/3/2024:\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\n\ndelta <- read_csv(\"delta.csv\")\n```\n:::\n\n\n::: callout-note\nRecalling the information [here](https://sta101-f24.github.io/computing/computing-file-paths.html), be prepared to adjust the file path to match how you have organized your files and folders.\n:::\n\nA row in this data set is a person, and we record whether or not that person died from/with COVID, and whether or not they were vaccinated. So there are four categories in all:\n\n-   unvaccinated and died\n-   unvaccinated and survived\n-   vaccinated and died\n-   vaccinated and survived\n\nThe following code creates a nifty lil' table that tallies up the number of people in each group and calculates the proportion of people that died versus survived *within each vaccination group*:\n\n\n::: {.cell}\n\n```{.r .cell-code}\ndelta |>\n  count(vaccine, outcome) |>\n  group_by(vaccine) |>\n  mutate(prop = n / sum(n))\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n# A tibble: 4 × 4\n# Groups:   vaccine [2]\n  vaccine      outcome       n    prop\n  <chr>        <chr>     <int>   <dbl>\n1 Unvaccinated died        250 0.00166\n2 Unvaccinated survived 150802 0.998  \n3 Vaccinated   died        477 0.00407\n4 Vaccinated   survived 116637 0.996  \n```\n\n\n:::\n:::\n\n\nSo within each vaccination group, the numbers sum to one. This code is equivalent, but it provides a truly horrific reading experience:\n\n\n::: {.cell}\n\n```{.r .cell-code}\n  mutate(group_by(count(delta, vaccine, outcome), vaccine), prop = n / sum(n))\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n# A tibble: 4 × 4\n# Groups:   vaccine [2]\n  vaccine      outcome       n    prop\n  <chr>        <chr>     <int>   <dbl>\n1 Unvaccinated died        250 0.00166\n2 Unvaccinated survived 150802 0.998  \n3 Vaccinated   died        477 0.00407\n4 Vaccinated   survived 116637 0.996  \n```\n\n\n:::\n:::\n\n\n## Now you try\n\nThe COVID data contains another variable indicating whether or not the person was older or younger than fifty. Write some code (it will be *very* similar to the code above) that produces a table that breaks things down by vaccination status, outcome, *and* age. How many rows should this table contain?\n",
+    "supporting": [
+      "computing-pipe_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

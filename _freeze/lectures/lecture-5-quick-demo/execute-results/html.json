@@ -1,0 +1,21 @@
+{
+  "hash": "eddc14930b73fb51c6773cf0d2b67562",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Quick `ggplot` and pipe demo\"\ndate: 9/10/2024\n---\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\nfake_data <- data.frame(var1 = c(rnorm(2500), rnorm(1000, mean = 3)), \n                        var2 = c(rnorm(2500), rnorm(1000, mean = 2)))\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nggplot(fake_data, aes(x = var1)) + \n  geom_histogram(bins = 50) +\n  labs(title = \"My plot\") +\n  geom_vline(xintercept = mean(fake_data$var1), color = \"red\")\n```\n\n::: {.cell-output-display}\n![](lecture-5-quick-demo_files/figure-revealjs/plot-histogram-1.png){width=960}\n:::\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\ncourage <- read_csv(\"~/sta101-f24.github.io/labs/data/courage.csv\")\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nnew_df <- courage |>\n  mutate(\n    courage_pts = if_else(home_team == \"NC\", home_pts, away_pts)\n    )\n\n\n#|> \n#  group_by(result) |>\n#  summarize(mean_courage_pts = mean(courage_pts))\n```\n:::\n",
+    "supporting": [
+      "lecture-5-quick-demo_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    // dispatch for htmlwidgets\n    function fireSlideEnter() {\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n    }\n\n    function fireSlideChanged(previousSlide, currentSlide) {\n      fireSlideEnter();\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,0 +1,60 @@
+---
+  title: "Using the t-distribution"
+---
+
+## Packages
+
+```{r}
+#| label: packages
+#| warning: false
+#| message: false
+
+library(tidyverse)
+library(tidymodels)
+library(openintro)
+```
+
+## Data 
+
+Every year, the United States Department of Health and Human Services releases to the public a large dataset containing information on births recorded in the country. This dataset has been of interest to medical researchers who are studying the relation between habits and practices of expectant mothers and the birth of their children. In this case study we work with a random sample of 1,000 cases from the dataset released in 2014. The length of pregnancy, measured in weeks, is commonly referred to as gestation.
+
+```{r}
+#| label: glimpse-data
+
+glimpse(births14)
+```
+
+## `t_test`
+
+```{r}
+#| label: t_test
+t_test(births14, 
+       response = weeks, 
+       alternative = "two-sided",
+       mu = 40,
+       conf_int = TRUE, 
+       conf_level = 0.95)
+
+births14 |>
+  summarize(
+    n = n(),
+    xbar = mean(weeks),
+    s = sd(weeks),
+    se = s / sqrt(n),
+    alpha = 0.05,
+    df = n - 1,
+    t_star = qt(1 - (alpha / 2), df = df),
+    L = xbar - t_star * se,
+    U = xbar + t_star * se
+  )
+```
+
+```{r}
+#| label: can-we-reproduce-the-output
+
+```
+
+```{r}
+#| label: compare-to-simulation
+
+```
